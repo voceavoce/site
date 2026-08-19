@@ -1,38 +1,40 @@
-# Sito "Voce a Voce" (landing statica)
+# Voce a Voce — site
 
-Landing page statica multilingua (IT/EN/ES) per il canale di studio corale. Nessun build: solo HTML/CSS/JS.
-Gli asset di brand (`assets/avatar.png`, `banner.png`, `watermark.png`) sono generati con
-`python -m scripts.cli.job_brand_assets` (rigenerali e ricopiali qui se cambi logo/colori).
+The landing page behind **[voceavoce.com](https://voceavoce.com/)**.
 
-## Anteprima locale
-Apri `index.html` nel browser, oppure:
+## What this is
+
+A static page, in three languages (IT/EN/ES), pointing to the project's channels. Plain HTML, CSS
+and a little JavaScript — no build step, no framework, no dependencies. Open `index.html` in a
+browser and you are looking at the deployed site.
+
+It is served by GitHub Pages from the `main` branch of this repository. `CNAME` holds the custom
+domain and `.nojekyll` turns off Jekyll processing; both are versioned, so the deployment
+configuration lives with the code rather than only in a settings panel.
+
+## The project
+
+**Voce a Voce** publishes choral rehearsal videos, one per piece per voice: your part in high
+contrast, the other voices attenuated, a cursor following the music in real time, and the syllables
+underneath.
+
+The scores those videos are made from are corrected by hand and published separately, at
+**[voceavoce/scores](https://github.com/voceavoce/scores)** — which is also where to report a wrong
+note if you hear one.
+
+## Working on it
+
+```bash
+python -m http.server 8000    # then open http://localhost:8000
 ```
-python -m http.server 8000   # dentro la cartella site/  →  http://localhost:8000
-```
 
-## Deploy gratis su GitHub Pages
-1. Crea un repo **pubblico** (es. `voceavoce-site`) e mettici il contenuto di questa cartella `site/`
-   (oppure pubblica da questo repo: Settings → Pages → Source = branch + cartella `/site`).
-2. Repo → **Settings → Pages** → Source = branch `main` (cartella root del repo del sito, o `/site`).
-   Pages pubblica su `https://<utente>.github.io/<repo>/` con HTTPS gratis.
-3. `.nojekyll` è già incluso (evita l'elaborazione Jekyll).
+Opening `index.html` directly works too. The `python` server is only worth the trouble when
+something depends on being served over HTTP rather than `file://`.
 
-## Dominio personalizzato (es. voceavoce.com)
-Compra **solo il dominio** (Aruba "solo registrazione", o Cloudflare Registrar). Poi:
-1. Crea il file **`CNAME`** in questa cartella con una riga: `voceavoce.com`.
-2. Nel **DNS del registrar** (pannello Aruba):
-   - record **A** per `voceavoce.com` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - record **CNAME** per `www` → `<utente>.github.io`
-3. Repo → Settings → Pages → **Custom domain** = `voceavoce.com` → spunta **Enforce HTTPS**.
-NB: lo **spazio web di Aruba NON serve** (il sito sta su Pages).
+## Brand assets
 
-## Email info@voceavoce.com (separata dal sito; convive coi record sopra)
-La registrazione dominio NON include la casella. Aggiungi un servizio email (record **MX**):
-- **Cloudflare Email Routing** (gratis): inoltra `info@voceavoce.com` → la tua Gmail.
-- **Zoho Mail** (piano gratuito): casella vera sul dominio.
-- **Aruba** (a pagamento): casella inclusa nel piano mail/hosting.
-I record MX (email) e A/CNAME (sito Pages) **coesistono** senza conflitti.
+`assets/avatar.png`, `banner.png` and `watermark.png` are **generated**, not drawn: typography and
+shapes composed from open fonts, produced deterministically by the tooling that builds the videos.
+Editing them by hand means the next regeneration silently overwrites the change.
 
-## Da personalizzare prima del lancio
-- Link **Podcast** (`data-link="podcast"`) e gli handle social reali in `index.html`.
-- Verifica handle `@voceavoce` su YouTube/social e il dominio prima di fissarli.
+They are committed here because this is where the site needs them.
