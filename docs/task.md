@@ -58,6 +58,6 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] P5 (H) PWA: manifest + service worker che non mette in cache l'audio
 - [~] P6 (H) `docs/player.md`, `docs/r2-setup.md` (con la policy CORS) — r2-setup fatto; player.md da completare a fine Fase 1
 - [x] P9 (S) Worker `workers/audio/` (GET/HEAD/OPTIONS, Range, ETag, Cache-Control, CORS, 404 pulito, punto unico per il futuro controllo premium) + `wrangler.toml` senza segreti + test; `site.audioBase` di produzione = URL workers.dev
-- [~] P10 (H) `docs/r2-setup.md` riscritto: bucket privato, binding nel Worker, deploy con wrangler, test con curl (anche Range); futuro audio.voceavoce.com solo con i nameserver, posta Aruba da copiare prima
+- [x] P10 (H) `docs/r2-setup.md` riscritto: bucket privato, binding nel Worker, deploy con wrangler, test con curl (anche Range); futuro audio.voceavoce.com solo con i nameserver, posta Aruba da copiare prima
 - [ ] P7 (S) Verifica su telefono (emulazione) e desktop, sincronia controllata a orecchio dall'utente
 - [ ] P8 (O) Pipeline, da decidere con l'utente: con una sola corona a metà brano `choir._timing_regions` la tratta come corona finale e mette lì l'allargando finale (es. Locus iste, b. 28-29). Riguarda anche i video già pubblicati

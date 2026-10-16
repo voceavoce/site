@@ -76,6 +76,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — P5 fatto (Sonnet): PWA con `/manifest.webmanifest`, icone rigenerate dall'avatar 800 px, `/sw.js` (navigazioni network-first con pagina `/offline/`, asset stale-while-revalidate, audio, Range, cross-origin, `*.workers.dev` e host di `site.audioBase` mai intercettati); provata offline vera fermando il server. Scelta mia: Verovio (7 MB) NON è nel precache, altrimenti ogni visitatore lo scaricherebbe; entra in cache alla prima apertura del player. P9 fatto (Sonnet): Worker `workers/audio/` (GET/HEAD/OPTIONS, 405, Range 206/416, 304, CORS solo per le origini ammesse, 404 senza elenco, `authorize()` unico punto per il premium, nessuna cache d'edge), `wrangler.toml` senza segreti, 11 test. `site.audioBase` di produzione = costante `AUDIO_BASE_PRODUZIONE` in `src/_data/site.js`, oggi segnaposto `https://voceavoce-audio.CAMBIAMI.workers.dev`, da sostituire dopo il primo `wrangler deploy`. Check verde (75 test), a11y 11/11.
 
+- 2026-10-16 — P10 fatto (Sonnet): `docs/r2-setup.md` riscritto per il Worker (bucket privato, nessuna CORS nel bucket, deploy con wrangler, test con curl compreso Range, futuro solo con i nameserver e la posta Aruba copiata prima; il divieto di trasferire la registrazione è in evidenza). Da verificare dal vivo: limiti del piano gratuito, voci di menu del pannello Cloudflare, `wrangler dev --remote`, percorso locale di AIVideoCreator.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
