@@ -51,6 +51,9 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — B7 fatto (Sonnet): ricerca Pagefind in 3 lingue (/cerca/, /en/search/, /es/buscar/) con filtri compositore/linea/voce/stagione/genere, conteggio aria-live, stato nell'URL, campo di ricerca nella home; indicizzate solo le schede pubblicabili (41 per lingua). Corretti gli errori di accessibilità della CI (contrasto sigle voce e ♪ delle card; `frame-tested` escluso per l'iframe YouTube) e lo script `npm run a11y` che restava appeso. Verificato: `npm run check` verde, pa11y/axe 10/10 pagine 0 errori. Dati del sito rigenerati dalla pipeline (R4): 2 slug cambiati, i compositori ora portano anche gli `alias` del registro.
 
+- 2026-10-16 — CI «Check» tornata verde sul commit `de1f830`.
+- 2026-10-16 — A8 (primo export ufficiale con `slug_sito` salvato in roadmap) rimandato di proposito: scrivere `slug_sito` nelle roadmap su questo branch creerebbe conflitti con le roadmap che la pipeline aggiorna su `main` di AIVideoCreator. Si fa dopo il merge del branch di AIVideoCreator, con lo STAGE 5 della skill `/voceavoce-publish-choir`.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
