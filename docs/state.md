@@ -27,3 +27,4 @@ Aggiornato: 2026-10-16
 - 2026-10-16 — Tag `landing-v1` creato su `c50b793`, ma il push del tag è rifiutato (403: l'ambiente permette solo il branch di lavoro). Per pubblicarlo, dal tuo computer: `git tag landing-v1 c50b793 && git push origin landing-v1`.
 - 2026-10-16 — Organizzazione del lavoro: i sotto-agenti modificano i file ma non fanno commit; commit, push e aggiornamento di `task.md`/`state.md` li fa l'agente principale.
 - 2026-10-16 — B0 fatto (Haiku): landing archiviata in `src/static/classic/` (servita su /classic/), verificata via HTTP (noindex presente, asset 200).
+- 2026-10-16 — A5-A7 fatti (Haiku): campo `genere` nello `_schema` del contratto, `VOCEAVOCE_SITE_DIR` in `.env.example`, STAGE 5 «Aggiorna il sito» nella skill `voceavoce-publish-choir`, riga in `CLAUDE.md`, voce T-905 in `tasks.md`. Commit pushato su AIVideoCreator.
