@@ -1,0 +1,92 @@
+{
+  "htmlLang": "it",
+  "siteName": "Voce a Voce",
+  "nav": {
+    "label": "Navigazione principale",
+    "coro": "Coro",
+    "arie": "Arie",
+    "metodi": "Metodi",
+    "compositori": "Compositori",
+    "stagioni": "Stagioni",
+    "cerca": "Cerca"
+  },
+  "skip": "Salta al contenuto",
+  "home": {
+    "label": "Voce a Voce, pagina iniziale",
+    "title": "Voce a Voce - studia la tua parte",
+    "description": "Voce a Voce: video di studio corale voce per voce (S/A/T/B). Segui la tua linea sulla partitura, con cursore, voce in evidenza e sottotitoli. Repertorio di pubblico dominio.",
+    "ctaYoutube": "Guarda su YouTube",
+    "ctaHow": "Come funziona"
+  },
+  "tag": "studia la tua parte",
+  "lead": "Video di studio corale <strong>voce per voce</strong> (Soprano, Alto, Tenore, Basso): segui la tua linea sulla partitura, con cursore a tempo, la tua voce in evidenza e le altre attenuate.",
+  "how": {
+    "h": "Come funziona",
+    "f1_h": "La tua voce in evidenza",
+    "f1_p": "La parte da studiare in nero ad alto contrasto, le altre voci attenuate in grigio.",
+    "f2_h": "Cursore a tempo",
+    "f2_p": "Una barra segue il ritmo della tua linea, anche sulle pause e le corone.",
+    "f3_h": "Testo e sottotitoli",
+    "f3_p": "Liriche sotto la tua voce e sottotitoli per verso, sincronizzati.",
+    "f4_h": "Una lezione per voce",
+    "f4_p": "Primo ascolto, lettura lenta, a tempo, a due voci, col coro e infine «ora tocca a te», con la tua voce tolta dal mix. Capitoli per saltare alla sezione."
+  },
+  "voicesDemo": "Le quattro voci: una in evidenza, le altre attenuate",
+  "sources": {
+    "h": "Fonti e licenze",
+    "p": "Usiamo esclusivamente partiture di <strong>pubblico dominio</strong> (es. CPDL/ChoralWiki, IMSLP, OpenScore). La fonte e l'edizione di ogni brano sono citate nella descrizione del relativo video."
+  },
+  "theme": {
+    "toggle": "Tema scuro"
+  },
+  "langSwitch": {
+    "label": "Lingua"
+  },
+  "langName": {
+    "it": "Italiano",
+    "en": "English",
+    "es": "Español"
+  },
+  "breadcrumb": {
+    "label": "Briciole di pane",
+    "home": "Home"
+  },
+  "footer": {
+    "note": "Partiture di pubblico dominio · arrangiamenti e attribuzioni citati per brano.",
+    "follow": "Seguici",
+    "contact": "Contatti",
+    "rights": "Voce a Voce"
+  },
+  "social": {
+    "youtube": "YouTube",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "card": {
+    "voices": "Voci",
+    "play": "Scheda del brano",
+    "soon": "in arrivo",
+    "anon": "Anonimo / tradizionale"
+  },
+  "voice": {
+    "S": "Soprano",
+    "A": "Alto",
+    "T": "Tenore",
+    "B": "Basso",
+    "alta": "Voce alta",
+    "media": "Voce media",
+    "bassa": "Voce bassa"
+  },
+  "lines": {
+    "coro": "Coro",
+    "aria": "Aria",
+    "metodo": "Metodo"
+  },
+  "seasons": {
+    "natale": "Natale",
+    "pasqua": "Pasqua",
+    "quaresima": "Quaresima",
+    "mariano": "Mariano"
+  }
+}

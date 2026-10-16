@@ -1,0 +1,92 @@
+{
+  "htmlLang": "es",
+  "siteName": "Voce a Voce",
+  "nav": {
+    "label": "Navegación principal",
+    "coro": "Coro",
+    "arie": "Arias",
+    "metodi": "Métodos",
+    "compositori": "Compositores",
+    "stagioni": "Temporadas",
+    "cerca": "Buscar"
+  },
+  "skip": "Saltar al contenido",
+  "home": {
+    "label": "Voce a Voce, página de inicio",
+    "title": "Voce a Voce - estudia tu voz",
+    "description": "Voce a Voce: vídeos de estudio coral voz por voz (S/A/T/B). Sigue tu línea en la partitura, con cursor a tiempo, tu voz resaltada y subtítulos. Repertorio de dominio público.",
+    "ctaYoutube": "Ver en YouTube",
+    "ctaHow": "Cómo funciona"
+  },
+  "tag": "estudia tu voz",
+  "lead": "Vídeos de estudio coral, <strong>voz por voz</strong> (Soprano, Contralto, Tenor, Bajo): sigue tu línea en la partitura, con cursor a tiempo, tu voz resaltada y las demás atenuadas.",
+  "how": {
+    "h": "Cómo funciona",
+    "f1_h": "Tu voz resaltada",
+    "f1_p": "Tu parte en negro de alto contraste, las demás voces atenuadas en gris.",
+    "f2_h": "Cursor a tiempo",
+    "f2_p": "Una barra sigue el ritmo de tu línea, también en silencios y calderones.",
+    "f3_h": "Letra y subtítulos",
+    "f3_p": "Letra bajo tu voz y subtítulos por verso, sincronizados.",
+    "f4_h": "Una lección por voz",
+    "f4_p": "Primera escucha, lectura lenta, a tempo, a dos voces, con el coro y por último «ahora te toca», sin tu voz en la mezcla. Capítulos para saltar a cada sección."
+  },
+  "voicesDemo": "Las cuatro voces: una resaltada, las demás atenuadas",
+  "sources": {
+    "h": "Fuentes y licencias",
+    "p": "Usamos solo partituras de <strong>dominio público</strong> (p. ej. CPDL/ChoralWiki, IMSLP, OpenScore). La fuente y edición de cada pieza se citan en la descripción del vídeo."
+  },
+  "theme": {
+    "toggle": "Tema oscuro"
+  },
+  "langSwitch": {
+    "label": "Idioma"
+  },
+  "langName": {
+    "it": "Italiano",
+    "en": "English",
+    "es": "Español"
+  },
+  "breadcrumb": {
+    "label": "Ruta de navegación",
+    "home": "Inicio"
+  },
+  "footer": {
+    "note": "Partituras de dominio público · arreglos y atribuciones citados por pieza.",
+    "follow": "Síguenos",
+    "contact": "Contacto",
+    "rights": "Voce a Voce"
+  },
+  "social": {
+    "youtube": "YouTube",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "card": {
+    "voices": "Voces",
+    "play": "Ficha de la pieza",
+    "soon": "próximamente",
+    "anon": "Anónimo / tradicional"
+  },
+  "voice": {
+    "S": "Soprano",
+    "A": "Contralto",
+    "T": "Tenor",
+    "B": "Bajo",
+    "alta": "Voz aguda",
+    "media": "Voz media",
+    "bassa": "Voz grave"
+  },
+  "lines": {
+    "coro": "Coro",
+    "aria": "Aria",
+    "metodo": "Método"
+  },
+  "seasons": {
+    "natale": "Navidad",
+    "pasqua": "Pascua",
+    "quaresima": "Cuaresma",
+    "mariano": "Mariano"
+  }
+}

@@ -1,0 +1,32 @@
+{#- Scheda brano. Variabili: piece (formato content/generated/SCHEMA.md), lang -#}
+{%- set pubVoices = [] -%}
+{%- for v in piece.voci %}{% if v.video_id %}{% set pubVoices = (pubVoices.push(v), pubVoices) %}{% endif %}{% endfor -%}
+{%- set thumbId = pubVoices[0].video_id if pubVoices.length else "" -%}
+{%- set composer = (piece.compositore.breve or piece.compositore.nome) if piece.compositore else ('card.anon' | t(lang)) -%}
+{%- set title = piece.titolo_breve or piece.titolo -%}
+<article class="card">
+  {%- if thumbId %}
+  <img class="card__thumb" src="https://i.ytimg.com/vi/{{ thumbId }}/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="">
+  {%- else %}
+  <div class="card__thumb card__thumb--empty" aria-hidden="true">♪</div>
+  {%- endif %}
+  <div class="card__body">
+    <h3 class="card__title"><a href="{{ lang | routeUrl('pieces', piece.slug) }}">{{ title }}</a></h3>
+    <p class="card__composer">{{ composer }}</p>
+    <div class="card__meta">
+      {%- if pubVoices.length %}
+      <ul class="chips" aria-label="{{ 'card.voices' | t(lang) }}">
+        {%- for v in pubVoices %}
+        <li class="chip" title="{{ ('voice.' ~ v.voce) | t(lang) }}">{{ v.voce | upper if v.voce.length <= 3 else (('voice.' ~ v.voce) | t(lang)) }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+      <ul class="badges">
+        <li class="badge badge--line">{{ ('lines.' ~ piece.linea) | t(lang) }}</li>
+        {%- for s in piece.stagioni %}
+        <li class="badge">{{ ('seasons.' ~ s) | t(lang) }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</article>

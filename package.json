@@ -1,0 +1,22 @@
+{
+  "name": "voceavoce-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sito di Voce a Voce (voceavoce.com)",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "check": "eleventy --dryrun"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "html-validate": "^11.16.2"
+  }
+}

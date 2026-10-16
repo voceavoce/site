@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: site.langs
+  size: 1
+  alias: lang
+permalink: "{{ lang | routeUrl }}index.html"
+isHome: true
+eleventyComputed:
+  title: "{{ 'home.title' | t(lang) | safe }}"
+  description: "{{ 'home.description' | t(lang) | safe }}"
+eleventyExcludeFromCollections: true
+---
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>VOCE <span class="a">a</span> VOCE</h1>
+      <p class="tag">{{ 'tag' | t(lang) }}</p>
+      <p class="lead">{{ 'lead' | t(lang) | safe }}</p>
+      <div class="cta-row">
+        <a class="btn" href="{{ site.social.youtube }}">{{ 'home.ctaYoutube' | t(lang) }}</a>
+        <a class="btn btn--ghost" href="#how">{{ 'home.ctaHow' | t(lang) }}</a>
+      </div>
+    </div>
+    <div>
+      <ul class="voices" aria-label="{{ 'voicesDemo' | t(lang) }}">
+        <li><span class="name">S</span><span class="bar" aria-hidden="true"></span></li>
+        <li><span class="name">A</span><span class="bar b2" aria-hidden="true"></span></li>
+        <li class="on"><span class="name">T</span><span class="bar b3" aria-hidden="true"></span></li>
+        <li><span class="name">B</span><span class="bar b4" aria-hidden="true"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 id="how-h" class="section-title">{{ 'how.h' | t(lang) }}</h2>
+    <div class="bars-mini" aria-hidden="true"><span></span><span class="on"></span><span></span><span></span></div>
+    <div class="grid-auto">
+      {%- for n in [1, 2, 3, 4] %}
+      <div class="feat">
+        <span class="n" aria-hidden="true">{{ n }}</span>
+        <h3>{{ ('how.f' ~ n ~ '_h') | t(lang) }}</h3>
+        <p>{{ ('how.f' ~ n ~ '_p') | t(lang) }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="src-h">
+  <div class="wrap">
+    <h2 id="src-h" class="section-title">{{ 'sources.h' | t(lang) }}</h2>
+    <p class="prose">{{ 'sources.p' | t(lang) | safe }}</p>
+    <ul class="source-list">
+      <li><a href="https://www.cpdl.org">CPDL / ChoralWiki</a></li>
+      <li><a href="https://imslp.org">IMSLP</a></li>
+      <li><a href="https://musescore.com/openscore-lieder-corpus">OpenScore (CC0)</a></li>
+    </ul>
+  </div>
+</section>
