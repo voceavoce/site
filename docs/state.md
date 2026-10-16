@@ -78,6 +78,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — P10 fatto (Sonnet): `docs/r2-setup.md` riscritto per il Worker (bucket privato, nessuna CORS nel bucket, deploy con wrangler, test con curl compreso Range, futuro solo con i nameserver e la posta Aruba copiata prima; il divieto di trasferire la registrazione è in evidenza). Da verificare dal vivo: limiti del piano gratuito, voci di menu del pannello Cloudflare, `wrangler dev --remote`, percorso locale di AIVideoCreator.
 
+- 2026-10-16 — CI rossa dal commit `b0b4b68`: la regola `audio/` del `.gitignore` escludeva anche `workers/audio/`, quindi il codice del Worker non era mai entrato in git e in CI il suo test non trovava il modulo (in locale passava perché i file c'erano). Corretto ancorando le regole alla radice (`/audio/`, `/audio-local/`) e aggiungendo il Worker. Lezione: dopo ogni modifica al `.gitignore` controllare `git status --ignored`. I run `WIP` dei salvataggi automatici possono risultare rossi perché fotografano lavoro a metà.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.

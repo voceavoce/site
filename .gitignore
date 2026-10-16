@@ -8,6 +8,6 @@ _site/
 *.flac
 *.ogg
 *.m4a
-audio/
-audio-local/
+/audio/
+/audio-local/
 .env.local
