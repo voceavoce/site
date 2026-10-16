@@ -23,7 +23,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] B4 (S) `catalog.js`: unisce `content/generated` + `content/curated`, filtra voci per `pubblica_dal`, noindex sulle schede solo programmate
 - [x] B5 (S) Scheda brano: In breve, facade video + selettore voce, capitoli, note, testo/traduzioni, spartito, correlati
 - [x] B6 (S) Liste: compositori, opere/raccolte, generi, stagioni, linee (coro/arie/metodi), home
-- [ ] B7 (S) Ricerca Pagefind con UI accessibile (filtri, aria-live, stato in URL)
+- [~] B7 (S) Ricerca Pagefind con UI accessibile (filtri, aria-live, stato in URL)
 - [x] B8 (S) SEO: JSON-LD (WebSite, Organization, MusicComposition, VideoObject, Breadcrumb, Person, ItemList), sitemap con hreflang, robots, llms.txt, feed Atom, OG
 - [x] B9 (H) Pagine istituzionali IT/EN/ES: come funziona, fonti e licenze, chi siamo, privacy, trasparenza affiliazioni
 - [x] B10 (H) Componenti `ad-slot` e `affiliate` dietro `site.ads.enabled = false`
@@ -37,7 +37,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] R1 (H) Footer: includere `info-links.njk`; breadcrumb e riga autore della scheda: link a compositore e opera quando esistono le pagine (B6)
 - [x] R2 (H) Selettore voce di arie/metodi: le sigle A/M/B (alta/media/bassa) si confondono con Alto/Basso: usare le parole intere
 - [x] R3 Testi cantati: decisione utente 2026-10-16 = testo completo, con la fonte citata e linkata (già così)
-- [ ] R4 (S) Pipeline: «Lead Me Lord - Samuel Sebastian Wesley» resta col nome nel titolo (compositore fuori registro, nome preso dal titolo ma non tolto dal titolo): `titolo_pulito` deve togliere anche il nome scelto fra i candidati
+- [~] R4 (S) Pipeline: «Lead Me Lord - Samuel Sebastian Wesley» resta col nome nel titolo (compositore fuori registro, nome preso dal titolo ma non tolto dal titolo): `titolo_pulito` deve togliere anche il nome scelto fra i candidati
 - [ ] R5 (S) `workTranslation` nel JSON-LD e ItemList sulle pagine di elenco
 
 ## C — Contenuti editoriali (costano token: stima prima di partire)
