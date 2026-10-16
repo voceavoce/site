@@ -64,6 +64,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — Aperta la pull request https://github.com/voceavoce/site/pull/1 verso `main`. Il merge lo fa l'utente.
 
+- 2026-10-16 — PR #1 unita dall'utente (`bb36fe5`). Workflow Deploy verde: il nuovo sito è online su voceavoce.com. Il branch di lavoro riparte da `main` per la Fase 2.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
