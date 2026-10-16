@@ -1,8 +1,8 @@
 // PWA: manifest, registrazione del service worker, pagina /offline/ senza rete e REGOLA SULL'AUDIO (mai in cache).
 // Per "senza rete" non basta context.setOffline(): non vale per le richieste fatte dal service worker. Si usa
 // un server del sito che il test puo' FERMARE (helpers.avviaSito).
-import { test, expect } from "@playwright/test";
-import { avviaSito, eAudio, intercettaAudio, leggiCache, apriPlayer, raccogliErrori, HOST_AUDIO, PLAYER_URL } from "./helpers.mjs";
+import { expect } from "@playwright/test";
+import { test, avviaSito, eAudio, intercettaAudio, leggiCache, apriPlayer, raccogliErrori, HOST_AUDIO, PLAYER_URL } from "./helpers.mjs";
 
 /** Registra il SW e aspetta che controlli la pagina (dopo un reload, come farebbe un secondo accesso). */
 async function attivaSw(page, base) {

@@ -2,6 +2,7 @@
 
 Script usati durante la sessione del 2026-10-16 per verificare a mano player e PWA con Playwright.
 **Non sono test automatici** e non girano in CI: sono la base del task P12 (test end-to-end in `tests/e2e/`).
+**Test automatici (P12-P14): `tests/e2e/`, lanciati con `npm run e2e`** (vedi `docs/player.md`, sezione «Test end-to-end»).
 Possono contenere porte, percorsi o tempi legati a quella sessione: vanno rivisti prima di riusarli.
 
 | File | Cosa verificava |

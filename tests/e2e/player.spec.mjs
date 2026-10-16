@@ -1,7 +1,7 @@
 // Player di studio (/player/<slug>/) sul brano di prova content/player/_prova: caricamento, sincronia della battuta
 // evidenziata con sync.json, seek, loop, mixer, tastiera/ARIA e layout mobile. Audio sintetici (helpers.mjs).
-import { test, expect } from "@playwright/test";
-import { apriPlayer, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST } from "./helpers.mjs";
+import { expect } from "@playwright/test";
+import { test, apriPlayer, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST } from "./helpers.mjs";
 
 const TOLLERANZA_S = 0.15; // evidenziazione vs sync.json: un frame di rAF piu' la latenza stimata, in headless
 const battuta = (i) => SYNC.battute[i];

@@ -4,6 +4,7 @@ import fs from "node:fs";
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { test as base } from "@playwright/test";
 
 const QUI = path.dirname(fileURLToPath(import.meta.url));
 export const RADICE = path.resolve(QUI, "../..");
@@ -141,3 +142,19 @@ export function eAudio(url) {
   const u = new URL(url);
   return /\.(opus|mp3|wav|flac|ogg|oga|m4a|aac|weba)$/i.test(u.pathname) || u.host === HOST_AUDIO || /(^|\.)workers\.dev$/.test(u.hostname);
 }
+
+// GIF 1x1 trasparente: risposta di comodo per le risorse esterne (miniature YouTube, ecc.).
+const GIF = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", "base64");
+
+/**
+ * `test` con rete isolata: ogni richiesta verso un host che non e' locale (i.ytimg.com, YouTube, ...) riceve un
+ * GIF vuoto. Cosi' i test non dipendono da internet (in sandbox o in CI le miniature esterne darebbero
+ * errori di console casuali). Le route dell'audio, registrate dopo, hanno la precedenza.
+ */
+export const test = base.extend({
+  context: async ({ context }, use) => {
+    await context.route((u) => !["127.0.0.1", "localhost"].includes(u.hostname) && /^https?:$/.test(u.protocol), (route) =>
+      route.fulfill({ status: 200, headers: { "content-type": "image/gif", "access-control-allow-origin": "*" }, body: GIF }));
+    await use(context);
+  },
+});

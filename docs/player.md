@@ -144,6 +144,18 @@ Manifest `/manifest.webmanifest`, icone generate dall'avatar e service worker `/
 
 Sono considerati audio, e quindi mai intercettati: gli host `audio.voceavoce.com`, `localhost:8787`, `127.0.0.1:8787`, qualunque `*.workers.dev`, l'host di `site.audioBase` (iniettato in build in `AUDIO_HOSTS`), le estensioni `.opus .mp3 .wav .flac .ogg .oga .m4a .aac .weba` e **qualunque richiesta con header `Range`**. Si mette in cache solo una risposta 200 completa e dello stesso sito (mai 206). Le cache si chiamano `vav-pre-<versione>` e `vav-rt-<versione>` e quelle di versioni vecchie si cancellano all'`activate`. Motivo della regola: in questa fase non c'è audio offline, e quando arriveranno gli URL firmati per il premium non devono restare in una cache del browser.
 
+## Test end-to-end
+
+I test Playwright stanno in `tests/e2e/` (`player.spec.mjs`, `pwa.spec.mjs`, utilità in `helpers.mjs`) e si lanciano con `npm run e2e`: lo script `scripts/e2e.mjs` costruisce il sito in `_site-e2e` (build non di produzione, quindi con il brano `content/player/_prova`, base audio `http://localhost:8787`) e poi esegue `playwright test`. Gli argomenti passano oltre: `npm run e2e -- --grep mixer`. Il server del sito è un `webServer` di Playwright (`http-server` su `127.0.0.1:8090`, `E2E_PORT` per cambiarla). `npm test` resta solo per gli unit test.
+
+- **Audio sintetico.** Mai file audio nel repo: `helpers.mjs` costruisce in memoria un WAV per voce (tono debole più un clic a ogni battuta di `sync.json`) e lo serve intercettando le richieste verso `localhost:8787` e `*.workers.dev` (`context.route`), anche con `Range`. Il formato è riconosciuto dai byte, non dall'estensione `.opus`.
+- **Sincronia.** Si registra la posizione udibile al momento in cui cambia la battuta evidenziata e la si confronta con `sync.json` (tolleranza 150 ms, a 1× e a 0,75×).
+- **Offline.** `context.setOffline()` non vale per le richieste del service worker: il test usa un piccolo server del sito (`avviaSito`) che può fermare davvero.
+- **Aggiornamento del SW.** Lo stesso server serve `/sw.js` con una `VERSION` diversa (come dopo un nuovo deploy, dove è l'hash di `site.buildTime`); il test verifica che `reg.update()` attivi la versione nuova e che restino solo le cache `vav-*` nuove (le cache di altre app non si toccano).
+- **Browser.** In locale: `PW_CHROMIUM=/percorso/chrome`, altrimenti il Chromium di sistema se presente; in CI quello scaricato da `npx playwright install --with-deps chromium`. Non lanciare mai `playwright install` fuori dalla CI.
+- **CI.** Il passo `npm run e2e` è nel workflow Check (solo pull request); se fallisce, `playwright-report/` e `test-results/` (con le trace) si scaricano come artifact.
+- Le bozze manuali da cui sono nati (`tools/verifica-manuale/`) restano per le misure fuori dai test (latenza dello stretcher, clic udibile).
+
 ## Pubblicare un brano nel player, passo per passo
 
 1. **Macchina RENDER (AIVideoCreator).** Il brano deve avere gli stem cantati adottati (`/voceavoce-produci-lotto`, `job_svs_adopt`) in `runtime/inbox/choir/<job>/stems/<V>.svs.wav|flac` (più `accompaniment.wav` se c'è l'accompagnamento) e una scheda sul sito (`job_sito_esporta`). Da `pipeline-core/`:
