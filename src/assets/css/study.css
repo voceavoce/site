@@ -75,6 +75,8 @@
   .transport__speed input { flex: 1 1 auto; min-width: 0; min-height: var(--tap); accent-color: var(--accent); }
   .transport__speed output { min-width: 4ch; text-align: end; font-variant-numeric: tabular-nums; }
   .study-cta { margin-block: var(--space-3); }
+  /* la barra fissa non deve coprire la fine del footer (ultime righe raggiungibili con lo scorrimento) */
+  .site-footer { padding-bottom: calc(var(--space-6) + 9rem); }
 
   @media (min-width: 40rem) {
     .transport__play [data-play-label] { position: static; width: auto; height: auto; clip-path: none; }
