@@ -12,6 +12,12 @@ export const sections = {
   choir: { it: "coro", en: "choir", es: "coro" },
   arias: { it: "arie", en: "arias", es: "arias" },
   methods: { it: "metodi", en: "methods", es: "metodos" },
+  // Pagine istituzionali (src/pages/info/): permalink esatti, senza slug.
+  howItWorks: { it: "come-funziona", en: "how-it-works", es: "como-funciona" },
+  sources: { it: "fonti-e-licenze", en: "sources-and-licences", es: "fuentes-y-licencias" },
+  about: { it: "chi-siamo", en: "about", es: "quienes-somos" },
+  privacy: { it: "privacy", en: "privacy", es: "privacidad" },
+  disclosure: { it: "trasparenza", en: "disclosure", es: "transparencia" },
 };
 
 export const prefix = (lang) => (lang === site.defaultLang ? "" : `/${lang}`);

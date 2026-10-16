@@ -1,0 +1,14 @@
+{#- Elenco dei link alle pagine istituzionali nella lingua corrente. Usa: lang.
+    Non incluso in base.njk: lo include l'agente principale nel footer. -#}
+{%- set infoLabels = {
+  "it": { "nav": "Informazioni", "howItWorks": "Come funziona", "sources": "Fonti e licenze", "about": "Chi siamo", "privacy": "Privacy", "disclosure": "Trasparenza" },
+  "en": { "nav": "Information", "howItWorks": "How it works", "sources": "Sources and licences", "about": "About", "privacy": "Privacy", "disclosure": "Disclosure" },
+  "es": { "nav": "Información", "howItWorks": "Cómo funciona", "sources": "Fuentes y licencias", "about": "Quiénes somos", "privacy": "Privacidad", "disclosure": "Transparencia" }
+} -%}
+<nav class="info-links" aria-label="{{ infoLabels[lang].nav }}">
+  <ul>
+    {%- for key in ["howItWorks", "sources", "about", "privacy", "disclosure"] %}
+    <li><a href="{{ lang | routeUrl(key) }}">{{ infoLabels[lang][key] }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>

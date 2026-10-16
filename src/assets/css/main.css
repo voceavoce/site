@@ -296,3 +296,33 @@
   .no-js-hide { display: none; }
   .js .no-js-hide { display: inline-flex; }
 }
+
+/* Pagine istituzionali, pubblicita' e affiliazioni (B9/B10) */
+@layer components {
+  .info-page { max-width: var(--measure); padding-block: var(--space-6) var(--space-7); }
+  .info-page h1 { font-size: var(--step-3); margin-bottom: var(--space-4); }
+  .info-page h2 { font-size: var(--step-2); margin-top: var(--space-6); margin-bottom: var(--space-2); }
+  .info-page p, .info-page ul, .info-page ol { margin-top: var(--space-3); }
+  .info-page ul, .info-page ol { padding-left: 1.25rem; }
+  .info-page li + li { margin-top: var(--space-2); }
+
+  .info-links ul { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); list-style: none; padding: 0; }
+  .info-links a { display: inline-flex; align-items: center; min-height: 2rem; }
+
+  /* Spazi pubblicitari: spenti di default (site.ads.enabled), altezze riservate */
+  .ad-slot { margin-block: var(--space-5); }
+  .ad-slot__label { font-size: var(--step--1); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-2); }
+  .ad-slot__box { display: grid; place-items: center; background: var(--surface-2); border: 1px dashed var(--border); border-radius: var(--radius-sm); }
+  .ad-slot--after-brief .ad-slot__box, .ad-slot--list .ad-slot__box { min-height: 6.25rem; }
+  .ad-slot--in-content .ad-slot__box, .ad-slot--sidebar .ad-slot__box { min-height: 15.625rem; }
+  .ad-slot--house { margin-block: var(--space-5); }
+  .ad-slot__promo { display: inline-flex; align-items: center; min-height: var(--tap); padding-inline: var(--space-4); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); font-weight: 700; text-decoration: none; }
+
+  /* Affiliazioni */
+  .affiliate { margin-block: var(--space-6); padding: var(--space-4); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+  .affiliate__title { font-family: var(--font-sans); font-size: var(--step-0); margin-bottom: var(--space-2); }
+  .affiliate__list { list-style: none; padding: 0; display: grid; gap: var(--space-2); }
+  .affiliate__list a { display: inline-flex; align-items: center; min-height: 2rem; }
+  .affiliate__tag { display: inline-block; margin-inline-start: var(--space-2); padding-inline: 0.4rem; border: 1px solid var(--border); border-radius: 0.35rem; font-size: var(--step--1); color: var(--muted); }
+  .affiliate__note { margin-top: var(--space-3); font-size: var(--step--1); color: var(--muted); }
+}

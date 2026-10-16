@@ -1,0 +1,16 @@
+{#- Spazio pubblicitario. Variabili: slot ("after-brief", "in-content", "sidebar", "list"), lang.
+    Con site.ads.enabled false non rende nulla, oppure una promo interna se site.ads.house e' true
+    (undefined = false). Con enabled true: etichetta visibile e spazio riservato (niente salti di layout). -#}
+{%- if site.ads.enabled %}
+<aside class="ad-slot ad-slot--{{ slot }}" aria-label="{{ labels.advertisement[lang] }}">
+  <p class="ad-slot__label">{{ labels.advertisement[lang] }}</p>
+  <div class="ad-slot__box">
+    {#- snippet della rete pubblicitaria qui (CMP TCF 2.2 prima dell'attivazione: vedi docs/plan.md) -#}
+    <!-- snippet rete pubblicitaria -->
+  </div>
+</aside>
+{%- elif site.ads.house %}
+<aside class="ad-slot ad-slot--{{ slot }} ad-slot--house" aria-label="{{ labels.subscribeChannel[lang] }}">
+  <a class="ad-slot__promo" href="{{ site.social.youtube }}" rel="noopener">{{ labels.subscribeChannel[lang] }}</a>
+</aside>
+{%- endif %}
