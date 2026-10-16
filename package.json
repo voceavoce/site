@@ -16,7 +16,8 @@
     "lint:html": "node scripts/lint-html.mjs",
     "serve": "eleventy --serve",
     "check": "npm run validate && npm test && npm run build && npm run lint:html",
-    "a11y": "node scripts/a11y.mjs"
+    "a11y": "node scripts/a11y.mjs",
+    "e2e": "node scripts/e2e.mjs"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
@@ -25,6 +26,7 @@
     "verovio": "^6.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.56.1",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "html-validate": "^11.16.2",
