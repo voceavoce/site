@@ -72,6 +72,8 @@ test.describe("sincronia", () => {
       await page.waitForFunction((n) => window.__hl.some((h) => h.m === n), ultima, { timeout: 40_000 });
       const hl = await page.evaluate(() => window.__hl);
       // sequenza ordinata, senza salti, fino all'ultima battuta
+      // (l'eventuale battuta precedente, accesa dal seek prima di Play, non conta)
+      hl.splice(0, hl.length, ...hl.filter((h) => h.m >= daBattuta));
       expect(hl.map((h) => h.m)).toEqual(Array.from({ length: ultima - daBattuta + 1 }, (_, k) => daBattuta + k));
       for (const h of hl) expect(Math.abs(h.pos - battuta(h.m).t), `battuta ${h.m}`).toBeLessThan(TOLLERANZA_S);
       expect(await page.evaluate(() => window.__study.engine.rate)).toBeCloseTo(pct / 100, 5);
@@ -87,12 +89,12 @@ test.describe("sincronia", () => {
     expect(await page.evaluate(() => window.__study.engine.pausedPos)).toBeCloseTo(battuta(3).t, 1);
     await expect(page.locator("[data-time]")).toHaveText("0:09");
     // tocco su una battuta della partitura
-    await page.locator("[data-score] g.measure").nth(1).click({ force: true });
+    await page.locator("[data-score] g.measure").nth(1).dispatchEvent("click"); // il gestore e' sul <g>: un clic a coordinate puo' cadere tra i segni
     await expect(page.locator("[data-score] g.measure").nth(1)).toHaveClass(/is-current/);
     expect(await page.evaluate(() => window.__study.engine.pausedPos)).toBeCloseTo(battuta(1).t, 1);
     // seek in riproduzione: si riparte dalla nuova battuta
     await page.click("[data-play]");
-    await page.locator("[data-seek]").fill(String(battuta(4).t + 0.2));
+    await page.locator("[data-seek]").fill((battuta(4).t + 0.2).toFixed(1));
     await expect(page.locator("[data-score] g.measure").nth(4)).toHaveClass(/is-current/);
     await page.click("[data-play]");
   });
@@ -101,8 +103,8 @@ test.describe("sincronia", () => {
     await apriPlayer(page);
     const a = 2, b = 3; // battute di indice 2..3 = da 6,3 s a 12,1 s
     const inizio = battuta(a).t, fine = battuta(b + 1).t;
-    await page.locator("[data-loop-from]").selectOption(String(a));
-    await page.locator("[data-loop-to]").selectOption(String(b));
+    await page.locator("[data-loop-from]").selectOption({ value: String(a) });
+    await page.locator("[data-loop-to]").selectOption({ value: String(b) });
     await page.locator("[data-loop] [data-loop-toggle]").click();
     await expect(page.locator("[data-loop] [data-loop-toggle]")).toHaveAttribute("aria-pressed", "true");
     // i due tasti Loop (pannello e barra) restano sincronizzati
@@ -258,12 +260,16 @@ test.describe("tastiera e ARIA", () => {
     await page.keyboard.press("ArrowLeft");
     await page.keyboard.press("ArrowLeft");
     await expect(page.locator("[data-track=basso] [data-volume]")).toHaveValue("90");
-    // frecce sul cursore di posizione
+    // tasti sul cursore di posizione (da fermo: a fine brano il motore riparte da zero)
+    await page.click("[data-play]");
+    await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "false");
     await page.locator("[data-seek]").focus();
     await page.keyboard.press("End");
+    await expect(page.locator("[data-seek]")).toHaveAttribute("data-measure", SYNC.battute.at(-1).numero);
     await expect(page.locator("[data-seek]")).toHaveValue(String(MANIFEST.durata_sec));
+    await page.keyboard.press("Home");
+    await expect(page.locator("[data-seek]")).toHaveValue("0");
     // Spazio dentro un menu non avvia il brano
-    await page.click("[data-play]"); // ferma
     await page.locator("[data-loop-from]").focus();
     await page.keyboard.press("Space");
     await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "false");
@@ -289,10 +295,10 @@ test.describe("mobile 375 px", () => {
     const f = await page.evaluate(() => {
       const t = document.querySelector(".transport");
       const pos = getComputedStyle(t).position;
-      return { pos, trTop: t.getBoundingClientRect().top, footerBottom: document.querySelector("footer.site-footer").getBoundingClientRect().bottom, altezza: window.innerHeight };
+      return { pos, trTop: t.getBoundingClientRect().top, footerBottom: document.querySelector("footer.site-footer .fine").getBoundingClientRect().bottom, altezza: window.innerHeight };
     });
     expect(f.pos).toBe("fixed");
-    expect(f.footerBottom, "il footer finisce sopra la barra di trasporto").toBeLessThanOrEqual(f.trTop + 0.5);
+    expect(f.footerBottom, "l'ultima riga del footer sta sopra la barra di trasporto").toBeLessThanOrEqual(f.trTop + 0.5);
     expect((await orizzontale()).doc).toBeLessThanOrEqual(0);
     // la barra non e' piu' alta di meta' schermo e i controlli principali sono tutti nella viewport
     const box = await page.locator(".transport").boundingBox();
