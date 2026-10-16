@@ -260,3 +260,25 @@ Richiesta dell'utente del 2026-10-16. Ok per l'implementazione dato lo stesso gi
 **Da verificare:** la licenza dei voicebank Synth V per il download degli stem (funzione premium futura); la decodifica Opus su Safari; la memoria sui telefoni per i brani lunghi.
 
 **Documenti:** `docs/player.md` (architettura, formato di manifest e sync, limiti, prossimi passi) e `docs/r2-setup.md`.
+
+---
+
+# Fase 3 — Robustezza: test end-to-end di player e PWA (proposta, in attesa dell'ok)
+
+**Perché.** Gli unit test (81, `npm test`) coprono la logica pura: classificazione del service worker, tempi, loop, `resolveAudioUrl`, Worker, script R2. Le prove nel browser vero (registrazione e aggiornamento del SW, offline, audio mai in cache, player sincronizzato, tastiera, mobile) finora sono state fatte a mano con Playwright. Gli script sono salvati in `tools/verifica-manuale/` come bozze, ma non girano in CI.
+
+**Cosa fare:**
+- `@playwright/test` come devDependency, test in `tests/e2e/`, comando `npm run e2e`. In locale usa il Chromium di sistema; in CI quello scaricato da Playwright.
+- Audio sintetici (con un clic a ogni battuta) generati AL MOMENTO del test da uno script Node in una cartella temporanea: mai file audio nel repo. Server audio di prova = `scripts/serve-audio.mjs`.
+- **PWA:**
+  - il SW si registra e si attiva; il manifest e le icone sono validi;
+  - offline: le pagine visitate si aprono dalla cache, quelle nuove mostrano `/offline/` (va simulato fermando il server, perché `setOffline` non vale per le richieste del SW);
+  - dopo la riproduzione `caches` non contiene audio;
+  - **aggiornamento**: una versione nuova del SW si attiva e cancella le cache `vav-*` vecchie.
+- **Player:**
+  - caricamento delle tracce;
+  - battuta evidenziata contro `sync.json` a 1× e 0,75×;
+  - seek, loop, mixer (muta, solo, «La mia voce»);
+  - tastiera e ARIA;
+  - layout a 375 px.
+- **CI:** `npm run e2e` nel workflow **Check**, che gira solo sulle pull request.

@@ -1,0 +1,15 @@
+import { chromium } from "/opt/node-tools/node_modules/playwright/index.mjs";
+const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome", args: ["--autoplay-policy=no-user-gesture-required"] });
+const p = await (await b.newContext({ viewport: { width: 1280, height: 800 } })).newPage();
+await p.goto("http://127.0.0.1:8080/player/locus-iste-bruckner/?debug");
+await p.waitForFunction(() => window.__study && !document.querySelector("[data-play]").disabled, null, { timeout: 90000 });
+await p.keyboard.press("Tab");
+await p.keyboard.press("Space"); await p.waitForTimeout(500);
+await p.focus("[data-track=alto] [data-mute]"); await p.keyboard.press("Enter");
+await p.focus("[data-track=tenore] [data-solo]"); await p.keyboard.press("Space");
+await p.focus("[data-track=basso] [data-volume]"); await p.keyboard.press("ArrowLeft"); await p.keyboard.press("ArrowLeft");
+await p.waitForTimeout(500);
+console.log(await p.evaluate(() => JSON.stringify({ playing: window.__study.engine.playing, gains: Object.fromEntries(["soprano","alto","tenore","basso"].map(k => [k, +window.__study.engine.getGainValue(k).toFixed(2)])), silent: [...document.querySelectorAll(".mix__row.is-silent")].map(r => r.dataset.track) })));
+await p.keyboard.press("Tab"); await p.keyboard.press("Tab");
+console.log(await p.evaluate(() => { const e = document.activeElement; const c = getComputedStyle(e); return JSON.stringify({ el: e.outerHTML.slice(0, 60), focusVisible: e.matches(":focus-visible"), outline: [c.outlineStyle, c.outlineWidth, c.outlineColor], shadow: c.boxShadow.slice(0, 50) }); }));
+await b.close();

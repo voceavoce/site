@@ -1,5 +1,30 @@
 # State — avanzamento e decisioni
 
+## Riepilogo per riprendere (aggiornato 2026-10-16, fine sessione)
+
+- **Online:** il nuovo sito Eleventy è su voceavoce.com (PR #1 unita, Deploy verde); la vecchia landing è su `/classic/`.
+- **Branch del sito:** `claude/voceavocecoro-video-portal-s3o8vi`. Contiene la Fase 2, cioè il player di studio, NON ancora unita su `main`. Ultimo commit pulito: P11 (`c7be018`), poi questo aggiornamento. Check e a11y sono verdi in locale (81 test, 11/11).
+- **AIVideoCreator:** T-905 unito su `main` (`80f43da`): `job_sito_esporta` (catalogo) e `job_sito_player` (player). Il branch omonimo resta solo come riferimento.
+- **Player (Fase 2, codice completo):**
+  - Web Audio a 24 kHz mono, un GainNode per voce, un solo SoundTouch (scavalcato a 1×);
+  - evidenziazione compensata per la latenza (`src/assets/js/study/latency.js`, tabella misurata offline: 133/123/94 ms a 1×/0,75×/0,5×);
+  - Verovio dal MusicXML;
+  - PWA con un SW che non tocca mai l'audio;
+  - dati di prova `content/player/_prova/` esclusi dalla build di produzione.
+- **Audio:** MAI in git né in CI. Cartella locale `VOCEAVOCE_AUDIO_DIR` → `scripts/upload-audio.mjs` (rclone, a mano) → bucket R2 **privato** `voceavoce-audio` → Worker `workers/audio/` su `*.workers.dev` (deploy a mano con wrangler).
+- **Segnaposto da sostituire:** `AUDIO_BASE_PRODUZIONE` in `src/_data/site.js` vale ancora `https://voceavoce-audio.CAMBIAMI.workers.dev`. Finché non c'è l'URL vero e gli audio non sono caricati, NON aggiungere dati reali in `content/player/` e NON unire su `main` un player che punti al segnaposto.
+- **Vincoli fissi dell'utente:**
+  - dominio, DNS e posta su **Aruba**: MAI proporre il trasferimento della registrazione;
+  - niente pubblicità (gli spazi esistono ma restano spenti), niente cookie di tracciamento;
+  - niente YouTube API;
+  - commit e push frequenti;
+  - sotto-agenti Sonnet/Haiku; solo l'agente principale aggiorna `task.md` e `state.md`.
+- **CI:** «Check» gira solo sulle PR (e a mano); «Deploy» su push a `main`, a mano e ogni giorno alle 04:15 UTC. Prima di ogni push con codice: `npm run check` e `npm run a11y` in locale (per a11y serve `PUPPETEER_EXECUTABLE_PATH` verso un Chromium).
+- **Prossimo passo proposto:** Fase 3, test end-to-end di PWA e player (P12–P14), in attesa dell'ok dell'utente. Bozze in `tools/verifica-manuale/`.
+- **Cose che l'utente fa sul suo PC:** sezione «Da fare dall'utente» in `task.md` (U1–U7).
+- **Aperto:** P8, corona singola: `choir._timing_regions` tratta un'unica corona a metà brano come finale e ci mette l'allargando (Locus iste b. 28-29); riguarda anche i video pubblicati. C1–C2, traduzioni e note, rimandate. A8, primo export ufficiale con `slug_sito`, si fa con lo STAGE 5 della skill.
+
+
 Aggiornato: 2026-10-16
 
 ## Decisioni prese (utente)
