@@ -16,7 +16,34 @@
     "title": "Voce a Voce - learn your part",
     "description": "Voce a Voce: choir study videos, voice by voice (S/A/T/B). Follow your line on the score, with a tempo cursor, your voice highlighted and subtitles. Public-domain repertoire.",
     "ctaYoutube": "Watch on YouTube",
-    "ctaHow": "How it works"
+    "ctaHow": "How it works",
+    "ctaExplore": "Explore the catalogue",
+    "latest": "Latest videos",
+    "latestP": "The newest releases, voice by voice.",
+    "soon": "Coming soon",
+    "soonP": "The next releases on the calendar.",
+    "soonOn": "Out on {date}",
+    "linesH": "Browse the catalogue",
+    "linesP": "Four ways in: pick your line of study.",
+    "tile": {
+      "choir": {
+        "h": "Choir",
+        "p": "Multi-voice choral pieces, one lesson for each voice."
+      },
+      "methods": {
+        "h": "Vocal methods",
+        "p": "Ordered courses of study, like Concone's vocalises."
+      },
+      "arias": {
+        "h": "Study arias",
+        "p": "Early arias in three registers: high, medium and low voice."
+      },
+      "seasons": {
+        "h": "Seasonal",
+        "p": "Christmas, Easter, Lent and Marian repertoire.",
+        "feat": "Featured: Christmas"
+      }
+    }
   },
   "tag": "learn your part",
   "lead": "Choir study videos, <strong>voice by voice</strong> (Soprano, Alto, Tenor, Bass): follow your line on the score, with a tempo cursor, your voice highlighted and the others dimmed.",
@@ -165,5 +192,80 @@
     "classico": "Classical",
     "romantico": "Romantic",
     "novecento": "20th century"
+  },
+  "lists": {
+    "count": {
+      "one": "{n} piece",
+      "other": "{n} pieces"
+    },
+    "pieces": "Pieces",
+    "path": "Study path",
+    "soonH": "Coming soon",
+    "soonP": "Pieces with scheduled videos, not yet published.",
+    "none": "No video is published yet: check back soon.",
+    "browse": "Browse by",
+    "releaseOn": "from {date}",
+    "alpha": "Alphabetical index",
+    "type": {
+      "opera": "Work",
+      "raccolta": "Collection"
+    },
+    "choir": {
+      "h1": "Choir: pieces voice by voice",
+      "title": "Choir: multi-voice pieces",
+      "desc": "Voce a Voce's choral repertoire: one video lesson for each voice (soprano, alto, tenor, bass), with score and text."
+    },
+    "arias": {
+      "h1": "Study arias",
+      "title": "Study arias in three registers",
+      "desc": "Early and chamber arias to study in high, medium or low voice, with guide video, text and public-domain score."
+    },
+    "methods": {
+      "h1": "Vocal methods",
+      "title": "Vocal methods and vocalises",
+      "desc": "Ordered courses of study for singing, such as Concone's vocalises, in three registers with guide videos."
+    },
+    "composers": {
+      "h1": "Composers",
+      "title": "Composers in the repertoire",
+      "desc": "Every composer in the catalogue in alphabetical order, with dates and the number of pieces with study videos."
+    },
+    "works": {
+      "h1": "Works and collections",
+      "title": "Works and collections",
+      "desc": "Operas, masses, oratorios and teaching collections in the catalogue, with their pieces in order."
+    },
+    "genres": {
+      "h1": "Genres",
+      "title": "Genres in the repertoire",
+      "desc": "Browse the pieces by genre: sacred, Christmas carol, aria, early aria, vocal method."
+    },
+    "seasons": {
+      "h1": "Liturgical seasons",
+      "title": "Seasons: Christmas, Easter, Lent",
+      "desc": "Choral pieces for Christmas, Easter, Lent and Marian repertoire, with voice-by-voice videos."
+    },
+    "composer": {
+      "title": "{name}: pieces and study videos",
+      "desc": "{who}: {n} with voice-by-voice study videos, public-domain score and text."
+    },
+    "work": {
+      "title": "{name}: pieces and videos",
+      "desc": "{name}: {n} with voice-by-voice study videos, in the order of the work or collection."
+    },
+    "genre": {
+      "title": "Genre {name}: pieces and videos",
+      "desc": "Genre “{name}”: {n} with voice-by-voice study videos, with score and text."
+    },
+    "season": {
+      "title": "{name}: choral pieces and videos",
+      "desc": "Pieces for {name}: {n} with voice-by-voice study videos, with score and text."
+    },
+    "seasonIntro": {
+      "natale": "Advent and Christmas songs, from sacred music to carols.",
+      "pasqua": "Pieces for the Easter season.",
+      "quaresima": "Pieces for Lent and the Passion.",
+      "mariano": "Pieces in honour of the Virgin Mary."
+    }
   }
 }

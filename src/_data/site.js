@@ -12,6 +12,7 @@ export default {
   },
   email: "info@voceavoce.com",
   ogImage: { path: "/assets/img/og-default.png", width: 1200, height: 630 },
+  aiCrawlers: true, // robots.txt: consente esplicitamente i crawler AI
   ads: { enabled: false },
   buildTime: new Date().toISOString(),
 };

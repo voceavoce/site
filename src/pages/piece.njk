@@ -15,10 +15,10 @@ eleventyExcludeFromCollections: true
     <header class="piece__head">
       <h1 data-pagefind-meta="title">{{ piece.titolo }}{% if piece.titolo_breve %} <span class="piece__sub">{{ piece.titolo_breve }}</span>{% endif %}</h1>
       <p class="piece__meta">
-        {%- if composer %}<span data-pagefind-filter="compositore">{{ composer.nome }}</span>{% if composer.date %} ({{ composer.date }}){% endif %}
+        {%- if composer %}<a href="{{ lang | routeUrl('composers', composer.id) }}" data-pagefind-filter="compositore">{{ composer.nome }}</a>{% if composer.date %} ({{ composer.date }}){% endif %}
         {%- else %}{{ 'card.anon' | t(lang) }}{% endif %}
-        {%- if piece.opera %} · <span>{{ piece.opera.titolo }}</span>{% endif %}
-        {%- if piece.raccolta %} · <span>{{ piece.raccolta.titolo }}{% if piece.raccolta.numero %}, {{ 'piece.no' | tv(lang, { n: piece.raccolta.numero }) }}{% endif %}</span>{% endif %}
+        {%- if piece.opera %} · <a href="{{ lang | routeUrl('works', piece.opera.id) }}">{{ piece.opera.titolo }}</a>{% endif %}
+        {%- if piece.raccolta %} · <a href="{{ lang | routeUrl('works', piece.raccolta.id) }}">{{ piece.raccolta.titolo }}</a>{% if piece.raccolta.numero %}, {{ 'piece.no' | tv(lang, { n: piece.raccolta.numero }) }}{% endif %}{% endif %}
         {%- if composer.periodo %} · <span>{{ ('periods.' ~ composer.periodo) | t(lang) }}</span>{% endif %}
       </p>
     </header>
@@ -63,7 +63,7 @@ eleventyExcludeFromCollections: true
         {%- for v in piece.voci %}
         <label class="voice-opt">
           <input type="radio" name="voce" value="{{ v.voce }}" data-id="{{ v.video_id }}" data-name="{{ v.voce | voiceName(lang) }}"{% if loop.first %} checked{% endif %}>
-          <span class="voice-opt__code" aria-hidden="true">{{ v.voce if v.voce.length <= 3 else v.voce[0] | upper }}</span>
+          {%- if v.voce.length <= 3 %}<span class="voice-opt__code" aria-hidden="true">{{ v.voce }}</span>{% endif %}
           <span>{{ v.voce | voiceName(lang) }}</span>
         </label>
         {%- endfor %}
@@ -95,7 +95,7 @@ eleventyExcludeFromCollections: true
       {%- if piece.vociInArrivo.length %}
       <ul class="voice-soon">
         {%- for v in piece.vociInArrivo %}
-        <li><span class="voice-opt__code" aria-hidden="true">{{ v.voce if v.voce.length <= 3 else v.voce[0] | upper }}</span> {{ v.voce | voiceName(lang) }}: {{ 'piece.soonOn' | t(lang) }} <time datetime="{{ v.pubblica_dal | isoDay }}">{{ v.pubblica_dal | dateLong(lang) }}</time></li>
+        <li>{% if v.voce.length <= 3 %}<span class="voice-opt__code" aria-hidden="true">{{ v.voce }}</span> {% endif %}{{ v.voce | voiceName(lang) }}: {{ 'piece.soonOn' | t(lang) }} <time datetime="{{ v.pubblica_dal | isoDay }}">{{ v.pubblica_dal | dateLong(lang) }}</time></li>
         {%- endfor %}
       </ul>
       {%- endif %}

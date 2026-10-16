@@ -1,7 +1,9 @@
 {%- set canonicalPath = lang | routeUrl(routeSection, routeSlug) -%}
 {%- set canonical = canonicalPath | absUrl -%}
 {%- set pageTitle = titleFull or (title if (isHome or not title) else (title ~ " · " ~ site.name)) -%}
-{%- set ogImg = (ogImage or site.ogImage.path) | absUrl -%}
+{%- set ogPiece = catalog.perSlug[routeSlug] if (routeSection == "pieces" and routeSlug) else null -%}
+{%- set og = ogPiece | pageOg -%}
+{%- set ogImg = og.image if (ogPiece or not ogImage) else (ogImage | absUrl) -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
@@ -18,7 +20,7 @@
 {%- endfor %}
 <link rel="alternate" hreflang="x-default" href="{{ (site.defaultLang | routeUrl(routeSection, routeSlug)) | absUrl }}">
 <meta name="theme-color" content="#121a2c">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ og.type }}">
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ description }}">
@@ -28,13 +30,16 @@
 <meta property="og:locale:alternate" content="{{ site.locales[l] }}">
 {%- endif %}{% endfor %}
 <meta property="og:image" content="{{ ogImg }}">
-<meta property="og:image:width" content="{{ site.ogImage.width }}">
-<meta property="og:image:height" content="{{ site.ogImage.height }}">
+{%- if not ogImage or ogPiece %}
+<meta property="og:image:width" content="{{ og.width }}">
+<meta property="og:image:height" content="{{ og.height }}">
+{%- endif %}
 <meta property="og:image:alt" content="{{ site.name }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ pageTitle }}">
 <meta name="twitter:description" content="{{ description }}">
 <meta name="twitter:image" content="{{ ogImg }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ (lang | routeUrl) | absUrl }}feed.xml">
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="stylesheet" href="/assets/css/main.css">
 <script>try{var t=localStorage.getItem("vav_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -42,7 +47,10 @@
 {%- if routeSection == "pieces" and routeSlug %}
 <script src="/assets/js/player.js" defer></script>
 {%- endif %}
-{% block jsonld %}{% endblock %}
+<script type="application/ld+json">{{ lang | siteLd | safe }}</script>
+{%- if ogPiece %}
+<script type="application/ld+json">{{ ogPiece | pieceLd(lang) | safe }}</script>
+{%- endif %}
 {#- Punto di innesto per il CMP (TCF 2.2) se si attivano gli annunci: vedi docs/plan.md #}
 </head>
 <body>
@@ -87,6 +95,7 @@
       <h2>{{ 'footer.contact' | t(lang) }}</h2>
       <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     </div>
+    <div>{% include "components/info-links.njk" %}</div>
     <p class="fine">© {{ site.buildTime.slice(0, 4) }} {{ 'footer.rights' | t(lang) }} · {{ 'footer.note' | t(lang) }}</p>
   </div>
 </footer>

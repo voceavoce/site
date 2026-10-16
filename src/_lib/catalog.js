@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import yaml from "js-yaml";
 import site from "../_data/site.js";
+import { sortVoices, listEntries } from "./listing.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const genDir = path.join(root, "content/generated");
@@ -72,8 +73,8 @@ export function buildCatalog(now = site.buildTime) {
       traduzioni: c.traduzioni || {},
       affiliazioni: (c.affiliazioni || []).filter((a) => a && a.enabled === true),
       percorsi: c.percorsi || [],
-      voci: visibili.map(mapVoice), // solo le visibili (cosi' anche card.njk e' corretto)
-      vociInArrivo: inArrivo.map(mapVoice),
+      voci: sortVoices(visibili).map(mapVoice), // solo le visibili (cosi' anche card.njk e' corretto)
+      vociInArrivo: inArrivo.map(mapVoice), // ordinate per data
       noindex: visibili.length === 0,
       ultimaUscita: dates.length ? new Date(Math.max(...dates)).toISOString() : null,
     };
@@ -109,6 +110,9 @@ export function buildCatalog(now = site.buildTime) {
   // Una voce per (brano x lingua): serve alla paginazione della scheda.
   const schede = pieces.flatMap((piece) => site.langs.map((lang) => ({ slug: piece.slug, lang })));
 
-  return { now, brani: pieces, perSlug, compositori, opere, perCompositore, perOpera, perGenere, perStagione, perLinea, ultimi, inArrivo, schede };
+  const cat = { now, brani: pieces, perSlug, compositori, opere, perCompositore, perOpera, perGenere, perStagione, perLinea, ultimi, inArrivo, schede };
+  // Pagine di elenco (B6): una per (tipo x id x lingua), vedi _lib/listing.js
+  cat.listPages = listEntries(cat, site.langs);
+  return cat;
 }
 

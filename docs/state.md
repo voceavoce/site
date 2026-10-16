@@ -37,6 +37,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — B4-B5 fatti (Sonnet): catalogo (`src/_lib/catalog.js`, logica pura testata) e scheda brano in 3 lingue: 426 pagine (142 × 3), di cui 102 brani noindex perché hanno solo voci programmate. Player incorporato (youtube-nocookie, lazy) con selettore voce; senza JS restano il primo video e i link alle altre voci. `npm run check` passa: validazione, 14 test, build di 444 pagine, html-validate 0 errori. Traduzioni con `reviewed` falso mostrate con l'etichetta «Traduzione non ancora rivista». Capitoli letti nel formato della pipeline (`sec`, `titolo`).
 
+- 2026-10-16 — B8 + R1 fatti (Sonnet): JSON-LD (WebSite, Organization, MusicComposition, un VideoObject per voce uscita con capitoli come Clip, BreadcrumbList; 870 blocchi tutti JSON validi), sitemap con hreflang generata dall'HTML finale (141 URL: 41 schede indicizzabili oggi × 3 lingue + home e pagine istituzionali; noindex e /classic/ esclusi), robots.txt con crawler AI ammessi (`site.aiCrawlers`), llms.txt, feed Atom per lingua, og:image della scheda = miniatura YouTube. Footer con le pagine istituzionali. Non ancora fatti: `workTranslation` e ItemList delle liste. Commit fatto con `npm run check` verde, includendo anche il lavoro di B6 ancora in corso.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.

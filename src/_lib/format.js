@@ -75,3 +75,12 @@ export function pieceDescription(piece, lang) {
   else parts.push(t("piece.descr.soon", lang));
   return parts.join(" ");
 }
+
+/** "1 brano" / "12 brani" (chiavi lists.count.one / other). */
+export function countLabel(n, lang) {
+  return t(n === 1 ? "lists.count.one" : "lists.count.other", lang, { n });
+}
+
+/** Nome tradotto di un'entita' di elenco (genere, stagione). */
+export function genreName(id, lang) { return t(`genres.${id}`, lang); }
+export function seasonName(id, lang) { return t(`seasons.${id}`, lang); }

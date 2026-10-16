@@ -44,3 +44,6 @@ export function routeUrl(lang, section, slug) {
 export function altUrls(section, slug) {
   return site.langs.map((lang) => ({ lang, url: routeUrl(lang, section, slug) }));
 }
+
+// Slug tradotti delle stagioni (natale -> christmas / navidad): usare routeUrl(lang, "seasons", seasonSlugs[id]).
+export { SEASON_SLUGS as seasonSlugs } from "../_lib/listing.js";

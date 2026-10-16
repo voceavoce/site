@@ -1,0 +1,29 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }}
+
+> Voce a Voce è un coro virtuale: studio corale voce per voce con video didattici (una traccia per Soprano, Contralto, Tenore, Basso), partiture di pubblico dominio, testi originali con traduzione e note. Disponibile in italiano, inglese e spagnolo. / A virtual choir for studying choral music voice by voice, with public-domain scores, lyrics and translations. / Un coro virtual para estudiar música coral voz por voz.
+
+{% for lang in site.langs -%}
+## {{ lang | upper }}
+
+- [Home]({{ (lang | routeUrl) | absUrl }})
+{% for s in ["choir", "arias", "methods", "composers", "works", "genres", "seasons", "search"] -%}
+- [{{ sections[s][lang] }}]({{ (lang | routeUrl(s)) | absUrl }})
+{% endfor -%}
+{% for s in ["howItWorks", "sources", "about", "privacy", "disclosure"] -%}
+- [{{ sections[s][lang] }}]({{ (lang | routeUrl(s)) | absUrl }})
+{% endfor %}
+{% endfor -%}
+## Brani più recenti
+
+{% for p in catalog.ultimi | slice20 -%}
+- [{{ p.titolo }}{% if p.compositore %} – {{ p.compositore.nome }}{% endif %}]({{ ("it" | routeUrl("pieces", p.slug)) | absUrl }})
+{% endfor %}
+## Feed
+
+- {{ ("it" | routeUrl) | absUrl }}feed.xml
+- {{ ("en" | routeUrl) | absUrl }}feed.xml
+- {{ ("es" | routeUrl) | absUrl }}feed.xml

@@ -36,6 +36,8 @@ export default {
       const nav = { coro: "nav.coro", aria: "nav.arie", metodo: "nav.metodi" }[p.linea];
       return [
         { label: t(nav, lang), url: routeUrl(lang, lineSection[p.linea]) },
+        ...(p.compositore ? [{ label: p.compositore.breve || p.compositore.nome, url: routeUrl(lang, "composers", p.compositore.id) }] : []),
+        ...(p.raccolta || p.opera ? [{ label: (p.raccolta || p.opera).titolo, url: routeUrl(lang, "works", (p.raccolta || p.opera).id) }] : []),
         { label: p.titolo_breve || p.titolo },
       ];
     },

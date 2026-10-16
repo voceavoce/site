@@ -16,7 +16,34 @@
     "title": "Voce a Voce - estudia tu voz",
     "description": "Voce a Voce: vídeos de estudio coral voz por voz (S/A/T/B). Sigue tu línea en la partitura, con cursor a tiempo, tu voz resaltada y subtítulos. Repertorio de dominio público.",
     "ctaYoutube": "Ver en YouTube",
-    "ctaHow": "Cómo funciona"
+    "ctaHow": "Cómo funciona",
+    "ctaExplore": "Explorar el catálogo",
+    "latest": "Últimos vídeos",
+    "latestP": "Los estrenos más recientes, voz por voz.",
+    "soon": "Próximamente",
+    "soonP": "Los próximos estrenos del calendario.",
+    "soonOn": "Sale el {date}",
+    "linesH": "Explora el catálogo",
+    "linesP": "Cuatro formas de entrar: elige tu línea de estudio.",
+    "tile": {
+      "choir": {
+        "h": "Coro",
+        "p": "Obras corales a varias voces, una lección para cada voz."
+      },
+      "methods": {
+        "h": "Métodos vocales",
+        "p": "Recorridos de estudio ordenados, como los vocalizos de Concone."
+      },
+      "arias": {
+        "h": "Arias de estudio",
+        "p": "Arias antiguas en tres registros: voz aguda, media y grave."
+      },
+      "seasons": {
+        "h": "Estacionales",
+        "p": "Navidad, Pascua, Cuaresma y repertorio mariano.",
+        "feat": "Destacado: Navidad"
+      }
+    }
   },
   "tag": "estudia tu voz",
   "lead": "Vídeos de estudio coral, <strong>voz por voz</strong> (Soprano, Contralto, Tenor, Bajo): sigue tu línea en la partitura, con cursor a tiempo, tu voz resaltada y las demás atenuadas.",
@@ -165,5 +192,80 @@
     "classico": "Clasicismo",
     "romantico": "Romanticismo",
     "novecento": "Siglo XX"
+  },
+  "lists": {
+    "count": {
+      "one": "{n} obra",
+      "other": "{n} obras"
+    },
+    "pieces": "Obras",
+    "path": "Recorrido de estudio",
+    "soonH": "Próximamente",
+    "soonP": "Obras con vídeos programados, aún no publicados.",
+    "none": "Todavía no hay vídeos publicados: vuelve pronto.",
+    "browse": "Explorar por",
+    "releaseOn": "desde el {date}",
+    "alpha": "Índice alfabético",
+    "type": {
+      "opera": "Ópera u obra",
+      "raccolta": "Colección"
+    },
+    "choir": {
+      "h1": "Coro: obras voz por voz",
+      "title": "Coro: obras a varias voces",
+      "desc": "El repertorio coral de Voce a Voce: una lección en vídeo para cada voz (soprano, alto, tenor, bajo), con partitura y texto."
+    },
+    "arias": {
+      "h1": "Arias de estudio",
+      "title": "Arias de estudio en tres registros",
+      "desc": "Arias antiguas y de cámara para estudiar en voz aguda, media o grave, con vídeo guía, texto y partitura de dominio público."
+    },
+    "methods": {
+      "h1": "Métodos vocales",
+      "title": "Métodos vocales y vocalizos",
+      "desc": "Recorridos de estudio ordenados para el canto, como los vocalizos de Concone, en tres registros con vídeos guía."
+    },
+    "composers": {
+      "h1": "Compositores",
+      "title": "Compositores del repertorio",
+      "desc": "Todos los compositores del catálogo por orden alfabético, con fechas y número de obras con vídeos de estudio."
+    },
+    "works": {
+      "h1": "Obras y colecciones",
+      "title": "Obras y colecciones",
+      "desc": "Óperas, misas, oratorios y colecciones didácticas del catálogo, con sus piezas en orden."
+    },
+    "genres": {
+      "h1": "Géneros",
+      "title": "Géneros del repertorio",
+      "desc": "Explora las obras por género: sacro, villancico, aria, aria antigua, método vocal."
+    },
+    "seasons": {
+      "h1": "Tiempos litúrgicos",
+      "title": "Temporadas: Navidad, Pascua, Cuaresma",
+      "desc": "Obras corales para Navidad, Pascua, Cuaresma y repertorio mariano, con vídeos voz por voz."
+    },
+    "composer": {
+      "title": "{name}: obras y vídeos de estudio",
+      "desc": "{who}: {n} con vídeos de estudio voz por voz, partitura y texto de dominio público."
+    },
+    "work": {
+      "title": "{name}: obras y vídeos",
+      "desc": "{name}: {n} con vídeos de estudio voz por voz, en el orden de la obra o colección."
+    },
+    "genre": {
+      "title": "Género {name}: obras y vídeos",
+      "desc": "Género «{name}»: {n} con vídeos de estudio voz por voz, con partitura y texto."
+    },
+    "season": {
+      "title": "{name}: obras corales y vídeos",
+      "desc": "Obras para {name}: {n} con vídeos de estudio voz por voz, con partitura y texto."
+    },
+    "seasonIntro": {
+      "natale": "Cantos de Adviento y Navidad, de la música sacra a los villancicos.",
+      "pasqua": "Obras para el tiempo pascual.",
+      "quaresima": "Obras de Cuaresma y Pasión.",
+      "mariano": "Obras en honor de la Virgen María."
+    }
   }
 }

@@ -1,0 +1,6 @@
+{#- Brani solo programmati: nessun link (la scheda e' noindex). Variabili: pieces, lang -#}
+<ul class="soon-list plain" role="list">
+  {%- for p in pieces %}
+  <li><strong>{{ p.titolo_breve or p.titolo }}</strong>{% if p.compositore %} <span class="text-muted">· {{ p.compositore.breve or p.compositore.nome }}</span>{% endif %} <span class="text-muted">· {{ 'lists.releaseOn' | tv(lang, { date: (p.vociInArrivo[0].pubblica_dal | dateLong(lang)) }) }}</span></li>
+  {%- endfor %}
+</ul>
