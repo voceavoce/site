@@ -86,6 +86,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — Branch di AIVideoCreator portato su `main` (fast-forward a `80f43da`, 5 commit T-905; autorizzazione dell'utente, nessun render in corso). Test toccati qui: 137 verdi. Da lanciare sul PC dell'utente: la suite completa `runtime\venv\Scripts\python.exe -m pytest tests/ -q`. Ora si può fare A8 (primo export ufficiale con `slug_sito` in roadmap) con lo STAGE 5 della skill `/voceavoce-publish-choir`.
 
+- 2026-10-16 — P11 fatto (Sonnet): latenza dello stretcher misurata offline (133 ms a 1×, 123 a 0,75×, 94 a 0,5×) e messa in tabella; l'evidenziazione usa il tempo «udibile» = motore − (latenza stretcher + outputLatency). A 1× lo stretcher viene scavalcato (ramo diretto, dissolvenza di 40 ms). Misure evidenziazione contro clic udibile: prima −190…−225 ms, dopo circa ±25 ms (un caso −48 dopo un seek a 1×), anche nel loop e cambiando velocità al volo. Pausa: riparte da ciò che si è sentito. Check verde (81 test), a11y 11/11. Resta la prova a orecchio dell'utente, in cuffia e in Bluetooth. Fase 1 del player COMPLETA lato codice.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
