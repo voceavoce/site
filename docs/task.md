@@ -12,7 +12,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] A5 (H) `_schema` del contratto: documentare il campo facoltativo `genere`
 - [x] A6 (H) `.env.example`: `VOCEAVOCE_SITE_DIR`; skill `voceavoce-publish-choir`: passo finale export + commit del sito
 - [x] A7 (H) `CLAUDE.md`: una riga sul nuovo export; numero T-905 in `tasks.md`
-- [ ] A8 (S) primo export reale verso `voceavoce/site/content/generated/` + commit slug in roadmap — DOPO il merge del branch di AIVideoCreator su main (vedi state.md)
+- [ ] A8 (S) primo export reale verso `voceavoce/site/content/generated/` + commit slug in roadmap — il branch è su main dal 2026-10-16: da lanciare sul PC dell'utente con lo STAGE 5 della skill
 
 ## B — Sito (`voceavoce/site`, branch `claude/voceavocecoro-video-portal-s3o8vi`)
 

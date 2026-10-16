@@ -84,6 +84,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — P6 fatto e P7 quasi (Sonnet): `docs/player.md` completo (architettura, flusso di pubblicazione, licenze, limiti). Verifica sul vero Locus iste (48 battute, audio sintetici di 189,6 s): evidenziazione contro sync 3–19 ms a 1× e 0,75×, dopo un seek e dentro un loop; mobile senza scroll orizzontale; tastiera e ARIA ok; memoria: buffer 73 MB teorici, heap JS 164 MB. Build di produzione senza player di prova né audio. Corretto: la barra fissa copriva il footer. Aperto (P11): il suono esce 75–150 ms DOPO l'evidenziazione per la latenza di SoundTouch e del dispositivo.
 
+- 2026-10-16 — Branch di AIVideoCreator portato su `main` (fast-forward a `80f43da`, 5 commit T-905; autorizzazione dell'utente, nessun render in corso). Test toccati qui: 137 verdi. Da lanciare sul PC dell'utente: la suite completa `runtime\venv\Scripts\python.exe -m pytest tests/ -q`. Ora si può fare A8 (primo export ufficiale con `slug_sito` in roadmap) con lo STAGE 5 della skill `/voceavoce-publish-choir`.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
