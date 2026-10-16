@@ -241,7 +241,7 @@ docs/CONTENUTI.md
 
 # Fase 2 — Player di studio (PWA), prototipo
 
-Richiesta dell'utente del 2026-10-16. **In attesa dell'ok per l'implementazione.**
+Richiesta dell'utente del 2026-10-16. Ok per l'implementazione dato lo stesso giorno. Formati dei dati in [player.md](player.md).
 
 **Obiettivo.** Una pagina `/player/<slug>/` per esercitarsi sulla propria parte: tracce separate per voce (stem Synth V), mixer con volume, mute e solo, partitura renderizzata con Verovio che evidenzia la battuta corrente, loop di battute, rallentamento senza cambiare l'intonazione. Mobile-first e installabile come PWA. Prototipo su 2 brani: **Locus iste** (Bruckner, SATB a cappella, con corone) e **Ave verum corpus K. 618** (Mozart, con accompagnamento).
 
