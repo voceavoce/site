@@ -16,6 +16,8 @@ Aggiornato: 2026-10-16
 
 - Testi cantati pubblicati **completi**, con il sito di provenienza citato e linkato sotto il testo (utente 2026-10-16). L'esportatore li include solo se la musica è di pubblico dominio sicuro (compositore morto da più di 100 anni).
 
+- Traduzioni e note editoriali (C1, C2) rimandate a più avanti (utente 2026-10-16).
+
 ## Fatti accertati
 
 - La pipeline non chiama API AI: i metadati YouTube sono template Python (`choir_publish.py`, `metadati_seo.py`). L'export costa zero token.
