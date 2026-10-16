@@ -80,6 +80,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — CI rossa dal commit `b0b4b68`: la regola `audio/` del `.gitignore` escludeva anche `workers/audio/`, quindi il codice del Worker non era mai entrato in git e in CI il suo test non trovava il modulo (in locale passava perché i file c'erano). Corretto ancorando le regole alla radice (`/audio/`, `/audio-local/`) e aggiungendo il Worker. Lezione: dopo ogni modifica al `.gitignore` controllare `git status --ignored`. I run `WIP` dei salvataggi automatici possono risultare rossi perché fotografano lavoro a metà.
 
+- 2026-10-16 — Workflow «Check» ora solo sulle pull request (e avvio manuale), per scelta dell'utente: niente CI a ogni push del branch di lavoro. Prima di aprire una PR lanciare in locale `npm run check` e `npm run a11y`.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
