@@ -18,6 +18,8 @@ Aggiornato: 2026-10-16
 
 - Traduzioni e note editoriali (C1, C2) rimandate a più avanti (utente 2026-10-16).
 
+- Player di studio (Fase 2): partitura dal MusicXML della pipeline (non .krn); prototipo su Locus iste e Ave verum K. 618; rallentamento con Web Audio + SoundTouch (piano B `preservesPitch`); spazi pubblicitari lasciati spenti (utente 2026-10-16). Implementazione in attesa dell'ok.
+
 ## Fatti accertati
 
 - La pipeline non chiama API AI: i metadati YouTube sono template Python (`choir_publish.py`, `metadati_seo.py`). L'export costa zero token.

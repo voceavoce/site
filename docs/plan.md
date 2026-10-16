@@ -236,3 +236,27 @@ docs/CONTENUTI.md
   - Lighthouse ≥ 95.
   - Sitemap con le alternate e JSON-LD valido (parse e campi obbligatori). Dopo il deploy: Rich Results Test di Google e invio della sitemap in Search Console (istruzioni nel README).
   - `/classic/` identica alla landing di oggi, con `noindex`.
+
+---
+
+# Fase 2 — Player di studio (PWA), prototipo
+
+Richiesta dell'utente del 2026-10-16. **In attesa dell'ok per l'implementazione.**
+
+**Obiettivo.** Una pagina `/player/<slug>/` per esercitarsi sulla propria parte: tracce separate per voce (stem Synth V), mixer con volume, mute e solo, partitura renderizzata con Verovio che evidenzia la battuta corrente, loop di battute, rallentamento senza cambiare l'intonazione. Mobile-first e installabile come PWA. Prototipo su 2 brani: **Locus iste** (Bruckner, SATB a cappella, con corone) e **Ave verum corpus K. 618** (Mozart, con accompagnamento).
+
+**Scelte (decise con l'utente):**
+- **Partitura:** il MusicXML verificato della pipeline, che Verovio legge direttamente. Niente Humdrum.
+- **Sincronia:** `sync.json` con l'inizio di ogni battuta, calcolato in AIVideoCreator con lo **stesso modello di tempo dei video** (`choir.TempoMap`, `_time_at`: corone, respiri, ritardando, `LEAD_IN_SEC`). Non si ricava da tempo e metrica né dalla timemap di Verovio, perché non sarebbe allineato agli stem.
+- **Dati per il player:** li produce un nuovo CLI `job_sito_player` in AIVideoCreator. Nel sito scrive `content/player/<slug>/{manifest.json, sync.json, score.musicxml}`. Gli audio Opus (più un MP3 di riserva per Safari) vanno in `VOCEAVOCE_AUDIO_DIR`, **fuori da ogni repo**.
+- **Audio mai nel repo e mai nella CI.** Il `.gitignore` blocca `*.opus *.mp3 *.wav *.flac` e la cartella audio. Il caricamento su Cloudflare R2 lo lancia l'utente a mano con `scripts/upload-audio.mjs`, uno script che usa rclone: `copy` per default, `sync` solo con conferma esplicita, `--dry-run`, controllo HEAD degli URL pubblici. Le credenziali restano solo in locale (`.env.local` o config di rclone); `.env.example` contiene solo valori fittizi.
+- **R2:** bucket `voceavoce-audio` con lettura pubblica su `audio.voceavoce.com`. Il DNS va su Cloudflare, il sito resta su GitHub Pages tramite CNAME, `r2.dev` serve solo per i test. CORS: GET e HEAD con Range, origini del sito e di localhost. Percorsi `{slug}/{versione}/{voce}.opus` con `Cache-Control: public, max-age=31536000, immutable`. Token con permesso Object Read & Write limitato al solo bucket. Passi documentati in `docs/r2-setup.md`.
+- **Rallentamento:** Web Audio con le tracce decodificate (mono, 24 kHz) → un GainNode per voce → **un solo** stretcher SoundTouch in AudioWorklet sul mix. Così le voci restano in sincronia esatta. Piano B: `<audio>` con `preservesPitch`.
+- **Codice:** vanilla JS a moduli ES dentro Eleventy. Le funzioni sono separate (`mixer`, `loop`, `tempo`, `download`) e accese da flag in `features.js`, pronte per un futuro premium. Gli URL audio passano solo da `resolveAudioUrl(track)`, con la base configurabile in un solo punto (localhost in sviluppo, `https://audio.voceavoce.com` in produzione). Nessuna credenziale nel client.
+- **PWA:** manifest più un service worker essenziale che mette in cache pagina, script e Verovio, ma **mai l'audio**.
+- **Predisposizione futura, da non implementare ora:** bucket privato `voceavoce-audio-premium` con gli stessi percorsi, servito da un Cloudflare Worker con URL firmati; link per le donazioni; video YouTube accanto al player.
+- **Pubblicità:** gli spazi già predisposti restano spenti. Niente cookie di tracciamento.
+
+**Da verificare:** la licenza dei voicebank Synth V per il download degli stem (funzione premium futura); la decodifica Opus su Safari; la memoria sui telefoni per i brani lunghi.
+
+**Documenti:** `docs/player.md` (architettura, formato di manifest e sync, limiti, prossimi passi) e `docs/r2-setup.md`.
