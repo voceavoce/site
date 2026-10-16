@@ -27,8 +27,8 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [ ] B8 (S) SEO: JSON-LD (WebSite, Organization, MusicComposition, VideoObject, Breadcrumb, Person, ItemList), sitemap con hreflang, robots, llms.txt, feed Atom, OG
 - [x] B9 (H) Pagine istituzionali IT/EN/ES: come funziona, fonti e licenze, chi siamo, privacy, trasparenza affiliazioni
 - [x] B10 (H) Componenti `ad-slot` e `affiliate` dietro `site.ads.enabled = false`
-- [~] B11 (S) `scripts/validate-content.mjs` (ajv) + schema
-- [~] B12 (S) CI `.github/workflows/deploy.yml`: validazione, build, Pagefind, html-validate, pa11y/axe, link check, deploy Pages; cron giornaliero
+- [x] B11 (S) `scripts/validate-content.mjs` (ajv) + schema
+- [x] B12 (S) CI `.github/workflows/deploy.yml`: validazione, build, Pagefind, html-validate, pa11y/axe, link check, deploy Pages; cron giornaliero
 - [ ] B13 (S) Verifica: Playwright (ricerca, filtri, voce, lingua, tastiera), screenshot 375/1280 chiaro/scuro, Lighthouse
 - [ ] B14 (H) README sito + `docs/CONTENUTI.md`
 

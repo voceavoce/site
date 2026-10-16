@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://voceavoce.com/schema/curated.schema.json",
+  "title": "Contenuto curato (content/curated/<slug>.yaml)",
+  "type": "object",
+  "properties": {
+    "nota": {
+      "type": "object",
+      "propertyNames": { "enum": ["it", "en", "es", "de", "fr"] },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "genere": { "type": "array", "items": { "type": "string" } },
+    "generi": { "type": "array", "items": { "type": "string" } },
+    "traduzioni": {
+      "type": "object",
+      "propertyNames": { "enum": ["it", "en", "es", "de", "fr"] },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["testo", "credit", "license"],
+        "properties": {
+          "testo": { "type": "string", "minLength": 1 },
+          "credit": { "type": "string", "minLength": 1 },
+          "license": { "type": "string", "minLength": 1 },
+          "reviewed": {}
+        }
+      }
+    },
+    "affiliazioni": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["vendor", "url"],
+        "properties": {
+          "vendor": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "pattern": "^https://[^\\s]+$" },
+          "etichetta": { "type": "string" }
+        }
+      }
+    }
+  }
+}
