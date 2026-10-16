@@ -73,3 +73,11 @@ Aggiornato: 2026-10-16
 3. Se il merge è avvenuto prima del passo 1: Actions → Deploy → Run workflow su `main`.
 4. Verifica: workflow verde, voceavoce.com nuovo, voceavoce.com/classic/ con la vecchia landing.
 5. Facoltativo, dal proprio computer: `git tag landing-v1 c50b793 && git push origin landing-v1`.
+
+## Come riprendere in locale
+
+1. Sito: `git clone https://github.com/voceavoce/site && cd site && git checkout claude/voceavocecoro-video-portal-s3o8vi && npm ci && npm run serve`.
+2. Pipeline: in AIVideoCreator `git fetch && git checkout claude/voceavocecoro-video-portal-s3o8vi`.
+3. Stato del lavoro: questo file (sezione Avanzamento) e `task.md`: `[~]` = in corso, `[ ]` = da fare.
+4. I commit `WIP …` sono salvataggi automatici fatti ogni 10 minuti mentre gli agenti lavoravano: il codice può essere incompleto. Prima di continuare lancia `npm run check` (sito) e `pytest tests/test_sito_*.py` (pipeline).
+5. Gli audio non sono mai nel repo: si rigenerano con `job_sito_player --scrivi` nella cartella `VOCEAVOCE_AUDIO_DIR`.
