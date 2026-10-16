@@ -7,8 +7,8 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 - [x] A1 (S) `pipeline-core/scripts/common/sito.py`: funzioni pure (inclusione voci, gruppi arie/metodi, slug, genere, compositore e titolo puliti, scheda, capitoli) — commit WIP pushato
 - [x] A2 (S) `pipeline-core/scripts/cli/job_sito_esporta.py`: CLI dry-run / `--scrivi`, `--out` (default `VOCEAVOCE_SITE_DIR`), salva `slug_sito` in roadmap — commit WIP pushato, dry-run ok (142 schede)
-- [~] A3 (S) `tests/test_sito_esporta.py`: inclusione per privacy/date, voci ritirate escluse, slug stabile, genere, titolo/compositore puliti, idempotenza
-- [~] A4 (S) `job_choir_complete_metadata._salva_stato`: copia i capitoli di `chapters.txt` e la durata in `voci.<V>` della roadmap + test
+- [x] A3 (S) `tests/test_sito_esporta.py`: inclusione per privacy/date, voci ritirate escluse, slug stabile, genere, titolo/compositore puliti, idempotenza
+- [x] A4 (S) `job_choir_complete_metadata._salva_stato`: copia i capitoli di `chapters.txt` e la durata in `voci.<V>` della roadmap + test
 - [x] A5 (H) `_schema` del contratto: documentare il campo facoltativo `genere`
 - [x] A6 (H) `.env.example`: `VOCEAVOCE_SITE_DIR`; skill `voceavoce-publish-choir`: passo finale export + commit del sito
 - [x] A7 (H) `CLAUDE.md`: una riga sul nuovo export; numero T-905 in `tasks.md`
