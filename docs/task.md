@@ -22,9 +22,9 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] B3 (S) Design system: token CSS chiaro/scuro, layout `base.njk`, componenti card/breadcrumbs
 - [x] B4 (S) `catalog.js`: unisce `content/generated` + `content/curated`, filtra voci per `pubblica_dal`, noindex sulle schede solo programmate
 - [x] B5 (S) Scheda brano: In breve, facade video + selettore voce, capitoli, note, testo/traduzioni, spartito, correlati
-- [ ] B6 (S) Liste: compositori, opere/raccolte, generi, stagioni, linee (coro/arie/metodi), home
+- [~] B6 (S) Liste: compositori, opere/raccolte, generi, stagioni, linee (coro/arie/metodi), home
 - [ ] B7 (S) Ricerca Pagefind con UI accessibile (filtri, aria-live, stato in URL)
-- [ ] B8 (S) SEO: JSON-LD (WebSite, Organization, MusicComposition, VideoObject, Breadcrumb, Person, ItemList), sitemap con hreflang, robots, llms.txt, feed Atom, OG
+- [~] B8 (S) SEO: JSON-LD (WebSite, Organization, MusicComposition, VideoObject, Breadcrumb, Person, ItemList), sitemap con hreflang, robots, llms.txt, feed Atom, OG
 - [x] B9 (H) Pagine istituzionali IT/EN/ES: come funziona, fonti e licenze, chi siamo, privacy, trasparenza affiliazioni
 - [x] B10 (H) Componenti `ad-slot` e `affiliate` dietro `site.ads.enabled = false`
 - [x] B11 (S) `scripts/validate-content.mjs` (ajv) + schema
@@ -34,8 +34,8 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 ## Rifiniture emerse
 
-- [ ] R1 (H) Footer: includere `info-links.njk`; breadcrumb e riga autore della scheda: link a compositore e opera quando esistono le pagine (B6)
-- [ ] R2 (H) Selettore voce di arie/metodi: le sigle A/M/B (alta/media/bassa) si confondono con Alto/Basso: usare le parole intere
+- [~] R1 (H) Footer: includere `info-links.njk`; breadcrumb e riga autore della scheda: link a compositore e opera quando esistono le pagine (B6)
+- [~] R2 (H) Selettore voce di arie/metodi: le sigle A/M/B (alta/media/bassa) si confondono con Alto/Basso: usare le parole intere
 - [ ] R3 (O) Testi cantati presi da siti terzi (es. lieder.net): verificare che la ripubblicazione sia lecita, oppure mostrare solo l'incipit + link alla fonte
 
 ## C — Contenuti editoriali (costano token: stima prima di partire)
