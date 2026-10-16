@@ -121,7 +121,7 @@ L'italiano resta alla radice, così l'URL di oggi non perde valore; `/en/` e `/e
 **Scheda brano:**
 1. Breadcrumb → H1 → riga con compositore (date), opera, periodo.
 2. **"In breve"** come elenco di definizioni (`<dl>`): organico, lingua, stagione, linea, voci disponibili, fonte, licenza. È il blocco che motori di ricerca e AI citano.
-3. **Player come *facade*.** Il selettore voce si genera dalle chiavi reali (S/A/T/B, ma anche T1/T2/B1/B2, oppure "Voce media" per i metodi). Le voci non ancora uscite compaiono come "in arrivo il …". Sotto, i capitoli cliccabili.
+3. **Player incorporato** (iframe `youtube-nocookie.com`, `loading="lazy"`; decisione utente 2026-10-16, prima era una facade). Il selettore voce si genera dalle chiavi reali (S/A/T/B, ma anche T1/T2/B1/B2, oppure "Voce media" per i metodi). Le voci non ancora uscite compaiono come "in arrivo il …". Sotto, i capitoli cliccabili.
 4. Note sul brano, da `curated` o da `nota_descrizione`.
 5. **Testo e traduzioni**, affiancati verso per verso; su mobile diventano schede. Ogni blocco ha il suo `lang`; ogni traduzione riporta autore e licenza.
 6. **Spartito:** prima le fonti di pubblico dominio (verifiche IMSLP/CPDL, link a `voceavoce/scores` quando c'è), poi le eventuali affiliazioni.

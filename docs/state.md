@@ -12,6 +12,8 @@ Aggiornato: 2026-10-16
 - Lavoro su branch `claude/voceavocecoro-video-portal-s3o8vi` in entrambi i repo; commit e push a ogni punto fermo.
 - Esecuzione dei task con sotto-agenti Sonnet/Haiku in base alla difficoltà; questo file e `task.md` li aggiorna solo l'agente principale.
 
+- Video **incorporati direttamente** nelle schede (iframe `youtube-nocookie.com`, `loading="lazy"`, niente autoplay) invece della facade da cliccare (utente 2026-10-16). Conseguenza: YouTube può scrivere dati nel browser appena la scheda si apre; la pagina privacy va scritta di conseguenza.
+
 ## Fatti accertati
 
 - La pipeline non chiama API AI: i metadati YouTube sono template Python (`choir_publish.py`, `metadati_seo.py`). L'export costa zero token.
