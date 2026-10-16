@@ -1,0 +1,188 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: catalog.schede
+  size: 1
+  alias: entry
+eleventyExcludeFromCollections: true
+---
+{#- Scheda brano: pagina per (brano x lingua). Dati calcolati in piece.11tydata.js -#}
+{%- set composer = piece.compositore -%}
+{%- set firstVoice = piece.voci[0] -%}
+{%- set noteLang = lang if piece.nota[lang] else ("it" if piece.nota.it else ("en" if piece.nota.en else "es")) -%}
+<article class="piece"{% if not noindex %} data-pagefind-body{% endif %}>
+  <div class="wrap piece__wrap">
+    <header class="piece__head">
+      <h1 data-pagefind-meta="title">{{ piece.titolo }}{% if piece.titolo_breve %} <span class="piece__sub">{{ piece.titolo_breve }}</span>{% endif %}</h1>
+      <p class="piece__meta">
+        {%- if composer %}<span data-pagefind-filter="compositore">{{ composer.nome }}</span>{% if composer.date %} ({{ composer.date }}){% endif %}
+        {%- else %}{{ 'card.anon' | t(lang) }}{% endif %}
+        {%- if piece.opera %} · <span>{{ piece.opera.titolo }}</span>{% endif %}
+        {%- if piece.raccolta %} · <span>{{ piece.raccolta.titolo }}{% if piece.raccolta.numero %}, {{ 'piece.no' | tv(lang, { n: piece.raccolta.numero }) }}{% endif %}</span>{% endif %}
+        {%- if composer.periodo %} · <span>{{ ('periods.' ~ composer.periodo) | t(lang) }}</span>{% endif %}
+      </p>
+    </header>
+
+    <section class="brief" aria-labelledby="brief-h">
+      <h2 id="brief-h">{{ 'piece.brief' | t(lang) }}</h2>
+      <dl class="brief__list">
+        {%- if piece.organico %}
+        <div><dt>{{ 'piece.org' | t(lang) }}</dt><dd>{{ piece.organico }}</dd></div>
+        {%- endif %}
+        {%- if piece.accompagnamento %}
+        <div><dt>{{ 'piece.acc' | t(lang) }}</dt><dd>{{ ('accomp.' ~ piece.accompagnamento) | t(lang) }}</dd></div>
+        {%- endif %}
+        {%- if piece.lingua %}
+        <div><dt>{{ 'piece.textLang' | t(lang) }}</dt><dd>{{ piece.lingua | langLabel(lang) }}</dd></div>
+        {%- endif %}
+        {%- if piece.tonalita %}
+        <div><dt>{{ 'piece.key' | t(lang) }}</dt><dd>{{ piece.tonalita | tonality(lang) }}</dd></div>
+        {%- endif %}
+        {%- if piece.generi.length %}
+        <div><dt>{{ 'piece.genre' | t(lang) }}</dt><dd>{% for g in piece.generi %}<span data-pagefind-filter="genere">{{ ('genres.' ~ g) | t(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        {%- endif %}
+        {%- if piece.stagioni.length %}
+        <div><dt>{{ 'piece.season' | t(lang) }}</dt><dd>{% for s in piece.stagioni %}<span data-pagefind-filter="stagione">{{ ('seasons.' ~ s) | t(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        {%- endif %}
+        <div><dt>{{ 'piece.line' | t(lang) }}</dt><dd><span data-pagefind-filter="linea">{{ ('lines.' ~ piece.linea) | t(lang) }}</span></dd></div>
+        {%- if piece.voci.length %}
+        <div><dt>{{ 'piece.voices' | t(lang) }}</dt><dd>{% for v in piece.voci %}<span data-pagefind-filter="voce">{{ v.voce | voiceName(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        {%- endif %}
+        {%- if piece.fonte_spartito %}
+        <div><dt>{{ 'piece.score' | t(lang) }}</dt><dd>{{ 'piece.scoreFrom' | tv(lang, { source: piece.fonte_spartito, license: (('license.' ~ piece.licenza_spartito) | t(lang)) if piece.licenza_spartito else '—' }) }}</dd></div>
+        {%- endif %}
+      </dl>
+    </section>
+    {%- set slot = "after-brief" %}{% include "components/ad-slot.njk" ignore missing -%}
+
+    <section class="player" data-player aria-label="{{ piece.titolo }}"
+      data-title="{{ 'piece.iframeTitle' | tv(lang, { title: piece.titolo, voice: '{voice}' }) }}">
+      {%- if firstVoice %}
+      <fieldset class="voice-picker" hidden>
+        <legend>{{ 'piece.pick' | t(lang) }}</legend>
+        {%- for v in piece.voci %}
+        <label class="voice-opt">
+          <input type="radio" name="voce" value="{{ v.voce }}" data-id="{{ v.video_id }}" data-name="{{ v.voce | voiceName(lang) }}"{% if loop.first %} checked{% endif %}>
+          <span class="voice-opt__code" aria-hidden="true">{{ v.voce if v.voce.length <= 3 else v.voce[0] | upper }}</span>
+          <span>{{ v.voce | voiceName(lang) }}</span>
+        </label>
+        {%- endfor %}
+      </fieldset>
+      <div class="player__frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ firstVoice.video_id }}" width="560" height="315"
+          title="{{ 'piece.iframeTitle' | tv(lang, { title: piece.titolo, voice: (firstVoice.voce | voiceName(lang)) }) }}"
+          loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <ul class="voice-links" data-links>
+        {%- for v in piece.voci %}
+        <li><a href="https://www.youtube.com/watch?v={{ v.video_id }}" rel="noopener">{{ 'piece.watchVoice' | tv(lang, { voice: (v.voce | voiceName(lang)) }) }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- for v in piece.voci %}{% if v.capitoli.length %}
+      <div class="chapters" data-chapters="{{ v.voce }}" data-id="{{ v.video_id }}">
+        <h3>{{ 'piece.chaptersFor' | tv(lang, { voice: (v.voce | voiceName(lang)) }) }}</h3>
+        <ol>
+          {%- for c in v.capitoli %}
+          <li><a href="https://www.youtube.com/watch?v={{ v.video_id }}&amp;t={{ c.sec }}s" data-t="{{ c.sec }}"><time datetime="PT{{ c.sec }}S">{{ c.sec | clock }}</time> {{ c.label }}</a></li>
+          {%- endfor %}
+        </ol>
+      </div>
+      {%- endif %}{% endfor %}
+      {%- else %}
+      <p class="player__none">{{ 'piece.noVideo' | t(lang) }}</p>
+      {%- endif %}
+      {%- if piece.vociInArrivo.length %}
+      <ul class="voice-soon">
+        {%- for v in piece.vociInArrivo %}
+        <li><span class="voice-opt__code" aria-hidden="true">{{ v.voce if v.voce.length <= 3 else v.voce[0] | upper }}</span> {{ v.voce | voiceName(lang) }}: {{ 'piece.soonOn' | t(lang) }} <time datetime="{{ v.pubblica_dal | isoDay }}">{{ v.pubblica_dal | dateLong(lang) }}</time></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </section>
+    {%- if firstVoice %}<img src="https://i.ytimg.com/vi/{{ firstVoice.video_id }}/hqdefault.jpg" alt="" hidden loading="lazy" data-pagefind-meta="image[src]">{% endif %}
+
+    {%- if piece.nota[noteLang] %}
+    <section class="notes" aria-labelledby="notes-h">
+      <h2 id="notes-h">{{ 'piece.notes' | t(lang) }}</h2>
+      <p class="prose"{% if noteLang != lang %} lang="{{ noteLang }}"{% endif %}>{{ piece.nota[noteLang] }}</p>
+    </section>
+    {%- endif %}
+
+    {%- if piece.testo %}
+    {%- set trKeys = [] -%}
+    {%- for code, tr in piece.traduzioni %}{% if code != piece.testo.lingua and tr.testo %}{% set trKeys = (trKeys.push(code), trKeys) %}{% endif %}{% endfor %}
+    {%- set openCode = lang if (lang in trKeys) else trKeys[0] -%}
+    <section class="lyrics" aria-labelledby="lyrics-h">
+      <h2 id="lyrics-h">{{ 'piece.lyrics' | t(lang) }}</h2>
+      <div class="lyrics__grid{% if not trKeys.length %} lyrics__grid--single{% endif %}">
+        <div class="lyrics__col">
+          <h3>{{ 'piece.original' | t(lang) }} · {{ piece.testo.lingua | langLabel(lang) }}</h3>
+          <div class="verses" lang="{{ piece.testo.lingua }}">
+            {%- for st in piece.testo.testo | stanzas %}
+            <p>{% for line in st %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+            {%- endfor %}
+          </div>
+          {%- if piece.testo.fonte %}
+          <p class="credit">{{ 'piece.textSource' | t(lang) }}: {% if piece.testo.fonte.url %}<a href="{{ piece.testo.fonte.url }}" rel="noopener">{{ piece.testo.fonte.sito }}</a>{% else %}{{ piece.testo.fonte.sito }}{% endif %}</p>
+          {%- endif %}
+        </div>
+        {%- if trKeys.length %}
+        <div class="lyrics__col">
+          {%- for code in trKeys %}{% set tr = piece.traduzioni[code] %}
+          <details class="translation"{% if code == openCode %} open{% endif %}>
+            <summary>{{ 'piece.translation' | tv(lang, { lang: (code | langLabel(lang)) }) }}</summary>
+            <div class="verses" lang="{{ code }}">
+              {%- for st in tr.testo | stanzas %}
+              <p>{% for line in st %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+              {%- endfor %}
+            </div>
+            <p class="credit">
+              {%- if tr.credit %}{{ 'piece.translationBy' | tv(lang, { credit: tr.credit }) }}{% endif %}
+              {%- if tr.license %}{% if tr.credit %} · {% endif %}{{ 'piece.license' | tv(lang, { license: tr.license }) }}{% endif %}
+              {%- if not tr.reviewed %} · <em>{{ 'piece.draft' | t(lang) }}</em>{% endif %}
+            </p>
+          </details>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+      </div>
+    </section>
+    {%- endif %}
+
+    {%- if piece.fonte_spartito or piece.edizioni_verifica %}
+    <section class="score" aria-labelledby="score-h">
+      <h2 id="score-h">{{ 'piece.scoreH' | t(lang) }}</h2>
+      <p class="prose">{{ 'piece.scoreP' | t(lang) }}</p>
+      {%- if piece.fonte_spartito %}
+      <p><strong>{{ piece.fonte_spartito }}</strong>{% if piece.licenza_spartito %} · {{ 'piece.license' | tv(lang, { license: (('license.' ~ piece.licenza_spartito) | t(lang)) }) }}{% endif %}</p>
+      {%- endif %}
+      {%- if piece.edizioni_verifica.length %}
+      <h3>{{ 'piece.verify' | t(lang) }}</h3>
+      <ul class="editions">
+        {%- for e in piece.edizioni_verifica %}
+        <li>{% if e.url %}<a href="{{ e.url }}" rel="noopener">{{ e.edizione }}</a>{% else %}{{ e.edizione }}{% endif %}{% if e.editore %}, {{ e.editore }}{% endif %}{% if e.anno %} ({{ e.anno }}){% endif %}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+      {%- set brano = piece %}{% include "components/affiliate.njk" ignore missing -%}
+    </section>
+    {%- endif %}
+
+    <section class="report" aria-labelledby="report-h">
+      <h2 id="report-h">{{ 'piece.report' | t(lang) }}</h2>
+      <p>{{ 'piece.reportP' | t(lang) }} <a href="https://github.com/voceavoce/scores/issues/new/choose" rel="noopener">{{ 'piece.reportLink' | t(lang) }}</a></p>
+    </section>
+
+    {%- if piece.correlati.length %}
+    <section class="related" aria-labelledby="related-h" data-pagefind-ignore>
+      <h2 id="related-h">{{ 'piece.related' | t(lang) }}</h2>
+      <div class="grid-auto">
+        {%- for slug in piece.correlati %}{% set piece = catalog.perSlug[slug] %}
+        {% include "components/card.njk" %}
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+  </div>
+</article>

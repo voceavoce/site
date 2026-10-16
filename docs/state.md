@@ -35,6 +35,8 @@ Aggiornato: 2026-10-16
 - 2026-10-16 — B9-B10 fatti (Haiku): 5 pagine istituzionali × 3 lingue in `src/pages/info/` (privacy aggiornata al player incorporato), componenti `ad-slot` e `affiliate` spenti, etichette in `src/_data/labels.js`, html-validate 0 errori. Allineato `affiliate.njk` al formato dei file curati (`vendor`, `url`, `label`, `enabled`). Da fare: includere `info-links.njk` nel footer e i due componenti nella scheda.
 - 2026-10-16 — B11-B12 fatti (Sonnet): `scripts/validate-content.mjs` + schemi JSON (brano, curato), 9 test; `npm run check` = validate + test + build + lint:html; workflow `deploy.yml` (main, avvio manuale, cron 04:15 UTC giornaliero, Pagefind, pa11y/axe, deploy Pages) e `check.yml` (PR e altri branch, senza deploy). pa11y sulle 3 home: 0 errori. Il deploy parte solo dopo il merge su main e il passaggio di Pages a «GitHub Actions» (M1).
 
+- 2026-10-16 — B4-B5 fatti (Sonnet): catalogo (`src/_lib/catalog.js`, logica pura testata) e scheda brano in 3 lingue: 426 pagine (142 × 3), di cui 102 brani noindex perché hanno solo voci programmate. Player incorporato (youtube-nocookie, lazy) con selettore voce; senza JS restano il primo video e i link alle altre voci. `npm run check` passa: validazione, 14 test, build di 444 pagine, html-validate 0 errori. Traduzioni con `reviewed` falso mostrate con l'etichetta «Traduzione non ancora rivista». Capitoli letti nel formato della pipeline (`sec`, `titolo`).
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.

@@ -88,5 +88,82 @@
     "pasqua": "Pasqua",
     "quaresima": "Quaresima",
     "mariano": "Mariano"
+  },
+  "piece": {
+    "brief": "In breve",
+    "composer": "Compositore",
+    "work": "Opera",
+    "period": "Periodo",
+    "org": "Organico",
+    "acc": "Accompagnamento",
+    "textLang": "Lingua del testo",
+    "key": "Tonalità",
+    "genre": "Genere",
+    "season": "Stagione",
+    "line": "Linea",
+    "voices": "Voci disponibili",
+    "score": "Spartito",
+    "scoreFrom": "{source}, licenza {license}",
+    "pick": "Scegli la voce",
+    "iframeTitle": "{title} – voce {voice}",
+    "watchVoice": "Guarda la voce {voice} su YouTube",
+    "watchAll": "Guarda su YouTube",
+    "soonOn": "in arrivo il",
+    "noVideo": "Nessun video è ancora pubblicato per questo brano: torna presto.",
+    "chapters": "Capitoli",
+    "chaptersFor": "Capitoli, voce {voice}",
+    "notes": "Note sul brano",
+    "lyrics": "Testo e traduzioni",
+    "original": "Testo originale",
+    "translation": "Traduzione: {lang}",
+    "translationBy": "Traduzione di {credit}",
+    "license": "Licenza: {license}",
+    "draft": "Traduzione non ancora rivista",
+    "textSource": "Fonte del testo",
+    "scoreH": "Spartito",
+    "scoreP": "Fonte e licenza dello spartito sono riconosciute e citate; le edizioni qui sotto servono per il confronto.",
+    "verify": "Edizioni di verifica",
+    "edition": "{edition}{publisher}{year}",
+    "report": "Hai sentito un errore?",
+    "reportP": "Un'alterazione sbagliata, una nota fuori posto, un verso mal scritto: dicci dove.",
+    "reportLink": "Segnala su GitHub",
+    "related": "Brani correlati",
+    "descr": {
+      "base": "{title} – {composer}: video di studio voce per voce.",
+      "org": "Organico: {org}.",
+      "voices": "Voci disponibili: {voices}.",
+      "soon": "Video in arrivo."
+    },
+    "no": "n. {n}"
+  },
+  "mode": {
+    "major": "maggiore",
+    "minor": "minore"
+  },
+  "accomp": {
+    "a_cappella": "A cappella",
+    "organo": "Organo",
+    "pianoforte": "Pianoforte",
+    "accompagnamento": "Con accompagnamento"
+  },
+  "license": {
+    "PD": "Pubblico dominio",
+    "CC0": "CC0",
+    "ChoralWiki License": "ChoralWiki License",
+    "MirOS License": "MirOS License"
+  },
+  "genres": {
+    "sacro": "Sacro",
+    "canto-natalizio": "Canto natalizio",
+    "aria": "Aria",
+    "aria-antica": "Aria antica",
+    "metodo-vocale": "Metodo vocale"
+  },
+  "periods": {
+    "rinascimento": "Rinascimento",
+    "barocco": "Barocco",
+    "classico": "Classicismo",
+    "romantico": "Romanticismo",
+    "novecento": "Novecento"
   }
 }

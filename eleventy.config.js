@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import site from "./src/_data/site.js";
 import { sections, routeUrl, altUrls } from "./src/_data/routes.js";
+import * as fmt from "./src/_lib/format.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const i18nDir = path.join(here, "src/_data/i18n");
@@ -23,14 +24,18 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/_data/i18n/");
 
   // t: chiave con punti ("nav.coro"), lingua; ripiega sulla lingua predefinita, poi sulla chiave.
-  eleventyConfig.addFilter("t", (key, lang) => {
-    const i18n = loadI18n();
-    const get = (l) => String(key).split(".").reduce((o, k) => (o == null ? o : o[k]), i18n[l]);
-    return get(lang) ?? get(site.defaultLang) ?? key;
-  });
+  eleventyConfig.addFilter("t", (key, lang) => fmt.t(String(key), lang));
   eleventyConfig.addFilter("routeUrl", routeUrl);
   eleventyConfig.addFilter("altUrls", altUrls);
   eleventyConfig.addFilter("absUrl", (p) => new URL(p, site.url).href);
+  eleventyConfig.addFilter("tv", (key, lang, vars) => fmt.t(key, lang, vars)); // t con segnaposto {x}
+  eleventyConfig.addFilter("voiceName", fmt.voiceName);
+  eleventyConfig.addFilter("langLabel", fmt.langLabel);
+  eleventyConfig.addFilter("dateLong", fmt.dateLong);
+  eleventyConfig.addFilter("isoDay", fmt.isoDay);
+  eleventyConfig.addFilter("tonality", fmt.tonality);
+  eleventyConfig.addFilter("stanzas", fmt.stanzas);
+  eleventyConfig.addFilter("clock", fmt.clock);
   eleventyConfig.addGlobalData("sections", sections);
 
   return {

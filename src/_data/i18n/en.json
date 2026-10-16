@@ -88,5 +88,82 @@
     "pasqua": "Easter",
     "quaresima": "Lent",
     "mariano": "Marian"
+  },
+  "piece": {
+    "brief": "At a glance",
+    "composer": "Composer",
+    "work": "Work",
+    "period": "Period",
+    "org": "Voicing",
+    "acc": "Accompaniment",
+    "textLang": "Language of the text",
+    "key": "Key",
+    "genre": "Genre",
+    "season": "Season",
+    "line": "Series",
+    "voices": "Available voices",
+    "score": "Score",
+    "scoreFrom": "{source}, {license} licence",
+    "pick": "Choose the voice",
+    "iframeTitle": "{title} – {voice} part",
+    "watchVoice": "Watch the {voice} part on YouTube",
+    "watchAll": "Watch on YouTube",
+    "soonOn": "coming on",
+    "noVideo": "No video has been published for this piece yet: check back soon.",
+    "chapters": "Chapters",
+    "chaptersFor": "Chapters, {voice} part",
+    "notes": "Notes on the piece",
+    "lyrics": "Text and translations",
+    "original": "Original text",
+    "translation": "Translation: {lang}",
+    "translationBy": "Translated by {credit}",
+    "license": "Licence: {license}",
+    "draft": "Translation not yet reviewed",
+    "textSource": "Source of the text",
+    "scoreH": "Score",
+    "scoreP": "The source and licence of the score are acknowledged; the editions below are for cross-checking.",
+    "verify": "Reference editions",
+    "edition": "{edition}{publisher}{year}",
+    "report": "Did you hear a mistake?",
+    "reportP": "A wrong accidental, a misplaced note, a misspelt word: tell us where.",
+    "reportLink": "Report it on GitHub",
+    "related": "Related pieces",
+    "descr": {
+      "base": "{title} – {composer}: part-by-part rehearsal video.",
+      "org": "Voicing: {org}.",
+      "voices": "Available voices: {voices}.",
+      "soon": "Video coming soon."
+    },
+    "no": "no. {n}"
+  },
+  "mode": {
+    "major": "major",
+    "minor": "minor"
+  },
+  "accomp": {
+    "a_cappella": "A cappella",
+    "organo": "Organ",
+    "pianoforte": "Piano",
+    "accompagnamento": "With accompaniment"
+  },
+  "license": {
+    "PD": "Public domain",
+    "CC0": "CC0",
+    "ChoralWiki License": "ChoralWiki License",
+    "MirOS License": "MirOS License"
+  },
+  "genres": {
+    "sacro": "Sacred",
+    "canto-natalizio": "Christmas carol",
+    "aria": "Aria",
+    "aria-antica": "Early Italian aria",
+    "metodo-vocale": "Vocal method"
+  },
+  "periods": {
+    "rinascimento": "Renaissance",
+    "barocco": "Baroque",
+    "classico": "Classical",
+    "romantico": "Romantic",
+    "novecento": "20th century"
   }
 }

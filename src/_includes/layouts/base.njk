@@ -1,6 +1,6 @@
 {%- set canonicalPath = lang | routeUrl(routeSection, routeSlug) -%}
 {%- set canonical = canonicalPath | absUrl -%}
-{%- set pageTitle = title if (isHome or not title) else (title ~ " · " ~ site.name) -%}
+{%- set pageTitle = titleFull or (title if (isHome or not title) else (title ~ " · " ~ site.name)) -%}
 {%- set ogImg = (ogImage or site.ogImage.path) | absUrl -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
@@ -39,6 +39,10 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <script>try{var t=localStorage.getItem("vav_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <script src="/assets/js/theme.js" defer></script>
+{%- if routeSection == "pieces" and routeSlug %}
+<script src="/assets/js/player.js" defer></script>
+{%- endif %}
+{% block jsonld %}{% endblock %}
 {#- Punto di innesto per il CMP (TCF 2.2) se si attivano gli annunci: vedi docs/plan.md #}
 </head>
 <body>
