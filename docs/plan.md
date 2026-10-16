@@ -263,7 +263,7 @@ Richiesta dell'utente del 2026-10-16. Ok per l'implementazione dato lo stesso gi
 
 ---
 
-# Fase 3 — Robustezza: test end-to-end di player e PWA (ok dell'utente 2026-10-16, in corso)
+# Fase 3 — Robustezza: test end-to-end di player e PWA (ok dell'utente 2026-10-16, FATTA)
 
 **Perché.** Gli unit test (81, `npm test`) coprono la logica pura: classificazione del service worker, tempi, loop, `resolveAudioUrl`, Worker, script R2. Le prove nel browser vero (registrazione e aggiornamento del SW, offline, audio mai in cache, player sincronizzato, tastiera, mobile) finora sono state fatte a mano con Playwright. Gli script sono salvati in `tools/verifica-manuale/` come bozze, ma non girano in CI.
 
@@ -282,3 +282,5 @@ Richiesta dell'utente del 2026-10-16. Ok per l'implementazione dato lo stesso gi
   - tastiera e ARIA;
   - layout a 375 px.
 - **CI:** `npm run e2e` nel workflow **Check**, che gira solo sulle pull request.
+
+**Com'è stata fatta (2026-10-16):** 18 test (13 player, 5 PWA), ~45 s, 3 run di fila verdi. Audio WAV sintetici costruiti in memoria e serviti con `context.route` (Range compreso): nessun file audio su disco. Offline e aggiornamento del SW usano un piccolo server statico in-process (`tests/e2e/helpers.mjs`, `avviaSito`) che si può fermare e che può servire `/sw.js` con un'altra `VERSION`. Le richieste esterne (miniature i.ytimg) ricevono una GIF 1×1, così i test non dipendono da internet. Resta manuale il confronto evidenziazione ↔ clic udibile (`tools/verifica-manuale/measure.mjs`, P11): il test automatico confronta la posizione udibile del motore con `sync.json`.
