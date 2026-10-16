@@ -1,6 +1,8 @@
 # Player di studio — architettura e formati
 
-Stato: **prototipo (Fase 1)**. Piano in [plan.md](plan.md), Fase 2; task P1–P7 in [task.md](task.md).
+Stato: **prototipo (Fase 1) completo e verificato in emulazione; manca la prova a orecchio dell'utente su stem veri**. Piano in [plan.md](plan.md), Fase 2; task P1–P10 in [task.md](task.md); configurazione di R2 e del Worker in [r2-setup.md](r2-setup.md).
+
+Indice: [Flusso dei dati](#flusso-dei-dati) · [Formato di manifest e sync](#contentplayerslugmanifestjson) · [Configurazione degli audio](#configurazione-degli-audio) · [Architettura del player](#architettura-del-player) · [Verovio](#partitura-verovio-e-battuta-evidenziata) · [PWA](#pwa-cosa-entra-in-cache-e-cosa-no) · [Pubblicare un brano](#pubblicare-un-brano-nel-player-passo-per-passo) · [Audio mai in git](#regola-audio-mai-in-git) · [Licenze](#licenze-di-terze-parti) · [Limiti noti](#limiti-noti) · [Prossimi passi](#prossimi-passi)
 
 ## Flusso dei dati
 
@@ -10,6 +12,8 @@ job_sito_player --brano 002 --scrivi
   ├─ manifest.json, sync.json, score.musicxml  ──►  content/player/<slug>/   (in git)
   └─ <voce>.opus / .mp3                        ──►  VOCEAVOCE_AUDIO_DIR/<slug>/<versione>/   (MAI in git)
                                                        scripts/upload-audio.mjs (a mano) ──►  voceavoce-audio/<slug>/<versione>/
+                                                                                              ▲ binding
+                                                       browser  ◄── Worker workers/audio/ (workers.dev) ┘
 ```
 
 Gli audio non entrano mai in un repo e non passano mai dalla CI.
@@ -39,9 +43,16 @@ Gli audio non entrano mai in un repo e non passano mai dalla CI.
 ```
 
 - `voce` è l'etichetta della partitura: S, A, T, B, T1…, oppure `ACC` per l'accompagnamento.
-- `chiave` è il nome del file: soprano, alto, tenore, basso, tenore-1, accompagnamento. Per arie e metodi la chiave è il registro (alta, media, bassa).
-- `file` e `riserva` sono **percorsi relativi** alla radice degli audio. Il player li risolve solo con `resolveAudioUrl()`.
+- `chiave` è il nome del file: soprano, alto, tenore, basso, tenore-1, accompagnamento. Per arie e metodi la chiave è il registro (alta, media, bassa) e l'accompagnamento di ciascun registro è `accompagnamento-<registro>` (un pianoforte per registro). La chiave è anche l'identificatore della traccia nel mixer.
+- `tipo` vale `voce` o `accompagnamento`. Il player lo usa per escludere l'accompagnamento dal menu «La mia voce».
+- `file` e `riserva` sono **percorsi relativi** alla radice degli audio, sempre con `/`: `<slug>/<versione>/<chiave>.opus|.mp3`. Il player li risolve solo con `resolveAudioUrl()`.
 - Il manifest non contiene mai URL assoluti né segreti. `licenza.audio` vale `null` finché non viene decisa.
+- `compositore` è facoltativo (manca se il brano non ha un compositore nel registro). `licenza.spartito` può essere `null` (è così nell'uscita reale di Locus iste, con `fonte_spartito` «PDMX / MuseScore»): il sito non lo usa per decidere nulla.
+- `durata_sec` è `sync.fine` arrotondata a 0,1 s. Il player la mostra prima del caricamento e poi la sostituisce con la durata reale dei buffer decodificati.
+- Lo `slug` è quello dell'export delle schede (`job_sito_esporta`) e coincide con `content/generated/brani/<slug>.json`: così `studio.linked[slug]` collega la scheda del brano al player.
+- Cartelle il cui nome inizia per `_` (oggi `content/player/_prova/`) sono **dati di prova**: pagina `noindex`, nessun link dalle schede e, con `ELEVENTY_ENV=production`, nemmeno generata.
+
+**Controlli in build** (`src/_lib/studio.js`, `checkManifest`): `schema` uguale a 1; `slug` uguale alla cartella; almeno una traccia con `voce`, `chiave` e `file`; `file` e `riserva` relativi (niente schema, `//`, `..`, `\`, `?`, `#`, caratteri di controllo, massimo 300 caratteri); `sync.battute` non vuoto, `sync.fine` numerica e tempi `t` non decrescenti; esistenza del file della partitura. Un manifest fuori contratto fa fallire la build.
 
 ## content/player/<slug>/sync.json
 
@@ -53,12 +64,125 @@ Gli audio non entrano mai in un repo e non passano mai dalla CI.
 }
 ```
 
-- Le voci sono in **ordine di esecuzione** (ritornelli espansi).
-- `m` è l'indice della battuta nel MusicXML in ordine di documento, partendo da 0: è la stessa numerazione con cui Verovio rende le battute.
-- `numero` è l'etichetta scritta in partitura (può essere "0" per la battuta in levare).
-- `t` sono i secondi dall'inizio dell'audio, calcolati con lo stesso modello di tempo dei video: tempo di prassi, `TempoMap`, corone, respiri, ritardando, `LEAD_IN_SEC`.
+- Le **battute** sono in **ordine di esecuzione** (ritornelli espansi).
+- `m` è l'indice della battuta nel MusicXML in ordine di documento, partendo da 0: è la stessa numerazione con cui Verovio rende le battute. La partitura che il sito riceve è quella di lavoro della pipeline (ritornelli espansi e rinumerati 1..N), quindi `m` coincide anche con la posizione nell'elenco `battute`. Se l'XML del catalogo ha un numero di battute diverso da quella di lavoro, `job_sito_player` scrive la partitura riscritta, non l'originale.
+- `numero` è l'etichetta scritta in partitura, come stringa (può essere "0" per la battuta in levare).
+- `t` sono i secondi dall'inizio dell'audio, calcolati con lo stesso modello di tempo dei video: tempo di prassi (mai quello dell'XML), `TempoMap`, corone, respiri, ritardando. **`t` include il `LEAD_IN_SEC` di 0,5 s** che gli stem di Synth V portano in testa: per questo la prima battuta sta a 0,5 e non a 0. All'accompagnamento (FluidSynth, che parte sulla nota) il CLI antepone 0,5 s di silenzio in conversione, così tutte le tracce hanno lo stesso zero e un solo `sync.json` vale per tutte. Il count-in dei video non è negli stem e non entra nel sync.
+- `fine` è la durata dell'audio in secondi (coda di silenzio compresa, come il `total_sec` dei video), quindi è maggiore dell'inizio dell'ultima battuta (es. Locus iste: ultima battuta a 182,024, `fine` 189,643). Le battute di coda silenziosa che non sono nella copia del sito restano fuori dall'elenco.
+- Per le ripetizioni nel menu del loop il player aggiunge « (2)» all'etichetta quando lo stesso `numero` compare più volte.
 
 ## Configurazione degli audio
 
-- **Base URL in un solo punto** (`site.audioBase`): in produzione l'URL `*.workers.dev` del Worker `workers/audio/` (bucket R2 privato), in sviluppo `VOCEAVOCE_AUDIO_BASE`, default `http://localhost:8787`, servito da `scripts/serve-audio.mjs` sulla cartella `VOCEAVOCE_AUDIO_DIR`.
+- **Base URL in un solo punto** (`site.audioBase`): in produzione l'URL `*.workers.dev` del Worker `workers/audio/` (bucket R2 privato), in sviluppo `VOCEAVOCE_AUDIO_BASE`, default `http://localhost:8787`, servito da `scripts/serve-audio.mjs` sulla cartella `VOCEAVOCE_AUDIO_DIR`. Oggi la costante `AUDIO_BASE_PRODUZIONE` in `src/_data/site.js` è ancora il segnaposto `https://voceavoce-audio.CAMBIAMI.workers.dev`, da sostituire dopo il primo `wrangler deploy` (vedi [r2-setup.md](r2-setup.md)).
 - Tutto passa da `resolveAudioUrl(track)`. In futuro questa funzione chiederà a un Cloudflare Worker URL firmati verso il bucket privato `voceavoce-audio-premium`, che userà gli stessi percorsi.
+- Il Worker ammette solo percorsi `{slug}/{versione}/{chiave}.opus|mp3` con caratteri `a-z 0-9 -` (per questo `_prova` si prova solo con `serve-audio.mjs`).
+
+## Architettura del player
+
+Pagina `/player/<slug>/` (e le versioni EN/ES) generata da `src/pages/study.njk` con i dati di `src/_data/studio.js` (logica in `src/_lib/studio.js`). I dati (manifest, sync, etichette tradotte, `audioBase`, URL della partitura) arrivano al browser dentro `<script type="application/json" id="study-data">`. Tutto il codice è vanilla JS a moduli ES in `src/assets/js/study/`, caricato solo in quella pagina.
+
+### Moduli JS
+
+| Modulo | Cosa fa |
+|---|---|
+| `app.js` | Collega pagina, motore, mixer, loop e partitura. Orologio visivo con `requestAnimationFrame`, trasporto (play/pausa, seek, velocità), tasto spazio, messaggi per l'`aria-live`. Con `?debug` espone `window.__study`. |
+| `engine.js` | `StudyEngine`: contesto Web Audio, grafo, scaricamento e decodifica delle tracce, posizione, seek, velocità, loop. |
+| `timeline.js` | Funzioni **pure** sul tempo (nessun DOM, nessun Web Audio): `measureIndexAt` (ricerca binaria), `loopBounds`, `computePosition` (orologio unico), `indexOfScoreMeasure`, `measureLabels`, `formatClock`. Testate con `node:test`. |
+| `mixer.js` | Stato per traccia (volume, mute, solo), `effectiveGains` (con almeno un solo suonano solo le tracce in solo; il mute vince sempre), preset «La mia voce» (voce scelta al 100%, le altre al 30%). |
+| `loop.js` | Menu «da battuta / a battuta», pulsante di attivazione e modalità «scegli sulla partitura» (due tocchi: inizio e fine). |
+| `score.js` | Verovio: layout, SVG, zoom, evidenziazione della battuta, tocco su una battuta. |
+| `config.js` | `setAudioBase`, `isSafeRelativePath`, `canDecodeOpus`, `resolveAudioUrl`: **unico punto in cui nasce un URL audio**. |
+| `features.js` | Interruttori `mixer`, `loop`, `tempo` (accesi) e `download` (spento). |
+| `download.js` | Segnaposto vuoto per lo scarico degli stem (spento, vedi [Limiti noti](#limiti-noti)). |
+
+### Grafo Web Audio
+
+```
+AudioBufferSource (una per traccia, mono, 24 kHz, playbackRate = velocità)
+   └─► GainNode (uno per traccia)
+          └─► bus (GainNode, somma)
+                 └─► UN solo SoundTouchNode (AudioWorklet, time-stretch)
+                        └─► AudioContext.destination
+```
+
+- **Rallentamento senza cambiare l'intonazione.** Ogni sorgente suona con `playbackRate = velocità` (0,5–1,0), quindi l'altezza scende; il nodo SoundTouch, che riceve la stessa velocità come parametro `playbackRate`, riporta l'intonazione al valore originale. Lo stretcher è **uno solo, sul mix**: le voci restano in sincronia esatta tra loro.
+- **Orologio unico = l'AudioContext.** La posizione è `ancoraggio + (currentTime − istante) × velocità` (`computePosition`). Le sorgenti partono tutte allo stesso `when` (`currentTime + 0,06 s`), che è anche l'istante di ancoraggio. Al cambio di velocità si ri-ancora alla posizione di quel momento. Ogni seek ferma e ricrea le sorgenti.
+- **Loop nativo e senza vuoti.** `AudioBufferSourceNode.loop = true` con `loopStart` e `loopEnd` presi dal sync (inizio della battuta iniziale, inizio della battuta dopo la finale); `computePosition` riporta l'orologio da `start` quando supera `end`. Un loop impostato quando la testina è già oltre la fine fa ripartire da `start`.
+- **Decodifica a 24 kHz mono.** Le voci non hanno contenuto utile oltre i 12 kHz: ogni file viene decodificato con un `OfflineAudioContext(1, 1, 24000)` (che ricampiona) e, se è stereo, mediato a mono. Un buffer da 190 s occupa circa 18 MB (190 × 24000 × 4 byte), invece dei circa 67 MB a 44,1 kHz stereo. Se la decodifica offline fallisce si ripiega sul contesto principale.
+- **Fallback se manca AudioWorklet.** `init()` richiede `AudioContext` e `AudioWorkletNode`; se mancano, errore `unsupported` e messaggio all'utente. Se il contesto c'è ma SoundTouch non si carica (file bloccato, worklet non registrabile) il bus va direttamente all'uscita: si suona alla velocità normale, il cursore della velocità si disattiva (`stretchOk = false`) e un messaggio lo dice. Piano B ancora non implementato: `<audio>` con `preservesPitch`.
+- **`resolveAudioUrl(track, opts)` e il passaggio Opus → MP3.** Sceglie `file` (Opus) se il browser dichiara di decodificare Opus (`canPlayType` su `audio/ogg; codecs="opus"` o `audio/webm; codecs="opus"`), altrimenti `riserva` (MP3). Rifiuta percorsi non relativi e una base non configurata, e codifica ogni segmento con `encodeURIComponent`. In più `engine.js` riprova da solo con l'MP3 di riserva se lo scaricamento o la decodifica dell'Opus falliscono. Richieste con `mode: "cors"` e `credentials: "omit"`: nessun cookie, nessuna credenziale.
+- **Errori.** `StudyError.kind` vale `network` (rete assente, HTTP non 2xx o CORS negato: dal client sono indistinguibili), `decode`, `worklet` o `unsupported`; la pagina mostra un messaggio tradotto in un riquadro `role="alert"`. Un errore della partitura non ferma il player.
+- **Flag in `features.js`.** `mixer`, `loop` e `tempo` nascondono i rispettivi pannelli (`data-feature`) se spenti; `download` è `false` e `download.js` è vuoto. I flag servono a differenziare in futuro la versione gratuita da quella premium senza toccare il resto.
+- **Tastiera e accessibilità.** Barra spaziatrice = play/pausa quando il focus non è in un campo, un pulsante o un link (il campo tiene la barra); frecce sui `range` (velocità di 5 in 5 punti, volumi di 5 in 5, posizione di 0,1 s) con `aria-valuetext`; muta e solo sono pulsanti con `aria-pressed` e nome accessibile completo («Muta Alto», «Solo Tenore») mentre il testo visibile è breve; `data-status` è un `role="status"` (annunci educati) e gli errori un `role="alert"`; la barra fissa in basso è un gruppo con etichetta.
+
+## Partitura: Verovio e battuta evidenziata
+
+- Verovio (WebAssembly, circa 7 MB, circa 2,3 MB compressi) è caricato **solo** nella pagina del player, con import dinamico di `verovio-module.mjs` e `verovio.mjs` da `/assets/vendor/verovio/`, in parallelo allo scaricamento della partitura (`/player-data/<slug>/score.musicxml`, copiata in build dalla cartella `content/player/<slug>/`).
+- Il MusicXML è quello verificato dalla pipeline, letto direttamente (niente Humdrum). Verovio lo rende in SVG a pagine di larghezza uguale al contenitore, con scorrimento verticale dentro il riquadro (mai della pagina), zoom a passi (25–100) e rifacimento del layout al cambio di larghezza (con un ritardo di 200 ms; le variazioni di sola altezza, come la barra del browser mobile, si ignorano).
+- **Indice `m`.** Ogni battuta renderizzata è un `<g class="measure">`. Il player le raccoglie in ordine di documento: la `m`-esima corrisponde al campo `m` del sync. Con la battuta evidenziata riceve la classe `is-current`, e dietro di essa si inserisce un rettangolo di sfondo (`.measure-bg`); il contenitore scorre per tenerla visibile (morbido, o istantaneo con `prefers-reduced-motion`).
+- Ad ogni frame `measureIndexAt(sync, posizione)` dà l'indice nell'elenco di esecuzione e `sync.battute[i].m` l'indice della battuta da evidenziare. Prima della prima battuta (lead-in) non si evidenzia nulla.
+- Un tocco su una battuta porta la testina al suo inizio (o, in modalità «scegli sulla partitura», imposta il loop). Con i ritornelli espansi `m` compare una volta sola; se comparisse più volte (sync con ripetizioni) si usa l'occorrenza più vicina alla posizione corrente.
+- Verifica di coerenza: nel Locus iste vero le battute in SVG sono 48 e `max(m) + 1` è 48.
+
+## PWA: cosa entra in cache e cosa no
+
+Manifest `/manifest.webmanifest`, icone generate dall'avatar e service worker `/sw.js` (generato da `src/pages/sw.njk`, scope `/`, registrato da `sw-register.js`). La classificazione delle richieste è in `src/assets/js/sw-core.js`, con test in `tests/sw.test.mjs`.
+
+| Richiesta | Trattamento |
+|---|---|
+| Navigazioni | rete prima; se manca, copia in cache (anche con altra query) e poi `/offline/` |
+| Asset statici dello stesso sito (css, js, mjs, wasm, immagini, font, `.musicxml`, `.json`, `.webmanifest`, `/player-data/`) | dalla cache subito e aggiornamento in background (stale-while-revalidate) |
+| Precache all'installazione | home, `/offline/`, `main.css`, `study.css`, gli script del sito e del player, icone, manifest |
+| Verovio e SoundTouch | **non** nel precache (7 MB che ogni visitatore scaricherebbe senza aprire il player): entrano in cache alla prima apertura del player |
+| **Audio** | **mai**: nessun `respondWith`, la richiesta va alla rete come se il SW non esistesse |
+| Cross-origin (YouTube, i.ytimg), `/pagefind/`, `/sw.js`, metodi diversi da GET | non intercettati |
+
+Sono considerati audio, e quindi mai intercettati: gli host `audio.voceavoce.com`, `localhost:8787`, `127.0.0.1:8787`, qualunque `*.workers.dev`, l'host di `site.audioBase` (iniettato in build in `AUDIO_HOSTS`), le estensioni `.opus .mp3 .wav .flac .ogg .oga .m4a .aac .weba` e **qualunque richiesta con header `Range`**. Si mette in cache solo una risposta 200 completa e dello stesso sito (mai 206). Le cache si chiamano `vav-pre-<versione>` e `vav-rt-<versione>` e quelle di versioni vecchie si cancellano all'`activate`. Motivo della regola: in questa fase non c'è audio offline, e quando arriveranno gli URL firmati per il premium non devono restare in una cache del browser.
+
+## Pubblicare un brano nel player, passo per passo
+
+1. **Macchina RENDER (AIVideoCreator).** Il brano deve avere gli stem cantati adottati (`/voceavoce-produci-lotto`, `job_svs_adopt`) in `runtime/inbox/choir/<job>/stems/<V>.svs.wav|flac` (più `accompaniment.wav` se c'è l'accompagnamento) e una scheda sul sito (`job_sito_esporta`). Da `pipeline-core/`:
+   `../runtime/venv/Scripts/python.exe -m scripts.cli.job_sito_player --brano 002` è un dry-run (mostra bpm, battute, durata, corone, file e audio); aggiungendo `--scrivi` scrive `content/player/<slug>/{manifest.json, sync.json, score.musicxml}` nel clone del sito (`--out`, default `VOCEAVOCE_SITE_DIR`) e converte gli audio con ffmpeg (mono; Opus 48 kHz 64 kbit/s e MP3 VBR q5 di riserva) in `VOCEAVOCE_AUDIO_DIR/<slug>/<versione>/` (`--audio-dir`, `--versione`, default `v1`). Senza stem su quella macchina scrive comunque manifest, sync e partitura e avvisa che gli audio mancano. Non fa commit né push.
+2. **Controllare.** Leggere il rapporto del CLI: bpm, numero di battute, durata, lead-in e corone devono essere quelli attesi. Provare in locale (due terminali nella radice del sito: `node scripts/serve-audio.mjs` e `npm run serve`, poi `http://localhost:8080/player/<slug>/`) e verificare a orecchio che la battuta evidenziata coincida con ciò che si sente.
+3. **Caricare gli audio su R2, a mano.** `node scripts/upload-audio.mjs --slug <slug> --dry-run`, poi senza `--dry-run`. È rclone `copy` (non cancella nulla; `--sync` solo con anteprima e conferma digitando il nome del bucket) e finisce con un controllo HEAD sul Worker. Credenziali solo in `.env.local` o nella config di rclone.
+4. **Worker.** Va distribuito una volta sola (`npx wrangler deploy` da `workers/audio/`, a mano) e il suo URL va scritto in `AUDIO_BASE_PRODUZIONE` (`src/_data/site.js`) e in `R2_PUBLIC_BASE` di `.env.local`. Passi completi in [r2-setup.md](r2-setup.md). Controllo: `curl -I -H "Range: bytes=0-99" <URL>/<slug>/v1/soprano.opus` deve dare 206.
+5. **Commit dei dati nel sito.** Solo dopo il passo 3: `content/player/<slug>/` (tre file di testo) va in git con commit e push; il deploy parte da solo e la scheda del brano mostra «Studia con il player». **Mai prima del caricamento**: senza audio raggiungibili il player in produzione sarebbe rotto (per lo stesso motivo oggi non c'è nessun manifest reale nel sito).
+6. **Nuova versione degli audio.** Si cambia `--versione` (v2): i percorsi sono diversi, quindi nessuna cache serve audio vecchio (i file sono `immutable` per un anno).
+
+## Regola «audio mai in git»
+
+- `.gitignore` blocca `*.opus *.mp3 *.wav *.flac *.ogg *.m4a` e le cartelle `audio/` e `audio-local/`; `VOCEAVOCE_AUDIO_DIR` sta fuori dal repo. `upload-audio.mjs` rifiuta di partire se la cartella audio è dentro il repo e non ignorata.
+- Gli audio non passano mai dalla CI: il caricamento è manuale e il deploy di Pages non li vede. Il Worker è distribuito a mano con wrangler.
+- Le credenziali non sono mai nel client né nel repo: `.env.example` contiene solo valori fittizi, `wrangler.toml` non ha segreti, il manifest non ha URL assoluti.
+- Il bucket R2 è **privato**: niente accesso pubblico e niente `r2.dev`; gli audio escono solo dal Worker.
+- Gli stem si rigenerano sempre dalla macchina RENDER con `job_sito_player --scrivi`.
+
+## Licenze di terze parti
+
+Le librerie sono copiate da `node_modules` in `assets/vendor/` come **file separati e non minificati insieme al nostro codice** (`eleventy.config.js`), modificabili e sostituibili, e il testo che le dichiara è `src/static-vendor/NOTICE.txt`, servito come `/assets/vendor/NOTICE.txt`.
+
+| Libreria | Licenza | Uso |
+|---|---|---|
+| Verovio 6.x | LGPL-3.0-or-later | resa della partitura (`verovio-module.mjs`, `verovio.mjs`) |
+| SoundTouchJS `@soundtouchjs/audio-worklet` 2.x | MPL-2.0 (l'algoritmo SoundTouch originale è di Olli Parviainen, LGPL-2.1) | time-stretch in AudioWorklet |
+
+Finché i file restano separati, non modificati e con NOTICE, gli obblighi LGPL/MPL sono rispettati. Se in futuro si modificassero o si impacchettassero insieme al codice del sito, gli obblighi cambierebbero.
+
+## Limiti noti
+
+- **Memoria sui telefoni per i brani lunghi.** Tutte le tracce restano decodificate in memoria (nessuno streaming). Con 4 tracce di 190 s a 24 kHz mono i buffer sono circa 73 MB; in emulazione desktop (Chromium headless) l'intero processo del browser pesava circa 1,04 GB dopo il caricamento (processo della pagina circa 390 MB, heap JS circa 165 MB), valore non confrontabile con un telefono. Un brano di 10 minuti con 5 tracce vale circa 290 MB di soli buffer. Da misurare su un telefono vero; leve possibili: 16 kHz, decodifica su richiesta, `MediaElement` per i brani lunghi.
+- **Durata reale degli stem non verificata rispetto a `fine`.** `sync.fine` e le `t` vengono dal modello, non dai file. Va controllato su stem veri che la loro durata combaci (e che il lead-in di 0,5 s sia davvero in testa a tutte le voci); in caso contrario il sync si sfasa.
+- **Latenza di SoundTouch.** Misurata con audio sintetico (un clic a ogni battuta): l'evidenziazione segue il sync entro 20 ms rispetto all'orologio e entro circa 40 ms rispetto al suono prima dello stretcher, ma il nodo SoundTouch ritarda l'uscita di circa 110–150 ms a 1x e 75–120 ms a 0,75x. Quindi la battuta si accende circa 0,1 s **prima** di ciò che si sente, a cui si aggiunge la latenza di uscita del dispositivo (non misurabile in emulazione). Da giudicare a orecchio; se fastidioso si può ritardare l'evidenziazione di una costante, o a 1x scavalcare lo stretcher.
+- **Safari e Opus.** Safari prima della 17 non decodifica Opus (Ogg) e usa l'MP3 di riserva; la decodifica Opus e il worklet su Safari/iOS non sono stati provati su dispositivi veri. L'AudioContext su iOS parte solo da un gesto dell'utente (qui parte dal tasto Riproduci).
+- **Sincronia da confermare a orecchio su stem veri.** Le prove automatiche usano tracce sintetiche con un clic a ogni battuta (nessuno stem vero è ancora stato convertito); l'ascolto dell'utente su Locus iste e Ave verum resta il collaudo finale (task P7).
+- **Caso della corona singola (P8).** Con una sola corona a metà brano `choir._timing_regions` la tratta come corona finale e mette lì l'allargando finale (Locus iste, b. 28–29). Il sync segue lo stesso modello dei video, quindi è coerente con il video ma musicalmente discutibile; riguarda anche i video già pubblicati. La decisione spetta all'utente (task P8 in [task.md](task.md)).
+- **Licenza dei voicebank per il download.** Non è chiaro se la licenza dei voicebank Synth V consenta di distribuire gli stem cantati scaricabili: finché non è verificata `features.download` resta spento e `licenza.audio` vale `null`. L'ascolto in streaming per lo studio è un'altra cosa e non è stato bloccato.
+- **Placeholder dell'URL del Worker.** Finché `AUDIO_BASE_PRODUZIONE` è `…CAMBIAMI.workers.dev` nessun audio può essere raggiunto in produzione, ed è per questo che non si pubblica nessun manifest reale.
+- Nessun controllo di rete lenta: il caricamento scarica tutte le tracce in parallelo (circa 2 MB l'una in Opus a 64 kbit/s per 190 s) prima di abilitare i comandi.
+
+## Prossimi passi
+
+1. Completare il collaudo della Fase 1: P7 a orecchio dell'utente su stem veri, decisione su P8, deploy del Worker, sostituzione del segnaposto, primo caricamento su R2 e poi pubblicazione dei dati di Locus iste e Ave verum K. 618.
+2. Fase 2 (piano in [plan.md](plan.md)): estendere il player agli altri brani del catalogo, decidere le leve di memoria per i brani lunghi e per i telefoni, eventuale piano B `<audio>` con `preservesPitch`, compensazione della latenza dello stretcher.
+3. Premium (solo predisposto, **non implementare ora**): bucket privato `voceavoce-audio-premium` con gli stessi percorsi, servito dal Worker con URL firmati (`authorize()` in `workers/audio/src/index.js` e `resolveAudioUrl` asincrona), scarico degli stem (`features.download`) dopo la verifica della licenza dei voicebank, link per le donazioni, video YouTube accanto al player. Futuro dominio `audio.voceavoce.com` spostando su Cloudflare solo i nameserver, dopo aver copiato i record della posta Aruba (mai trasferire la registrazione).
+4. Pubblicità: gli spazi sono predisposti e restano spenti; nessun cookie di tracciamento.

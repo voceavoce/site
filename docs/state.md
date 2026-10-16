@@ -82,6 +82,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — Workflow «Check» ora solo sulle pull request (e avvio manuale), per scelta dell'utente: niente CI a ogni push del branch di lavoro. Prima di aprire una PR lanciare in locale `npm run check` e `npm run a11y`.
 
+- 2026-10-16 — P6 fatto e P7 quasi (Sonnet): `docs/player.md` completo (architettura, flusso di pubblicazione, licenze, limiti). Verifica sul vero Locus iste (48 battute, audio sintetici di 189,6 s): evidenziazione contro sync 3–19 ms a 1× e 0,75×, dopo un seek e dentro un loop; mobile senza scroll orizzontale; tastiera e ARIA ok; memoria: buffer 73 MB teorici, heap JS 164 MB. Build di produzione senza player di prova né audio. Corretto: la barra fissa copriva il footer. Aperto (P11): il suono esce 75–150 ms DOPO l'evidenziazione per la latenza di SoundTouch e del dispositivo.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
