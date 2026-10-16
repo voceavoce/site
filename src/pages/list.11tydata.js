@@ -41,7 +41,13 @@ export default {
     },
     title: (d) => {
       const e = d.entry, def = KINDS[e.kind];
-      return def.detail ? t(`lists.${e.kind}.title`, e.lang, { name: nameOf(e, view(e), e.lang) }) : t(`lists.${e.kind}.title`, e.lang);
+      if (!def.detail) return t(`lists.${e.kind}.title`, e.lang);
+      const v = view(e);
+      let out = t(`lists.${e.kind}.title`, e.lang, { name: nameOf(e, v, e.lang) });
+      // base.njk aggiunge " · Voce a Voce" (14): il title completo deve stare nei 70 caratteri
+      if (out.length + 14 > 70 && e.kind === "composer" && v.composer.breve) out = t("lists.composer.title", e.lang, { name: v.composer.breve });
+      if (out.length + 14 > 70) out = `${out.slice(0, 70 - 14 - 1).trimEnd()}…`;
+      return out;
     },
     description: (d) => {
       const e = d.entry, def = KINDS[e.kind];

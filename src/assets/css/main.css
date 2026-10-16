@@ -377,3 +377,53 @@
   .score > * + * { margin-top: var(--space-3); }
   .related .grid-auto { grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); }
 }
+
+/* Pagine di elenco, home: sezioni catalogo (B6) */
+@layer components {
+  .chip--word { font-weight: 600; }
+  .card__no { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .piece-grid { list-style: none; padding: 0; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
+  .piece-grid > li { display: flex; }
+  .piece-grid > li > .card { flex: 1; }
+  .section-sub { margin: calc(var(--space-2) * -1) 0 var(--space-5); }
+
+  .list-page { padding-block: var(--space-4) var(--space-6); display: grid; gap: var(--space-6); }
+  .list-page > * { min-width: 0; }
+  .list-head h1 { font-size: var(--step-3); }
+  .list-head .lead { max-width: var(--measure); margin-top: var(--space-3); font-size: var(--step-1); color: var(--muted); }
+  .list-meta, .list-count { margin-top: var(--space-2); color: var(--muted); font-size: var(--step-1); }
+  .list-count { font-size: var(--step-0); font-weight: 600; }
+  .list-page h2 { font-size: var(--step-2); margin-bottom: var(--space-3); }
+  .browse-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); }
+  .browse-links__lbl { color: var(--muted); font-weight: 700; font-size: var(--step--1); text-transform: uppercase; letter-spacing: .04em; }
+  .browse-links a, .alpha-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 2.25rem; min-width: 2.25rem; padding-inline: var(--space-2); }
+
+  .alpha-nav { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-bottom: var(--space-4); font-weight: 700; }
+  .index-group { margin-top: var(--space-5); }
+  .index-group h3 { font-size: var(--step-2); color: var(--accent); border-bottom: 2px solid var(--accent-fill); padding-bottom: var(--space-1); margin-bottom: var(--space-2); }
+  .index-list { list-style: none; padding: 0; display: grid; gap: 0; }
+  .index-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--space-2); padding-block: var(--space-2); border-bottom: 1px solid var(--border); }
+  .index-list a { font-weight: 700; display: inline-flex; align-items: center; min-height: 2rem; }
+  .index-list__n { margin-inline-start: auto; color: var(--muted); font-size: var(--step--1); font-variant-numeric: tabular-nums; }
+  .index-list--rich li { padding-block: var(--space-3); }
+
+  .soon-list { list-style: none; padding: 0; display: grid; gap: var(--space-2); }
+  .soon-list li { padding: var(--space-2) var(--space-3); border: 1px dashed var(--border); border-radius: var(--radius-sm); }
+  .soon .text-muted { font-size: var(--step--1); }
+
+  .upcoming { list-style: none; padding: 0; display: grid; gap: var(--space-2); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+  .upcoming__item { display: grid; grid-template-columns: 1fr; gap: 0.1rem; padding: var(--space-3) var(--space-4); background: var(--surface); border: 1px solid var(--border); border-left: 6px solid var(--accent-fill); border-radius: var(--radius-sm); }
+  .upcoming__date { font-size: var(--step--1); font-weight: 700; color: var(--accent); }
+  .upcoming__title { font-weight: 700; font-family: var(--font-serif); font-size: var(--step-1); }
+  .upcoming__title a { display: inline-flex; align-items: center; min-height: 1.75rem; }
+  .upcoming__by { font-size: var(--step--1); }
+
+  .line-tiles { list-style: none; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+  .line-tile { display: flex; flex-direction: column; gap: var(--space-2); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-5); }
+  .line-tile .bars-mini { width: 6rem; margin-block: 0 var(--space-2); }
+  .line-tile h3 a { color: var(--text); text-decoration: none; display: inline-flex; align-items: center; min-height: var(--tap); }
+  .line-tile h3 a:hover { color: var(--accent); text-decoration: underline; }
+  .line-tile p { color: var(--muted); font-size: var(--step--1); }
+  .line-tile--feat { border-color: var(--accent); }
+  .line-tile__feat a { display: inline-flex; align-items: center; min-height: var(--tap); font-weight: 700; }
+}

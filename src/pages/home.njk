@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
       <p class="tag">{{ 'tag' | t(lang) }}</p>
       <p class="lead">{{ 'lead' | t(lang) | safe }}</p>
       <div class="cta-row">
-        <a class="btn" href="{{ site.social.youtube }}">{{ 'home.ctaYoutube' | t(lang) }}</a>
+        <a class="btn" href="#catalogo">{{ 'home.ctaExplore' | t(lang) }}</a>
         <a class="btn btn--ghost" href="#how">{{ 'home.ctaHow' | t(lang) }}</a>
       </div>
     </div>
@@ -30,6 +30,54 @@ eleventyExcludeFromCollections: true
         <li><span class="name">B</span><span class="bar b4" aria-hidden="true"></span></li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="section" id="ultimi" aria-labelledby="latest-h">
+  <div class="wrap">
+    <h2 id="latest-h" class="section-title">{{ 'home.latest' | t(lang) }}</h2>
+    <p class="text-muted section-sub">{{ 'home.latestP' | t(lang) }}</p>
+    {%- set pieces = catalog.ultimi | slice8 %}{% set asPath = false %}
+{% include "components/piece-grid.njk" %}
+  </div>
+</section>
+
+{%- set soonPieces = catalog.inArrivo | slice8 %}
+{%- if soonPieces.length %}
+<section class="section" id="in-arrivo" aria-labelledby="soon-h">
+  <div class="wrap">
+    <h2 id="soon-h" class="section-title">{{ 'home.soon' | t(lang) }}</h2>
+    <p class="text-muted section-sub">{{ 'home.soonP' | t(lang) }}</p>
+    <ul class="upcoming plain">
+      {%- for p in soonPieces %}
+      <li class="upcoming__item">
+        <time class="upcoming__date" datetime="{{ p.vociInArrivo[0].pubblica_dal | isoDay }}">{{ p.vociInArrivo[0].pubblica_dal | dateLong(lang) }}</time>
+        <span class="upcoming__title">{% if p.voci.length %}<a href="{{ lang | routeUrl('pieces', p.slug) }}">{{ p.titolo_breve or p.titolo }}</a>{% else %}{{ p.titolo_breve or p.titolo }}{% endif %}</span>
+        <span class="text-muted upcoming__by">{{ (p.compositore.breve or p.compositore.nome) if p.compositore else ('card.anon' | t(lang)) }}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section" id="catalogo" aria-labelledby="lines-h">
+  <div class="wrap">
+    <h2 id="lines-h" class="section-title">{{ 'home.linesH' | t(lang) }}</h2>
+    <p class="text-muted section-sub">{{ 'home.linesP' | t(lang) }}</p>
+    <ul class="line-tiles plain">
+      {%- set tiles = [["choir", "choir", 0, null], ["methods", "methods", 1, null], ["arias", "arias", 2, null], ["seasons", "seasons", 3, "natale"]] %}
+      {%- for tl in tiles %}
+      <li class="line-tile{% if tl[3] %} line-tile--feat{% endif %}">
+        <div class="bars-mini" aria-hidden="true">{% for i in [0, 1, 2, 3] %}<span{% if i == tl[2] %} class="on"{% endif %}></span>{% endfor %}</div>
+        <h3><a href="{{ lang | routeUrl(tl[1]) }}">{{ ('home.tile.' ~ tl[0] ~ '.h') | t(lang) }}</a></h3>
+        <p>{{ ('home.tile.' ~ tl[0] ~ '.p') | t(lang) }}</p>
+        {%- if tl[3] %}
+        <p class="line-tile__feat"><a href="{{ lang | routeUrl('seasons', seasonSlugs[tl[3]]) }}">{{ 'home.tile.seasons.feat' | t(lang) }}</a></p>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
   </div>
 </section>
 

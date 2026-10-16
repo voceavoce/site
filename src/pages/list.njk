@@ -54,7 +54,7 @@ eleventyExcludeFromCollections: true
     {%- for g in view.groups %}
     <div class="index-group">
       <h3 id="l-{{ loop.index }}">{{ g.letter }}</h3>
-      <ul class="index-list plain" role="list">
+      <ul class="index-list plain">
         {%- for r in g.items %}
         <li><a href="{{ lang | routeUrl('composers', r.id) }}">{{ r.nome }}</a>{% if r.date %} <span class="text-muted">({{ r.date }})</span>{% endif %}<span class="index-list__n">{{ r.count | countLabel(lang) }}</span></li>
         {%- endfor %}
@@ -65,7 +65,7 @@ eleventyExcludeFromCollections: true
   {%- else %}
   <section class="index-section" aria-labelledby="idx-h">
     <h2 id="idx-h" class="sr-only">{{ heading }}</h2>
-    <ul class="index-list index-list--rich plain" role="list">
+    <ul class="index-list index-list--rich plain">
       {%- for r in view.rows %}
       {%- if kind == 'works' %}
       <li><a href="{{ lang | routeUrl('works', r.id) }}">{{ r.titolo }}</a><span class="text-muted">{% if r.compositore %} · {{ r.compositore }}{% endif %} · {{ ('lists.type.' ~ r.tipo) | t(lang) }}</span><span class="index-list__n">{{ r.count | countLabel(lang) }}</span></li>
@@ -82,7 +82,7 @@ eleventyExcludeFromCollections: true
   <section class="soon" aria-labelledby="soon-h">
     <h2 id="soon-h">{{ 'lists.soonH' | t(lang) }}</h2>
     <p class="text-muted">{{ 'lists.soonP' | t(lang) }}</p>
-    <ul class="soon-list plain" role="list">
+    <ul class="soon-list plain">
       {%- for r in view.soonRows %}
       <li><strong>{{ (r.nome or r.titolo) if kind != 'genres' else (('genres.' ~ r.id) | t(lang)) }}</strong>{% if r.date %} <span class="text-muted">({{ r.date }})</span>{% endif %}<span class="text-muted"> · {{ r.soon.length | countLabel(lang) }}</span></li>
       {%- endfor %}
@@ -96,7 +96,7 @@ eleventyExcludeFromCollections: true
   <section class="pieces" aria-labelledby="pieces-h">
     <h2 id="pieces-h">{{ ('lists.path' if view.asPath else 'lists.pieces') | t(lang) }}</h2>
     {%- set pieces = view.visible %}{% set asPath = view.asPath %}
-    {% include "components/piece-grid.njk" %}
+{% include "components/piece-grid.njk" %}
   </section>
   {%- else %}
   <p class="player__none">{{ 'lists.none' | t(lang) }}</p>
@@ -106,7 +106,7 @@ eleventyExcludeFromCollections: true
     <h2 id="soon-h">{{ 'lists.soonH' | t(lang) }}</h2>
     <p class="text-muted">{{ 'lists.soonP' | t(lang) }}</p>
     {%- set pieces = view.soon %}
-    {% include "components/soon-list.njk" %}
+{% include "components/soon-list.njk" %}
   </section>
   {%- endif %}
   {%- endif %}

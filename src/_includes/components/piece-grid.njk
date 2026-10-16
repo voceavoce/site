@@ -1,6 +1,6 @@
 {#- Griglia di card. Variabili: pieces (brani), asPath (elenco numerato), lang -#}
 {%- if asPath %}{% set showNo = true %}{% endif %}
-<{{ 'ol' if asPath else 'ul' }} class="grid-auto piece-grid plain{% if asPath %} piece-grid--path{% endif %}" role="list">
+<{{ 'ol' if asPath else 'ul' }} class="grid-auto piece-grid plain{% if asPath %} piece-grid--path{% endif %}">
   {%- for piece in pieces %}
   <li>{% include "components/card.njk" %}</li>
   {%- endfor %}

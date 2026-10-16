@@ -43,6 +43,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — L'utente ha impostato Pages → Source = «GitHub Actions». Il sito attuale resta online con l'ultimo deploy finché il merge su `main` non avvia `deploy.yml`.
 
+- 2026-10-16 — B6 + R2 fatti (Sonnet): pagine di elenco in 3 lingue (indici coro/arie/metodi/autori/opere/generi/stagioni + dettagli: 70 autori, 7 opere, 5 generi, 4 stagioni), Concone come percorso ordinato, home con Ultimi video / In arrivo / Sfoglia il catalogo, link a compositore e opera nella scheda, parole intere per i registri delle arie. Brani solo programmati: in «In arrivo» senza link; pagine di dettaglio senza video visibili: noindex. `npm run check` verde: 26 test, 723 pagine HTML valide, 291 URL in sitemap.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
