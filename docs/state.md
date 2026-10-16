@@ -47,6 +47,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — R4 fatto (Sonnet), commit `421ede2` su AIVideoCreator: titoli senza il nome del compositore anche fuori registro (alias e stesso cognome). Cambiano 2 slug, nessuno ancora salvato in roadmap: `handl-gallus-quod-chorus-vatum` → `quod-chorus-vatum-gallus`, `lead-me-lord-samuel-sebastian-wesley` → `lead-me-lord-wesley`. I dati del sito vanno rigenerati dopo B7.
 
+- 2026-10-16 — CI «Check» rossa dal commit `5a6c69f`: fallisce solo il controllo di accessibilità (contrasto delle sigle voce e del ♪ nelle card senza miniatura; regola axe `frame-tested` sull'iframe YouTube, da escludere perché cross-origin). Correzione affidata all'agente di B7. Regola da ora: prima di ogni push con codice, oltre a `npm run check` lanciare anche `npm run a11y`.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
