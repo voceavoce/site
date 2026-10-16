@@ -103,7 +103,8 @@
     "B": "Basso",
     "alta": "Voce alta",
     "media": "Voce media",
-    "bassa": "Voce bassa"
+    "bassa": "Voce bassa",
+    "ACC": "Accompagnamento"
   },
   "lines": {
     "coro": "Coro",
@@ -161,7 +162,8 @@
       "voices": "Voci disponibili: {voices}.",
       "soon": "Video in arrivo."
     },
-    "no": "n. {n}"
+    "no": "n. {n}",
+    "study": "Studia con il player"
   },
   "mode": {
     "major": "maggiore",
@@ -299,5 +301,64 @@
     "resultsLabel": "Risultati della ricerca",
     "homeLabel": "Cerca brani o compositori",
     "homeButton": "Cerca"
+  },
+  "study": {
+    "title": "Player di studio",
+    "pageTitle": "{title}: player di studio",
+    "desc": "Studia la tua parte di «{title}» con il player: tracce separate per voce, partitura che scorre, ripetizione di un passaggio e velocità ridotta senza cambiare l'intonazione.",
+    "h1": "Studia: {title}",
+    "back": "Scheda del brano",
+    "noscript": "Il player di studio richiede JavaScript. Puoi comunque guardare i video del brano nella sua scheda.",
+    "score": "Partitura",
+    "zoomIn": "Ingrandisci la partitura",
+    "zoomOut": "Riduci la partitura",
+    "pick": "Scegli sulla partitura",
+    "pickHint": "Con questa opzione attiva, tocca una battuta per l'inizio e un'altra per la fine del passaggio; con l'opzione spenta, un tocco porta la riproduzione a quella battuta.",
+    "scoreLabel": "Partitura di {title}",
+    "mixer": "Mixer",
+    "mixerHint": "Regola il volume di ogni voce, silenziala (Muta) o ascoltala da sola (Solo).",
+    "volume": "Volume: {voice}",
+    "mute": "Muta",
+    "solo": "Solo",
+    "muteOf": "Muta {voice}",
+    "soloOf": "Solo {voice}",
+    "myVoice": "La mia voce",
+    "myVoiceSelect": "Scegli la tua voce",
+    "myVoiceBtn": "Applica",
+    "myVoiceHint": "La voce scelta al 100%, le altre al 30%.",
+    "loop": "Ripetizione",
+    "loopFrom": "Da battuta",
+    "loopTo": "A battuta",
+    "loopBtn": "Ripeti questo passaggio",
+    "loopShort": "Ripeti",
+    "speed": "Velocità",
+    "position": "Posizione",
+    "play": "Riproduci",
+    "pause": "Pausa",
+    "transport": "Controlli di riproduzione",
+    "bar": "Battuta",
+    "video": "Il video del brano",
+    "support": "Sostieni il progetto",
+    "testNotice": "Dati di prova: questa pagina non fa parte del sito pubblico.",
+    "js": {
+      "loading": "Caricamento dell'audio: {n} di {total} tracce…",
+      "ready": "Audio pronto. Premi Riproduci.",
+      "ended": "Fine del brano.",
+      "zoom": "Partitura al {z}%.",
+      "play": "Riproduci",
+      "pause": "Pausa",
+      "errNetwork": "Non riesco a scaricare l'audio. Controlla la connessione e riprova; se il problema continua, potrebbe essere un errore del nostro server (CORS).",
+      "errDecode": "Il tuo browser non riesce a decodificare l'audio di questo brano.",
+      "errUnsupported": "Il tuo browser non supporta l'audio avanzato (Web Audio e AudioWorklet) richiesto dal player. Prova con un browser aggiornato.",
+      "errScore": "Non riesco a mostrare la partitura. Il player audio può funzionare lo stesso.",
+      "noStretch": "Il rallentamento non è disponibile su questo browser: si suona alla velocità normale.",
+      "loop": {
+        "on": "Ripetizione attiva: battute da {a} a {b}.",
+        "off": "Ripetizione spenta.",
+        "pickOn": "Scelta sulla partitura attiva: tocca la prima e l'ultima battuta.",
+        "pickOff": "Scelta sulla partitura spenta: un tocco porta alla battuta.",
+        "range": "Passaggio scelto: battute da {a} a {b}."
+      }
+    }
   }
 }

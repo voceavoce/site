@@ -103,7 +103,8 @@
     "B": "Bajo",
     "alta": "Voz aguda",
     "media": "Voz media",
-    "bassa": "Voz grave"
+    "bassa": "Voz grave",
+    "ACC": "Acompañamiento"
   },
   "lines": {
     "coro": "Coro",
@@ -161,7 +162,8 @@
       "voices": "Voces disponibles: {voices}.",
       "soon": "Vídeo próximamente."
     },
-    "no": "n.º {n}"
+    "no": "n.º {n}",
+    "study": "Estudia con el reproductor"
   },
   "mode": {
     "major": "mayor",
@@ -299,5 +301,64 @@
     "resultsLabel": "Resultados de la búsqueda",
     "homeLabel": "Buscar obras o compositores",
     "homeButton": "Buscar"
+  },
+  "study": {
+    "title": "Reproductor de estudio",
+    "pageTitle": "{title}: reproductor de estudio",
+    "desc": "Estudia tu parte de «{title}» con el reproductor: pistas separadas por voz, partitura que se desplaza, repetición de un pasaje y velocidad reducida sin cambiar la afinación.",
+    "h1": "Estudia: {title}",
+    "back": "Ficha de la obra",
+    "noscript": "El reproductor de estudio necesita JavaScript. Aun así puedes ver los vídeos en la ficha de la obra.",
+    "score": "Partitura",
+    "zoomIn": "Ampliar la partitura",
+    "zoomOut": "Reducir la partitura",
+    "pick": "Elegir en la partitura",
+    "pickHint": "Con esta opción activada, toca un compás para el inicio y otro para el final del pasaje; desactivada, un toque lleva la reproducción a ese compás.",
+    "scoreLabel": "Partitura de {title}",
+    "mixer": "Mezclador",
+    "mixerHint": "Ajusta el volumen de cada voz, silénciala (Silenciar) o escúchala sola (Solo).",
+    "volume": "Volumen: {voice}",
+    "mute": "Silenciar",
+    "solo": "Solo",
+    "muteOf": "Silenciar {voice}",
+    "soloOf": "Solo {voice}",
+    "myVoice": "Mi voz",
+    "myVoiceSelect": "Elige tu voz",
+    "myVoiceBtn": "Aplicar",
+    "myVoiceHint": "Tu voz al 100 %, las demás al 30 %.",
+    "loop": "Repetición",
+    "loopFrom": "Desde el compás",
+    "loopTo": "Hasta el compás",
+    "loopBtn": "Repetir este pasaje",
+    "loopShort": "Repetir",
+    "speed": "Velocidad",
+    "position": "Posición",
+    "play": "Reproducir",
+    "pause": "Pausa",
+    "transport": "Controles de reproducción",
+    "bar": "Compás",
+    "video": "El vídeo de la obra",
+    "support": "Apoya el proyecto",
+    "testNotice": "Datos de prueba: esta página no forma parte del sitio público.",
+    "js": {
+      "loading": "Cargando el audio: {n} de {total} pistas…",
+      "ready": "Audio listo. Pulsa Reproducir.",
+      "ended": "Fin de la obra.",
+      "zoom": "Partitura al {z} %.",
+      "play": "Reproducir",
+      "pause": "Pausa",
+      "errNetwork": "No puedo descargar el audio. Revisa tu conexión e inténtalo de nuevo; si sigue fallando, puede ser un error de nuestro servidor (CORS).",
+      "errDecode": "Tu navegador no puede decodificar el audio de esta obra.",
+      "errUnsupported": "Tu navegador no admite el audio avanzado (Web Audio y AudioWorklet) que necesita el reproductor. Prueba con un navegador actualizado.",
+      "errScore": "No puedo mostrar la partitura. El reproductor de audio puede funcionar igualmente.",
+      "noStretch": "Reducir la velocidad no está disponible en este navegador: se reproduce a velocidad normal.",
+      "loop": {
+        "on": "Repetición activada: compases {a} a {b}.",
+        "off": "Repetición desactivada.",
+        "pickOn": "Elegir en la partitura está activado: toca el primer y el último compás.",
+        "pickOff": "Elegir en la partitura está desactivado: un toque lleva a ese compás.",
+        "range": "Pasaje elegido: compases {a} a {b}."
+      }
+    }
   }
 }

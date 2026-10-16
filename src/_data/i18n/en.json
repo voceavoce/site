@@ -103,7 +103,8 @@
     "B": "Bass",
     "alta": "High voice",
     "media": "Medium voice",
-    "bassa": "Low voice"
+    "bassa": "Low voice",
+    "ACC": "Accompaniment"
   },
   "lines": {
     "coro": "Choir",
@@ -161,7 +162,8 @@
       "voices": "Available voices: {voices}.",
       "soon": "Video coming soon."
     },
-    "no": "no. {n}"
+    "no": "no. {n}",
+    "study": "Practise with the player"
   },
   "mode": {
     "major": "major",
@@ -299,5 +301,64 @@
     "resultsLabel": "Search results",
     "homeLabel": "Search pieces or composers",
     "homeButton": "Search"
+  },
+  "study": {
+    "title": "Practice player",
+    "pageTitle": "{title}: practice player",
+    "desc": "Practise your part of “{title}” with the player: separate tracks per voice, scrolling score, passage looping and slower speed without changing the pitch.",
+    "h1": "Practise: {title}",
+    "back": "Piece page",
+    "noscript": "The practice player needs JavaScript. You can still watch the videos on the piece page.",
+    "score": "Score",
+    "zoomIn": "Zoom the score in",
+    "zoomOut": "Zoom the score out",
+    "pick": "Pick on the score",
+    "pickHint": "When on, tap one bar for the start and another for the end of the passage; when off, a tap moves playback to that bar.",
+    "scoreLabel": "Score of {title}",
+    "mixer": "Mixer",
+    "mixerHint": "Set the volume of each voice, silence it (Mute) or hear it alone (Solo).",
+    "volume": "Volume: {voice}",
+    "mute": "Mute",
+    "solo": "Solo",
+    "muteOf": "Mute {voice}",
+    "soloOf": "Solo {voice}",
+    "myVoice": "My voice",
+    "myVoiceSelect": "Choose your voice",
+    "myVoiceBtn": "Apply",
+    "myVoiceHint": "Your voice at 100%, the others at 30%.",
+    "loop": "Loop",
+    "loopFrom": "From bar",
+    "loopTo": "To bar",
+    "loopBtn": "Repeat this passage",
+    "loopShort": "Loop",
+    "speed": "Speed",
+    "position": "Position",
+    "play": "Play",
+    "pause": "Pause",
+    "transport": "Playback controls",
+    "bar": "Bar",
+    "video": "The video of the piece",
+    "support": "Support the project",
+    "testNotice": "Test data: this page is not part of the public site.",
+    "js": {
+      "loading": "Loading audio: {n} of {total} tracks…",
+      "ready": "Audio ready. Press Play.",
+      "ended": "End of the piece.",
+      "zoom": "Score at {z}%.",
+      "play": "Play",
+      "pause": "Pause",
+      "errNetwork": "I can't download the audio. Check your connection and try again; if it keeps failing, it may be a server error (CORS).",
+      "errDecode": "Your browser can't decode the audio of this piece.",
+      "errUnsupported": "Your browser doesn't support the advanced audio (Web Audio and AudioWorklet) the player needs. Try an up-to-date browser.",
+      "errScore": "I can't show the score. The audio player may still work.",
+      "noStretch": "Slowing down isn't available in this browser: playback is at normal speed.",
+      "loop": {
+        "on": "Loop on: bars {a} to {b}.",
+        "off": "Loop off.",
+        "pickOn": "Picking on the score is on: tap the first and the last bar.",
+        "pickOff": "Picking on the score is off: a tap moves to that bar.",
+        "range": "Passage chosen: bars {a} to {b}."
+      }
+    }
   }
 }

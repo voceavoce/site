@@ -15,6 +15,8 @@ export function sampleUrls(base = "http://localhost:8080", site = "_site") {
       .slice(0, 3);
     for (const s of schede) paths.push(`/brani/${s}/`);
   }
+  // Player di studio con dati di prova (assente nella build di produzione)
+  if (existsSync(path.join(site, "player/_prova/index.html"))) paths.push("/player/_prova/");
   return paths.map((p) => base.replace(/\/$/, "") + p);
 }
 

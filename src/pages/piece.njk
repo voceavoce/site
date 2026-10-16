@@ -102,6 +102,10 @@ eleventyExcludeFromCollections: true
     </section>
     {%- if firstVoice %}<img src="https://i.ytimg.com/vi/{{ firstVoice.video_id }}/hqdefault.jpg" alt="" hidden loading="lazy" data-pagefind-meta="image[src]">{% endif %}
 
+    {%- if studio.linked[piece.slug] %}
+    <p class="study-cta"><a class="btn" href="{{ lang | routeUrl('study', piece.slug) }}">{{ 'piece.study' | t(lang) }}</a></p>
+    {%- endif %}
+
     {%- if piece.nota[noteLang] %}
     <section class="notes" aria-labelledby="notes-h">
       <h2 id="notes-h">{{ 'piece.notes' | t(lang) }}</h2>

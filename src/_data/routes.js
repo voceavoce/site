@@ -12,6 +12,7 @@ export const sections = {
   choir: { it: "coro", en: "choir", es: "coro" },
   arias: { it: "arie", en: "arias", es: "arias" },
   methods: { it: "metodi", en: "methods", es: "metodos" },
+  study: { it: "player", en: "player", es: "player" }, // /player/<slug>/ (player di studio)
   // Pagine istituzionali (src/pages/info/): permalink esatti, senza slug.
   howItWorks: { it: "come-funziona", en: "how-it-works", es: "como-funciona" },
   sources: { it: "fonti-e-licenze", en: "sources-and-licences", es: "fuentes-y-licencias" },

@@ -42,10 +42,17 @@
 <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ (lang | routeUrl) | absUrl }}feed.xml">
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="stylesheet" href="/assets/css/main.css">
+{%- if routeSection == "study" %}
+<link rel="stylesheet" href="/assets/css/study.css">
+{%- endif %}
 <script>try{var t=localStorage.getItem("vav_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <script src="/assets/js/theme.js" defer></script>
 {%- if routeSection == "pieces" and routeSlug %}
 <script src="/assets/js/player.js" defer></script>
+{%- endif %}
+{%- if routeSection == "study" %}
+<script src="/assets/js/player.js" defer></script>
+<script type="module" src="/assets/js/study/app.js"></script>
 {%- endif %}
 {%- if routeSection == "search" %}
 <script src="/assets/js/search.js" defer></script>

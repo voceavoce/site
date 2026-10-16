@@ -1,3 +1,8 @@
+// Base degli audio del player (UNICO punto di configurazione): produzione su R2, sviluppo su scripts/serve-audio.mjs.
+const audioBase =
+  process.env.VOCEAVOCE_AUDIO_BASE ||
+  (process.env.ELEVENTY_ENV === "production" ? "https://audio.voceavoce.com" : "http://localhost:8787");
+
 export default {
   url: "https://voceavoce.com",
   name: "Voce a Voce",
@@ -14,5 +19,8 @@ export default {
   ogImage: { path: "/assets/img/og-default.png", width: 1200, height: 630 },
   aiCrawlers: true, // robots.txt: consente esplicitamente i crawler AI
   ads: { enabled: false },
+  audioBase: audioBase.replace(/\/+$/, ""),
+  // TODO: link per le donazioni (Ko-fi, PayPal, ...). Finche' e' null il link «Sostieni il progetto» non si mostra.
+  donazioni: null,
   buildTime: new Date().toISOString(),
 };
