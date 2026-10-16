@@ -60,5 +60,5 @@ Gli audio non entrano mai in un repo e non passano mai dalla CI.
 
 ## Configurazione degli audio
 
-- **Base URL in un solo punto** (`site.audioBase`): in produzione `https://audio.voceavoce.com`, in sviluppo `VOCEAVOCE_AUDIO_BASE`, default `http://localhost:8787`, servito da `scripts/serve-audio.mjs` sulla cartella `VOCEAVOCE_AUDIO_DIR`.
+- **Base URL in un solo punto** (`site.audioBase`): in produzione l'URL `*.workers.dev` del Worker `workers/audio/` (bucket R2 privato), in sviluppo `VOCEAVOCE_AUDIO_BASE`, default `http://localhost:8787`, servito da `scripts/serve-audio.mjs` sulla cartella `VOCEAVOCE_AUDIO_DIR`.
 - Tutto passa da `resolveAudioUrl(track)`. In futuro questa funzione chiederà a un Cloudflare Worker URL firmati verso il bucket privato `voceavoce-audio-premium`, che userà gli stessi percorsi.

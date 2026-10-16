@@ -20,6 +20,8 @@ Aggiornato: 2026-10-16
 
 - Player di studio (Fase 2): partitura dal MusicXML della pipeline (non .krn); prototipo su Locus iste e Ave verum K. 618; rallentamento con Web Audio + SoundTouch (piano B `preservesPitch`); spazi pubblicitari lasciati spenti (utente 2026-10-16). Implementazione in attesa dell'ok.
 
+- **Dominio e posta su Aruba, non si toccano** (utente 2026-10-16): niente spostamento del DNS su Cloudflare per ora, e MAI il trasferimento della registrazione, che farebbe cessare la casella info@voceavoce.com. Gli audio li serve un Cloudflare Worker su `*.workers.dev` collegato al bucket R2 privato; il CORS sta nel Worker; il deploy del Worker lo fa l'utente con wrangler.
+
 ## Fatti accertati
 
 - La pipeline non chiama API AI: i metadati YouTube sono template Python (`choir_publish.py`, `metadati_seo.py`). L'export costa zero token.
