@@ -328,7 +328,7 @@ npm run serve
 
 Poi apri `http://localhost:8080/player/<slug>/`. Nota: `npm run serve` lancia solo `eleventy --serve`, **non** avvia il server degli audio: vanno avviati separatamente. Prova rapida del server audio: `curl.exe -I http://localhost:8787/<slug>/v1/soprano.opus`.
 
-Se `VOCEAVOCE_AUDIO_BASE` non è impostata nel tuo ambiente, controlla come la base arriva alla pagina (`site.audioBase`, vedi [player.md](player.md)): al momento di scrivere questa guida non ho trovato nel repo il file dati che la definisce, quindi verifica che il valore in sviluppo sia `http://localhost:8787`.
+Se `VOCEAVOCE_AUDIO_BASE` non è impostata, la base degli audio la decide `src/_data/site.js` (`site.audioBase`): in sviluppo `http://localhost:8787`, nella build di produzione (`ELEVENTY_ENV=production`, impostata dal workflow di deploy) `https://audio.voceavoce.com`.
 
 ## 11. Futuro (solo descritto, niente da fare ora)
 

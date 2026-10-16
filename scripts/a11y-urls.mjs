@@ -28,6 +28,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       // frame-tested: l'iframe di YouTube (youtube-nocookie.com) e' cross-origin, axe non puo' entrarci
       // e lo segnala come "non testato": non e' un difetto del sito.
       ignore: ["frame-tested"],
+      // La partitura di Verovio e' una figura (SVG con role="img"): il suo testo (nomi delle voci, sillabe) non ha uno
+      // sfondo calcolabile e axe lo segnala come "da rivedere". Il colore e' var(--text) su var(--surface).
+      hideElements: ".score-scroll svg",
       standard: "WCAG2AA",
       timeout: 60000,
       chromeLaunchConfig: {
