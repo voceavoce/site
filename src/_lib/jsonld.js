@@ -1,6 +1,7 @@
 // JSON-LD: funzioni pure che producono oggetti schema.org. Nessuna dipendenza da Eleventy.
 import site from "../_data/site.js";
 import { routeUrl, altUrls } from "../_data/routes.js";
+import { SEASON_SLUGS, KINDS } from "./listing.js";
 import { t, voiceName, pieceDescription, isoDuration } from "./format.js";
 
 const abs = (p) => new URL(p, site.url).href;
@@ -91,6 +92,40 @@ export function breadcrumbLd(items) {
 
 const LINE_NAV = { coro: ["choir", "nav.coro"], aria: ["arias", "nav.arie"], metodo: ["methods", "nav.metodi"] };
 
+const LICENSE_URLS = {
+  "cc by 4.0": "https://creativecommons.org/licenses/by/4.0/",
+  "cc by-sa 4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "cc by-nc 4.0": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "cc by-nc-sa 4.0": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "cc by-nd 4.0": "https://creativecommons.org/licenses/by-nd/4.0/",
+  "cc by-nc-nd 4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "cc0 1.0": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "cc0": "https://creativecommons.org/publicdomain/zero/1.0/",
+};
+/** URL della licenza se e' una CC nota, altrimenti null. */
+export const licenseUrl = (l) => LICENSE_URLS[String(l ?? "").trim().toLowerCase().replace(/\s+/g, " ")] ?? null;
+
+/**
+ * Traduzioni del testo come CreativeWork. Il testo compare solo se `reviewed === true`
+ * (le bozze si mostrano nella pagina ma non vanno ai motori di ricerca).
+ */
+export function translationsLd(traduzioni, originalLang) {
+  const out = [];
+  for (const [code, tr] of Object.entries(traduzioni || {})) {
+    if (!tr?.testo || code === originalLang) continue;
+    const w = { "@type": "CreativeWork", inLanguage: code };
+    if (tr.reviewed === true) w.text = tr.testo;
+    if (tr.credit) { w.author = { "@type": "Person", name: tr.credit }; w.creditText = tr.credit; }
+    if (tr.license) {
+      const u = licenseUrl(tr.license);
+      if (u) w.license = u;
+      else w.copyrightNotice = String(tr.license);
+    }
+    out.push(w);
+  }
+  return out;
+}
+
 /** Grafo JSON-LD della scheda brano. `piece.voci` contiene gia' solo le voci visibili. */
 export function pieceLd(piece, lang) {
   const url = abs(routeUrl(lang, "pieces", piece.slug));
@@ -108,6 +143,8 @@ export function pieceLd(piece, lang) {
   if (piece.testo?.testo) {
     comp.lyrics = { "@type": "CreativeWork", text: piece.testo.testo, inLanguage: piece.testo.lingua || piece.lingua };
     if (!comp.lyrics.inLanguage) delete comp.lyrics.inLanguage;
+    const trs = translationsLd(piece.traduzioni, comp.lyrics.inLanguage);
+    if (trs.length) comp.lyrics.workTranslation = trs;
   }
   if (piece.generi?.length) comp.genre = piece.generi.map((g) => t(`genres.${g}`, lang));
   const parent = piece.opera || piece.raccolta;
@@ -123,6 +160,83 @@ export function pieceLd(piece, lang) {
   ]);
   const videos = (piece.voci || []).map((v) => videoObjectLd(piece, v, lang));
   return { "@context": "https://schema.org", "@graph": [comp, ...videos, crumbs] };
+}
+
+const SECTION_NAV = { choir: "nav.coro", arias: "nav.arie", methods: "nav.metodi", composers: "nav.compositori", works: "lists.works.h1", genres: "lists.genres.h1", seasons: "nav.stagioni" };
+
+/** Anno intero o stringa tipo "c. 1540" -> valore per birthDate/deathDate; altrimenti undefined. */
+const yearValue = (y) => (y == null || y === "" ? undefined : /^(c\.\s*)?\d{1,4}$/.test(String(y).trim()) ? String(y).trim() : undefined);
+
+export function personLd(c, lang) {
+  const p = { "@type": "Person", "@id": composerId(c.id), name: c.nome, url: abs(routeUrl(lang, "composers", c.id)), sameAs: [] };
+  const b = yearValue(c.nascita), d = yearValue(c.morte);
+  if (b) p.birthDate = b;
+  if (d) p.deathDate = d;
+  return p;
+}
+
+/** Url assoluto di una voce di elenco. */
+function rowUrl(kind, r, lang) {
+  if (kind === "composers") return abs(routeUrl(lang, "composers", r.id));
+  if (kind === "works") return abs(routeUrl(lang, "works", r.id));
+  if (kind === "genres") return abs(routeUrl(lang, "genres", r.id));
+  if (kind === "seasons") return abs(routeUrl(lang, "seasons", SEASON_SLUGS[r.id]?.[lang] ?? r.id));
+  return abs(routeUrl(lang, "pieces", r.slug));
+}
+function rowName(kind, r, lang) {
+  if (kind === "composers") return r.nome;
+  if (kind === "works") return r.titolo;
+  if (kind === "genres") return t(`genres.${r.id}`, lang);
+  if (kind === "seasons") return t(`seasons.${r.id}`, lang);
+  return r.titolo;
+}
+
+/**
+ * JSON-LD di una pagina di elenco: CollectionPage + ItemList (+ Person / opera per i dettagli).
+ * `entry` = {kind, id}, `view` = viewFor(...) (`view.visible` e' gia' ordinato come in pagina).
+ * Restituisce null per pagine noindex o senza elementi visibili.
+ */
+export function listLd(entry, view, lang, { heading, description, noindex } = {}) {
+  const items = view?.visible || [];
+  if (noindex || !items.length) return null;
+  const { kind } = entry;
+  const section = KINDS[kind].section;
+  const url = abs(routeUrl(lang, section, kind === "season" ? SEASON_SLUGS[entry.id][lang] ?? SEASON_SLUGS[entry.id].it : entry.id));
+  const itemKind = ["composers", "works", "genres", "seasons"].includes(kind) ? kind : "pieces";
+  const list = {
+    "@type": "ItemList",
+    "@id": `${url}#list`,
+    numberOfItems: items.length,
+    itemListElement: items.map((r, i) => ({ "@type": "ListItem", position: i + 1, url: rowUrl(itemKind, r, lang), name: rowName(itemKind, r, lang) })),
+  };
+  const page = { "@type": "CollectionPage", "@id": `${url}#page`, url, name: heading, inLanguage: lang, isPartOf: { "@id": ID.website }, mainEntity: { "@id": list["@id"] } };
+  if (description) page.description = description;
+  const graph = [page, list];
+  if (kind === "composer" && view.composer) {
+    const person = personLd(view.composer, lang);
+    page.mainEntity = { "@id": person["@id"] };
+    graph.splice(1, 0, person);
+  } else if (kind === "work" && view.work) {
+    const w = view.work;
+    const series = w.tipo === "raccolta";
+    const work = {
+      "@type": series ? "CreativeWorkSeries" : "MusicComposition",
+      "@id": `${url}#work`,
+      name: w.titolo,
+      url,
+      hasPart: items.map((p) => ({ "@type": "MusicComposition", name: p.titolo, url: abs(routeUrl(lang, "pieces", p.slug)) })),
+    };
+    const first = items[0]?.compositore;
+    if (first) work.composer = { "@type": "Person", "@id": composerId(first.id), name: first.nome, url: composerUrl(first.id) };
+    page.mainEntity = { "@id": work["@id"] };
+    graph.splice(1, 0, work);
+  }
+  const crumbs = [{ name: site.name, url: abs(routeUrl(lang)) }];
+  crumbs.push({ name: t(SECTION_NAV[section], lang), url: ["composers", "works", "genres", "seasons", "choir", "arias", "methods"].includes(kind) ? undefined : abs(routeUrl(lang, section)) });
+  if (KINDS[kind].detail) crumbs.push({ name: heading, url });
+  else crumbs[1].url = url;
+  graph.push(breadcrumbLd(crumbs));
+  return { "@context": "https://schema.org", "@graph": graph };
 }
 
 /** Immagine OG della pagina: miniatura YouTube della prima voce visibile, altrimenti quella predefinita. */

@@ -6,36 +6,97 @@
   "properties": {
     "nota": {
       "type": "object",
-      "propertyNames": { "enum": ["it", "en", "es", "de", "fr"] },
-      "additionalProperties": { "type": "string", "minLength": 1 }
+      "propertyNames": {
+        "enum": [
+          "it",
+          "en",
+          "es",
+          "de",
+          "fr"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
     },
-    "genere": { "type": "array", "items": { "type": "string" } },
-    "generi": { "type": "array", "items": { "type": "string" } },
+    "generi": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "traduzioni": {
       "type": "object",
-      "propertyNames": { "enum": ["it", "en", "es", "de", "fr"] },
+      "propertyNames": {
+        "enum": [
+          "it",
+          "en",
+          "es",
+          "de",
+          "fr"
+        ]
+      },
       "additionalProperties": {
         "type": "object",
-        "required": ["testo", "credit", "license"],
+        "required": [
+          "testo",
+          "credit",
+          "license"
+        ],
         "properties": {
-          "testo": { "type": "string", "minLength": 1 },
-          "credit": { "type": "string", "minLength": 1 },
-          "license": { "type": "string", "minLength": 1 },
-          "reviewed": {}
-        }
+          "testo": {
+            "type": "string",
+            "minLength": 1
+          },
+          "credit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
       }
     },
     "affiliazioni": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["vendor", "url"],
+        "required": [
+          "vendor",
+          "url"
+        ],
         "properties": {
-          "vendor": { "type": "string", "minLength": 1 },
-          "url": { "type": "string", "pattern": "^https://[^\\s]+$" },
-          "etichetta": { "type": "string" }
-        }
+          "vendor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://[^\\s]+$"
+          },
+          "label": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "percorsi": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     }
-  }
+  },
+  "additionalProperties": false
 }

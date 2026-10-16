@@ -25,6 +25,7 @@ const dateText = (e, v) => (e.kind === "composer" && v.composer.date ? v.compose
 export default {
   eleventyComputed: {
     lang: (d) => d.entry.lang,
+    isListPage: () => true,
     kind: (d) => d.entry.kind,
     view: (d) => view(d.entry),
     routeSection: (d) => KINDS[d.entry.kind].section,

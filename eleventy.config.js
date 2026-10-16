@@ -43,6 +43,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("slice8", (a) => a.slice(0, 8));
   eleventyConfig.addFilter("pieceDescription", fmt.pieceDescription);
   eleventyConfig.addFilter("siteLd", (lang) => ld.serializeLd(ld.siteLd(lang)));
+  eleventyConfig.addFilter("listLd", (entry, view, lang, opts) => { const o = ld.listLd(entry, view, lang, opts); return o ? ld.serializeLd(o) : ""; });
   eleventyConfig.addFilter("pieceLd", (piece, lang) => ld.serializeLd(ld.pieceLd(piece, lang)));
   eleventyConfig.addFilter("slice20", (a) => a.slice(0, 20));
   eleventyConfig.addFilter("slice30", (a) => a.slice(0, 30));

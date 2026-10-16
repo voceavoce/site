@@ -29,8 +29,8 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] B10 (H) Componenti `ad-slot` e `affiliate` dietro `site.ads.enabled = false`
 - [x] B11 (S) `scripts/validate-content.mjs` (ajv) + schema
 - [x] B12 (S) CI `.github/workflows/deploy.yml`: validazione, build, Pagefind, html-validate, pa11y/axe, link check, deploy Pages; cron giornaliero
-- [ ] B13 (S) Verifica: Playwright (ricerca, filtri, voce, lingua, tastiera), screenshot 375/1280 chiaro/scuro, Lighthouse
-- [~] B14 (H) README sito + `docs/CONTENUTI.md`
+- [~] B13 (S) Verifica: Playwright (ricerca, filtri, voce, lingua, tastiera), screenshot 375/1280 chiaro/scuro, Lighthouse
+- [x] B14 (H) README sito + `docs/CONTENUTI.md`
 
 ## Rifiniture emerse
 
@@ -38,7 +38,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] R2 (H) Selettore voce di arie/metodi: le sigle A/M/B (alta/media/bassa) si confondono con Alto/Basso: usare le parole intere
 - [x] R3 Testi cantati: decisione utente 2026-10-16 = testo completo, con la fonte citata e linkata (già così)
 - [x] R4 (S) Pipeline: «Lead Me Lord - Samuel Sebastian Wesley» resta col nome nel titolo (compositore fuori registro, nome preso dal titolo ma non tolto dal titolo): `titolo_pulito` deve togliere anche il nome scelto fra i candidati
-- [~] R5 (S) `workTranslation` nel JSON-LD e ItemList sulle pagine di elenco
+- [x] R5 (S) `workTranslation` nel JSON-LD e ItemList sulle pagine di elenco
 
 ## C — Contenuti editoriali (costano token: stima prima di partire)
 

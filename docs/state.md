@@ -56,6 +56,8 @@ Aggiornato: 2026-10-16
 - 2026-10-16 — CI «Check» tornata verde sul commit `de1f830`.
 - 2026-10-16 — A8 (primo export ufficiale con `slug_sito` salvato in roadmap) rimandato di proposito: scrivere `slug_sito` nelle roadmap su questo branch creerebbe conflitti con le roadmap che la pipeline aggiorna su `main` di AIVideoCreator. Si fa dopo il merge del branch di AIVideoCreator, con lo STAGE 5 della skill `/voceavoce-publish-choir`.
 
+- 2026-10-16 — R5 fatto (Sonnet): `workTranslation` nella scheda (testo solo per traduzioni con `reviewed: true`), CollectionPage + ItemList sulle pagine di elenco indicizzabili, Person sulla pagina del compositore, CreativeWorkSeries/MusicComposition per raccolte e opere; 1317 blocchi JSON-LD tutti validi. B14 fatto (Haiku): README in inglese e guida `docs/CONTENUTI.md` in italiano. Allineato lo schema dei file curati al codice (`generi`, `label`, `enabled`, `percorsi`, `reviewed` booleano; campi sconosciuti ora sono errore). Tolti dalla radice `index.html`, `style.css`, `CNAME`, `.nojekyll` della vecchia landing: non servono più (la landing è in `src/static/classic/`, il CNAME in `src/static/`). Verificato: check verde (31 test), a11y 10/10.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.

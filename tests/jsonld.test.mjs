@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { siteLd, pieceLd, serializeLd, videoObjectLd, pageOg } from "../src/_lib/jsonld.js";
+import { listLd, translationsLd, personLd, siteLd, pieceLd, serializeLd, videoObjectLd, pageOg } from "../src/_lib/jsonld.js";
 import { buildCatalog } from "../src/_lib/catalog.js";
+import { viewFor, detailIds } from "../src/_lib/listing.js";
 
 const piece = {
   slug: "locus-iste", titolo: "Locus iste", linea: "coro", lingua: "la", organico: "SATB",
@@ -68,4 +69,67 @@ test("og: miniatura della prima voce, altrimenti predefinita", () => {
   assert.equal(pageOg(piece).type, "video.other");
   assert.equal(pageOg(piece).image, "https://i.ytimg.com/vi/abc123/hqdefault.jpg");
   assert.equal(pageOg({ voci: [] }).type, "website");
+});
+
+const TR = {
+  en: { testo: "This place is made by God", credit: "A. Rossi", license: "CC BY 4.0", reviewed: true },
+  de: { testo: "BOZZA </script>", credit: "B. Test", license: "Proprietaria", reviewed: false },
+  la: { testo: "originale", reviewed: true },
+};
+
+test("traduzioni: testo solo se reviewed, licenza CC come URL, originale escluso", () => {
+  const trs = translationsLd(TR, "la");
+  assert.deepEqual(trs.map((x) => x.inLanguage), ["en", "de"]);
+  assert.equal(trs[0].text, "This place is made by God");
+  assert.equal(trs[0].license, "https://creativecommons.org/licenses/by/4.0/");
+  assert.equal(trs[0].creditText, "A. Rossi");
+  assert.equal(trs[0].author.name, "A. Rossi");
+  assert.equal("text" in trs[1], false);
+  assert.equal("license" in trs[1], false);
+  assert.equal(trs[1].copyrightNotice, "Proprietaria");
+});
+
+test("scheda: lyrics.workTranslation e bozze senza testo nel JSON serializzato", () => {
+  const mc = byType(pieceLd({ ...piece, traduzioni: TR }, "it"), "MusicComposition")[0];
+  assert.equal(mc.lyrics.workTranslation.length, 2);
+  const s = serializeLd(pieceLd({ ...piece, traduzioni: TR }, "it"));
+  assert.ok(!s.includes("BOZZA"));
+  assert.ok(!("workTranslation" in byType(pieceLd(piece, "it"), "MusicComposition")[0].lyrics));
+});
+
+test("listLd: ItemList ordinata, url nella lingua, noindex -> null", () => {
+  const cat = buildCatalog(new Date().toISOString());
+  const id = detailIds(cat).composer.find((i) => (cat.perCompositore[i] || []).some((p) => p.voci.length));
+  const view = viewFor(cat, "composer", id);
+  const g = listLd({ kind: "composer", id }, view, "en", { heading: "X", description: "d" });
+  const [list] = byType(g, "ItemList");
+  assert.deepEqual(list.itemListElement.map((e) => e.position), view.visible.map((_, i) => i + 1));
+  assert.deepEqual(list.itemListElement.map((e) => e.name), view.visible.map((p) => p.titolo));
+  assert.ok(list.itemListElement.every((e) => e.url.startsWith("https://voceavoce.com/en/")));
+  assert.ok(view.visible.every((p) => p.voci.length > 0)); // nessun brano futuro
+  const [person] = byType(g, "Person");
+  assert.equal(person["@id"], `https://voceavoce.com/autori/${id}/#person`);
+  assert.deepEqual(person.sameAs, []);
+  assert.equal(listLd({ kind: "composer", id }, view, "it", { noindex: true }), null);
+  assert.equal(listLd({ kind: "genre", id: "x" }, { visible: [] }, "it", {}), null);
+});
+
+test("personLd: anni interi o 'c. 1540', altrimenti omessi; escaping titolo", () => {
+  const p = personLd({ id: "a", nome: "A", nascita: "c. 1540", morte: 1623 }, "it");
+  assert.equal(p.birthDate, "c. 1540");
+  assert.equal(p.deathDate, "1623");
+  assert.equal("birthDate" in personLd({ id: "a", nome: "A", nascita: "boh" }, "it"), false);
+  const view = { visible: [{ slug: "s", titolo: "</script><b>" }] };
+  const s = serializeLd(listLd({ kind: "choir" }, view, "it", { heading: "Coro" }));
+  assert.ok(!s.includes("<"));
+});
+
+test("listLd: opera/raccolta con hasPart", () => {
+  const cat = buildCatalog(new Date().toISOString());
+  const id = detailIds(cat).work.find((i) => viewFor(cat, "work", i).visible.length);
+  if (!id) return;
+  const view = viewFor(cat, "work", id);
+  const g = listLd({ kind: "work", id }, view, "it", { heading: "W" });
+  const w = graph(g).find((x) => x.hasPart);
+  assert.equal(w.hasPart.length, view.visible.length);
 });
