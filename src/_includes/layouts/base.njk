@@ -19,7 +19,10 @@
 <link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.url | absUrl }}">
 {%- endfor %}
 <link rel="alternate" hreflang="x-default" href="{{ (site.defaultLang | routeUrl(routeSection, routeSlug)) | absUrl }}">
-<meta name="theme-color" content="#121a2c">
+<meta name="theme-color" content="#fbf9f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121a2c" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
 <meta property="og:type" content="{{ og.type }}">
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:title" content="{{ pageTitle }}">
@@ -47,6 +50,7 @@
 {%- endif %}
 <script>try{var t=localStorage.getItem("vav_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <script src="/assets/js/theme.js" defer></script>
+<script src="/assets/js/sw-register.js" defer></script>
 {%- if routeSection == "pieces" and routeSlug %}
 <script src="/assets/js/player.js" defer></script>
 {%- endif %}

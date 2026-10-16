@@ -1,7 +1,10 @@
-// Base degli audio del player (UNICO punto di configurazione): produzione su R2, sviluppo su scripts/serve-audio.mjs.
+// Base degli audio del player (UNICO punto di configurazione).
+// Produzione: Worker Cloudflare su workers.dev (bucket R2 privato). Sviluppo: scripts/serve-audio.mjs.
+// Da sostituire con l'URL mostrato da `wrangler deploy` (vedi workers/audio/README.md).
+const AUDIO_BASE_PRODUZIONE = "https://voceavoce-audio.CAMBIAMI.workers.dev";
 const audioBase =
   process.env.VOCEAVOCE_AUDIO_BASE ||
-  (process.env.ELEVENTY_ENV === "production" ? "https://audio.voceavoce.com" : "http://localhost:8787");
+  (process.env.ELEVENTY_ENV === "production" ? AUDIO_BASE_PRODUZIONE : "http://localhost:8787");
 
 export default {
   url: "https://voceavoce.com",

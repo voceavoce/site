@@ -1,0 +1,77 @@
+---
+permalink: /sw.js
+eleventyExcludeFromCollections: true
+---
+/* Service worker di Voce a Voce (generato da src/pages/sw.njk). Scope /.
+ *
+ * REGOLA SULL'AUDIO: l'audio non va MAI in cache. Le richieste verso audio.voceavoce.com, localhost:8787,
+ * *.workers.dev, l'origine di site.audioBase, URL .opus/.mp3/.wav/.flac e qualunque richiesta con Range NON si intercettano (nessun respondWith).
+ * Motivo: in questa fase niente audio offline; il caricamento avverra' con URL firmati, da non conservare.
+ * Non si intercettano nemmeno le richieste cross-origin (YouTube, i.ytimg) ne' /pagefind/.
+ * La classificazione sta in /assets/js/sw-core.js (testata in tests/sw.test.mjs).
+ */
+importScripts("/assets/js/sw-core.js");
+
+const VERSION = "{{ swVersion }}";
+const PRECACHE = {{ swPrecache | jsonSafe | safe }};
+const PRECACHE_VENDOR = {{ swPrecacheVendor | jsonSafe | safe }};
+const AUDIO_HOSTS = {{ audioHosts | jsonSafe | safe }}; // host di site.audioBase: mai intercettato
+const OFFLINE_URL = "/offline/";
+const NAMES = SWCore.cacheNames(VERSION);
+
+self.addEventListener("install", (event) => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(NAMES.pre);
+    await cache.addAll(PRECACHE);
+    await Promise.all(PRECACHE_VENDOR.map((u) => cache.add(u).catch(() => {})));
+    await self.skipWaiting();
+  })());
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil((async () => {
+    const stale = SWCore.staleCaches(await caches.keys(), VERSION);
+    await Promise.all(stale.map((k) => caches.delete(k)));
+    await self.clients.claim();
+  })());
+});
+
+async function lookup(request, opts) {
+  return (await caches.match(request, opts)) || undefined;
+}
+
+// Navigazioni: rete prima; se manca, la copia in cache (anche con altra query, es. /?source=pwa); poi /offline/.
+async function networkFirst(request) {
+  try {
+    const res = await fetch(request);
+    if (SWCore.isCacheable(res)) {
+      const copy = res.clone();
+      caches.open(NAMES.rt).then((c) => c.put(request, copy)).catch(() => {});
+    }
+    return res;
+  } catch (err) {
+    return (await lookup(request, { ignoreSearch: true })) || (await lookup(OFFLINE_URL)) || Response.error();
+  }
+}
+
+// Asset statici: dalla cache subito, e intanto si aggiorna dalla rete.
+async function staleWhileRevalidate(event) {
+  const request = event.request;
+  const cached = await lookup(request);
+  const refresh = fetch(request).then((res) => {
+    if (SWCore.isCacheable(res)) {
+      const copy = res.clone();
+      caches.open(NAMES.rt).then((c) => c.put(request, copy)).catch(() => {});
+    }
+    return res;
+  });
+  if (cached) { event.waitUntil(refresh.catch(() => {})); return cached; }
+  return refresh;
+}
+
+self.addEventListener("fetch", (event) => {
+  const kind = SWCore.classify(event.request, self.location.origin, AUDIO_HOSTS);
+  if (kind === "navigate") event.respondWith(networkFirst(event.request));
+  else if (kind === "static") event.respondWith(staleWhileRevalidate(event));
+  // "ignore": nessun respondWith, la richiesta va alla rete come se il SW non esistesse
+});

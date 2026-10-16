@@ -332,7 +332,7 @@ export async function main(argv) {
     return 1;
   }
   if (!opts.dryRun && !cfg.publicBase) {
-    console.error("R2_PUBLIC_BASE non impostato: senza URL pubblico non posso verificare il caricamento (HEAD). Imposta la variabile o usa --dry-run.");
+    console.error("R2_PUBLIC_BASE non impostato: senza l'URL del Worker non posso verificare il caricamento (HEAD). Imposta la variabile o usa --dry-run.");
     return 1;
   }
 
