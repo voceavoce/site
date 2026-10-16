@@ -16,7 +16,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 ## B — Sito (`voceavoce/site`, branch `claude/voceavocecoro-video-portal-s3o8vi`)
 
-- [~] B0 (H) Backup: tag `landing-v1` su `c50b793` (creato in locale, push del tag rifiutato 403: da pushare dall'utente); copia landing in `src/static/classic/` con `noindex` e canonical
+- [x] B0 (H) Backup: copia landing in `src/static/classic/` con `noindex`, canonical, og:image assoluto, avviso «versione archiviata» — fatto. Tag `landing-v1` creato in locale (push rifiutato 403: da pushare dall'utente)
 - [~] B1 (S) Base Eleventy 3: `package.json`, `eleventy.config.js`, `.nvmrc`, struttura `src/`
 - [~] B2 (S) i18n IT/EN/ES con URL per lingua, `lang-switch` a link, `hreflang`
 - [~] B3 (S) Design system: token CSS chiaro/scuro, layout `base.njk`, componenti card/breadcrumbs
