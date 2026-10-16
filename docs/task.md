@@ -36,7 +36,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 - [x] R1 (H) Footer: includere `info-links.njk`; breadcrumb e riga autore della scheda: link a compositore e opera quando esistono le pagine (B6)
 - [~] R2 (H) Selettore voce di arie/metodi: le sigle A/M/B (alta/media/bassa) si confondono con Alto/Basso: usare le parole intere
-- [ ] R3 (O) Testi cantati presi da siti terzi (es. lieder.net): verificare che la ripubblicazione sia lecita, oppure mostrare solo l'incipit + link alla fonte
+- [x] R3 Testi cantati: decisione utente 2026-10-16 = testo completo, con la fonte citata e linkata (già così)
 
 ## C — Contenuti editoriali (costano token: stima prima di partire)
 
