@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "slug": "sing-joyfully-byrd",
+  "linea": "coro",
+  "rank": "187",
+  "ranks": [
+    "187"
+  ],
+  "titolo": "Sing Joyfully",
+  "compositore": {
+    "id": "william-byrd",
+    "nome": "William Byrd",
+    "breve": "Byrd",
+    "date": "c. 1540–1623",
+    "nascita": "c. 1540",
+    "morte": 1623,
+    "periodo": "rinascimento",
+    "alias": [
+      "Byrd"
+    ]
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "C",
+    "modo": "major"
+  },
+  "tempo_bpm": 115,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "Sing joyfully unto God our strength.\nSing loud unto the God of Jacob.\nTake the song and bring forth the timbrel,\nthe pleasant harp and the viol.\nBlow the trumpet in the new moon,\neven in the time appointed and at our feast day.\nFor this is a statute for Israel,\nand a law of the God of Jacob",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=105429"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "o4MlEuvQKNA",
+      "pubblica_dal": "2026-10-15T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "hKNzuca9PqA",
+      "pubblica_dal": "2026-10-15T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "T7p7Uk7C638",
+      "pubblica_dal": "2026-10-15T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "HXVjYKxWUqs",
+      "pubblica_dal": "2026-10-15T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-15T14:30:00Z"
+}

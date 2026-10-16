@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "slug": "versa-est-in-luctum-lobo",
+  "linea": "coro",
+  "rank": "067",
+  "ranks": [
+    "067"
+  ],
+  "titolo": "Versa est in luctum",
+  "compositore": {
+    "id": "alonso-lobo",
+    "nome": "Alonso Lobo",
+    "breve": "Lobo"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSATTB",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "minor"
+  },
+  "tempo_bpm": 88,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "Rxg_Xf9MaMA",
+      "pubblica_dal": "2026-10-07T14:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "LC3AxHIwBQM",
+      "pubblica_dal": "2026-10-07T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "l2BbC6D2FIo",
+      "pubblica_dal": "2026-10-07T14:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "ofFZ10EGh0c",
+      "pubblica_dal": "2026-10-07T14:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "dxs4RoZ7gTk",
+      "pubblica_dal": "2026-10-07T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "-UjhY5BJTLQ",
+      "pubblica_dal": "2026-10-07T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-07T14:30:00Z"
+}

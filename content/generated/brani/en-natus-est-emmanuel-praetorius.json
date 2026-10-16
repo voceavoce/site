@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "slug": "en-natus-est-emmanuel-praetorius",
+  "linea": "coro",
+  "rank": "386",
+  "ranks": [
+    "386"
+  ],
+  "titolo": "En natus est Emmanuel",
+  "compositore": {
+    "id": "michael-praetorius",
+    "nome": "Michael Praetorius",
+    "breve": "Praetorius",
+    "date": "1571–1621",
+    "nascita": "1571",
+    "morte": 1621,
+    "alias": [
+      "Michael Prätorius"
+    ]
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio",
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 88,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "dfp_NcvWb4I",
+      "pubblica_dal": "2026-11-19T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "7LLcwlANJf8",
+      "pubblica_dal": "2026-11-19T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "DVQRkMYRxq4",
+      "pubblica_dal": "2026-11-19T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "1ycJi-tL9pI",
+      "pubblica_dal": "2026-11-19T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-19T15:30:00Z"
+}

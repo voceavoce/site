@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "slug": "jesu-dulcis-memoria-victoria",
+  "linea": "coro",
+  "rank": "098",
+  "ranks": [
+    "098"
+  ],
+  "titolo": "Jesu Dulcis Memoria",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ],
+    "alias": [
+      "Tomas Luis de Victoria",
+      "Victoria",
+      "T. L. de Victoria"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 44,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "cpffXMkPonI",
+      "pubblica_dal": "2026-12-07T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "se6_irqs76s",
+      "pubblica_dal": "2026-12-07T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "WPOWe36h0KM",
+      "pubblica_dal": "2026-12-07T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "hvRKz9f7DRk",
+      "pubblica_dal": "2026-12-07T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-07T15:30:00Z"
+}

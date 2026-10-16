@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "lead-me-lord-wesley",
+  "linea": "coro",
+  "rank": "111",
+  "ranks": [
+    "111"
+  ],
+  "titolo": "Lead Me Lord",
+  "compositore": {
+    "id": "samuel-sebastian-wesley",
+    "nome": "Samuel Sebastian Wesley",
+    "breve": "Wesley"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": 69,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "0m1C4oSxjuc",
+      "pubblica_dal": "2026-10-16T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "kBvJa_GUSMA",
+      "pubblica_dal": "2026-10-16T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "B9uTvaAJ09g",
+      "pubblica_dal": "2026-10-16T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "m2w7EtQA5o8",
+      "pubblica_dal": "2026-10-16T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-16T14:30:00Z"
+}

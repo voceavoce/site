@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "slug": "moro-lasso-al-mio-duolo-gesualdo",
+  "linea": "coro",
+  "rank": "326",
+  "ranks": [
+    "326"
+  ],
+  "titolo": "Moro lasso al mio duolo",
+  "compositore": {
+    "id": "carlo-gesualdo",
+    "nome": "Carlo Gesualdo",
+    "breve": "Gesualdo",
+    "date": "1566–1613",
+    "nascita": "1566",
+    "morte": 1613,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Gesualdo da Venosa"
+    ],
+    "alias": [
+      "Gesualdo",
+      "Carlo Gesualdo da Venosa"
+    ]
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SSATB",
+  "tempo_bpm": [
+    80,
+    126
+  ],
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "lZt5r13S0-Y",
+      "pubblica_dal": "2026-11-10T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "MIF0Gki4ndU",
+      "pubblica_dal": "2026-11-10T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "aUSr1Thu3DE",
+      "pubblica_dal": "2026-11-10T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "aH6YzPSP6Bs",
+      "pubblica_dal": "2026-11-10T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "z1NnAp2BNmQ",
+      "pubblica_dal": "2026-11-10T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-10T15:30:00Z"
+}

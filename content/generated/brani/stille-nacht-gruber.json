@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "slug": "stille-nacht-gruber",
+  "linea": "coro",
+  "rank": "080",
+  "ranks": [
+    "080"
+  ],
+  "titolo": "Stille Nacht",
+  "compositore": {
+    "id": "franz-xaver-gruber",
+    "nome": "Franz Xaver Gruber",
+    "breve": "Gruber",
+    "date": "1787–1863",
+    "nascita": "1787",
+    "morte": 1863,
+    "alias": [
+      "Franz Gruber",
+      "Franz X. Gruber"
+    ]
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "de",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "Bb",
+    "modo": "major"
+  },
+  "tempo_bpm": 42,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "gSHEQ02ZUa0",
+      "pubblica_dal": "2026-08-29",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "Gzw-HjfYe2c",
+      "pubblica_dal": "2026-08-29",
+      "pubblica": true
+    },
+    {
+      "voce": "T",
+      "video_id": "fsasEXx86iI",
+      "pubblica_dal": "2026-08-29",
+      "pubblica": true
+    },
+    {
+      "voce": "B",
+      "video_id": "-k-55omcIbY",
+      "pubblica_dal": "2026-08-29",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-08-29"
+}

@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "slug": "the-shepherds-farewell-berlioz",
+  "linea": "coro",
+  "rank": "465",
+  "ranks": [
+    "465"
+  ],
+  "titolo": "The Shepherds' Farewell",
+  "compositore": {
+    "id": "hector-berlioz",
+    "nome": "Hector Berlioz",
+    "breve": "Berlioz",
+    "date": "1803–1869",
+    "nascita": "1803",
+    "morte": 1869,
+    "periodo": "romantico"
+  },
+  "opera": {
+    "id": "l-enfance-du-christ-op-25",
+    "titolo": "L'enfance du Christ op. 25"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATTBB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "major"
+  },
+  "tempo_bpm": 60,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "Thou must leave thy lowly dwelling,\nThe humble crib, the stable bare.\nBabe, all mortal babes excelling,\nContent our earthly lot to share.\nLoving father, loving mother,\nShelter thee with tender care!\nBlessed Jesus, we implore thee\nWith humble love and holy fear,\nIn the land that lies before thee,\nForget not us who linger here!\nMay the shepherd's lowly calling\nEver to thy heart be dear!\nBlest are ye beyond all measure,\nThou happy father, mother mild!\nGuard ye well your heav’nly treasure,\nThe Prince of Peace, the Holy Child!\nGod go with you, God protect you,\nGuide you safely through the wild!",
+    "fonte": {
+      "sito": "fbcradio.org",
+      "url": "https://www.fbcradio.org/lyrics/5899/the-shepherds-farewell-from-lenfance-du-christ-op-25/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "LSWbmKNydK0",
+      "pubblica_dal": "2027-01-06T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "aixnHRxuFbE",
+      "pubblica_dal": "2027-01-06T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "J2an8ljooQs",
+      "pubblica_dal": "2027-01-06T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "ZQUn05uhgvg",
+      "pubblica_dal": "2027-01-06T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "6DDeP-bPIUU",
+      "pubblica_dal": "2027-01-06T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "JPYDxLqIwzI",
+      "pubblica_dal": "2027-01-06T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-06T15:30:00Z"
+}

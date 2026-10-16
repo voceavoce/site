@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "slug": "april-is-in-my-mistress-face-morley",
+  "linea": "coro",
+  "rank": "021",
+  "ranks": [
+    "021"
+  ],
+  "titolo": "April is in my mistress' face",
+  "compositore": {
+    "id": "thomas-morley",
+    "nome": "Thomas Morley",
+    "breve": "Morley",
+    "date": "1557–1602",
+    "nascita": "1557",
+    "morte": 1602,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": [
+    80,
+    112
+  ],
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "Dt0r_KHxy4k",
+      "pubblica_dal": "2026-11-09T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "1xmYNc_KQ5w",
+      "pubblica_dal": "2026-11-09T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "Ozl6rU4882o",
+      "pubblica_dal": "2026-11-09T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "Ebfa-NrYi2s",
+      "pubblica_dal": "2026-11-09T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-09T15:30:00Z"
+}

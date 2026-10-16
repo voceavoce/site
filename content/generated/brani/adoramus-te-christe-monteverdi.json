@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "slug": "adoramus-te-christe-monteverdi",
+  "linea": "coro",
+  "rank": "248",
+  "ranks": [
+    "248"
+  ],
+  "titolo": "Adoramus te Christe",
+  "compositore": {
+    "id": "claudio-monteverdi",
+    "nome": "Claudio Monteverdi",
+    "breve": "Monteverdi",
+    "date": "1567–1643",
+    "nascita": "1567",
+    "morte": 1643,
+    "alias": [
+      "Monteverdi"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSATTB",
+  "tempo_bpm": 84,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "Monteverdi, Adoramus te Christe (a 6 voci, Bianchi 1620), ed. moderna IMSLP350050 (partitura vettoriale, 62 b. + prima/seconda volta)",
+      "editore": "IMSLP (edizione moderna, partitura 6 voci)",
+      "anno": 1620
+    },
+    {
+      "edizione": "Monteverdi, Tutte le opere (Malipiero), vol. XVI p.439-443, «Adoramus a 6 voci» (Raccolta Giulio Cesare Bianchi, Mottetti libro I, 1620), PMLASIA00188 SV289",
+      "editore": "Malipiero (Opera omnia)",
+      "anno": 1932
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "Adoramus te, Christe,\net benedicimus tibi:\nquia per sanguinem tuum pretiosum\nredemisti mundum,\nmiserere nobis.",
+    "fonte": {
+      "sito": "tafelmusik.org",
+      "url": "https://tafelmusik.org/explore-baroque/articles/behind-the-musik-choral-kaleidoscope/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "3gDPLS0sz4M",
+      "pubblica_dal": "2027-01-23T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "LIKM2ilA0mU",
+      "pubblica_dal": "2027-01-23T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "N9I3ESZACM0",
+      "pubblica_dal": "2027-01-23T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "0BSKnlh6Do4",
+      "pubblica_dal": "2027-01-23T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "0re7fEm8QjI",
+      "pubblica_dal": "2027-01-23T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "BZ-5ukvA9ZU",
+      "pubblica_dal": "2027-01-23T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-23T15:30:00Z"
+}

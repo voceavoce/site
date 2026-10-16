@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "slug": "hush-no-more-purcell",
+  "linea": "coro",
+  "rank": "268",
+  "ranks": [
+    "268"
+  ],
+  "titolo": "Hush no more",
+  "compositore": {
+    "id": "henry-purcell",
+    "nome": "Henry Purcell",
+    "breve": "Purcell",
+    "date": "1659–1695",
+    "nascita": "1659",
+    "morte": 1695,
+    "periodo": "barocco"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "C",
+    "modo": "minor"
+  },
+  "tempo_bpm": 76,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "Hush, no more, be silent all,\nsweet repose has clos'd her eyes.\nSoft as feather'd snow does fall!\nSoftly, softly, steal from hence.\nNo noise disturb her sleeping sence.",
+    "fonte": {
+      "sito": "musique.opus-31.fr",
+      "url": "https://musique.opus-31.fr/fichier_oeuvre/PurcellFairyQueen.PDF"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "LQkYTnCfitQ",
+      "pubblica_dal": "2026-12-01T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "-Ak0Ea-3JmM",
+      "pubblica_dal": "2026-12-01T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "uvny2S1c-HI",
+      "pubblica_dal": "2026-12-01T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "CFU-6ppiX5M",
+      "pubblica_dal": "2026-12-01T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-01T15:30:00Z"
+}

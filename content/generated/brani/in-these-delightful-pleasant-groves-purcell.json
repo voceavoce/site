@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "slug": "in-these-delightful-pleasant-groves-purcell",
+  "linea": "coro",
+  "rank": "379",
+  "ranks": [
+    "379"
+  ],
+  "titolo": "In these delightful pleasant groves",
+  "compositore": {
+    "id": "henry-purcell",
+    "nome": "Henry Purcell",
+    "breve": "Purcell",
+    "date": "1659–1695",
+    "nascita": "1659",
+    "morte": 1695,
+    "periodo": "barocco"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 132,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "In these delightful pleasant groves,\nIn these delightful pleasant groves,\nLet us celebrate,Let us celebrate\nour happy happy loves!\nIn these delightful pleasant groves,\nIn these delightful pleasant groves,\nLet us celebrate,Let us celebrate\nour happy happy loves!\nLet's pipe, pipe and dance,\nLet's pipe, pipe and dance,\ndance and laugh, laugh, laugh\nlaugh and sing\nThus, thus, thus, thus\nerery happy happy living thing\nRevels in the cheerful, cheerful spring\nRevels in the cheerful, cheerful spring",
+    "fonte": {
+      "sito": "lyricsmania.com",
+      "url": "https://www.lyricsmania.com/in_these_delightful,_pleasant_groves_lyrics_henry_purcell.html"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "iUELQ87m7Jo",
+      "pubblica_dal": "2026-12-03T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "CQwMNL5z2uc",
+      "pubblica_dal": "2026-12-03T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "JiAs7N7lVrA",
+      "pubblica_dal": "2026-12-03T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "ndLMXugw0c8",
+      "pubblica_dal": "2026-12-03T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-03T15:30:00Z"
+}

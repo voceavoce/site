@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "slug": "le-violette-scarlatti",
+  "linea": "aria",
+  "rank": "aria-001",
+  "ranks": [
+    "aria-001-alta",
+    "aria-001-media",
+    "aria-001-bassa"
+  ],
+  "titolo": "Le violette",
+  "compositore": {
+    "id": "alessandro-scarlatti",
+    "nome": "Alessandro Scarlatti",
+    "breve": "Scarlatti",
+    "date": "1660–1725",
+    "nascita": "1660",
+    "morte": 1725,
+    "periodo": "barocco"
+  },
+  "raccolta": {
+    "id": "arie-antiche-parisotti",
+    "titolo": "Arie antiche (Parisotti)",
+    "numero": 1
+  },
+  "opera": {
+    "id": "pirro-e-demetrio",
+    "titolo": "Pirro e Demetrio"
+  },
+  "generi": [
+    "aria",
+    "aria-antica"
+  ],
+  "lingua": "it",
+  "accompagnamento": "pianoforte",
+  "tonalita": {
+    "tonica": "Bb",
+    "modo": "major"
+  },
+  "tempo_bpm": 84,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "edizioni_verifica": [
+    {
+      "edizione": "24 Italian Songs and Arias of the 17th and 18th Centuries, n. 20 «Le Violette» (ed. Alessandro Parisotti), voce medium-low, pp. 79-83",
+      "editore": "G. Schirmer (Schirmer's Library vol. 1723)",
+      "anno": 1948,
+      "url": "https://imslp.org/wiki/24_Italian_Songs_and_Arias_of_the_17th_and_18th_Centuries_(Various)"
+    },
+    {
+      "edizione": "Caecilia, geistliche und weltliche Arien & Lieder (ed. Adolf Schimon), «Le violette»",
+      "anno": 1890,
+      "url": "https://imslp.org/wiki/File:PMLP88450-Le_violette.pdf"
+    },
+    {
+      "edizione": "Standard Songs n. 24 (ed. Edgardo Lèvi), «Le violette»",
+      "editore": "Ascherberg, Hopwood & Crew, Londra",
+      "anno": 1907,
+      "url": "https://imslp.org/wiki/File:PMLP88450-1_Scarlatti_Violette.pdf.pdf"
+    }
+  ],
+  "testo": {
+    "lingua": "it",
+    "testo": "Rugiadose,\nOdorose,\nViolette graziose,\nVoi vi state\nVergognose,\nMezzo ascose\nFra le foglie,\nE sgridate\nLe mie voglie,\nChe son troppo ambiziose.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=1069"
+    }
+  },
+  "voci": [
+    {
+      "voce": "alta",
+      "video_id": "06640AmEeLo",
+      "pubblica_dal": "2026-10-07T09:00:00Z"
+    },
+    {
+      "voce": "media",
+      "video_id": "VTgAHe9UF3o",
+      "pubblica_dal": "2026-10-07T09:00:00Z"
+    },
+    {
+      "voce": "bassa",
+      "video_id": "Xb2VZQFkS1w",
+      "pubblica_dal": "2026-10-07T09:00:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-07T09:00:00Z"
+}

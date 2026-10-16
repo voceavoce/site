@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "slug": "canticorum-jubilo-g-handel",
+  "linea": "coro",
+  "rank": "041",
+  "ranks": [
+    "041"
+  ],
+  "titolo": "Canticorum Jubilo G",
+  "compositore": {
+    "id": "george-frideric-handel",
+    "nome": "George Frideric Handel",
+    "breve": "Handel",
+    "date": "1685–1759",
+    "nascita": "1685",
+    "morte": 1759,
+    "periodo": "barocco",
+    "varianti": [
+      "Händel",
+      "Haendel",
+      "Georg Friedrich Händel"
+    ],
+    "alias": [
+      "Handel",
+      "Händel",
+      "Haendel",
+      "Georg Friedrich Händel",
+      "Georg Friedrich Handel",
+      "G. F. Handel",
+      "G.F. Handel",
+      "G. F. Händel"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 140,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "7iYTZJin8GM",
+      "pubblica_dal": "2026-09-29T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "9Ky5h8sc4hA",
+      "pubblica_dal": "2026-09-29T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "27AEMbtKRWY",
+      "pubblica_dal": "2026-09-29T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "58pPxkiVy_w",
+      "pubblica_dal": "2026-09-29T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-29T14:30:00Z"
+}

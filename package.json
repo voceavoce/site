@@ -1,0 +1,32 @@
+{
+  "name": "voceavoce-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sito di Voce a Voce (voceavoce.com)",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "validate": "node scripts/validate-content.mjs",
+    "search": "npx pagefind --site _site",
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "lint:html": "node scripts/lint-html.mjs",
+    "serve": "eleventy --serve",
+    "check": "npm run validate && npm test && npm run build && npm run lint:html",
+    "a11y": "node scripts/a11y.mjs"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "html-validate": "^11.16.2",
+    "http-server": "^14.1.1",
+    "pa11y-ci": "^5.0.0",
+    "pagefind": "^1.5.2"
+  }
+}

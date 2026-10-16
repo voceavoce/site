@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "slug": "angelus-ad-virginem",
+  "linea": "coro",
+  "rank": "252",
+  "ranks": [
+    "252"
+  ],
+  "titolo": "Angelus ad Virginem",
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio",
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SAB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 104,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "y5jy-RNQvyQ",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "vJDNs3dHYcs",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "B",
+      "video_id": "Jc7jhh7bm0g",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-09-01"
+}

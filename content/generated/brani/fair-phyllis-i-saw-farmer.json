@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "slug": "fair-phyllis-i-saw-farmer",
+  "linea": "coro",
+  "rank": "074",
+  "ranks": [
+    "074"
+  ],
+  "titolo": "Fair Phyllis I saw",
+  "compositore": {
+    "id": "john-farmer",
+    "nome": "John Farmer",
+    "breve": "Farmer"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 160,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "aasBXIB5JPs",
+      "pubblica_dal": "2026-10-02T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "eguTWrejQH4",
+      "pubblica_dal": "2026-10-02T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "w1PTbg_RWPY",
+      "pubblica_dal": "2026-10-02T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "5jiJGEsBywc",
+      "pubblica_dal": "2026-10-02T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-02T14:30:00Z"
+}

@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "slug": "verbum-caro-victoria",
+  "linea": "coro",
+  "rank": "164",
+  "ranks": [
+    "164"
+  ],
+  "titolo": "Verbum caro",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ],
+    "alias": [
+      "Tomas Luis de Victoria",
+      "Victoria",
+      "T. L. de Victoria"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SAT",
+  "tonalita": {
+    "tonica": "Eb",
+    "modo": "major"
+  },
+  "tempo_bpm": 150,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "ChoralWiki License",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "6u7G29PASzs",
+      "pubblica_dal": "2026-10-22T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "srL8yIIRhUw",
+      "pubblica_dal": "2026-10-22T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "wHx8qPyPYzg",
+      "pubblica_dal": "2026-10-22T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-22T14:30:00Z"
+}

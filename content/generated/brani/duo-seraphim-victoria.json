@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "slug": "duo-seraphim-victoria",
+  "linea": "coro",
+  "rank": "127",
+  "ranks": [
+    "127"
+  ],
+  "titolo": "Duo Seraphim",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ],
+    "alias": [
+      "Tomas Luis de Victoria",
+      "Victoria",
+      "T. L. de Victoria"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSAT",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 96,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "Gdo4lVIN7Kg",
+      "pubblica_dal": "2026-09-26T14:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "KLedUjtC88A",
+      "pubblica_dal": "2026-09-26T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "470G-H-S3hM",
+      "pubblica_dal": "2026-09-26T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "WVscOyq-1B0",
+      "pubblica_dal": "2026-09-26T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-26T14:30:00Z"
+}

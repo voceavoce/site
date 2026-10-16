@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-victoria",
+  "linea": "coro",
+  "rank": "468",
+  "ranks": [
+    "468"
+  ],
+  "titolo": "Ave Maria",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ],
+    "alias": [
+      "Tomas Luis de Victoria",
+      "Victoria",
+      "T. L. de Victoria"
+    ]
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSAATTBB",
+  "accompagnamento": "organo",
+  "tempo_bpm": [
+    124,
+    186
+  ],
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "T. L. de Victoria, Opera omnia vol. I (Motecta ad octo voces, ex editione anni 1572), Ave Maria a 8 (In Annuntiationis B. Mariae Virginis), a cura di F. Pedrell, con organo ex ed. 1600",
+      "editore": "Breitkopf & Härtel, Leipzig",
+      "anno": 1902,
+      "url": "https://imslp.org/wiki/Ave_Maria_for_8_Voices_(Victoria,_Tomás_Luis_de) (file #413507)"
+    },
+    {
+      "edizione": "T. L. de Victoria, Ave Maria a 8 voci, trascrizione di Giovanni Acciai dalla stampa originale Motecta, Venezia, Gardano 1572 (in IMSLP con il frontespizio della stampa 1572)",
+      "editore": "G. Acciai (edizione moderna, IMSLP)",
+      "anno": 2010,
+      "url": "https://imslp.org/wiki/Ave_Maria_for_8_Voices_(Victoria,_Tomás_Luis_de) (file #496052)"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "Ave Maria, gratia plena, Dominus tecum,\nbenedicta tu in mulieribus,\net benedictus fructus ventris tui, Jesus.\nSancta Maria, Regina caeli, dulcis et pia,\nO Mater Dei, ora pro nobis peccatoribus,\nut cum electis te videamus.",
+    "fonte": {
+      "sito": "cpdl.org",
+      "url": "https://www.cpdl.org/wiki/index.php/Ave_Maria_(Tom%C3%A1s_Luis_de_Victoria)"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "UI_WuaUkbyw",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "DPo38VO_-N4",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "Ea4orn6fhkY",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "5ilu-bFjLvg",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "JqwAo19Pvi0",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "OqLhWtinnFs",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "jxJPpeqEPgU",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "46-O-6FBTzM",
+      "pubblica_dal": "2027-01-20T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-20T15:30:00Z"
+}

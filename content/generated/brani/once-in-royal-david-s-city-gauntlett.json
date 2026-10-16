@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "slug": "once-in-royal-david-s-city-gauntlett",
+  "linea": "coro",
+  "rank": "072",
+  "ranks": [
+    "072"
+  ],
+  "titolo": "Once in Royal David's City",
+  "compositore": {
+    "id": "henry-j-gauntlett",
+    "nome": "Henry J. Gauntlett",
+    "breve": "Gauntlett"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 66,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "KwRav3D4orc",
+      "pubblica_dal": "2026-09-18T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "T-_hgjB7vGA",
+      "pubblica_dal": "2026-09-18T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "ZmXyFLZoGZ4",
+      "pubblica_dal": "2026-09-19T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "6oN18Tv-3d0",
+      "pubblica_dal": "2026-09-19T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-18T14:30:00Z"
+}

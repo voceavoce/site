@@ -1,0 +1,61 @@
+{
+  "arie-antiche-parisotti": {
+    "id": "arie-antiche-parisotti",
+    "titolo": "Arie antiche (Parisotti)",
+    "tipo": "raccolta",
+    "brani": [
+      "le-violette-scarlatti"
+    ]
+  },
+  "concone-50-lezioni-op-9": {
+    "id": "concone-50-lezioni-op-9",
+    "titolo": "Concone, 50 Lezioni op. 9",
+    "tipo": "raccolta",
+    "brani": [
+      "concone-50-lezioni-op-9-n-1"
+    ]
+  },
+  "l-enfance-du-christ-op-25": {
+    "id": "l-enfance-du-christ-op-25",
+    "titolo": "L'enfance du Christ op. 25",
+    "tipo": "opera",
+    "brani": [
+      "the-shepherds-farewell-berlioz"
+    ]
+  },
+  "messiah-hwv-56": {
+    "id": "messiah-hwv-56",
+    "titolo": "Messiah HWV 56",
+    "tipo": "opera",
+    "brani": [
+      "hallelujah-handel",
+      "no-22-behold-the-lamb-of-god-handel",
+      "for-unto-us-a-child-is-born-handel"
+    ]
+  },
+  "missa-brevis-sancti-joannis-de-deo": {
+    "id": "missa-brevis-sancti-joannis-de-deo",
+    "titolo": "Missa brevis Sancti Joannis de Deo",
+    "tipo": "opera",
+    "brani": [
+      "missa-brevis-sancti-02-gloria-haydn",
+      "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn"
+    ]
+  },
+  "pirro-e-demetrio": {
+    "id": "pirro-e-demetrio",
+    "titolo": "Pirro e Demetrio",
+    "tipo": "opera",
+    "brani": [
+      "le-violette-scarlatti"
+    ]
+  },
+  "quattro-pezzi-sacri-n-3": {
+    "id": "quattro-pezzi-sacri-n-3",
+    "titolo": "Quattro pezzi sacri n. 3",
+    "tipo": "opera",
+    "brani": [
+      "laudi-alla-vergine-maria-verdi"
+    ]
+  }
+}

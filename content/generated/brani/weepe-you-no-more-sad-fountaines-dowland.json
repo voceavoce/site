@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "weepe-you-no-more-sad-fountaines-dowland",
+  "linea": "coro",
+  "rank": "290",
+  "ranks": [
+    "290"
+  ],
+  "titolo": "Weepe you no more sad fountaines",
+  "compositore": {
+    "id": "john-dowland",
+    "nome": "John Dowland",
+    "breve": "Dowland",
+    "date": "1563–1626",
+    "nascita": "1563",
+    "morte": 1626,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "minor"
+  },
+  "tempo_bpm": 54,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "uDTaRCHE9BM",
+      "pubblica_dal": "2026-11-17T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "t74ic7xnTVk",
+      "pubblica_dal": "2026-11-17T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "76eMheJeslc",
+      "pubblica_dal": "2026-11-17T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "MZKYNz7HrNU",
+      "pubblica_dal": "2026-11-17T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-17T15:30:00Z"
+}

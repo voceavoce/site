@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "slug": "los-reyes-siguen-la-estrella-guerrero",
+  "linea": "coro",
+  "rank": "283",
+  "ranks": [
+    "283"
+  ],
+  "titolo": "Los reyes siguen la estrella",
+  "compositore": {
+    "id": "francisco-guerrero",
+    "nome": "Francisco Guerrero",
+    "breve": "Guerrero",
+    "date": "1528–1599",
+    "nascita": "1528",
+    "morte": 1599,
+    "periodo": "rinascimento",
+    "alias": [
+      "Guerrero"
+    ]
+  },
+  "generi": [],
+  "lingua": "es",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 126,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "WtH1Zy_-6Wk",
+      "pubblica_dal": "2026-09-24T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "VMiOmVw-nxo",
+      "pubblica_dal": "2026-09-24T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "r-cBW_yRGKI",
+      "pubblica_dal": "2026-09-24T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "pA-astvvES0",
+      "pubblica_dal": "2026-09-24T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-24T14:30:00Z"
+}

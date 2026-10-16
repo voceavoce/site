@@ -1,0 +1,303 @@
+{
+  "htmlLang": "es",
+  "siteName": "Voce a Voce",
+  "nav": {
+    "label": "Navegación principal",
+    "coro": "Coro",
+    "arie": "Arias",
+    "metodi": "Métodos",
+    "compositori": "Compositores",
+    "stagioni": "Temporadas",
+    "cerca": "Buscar"
+  },
+  "skip": "Saltar al contenido",
+  "home": {
+    "label": "Voce a Voce, página de inicio",
+    "title": "Voce a Voce - estudia tu voz",
+    "description": "Voce a Voce: vídeos de estudio coral voz por voz (S/A/T/B). Sigue tu línea en la partitura, con cursor a tiempo, tu voz resaltada y subtítulos. Repertorio de dominio público.",
+    "ctaYoutube": "Ver en YouTube",
+    "ctaHow": "Cómo funciona",
+    "ctaExplore": "Explorar el catálogo",
+    "latest": "Últimos vídeos",
+    "latestP": "Los estrenos más recientes, voz por voz.",
+    "soon": "Próximamente",
+    "soonP": "Los próximos estrenos del calendario.",
+    "soonOn": "Sale el {date}",
+    "linesH": "Explora el catálogo",
+    "linesP": "Cuatro formas de entrar: elige tu línea de estudio.",
+    "tile": {
+      "choir": {
+        "h": "Coro",
+        "p": "Obras corales a varias voces, una lección para cada voz."
+      },
+      "methods": {
+        "h": "Métodos vocales",
+        "p": "Recorridos de estudio ordenados, como los vocalizos de Concone."
+      },
+      "arias": {
+        "h": "Arias de estudio",
+        "p": "Arias antiguas en tres registros: voz aguda, media y grave."
+      },
+      "seasons": {
+        "h": "Estacionales",
+        "p": "Navidad, Pascua, Cuaresma y repertorio mariano.",
+        "feat": "Destacado: Navidad"
+      }
+    }
+  },
+  "tag": "estudia tu voz",
+  "lead": "Vídeos de estudio coral, <strong>voz por voz</strong> (Soprano, Contralto, Tenor, Bajo): sigue tu línea en la partitura, con cursor a tiempo, tu voz resaltada y las demás atenuadas.",
+  "how": {
+    "h": "Cómo funciona",
+    "f1_h": "Tu voz resaltada",
+    "f1_p": "Tu parte en negro de alto contraste, las demás voces atenuadas en gris.",
+    "f2_h": "Cursor a tiempo",
+    "f2_p": "Una barra sigue el ritmo de tu línea, también en silencios y calderones.",
+    "f3_h": "Letra y subtítulos",
+    "f3_p": "Letra bajo tu voz y subtítulos por verso, sincronizados.",
+    "f4_h": "Una lección por voz",
+    "f4_p": "Primera escucha, lectura lenta, a tempo, a dos voces, con el coro y por último «ahora te toca», sin tu voz en la mezcla. Capítulos para saltar a cada sección."
+  },
+  "voicesDemo": "Las cuatro voces: una resaltada, las demás atenuadas",
+  "sources": {
+    "h": "Fuentes y licencias",
+    "p": "Usamos solo partituras de <strong>dominio público</strong> (p. ej. CPDL/ChoralWiki, IMSLP, OpenScore). La fuente y edición de cada pieza se citan en la descripción del vídeo."
+  },
+  "theme": {
+    "toggle": "Tema oscuro"
+  },
+  "langSwitch": {
+    "label": "Idioma"
+  },
+  "langName": {
+    "it": "Italiano",
+    "en": "English",
+    "es": "Español"
+  },
+  "breadcrumb": {
+    "label": "Ruta de navegación",
+    "home": "Inicio"
+  },
+  "footer": {
+    "note": "Partituras de dominio público · arreglos y atribuciones citados por pieza.",
+    "follow": "Síguenos",
+    "contact": "Contacto",
+    "rights": "Voce a Voce"
+  },
+  "social": {
+    "youtube": "YouTube",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "card": {
+    "voices": "Voces",
+    "play": "Ficha de la pieza",
+    "soon": "próximamente",
+    "anon": "Anónimo / tradicional"
+  },
+  "voice": {
+    "S": "Soprano",
+    "A": "Contralto",
+    "T": "Tenor",
+    "B": "Bajo",
+    "alta": "Voz aguda",
+    "media": "Voz media",
+    "bassa": "Voz grave"
+  },
+  "lines": {
+    "coro": "Coro",
+    "aria": "Aria",
+    "metodo": "Método"
+  },
+  "seasons": {
+    "natale": "Navidad",
+    "pasqua": "Pascua",
+    "quaresima": "Cuaresma",
+    "mariano": "Mariano"
+  },
+  "piece": {
+    "brief": "En breve",
+    "composer": "Compositor",
+    "work": "Obra",
+    "period": "Periodo",
+    "org": "Plantilla",
+    "acc": "Acompañamiento",
+    "textLang": "Idioma del texto",
+    "key": "Tonalidad",
+    "genre": "Género",
+    "season": "Temporada",
+    "line": "Línea",
+    "voices": "Voces disponibles",
+    "score": "Partitura",
+    "scoreFrom": "{source}, licencia {license}",
+    "pick": "Elige la voz",
+    "iframeTitle": "{title} – voz {voice}",
+    "watchVoice": "Ver la voz {voice} en YouTube",
+    "watchAll": "Ver en YouTube",
+    "soonOn": "disponible el",
+    "noVideo": "Todavía no hay vídeos publicados de esta obra: vuelve pronto.",
+    "chapters": "Capítulos",
+    "chaptersFor": "Capítulos, voz {voice}",
+    "notes": "Notas sobre la obra",
+    "lyrics": "Texto y traducciones",
+    "original": "Texto original",
+    "translation": "Traducción: {lang}",
+    "translationBy": "Traducción de {credit}",
+    "license": "Licencia: {license}",
+    "draft": "Traducción aún sin revisar",
+    "textSource": "Fuente del texto",
+    "scoreH": "Partitura",
+    "scoreP": "La fuente y la licencia de la partitura están reconocidas; las ediciones de abajo sirven para comparar.",
+    "verify": "Ediciones de verificación",
+    "edition": "{edition}{publisher}{year}",
+    "report": "¿Has oído un error?",
+    "reportP": "Una alteración equivocada, una nota fuera de lugar, una palabra mal escrita: dinos dónde.",
+    "reportLink": "Avisar en GitHub",
+    "related": "Obras relacionadas",
+    "descr": {
+      "base": "{title} – {composer}: vídeo de estudio voz por voz.",
+      "org": "Plantilla: {org}.",
+      "voices": "Voces disponibles: {voices}.",
+      "soon": "Vídeo próximamente."
+    },
+    "no": "n.º {n}"
+  },
+  "mode": {
+    "major": "mayor",
+    "minor": "menor"
+  },
+  "accomp": {
+    "a_cappella": "A cappella",
+    "organo": "Órgano",
+    "pianoforte": "Piano",
+    "accompagnamento": "Con acompañamiento"
+  },
+  "license": {
+    "PD": "Dominio público",
+    "CC0": "CC0",
+    "ChoralWiki License": "ChoralWiki License",
+    "MirOS License": "MirOS License"
+  },
+  "genres": {
+    "sacro": "Sacro",
+    "canto-natalizio": "Villancico",
+    "aria": "Aria",
+    "aria-antica": "Aria antigua",
+    "metodo-vocale": "Método vocal"
+  },
+  "periods": {
+    "rinascimento": "Renacimiento",
+    "barocco": "Barroco",
+    "classico": "Clasicismo",
+    "romantico": "Romanticismo",
+    "novecento": "Siglo XX"
+  },
+  "lists": {
+    "count": {
+      "one": "{n} obra",
+      "other": "{n} obras"
+    },
+    "pieces": "Obras",
+    "path": "Recorrido de estudio",
+    "soonH": "Próximamente",
+    "soonP": "Obras con vídeos programados, aún no publicados.",
+    "none": "Todavía no hay vídeos publicados: vuelve pronto.",
+    "browse": "Explorar por",
+    "releaseOn": "desde el {date}",
+    "alpha": "Índice alfabético",
+    "type": {
+      "opera": "Ópera u obra",
+      "raccolta": "Colección"
+    },
+    "choir": {
+      "h1": "Coro: obras voz por voz",
+      "title": "Coro: obras a varias voces",
+      "desc": "El repertorio coral de Voce a Voce: una lección en vídeo para cada voz (soprano, alto, tenor, bajo), con partitura y texto."
+    },
+    "arias": {
+      "h1": "Arias de estudio",
+      "title": "Arias de estudio en tres registros",
+      "desc": "Arias antiguas y de cámara para estudiar en voz aguda, media o grave, con vídeo guía, texto y partitura de dominio público."
+    },
+    "methods": {
+      "h1": "Métodos vocales",
+      "title": "Métodos vocales y vocalizos",
+      "desc": "Recorridos de estudio ordenados para el canto, como los vocalizos de Concone, en tres registros con vídeos guía."
+    },
+    "composers": {
+      "h1": "Compositores",
+      "title": "Compositores del repertorio",
+      "desc": "Todos los compositores del catálogo por orden alfabético, con fechas y número de obras con vídeos de estudio."
+    },
+    "works": {
+      "h1": "Obras y colecciones",
+      "title": "Obras y colecciones",
+      "desc": "Óperas, misas, oratorios y colecciones didácticas del catálogo, con sus piezas en orden."
+    },
+    "genres": {
+      "h1": "Géneros",
+      "title": "Géneros del repertorio",
+      "desc": "Explora las obras por género: sacro, villancico, aria, aria antigua, método vocal."
+    },
+    "seasons": {
+      "h1": "Tiempos litúrgicos",
+      "title": "Temporadas: Navidad, Pascua, Cuaresma",
+      "desc": "Obras corales para Navidad, Pascua, Cuaresma y repertorio mariano, con vídeos voz por voz."
+    },
+    "composer": {
+      "title": "{name}: obras y vídeos de estudio",
+      "desc": "{who}: {n} con vídeos de estudio voz por voz, partitura y texto de dominio público."
+    },
+    "work": {
+      "title": "{name}: obras y vídeos",
+      "desc": "{name}: {n} con vídeos de estudio voz por voz, en el orden de la obra o colección."
+    },
+    "genre": {
+      "title": "Género {name}: obras y vídeos",
+      "desc": "Género «{name}»: {n} con vídeos de estudio voz por voz, con partitura y texto."
+    },
+    "season": {
+      "title": "{name}: obras corales y vídeos",
+      "desc": "Obras para {name}: {n} con vídeos de estudio voz por voz, con partitura y texto."
+    },
+    "seasonIntro": {
+      "natale": "Cantos de Adviento y Navidad, de la música sacra a los villancicos.",
+      "pasqua": "Obras para el tiempo pascual.",
+      "quaresima": "Obras de Cuaresma y Pasión.",
+      "mariano": "Obras en honor de la Virgen María."
+    }
+  },
+  "search": {
+    "title": "Buscar en el catálogo",
+    "description": "Busca obras, compositores y textos en el catálogo de Voce a Voce y filtra por línea, voz, temporada y género.",
+    "h1": "Buscar",
+    "intro": "Busca una obra, un compositor o una palabra del texto. Puedes acotar los resultados por compositor, línea, voz, temporada y género.",
+    "label": "Buscar en el catálogo",
+    "button": "Buscar",
+    "filters": "Filtrar los resultados",
+    "reset": "Quitar los filtros",
+    "f": {
+      "compositore": "Compositor",
+      "linea": "Línea",
+      "voce": "Voz",
+      "stagione": "Temporada",
+      "genere": "Género"
+    },
+    "otherComposers": "Más compositores ({n})",
+    "hint": "Escribe una o más palabras, o elige un filtro.",
+    "countNone": "Sin resultados",
+    "countOne": "1 resultado",
+    "countMany": "{n} resultados",
+    "loading": "Buscando…",
+    "noResults": "Sin resultados. Prueba con menos palabras, revisa la ortografía o quita algún filtro.",
+    "browseH": "O explora los índices",
+    "more": "Mostrar más resultados",
+    "error": "La búsqueda no está disponible en este momento. Aun así puedes explorar los índices de abajo.",
+    "nojs": "La búsqueda necesita JavaScript. Sin él, puedes explorar el catálogo con los índices de abajo.",
+    "by": "de",
+    "resultsLabel": "Resultados de la búsqueda",
+    "homeLabel": "Buscar obras o compositores",
+    "homeButton": "Buscar"
+  }
+}

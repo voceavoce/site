@@ -1,0 +1,113 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: catalog.listPages
+  size: 1
+  alias: entry
+eleventyExcludeFromCollections: true
+---
+{#- Pagine di elenco (indici e dettagli). Dati in list.11tydata.js: kind, view, heading -#}
+{%- set isDetail = kind in ['composer', 'work', 'genre', 'season'] -%}
+<div class="wrap list-page">
+  <header class="list-head">
+    <h1>{{ heading }}</h1>
+    {%- if kind == 'composer' %}
+    <p class="list-meta">
+      {%- if view.composer.date %}<span>{{ view.composer.date }}</span>{% endif %}
+      {%- if view.composer.periodo %}{% if view.composer.date %} · {% endif %}<span>{{ ('periods.' ~ view.composer.periodo) | t(lang) }}</span>{% endif %}
+    </p>
+    {%- elif kind == 'work' %}
+    {%- set first = (view.visible[0] or view.soon[0]) %}
+    <p class="list-meta">
+      {%- if view.work.tipo %}<span>{{ ('lists.type.' ~ view.work.tipo) | t(lang) }}</span>{% endif %}
+      {%- if first and first.compositore %} · <a href="{{ lang | routeUrl('composers', first.compositore.id) }}">{{ first.compositore.nome }}</a>{% endif %}
+    </p>
+    {%- elif kind == 'season' %}
+    <p class="lead">{{ ('lists.seasonIntro.' ~ entry.id) | t(lang) }}</p>
+    {%- elif not isDetail %}
+    <p class="lead">{{ description }}</p>
+    {%- endif %}
+    {%- if isDetail and view.visible.length %}
+    <p class="list-count">{{ view.visible.length | countLabel(lang) }}</p>
+    {%- endif %}
+    <div class="bars-mini" aria-hidden="true"><span></span><span class="on"></span><span></span><span></span></div>
+  </header>
+
+  {%- if kind in ['choir', 'arias', 'methods'] %}
+  <nav class="browse-links" aria-label="{{ 'lists.browse' | t(lang) }}">
+    <span class="browse-links__lbl">{{ 'lists.browse' | t(lang) }}</span>
+    <a href="{{ lang | routeUrl('composers') }}">{{ 'nav.compositori' | t(lang) }}</a>
+    <a href="{{ lang | routeUrl('works') }}">{{ 'lists.works.h1' | t(lang) }}</a>
+    <a href="{{ lang | routeUrl('genres') }}">{{ 'lists.genres.h1' | t(lang) }}</a>
+    <a href="{{ lang | routeUrl('seasons') }}">{{ 'nav.stagioni' | t(lang) }}</a>
+  </nav>
+  {%- endif %}
+
+  {#- ===== Indici con righe (autori, opere, generi, stagioni) ===== -#}
+  {%- if kind in ['composers', 'works', 'genres', 'seasons'] %}
+  {%- if kind == 'composers' %}
+  <section class="index-section" aria-labelledby="idx-h">
+    <h2 id="idx-h" class="sr-only">{{ 'lists.alpha' | t(lang) }}</h2>
+    <nav class="alpha-nav" aria-label="{{ 'lists.alpha' | t(lang) }}">
+      {%- for g in view.groups %}<a href="#l-{{ loop.index }}">{{ g.letter }}</a>{% endfor %}
+    </nav>
+    {%- for g in view.groups %}
+    <div class="index-group">
+      <h3 id="l-{{ loop.index }}">{{ g.letter }}</h3>
+      <ul class="index-list plain">
+        {%- for r in g.items %}
+        <li><a href="{{ lang | routeUrl('composers', r.id) }}">{{ r.nome }}</a>{% if r.date %} <span class="text-muted">({{ r.date }})</span>{% endif %}<span class="index-list__n">{{ r.count | countLabel(lang) }}</span></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </section>
+  {%- else %}
+  <section class="index-section" aria-labelledby="idx-h">
+    <h2 id="idx-h" class="sr-only">{{ heading }}</h2>
+    <ul class="index-list index-list--rich plain">
+      {%- for r in view.rows %}
+      {%- if kind == 'works' %}
+      <li><a href="{{ lang | routeUrl('works', r.id) }}">{{ r.titolo }}</a><span class="text-muted">{% if r.compositore %} · {{ r.compositore }}{% endif %} · {{ ('lists.type.' ~ r.tipo) | t(lang) }}</span><span class="index-list__n">{{ r.count | countLabel(lang) }}</span></li>
+      {%- elif kind == 'genres' %}
+      <li><a href="{{ lang | routeUrl('genres', r.id) }}">{{ ('genres.' ~ r.id) | t(lang) }}</a><span class="index-list__n">{{ r.count | countLabel(lang) }}</span></li>
+      {%- else %}
+      <li><a href="{{ lang | routeUrl('seasons', seasonSlugs[r.id]) }}">{{ ('seasons.' ~ r.id) | t(lang) }}</a><span class="text-muted"> · {{ ('lists.seasonIntro.' ~ r.id) | t(lang) }}</span><span class="index-list__n">{{ r.count | countLabel(lang) }}</span></li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+  {%- if view.soonRows.length %}
+  <section class="soon" aria-labelledby="soon-h">
+    <h2 id="soon-h">{{ 'lists.soonH' | t(lang) }}</h2>
+    <p class="text-muted">{{ 'lists.soonP' | t(lang) }}</p>
+    <ul class="soon-list plain">
+      {%- for r in view.soonRows %}
+      <li><strong>{{ (r.nome or r.titolo) if kind != 'genres' else (('genres.' ~ r.id) | t(lang)) }}</strong>{% if r.date %} <span class="text-muted">({{ r.date }})</span>{% endif %}<span class="text-muted"> · {{ r.soon.length | countLabel(lang) }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {#- ===== Elenchi di brani (linee e dettagli) ===== -#}
+  {%- else %}
+  {%- if view.visible.length %}
+  <section class="pieces" aria-labelledby="pieces-h">
+    <h2 id="pieces-h">{{ ('lists.path' if view.asPath else 'lists.pieces') | t(lang) }}</h2>
+    {%- set pieces = view.visible %}{% set asPath = view.asPath %}
+{% include "components/piece-grid.njk" %}
+  </section>
+  {%- else %}
+  <p class="player__none">{{ 'lists.none' | t(lang) }}</p>
+  {%- endif %}
+  {%- if view.soon.length %}
+  <section class="soon" aria-labelledby="soon-h">
+    <h2 id="soon-h">{{ 'lists.soonH' | t(lang) }}</h2>
+    <p class="text-muted">{{ 'lists.soonP' | t(lang) }}</p>
+    {%- set pieces = view.soon %}
+{% include "components/soon-list.njk" %}
+  </section>
+  {%- endif %}
+  {%- endif %}
+</div>

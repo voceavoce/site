@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "slug": "due-pupille-amabili-mozart",
+  "linea": "coro",
+  "rank": "222",
+  "ranks": [
+    "222"
+  ],
+  "titolo": "Due pupille amabili",
+  "compositore": {
+    "id": "wolfgang-amadeus-mozart",
+    "nome": "Wolfgang Amadeus Mozart",
+    "breve": "Mozart",
+    "date": "1756–1791",
+    "nascita": "1756",
+    "morte": 1791,
+    "periodo": "classico",
+    "alias": [
+      "W. A. Mozart",
+      "W.A. Mozart",
+      "WA Mozart",
+      "Mozart"
+    ]
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SAB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "Due pupille amabili\nM'han piegato il core\nE se pietà non chiedo\nA quelle luci belle\nPer quelle, sì per quelle,\nIo morirò d'amore.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=54603"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "XOZ_l9NASjo",
+      "pubblica_dal": "2027-01-05T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "X1Bh7R4x0Qc",
+      "pubblica_dal": "2027-01-05T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "GR2HL8m-KjU",
+      "pubblica_dal": "2027-01-05T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-05T15:30:00Z"
+}

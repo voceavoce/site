@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "audite-silete-praetorius",
+  "linea": "coro",
+  "rank": "019",
+  "ranks": [
+    "019"
+  ],
+  "titolo": "Audite silete",
+  "compositore": {
+    "id": "michael-praetorius",
+    "nome": "Michael Praetorius",
+    "breve": "Praetorius",
+    "date": "1571–1621",
+    "nascita": "1571",
+    "morte": 1621,
+    "alias": [
+      "Michael Prätorius"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 112,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "rpy67HuNdk8",
+      "pubblica_dal": "2026-09-27T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "lW-sRqwemjs",
+      "pubblica_dal": "2026-09-27T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "iMo09rvynvs",
+      "pubblica_dal": "2026-09-27T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "nRih5rJU3TY",
+      "pubblica_dal": "2026-09-27T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-27T14:30:00Z"
+}

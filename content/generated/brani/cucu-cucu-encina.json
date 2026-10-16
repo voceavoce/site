@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "slug": "cucu-cucu-encina",
+  "linea": "coro",
+  "rank": "007",
+  "ranks": [
+    "007"
+  ],
+  "titolo": "Cucú, cucú!",
+  "compositore": {
+    "id": "juan-del-encina",
+    "nome": "Juan del Encina",
+    "breve": "Encina",
+    "date": "1468–1529",
+    "nascita": "1468",
+    "morte": 1529,
+    "periodo": "rinascimento",
+    "alias": [
+      "Encina"
+    ]
+  },
+  "generi": [],
+  "lingua": "es",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 115,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "uYVajIrWPt4",
+      "pubblica_dal": "2026-12-09T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "VN0xfUiYjrU",
+      "pubblica_dal": "2026-12-09T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "kwt3nVrkTpY",
+      "pubblica_dal": "2026-12-09T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "miSYChDJvUI",
+      "pubblica_dal": "2026-12-09T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-09T15:30:00Z"
+}

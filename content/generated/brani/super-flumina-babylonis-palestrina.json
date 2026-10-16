@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "slug": "super-flumina-babylonis-palestrina",
+  "linea": "coro",
+  "rank": "066",
+  "ranks": [
+    "066"
+  ],
+  "titolo": "Super flumina Babylonis",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 168,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "ChoralWiki License",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "j_0s5hDHVLo",
+      "pubblica_dal": "2026-11-11T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "HbFd8Bq2U50",
+      "pubblica_dal": "2026-11-11T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "A5koGnE28hU",
+      "pubblica_dal": "2026-11-11T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "unTihEOvljM",
+      "pubblica_dal": "2026-11-11T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-11T15:30:00Z"
+}

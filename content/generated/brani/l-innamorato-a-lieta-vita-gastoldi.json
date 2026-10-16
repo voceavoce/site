@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "slug": "l-innamorato-a-lieta-vita-gastoldi",
+  "linea": "coro",
+  "rank": "055",
+  "ranks": [
+    "055"
+  ],
+  "titolo": "L'Innamorato (A lieta vita)",
+  "compositore": {
+    "id": "giovanni-giacomo-gastoldi",
+    "nome": "Giovanni Giacomo Gastoldi",
+    "breve": "Gastoldi",
+    "date": "c. 1554–1609",
+    "nascita": "c. 1554",
+    "morte": 1609,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Gastoldi"
+    ],
+    "alias": [
+      "Giovanni Gastoldi",
+      "Gastoldi"
+    ]
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SSATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 170,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "A lieta vita\nAmor c'invita, Fa la la\nChi gior brama,\nSe di cor ama,\nDonerà il core\nA un tal Signore, Fa la la\nOr lieta omai\nScacciando i guai, Fa la la\nQuanto ci resta\nViviamo in festa\nE diam I'onore\nA un tal Signore, Fa la la\nChi a Lui non crede\nPrivo è di fede, Fa la la\nOnde aver merta\nContra se aperta\nL'ira e 'l furore\nD'un tal Signore, Fa la la\nNe fuggir giova\nCh'egli ognun trova, Fa la la\nVeloci ha l'ali\nE foco e strali\nDunque s'ardore\nUn tal Signore, Fa la la.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=301"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "9NKM1BDlFP8",
+      "pubblica_dal": "2026-12-06T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "aATPNfa-vfg",
+      "pubblica_dal": "2026-12-06T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Lgsql6h7SWM",
+      "pubblica_dal": "2026-12-06T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "S2VK8MUhBCw",
+      "pubblica_dal": "2026-12-06T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "DlZJw_BKmzo",
+      "pubblica_dal": "2026-12-06T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-06T15:30:00Z"
+}

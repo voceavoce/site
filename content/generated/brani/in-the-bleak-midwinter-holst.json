@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "in-the-bleak-midwinter-holst",
+  "linea": "coro",
+  "rank": "077",
+  "ranks": [
+    "077"
+  ],
+  "titolo": "In the Bleak Midwinter",
+  "compositore": {
+    "id": "gustav-holst",
+    "nome": "Gustav Holst",
+    "breve": "Holst",
+    "date": "1874–1934",
+    "nascita": "1874",
+    "morte": 1934,
+    "periodo": "novecento"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 66,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "RcE7hKy0ZmI",
+      "pubblica_dal": "2026-09-20T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "y3BPLB3T984",
+      "pubblica_dal": "2026-09-20T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "TmvD2J1i8fw",
+      "pubblica_dal": "2026-09-20T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "cFKmwlDVpqw",
+      "pubblica_dal": "2026-09-20T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-20T14:30:00Z"
+}

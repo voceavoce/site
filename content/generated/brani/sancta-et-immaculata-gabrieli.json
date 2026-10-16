@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "slug": "sancta-et-immaculata-gabrieli",
+  "linea": "coro",
+  "rank": "322",
+  "ranks": [
+    "322"
+  ],
+  "titolo": "Sancta et Immaculata",
+  "compositore": {
+    "id": "andrea-gabrieli",
+    "nome": "Andrea Gabrieli",
+    "breve": "Gabrieli"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSATB",
+  "tonalita": {
+    "tonica": "Eb",
+    "modo": "major"
+  },
+  "tempo_bpm": 92,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "mkJ4qaz_ZgU",
+      "pubblica_dal": "2026-11-08T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "4myqvjMJED4",
+      "pubblica_dal": "2026-11-08T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "0EdCAka0Uec",
+      "pubblica_dal": "2026-11-08T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "lxfI9TV9Dcc",
+      "pubblica_dal": "2026-11-08T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "MDSXOHL1st0",
+      "pubblica_dal": "2026-11-08T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-08T15:30:00Z"
+}

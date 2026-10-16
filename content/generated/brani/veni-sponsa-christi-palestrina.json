@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "slug": "veni-sponsa-christi-palestrina",
+  "linea": "coro",
+  "rank": "085",
+  "ranks": [
+    "085"
+  ],
+  "titolo": "Veni sponsa Christi",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 148,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "TYcxSK41qmA",
+      "pubblica_dal": "2026-12-23T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Lrj51gyrPEc",
+      "pubblica_dal": "2026-12-23T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "fpYpZWKq-9w",
+      "pubblica_dal": "2026-12-23T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "FshMgfV1VSU",
+      "pubblica_dal": "2026-12-23T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-23T15:30:00Z"
+}

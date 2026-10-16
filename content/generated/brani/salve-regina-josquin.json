@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "slug": "salve-regina-josquin",
+  "linea": "coro",
+  "rank": "471",
+  "ranks": [
+    "471"
+  ],
+  "titolo": "Salve Regina",
+  "compositore": {
+    "id": "josquin-des-prez",
+    "nome": "Josquin des Prez",
+    "breve": "Josquin",
+    "date": "c. 1450–1521",
+    "nascita": "c. 1450",
+    "morte": 1521,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Josquin Desprez",
+      "Josquin"
+    ],
+    "alias": [
+      "Josquin des Prés",
+      "Josquin Desprez",
+      "Josquin desPrez",
+      "Josquin Des Pres",
+      "Josquin",
+      "des Prez"
+    ]
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 110,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "edizioni_verifica": [
+    {
+      "edizione": "Josquin Research Project (Stanford University), Jos2504 «Salve regina» a 4 = NJE 25.4; trascrizione Will Watson, edizione critica di Jesse Rodin (2011), accidenti editoriali marcati",
+      "editore": "Josquin Research Project / CCARH, Stanford",
+      "anno": 2011,
+      "url": "https://github.com/josquin-research-project/jrp-scores/blob/main/Jos/Jos2504-Salve_regina.krn"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "Salve, Regina, Mater misericordiae:\nVita, dulcedo et spes nostra, salve.\nAd te clamamus, exsules, filii Hevae.\nAd te suspiramus, gementes et flentes\nin hac lacrimarum valle.\nEia, ergo, Advocata nostra,\nillos tuos misericordes oculos ad nos converte.\nEt Iesum, benedictum fructum ventris tui,\nnobis post hoc exsilium ostende.\nO clemens, O pia,\nO dulcis Virgo Maria.",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Salve_Regina"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "mo5tcEROjgE",
+      "pubblica_dal": "2027-01-09T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "AhmNITdCdsM",
+      "pubblica_dal": "2027-01-09T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "pXECrrZRXLk",
+      "pubblica_dal": "2027-01-09T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "dxlmrBRvsok",
+      "pubblica_dal": "2027-01-09T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-09T15:30:00Z"
+}

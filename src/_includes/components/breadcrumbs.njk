@@ -1,0 +1,13 @@
+{#- breadcrumbs: [{label, url}] ; l'ultima voce e' la pagina corrente (senza link) -#}
+<nav class="breadcrumbs" aria-label="{{ 'breadcrumb.label' | t(lang) }}">
+  <ol>
+    <li><a href="{{ lang | routeUrl }}">{{ 'breadcrumb.home' | t(lang) }}</a></li>
+    {%- for crumb in breadcrumbs %}
+    {%- if loop.last %}
+    <li><span aria-current="page">{{ crumb.label }}</span></li>
+    {%- else %}
+    <li><a href="{{ crumb.url }}">{{ crumb.label }}</a></li>
+    {%- endif %}
+    {%- endfor %}
+  </ol>
+</nav>

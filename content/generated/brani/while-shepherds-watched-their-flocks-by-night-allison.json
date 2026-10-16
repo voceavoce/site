@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "slug": "while-shepherds-watched-their-flocks-by-night-allison",
+  "linea": "coro",
+  "rank": "059",
+  "ranks": [
+    "059"
+  ],
+  "titolo": "While Shepherds Watched Their Flocks By Night",
+  "compositore": {
+    "id": "richard-allison",
+    "nome": "Richard Allison",
+    "breve": "Allison"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": 126,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "Wd6-cM6kdvU",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "BtynxixE13o",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "T",
+      "video_id": "_B2qNc6SerQ",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "B",
+      "video_id": "VYGia7KEk6M",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-09-01"
+}

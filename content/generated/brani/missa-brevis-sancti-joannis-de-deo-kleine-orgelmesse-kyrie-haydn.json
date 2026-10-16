@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "slug": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn",
+  "linea": "coro",
+  "rank": "472",
+  "ranks": [
+    "472"
+  ],
+  "titolo": "Missa brevis Sancti Joannis de Deo (Kleine Orgelmesse) - Kyrie",
+  "compositore": {
+    "id": "joseph-haydn",
+    "nome": "Joseph Haydn",
+    "breve": "Haydn",
+    "date": "1732–1809",
+    "nascita": "1732",
+    "morte": 1809,
+    "periodo": "classico",
+    "varianti": [
+      "Franz Joseph Haydn"
+    ],
+    "alias": [
+      "Franz Joseph Haydn",
+      "J. Haydn"
+    ]
+  },
+  "opera": {
+    "id": "missa-brevis-sancti-joannis-de-deo",
+    "titolo": "Missa brevis Sancti Joannis de Deo"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "Bb",
+    "modo": "major"
+  },
+  "tempo_bpm": 69,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "edizioni_verifica": [
+    {
+      "edizione": "J. Haydn, Missa brevis in hon. St. Joannis de Deo in B dur («Kleine Orgelsolo-Messe»), riduzione per canto e pianoforte «nach der Originalpartitur», bearbeitet von Ferdinand Habel (Denkmäler liturgischer Tonkunst, hrsg. Alfred Schnerich), Kyrie",
+      "editore": "Anton Böhm & Sohn, Augsburg-Wien (lastra 7790)",
+      "anno": 1920,
+      "url": "https://archive.org/details/missabrevisihsti00hayd"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "Kyrie Eleison\nChriste Eleison\nKyrie Eleison",
+    "fonte": {
+      "sito": "hozana.org",
+      "url": "https://hozana.org/en/prayer/in-latin/kyrie"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "ur8dovjsC9A",
+      "pubblica_dal": "2027-01-07T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "olG1fBzTVUU",
+      "pubblica_dal": "2027-01-07T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "oQ2rnIpNncQ",
+      "pubblica_dal": "2027-01-07T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "sQKd3iPPMlk",
+      "pubblica_dal": "2027-01-07T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-07T15:30:00Z"
+}

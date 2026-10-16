@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "slug": "stabat-mater-palestrina",
+  "linea": "coro",
+  "rank": "092",
+  "ranks": [
+    "092"
+  ],
+  "titolo": "Stabat Mater",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
+    ]
+  },
+  "stagioni": [
+    "quaresima"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSAATTBB",
+  "tempo_bpm": 96,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "bmjfYgSJ-4U",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "gzt-bgRNFNE",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "-dq-P-Up-SM",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "Ue5XPlizzrQ",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "DEdnEHjzrww",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "HV92lquuc1Q",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "3970FcA5zv0",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "ZmvZyuju4JA",
+      "pubblica_dal": "2027-01-01T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-01T15:30:00Z"
+}

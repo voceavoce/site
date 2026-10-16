@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "the-first-nowell-stainer",
+  "linea": "coro",
+  "rank": "073",
+  "ranks": [
+    "073"
+  ],
+  "titolo": "The First Nowell",
+  "compositore": {
+    "id": "john-stainer",
+    "nome": "John Stainer",
+    "breve": "Stainer",
+    "date": "1840–1901",
+    "nascita": "1840",
+    "morte": 1901,
+    "periodo": "romantico"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": 90,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "Wemtf1UcOjs",
+      "pubblica_dal": "2026-08-27",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "O6cBaKrE3x4",
+      "pubblica_dal": "2026-08-27",
+      "pubblica": true
+    },
+    {
+      "voce": "T",
+      "video_id": "JZBil0EvpCE",
+      "pubblica_dal": "2026-08-27",
+      "pubblica": true
+    },
+    {
+      "voce": "B",
+      "video_id": "1iZNYqWNmAQ",
+      "pubblica_dal": "2026-08-27",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-08-27"
+}

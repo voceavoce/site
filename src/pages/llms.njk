@@ -1,0 +1,34 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+{%- set nomi = {
+  "it": {"choir": "Coro", "arias": "Arie", "methods": "Metodi vocali", "composers": "Compositori", "works": "Opere e raccolte", "genres": "Generi", "seasons": "Stagioni", "search": "Cerca", "howItWorks": "Come funziona", "sources": "Fonti e licenze", "about": "Chi siamo", "privacy": "Privacy", "disclosure": "Trasparenza"},
+  "en": {"choir": "Choir", "arias": "Arias", "methods": "Vocal methods", "composers": "Composers", "works": "Works and collections", "genres": "Genres", "seasons": "Seasons", "search": "Search", "howItWorks": "How it works", "sources": "Sources and licences", "about": "About", "privacy": "Privacy", "disclosure": "Disclosure"},
+  "es": {"choir": "Coro", "arias": "Arias", "methods": "Métodos vocales", "composers": "Compositores", "works": "Obras y colecciones", "genres": "Géneros", "seasons": "Temporadas", "search": "Buscar", "howItWorks": "Cómo funciona", "sources": "Fuentes y licencias", "about": "Quiénes somos", "privacy": "Privacidad", "disclosure": "Transparencia"}
+} -%}
+# {{ site.name }}
+
+> Voce a Voce pubblica video di studio corale voce per voce: per ogni brano un video per ciascuna voce (Soprano, Contralto, Tenore, Basso), con la partitura che scorre, la voce studiata in evidenza e le altre attenuate. Repertorio e partiture di pubblico dominio; anche metodi vocali (Concone) e arie antiche per i primi anni di studio. Sito in italiano, inglese e spagnolo. / Choral rehearsal videos, one per voice part, from public-domain scores. / Vídeos de estudio coral, uno por voz, de partituras de dominio público.
+
+{% for lang in site.langs -%}
+## {{ lang | upper }}
+
+- [Home]({{ (lang | routeUrl) | absUrl }})
+{% for s in ["choir", "arias", "methods", "composers", "works", "genres", "seasons", "search"] -%}
+- [{{ nomi[lang][s] }}]({{ (lang | routeUrl(s)) | absUrl }})
+{% endfor -%}
+{% for s in ["howItWorks", "sources", "about", "privacy", "disclosure"] -%}
+- [{{ nomi[lang][s] }}]({{ (lang | routeUrl(s)) | absUrl }})
+{% endfor %}
+{% endfor -%}
+## Brani più recenti
+
+{% for p in catalog.ultimi | slice20 -%}
+- [{{ p.titolo }}{% if p.compositore %} – {{ p.compositore.nome }}{% endif %}]({{ ("it" | routeUrl("pieces", p.slug)) | absUrl }})
+{% endfor %}
+## Feed
+
+- {{ ("it" | routeUrl) | absUrl }}feed.xml
+- {{ ("en" | routeUrl) | absUrl }}feed.xml
+- {{ ("es" | routeUrl) | absUrl }}feed.xml

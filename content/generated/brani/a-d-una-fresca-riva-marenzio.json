@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "slug": "a-d-una-fresca-riva-marenzio",
+  "linea": "coro",
+  "rank": "342",
+  "ranks": [
+    "342"
+  ],
+  "titolo": "A d'una fresca riva",
+  "compositore": {
+    "id": "luca-marenzio",
+    "nome": "Luca Marenzio",
+    "breve": "Marenzio",
+    "date": "1553–1599",
+    "nascita": "1553",
+    "morte": 1599,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SST",
+  "tempo_bpm": 124,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "Testo\nAd una fresca riva\nGuidommi Amor dove era la mia Diva,\nChe con gli occhi, co'l crin e’l visadorno\nFea nascer fiore e vaghe erbett'intorno.\nSe a me gli occhi volgea\nInvidia agli altri amanti ella porgea,\nChe co' sguardi, con risi e con parole\nEra a me sol dolcissimo il mio sole.\nSe apria le chiome bionde\nGarrian gli augelli e si fermavan la onde,\nE se gioia al mio cor era il lor canto",
+    "fonte": {
+      "sito": "flaminioonline.it",
+      "url": "https://www.flaminioonline.it/Guide/Marenzio/Marenzio-Madrigale63.html"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "1YsAcP4L6VI",
+      "pubblica_dal": "2026-12-16T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "Iw8PPX0p1n0",
+      "pubblica_dal": "2026-12-16T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "Z0BkiuvNWQ4",
+      "pubblica_dal": "2026-12-16T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-16T15:30:00Z"
+}

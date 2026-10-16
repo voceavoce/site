@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "slug": "though-philomela-lost-her-love-morley",
+  "linea": "coro",
+  "rank": "361",
+  "ranks": [
+    "361"
+  ],
+  "titolo": "Though Philomela lost her love",
+  "compositore": {
+    "id": "thomas-morley",
+    "nome": "Thomas Morley",
+    "breve": "Morley",
+    "date": "1557–1602",
+    "nascita": "1557",
+    "morte": 1602,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SAT",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": 150,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "Though Philomela lost her love,\nfresh note she warbleth yes again;\nFa la la la la.\nHe is a fool that lovers prove;\nand leaves to sing\nto live in pain.\nFa la la la.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=1274"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "mg4401a9jD4",
+      "pubblica_dal": "2026-11-20T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "sgI1S_834-8",
+      "pubblica_dal": "2026-11-20T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "jlYtjSxowek",
+      "pubblica_dal": "2026-11-20T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-20T15:30:00Z"
+}

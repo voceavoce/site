@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "slug": "vere-languores-victoria",
+  "linea": "coro",
+  "rank": "156",
+  "ranks": [
+    "156"
+  ],
+  "titolo": "Vere languores",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ],
+    "alias": [
+      "Tomas Luis de Victoria",
+      "Victoria",
+      "T. L. de Victoria"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "B",
+    "modo": "minor"
+  },
+  "tempo_bpm": 108,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "omoZzZBjE8g",
+      "pubblica_dal": "2026-10-08T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "1qXavddd9Q4",
+      "pubblica_dal": "2026-10-08T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "ey0SRQfwpeo",
+      "pubblica_dal": "2026-10-08T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "TD4zsnmMqtA",
+      "pubblica_dal": "2026-10-08T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-08T14:30:00Z"
+}

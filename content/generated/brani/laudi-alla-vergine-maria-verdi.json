@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "slug": "laudi-alla-vergine-maria-verdi",
+  "linea": "coro",
+  "rank": "464",
+  "ranks": [
+    "464"
+  ],
+  "titolo": "Laudi alla Vergine Maria",
+  "compositore": {
+    "id": "giuseppe-verdi",
+    "nome": "Giuseppe Verdi",
+    "breve": "Verdi",
+    "date": "1813–1901",
+    "nascita": "1813",
+    "morte": 1901,
+    "periodo": "romantico"
+  },
+  "opera": {
+    "id": "quattro-pezzi-sacri-n-3",
+    "titolo": "Quattro pezzi sacri n. 3"
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "it",
+  "organico": "SSAA",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 75,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "G. Verdi, Laudi alla Vergine Maria (tolte dall'ultimo Canto del «Paradiso» di Dante) per 4 voci bianche, partitura vocale",
+      "editore": "G. Ricordi & C., Milano (lastra 100009)",
+      "anno": 1898,
+      "url": "https://archive.org/details/laudiallavergine00verd"
+    }
+  ],
+  "testo": {
+    "lingua": "it",
+    "testo": "Vergine Madre, figlia del tuo Figlio,\numile ed alta più che creatura,\ntermine fisso d'eterno consiglio,\ntu se' colei che l'umana natura\nnobilitasti sì, che 'l suo fattore\nnon disdegnò di farsi sua fattura.\nNel ventre tuo si raccese l'amore,\nper lo cui caldo nell'eterna pace\ncosì è germinato questo fiore.\nQui se' a noi meridiana face\ndi caritate, e giuso, intra' mortali,\nse' di speranza fontana vivace.\nDonna, se' tanto grande e tanto vali,\nche qual vuol grazia e a te non ricorre,\nsua disianza vuol volar senz'ali.\nLa tua benignità non pur soccorre\na chi dimanda, ma molte fiate\nliberamente al dimandar precorre.\nIn te misericordia, in te pietate,\nin te magnificenza, in te s'aduna\nquantunque in creatura è di bontate.",
+    "fonte": {
+      "sito": "imslp.org",
+      "url": "https://imslp.org/wiki/4_Pezzi_sacri_(Verdi,_Giuseppe)"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "McPkxVbx4cA",
+      "pubblica_dal": "2027-01-16T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "zBA8nJxWTIY",
+      "pubblica_dal": "2027-01-16T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "hRO47fuw2eg",
+      "pubblica_dal": "2027-01-16T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "l7VxFK22Ftc",
+      "pubblica_dal": "2027-01-16T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-16T15:30:00Z"
+}

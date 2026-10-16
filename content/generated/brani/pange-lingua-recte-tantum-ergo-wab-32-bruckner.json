@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "slug": "pange-lingua-recte-tantum-ergo-wab-32-bruckner",
+  "linea": "coro",
+  "rank": "266",
+  "ranks": [
+    "266"
+  ],
+  "titolo": "Pange lingua recte: Tantum ergo WAB 32",
+  "compositore": {
+    "id": "anton-bruckner",
+    "nome": "Anton Bruckner",
+    "breve": "Bruckner",
+    "date": "1824–1896",
+    "nascita": "1824",
+    "morte": 1896,
+    "periodo": "romantico",
+    "alias": [
+      "Joseph Anton Bruckner",
+      "Bruckner"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "ChoralWiki License",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "M5YLCNTz-KQ",
+      "pubblica_dal": "2026-10-31T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Qk966mU1Hkk",
+      "pubblica_dal": "2026-10-31T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "ZAoXQIiD0Y8",
+      "pubblica_dal": "2026-10-31T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "1aOtvcCsdxI",
+      "pubblica_dal": "2026-10-31T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-31T15:30:00Z"
+}

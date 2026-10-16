@@ -1,0 +1,238 @@
+# Voce a Voce — da landing page a catalogo video ricercabile
+
+## Contesto
+
+**Dove è pubblicato oggi:** su **GitHub Pages**, dal branch `main` del repo `voceavoce/site`, con dominio personalizzato **voceavoce.com** (file `CNAME`; `.nojekyll` disattiva Jekyll). È confermato anche da `AIVideoCreator/docs/voceavoce-infrastruttura.md`.
+
+Il sito di oggi è una sola pagina statica: `index.html`, `style.css` e 4 PNG in `assets/`.
+
+**Perché cambiarlo:** il canale YouTube cresce. Oggi la roadmap conta 489 brani corali, 31 arie e 3 metodi (pilota Concone), con circa 700 video per voce tra pubblicati e programmati. La landing rimanda soltanto al canale.
+
+Serve un catalogo strutturato, concettualmente "alla Choralia" ma con un'interfaccia moderna, che:
+- presenti i video dentro **schede-brano**: spiegazione, testo, traduzioni, fonti;
+- si possa sfogliare per autore, opera/raccolta, genere, stagione, voce e linea (coro / arie / metodi), e abbia una **ricerca interna**;
+- sia accessibile (WCAG 2.2 AA), valido W3C e indicizzabile da motori di ricerca e AI;
+- abbia già gli spazi per **banner** e **affiliazioni**, spenti finché non servono;
+- resti statico, sullo stesso hosting.
+
+**Problemi della landing attuale da non ripetere:**
+- EN/ES sono iniettati via JS, quindi i motori di ricerca vedono solo l'italiano.
+- `og:image` è relativo: le anteprime social non funzionano.
+- Il cambio lingua usa `<button>` senza stato.
+- I PNG arrivano a 2560×1440.
+- Mancano sitemap, `robots.txt`, dati strutturati e canonical.
+
+**Decisioni prese:**
+- Eleventy + Pagefind, build e deploy con GitHub Actions.
+- Interfaccia IT/EN/ES; testi cantati anche con traduzioni DE/FR.
+- Backup: tag `landing-v1` + copia in `/classic/` (noindex).
+- **Niente YouTube API:** i dati del sito li scrive la pipeline **AIVideoCreator**, partendo da ciò che ha già in git.
+
+## Cosa offre già AIVideoCreator (verificato)
+
+| Dato | Dove (in git) |
+|---|---|
+| ID video per voce, `publish_at`, `privacy`, stadio | `projects-instances/<linea>/roadmap/brani/<rank>.json` (scritto da `job_choir_complete_metadata._salva_stato` e da `job_choir_sync_schedule`) |
+| Titolo, compositore, opera madre, stagione (`avvento-natale`, `pasqua`, `quaresima-passione`, `mariano`, `generico`), lingua, voicing, fonte, licenza, `nota_descrizione {it,en,es}` | contratto `…/render_settings.json` |
+| Arie/metodi: `opera`, `numero`, `registro`, attribuzione | `projects-instances/{arie,metodi}/render_settings.json` |
+| Compositori: nascita, morte, periodo, alias | `projects-instances/choir/compositori.yaml` (letto da `metadati_seo.compositore_info`) |
+| Testi originali con fonti | `sources/pdmx/testi/*.json`, `testi/_comuni/`, `verses/`, `arie/testi_cantati/` |
+| Edizioni di verifica IMSLP/CPDL | `sources/pdmx/verifiche/*.json` |
+| Etichette multilingua, periodi, playlist | `testi_seo.yaml`, `metadati_seo.scheda_brano` |
+| Modello da riusare | `scripts/cli/job_choir_esporta_scores.py`: esporta dati per un repo pubblico, include solo video `public`, non fa push |
+
+**Cosa manca:**
+- **genere**: non esiste come campo; si ricava, vedi sotto;
+- **traduzioni dei testi cantati**;
+- **capitoli**: oggi solo in `runtime/` sulla macchina RENDER, fuori da git;
+- **varianti scure**: si produce solo il tema chiaro, quindi niente selettore chiaro/scuro;
+- **ID playlist**: non vengono salvati.
+
+**Implicazione:** l'esportatore è codice Python puro e costa **zero token e zero quota API**. Consumano token solo i contenuti scritti dall'agente (traduzioni, note); quelli li pianifichiamo a lotti, come chiede la regola di AIVideoCreator «operazioni costose: segnalarle prima».
+
+---
+
+## Parte A — AIVideoCreator: esportatore dei dati del sito
+
+Nuovo CLI **`pipeline-core/scripts/cli/job_sito_esporta.py`**, sul modello di `job_choir_esporta_scores.py`. È puro, deterministico, testato.
+
+- **Input:** le 3 linee definite in `scripts/common/linee.py` `LINEE`. Per ciascuna legge roadmap, contratto, `compositori.yaml`, testi, verifiche e, se presente, `testi_seo.yaml`. Se trova `runtime/output/…` (cioè gira sulla macchina RENDER), legge anche `chapters.txt` e la durata da `render_meta.json`.
+- **Output:** scrive nella cartella `--out` (default: variabile `VOCEAVOCE_SITE_DIR` nel `.env`, altrimenti `runtime/tmp/site_export/`) dentro `content/generated/`:
+  - `brani/<slug>.json`: un file per brano, con lo schema documentato in `content/generated/SCHEMA.md`;
+  - `compositori.json`, `opere.json`, `indice.json` (con data di generazione e hash del commit della pipeline).
+- **Regola di inclusione:** il brano entra se ha almeno una voce `public`, oppure una voce `private` con `publish_at` futuro. Per queste ultime l'ID viene esportato con `publish_at`, e il sito lo mostra solo dopo quella data. Un video privato non è comunque visibile a nessuno, quindi esportarne l'ID non rivela nulla. Escluse le voci in `voci_v1_eliminate` / `voci_sfasate_sostituite` e i brani con `hold_publish`.
+- **Slug stabile:** generato al primo export da titolo e cognome del compositore (es. `locus-iste-bruckner`) e salvato una volta per tutte nel campo `slug_sito` della roadmap. Così, se il titolo viene corretto, l'URL non cambia e il posizionamento non si perde.
+- **Genere, senza AI:** campo opzionale `genere` nel contratto. Se manca, una regola deterministica lo ricava:
+  - linea `metodi` → *metodo-vocale*;
+  - linea `arie` → *aria*, con il sottotipo dalla raccolta (es. *arie antiche*);
+  - coro + lingua `la` → *sacro-latino*;
+  - stagione `avvento-natale` → aggiunge il tag *natale*;
+  - il periodo arriva da `compositori.yaml` (rinascimento / barocco / …).
+  - La regola sta in una funzione pura con i suoi test.
+- **Capitoli in git:** `job_choir_complete_metadata` gira già quando il video viene pubblicato. Aggiungo un passo che copia i capitoli di `chapters.txt` dentro `brani/<rank>.json` (`voci.<V>.capitoli`). Così entrano in git e l'export li trova da qualsiasi macchina.
+- **Collegamento con la catena:** nuovo passo finale della skill `/voceavoce-publish-choir`. Lancia `job_sito_esporta --scrivi`, poi l'agente fa commit e push nel clone di `voceavoce/site` con messaggio `dati: export <data>`, come già avviene con `job_brand_assets --out`. Con `--dry-run` mostra solo cosa cambierebbe (brani aggiunti, rimossi, modificati).
+- **Regole del repo AIVideoCreator da rispettare:**
+  - CRLF ed encoding preservati;
+  - commit `T-NN: …` (prendo il prossimo T libero in `tasks.md`) con push subito dopo;
+  - modifiche al codice su un worktree / branch separato `claude/voceavocecoro-video-portal-s3o8vi`, merge su main solo a render fermi;
+  - un test per ogni funzione, più un test sul file di configurazione realmente spedito.
+- **Test (`tests/test_sito_esporta.py`):** inclusione ed esclusione per privacy e date, slug stabile, regola del genere, schema dell'output, idempotenza (stesso input → stessi byte), e nessuna voce eliminata che finisca nell'export.
+
+### Contenuti editoriali (gli unici che costano token, a lotti)
+
+File curati nel repo del sito: **`content/curated/<slug>.yaml`**. L'export non li tocca mai. Contengono:
+- note sul brano per lingua (partendo da `nota_descrizione`, che esiste già);
+- traduzioni del testo (`it/en/es/de/fr`, ognuna con `credit`, `license: CC BY 4.0` e `reviewed`);
+- eventuale genere corretto a mano, link agli spartiti in affiliazione, percorsi di studio.
+
+**Priorità:** prima i brani con video pubblici (oggi circa 10), poi quelli programmati man mano che escono. I testi liturgici ricorrenti (`testi/_comuni/`, 19 file) si traducono **una volta sola** e valgono per tutti i brani che li usano. Il risparmio è grande, perché tanti brani usano Gloria, Ave Maria, Magnificat.
+
+Una scheda senza traduzione resta perfettamente valida: mostra solo l'originale.
+
+---
+
+## Parte B — Il nuovo sito (`voceavoce/site`, branch `claude/voceavocecoro-video-portal-s3o8vi`)
+
+### Struttura degli URL
+
+L'italiano resta alla radice, così l'URL di oggi non perde valore; `/en/` e `/es/` sono le varianti.
+
+| Pagina | IT | EN | ES |
+|---|---|---|---|
+| Home | `/` | `/en/` | `/es/` |
+| Scheda brano | `/brani/locus-iste-bruckner/` | `/en/pieces/…` | `/es/obras/…` |
+| Autore | `/autori/bruckner/` | `/en/composers/…` | `/es/compositores/…` |
+| Opera / raccolta | `/opere/messiah-hwv-56/` | `/en/works/…` | `/es/colecciones/…` |
+| Genere / periodo | `/generi/sacro-latino/` | `/en/genres/…` | `/es/generos/…` |
+| Stagione | `/stagioni/natale/` | `/en/seasons/christmas/` | `/es/temporadas/navidad/` |
+| Linee | `/coro/`, `/arie/`, `/metodi/` (Concone come percorso ordinato) | | |
+| Ricerca | `/cerca/` | `/en/search/` | `/es/buscar/` |
+| Istituzionali | come funziona, fonti e licenze, chi siamo, privacy, trasparenza affiliazioni | | |
+| Backup | `/classic/` (noindex) | | |
+
+**Home:**
+- hero con la ricerca in evidenza;
+- "Ultimi video";
+- "In arrivo", con i `publish_at` futuri;
+- quattro ingressi: *Coro SATB*, *Metodi vocali*, *Arie di studio*, *Stagionali*;
+- il metodo, raccontato con il motivo delle 4 barre;
+- i canali social.
+
+**Scheda brano:**
+1. Breadcrumb → H1 → riga con compositore (date), opera, periodo.
+2. **"In breve"** come elenco di definizioni (`<dl>`): organico, lingua, stagione, linea, voci disponibili, fonte, licenza. È il blocco che motori di ricerca e AI citano.
+3. **Player incorporato** (iframe `youtube-nocookie.com`, `loading="lazy"`; decisione utente 2026-10-16, prima era una facade). Il selettore voce si genera dalle chiavi reali (S/A/T/B, ma anche T1/T2/B1/B2, oppure "Voce media" per i metodi). Le voci non ancora uscite compaiono come "in arrivo il …". Sotto, i capitoli cliccabili.
+4. Note sul brano, da `curated` o da `nota_descrizione`.
+5. **Testo e traduzioni**, affiancati verso per verso; su mobile diventano schede. Ogni blocco ha il suo `lang`; ogni traduzione riporta autore e licenza.
+6. **Spartito:** prima le fonti di pubblico dominio (verifiche IMSLP/CPDL, link a `voceavoce/scores` quando c'è), poi le eventuali affiliazioni.
+7. Spazio pubblicitario riservato (spento) · brani correlati · "Hai sentito un errore?" che porta alle issue di `voceavoce/scores`.
+
+**Contenuti sottili:** per i brani programmati senza alcun video pubblico la scheda viene generata con `noindex`, e diventa indicizzabile alla prima uscita. Così Google non vede pagine vuote.
+
+### Stack e struttura del repo
+
+- **Eleventy 3** (ESM, Nunjucks). Nessun framework lato client: JS minimo, come miglioramento progressivo.
+- **Pagefind:** indice statico per lingua, con filtri. L'interfaccia è mia, scritta sulla sua API, per renderla accessibile:
+  - `<form role="search">`;
+  - filtri come checkbox dentro `<fieldset>`;
+  - conteggio risultati annunciato con `aria-live`;
+  - stato della ricerca nell'URL (`?q=&voce=&stagione=`), così si può condividere.
+  - Senza JS restano gli indici per autore e genere.
+- **@11ty/eleventy-img:** AVIF/WebP con `srcset`, e immagine OG 1200×630.
+- Font serif self-hosted (sottoinsieme woff2) per i titoli; font di sistema per il testo.
+
+```
+eleventy.config.js   package.json   .nvmrc
+content/generated/   ← SCRITTO DALLA PIPELINE (non modificare a mano)
+content/curated/     ← note, traduzioni, affiliazioni (umano o agente)
+content/taxonomies.yaml  (generi, stagioni, linee: etichette in 3 lingue)
+src/_data/ site.js  i18n/{it,en,es}.json  catalog.js (unisce generated + curated, filtra per data)
+src/_includes/layouts/ base · piece · listing · page
+src/_includes/components/ video-facade · voice-picker · lyrics · card · breadcrumbs ·
+                          lang-switch · in-brief · ad-slot · affiliate · jsonld/*
+src/pages/ piece · composer · work · genre · season · line · search · home · static/*.md
+src/assets/ css/ js/(search, facade, theme) img/ fonts/
+src/static/ CNAME .nojekyll robots.txt llms.txt classic/
+scripts/validate-content.mjs
+.github/workflows/deploy.yml
+docs/CONTENUTI.md
+```
+
+`scripts/validate-content.mjs` usa ajv e lo `SCHEMA.md`/JSON Schema condiviso con la pipeline. Fa fallire la build se trova curated orfani (slug inesistente), riferimenti rotti o ID malformati.
+
+### Design system (UI/UX)
+
+- **Identità ripresa dall'attuale:** blu notte `#121a2c`, ambra `#ffc24d`, logotipo "VOCE **a** VOCE". Il motivo delle **4 barre, una evidenziata**, diventa la firma grafica e il controllo per scegliere la voce. Le etichette testuali sono sempre visibili: il colore non è mai l'unico indizio.
+- **Tema chiaro e scuro** del sito: `prefers-color-scheme` più interruttore, memorizzato in `localStorage`. I colori sono token, con contrasti AA verificati.
+- **CSS moderno, senza framework:** `@layer`, container queries, `clamp()`, layout fluido da 320px, nessuno scroll orizzontale, `prefers-reduced-motion`.
+- **Card brano:** miniatura 16:9 con `aspect-ratio`, titolo, compositore, chip delle voci, badge stagione e linea.
+
+### Accessibilità (WCAG 2.2 AA) e W3C
+
+- HTML5 valido, landmark, un solo H1 con gerarchia corretta, skip link.
+- `:focus-visible`, aree cliccabili ≥ 24×24px, tutto usabile da tastiera. Il selettore voce è un gruppo radio nativo; le schede delle traduzioni seguono le APG.
+- Cambio lingua come **link** alla pagina equivalente, con `hreflang` e `lang`.
+- La facade è un `<button>` con nome completo ("Riproduci: Locus iste, voce Alto"); l'iframe ha un `title`.
+- `lang` su ogni testo straniero (`la`, `de`, …); `alt` corretti.
+- Tutto il contenuto è leggibile senza JS.
+
+### SEO, ottimizzazione per le AI, prestazioni
+
+- **HTML statico per ogni lingua:** `title` e meta description unici, canonical, `hreflang` (it/en/es + x-default), `sitemap.xml` con le alternate.
+- **JSON-LD:**
+  - `WebSite` con `SearchAction`;
+  - `Organization` con `sameAs` (YouTube, Facebook, Instagram, TikTok);
+  - nella scheda: `MusicComposition` (compositore, autore del testo, `lyrics`, `inLanguage`, `workTranslation`) + un `VideoObject` per voce pubblicata (`uploadDate`, `thumbnailUrl` di i.ytimg, `embedUrl`, `duration` quando disponibile, capitoli come `Clip`) + `BreadcrumbList`;
+  - `Person` per i compositori; `ItemList` per opere, raccolte e Concone.
+- Altri file: `robots.txt` (crawler AI ammessi, configurabile), `llms.txt`, feed Atom delle nuove uscite, Open Graph e Twitter card con URL assoluti.
+- **Contenuto citabile:** il riquadro "In breve", note originali, entità coerenti (stesso compositore = stessa pagina = stesso `@id`).
+- **Core Web Vitals:**
+  - la facade carica `youtube-nocookie.com` solo al clic, quindi niente cookie di terzi prima di un'interazione;
+  - JS sotto i 10 KB per pagina (Pagefind solo nella pagina di ricerca);
+  - CLS circa 0.
+  - Obiettivo: Lighthouse ≥ 95 in tutte e 4 le categorie.
+- **Rebuild quotidiano** con cron GitHub Actions, gratuito e senza API: i video programmati compaiono da soli il giorno del loro `publish_at`, senza un nuovo export.
+
+### Monetizzazione (predisposta, spenta)
+
+- **`ad-slot`:** spazi con dimensioni riservate (niente CLS) ed etichetta "Pubblicità", controllati da `site.ads.enabled = false`. Da spenti mostrano nulla, o una promo interna ("Iscriviti al canale").
+  - Posizioni: dopo "In breve", tra le note e il testo, nella colonna laterale su desktop, ogni N card nelle liste.
+- **`affiliate`:** link con `rel="sponsored noopener"` e l'etichetta "link sponsorizzato", più la pagina Trasparenza. Le fonti gratuite di pubblico dominio stanno sempre in cima.
+- **Privacy:** oggi nessun cookie. Per attivare AdSense nello Spazio Economico Europeo servirà un CMP certificato (TCF 2.2): il punto in cui inserirlo è già pronto in `base.njk`, ma l'integrazione è fuori da questo lavoro.
+
+---
+
+## Ordine di esecuzione
+
+1. **Backup:** tag `landing-v1` su `c50b793` + `src/static/classic/` (noindex, percorsi corretti).
+2. **AIVideoCreator:** `job_sito_esporta` + test; passo dei capitoli in `job_choir_complete_metadata`; campo `genere` documentato nel `_schema` del contratto; passo nella skill `voceavoce-publish-choir`; prima esecuzione dell'export (sul clone, in questo ambiente) verso `voceavoce/site/content/generated/`.
+3. **Sito, base:** package, config, layout, token CSS, i18n con URL per lingua.
+4. **Sito, pagine:** scheda brano, liste per autore, opera, genere, stagione e linea, home, istituzionali.
+5. **Ricerca:** attributi Pagefind e UI accessibile.
+6. **SEO:** JSON-LD, sitemap, robots, llms.txt, feed, OG.
+7. **Monetizzazione:** componenti dietro interruttore e pagina Trasparenza.
+8. **CI:** `deploy.yml` (validazione → build → Pagefind → html-validate → pa11y-ci/axe → controllo dei link → `deploy-pages`), con trigger su push e cron giornaliero.
+9. **Primo lotto editoriale:** traduzioni dei testi comuni e note dei brani già pubblici. Ti indico la stima dei token prima di partire.
+10. **Documentazione:** README del sito, `docs/CONTENUTI.md`, sezione nel `CLAUDE.md` di AIVideoCreator (una riga).
+
+**Passaggio manuale tuo, una volta sola:** su GitHub, *Settings → Pages → Source → "GitHub Actions"*, subito dopo il merge su main. Il dominio voceavoce.com resta invariato. Fino a quel momento Pages serve la radice di `main`, quindi c'è qualche minuto di transizione.
+
+## Verifica
+
+- **AIVideoCreator:**
+  - `pytest tests/test_sito_esporta.py` più i test toccati (`test_complete_metadata*`, `test_roadmap*`);
+  - `--dry-run` sul catalogo reale: numero di brani inclusi ed esclusi, con i motivi;
+  - controllo che nessun file sia passato da CRLF a LF.
+- **Sito:**
+  - `npm run build` e `npm run check`: validazione, html-validate (W3C), pa11y-ci/axe in Chromium su home, scheda, lista e ricerca nelle 3 lingue, zero errori AA.
+  - Prove con Playwright:
+    - ricerca "Bruckner" o "Concone";
+    - filtro Natale;
+    - cambio voce nella facade;
+    - un video con `publish_at` futuro deve restare nascosto e comparire quando simulo la data;
+    - cambio lingua che porta alla stessa scheda;
+    - navigazione solo da tastiera.
+  - Screenshot a 375 e 1280px, in chiaro e in scuro, che ti invio.
+  - Lighthouse ≥ 95.
+  - Sitemap con le alternate e JSON-LD valido (parse e campi obbligatori). Dopo il deploy: Rich Results Test di Google e invio della sitemap in Search Console (istruzioni nel README).
+  - `/classic/` identica alla landing di oggi, con `noindex`.

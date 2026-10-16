@@ -1,0 +1,303 @@
+{
+  "htmlLang": "en",
+  "siteName": "Voce a Voce",
+  "nav": {
+    "label": "Main navigation",
+    "coro": "Choir",
+    "arie": "Arias",
+    "metodi": "Methods",
+    "compositori": "Composers",
+    "stagioni": "Seasons",
+    "cerca": "Search"
+  },
+  "skip": "Skip to content",
+  "home": {
+    "label": "Voce a Voce, home page",
+    "title": "Voce a Voce - learn your part",
+    "description": "Voce a Voce: choir study videos, voice by voice (S/A/T/B). Follow your line on the score, with a tempo cursor, your voice highlighted and subtitles. Public-domain repertoire.",
+    "ctaYoutube": "Watch on YouTube",
+    "ctaHow": "How it works",
+    "ctaExplore": "Explore the catalogue",
+    "latest": "Latest videos",
+    "latestP": "The newest releases, voice by voice.",
+    "soon": "Coming soon",
+    "soonP": "The next releases on the calendar.",
+    "soonOn": "Out on {date}",
+    "linesH": "Browse the catalogue",
+    "linesP": "Four ways in: pick your line of study.",
+    "tile": {
+      "choir": {
+        "h": "Choir",
+        "p": "Multi-voice choral pieces, one lesson for each voice."
+      },
+      "methods": {
+        "h": "Vocal methods",
+        "p": "Ordered courses of study, like Concone's vocalises."
+      },
+      "arias": {
+        "h": "Study arias",
+        "p": "Early arias in three registers: high, medium and low voice."
+      },
+      "seasons": {
+        "h": "Seasonal",
+        "p": "Christmas, Easter, Lent and Marian repertoire.",
+        "feat": "Featured: Christmas"
+      }
+    }
+  },
+  "tag": "learn your part",
+  "lead": "Choir study videos, <strong>voice by voice</strong> (Soprano, Alto, Tenor, Bass): follow your line on the score, with a tempo cursor, your voice highlighted and the others dimmed.",
+  "how": {
+    "h": "How it works",
+    "f1_h": "Your voice highlighted",
+    "f1_p": "Your part in high-contrast black, the other voices dimmed in grey.",
+    "f2_h": "Tempo cursor",
+    "f2_p": "A bar follows the rhythm of your line, on rests and fermatas too.",
+    "f3_h": "Lyrics & subtitles",
+    "f3_p": "Lyrics under your voice and per-verse subtitles, synced.",
+    "f4_h": "A lesson for each voice",
+    "f4_p": "First listening, slow reading, at tempo, in pairs, with the choir and finally «your turn», with your voice taken out of the mix. Chapters to jump to each section."
+  },
+  "voicesDemo": "The four voices: one highlighted, the others dimmed",
+  "sources": {
+    "h": "Sources & licenses",
+    "p": "We use only <strong>public-domain</strong> scores (e.g. CPDL/ChoralWiki, IMSLP, OpenScore). The source and edition of each piece are credited in that video's description."
+  },
+  "theme": {
+    "toggle": "Dark theme"
+  },
+  "langSwitch": {
+    "label": "Language"
+  },
+  "langName": {
+    "it": "Italiano",
+    "en": "English",
+    "es": "Español"
+  },
+  "breadcrumb": {
+    "label": "Breadcrumb",
+    "home": "Home"
+  },
+  "footer": {
+    "note": "Public-domain scores · arrangements and attributions credited per piece.",
+    "follow": "Follow us",
+    "contact": "Contact",
+    "rights": "Voce a Voce"
+  },
+  "social": {
+    "youtube": "YouTube",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "card": {
+    "voices": "Voices",
+    "play": "Piece page",
+    "soon": "coming soon",
+    "anon": "Anonymous / traditional"
+  },
+  "voice": {
+    "S": "Soprano",
+    "A": "Alto",
+    "T": "Tenor",
+    "B": "Bass",
+    "alta": "High voice",
+    "media": "Medium voice",
+    "bassa": "Low voice"
+  },
+  "lines": {
+    "coro": "Choir",
+    "aria": "Aria",
+    "metodo": "Method"
+  },
+  "seasons": {
+    "natale": "Christmas",
+    "pasqua": "Easter",
+    "quaresima": "Lent",
+    "mariano": "Marian"
+  },
+  "piece": {
+    "brief": "At a glance",
+    "composer": "Composer",
+    "work": "Work",
+    "period": "Period",
+    "org": "Voicing",
+    "acc": "Accompaniment",
+    "textLang": "Language of the text",
+    "key": "Key",
+    "genre": "Genre",
+    "season": "Season",
+    "line": "Series",
+    "voices": "Available voices",
+    "score": "Score",
+    "scoreFrom": "{source}, {license} licence",
+    "pick": "Choose the voice",
+    "iframeTitle": "{title} – {voice} part",
+    "watchVoice": "Watch the {voice} part on YouTube",
+    "watchAll": "Watch on YouTube",
+    "soonOn": "coming on",
+    "noVideo": "No video has been published for this piece yet: check back soon.",
+    "chapters": "Chapters",
+    "chaptersFor": "Chapters, {voice} part",
+    "notes": "Notes on the piece",
+    "lyrics": "Text and translations",
+    "original": "Original text",
+    "translation": "Translation: {lang}",
+    "translationBy": "Translated by {credit}",
+    "license": "Licence: {license}",
+    "draft": "Translation not yet reviewed",
+    "textSource": "Source of the text",
+    "scoreH": "Score",
+    "scoreP": "The source and licence of the score are acknowledged; the editions below are for cross-checking.",
+    "verify": "Reference editions",
+    "edition": "{edition}{publisher}{year}",
+    "report": "Did you hear a mistake?",
+    "reportP": "A wrong accidental, a misplaced note, a misspelt word: tell us where.",
+    "reportLink": "Report it on GitHub",
+    "related": "Related pieces",
+    "descr": {
+      "base": "{title} – {composer}: part-by-part rehearsal video.",
+      "org": "Voicing: {org}.",
+      "voices": "Available voices: {voices}.",
+      "soon": "Video coming soon."
+    },
+    "no": "no. {n}"
+  },
+  "mode": {
+    "major": "major",
+    "minor": "minor"
+  },
+  "accomp": {
+    "a_cappella": "A cappella",
+    "organo": "Organ",
+    "pianoforte": "Piano",
+    "accompagnamento": "With accompaniment"
+  },
+  "license": {
+    "PD": "Public domain",
+    "CC0": "CC0",
+    "ChoralWiki License": "ChoralWiki License",
+    "MirOS License": "MirOS License"
+  },
+  "genres": {
+    "sacro": "Sacred",
+    "canto-natalizio": "Christmas carol",
+    "aria": "Aria",
+    "aria-antica": "Early Italian aria",
+    "metodo-vocale": "Vocal method"
+  },
+  "periods": {
+    "rinascimento": "Renaissance",
+    "barocco": "Baroque",
+    "classico": "Classical",
+    "romantico": "Romantic",
+    "novecento": "20th century"
+  },
+  "lists": {
+    "count": {
+      "one": "{n} piece",
+      "other": "{n} pieces"
+    },
+    "pieces": "Pieces",
+    "path": "Study path",
+    "soonH": "Coming soon",
+    "soonP": "Pieces with scheduled videos, not yet published.",
+    "none": "No video is published yet: check back soon.",
+    "browse": "Browse by",
+    "releaseOn": "from {date}",
+    "alpha": "Alphabetical index",
+    "type": {
+      "opera": "Work",
+      "raccolta": "Collection"
+    },
+    "choir": {
+      "h1": "Choir: pieces voice by voice",
+      "title": "Choir: multi-voice pieces",
+      "desc": "Voce a Voce's choral repertoire: one video lesson for each voice (soprano, alto, tenor, bass), with score and text."
+    },
+    "arias": {
+      "h1": "Study arias",
+      "title": "Study arias in three registers",
+      "desc": "Early and chamber arias to study in high, medium or low voice, with guide video, text and public-domain score."
+    },
+    "methods": {
+      "h1": "Vocal methods",
+      "title": "Vocal methods and vocalises",
+      "desc": "Ordered courses of study for singing, such as Concone's vocalises, in three registers with guide videos."
+    },
+    "composers": {
+      "h1": "Composers",
+      "title": "Composers in the repertoire",
+      "desc": "Every composer in the catalogue in alphabetical order, with dates and the number of pieces with study videos."
+    },
+    "works": {
+      "h1": "Works and collections",
+      "title": "Works and collections",
+      "desc": "Operas, masses, oratorios and teaching collections in the catalogue, with their pieces in order."
+    },
+    "genres": {
+      "h1": "Genres",
+      "title": "Genres in the repertoire",
+      "desc": "Browse the pieces by genre: sacred, Christmas carol, aria, early aria, vocal method."
+    },
+    "seasons": {
+      "h1": "Liturgical seasons",
+      "title": "Seasons: Christmas, Easter, Lent",
+      "desc": "Choral pieces for Christmas, Easter, Lent and Marian repertoire, with voice-by-voice videos."
+    },
+    "composer": {
+      "title": "{name}: pieces and study videos",
+      "desc": "{who}: {n} with voice-by-voice study videos, public-domain score and text."
+    },
+    "work": {
+      "title": "{name}: pieces and videos",
+      "desc": "{name}: {n} with voice-by-voice study videos, in the order of the work or collection."
+    },
+    "genre": {
+      "title": "Genre {name}: pieces and videos",
+      "desc": "Genre “{name}”: {n} with voice-by-voice study videos, with score and text."
+    },
+    "season": {
+      "title": "{name}: choral pieces and videos",
+      "desc": "Pieces for {name}: {n} with voice-by-voice study videos, with score and text."
+    },
+    "seasonIntro": {
+      "natale": "Advent and Christmas songs, from sacred music to carols.",
+      "pasqua": "Pieces for the Easter season.",
+      "quaresima": "Pieces for Lent and the Passion.",
+      "mariano": "Pieces in honour of the Virgin Mary."
+    }
+  },
+  "search": {
+    "title": "Search the catalogue",
+    "description": "Search pieces, composers and lyrics in the Voce a Voce catalogue and filter by line, voice, season and genre.",
+    "h1": "Search",
+    "intro": "Search for a piece, a composer or a word from the text. You can narrow the results by composer, line, voice, season and genre.",
+    "label": "Search the catalogue",
+    "button": "Search",
+    "filters": "Filter the results",
+    "reset": "Clear filters",
+    "f": {
+      "compositore": "Composer",
+      "linea": "Line",
+      "voce": "Voice",
+      "stagione": "Season",
+      "genere": "Genre"
+    },
+    "otherComposers": "More composers ({n})",
+    "hint": "Type one or more words, or choose a filter.",
+    "countNone": "No results",
+    "countOne": "1 result",
+    "countMany": "{n} results",
+    "loading": "Searching…",
+    "noResults": "No results. Try fewer words, check the spelling or remove a filter.",
+    "browseH": "Or browse the indexes",
+    "more": "Show more results",
+    "error": "Search is not available right now. You can still browse the indexes below.",
+    "nojs": "Search needs JavaScript. Without it, you can browse the catalogue with the indexes below.",
+    "by": "by",
+    "resultsLabel": "Search results",
+    "homeLabel": "Search pieces or composers",
+    "homeButton": "Search"
+  }
+}

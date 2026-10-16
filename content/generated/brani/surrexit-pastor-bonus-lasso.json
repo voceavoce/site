@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "slug": "surrexit-pastor-bonus-lasso",
+  "linea": "coro",
+  "rank": "188",
+  "ranks": [
+    "188"
+  ],
+  "titolo": "Surrexit pastor bonus",
+  "compositore": {
+    "id": "orlando-di-lasso",
+    "nome": "Orlando di Lasso",
+    "breve": "Lasso",
+    "date": "c. 1532–1594",
+    "nascita": "c. 1532",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Orlande de Lassus",
+      "Lassus"
+    ],
+    "alias": [
+      "Orlande de Lassus",
+      "Roland de Lassus",
+      "Orlando Lasso",
+      "Lassus",
+      "Lasso"
+    ]
+  },
+  "stagioni": [
+    "pasqua"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSATB",
+  "tonalita": {
+    "tonica": "Bb",
+    "modo": "major"
+  },
+  "tempo_bpm": 96,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "MtIS3EWUDac",
+      "pubblica_dal": "2026-09-28T14:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "xCqFr9iEYFs",
+      "pubblica_dal": "2026-09-28T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "fq5nCmb07yY",
+      "pubblica_dal": "2026-09-28T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "Kui3fqNoLvg",
+      "pubblica_dal": "2026-09-28T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "p6iQ6l41yxk",
+      "pubblica_dal": "2026-09-28T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-28T14:30:00Z"
+}

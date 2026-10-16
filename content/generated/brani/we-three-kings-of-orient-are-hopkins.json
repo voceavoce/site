@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "slug": "we-three-kings-of-orient-are-hopkins",
+  "linea": "coro",
+  "rank": "261",
+  "ranks": [
+    "261"
+  ],
+  "titolo": "We Three Kings of Orient Are",
+  "compositore": {
+    "id": "john-henry-hopkins-jr",
+    "nome": "John Henry Hopkins Jr.",
+    "breve": "Hopkins"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 90,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "U2cxTSo6Ivo",
+      "pubblica_dal": "2026-09-22T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "rxCVxySiLuM",
+      "pubblica_dal": "2026-09-22T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "R280xwC5ILA",
+      "pubblica_dal": "2026-09-22T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "fgSf6wDRnj8",
+      "pubblica_dal": "2026-09-22T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-22T14:30:00Z"
+}

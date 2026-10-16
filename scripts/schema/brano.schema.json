@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://voceavoce.com/schema/brano.schema.json",
+  "title": "Brano (content/generated/brani/<slug>.json)",
+  "type": "object",
+  "required": ["schema", "slug", "linea", "rank", "ranks", "titolo", "generi", "voci"],
+  "properties": {
+    "schema": { "type": "integer", "const": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "linea": { "enum": ["coro", "aria", "metodo"] },
+    "rank": { "type": "string", "minLength": 1 },
+    "ranks": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "titolo": { "type": "string", "minLength": 1 },
+    "compositore": {
+      "type": "object",
+      "required": ["id", "nome", "breve"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "nome": { "type": "string" },
+        "breve": { "type": "string" },
+        "date": { "type": "string" },
+        "nascita": { "type": ["string", "integer"] },
+        "morte": { "type": ["string", "integer"] },
+        "periodo": { "type": "string" },
+        "varianti": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "opera": {
+      "type": "object",
+      "required": ["id", "titolo"],
+      "properties": { "id": { "type": "string" }, "titolo": { "type": "string" } }
+    },
+    "raccolta": {
+      "type": "object",
+      "required": ["id", "titolo"],
+      "properties": {
+        "id": { "type": "string" },
+        "titolo": { "type": "string" },
+        "numero": { "type": ["integer", "string"] }
+      }
+    },
+    "stagioni": { "type": "array", "items": { "type": "string" } },
+    "generi": { "type": "array", "items": { "type": "string" } },
+    "lingua": { "type": "string" },
+    "organico": { "type": "string" },
+    "accompagnamento": { "type": "string" },
+    "tonalita": {
+      "type": "object",
+      "properties": { "tonica": { "type": "string" }, "modo": { "type": "string" } }
+    },
+    "tempo_bpm": {
+      "oneOf": [
+        { "type": "integer" },
+        { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "integer" } }
+      ]
+    },
+    "fonte_spartito": { "type": "string" },
+    "licenza_spartito": { "type": "string" },
+    "edizioni_verifica": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["edizione"],
+        "properties": {
+          "edizione": { "type": "string" },
+          "editore": { "type": "string" },
+          "anno": { "type": ["integer", "string"] },
+          "url": { "type": "string" }
+        }
+      }
+    },
+    "testo": {
+      "type": "object",
+      "required": ["testo"],
+      "properties": {
+        "lingua": { "type": "string" },
+        "testo": { "type": "string" },
+        "fonte": {
+          "type": "object",
+          "properties": { "sito": { "type": "string" }, "url": { "type": "string" } }
+        }
+      }
+    },
+    "nota": {
+      "type": "object",
+      "properties": { "it": { "type": "string" }, "en": { "type": "string" }, "es": { "type": "string" } }
+    },
+    "voci": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["voce", "video_id", "pubblica_dal"],
+        "properties": {
+          "voce": { "type": "string", "minLength": 1 },
+          "video_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+          "pubblica_dal": {
+            "oneOf": [
+              { "type": "null" },
+              { "type": "string", "format": "date-time" },
+              { "type": "string", "format": "date" }
+            ]
+          },
+          "pubblica": { "type": "boolean" },
+          "capitoli": { "type": "array" },
+          "durata_sec": { "type": "number" }
+        }
+      }
+    },
+    "prima_uscita": { "type": ["string", "null"] }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "slug": "prado-verde-y-florido-guerrero",
+  "linea": "coro",
+  "rank": "204",
+  "ranks": [
+    "204"
+  ],
+  "titolo": "Prado verde y florido",
+  "compositore": {
+    "id": "francisco-guerrero",
+    "nome": "Francisco Guerrero",
+    "breve": "Guerrero",
+    "date": "1528–1599",
+    "nascita": "1528",
+    "morte": 1599,
+    "periodo": "rinascimento",
+    "alias": [
+      "Guerrero"
+    ]
+  },
+  "generi": [],
+  "lingua": "es",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "Eb",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "6TcWSDnxxZ8",
+      "pubblica_dal": "2026-10-12T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "2JHje6Kat7o",
+      "pubblica_dal": "2026-10-12T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "o6Lng1RAMLw",
+      "pubblica_dal": "2026-10-12T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "5yC5Ip0mIXc",
+      "pubblica_dal": "2026-10-12T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-12T14:30:00Z"
+}

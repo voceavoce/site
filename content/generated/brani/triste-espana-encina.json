@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "slug": "triste-espana-encina",
+  "linea": "coro",
+  "rank": "081",
+  "ranks": [
+    "081"
+  ],
+  "titolo": "Triste Espana",
+  "compositore": {
+    "id": "juan-del-encina",
+    "nome": "Juan del Encina",
+    "breve": "Encina",
+    "date": "1468–1529",
+    "nascita": "1468",
+    "morte": 1529,
+    "periodo": "rinascimento",
+    "alias": [
+      "Encina"
+    ]
+  },
+  "generi": [],
+  "lingua": "es",
+  "organico": "SATB",
+  "tempo_bpm": 72,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "uAtjB5jK94c",
+      "pubblica_dal": "2026-12-21T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "5AGbK8B7tGU",
+      "pubblica_dal": "2026-12-21T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "NZ8OiUgb3cs",
+      "pubblica_dal": "2026-12-21T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "djQvViN-UTI",
+      "pubblica_dal": "2026-12-21T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-21T15:30:00Z"
+}

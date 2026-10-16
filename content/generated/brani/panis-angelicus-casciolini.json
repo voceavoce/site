@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "panis-angelicus-casciolini",
+  "linea": "coro",
+  "rank": "346",
+  "ranks": [
+    "346"
+  ],
+  "titolo": "Panis Angelicus",
+  "compositore": {
+    "id": "claudio-casciolini",
+    "nome": "Claudio Casciolini",
+    "breve": "Casciolini"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 54,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "Dm8fEzaZXjQ",
+      "pubblica_dal": "2026-11-03T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "_lKUyiAa--w",
+      "pubblica_dal": "2026-11-03T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "Jp9I5hd77vA",
+      "pubblica_dal": "2026-11-03T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "zsqGxlxVJ5s",
+      "pubblica_dal": "2026-11-03T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-03T15:30:00Z"
+}

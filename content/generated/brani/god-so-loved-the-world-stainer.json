@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "god-so-loved-the-world-stainer",
+  "linea": "coro",
+  "rank": "006",
+  "ranks": [
+    "006"
+  ],
+  "titolo": "God so loved the world",
+  "compositore": {
+    "id": "john-stainer",
+    "nome": "John Stainer",
+    "breve": "Stainer",
+    "date": "1840–1901",
+    "nascita": "1840",
+    "morte": 1901,
+    "periodo": "romantico"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": 69,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "FxrhUhFZ3jI",
+      "pubblica_dal": "2026-09-23T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "rWPxoR3gQLk",
+      "pubblica_dal": "2026-09-23T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "_1Onj-GPiuY",
+      "pubblica_dal": "2026-09-23T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "jV0Kne_DU5g",
+      "pubblica_dal": "2026-09-23T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-23T14:30:00Z"
+}

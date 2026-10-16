@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "slug": "o-memoriale-palestrina",
+  "linea": "coro",
+  "rank": "400",
+  "ranks": [
+    "400"
+  ],
+  "titolo": "O memoriale",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "minor"
+  },
+  "tempo_bpm": 76,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "XksgVQi4Oww",
+      "pubblica_dal": "2026-11-22T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "jFIQy_79fG8",
+      "pubblica_dal": "2026-11-22T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "YvQD7M32Zw0",
+      "pubblica_dal": "2026-11-22T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "dBVb5hv9paI",
+      "pubblica_dal": "2026-11-22T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-22T15:30:00Z"
+}

@@ -1,0 +1,16 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+Disallow: /classic/
+{% if site.aiCrawlers %}
+# Crawler AI ammessi esplicitamente (site.aiCrawlers in src/_data/site.js)
+{% for bot in ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended", "CCBot"] -%}
+User-agent: {{ bot }}
+Allow: /
+Disallow: /classic/
+
+{% endfor %}{% endif %}
+Sitemap: {{ site.url }}/sitemap.xml

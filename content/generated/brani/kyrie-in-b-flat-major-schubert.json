@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "kyrie-in-b-flat-major-schubert",
+  "linea": "coro",
+  "rank": "336",
+  "ranks": [
+    "336"
+  ],
+  "titolo": "Kyrie in B flat major",
+  "compositore": {
+    "id": "franz-schubert",
+    "nome": "Franz Schubert",
+    "breve": "Schubert",
+    "date": "1797–1828",
+    "nascita": "1797",
+    "morte": 1828,
+    "periodo": "romantico",
+    "alias": [
+      "Schubert"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "Bb",
+    "modo": "major"
+  },
+  "tempo_bpm": 92,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "0fwRPf0mFac",
+      "pubblica_dal": "2026-11-14T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "3KDPqfK27LA",
+      "pubblica_dal": "2026-11-14T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "uB_-Wh9nq0U",
+      "pubblica_dal": "2026-11-14T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "zwgL1jEn1fY",
+      "pubblica_dal": "2026-11-14T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-14T15:30:00Z"
+}

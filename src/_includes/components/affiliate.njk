@@ -1,0 +1,19 @@
+{#- Link di affiliazione di un brano. Variabili: brano (scheda), lang.
+    Formato (content/curated/README.md): brano.affiliazioni = [{vendor, url, label?, enabled}]; rende solo le voci enabled con url.
+    Senza link attivi non rende nulla. -#}
+{%- set links = [] -%}
+{%- for a in (brano.affiliazioni or []) %}{% if a.enabled and a.url %}{% set links = (links.push(a), links) %}{% endif %}{% endfor -%}
+{%- if links.length %}
+<aside class="affiliate" aria-label="{{ labels.whereToFindScore[lang] }}">
+  <h3 class="affiliate__title">{{ labels.whereToFindScore[lang] }}</h3>
+  <ul class="affiliate__list">
+    {%- for a in links %}
+    <li>
+      <a href="{{ a.url }}" rel="sponsored noopener">{{ a.label or a.vendor or a.url }}</a>
+      <span class="affiliate__tag">{{ labels.sponsoredLink[lang] }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+  <p class="affiliate__note"><a href="{{ lang | routeUrl('disclosure') }}">{{ labels.disclosure[lang] }}</a></p>
+</aside>
+{%- endif %}

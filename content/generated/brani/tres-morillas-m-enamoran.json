@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "slug": "tres-morillas-m-enamoran",
+  "linea": "coro",
+  "rank": "121",
+  "ranks": [
+    "121"
+  ],
+  "titolo": "Tres morillas m' enamoran",
+  "generi": [],
+  "lingua": "es",
+  "organico": "SAB",
+  "tempo_bpm": 158,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "JUQ2u4JQ4Lw",
+      "pubblica_dal": "2026-10-20T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "8apfhXyyie8",
+      "pubblica_dal": "2026-10-20T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "blVD-b3jDqM",
+      "pubblica_dal": "2026-10-20T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-20T14:30:00Z"
+}

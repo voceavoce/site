@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "slug": "in-s-angelum-custodem-wab-18-bruckner",
+  "linea": "coro",
+  "rank": "347",
+  "ranks": [
+    "347"
+  ],
+  "titolo": "In S. Angelum custodem WAB 18",
+  "compositore": {
+    "id": "anton-bruckner",
+    "nome": "Anton Bruckner",
+    "breve": "Bruckner",
+    "date": "1824–1896",
+    "nascita": "1824",
+    "morte": 1896,
+    "periodo": "romantico",
+    "alias": [
+      "Joseph Anton Bruckner",
+      "Bruckner"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "minor"
+  },
+  "tempo_bpm": 106,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "OwSucJGSVMw",
+      "pubblica_dal": "2026-11-18T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "f4rgipcy8OY",
+      "pubblica_dal": "2026-11-18T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "qehfqoBGXyc",
+      "pubblica_dal": "2026-11-18T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "GBJ_os27uZY",
+      "pubblica_dal": "2026-11-18T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-18T15:30:00Z"
+}

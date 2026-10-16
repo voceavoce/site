@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "slug": "exultate-deo-palestrina",
+  "linea": "coro",
+  "rank": "114",
+  "ranks": [
+    "114"
+  ],
+  "titolo": "Exultate Deo",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SAATB",
+  "tonalita": {
+    "tonica": "A",
+    "modo": "major"
+  },
+  "tempo_bpm": 120,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "ZI0oIGZJ8qQ",
+      "pubblica_dal": "2026-10-17T14:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "-mGExY-y5uo",
+      "pubblica_dal": "2026-10-17T14:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "Cxw_DOoSFKI",
+      "pubblica_dal": "2026-10-17T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "a8TOWrsqlnA",
+      "pubblica_dal": "2026-10-17T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "2CgYYPWqwQI",
+      "pubblica_dal": "2026-10-17T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-17T14:30:00Z"
+}

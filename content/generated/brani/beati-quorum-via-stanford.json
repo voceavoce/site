@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "slug": "beati-quorum-via-stanford",
+  "linea": "coro",
+  "rank": "419",
+  "ranks": [
+    "419"
+  ],
+  "titolo": "Beati quorum via Op. 38 No. 3",
+  "compositore": {
+    "id": "charles-villiers-stanford",
+    "nome": "Charles Villiers Stanford",
+    "breve": "Stanford",
+    "date": "1852–1924",
+    "nascita": "1852",
+    "morte": 1924,
+    "periodo": "romantico",
+    "alias": [
+      "Charles Viliers Stanford",
+      "Stanford",
+      "C. V. Stanford"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSATBB",
+  "tonalita": {
+    "tonica": "Ab",
+    "modo": "major"
+  },
+  "tempo_bpm": 96,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Beati quorum via integra est,\nqui ambulant in lege Domini.",
+    "fonte": {
+      "sito": "emmanuelmusic.org",
+      "url": "https://www.emmanuelmusic.org/other-translations/stanford-beati-quorum-via"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "_rWhmw795gw",
+      "pubblica_dal": "2026-12-24T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "nkv37i3n-Xs",
+      "pubblica_dal": "2026-12-24T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "wMO1bowiNL0",
+      "pubblica_dal": "2026-12-24T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "l9g4c_t_xCY",
+      "pubblica_dal": "2026-12-24T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "EGRAAzW_bgI",
+      "pubblica_dal": "2026-12-24T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "pxfcpw6Wb3k",
+      "pubblica_dal": "2026-12-24T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-24T15:30:00Z"
+}

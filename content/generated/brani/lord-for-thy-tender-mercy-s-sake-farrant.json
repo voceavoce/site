@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "slug": "lord-for-thy-tender-mercy-s-sake-farrant",
+  "linea": "coro",
+  "rank": "029",
+  "ranks": [
+    "029"
+  ],
+  "titolo": "Lord for Thy tender mercy's sake",
+  "compositore": {
+    "id": "richard-farrant",
+    "nome": "Richard Farrant",
+    "breve": "Farrant"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "A",
+    "modo": "major"
+  },
+  "tempo_bpm": 58,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "mMU0XH2btlk",
+      "pubblica_dal": "2026-12-13T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "tES8LrwOb2s",
+      "pubblica_dal": "2026-12-13T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "NlEsObe6zfI",
+      "pubblica_dal": "2026-12-13T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "6cdvm_2DLVY",
+      "pubblica_dal": "2026-12-13T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-13T15:30:00Z"
+}

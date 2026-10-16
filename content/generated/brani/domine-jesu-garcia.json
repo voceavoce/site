@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "slug": "domine-jesu-garcia",
+  "linea": "coro",
+  "rank": "484",
+  "ranks": [
+    "484"
+  ],
+  "titolo": "Domine Jesu",
+  "compositore": {
+    "id": "jose-mauricio-nunes-garcia",
+    "nome": "José Maurício Nunes Garcia",
+    "breve": "Garcia"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 66,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "fa0jkLZJzE8",
+      "pubblica_dal": "2026-12-30T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "QT0ThJmCuUc",
+      "pubblica_dal": "2026-12-30T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "Oa-BVZcRpu8",
+      "pubblica_dal": "2026-12-30T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "psO9Pclgios",
+      "pubblica_dal": "2026-12-30T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-30T15:30:00Z"
+}

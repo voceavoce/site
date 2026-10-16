@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "slug": "sing-we-and-chant-it-morley",
+  "linea": "coro",
+  "rank": "038",
+  "ranks": [
+    "038"
+  ],
+  "titolo": "Sing We and Chant It",
+  "compositore": {
+    "id": "thomas-morley",
+    "nome": "Thomas Morley",
+    "breve": "Morley",
+    "date": "1557–1602",
+    "nascita": "1557",
+    "morte": 1602,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SSATB",
+  "tempo_bpm": 170,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "fI0KGb9oDKQ",
+      "pubblica_dal": "2026-12-15T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "67G0AqoJp5c",
+      "pubblica_dal": "2026-12-15T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "pb7LO4c2ZP4",
+      "pubblica_dal": "2026-12-15T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "IJwN9qtSn1c",
+      "pubblica_dal": "2026-12-15T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "ne86Tl73mpk",
+      "pubblica_dal": "2026-12-15T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-15T15:30:00Z"
+}

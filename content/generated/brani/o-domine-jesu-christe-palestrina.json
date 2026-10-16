@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "slug": "o-domine-jesu-christe-palestrina",
+  "linea": "coro",
+  "rank": "138",
+  "ranks": [
+    "138"
+  ],
+  "titolo": "O Domine Jesu Christe",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 112,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "Xx1vog2sE3U",
+      "pubblica_dal": "2026-10-23T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "LTj04tBzymo",
+      "pubblica_dal": "2026-10-23T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "L7ucsZyr3t8",
+      "pubblica_dal": "2026-10-23T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "fs9goNfaHSY",
+      "pubblica_dal": "2026-10-23T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-23T14:30:00Z"
+}

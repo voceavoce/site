@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "slug": "the-long-day-closes-sullivan",
+  "linea": "coro",
+  "rank": "480",
+  "ranks": [
+    "480"
+  ],
+  "titolo": "The long day closes",
+  "compositore": {
+    "id": "arthur-sullivan",
+    "nome": "Arthur Sullivan",
+    "breve": "Sullivan",
+    "date": "1842–1900",
+    "nascita": "1842",
+    "morte": 1900,
+    "periodo": "romantico",
+    "alias": [
+      "Sir Arthur Sullivan"
+    ]
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "Ab",
+    "modo": "major"
+  },
+  "tempo_bpm": 88,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "No star is o'er the lake,\nIts pale watch keeping,\nThe moon is half awake,\nThrough grey mist creeping,\nThe last red leaves fall round\nThe porch of roses,\nThe clock hath ceased to sound,\nThe long day closes.\nSit by the silent hearth\nIn calm endeavour,\nTo count the sounds of mirth,\nNow dumb for ever.\nHeed not how hope believes\nAnd fate disposes:\nShadow is round the eaves,\nThe long day closes.\nThe lighted windows dim\nAre fading slowly.\nThe fire that was so trim\nNow quivers lowly.\nGo to the dreamless bed\nWhere grief reposes;\nThy book of toil is read,\nThe long day closes.",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/The_Long_Day_Closes_(song)"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "XHsVShhMZuY",
+      "pubblica_dal": "2027-01-17T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "MSYRjZOwvDY",
+      "pubblica_dal": "2027-01-17T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "WAi44y2Lsf4",
+      "pubblica_dal": "2027-01-17T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "f2TfWeCgGbg",
+      "pubblica_dal": "2027-01-17T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-17T15:30:00Z"
+}

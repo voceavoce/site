@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "slug": "jesu-salvator-mundi-menegali",
+  "linea": "coro",
+  "rank": "243",
+  "ranks": [
+    "243"
+  ],
+  "titolo": "Jesu Salvator mundi",
+  "compositore": {
+    "id": "menegali",
+    "nome": "Menegali",
+    "breve": "Menegali"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "TTB",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "minor"
+  },
+  "tempo_bpm": 50,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "T1",
+      "video_id": "acfj06xStkM",
+      "pubblica_dal": "2026-10-29T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "5N0w-v3wIak",
+      "pubblica_dal": "2026-10-29T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "-Qf_0qnOlmA",
+      "pubblica_dal": "2026-10-29T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-29T15:30:00Z"
+}

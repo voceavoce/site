@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "come-again-sweet-love-dowland",
+  "linea": "coro",
+  "rank": "069",
+  "ranks": [
+    "069"
+  ],
+  "titolo": "Come again, sweet love",
+  "compositore": {
+    "id": "john-dowland",
+    "nome": "John Dowland",
+    "breve": "Dowland",
+    "date": "1563–1626",
+    "nascita": "1563",
+    "morte": 1626,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 100,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "1uOrCCKmSIM",
+      "pubblica_dal": "2026-12-19T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Slk4Wji_2FQ",
+      "pubblica_dal": "2026-12-19T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "0SAVaocjYNc",
+      "pubblica_dal": "2026-12-19T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "yWRu4f6EWmI",
+      "pubblica_dal": "2026-12-19T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-19T15:30:00Z"
+}

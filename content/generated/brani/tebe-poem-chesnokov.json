@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "slug": "tebe-poem-chesnokov",
+  "linea": "coro",
+  "rank": "015",
+  "ranks": [
+    "015"
+  ],
+  "titolo": "Tebe poem, Op. 27 No. 6",
+  "compositore": {
+    "id": "pavel-chesnokov",
+    "nome": "Pavel Chesnokov",
+    "breve": "Chesnokov",
+    "date": "1877–1944",
+    "nascita": "1877",
+    "morte": 1944,
+    "varianti": [
+      "Tchesnokov",
+      "Tschesnokow"
+    ],
+    "alias": [
+      "Pavel Tsjesnokov",
+      "Pavel Tchesnokov",
+      "Pavel Tschesnokow",
+      "Pavel Tchesnokoff"
+    ]
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 60,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "DpQ2l4HWurA",
+      "pubblica_dal": "2026-09-25T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "cTDgYv2DhrI",
+      "pubblica_dal": "2026-09-25T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "_DqKIZudJ3E",
+      "pubblica_dal": "2026-09-25T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "S40vO-Y_D7Q",
+      "pubblica_dal": "2026-09-25T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-25T14:30:00Z"
+}

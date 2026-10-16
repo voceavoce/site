@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "slug": "sicut-cervus-palestrina",
+  "linea": "coro",
+  "rank": "016",
+  "ranks": [
+    "016"
+  ],
+  "titolo": "Sicut cervus",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 84,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "9jiUBALgtSg",
+      "pubblica_dal": "2026-09-14T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "SSWU_sQ7yQg",
+      "pubblica_dal": "2026-09-14T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "hHcbOAyvToY",
+      "pubblica_dal": "2026-09-15T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "ROe00MpXdAU",
+      "pubblica_dal": "2026-09-15T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-14T14:30:00Z"
+}

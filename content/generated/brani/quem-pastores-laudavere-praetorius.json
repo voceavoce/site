@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "slug": "quem-pastores-laudavere-praetorius",
+  "linea": "coro",
+  "rank": "473",
+  "ranks": [
+    "473"
+  ],
+  "titolo": "Quem pastores laudavere",
+  "compositore": {
+    "id": "michael-praetorius",
+    "nome": "Michael Praetorius",
+    "breve": "Praetorius",
+    "date": "1571–1621",
+    "nascita": "1571",
+    "morte": 1621,
+    "alias": [
+      "Michael Prätorius"
+    ]
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio",
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATBB",
+  "tonalita": {
+    "tonica": "Ab",
+    "modo": "major"
+  },
+  "tempo_bpm": 126,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "Michael Praetorius, Gesamtausgabe der musikalischen Werke, Bd. V: Musae Sioniae V (1607), a cura di Friedrich Blume, n. LXXXIX, sezione a 4 voci miste «Den die Hirten lobten sehre» (p. 177; nn. LXXXVIII-XC pp. 173-177)",
+      "editore": "Möseler / Kallmeyer, Wolfenbüttel-Berlin",
+      "anno": 1937,
+      "url": "https://bcul.lib.uni.lodz.pl/dlibra/publication/29770/edition/24197"
+    },
+    {
+      "edizione": "Michael Praetorius, Gesamtausgabe der musikalischen Werke, Bd. VI: Musae Sioniae VI (1609), Register (pp. VIII-IX)",
+      "editore": "Möseler / Kallmeyer, Wolfenbüttel-Berlin",
+      "anno": 1937,
+      "url": "https://bcul.lib.uni.lodz.pl/dlibra/publication/29771/edition/24198"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "Quem pastores laudavere,\nquibus angeli dixere,\n\"Absit vobis jam timere,\"\nnatus est Rex gloriae.\nAd quem magi ambulabant,\naurum, thus, myrrham portabant,\nimmolabant haec sincere\nleoni victoriae.\nExultemus cum Maria\nin coelesti hiearchia,\nnatum promat voce pia\ndulci cum melodia.\nChristo regi, Deo nato,\nper Mariam nobis dato,\nmerito resonet vere\nlaus, honor, et gloria.",
+    "fonte": {
+      "sito": "musicanet.org",
+      "url": "https://musicanet.org/sfbc/repertoire/quempas_praetorius.html"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "0dK0JcFgQHI",
+      "pubblica_dal": "2027-01-11T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "ixcTi2FwM8E",
+      "pubblica_dal": "2027-01-11T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "JaUQ9pBmGQU",
+      "pubblica_dal": "2027-01-11T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "WcyLYh9zjTM",
+      "pubblica_dal": "2027-01-11T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "gU_6Q5X1D8k",
+      "pubblica_dal": "2027-01-11T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-11T15:30:00Z"
+}

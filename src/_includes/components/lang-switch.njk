@@ -1,0 +1,8 @@
+{#- Elenco di LINK alla stessa pagina nelle altre lingue. Usa: lang, routeSection, routeSlug -#}
+<nav class="lang-switch" aria-label="{{ 'langSwitch.label' | t(lang) }}">
+  <ul>
+    {%- for alt in routeSection | altUrls(routeSlug) %}
+    <li><a href="{{ alt.url }}" hreflang="{{ alt.lang }}" lang="{{ alt.lang }}" aria-label="{{ ('langName.' ~ alt.lang) | t(alt.lang) }}"{% if alt.lang == lang %} aria-current="true"{% endif %}>{{ alt.lang | upper }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>

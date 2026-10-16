@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "the-silver-swan-gibbons",
+  "linea": "coro",
+  "rank": "003",
+  "ranks": [
+    "003"
+  ],
+  "titolo": "The silver swan",
+  "compositore": {
+    "id": "orlando-gibbons",
+    "nome": "Orlando Gibbons",
+    "breve": "Gibbons",
+    "date": "1583–1625",
+    "nascita": "1583",
+    "morte": 1625,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATBB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 50,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "cDFgn36hY4Q",
+      "pubblica_dal": "2026-11-23T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "sqc-qWM3_Bg",
+      "pubblica_dal": "2026-11-23T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "igiSRwAuQew",
+      "pubblica_dal": "2026-11-23T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "anS-u2XA2YU",
+      "pubblica_dal": "2026-11-23T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "AEKajWnSdQ0",
+      "pubblica_dal": "2026-11-23T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-23T15:30:00Z"
+}

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "slug": "what-if-i-never-speed-dowland",
+  "linea": "coro",
+  "rank": "088",
+  "ranks": [
+    "088"
+  ],
+  "titolo": "What if I never speed",
+  "compositore": {
+    "id": "john-dowland",
+    "nome": "John Dowland",
+    "breve": "Dowland",
+    "date": "1563–1626",
+    "nascita": "1563",
+    "morte": 1626,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": 100,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "ecxyJo3JPMc",
+      "pubblica_dal": "2027-01-12T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "NAwsqVKDRGM",
+      "pubblica_dal": "2027-01-12T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "T7uAuHWxI_E",
+      "pubblica_dal": "2027-01-12T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "NHvwLgZWOkg",
+      "pubblica_dal": "2027-01-12T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-12T15:30:00Z"
+}

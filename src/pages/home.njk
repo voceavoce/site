@@ -1,0 +1,117 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: site.langs
+  size: 1
+  alias: lang
+permalink: "{{ lang | routeUrl }}index.html"
+isHome: true
+eleventyComputed:
+  title: "{{ 'home.title' | t(lang) | safe }}"
+  description: "{{ 'home.description' | t(lang) | safe }}"
+eleventyExcludeFromCollections: true
+---
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>VOCE <span class="a">a</span> VOCE</h1>
+      <p class="tag">{{ 'tag' | t(lang) }}</p>
+      <p class="lead">{{ 'lead' | t(lang) | safe }}</p>
+      <form class="hero-search" role="search" action="{{ lang | routeUrl('search') }}" method="get">
+        <label for="hero-q">{{ 'search.homeLabel' | t(lang) }}</label>
+        <div class="search-form__row">
+          <input class="search-input" type="search" id="hero-q" name="q" autocomplete="off">
+          <button class="btn" type="submit">{{ 'search.homeButton' | t(lang) }}</button>
+        </div>
+      </form>
+      <div class="cta-row">
+        <a class="btn" href="#catalogo">{{ 'home.ctaExplore' | t(lang) }}</a>
+        <a class="btn btn--ghost" href="#how">{{ 'home.ctaHow' | t(lang) }}</a>
+      </div>
+    </div>
+    <div>
+      <ul class="voices" aria-label="{{ 'voicesDemo' | t(lang) }}">
+        <li><span class="name">S</span><span class="bar" aria-hidden="true"></span></li>
+        <li><span class="name">A</span><span class="bar b2" aria-hidden="true"></span></li>
+        <li class="on"><span class="name">T</span><span class="bar b3" aria-hidden="true"></span></li>
+        <li><span class="name">B</span><span class="bar b4" aria-hidden="true"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ultimi" aria-labelledby="latest-h">
+  <div class="wrap">
+    <h2 id="latest-h" class="section-title">{{ 'home.latest' | t(lang) }}</h2>
+    <p class="text-muted section-sub">{{ 'home.latestP' | t(lang) }}</p>
+    {%- set pieces = catalog.ultimi | slice8 %}{% set asPath = false %}
+{% include "components/piece-grid.njk" %}
+  </div>
+</section>
+
+{%- set soonPieces = catalog.inArrivo | slice8 %}
+{%- if soonPieces.length %}
+<section class="section" id="in-arrivo" aria-labelledby="soon-h">
+  <div class="wrap">
+    <h2 id="soon-h" class="section-title">{{ 'home.soon' | t(lang) }}</h2>
+    <p class="text-muted section-sub">{{ 'home.soonP' | t(lang) }}</p>
+    <ul class="upcoming plain">
+      {%- for p in soonPieces %}
+      <li class="upcoming__item">
+        <time class="upcoming__date" datetime="{{ p.vociInArrivo[0].pubblica_dal | isoDay }}">{{ p.vociInArrivo[0].pubblica_dal | dateLong(lang) }}</time>
+        <span class="upcoming__title">{% if p.voci.length %}<a href="{{ lang | routeUrl('pieces', p.slug) }}">{{ p.titolo_breve or p.titolo }}</a>{% else %}{{ p.titolo_breve or p.titolo }}{% endif %}</span>
+        <span class="text-muted upcoming__by">{{ (p.compositore.breve or p.compositore.nome) if p.compositore else ('card.anon' | t(lang)) }}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section" id="catalogo" aria-labelledby="lines-h">
+  <div class="wrap">
+    <h2 id="lines-h" class="section-title">{{ 'home.linesH' | t(lang) }}</h2>
+    <p class="text-muted section-sub">{{ 'home.linesP' | t(lang) }}</p>
+    <ul class="line-tiles plain">
+      {%- set tiles = [["choir", "choir", 0, null], ["methods", "methods", 1, null], ["arias", "arias", 2, null], ["seasons", "seasons", 3, "natale"]] %}
+      {%- for tl in tiles %}
+      <li class="line-tile{% if tl[3] %} line-tile--feat{% endif %}">
+        <div class="bars-mini" aria-hidden="true">{% for i in [0, 1, 2, 3] %}<span{% if i == tl[2] %} class="on"{% endif %}></span>{% endfor %}</div>
+        <h3><a href="{{ lang | routeUrl(tl[1]) }}">{{ ('home.tile.' ~ tl[0] ~ '.h') | t(lang) }}</a></h3>
+        <p>{{ ('home.tile.' ~ tl[0] ~ '.p') | t(lang) }}</p>
+        {%- if tl[3] %}
+        <p class="line-tile__feat"><a href="{{ lang | routeUrl('seasons', seasonSlugs[tl[3]]) }}">{{ 'home.tile.seasons.feat' | t(lang) }}</a></p>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 id="how-h" class="section-title">{{ 'how.h' | t(lang) }}</h2>
+    <div class="bars-mini" aria-hidden="true"><span></span><span class="on"></span><span></span><span></span></div>
+    <div class="grid-auto">
+      {%- for n in [1, 2, 3, 4] %}
+      <div class="feat">
+        <span class="n" aria-hidden="true">{{ n }}</span>
+        <h3>{{ ('how.f' ~ n ~ '_h') | t(lang) }}</h3>
+        <p>{{ ('how.f' ~ n ~ '_p') | t(lang) }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="src-h">
+  <div class="wrap">
+    <h2 id="src-h" class="section-title">{{ 'sources.h' | t(lang) }}</h2>
+    <p class="prose">{{ 'sources.p' | t(lang) | safe }}</p>
+    <ul class="source-list">
+      <li><a href="https://www.cpdl.org">CPDL / ChoralWiki</a></li>
+      <li><a href="https://imslp.org">IMSLP</a></li>
+      <li><a href="https://musescore.com/openscore-lieder-corpus">OpenScore (CC0)</a></li>
+    </ul>
+  </div>
+</section>

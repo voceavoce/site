@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "slug": "teach-me-o-lord-byrd",
+  "linea": "coro",
+  "rank": "428",
+  "ranks": [
+    "428"
+  ],
+  "titolo": "Teach me, O Lord",
+  "compositore": {
+    "id": "william-byrd",
+    "nome": "William Byrd",
+    "breve": "Byrd",
+    "date": "c. 1540–1623",
+    "nascita": "c. 1540",
+    "morte": 1623,
+    "periodo": "rinascimento",
+    "alias": [
+      "Byrd"
+    ]
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SAATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "minor"
+  },
+  "tempo_bpm": 100,
+  "fonte_spartito": "IMSLP",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "Tudor Church Music vol. II (William Byrd, English Church Music part I), a cura di P. C. Buck, E. H. Fellowes, A. Ramsbotham, R. R. Terry, S. Townsend Warner: Second Preces and Psalms (T 192), Third Psalm 'Teach me, O Lord' (Ps. CXIX), Medius verse + 5 voci + organo",
+      "editore": "Oxford University Press (Carnegie UK Trust)",
+      "anno": 1922,
+      "url": "https://imslp.org/wiki/Second_Preces_and_Psalms,_T_192_(Byrd,_William)"
+    }
+  ],
+  "testo": {
+    "lingua": "en",
+    "testo": "Teach me, O Lord, the way of thy statutes: and I shall keep it unto the end.\nGive me understanding and I shall keep thy law: yea, I shall keep it with my whole heart.\nMake me to go in the path of thy commandments: for therein is my desire.\nIncline my heart unto thy testimonies: and not to covetousness.\nO turn away mine eyes, lest they behold vanity: and quicken thou me in thy way.\nO stablish thy word in thy servant: that I may fear thee.",
+    "fonte": {
+      "sito": "sofn.uk",
+      "url": "https://sofn.uk/library/psalm-119-verses-33-40/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "McePENesd2M",
+      "pubblica_dal": "2027-01-24T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "YydDBXVVnj4",
+      "pubblica_dal": "2027-01-24T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "Wf9sc16mUFI",
+      "pubblica_dal": "2027-01-24T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "wKGLUIDO16k",
+      "pubblica_dal": "2027-01-24T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "NFGhB_SSA-I",
+      "pubblica_dal": "2027-01-24T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-24T15:30:00Z"
+}

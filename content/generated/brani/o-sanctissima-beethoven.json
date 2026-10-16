@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "slug": "o-sanctissima-beethoven",
+  "linea": "coro",
+  "rank": "476",
+  "ranks": [
+    "476"
+  ],
+  "titolo": "O sanctissima WoO 157 n. 4",
+  "compositore": {
+    "id": "ludwig-van-beethoven",
+    "nome": "Ludwig van Beethoven",
+    "breve": "Beethoven",
+    "date": "1770–1827",
+    "nascita": "1770",
+    "morte": 1827,
+    "periodo": "classico",
+    "alias": [
+      "Beethoven"
+    ]
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 76,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "edizioni_verifica": [
+    {
+      "edizione": "L. van Beethoven, Narodnye pesni / Lieder verschiedener Völker (selezione da WoO 157 e WoO 158) per 1-3 voci con violino, violoncello e pianoforte, n. 2 «O sanctissima! Sicilianskaja», partitura completa",
+      "editore": "Muzyka, Moskva (lastra 10887)",
+      "anno": 1980,
+      "url": "https://archive.org/details/31761041557661"
+    },
+    {
+      "edizione": "Ludwig van Beethovens Werke. Vollständige kritisch durchgesehene Gesamtausgabe, Serie 24 n. 259: 12 Lieder verschiedener Völker WoO 157, n. 4 «O sanctissima! (Sicilianisches Volkslied)», partitura completa (Violino, Violoncello, Soprani I-II, Basso, Pianoforte)",
+      "editore": "Breitkopf & Härtel, Leipzig (B.259)",
+      "anno": 1864,
+      "url": "https://imslp.org/wiki/12_Songs_of_Various_Nationality,_WoO_157_(Beethoven,_Ludwig_van)"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "O sanctissima, o piissima,\ndulcis virgo Maria!\nMater amata, intemerata,\nora, ora pro nobis.",
+    "fonte": {
+      "sito": "Beethoven Gesamtausgabe (Breitkopf & Härtel), Serie 24 n. 259",
+      "url": "https://imslp.org/wiki/Category:Beethoven,_Ludwig_van"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "2gNYte_mlBU",
+      "pubblica_dal": "2027-01-18T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "7XIviB4PCtY",
+      "pubblica_dal": "2027-01-18T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "IDCEmdoNdv8",
+      "pubblica_dal": "2027-01-18T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-18T15:30:00Z"
+}

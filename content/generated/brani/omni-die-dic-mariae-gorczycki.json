@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "omni-die-dic-mariae-gorczycki",
+  "linea": "coro",
+  "rank": "053",
+  "ranks": [
+    "053"
+  ],
+  "titolo": "Omni die dic Mariae",
+  "compositore": {
+    "id": "grzegorz-gorczycki",
+    "nome": "Grzegorz Gorczycki",
+    "breve": "Gorczycki"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "A",
+    "modo": "major"
+  },
+  "tempo_bpm": 126,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "VVRe-dol1fQ",
+      "pubblica_dal": "2026-10-03T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "MuxaXnx7mOg",
+      "pubblica_dal": "2026-10-03T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "XdH6FG71mbw",
+      "pubblica_dal": "2026-10-03T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "wJWmFRIFC7M",
+      "pubblica_dal": "2026-10-03T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-03T14:30:00Z"
+}

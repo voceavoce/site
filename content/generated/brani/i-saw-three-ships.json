@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "i-saw-three-ships",
+  "linea": "coro",
+  "rank": "340",
+  "ranks": [
+    "340"
+  ],
+  "titolo": "I Saw Three Ships",
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 90,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "yUDYndIU2uw",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "f-qwIWCqliU",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "T",
+      "video_id": "g92C4ALvHvg",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "B",
+      "video_id": "IFug6DkaapU",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-09-01"
+}
