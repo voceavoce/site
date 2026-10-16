@@ -45,4 +45,4 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 ## Manuale (utente)
 
-- [ ] M1 Dopo il merge su main: GitHub → Settings → Pages → Source → «GitHub Actions»
+- [x] M1 GitHub → Settings → Pages → Source → «GitHub Actions» (fatto dall'utente il 2026-10-16, prima del merge)
