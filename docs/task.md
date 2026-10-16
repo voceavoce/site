@@ -37,7 +37,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] R1 (H) Footer: includere `info-links.njk`; breadcrumb e riga autore della scheda: link a compositore e opera quando esistono le pagine (B6)
 - [x] R2 (H) Selettore voce di arie/metodi: le sigle A/M/B (alta/media/bassa) si confondono con Alto/Basso: usare le parole intere
 - [x] R3 Testi cantati: decisione utente 2026-10-16 = testo completo, con la fonte citata e linkata (già così)
-- [~] R4 (S) Pipeline: «Lead Me Lord - Samuel Sebastian Wesley» resta col nome nel titolo (compositore fuori registro, nome preso dal titolo ma non tolto dal titolo): `titolo_pulito` deve togliere anche il nome scelto fra i candidati
+- [x] R4 (S) Pipeline: «Lead Me Lord - Samuel Sebastian Wesley» resta col nome nel titolo (compositore fuori registro, nome preso dal titolo ma non tolto dal titolo): `titolo_pulito` deve togliere anche il nome scelto fra i candidati
 - [ ] R5 (S) `workTranslation` nel JSON-LD e ItemList sulle pagine di elenco
 
 ## C — Contenuti editoriali (costano token: stima prima di partire)
