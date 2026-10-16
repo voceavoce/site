@@ -63,11 +63,11 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [ ] P8 (O) Pipeline, da decidere con l'utente: con una sola corona a metà brano `choir._timing_regions` la tratta come corona finale e mette lì l'allargando finale (es. Locus iste, b. 28-29). Riguarda anche i video già pubblicati
 - [x] P11 (S) [FATTO nel codice, resta la verifica a orecchio: compensazione col tempo udibile + bypass dello stretcher a 1x, vedi player.md] Latenza audio: il suono esce 75–150 ms dopo l'evidenziazione della battuta (buffer di SoundTouch + latenza d'uscita del dispositivo). Compensare l'evidenziazione con la latenza misurata (`AudioContext.outputLatency` / `baseLatency` + latenza dello stretcher); poi verifica a orecchio dell'utente
 
-## Q — Robustezza (Fase 3, in attesa dell'ok dell'utente)
+## Q — Robustezza (Fase 3, ok dell'utente 2026-10-16)
 
-- [ ] P12 (S) Test end-to-end Playwright in `tests/e2e/` (PWA + player), partendo dalle bozze in `tools/verifica-manuale/`; audio sintetici generati al momento del test, mai nel repo
-- [ ] P13 (S) Test dell'aggiornamento del service worker (versione nuova → cache vecchie cancellate, audio sempre fuori dalla cache)
-- [ ] P14 (H) `npm run e2e` nel workflow Check (solo PR), con l'installazione di Chromium da Playwright in CI
+- [~] P12 (S) Test end-to-end Playwright in `tests/e2e/` (PWA + player), partendo dalle bozze in `tools/verifica-manuale/`; audio sintetici generati al momento del test, mai nel repo
+- [~] P13 (S) Test dell'aggiornamento del service worker (versione nuova → cache vecchie cancellate, audio sempre fuori dalla cache)
+- [~] P14 (H) `npm run e2e` nel workflow Check (solo PR), con l'installazione di Chromium da Playwright in CI
 
 ## Da fare dall'utente (sul proprio PC)
 

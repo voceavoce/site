@@ -263,7 +263,7 @@ Richiesta dell'utente del 2026-10-16. Ok per l'implementazione dato lo stesso gi
 
 ---
 
-# Fase 3 — Robustezza: test end-to-end di player e PWA (proposta, in attesa dell'ok)
+# Fase 3 — Robustezza: test end-to-end di player e PWA (ok dell'utente 2026-10-16, in corso)
 
 **Perché.** Gli unit test (81, `npm test`) coprono la logica pura: classificazione del service worker, tempi, loop, `resolveAudioUrl`, Worker, script R2. Le prove nel browser vero (registrazione e aggiornamento del SW, offline, audio mai in cache, player sincronizzato, tastiera, mobile) finora sono state fatte a mano con Playwright. Gli script sono salvati in `tools/verifica-manuale/` come bozze, ma non girano in CI.
 

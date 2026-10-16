@@ -20,7 +20,7 @@
   - commit e push frequenti;
   - sotto-agenti Sonnet/Haiku; solo l'agente principale aggiorna `task.md` e `state.md`.
 - **CI:** «Check» gira solo sulle PR (e a mano); «Deploy» su push a `main`, a mano e ogni giorno alle 04:15 UTC. Prima di ogni push con codice: `npm run check` e `npm run a11y` in locale (per a11y serve `PUPPETEER_EXECUTABLE_PATH` verso un Chromium).
-- **Prossimo passo proposto:** Fase 3, test end-to-end di PWA e player (P12–P14), in attesa dell'ok dell'utente. Bozze in `tools/verifica-manuale/`.
+- **Prossimo passo:** Fase 3, test end-to-end di PWA e player (P12–P14): ok dell'utente il 2026-10-16, affidati a un agente Sonnet. Bozze di partenza in `tools/verifica-manuale/`.
 - **Cose che l'utente fa sul suo PC:** sezione «Da fare dall'utente» in `task.md` (U1–U7).
 - **Aperto:** P8, corona singola: `choir._timing_regions` tratta un'unica corona a metà brano come finale e ci mette l'allargando (Locus iste b. 28-29); riguarda anche i video pubblicati. C1–C2, traduzioni e note, rimandate. A8, primo export ufficiale con `slug_sito`, si fa con lo STAGE 5 della skill.
 
