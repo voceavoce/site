@@ -69,6 +69,20 @@ export function computePosition({ anchorPos, anchorTime, now, rate, loop = null,
   return Math.min(raw, duration);
 }
 
+/**
+ * Posizione UDIBILE: il tempo del motore indietro di `latency` secondi di orologio (quello che esce adesso dagli
+ * altoparlanti e' stato immesso nel bus `latency` fa). Si calcola come computePosition a `now - latency`, quindi
+ * rispetta da solo il loop (all'uscita dal loop l'udibile rientra `latency` dopo il motore) e il seek (fermo
+ * sul punto finche' il nuovo suono non arriva). Dopo un cambio di velocita' o di loop `prev` e' l'ancoraggio
+ * precedente {anchorPos, anchorTime, rate, loop}: serve finche' `now - latency` precede il nuovo ancoraggio.
+ * Solo per evidenziazione, posizione mostrata e scroll: seek e confini del loop restano sul tempo del motore.
+ */
+export function audiblePosition({ anchorPos, anchorTime, now, rate, loop = null, duration = Infinity, latency = 0, prev = null }) {
+  const t = now - Math.max(0, latency || 0);
+  if (prev && t < anchorTime) return computePosition({ ...prev, now: t, duration });
+  return computePosition({ anchorPos, anchorTime, now: t, rate, loop, duration });
+}
+
 /** Formatta i secondi come m:ss (arrotondato per difetto). */
 export function formatClock(sec) {
   const s = Math.max(0, Math.floor(sec || 0));

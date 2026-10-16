@@ -60,7 +60,10 @@ async function main(data) {
 
   // --- trasporto
   function update() {
-    const pos = engine.tracks.size ? engine.position() : 0;
+    // Tempo UDIBILE (motore meno latenza dello stretcher e dell'uscita): evidenziazione, orologio, cursore e scroll
+    // seguono quello che si sente. position() resta per la fine del brano (evento "ended") e per seek e loop.
+    if (engine.tracks.size) engine.position();
+    const pos = engine.tracks.size ? engine.audiblePosition() : 0;
     el.time.textContent = formatClock(pos);
     if (!dragging) el.seek.value = String(pos);
     el.seek.setAttribute("aria-valuetext", `${formatClock(pos)} / ${formatClock(engine.duration || manifest.durata_sec)}`);

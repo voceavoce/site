@@ -1,18 +1,25 @@
 // Motore audio (Web Audio).
 //
 //   AudioBufferSource (una per traccia, mono, 24 kHz) -> GainNode (uno per traccia) -> bus (somma)
-//     -> UN solo SoundTouchNode (AudioWorklet, time-stretch) -> uscita
+//     +-> dry (GainNode) ------------------------------------------+-> uscita        (1x: bypass, nessuna latenza)
+//     +-> UN solo SoundTouchNode (AudioWorklet, time-stretch) -> wet +                 (< 1x)
+//   dry e wet si scambiano con una dissolvenza di XFADE secondi quando la velocita' attraversa 1x.
 //
 // Il rallentamento si ottiene cosi': ogni sorgente suona con playbackRate = velocita' (l'altezza scende) e il
 // nodo SoundTouch, che conosce la stessa velocita' (parametro playbackRate), riporta l'intonazione al valore
 // originale. Poiche' lo stretcher e' uno solo sul mix, le voci restano in sincronia esatta.
 // L'orologio unico e' l'AudioContext: posizione = ancoraggio + (currentTime - istante) * velocita' (timeline.js).
 //
+// Latenza: il ramo wet ritarda di ~0,1 s (buffer di SoundTouch, latency.js) piu' la latenza d'uscita del dispositivo.
+// audiblePosition() e' il tempo del motore indietro di quella latenza: serve a evidenziazione, posizione e scroll.
+//
 // SoundTouch (AudioWorklet): vedi src/assets/vendor (copiato da node_modules, file separati e non minificati).
 import { resolveAudioUrl } from "./config.js";
-import { computePosition } from "./timeline.js";
+import { computePosition, audiblePosition } from "./timeline.js";
+import { deviceLatency, totalLatency } from "./latency.js";
 
 const TARGET_RATE = 24000; // le voci non hanno contenuto utile oltre i 12 kHz: si dimezza la memoria
+const XFADE = 0.04; // dissolvenza (s) tra ramo diretto e ramo con stretcher
 const VENDOR = new URL("../../vendor/soundtouch/", import.meta.url);
 
 export class StudyError extends Error {
@@ -30,6 +37,10 @@ export class StudyEngine extends EventTarget {
     this.tracks = new Map(); // chiave -> { buffer, gain, source }
     this.bus = null;
     this.stretcher = null;
+    this.dry = null; // ramo diretto bus -> uscita (usato a 1x)
+    this.wet = null; // uscita dello stretcher -> uscita
+    this.mix = { from: 0, to: 0, t0: 0 }; // peso del ramo wet (0..1) e dissolvenza in corso
+    this.prevAnchor = null; // ancoraggio precedente (velocita'/loop appena cambiati), per la posizione udibile
     this.stretchOk = false;
     this.duration = 0;
     this.rate = 1;
@@ -47,17 +58,22 @@ export class StudyEngine extends EventTarget {
     if (!AC || !window.AudioWorkletNode) throw new StudyError("unsupported", "Web Audio / AudioWorklet non disponibili");
     this.ctx = new AC({ latencyHint: "playback" });
     this.bus = this.ctx.createGain();
+    this.dry = this.ctx.createGain();
+    this.bus.connect(this.dry);
+    this.dry.connect(this.ctx.destination);
     try {
       const { SoundTouchNode } = await import(new URL("index.js", VENDOR).href);
       await SoundTouchNode.register(this.ctx, new URL("soundtouch-processor.js", VENDOR).href);
       this.stretcher = new SoundTouchNode({ context: this.ctx });
+      this.wet = this.ctx.createGain();
+      this.wet.gain.value = 0; // si parte a 1x: tutto sul ramo diretto
       this.bus.connect(this.stretcher);
-      this.stretcher.connect(this.ctx.destination);
+      this.stretcher.connect(this.wet);
+      this.wet.connect(this.ctx.destination);
       this.stretchOk = true;
     } catch (e) {
       // Senza lo stretcher si suona alla velocita' normale e il controllo della velocita' va disattivato.
       this.stretchOk = false;
-      this.bus.connect(this.ctx.destination);
       this.dispatchEvent(new CustomEvent("warning", { detail: new StudyError("worklet", "SoundTouch non disponibile", e) }));
     }
   }
@@ -150,7 +166,42 @@ export class StudyEngine extends EventTarget {
     return p;
   }
 
+  /**
+   * Posizione UDIBILE (s): quella che si sta sentendo adesso, cioe' il tempo del motore al netto della latenza del
+   * ramo attivo (stretcher solo se non siamo a 1x) e di quella d'uscita del dispositivo. Per evidenziazione, tempo
+   * mostrato e scroll; mai per seek o confini del loop (restano sul tempo del motore: position()).
+   */
+  audiblePosition() {
+    if (!this.playing) return this.pausedPos;
+    return audiblePosition({ anchorPos: this.anchorPos, anchorTime: this.anchorTime, now: this.ctx.currentTime, rate: this.rate, loop: this.loop, duration: this.duration, latency: this.latency(), prev: this.prevAnchor });
+  }
+
+  /** Latenza attuale (s) tra motore e orecchio, secondo il ramo attivo. */
+  latency() {
+    return totalLatency({ rate: this.rate, wet: this.#wetWeight(), device: deviceLatency(this.ctx) });
+  }
+
+  #wetWeight() {
+    const m = this.mix;
+    const k = Math.min(1, Math.max(0, (this.ctx.currentTime - m.t0) / XFADE));
+    return m.from + (m.to - m.from) * k;
+  }
+
+  // Sceglie il ramo: wet = 1 (stretcher) o 0 (diretto), con dissolvenza lineare a somma costante.
+  #setBranch(wet) {
+    if (!this.wet || this.mix.to === wet) return;
+    const now = this.ctx.currentTime;
+    const w0 = this.#wetWeight();
+    this.mix = { from: w0, to: wet, t0: now };
+    for (const [g, from, to] of [[this.wet.gain, w0, wet], [this.dry.gain, 1 - w0, 1 - wet]]) {
+      g.cancelScheduledValues(now);
+      g.setValueAtTime(from, now);
+      g.linearRampToValueAtTime(to, now + XFADE);
+    }
+  }
+
   #startSources(pos) {
+    this.prevAnchor = null; // sorgenti nuove: nessun suono precedente da raccordare
     const when = this.ctx.currentTime + 0.06; // stesso istante di partenza per tutte le tracce
     for (const tr of this.tracks.values()) {
       const src = this.ctx.createBufferSource();
@@ -185,7 +236,9 @@ export class StudyEngine extends EventTarget {
   }
   pause() {
     if (!this.playing) return;
-    this.pausedPos = this.position();
+    this.position();
+    if (!this.playing) return; // fine del brano raggiunta proprio ora
+    this.pausedPos = this.audiblePosition(); // si riparte da dove si e' sentito, non da dove era il motore
     this.#stopSources();
     this.playing = false;
     this.dispatchEvent(new Event("pause"));
@@ -201,20 +254,24 @@ export class StudyEngine extends EventTarget {
     if (!this.stretchOk) r = 1;
     const now = this.ctx.currentTime;
     if (this.playing) { // nuovo ancoraggio alla posizione di adesso, poi cambio per tutti allo stesso istante
+      this.prevAnchor = { anchorPos: this.anchorPos, anchorTime: this.anchorTime, rate: this.rate, loop: this.loop };
       this.anchorPos = computePosition({ anchorPos: this.anchorPos, anchorTime: this.anchorTime, now, rate: this.rate, loop: this.loop, duration: this.duration });
       this.anchorTime = now;
     }
     this.rate = r;
     for (const tr of this.tracks.values()) tr.source?.playbackRate.setValueAtTime(r, now);
     this.stretcher?.playbackRate.setValueAtTime(r, now);
+    this.#setBranch(r < 1 ? 1 : 0);
   }
 
   /** Loop senza vuoti ({start,end} in secondi) oppure null. */
   setLoop(range) {
     const pos = this.playing ? this.position() : this.pausedPos;
+    const oldLoop = this.loop;
     this.loop = range ? { start: range.start, end: range.end } : null;
     if (this.playing) {
       if (this.loop && pos >= this.loop.end) { this.seek(this.loop.start); return; }
+      this.prevAnchor = { anchorPos: this.anchorPos, anchorTime: this.anchorTime, rate: this.rate, loop: oldLoop };
       this.anchorPos = pos;
       this.anchorTime = this.ctx.currentTime;
       for (const tr of this.tracks.values()) if (tr.source) this.#applyLoop(tr.source);

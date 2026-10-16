@@ -1,6 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { measureIndexAt, timeOfMeasure, endOfMeasure, loopBounds, indexOfScoreMeasure, computePosition, measureLabels, formatClock } from "../src/assets/js/study/timeline.js";
+import { measureIndexAt, timeOfMeasure, endOfMeasure, loopBounds, indexOfScoreMeasure, computePosition, audiblePosition, measureLabels, formatClock } from "../src/assets/js/study/timeline.js";
+import { stretcherLatency, deviceLatency, totalLatency, STRETCH_LATENCY } from "../src/assets/js/study/latency.js";
 import { resolveAudioUrl, isSafeRelativePath, setAudioBase } from "../src/assets/js/study/config.js";
 import { effectiveGains, myVoiceState, initialMixerState } from "../src/assets/js/study/mixer.js";
 import { loadStudio, checkManifest } from "../src/_lib/studio.js";
@@ -101,4 +102,71 @@ test("studio: manifest con URL assoluto rifiutato; dati di prova esclusi in prod
   assert.deepEqual(dev.slugs, ["_prova", "vero"]);
   assert.deepEqual(Object.keys(dev.linked), ["vero"]); // nessun link verso i dati di prova
   assert.equal(dev.schede.length, 6);
+});
+
+test("latenza dello stretcher: tabella monotona, interpolata e limitata", () => {
+  for (let i = 1; i < STRETCH_LATENCY.length; i++) {
+    assert.ok(STRETCH_LATENCY[i][0] > STRETCH_LATENCY[i - 1][0]);
+    assert.ok(STRETCH_LATENCY[i][1] >= STRETCH_LATENCY[i - 1][1]); // piu' lento = latenza minore o uguale
+  }
+  assert.equal(stretcherLatency(1), 0.133);
+  assert.equal(stretcherLatency(0.5), 0.094);
+  assert.equal(stretcherLatency(0.75), 0.123);
+  assert.ok(Math.abs(stretcherLatency(0.525) - 0.0985) < 1e-9); // meta' tra 0,5 e 0,55
+  assert.equal(stretcherLatency(2), 0.133);
+  assert.equal(stretcherLatency(0.1), 0.094);
+  assert.equal(stretcherLatency(NaN), 0.133);
+});
+
+test("latenza d'uscita: outputLatency, poi baseLatency, poi 0", () => {
+  assert.equal(deviceLatency({ outputLatency: 0.07, baseLatency: 0.01 }), 0.07);
+  assert.equal(deviceLatency({ outputLatency: 0, baseLatency: 0.01 }), 0.01);
+  assert.equal(deviceLatency({ baseLatency: 0.02 }), 0.02);
+  assert.equal(deviceLatency({ outputLatency: NaN, baseLatency: -1 }), 0);
+  assert.equal(deviceLatency({ outputLatency: 99 }), 0);
+  assert.equal(deviceLatency(null), 0);
+});
+
+test("latenza totale: segue il ramo attivo (bypass a 1x, stretcher sotto)", () => {
+  assert.equal(totalLatency({ rate: 1, wet: 0, device: 0.07 }), 0.07); // bypass: solo il dispositivo
+  assert.ok(Math.abs(totalLatency({ rate: 0.75, wet: 1, device: 0.07 }) - 0.193) < 1e-9);
+  assert.ok(Math.abs(totalLatency({ rate: 0.75, wet: 0.5, device: 0 }) - 0.0615) < 1e-9); // dissolvenza a meta'
+  assert.equal(totalLatency({ rate: 0.75, wet: 7 }), 0.123); // peso limitato a 1
+  assert.equal(totalLatency({ rate: 1, wet: 0 }), 0);
+});
+
+test("tempo udibile: motore meno latenza (a orologio), con rate e senza passare sotto l'ancoraggio", () => {
+  const a = { anchorPos: 2, anchorTime: 10, rate: 1 };
+  assert.equal(audiblePosition({ ...a, now: 12, latency: 0 }), computePosition({ ...a, now: 12 }));
+  assert.ok(Math.abs(audiblePosition({ ...a, now: 12, latency: 0.2 }) - 3.8) < 1e-9);
+  assert.ok(Math.abs(audiblePosition({ ...a, rate: 0.75, now: 12, latency: 0.2 }) - (2 + 1.8 * 0.75)) < 1e-9);
+  // dopo un seek/partenza il suono nuovo arriva `latency` dopo l'ancoraggio: prima l'udibile resta fermo
+  assert.equal(audiblePosition({ ...a, now: 10.1, latency: 0.2 }), 2);
+  assert.equal(audiblePosition({ ...a, now: 9, latency: 0.2 }), 2);
+  assert.equal(audiblePosition({ ...a, now: 12, latency: -5 }), 4); // latenza negativa ignorata
+  assert.equal(audiblePosition({ ...a, anchorPos: 9.9, now: 11, latency: 0, duration: 10 }), 10);
+});
+
+test("tempo udibile: dopo un cambio di velocita' raccorda con l'ancoraggio precedente", () => {
+  const prev = { anchorPos: 2, anchorTime: 10, rate: 1, loop: null };
+  // a t=12 la velocita' passa a 0,75: ancoraggio nuovo (4, 12)
+  const cur = { anchorPos: 4, anchorTime: 12, rate: 0.75 };
+  // 100 ms dopo, con latenza 0,2: l'udibile e' ancora sul vecchio ramo (a 11,9 s -> 3,9), non congelato a 4
+  assert.ok(Math.abs(audiblePosition({ ...cur, now: 12.1, latency: 0.2, prev }) - 3.9) < 1e-9);
+  assert.equal(audiblePosition({ ...cur, now: 12.1, latency: 0.2 }), 4);
+  // a regime usa l'ancoraggio nuovo
+  assert.ok(Math.abs(audiblePosition({ ...cur, now: 13, latency: 0.2, prev }) - (4 + 0.8 * 0.75)) < 1e-9);
+});
+
+test("tempo udibile nel loop: rientra dopo il motore e non esce mai dal loop", () => {
+  const loop = { start: 5, end: 7 };
+  const a = { anchorPos: 6, anchorTime: 0, rate: 1, loop };
+  // il motore supera 7 a t=1 e rientra da 5; l'udibile (latenza 0,15) passa ancora per 6,95 e rientra a t=1,15
+  assert.ok(Math.abs(computePosition({ ...a, now: 1.05 }) - 5.05) < 1e-9);
+  assert.ok(Math.abs(audiblePosition({ ...a, now: 1.05, latency: 0.15 }) - 6.9) < 1e-9);
+  assert.ok(Math.abs(audiblePosition({ ...a, now: 1.2, latency: 0.15 }) - 5.05) < 1e-9);
+  for (let t = 0; t < 20; t += 0.01) {
+    const p = audiblePosition({ ...a, now: t, latency: 0.15 });
+    assert.ok(p >= 5 - 1e-9 && p <= 7 + 1e-9 || t < 1.15 && p >= 6 - 1e-9, `fuori dal loop a t=${t}: ${p}`);
+  }
 });
