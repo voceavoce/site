@@ -60,6 +60,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — B13 fatto (Sonnet), verifica finale: 96 combinazioni Playwright (3 lingue × 8 tipi di pagina × 375/1280 × chiaro/scuro) senza scroll orizzontale, errori console o 404 locali; 23149 link interni e 2178 link di cambio lingua, 0 rotti; tastiera ok (skip link, menu, lingua, tema persistente, selettore voce, ricerca); Lighthouse home 100/100/96/100 desktop e 99/100/96/100 mobile, scheda 100/100/100/100 (il 96 di best practices dipende solo dalle miniature YouTube bloccate in questo ambiente); 294 URL in sitemap, tutti con canonical e hreflang validi; CSS 29 KB, JS 1–3 KB per pagina (10 KB la ricerca, Pagefind escluso). Corretti: «licenza —» nel riquadro In breve quando la licenza manca; `llms.txt` con nomi leggibili delle sezioni e descrizione corretta del progetto (prima diceva «coro virtuale» e citava traduzioni non ancora presenti).
 
+- 2026-10-16 — Aperta la pull request https://github.com/voceavoce/site/pull/1 verso `main`. Il merge lo fa l'utente.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
