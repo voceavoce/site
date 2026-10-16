@@ -29,7 +29,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] B10 (H) Componenti `ad-slot` e `affiliate` dietro `site.ads.enabled = false`
 - [x] B11 (S) `scripts/validate-content.mjs` (ajv) + schema
 - [x] B12 (S) CI `.github/workflows/deploy.yml`: validazione, build, Pagefind, html-validate, pa11y/axe, link check, deploy Pages; cron giornaliero
-- [~] B13 (S) Verifica: Playwright (ricerca, filtri, voce, lingua, tastiera), screenshot 375/1280 chiaro/scuro, Lighthouse
+- [x] B13 (S) Verifica: Playwright (ricerca, filtri, voce, lingua, tastiera), screenshot 375/1280 chiaro/scuro, Lighthouse
 - [x] B14 (H) README sito + `docs/CONTENUTI.md`
 
 ## Rifiniture emerse

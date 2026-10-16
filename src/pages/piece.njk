@@ -49,7 +49,7 @@ eleventyExcludeFromCollections: true
         <div><dt>{{ 'piece.voices' | t(lang) }}</dt> <dd>{% for v in piece.voci %}<span data-pagefind-filter="voce">{{ v.voce | voiceName(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
         {%- endif %}
         {%- if piece.fonte_spartito %}
-        <div><dt>{{ 'piece.score' | t(lang) }}</dt> <dd>{{ 'piece.scoreFrom' | tv(lang, { source: piece.fonte_spartito, license: (('license.' ~ piece.licenza_spartito) | t(lang)) if piece.licenza_spartito else '—' }) }}</dd></div>
+        <div><dt>{{ 'piece.score' | t(lang) }}</dt> <dd>{% if piece.licenza_spartito %}{{ 'piece.scoreFrom' | tv(lang, { source: piece.fonte_spartito, license: (('license.' ~ piece.licenza_spartito) | t(lang)) }) }}{% else %}{{ piece.fonte_spartito }}{% endif %}</dd></div>
         {%- endif %}
       </dl>
     </section>
