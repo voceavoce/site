@@ -1,0 +1,860 @@
+{
+  "schema": 1,
+  "generato": "2026-10-16T20:27:11Z",
+  "pipeline": "92814bb",
+  "impronta": "91e23a28cb8055db",
+  "brani": [
+    {
+      "slug": "le-violette-scarlatti",
+      "linea": "aria",
+      "titolo": "Le violette",
+      "prima_uscita": "2026-10-07T09:00:00Z"
+    },
+    {
+      "slug": "salvation-is-created-chesnokov",
+      "linea": "coro",
+      "titolo": "Salvation is Created",
+      "prima_uscita": "2026-11-25T15:30:00Z"
+    },
+    {
+      "slug": "locus-iste-bruckner",
+      "linea": "coro",
+      "titolo": "Locus iste",
+      "prima_uscita": "2026-11-05T15:30:00Z"
+    },
+    {
+      "slug": "the-silver-swan-gibbons",
+      "linea": "coro",
+      "titolo": "The silver swan",
+      "prima_uscita": "2026-11-23T15:30:00Z"
+    },
+    {
+      "slug": "the-star-spangled-banner-smith",
+      "linea": "coro",
+      "titolo": "The Star-Spangled Banner",
+      "prima_uscita": "2026-09-21T14:30:00Z"
+    },
+    {
+      "slug": "o-salutaris-hostia-werner",
+      "linea": "coro",
+      "titolo": "O salutaris hostia",
+      "prima_uscita": "2027-01-02T15:30:00Z"
+    },
+    {
+      "slug": "god-so-loved-the-world-stainer",
+      "linea": "coro",
+      "titolo": "God so loved the world",
+      "prima_uscita": "2026-09-23T14:30:00Z"
+    },
+    {
+      "slug": "cucu-cucu-encina",
+      "linea": "coro",
+      "titolo": "Cucú, cucú!",
+      "prima_uscita": "2026-12-09T15:30:00Z"
+    },
+    {
+      "slug": "o-esca-viatorum-haydn",
+      "linea": "coro",
+      "titolo": "O esca viatorum",
+      "prima_uscita": "2026-12-11T15:30:00Z"
+    },
+    {
+      "slug": "ave-maria-arcadelt",
+      "linea": "coro",
+      "titolo": "Ave Maria",
+      "prima_uscita": "2026-11-07T15:30:00Z"
+    },
+    {
+      "slug": "if-love-s-a-sweet-passion-purcell",
+      "linea": "coro",
+      "titolo": "If love's a sweet passion",
+      "prima_uscita": "2027-01-04T15:30:00Z"
+    },
+    {
+      "slug": "tebe-poem-chesnokov",
+      "linea": "coro",
+      "titolo": "Tebe poem, Op. 27 No. 6",
+      "prima_uscita": "2026-09-25T14:30:00Z"
+    },
+    {
+      "slug": "sicut-cervus-palestrina",
+      "linea": "coro",
+      "titolo": "Sicut cervus",
+      "prima_uscita": "2026-09-14T14:30:00Z"
+    },
+    {
+      "slug": "o-little-town-of-bethlehem-redner",
+      "linea": "coro",
+      "titolo": "O Little Town of Bethlehem",
+      "prima_uscita": "2026-09-01"
+    },
+    {
+      "slug": "ave-verum-corpus-byrd",
+      "linea": "coro",
+      "titolo": "Ave verum corpus",
+      "prima_uscita": "2026-09-16T14:30:00Z"
+    },
+    {
+      "slug": "audite-silete-praetorius",
+      "linea": "coro",
+      "titolo": "Audite silete",
+      "prima_uscita": "2026-09-27T14:30:00Z"
+    },
+    {
+      "slug": "april-is-in-my-mistress-face-morley",
+      "linea": "coro",
+      "titolo": "April is in my mistress' face",
+      "prima_uscita": "2026-11-09T15:30:00Z"
+    },
+    {
+      "slug": "lord-for-thy-tender-mercy-s-sake-farrant",
+      "linea": "coro",
+      "titolo": "Lord for Thy tender mercy's sake",
+      "prima_uscita": "2026-12-13T15:30:00Z"
+    },
+    {
+      "slug": "what-child-is-this-stainer",
+      "linea": "coro",
+      "titolo": "What Child Is This",
+      "prima_uscita": "2026-09-01"
+    },
+    {
+      "slug": "ave-maris-stella-grieg",
+      "linea": "coro",
+      "titolo": "Ave Maris Stella",
+      "prima_uscita": "2026-10-01"
+    },
+    {
+      "slug": "sing-we-and-chant-it-morley",
+      "linea": "coro",
+      "titolo": "Sing We and Chant It",
+      "prima_uscita": "2026-12-15T15:30:00Z"
+    },
+    {
+      "slug": "canticorum-jubilo-g-handel",
+      "linea": "coro",
+      "titolo": "Canticorum Jubilo G",
+      "prima_uscita": "2026-09-29T14:30:00Z"
+    },
+    {
+      "slug": "o-vos-omnes-victoria",
+      "linea": "coro",
+      "titolo": "O vos omnes",
+      "prima_uscita": "2026-10-01T14:30:00Z"
+    },
+    {
+      "slug": "thou-knowest-lord-the-secrets-of-our-hearts-purcell",
+      "linea": "coro",
+      "titolo": "Thou Knowest Lord the Secrets of Our Hearts",
+      "prima_uscita": "2027-01-08T15:30:00Z"
+    },
+    {
+      "slug": "o-la-o-che-bon-eccho-lasso",
+      "linea": "coro",
+      "titolo": "O la, o che bon eccho!",
+      "prima_uscita": "2026-12-04T15:30:00Z"
+    },
+    {
+      "slug": "morir-non-puo-il-mio-cuore-casulana",
+      "linea": "coro",
+      "titolo": "Morir non puo il mio cuore",
+      "prima_uscita": "2026-11-29T15:30:00Z"
+    },
+    {
+      "slug": "omni-die-dic-mariae-gorczycki",
+      "linea": "coro",
+      "titolo": "Omni die dic Mariae",
+      "prima_uscita": "2026-10-03T14:30:00Z"
+    },
+    {
+      "slug": "ave-maria-ii-palestrina",
+      "linea": "coro",
+      "titolo": "Ave Maria II",
+      "prima_uscita": "2026-11-26T15:30:00Z"
+    },
+    {
+      "slug": "l-innamorato-a-lieta-vita-gastoldi",
+      "linea": "coro",
+      "titolo": "L'Innamorato (A lieta vita)",
+      "prima_uscita": "2026-12-06T15:30:00Z"
+    },
+    {
+      "slug": "while-shepherds-watched-their-flocks-by-night-allison",
+      "linea": "coro",
+      "titolo": "While Shepherds Watched Their Flocks By Night",
+      "prima_uscita": "2026-09-01"
+    },
+    {
+      "slug": "gaudeamus-igitur-brahms",
+      "linea": "coro",
+      "titolo": "Gaudeamus Igitur",
+      "prima_uscita": "2026-10-05T14:30:00Z"
+    },
+    {
+      "slug": "handl-gallus-quod-chorus-vatum",
+      "linea": "coro",
+      "titolo": "Handl-Gallus - Quod Chorus vatum",
+      "prima_uscita": "2026-12-17T15:30:00Z"
+    },
+    {
+      "slug": "the-lord-bless-you-and-keep-you-lutkin",
+      "linea": "coro",
+      "titolo": "The Lord bless you and keep you",
+      "prima_uscita": "2026-12-05T15:30:00Z"
+    },
+    {
+      "slug": "super-flumina-babylonis-palestrina",
+      "linea": "coro",
+      "titolo": "Super flumina Babylonis",
+      "prima_uscita": "2026-11-11T15:30:00Z"
+    },
+    {
+      "slug": "versa-est-in-luctum-lobo",
+      "linea": "coro",
+      "titolo": "Versa est in luctum",
+      "prima_uscita": "2026-10-07T14:30:00Z"
+    },
+    {
+      "slug": "come-again-sweet-love-dowland",
+      "linea": "coro",
+      "titolo": "Come again, sweet love",
+      "prima_uscita": "2026-12-19T15:30:00Z"
+    },
+    {
+      "slug": "once-in-royal-david-s-city-gauntlett",
+      "linea": "coro",
+      "titolo": "Once in Royal David's City",
+      "prima_uscita": "2026-09-18T14:30:00Z"
+    },
+    {
+      "slug": "the-first-nowell-stainer",
+      "linea": "coro",
+      "titolo": "The First Nowell",
+      "prima_uscita": "2026-08-27"
+    },
+    {
+      "slug": "fair-phyllis-i-saw-farmer",
+      "linea": "coro",
+      "titolo": "Fair Phyllis I saw",
+      "prima_uscita": "2026-10-02T14:30:00Z"
+    },
+    {
+      "slug": "in-the-bleak-midwinter-holst",
+      "linea": "coro",
+      "titolo": "In the Bleak Midwinter",
+      "prima_uscita": "2026-09-20T14:30:00Z"
+    },
+    {
+      "slug": "stille-nacht-gruber",
+      "linea": "coro",
+      "titolo": "Stille Nacht",
+      "prima_uscita": "2026-08-29"
+    },
+    {
+      "slug": "triste-espana-encina",
+      "linea": "coro",
+      "titolo": "Triste Espana",
+      "prima_uscita": "2026-12-21T15:30:00Z"
+    },
+    {
+      "slug": "veni-sponsa-christi-palestrina",
+      "linea": "coro",
+      "titolo": "Veni sponsa Christi",
+      "prima_uscita": "2026-12-23T15:30:00Z"
+    },
+    {
+      "slug": "can-she-excuse-my-wrongs-dowland",
+      "linea": "coro",
+      "titolo": "Can she excuse my wrongs",
+      "prima_uscita": "2027-01-10T15:30:00Z"
+    },
+    {
+      "slug": "what-if-i-never-speed-dowland",
+      "linea": "coro",
+      "titolo": "What if I never speed",
+      "prima_uscita": "2027-01-12T15:30:00Z"
+    },
+    {
+      "slug": "parce-mihi-domine-morales",
+      "linea": "coro",
+      "titolo": "Parce mihi Domine",
+      "prima_uscita": "2026-12-25T15:30:00Z"
+    },
+    {
+      "slug": "stabat-mater-palestrina",
+      "linea": "coro",
+      "titolo": "Stabat Mater",
+      "prima_uscita": "2027-01-01T15:30:00Z"
+    },
+    {
+      "slug": "ave-maria-josquin",
+      "linea": "coro",
+      "titolo": "Ave Maria",
+      "prima_uscita": "2026-12-28T15:30:00Z"
+    },
+    {
+      "slug": "jubilate-deo-mozart",
+      "linea": "coro",
+      "titolo": "Jubilate Deo",
+      "prima_uscita": "2026-10-04T14:30:00Z"
+    },
+    {
+      "slug": "jesu-dulcis-memoria-victoria",
+      "linea": "coro",
+      "titolo": "Jesu Dulcis Memoria",
+      "prima_uscita": "2026-12-07T15:30:00Z"
+    },
+    {
+      "slug": "adieu-sweet-amaryllis-wilbye",
+      "linea": "coro",
+      "titolo": "Adieu Sweet Amaryllis",
+      "prima_uscita": "2026-10-14T14:30:00Z"
+    },
+    {
+      "slug": "lacrymosa-from-requiem-mozart",
+      "linea": "coro",
+      "titolo": "Lacrymosa from Requiem",
+      "prima_uscita": "2026-11-30T15:30:00Z"
+    },
+    {
+      "slug": "lead-me-lord-samuel-sebastian-wesley",
+      "linea": "coro",
+      "titolo": "Lead Me Lord - Samuel Sebastian Wesley",
+      "prima_uscita": "2026-10-16T14:30:00Z"
+    },
+    {
+      "slug": "the-lord-bless-you-and-keep-you-lutkin-2",
+      "linea": "coro",
+      "titolo": "The Lord bless you and keep you",
+      "prima_uscita": "2026-10-18T14:30:00Z"
+    },
+    {
+      "slug": "exultate-deo-palestrina",
+      "linea": "coro",
+      "titolo": "Exultate Deo",
+      "prima_uscita": "2026-10-17T14:30:00Z"
+    },
+    {
+      "slug": "o-salutaris-hostia-beethoven",
+      "linea": "coro",
+      "titolo": "O salutaris hostia",
+      "prima_uscita": "2026-10-10T14:30:00Z"
+    },
+    {
+      "slug": "tres-morillas-m-enamoran",
+      "linea": "coro",
+      "titolo": "Tres morillas m' enamoran",
+      "prima_uscita": "2026-10-20T14:30:00Z"
+    },
+    {
+      "slug": "duo-seraphim-victoria",
+      "linea": "coro",
+      "titolo": "Duo Seraphim",
+      "prima_uscita": "2026-09-26T14:30:00Z"
+    },
+    {
+      "slug": "lay-a-garland-pearsall",
+      "linea": "coro",
+      "titolo": "Lay a garland",
+      "prima_uscita": "2027-01-22T15:30:00Z"
+    },
+    {
+      "slug": "verily-verily-i-say-unto-you-tallis",
+      "linea": "coro",
+      "titolo": "Verily, verily I say unto you",
+      "prima_uscita": "2026-10-06T14:30:00Z"
+    },
+    {
+      "slug": "ave-maria-elgar",
+      "linea": "coro",
+      "titolo": "Ave, Maria",
+      "prima_uscita": "2026-10-21T14:30:00Z"
+    },
+    {
+      "slug": "o-domine-jesu-christe-palestrina",
+      "linea": "coro",
+      "titolo": "O Domine Jesu Christe",
+      "prima_uscita": "2026-10-23T14:30:00Z"
+    },
+    {
+      "slug": "o-lord-in-thee-is-all-my-trust-tallis",
+      "linea": "coro",
+      "titolo": "O Lord in thee is all my trust",
+      "prima_uscita": "2026-10-19T14:30:00Z"
+    },
+    {
+      "slug": "vere-languores-victoria",
+      "linea": "coro",
+      "titolo": "Vere languores",
+      "prima_uscita": "2026-10-08T14:30:00Z"
+    },
+    {
+      "slug": "tantum-ergo-faure",
+      "linea": "coro",
+      "titolo": "Tantum Ergo (Op. 65, No. 2)",
+      "prima_uscita": "2026-12-08T15:30:00Z"
+    },
+    {
+      "slug": "verbum-caro-victoria",
+      "linea": "coro",
+      "titolo": "Verbum caro",
+      "prima_uscita": "2026-10-22T14:30:00Z"
+    },
+    {
+      "slug": "hallelujah-handel",
+      "linea": "coro",
+      "titolo": "Hallelujah",
+      "prima_uscita": "2027-01-13T15:30:00Z"
+    },
+    {
+      "slug": "sing-joyfully-byrd",
+      "linea": "coro",
+      "titolo": "Sing Joyfully",
+      "prima_uscita": "2026-10-15T14:30:00Z"
+    },
+    {
+      "slug": "surrexit-pastor-bonus-lasso",
+      "linea": "coro",
+      "titolo": "Surrexit pastor bonus",
+      "prima_uscita": "2026-09-28T14:30:00Z"
+    },
+    {
+      "slug": "cantate-domino-croce",
+      "linea": "coro",
+      "titolo": "Cantate Domino",
+      "prima_uscita": "2026-09-30T14:30:00Z"
+    },
+    {
+      "slug": "sancte-deus-tallis",
+      "linea": "coro",
+      "titolo": "Sancte Deus",
+      "prima_uscita": "2026-10-30T15:30:00Z"
+    },
+    {
+      "slug": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar",
+      "linea": "coro",
+      "titolo": "As torrents in summer from Scenes from the Saga of King Olaf Op. 30",
+      "prima_uscita": "2026-10-28T15:30:00Z"
+    },
+    {
+      "slug": "tu-pauperum-refugium-josquin",
+      "linea": "coro",
+      "titolo": "Tu pauperum refugium",
+      "prima_uscita": "2026-10-24T14:30:00Z"
+    },
+    {
+      "slug": "prado-verde-y-florido-guerrero",
+      "linea": "coro",
+      "titolo": "Prado verde y florido",
+      "prima_uscita": "2026-10-12T14:30:00Z"
+    },
+    {
+      "slug": "hic-vir-despiciens-mundum-victoria",
+      "linea": "coro",
+      "titolo": "Hic Vir Despiciens Mundum",
+      "prima_uscita": "2026-11-04T15:30:00Z"
+    },
+    {
+      "slug": "due-pupille-amabili-mozart",
+      "linea": "coro",
+      "titolo": "Due pupille amabili",
+      "prima_uscita": "2027-01-05T15:30:00Z"
+    },
+    {
+      "slug": "tristis-est-anima-mea-martini",
+      "linea": "coro",
+      "titolo": "Tristis est anima mea",
+      "prima_uscita": "2026-10-25T15:30:00Z"
+    },
+    {
+      "slug": "crux-fidelis",
+      "linea": "coro",
+      "titolo": "Crux Fidelis",
+      "prima_uscita": "2026-10-27T15:30:00Z"
+    },
+    {
+      "slug": "ecce-panis-angelorum-lotti",
+      "linea": "coro",
+      "titolo": "Ecce panis angelorum",
+      "prima_uscita": "2026-10-26T15:30:00Z"
+    },
+    {
+      "slug": "luci-care-luci-belle-mozart",
+      "linea": "coro",
+      "titolo": "Luci care, luci belle",
+      "prima_uscita": "2026-11-27T15:30:00Z"
+    },
+    {
+      "slug": "jesu-salvator-mundi-menegali",
+      "linea": "coro",
+      "titolo": "Jesu Salvator mundi",
+      "prima_uscita": "2026-10-29T15:30:00Z"
+    },
+    {
+      "slug": "exultate-justi-viadana",
+      "linea": "coro",
+      "titolo": "Exultate justi",
+      "prima_uscita": "2026-11-06T15:30:00Z"
+    },
+    {
+      "slug": "adoramus-te-christe-monteverdi",
+      "linea": "coro",
+      "titolo": "Adoramus te Christe",
+      "prima_uscita": "2027-01-23T15:30:00Z"
+    },
+    {
+      "slug": "angelus-ad-virginem",
+      "linea": "coro",
+      "titolo": "Angelus ad Virginem",
+      "prima_uscita": "2026-09-01"
+    },
+    {
+      "slug": "matona-mia-cara-lasso",
+      "linea": "coro",
+      "titolo": "Matona mia cara",
+      "prima_uscita": "2026-11-28T15:30:00Z"
+    },
+    {
+      "slug": "good-king-wenceslas-shaw",
+      "linea": "coro",
+      "titolo": "Good King Wenceslas",
+      "prima_uscita": "2026-12-27T15:30:00Z"
+    },
+    {
+      "slug": "we-three-kings-of-orient-are-hopkins",
+      "linea": "coro",
+      "titolo": "We Three Kings of Orient Are",
+      "prima_uscita": "2026-09-22T14:30:00Z"
+    },
+    {
+      "slug": "pange-lingua-recte-tantum-ergo-wab-32-bruckner",
+      "linea": "coro",
+      "titolo": "Pange lingua recte: Tantum ergo WAB 32",
+      "prima_uscita": "2026-10-31T15:30:00Z"
+    },
+    {
+      "slug": "hush-no-more-purcell",
+      "linea": "coro",
+      "titolo": "Hush no more",
+      "prima_uscita": "2026-12-01T15:30:00Z"
+    },
+    {
+      "slug": "se-la-mia-morte-brami-gesualdo",
+      "linea": "coro",
+      "titolo": "Se la mia morte brami",
+      "prima_uscita": "2026-12-10T15:30:00Z"
+    },
+    {
+      "slug": "miserere-mei-deus-byrd",
+      "linea": "coro",
+      "titolo": "Miserere mei Deus",
+      "prima_uscita": "2026-11-02T15:30:00Z"
+    },
+    {
+      "slug": "los-reyes-siguen-la-estrella-guerrero",
+      "linea": "coro",
+      "titolo": "Los reyes siguen la estrella",
+      "prima_uscita": "2026-09-24T14:30:00Z"
+    },
+    {
+      "slug": "resonet-in-laudibus-gallus",
+      "linea": "coro",
+      "titolo": "Resonet in laudibus",
+      "prima_uscita": "2026-11-15T15:30:00Z"
+    },
+    {
+      "slug": "con-que-la-lavare",
+      "linea": "coro",
+      "titolo": "Con qué la lavaré",
+      "prima_uscita": "2026-11-13T15:30:00Z"
+    },
+    {
+      "slug": "o-nata-lux-de-lumine-tallis",
+      "linea": "coro",
+      "titolo": "O nata lux de lumine",
+      "prima_uscita": "2026-10-09T14:30:00Z"
+    },
+    {
+      "slug": "weepe-you-no-more-sad-fountaines-dowland",
+      "linea": "coro",
+      "titolo": "Weepe you no more sad fountaines",
+      "prima_uscita": "2026-11-17T15:30:00Z"
+    },
+    {
+      "slug": "adoramus-te-christe-martini",
+      "linea": "coro",
+      "titolo": "Adoramus te Christe",
+      "prima_uscita": "2026-11-01T15:30:00Z"
+    },
+    {
+      "slug": "missa-brevis-sancti-02-gloria-haydn",
+      "linea": "coro",
+      "titolo": "Missa brevis Sancti 02 Gloria",
+      "prima_uscita": "2026-12-12T15:30:00Z"
+    },
+    {
+      "slug": "it-was-a-lover-and-his-lass-morley",
+      "linea": "coro",
+      "titolo": "It was a lover and his lass",
+      "prima_uscita": "2026-10-11T14:30:00Z"
+    },
+    {
+      "slug": "no-22-behold-the-lamb-of-god-handel",
+      "linea": "coro",
+      "titolo": "No.22 Behold the Lamb of God",
+      "prima_uscita": "2026-12-02T15:30:00Z"
+    },
+    {
+      "slug": "sancta-et-immaculata-gabrieli",
+      "linea": "coro",
+      "titolo": "Sancta et Immaculata",
+      "prima_uscita": "2026-11-08T15:30:00Z"
+    },
+    {
+      "slug": "da-quei-begl-occhi-gabrieli",
+      "linea": "coro",
+      "titolo": "Da quei begl' occhi",
+      "prima_uscita": "2026-12-14T15:30:00Z"
+    },
+    {
+      "slug": "os-justi-bruckner",
+      "linea": "coro",
+      "titolo": "Os justi",
+      "prima_uscita": "2027-01-15T15:30:00Z"
+    },
+    {
+      "slug": "moro-lasso-al-mio-duolo-gesualdo",
+      "linea": "coro",
+      "titolo": "Moro lasso al mio duolo",
+      "prima_uscita": "2026-11-10T15:30:00Z"
+    },
+    {
+      "slug": "now-o-now-i-needs-must-part-dowland",
+      "linea": "coro",
+      "titolo": "Now O now I needs must part",
+      "prima_uscita": "2027-01-19T15:30:00Z"
+    },
+    {
+      "slug": "kyrie-in-b-flat-major-schubert",
+      "linea": "coro",
+      "titolo": "Kyrie in B flat major",
+      "prima_uscita": "2026-11-14T15:30:00Z"
+    },
+    {
+      "slug": "i-saw-three-ships",
+      "linea": "coro",
+      "titolo": "I Saw Three Ships",
+      "prima_uscita": "2026-09-01"
+    },
+    {
+      "slug": "a-d-una-fresca-riva-marenzio",
+      "linea": "coro",
+      "titolo": "A d'una fresca riva",
+      "prima_uscita": "2026-12-16T15:30:00Z"
+    },
+    {
+      "slug": "musica-est-dei-donum-optimi-lasso",
+      "linea": "coro",
+      "titolo": "Musica est Dei donum optimi",
+      "prima_uscita": "2026-11-16T15:30:00Z"
+    },
+    {
+      "slug": "panis-angelicus-casciolini",
+      "linea": "coro",
+      "titolo": "Panis Angelicus",
+      "prima_uscita": "2026-11-03T15:30:00Z"
+    },
+    {
+      "slug": "in-s-angelum-custodem-wab-18-bruckner",
+      "linea": "coro",
+      "titolo": "In S. Angelum custodem WAB 18",
+      "prima_uscita": "2026-11-18T15:30:00Z"
+    },
+    {
+      "slug": "for-unto-us-a-child-is-born-handel",
+      "linea": "coro",
+      "titolo": "For unto us a Child is born",
+      "prima_uscita": "2026-12-31T15:30:00Z"
+    },
+    {
+      "slug": "though-philomela-lost-her-love-morley",
+      "linea": "coro",
+      "titolo": "Though Philomela lost her love",
+      "prima_uscita": "2026-11-20T15:30:00Z"
+    },
+    {
+      "slug": "hosanna-filio-david-d-696-n-1-schubert",
+      "linea": "coro",
+      "titolo": "Hosanna Filio David D 696 n. 1",
+      "prima_uscita": "2026-12-18T15:30:00Z"
+    },
+    {
+      "slug": "in-these-delightful-pleasant-groves-purcell",
+      "linea": "coro",
+      "titolo": "In these delightful pleasant groves",
+      "prima_uscita": "2026-12-03T15:30:00Z"
+    },
+    {
+      "slug": "fine-knacks-for-ladies-dowland",
+      "linea": "coro",
+      "titolo": "Fine knacks for ladies",
+      "prima_uscita": "2026-11-21T15:30:00Z"
+    },
+    {
+      "slug": "en-natus-est-emmanuel-praetorius",
+      "linea": "coro",
+      "titolo": "En natus est Emmanuel",
+      "prima_uscita": "2026-11-19T15:30:00Z"
+    },
+    {
+      "slug": "kyrie-casali",
+      "linea": "coro",
+      "titolo": "Kyrie",
+      "prima_uscita": "2026-11-24T15:30:00Z"
+    },
+    {
+      "slug": "o-memoriale-palestrina",
+      "linea": "coro",
+      "titolo": "O memoriale",
+      "prima_uscita": "2026-11-22T15:30:00Z"
+    },
+    {
+      "slug": "ave-maria-monteverdi",
+      "linea": "coro",
+      "titolo": "Ave Maria",
+      "prima_uscita": "2026-10-13T14:30:00Z"
+    },
+    {
+      "slug": "agnus-dei-josquin",
+      "linea": "coro",
+      "titolo": "Agnus Dei",
+      "prima_uscita": "2026-12-20T15:30:00Z"
+    },
+    {
+      "slug": "beati-quorum-via-stanford",
+      "linea": "coro",
+      "titolo": "Beati quorum via Op. 38 No. 3",
+      "prima_uscita": "2026-12-24T15:30:00Z"
+    },
+    {
+      "slug": "teach-me-o-lord-byrd",
+      "linea": "coro",
+      "titolo": "Teach me, O Lord",
+      "prima_uscita": "2027-01-24T15:30:00Z"
+    },
+    {
+      "slug": "maria-mater-gratiae-gesualdo",
+      "linea": "coro",
+      "titolo": "Maria, mater gratiae",
+      "prima_uscita": "2026-12-22T15:30:00Z"
+    },
+    {
+      "slug": "nino-dios-d-amor-herido-guerrero",
+      "linea": "coro",
+      "titolo": "Niño Dios d'amor herido",
+      "prima_uscita": "2026-09-05"
+    },
+    {
+      "slug": "sancta-maria-mater-dei-mozart",
+      "linea": "coro",
+      "titolo": "Sancta Maria mater Dei K. 273",
+      "prima_uscita": "2027-01-14T15:30:00Z"
+    },
+    {
+      "slug": "laudi-alla-vergine-maria-verdi",
+      "linea": "coro",
+      "titolo": "Laudi alla Vergine Maria",
+      "prima_uscita": "2027-01-16T15:30:00Z"
+    },
+    {
+      "slug": "the-shepherds-farewell-berlioz",
+      "linea": "coro",
+      "titolo": "The Shepherds' Farewell",
+      "prima_uscita": "2027-01-06T15:30:00Z"
+    },
+    {
+      "slug": "ave-maria-victoria",
+      "linea": "coro",
+      "titolo": "Ave Maria",
+      "prima_uscita": "2027-01-20T15:30:00Z"
+    },
+    {
+      "slug": "she-walks-in-beauty-sabin",
+      "linea": "coro",
+      "titolo": "She Walks in Beauty",
+      "prima_uscita": "2027-01-25T15:30:00Z"
+    },
+    {
+      "slug": "salve-regina-josquin",
+      "linea": "coro",
+      "titolo": "Salve Regina",
+      "prima_uscita": "2027-01-09T15:30:00Z"
+    },
+    {
+      "slug": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn",
+      "linea": "coro",
+      "titolo": "Missa brevis Sancti Joannis de Deo (Kleine Orgelmesse) - Kyrie",
+      "prima_uscita": "2027-01-07T15:30:00Z"
+    },
+    {
+      "slug": "quem-pastores-laudavere-praetorius",
+      "linea": "coro",
+      "titolo": "Quem pastores laudavere",
+      "prima_uscita": "2027-01-11T15:30:00Z"
+    },
+    {
+      "slug": "salve-regina-liszt",
+      "linea": "coro",
+      "titolo": "Salve Regina S. 66",
+      "prima_uscita": "2026-12-26T15:30:00Z"
+    },
+    {
+      "slug": "ave-verum-corpus-mozart",
+      "linea": "coro",
+      "titolo": "Ave verum corpus K. 618",
+      "prima_uscita": "2026-12-29T15:30:00Z"
+    },
+    {
+      "slug": "o-sanctissima-beethoven",
+      "linea": "coro",
+      "titolo": "O sanctissima WoO 157 n. 4",
+      "prima_uscita": "2027-01-18T15:30:00Z"
+    },
+    {
+      "slug": "summer-is-gone-coleridge-taylor",
+      "linea": "coro",
+      "titolo": "Summer is gone",
+      "prima_uscita": "2027-01-21T15:30:00Z"
+    },
+    {
+      "slug": "the-long-day-closes-sullivan",
+      "linea": "coro",
+      "titolo": "The long day closes",
+      "prima_uscita": "2027-01-17T15:30:00Z"
+    },
+    {
+      "slug": "vexilla-regis-wab-51-bruckner",
+      "linea": "coro",
+      "titolo": "Vexilla Regis WAB 51",
+      "prima_uscita": "2027-01-03T15:30:00Z"
+    },
+    {
+      "slug": "domine-jesu-garcia",
+      "linea": "coro",
+      "titolo": "Domine Jesu",
+      "prima_uscita": "2026-12-30T15:30:00Z"
+    },
+    {
+      "slug": "the-coventry-carol",
+      "linea": "coro",
+      "titolo": "The Coventry Carol",
+      "prima_uscita": "2026-11-12T15:30:00Z"
+    },
+    {
+      "slug": "concone-50-lezioni-op-9-n-1",
+      "linea": "metodo",
+      "titolo": "Concone, 50 Lezioni op. 9 n. 1",
+      "prima_uscita": "2026-10-06T09:00:00Z"
+    }
+  ]
+}

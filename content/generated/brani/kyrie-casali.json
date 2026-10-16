@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "kyrie-casali",
+  "linea": "coro",
+  "rank": "396",
+  "ranks": [
+    "396"
+  ],
+  "titolo": "Kyrie",
+  "compositore": {
+    "id": "giovanni-battista-casali",
+    "nome": "Giovanni Battista Casali",
+    "breve": "Casali"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 62,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "hQiWjYrGUQc",
+      "pubblica_dal": "2026-11-24T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "vpA82NkQFQw",
+      "pubblica_dal": "2026-11-24T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "o9ncRlECYAI",
+      "pubblica_dal": "2026-11-24T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "GM8Sy-wgYVw",
+      "pubblica_dal": "2026-11-24T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-24T15:30:00Z"
+}

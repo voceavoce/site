@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "slug": "os-justi-bruckner",
+  "linea": "coro",
+  "rank": "325",
+  "ranks": [
+    "325"
+  ],
+  "titolo": "Os justi",
+  "compositore": {
+    "id": "anton-bruckner",
+    "nome": "Anton Bruckner",
+    "breve": "Bruckner",
+    "date": "1824–1896",
+    "nascita": "1824",
+    "morte": 1896,
+    "periodo": "romantico"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSAATTBB",
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Os justi meditabitur sapientiam,\net lingua ejus loquetur judicium.\nLex Dei ejus in corde ipsius\net non supplantabuntur gressus ejus.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=58489"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "bMQokmSOwII",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "NLe0aSlNrQQ",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "2bEL9Od-fng",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "-Zi7uRvh9xQ",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "bPXOTzxaM2g",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "wjezR-FLJ7g",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "3X0fehZ9UuQ",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "pS4UVpSM-iE",
+      "pubblica_dal": "2027-01-15T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-15T15:30:00Z"
+}

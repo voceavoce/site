@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "slug": "for-unto-us-a-child-is-born-handel",
+  "linea": "coro",
+  "rank": "354",
+  "ranks": [
+    "354"
+  ],
+  "titolo": "For unto us a Child is born",
+  "compositore": {
+    "id": "george-frideric-handel",
+    "nome": "George Frideric Handel",
+    "breve": "Handel",
+    "date": "1685–1759",
+    "nascita": "1685",
+    "morte": 1759,
+    "periodo": "barocco",
+    "varianti": [
+      "Händel",
+      "Haendel",
+      "Georg Friedrich Händel"
+    ]
+  },
+  "opera": {
+    "id": "messiah-hwv-56",
+    "titolo": "Messiah HWV 56"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 104,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "Messiah, vocal score complete (riduzione per canto e pianoforte)",
+      "editore": "G. Schirmer, New York (lastra 22945)",
+      "anno": 1912,
+      "url": "https://archive.org/details/messiahoratoriof00hand_1"
+    },
+    {
+      "edizione": "Messiah, a sacred oratorio, partitura (full score) a cura di Ebenezer Prout, con archi/voci/bassi di Handel (senza/con Rip.) e fiati aggiunti da Prout",
+      "editore": "Novello, London (lastra 11570)",
+      "anno": 1902,
+      "url": "https://archive.org/details/messiahsacredora00hand_0"
+    }
+  ],
+  "testo": {
+    "lingua": "en",
+    "testo": "For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder; and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace.",
+    "fonte": {
+      "sito": "haventoday.org",
+      "url": "https://haventoday.org/blog/handels-messiah-lyrics-verse-references/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "3d9Lc5Z1rhQ",
+      "pubblica_dal": "2026-12-31T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "HU7Ig7DPu4g",
+      "pubblica_dal": "2026-12-31T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "rEwCeeXjRYc",
+      "pubblica_dal": "2026-12-31T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "-H9Fy66Fl-U",
+      "pubblica_dal": "2026-12-31T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-31T15:30:00Z"
+}

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "ave-verum-corpus-byrd",
+  "linea": "coro",
+  "rank": "018",
+  "ranks": [
+    "018"
+  ],
+  "titolo": "Ave verum corpus",
+  "compositore": {
+    "id": "william-byrd",
+    "nome": "William Byrd",
+    "breve": "Byrd",
+    "date": "c. 1540–1623",
+    "nascita": "c. 1540",
+    "morte": 1623,
+    "periodo": "rinascimento"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 70,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "cwclEqvVvV4",
+      "pubblica_dal": "2026-09-16T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "fY8QRadf7nk",
+      "pubblica_dal": "2026-09-16T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "lB9WnFo9IqM",
+      "pubblica_dal": "2026-09-17T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "GaF7fmZVKNI",
+      "pubblica_dal": "2026-09-17T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-16T14:30:00Z"
+}

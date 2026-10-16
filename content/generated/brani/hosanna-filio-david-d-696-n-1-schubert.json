@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "slug": "hosanna-filio-david-d-696-n-1-schubert",
+  "linea": "coro",
+  "rank": "365",
+  "ranks": [
+    "365"
+  ],
+  "titolo": "Hosanna Filio David D 696 n. 1",
+  "compositore": {
+    "id": "franz-schubert",
+    "nome": "Franz Schubert",
+    "breve": "Schubert",
+    "date": "1797–1828",
+    "nascita": "1797",
+    "morte": 1828,
+    "periodo": "romantico"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 116,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Hosanna Filio David;\nbenedictus qui venit\nin nomine Domini,\nRex Israel:\nHosanna in excelsis.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=83992"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "oU4rgsXGQzI",
+      "pubblica_dal": "2026-12-18T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "wqNXmO97zU8",
+      "pubblica_dal": "2026-12-18T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "w2qvC9drOWc",
+      "pubblica_dal": "2026-12-18T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "OWQ5qAN3f6Y",
+      "pubblica_dal": "2026-12-18T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-18T15:30:00Z"
+}

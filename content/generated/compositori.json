@@ -1,0 +1,853 @@
+{
+  "alessandro-scarlatti": {
+    "id": "alessandro-scarlatti",
+    "nome": "Alessandro Scarlatti",
+    "breve": "Scarlatti",
+    "date": "1660–1725",
+    "nascita": "1660",
+    "morte": 1725,
+    "periodo": "barocco",
+    "brani": [
+      "le-violette-scarlatti"
+    ]
+  },
+  "alonso-lobo": {
+    "id": "alonso-lobo",
+    "nome": "Alonso Lobo",
+    "breve": "Lobo",
+    "brani": [
+      "versa-est-in-luctum-lobo"
+    ]
+  },
+  "andrea-gabrieli": {
+    "id": "andrea-gabrieli",
+    "nome": "Andrea Gabrieli",
+    "breve": "Gabrieli",
+    "brani": [
+      "sancta-et-immaculata-gabrieli"
+    ]
+  },
+  "anthony-werner": {
+    "id": "anthony-werner",
+    "nome": "Anthony Werner",
+    "breve": "Werner",
+    "brani": [
+      "o-salutaris-hostia-werner"
+    ]
+  },
+  "anton-bruckner": {
+    "id": "anton-bruckner",
+    "nome": "Anton Bruckner",
+    "breve": "Bruckner",
+    "date": "1824–1896",
+    "nascita": "1824",
+    "morte": 1896,
+    "periodo": "romantico",
+    "brani": [
+      "locus-iste-bruckner",
+      "pange-lingua-recte-tantum-ergo-wab-32-bruckner",
+      "os-justi-bruckner",
+      "in-s-angelum-custodem-wab-18-bruckner",
+      "vexilla-regis-wab-51-bruckner"
+    ]
+  },
+  "antonio-lotti": {
+    "id": "antonio-lotti",
+    "nome": "Antonio Lotti",
+    "breve": "Lotti",
+    "date": "1667–1740",
+    "nascita": "1667",
+    "morte": 1740,
+    "periodo": "barocco",
+    "brani": [
+      "ecce-panis-angelorum-lotti"
+    ]
+  },
+  "arthur-sullivan": {
+    "id": "arthur-sullivan",
+    "nome": "Arthur Sullivan",
+    "breve": "Sullivan",
+    "date": "1842–1900",
+    "nascita": "1842",
+    "morte": 1900,
+    "periodo": "romantico",
+    "brani": [
+      "the-long-day-closes-sullivan"
+    ]
+  },
+  "carlo-gesualdo": {
+    "id": "carlo-gesualdo",
+    "nome": "Carlo Gesualdo",
+    "breve": "Gesualdo",
+    "date": "1566–1613",
+    "nascita": "1566",
+    "morte": 1613,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Gesualdo da Venosa"
+    ],
+    "brani": [
+      "se-la-mia-morte-brami-gesualdo",
+      "moro-lasso-al-mio-duolo-gesualdo",
+      "maria-mater-gratiae-gesualdo"
+    ]
+  },
+  "charles-villiers-stanford": {
+    "id": "charles-villiers-stanford",
+    "nome": "Charles Villiers Stanford",
+    "breve": "Stanford",
+    "date": "1852–1924",
+    "nascita": "1852",
+    "morte": 1924,
+    "periodo": "romantico",
+    "brani": [
+      "beati-quorum-via-stanford"
+    ]
+  },
+  "claudio-casciolini": {
+    "id": "claudio-casciolini",
+    "nome": "Claudio Casciolini",
+    "breve": "Casciolini",
+    "brani": [
+      "panis-angelicus-casciolini"
+    ]
+  },
+  "claudio-monteverdi": {
+    "id": "claudio-monteverdi",
+    "nome": "Claudio Monteverdi",
+    "breve": "Monteverdi",
+    "date": "1567–1643",
+    "nascita": "1567",
+    "morte": 1643,
+    "brani": [
+      "adoramus-te-christe-monteverdi",
+      "ave-maria-monteverdi"
+    ]
+  },
+  "cristobal-de-morales": {
+    "id": "cristobal-de-morales",
+    "nome": "Cristóbal de Morales",
+    "breve": "Morales",
+    "date": "c. 1500–1553",
+    "nascita": "c. 1500",
+    "morte": 1553,
+    "periodo": "rinascimento",
+    "brani": [
+      "parce-mihi-domine-morales"
+    ]
+  },
+  "edvard-grieg": {
+    "id": "edvard-grieg",
+    "nome": "Edvard Grieg",
+    "breve": "Grieg",
+    "date": "1843–1907",
+    "nascita": "1843",
+    "morte": 1907,
+    "periodo": "romantico",
+    "brani": [
+      "ave-maris-stella-grieg"
+    ]
+  },
+  "edward-elgar": {
+    "id": "edward-elgar",
+    "nome": "Edward Elgar",
+    "breve": "Elgar",
+    "date": "1857–1934",
+    "nascita": "1857",
+    "morte": 1934,
+    "brani": [
+      "ave-maria-elgar",
+      "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar"
+    ]
+  },
+  "francisco-guerrero": {
+    "id": "francisco-guerrero",
+    "nome": "Francisco Guerrero",
+    "breve": "Guerrero",
+    "date": "1528–1599",
+    "nascita": "1528",
+    "morte": 1599,
+    "periodo": "rinascimento",
+    "brani": [
+      "prado-verde-y-florido-guerrero",
+      "los-reyes-siguen-la-estrella-guerrero",
+      "nino-dios-d-amor-herido-guerrero"
+    ]
+  },
+  "franz-liszt": {
+    "id": "franz-liszt",
+    "nome": "Franz Liszt",
+    "breve": "Liszt",
+    "date": "1811–1886",
+    "nascita": "1811",
+    "morte": 1886,
+    "periodo": "romantico",
+    "varianti": [
+      "Liszt Ferenc"
+    ],
+    "brani": [
+      "salve-regina-liszt"
+    ]
+  },
+  "franz-schubert": {
+    "id": "franz-schubert",
+    "nome": "Franz Schubert",
+    "breve": "Schubert",
+    "date": "1797–1828",
+    "nascita": "1797",
+    "morte": 1828,
+    "periodo": "romantico",
+    "brani": [
+      "kyrie-in-b-flat-major-schubert",
+      "hosanna-filio-david-d-696-n-1-schubert"
+    ]
+  },
+  "franz-xaver-gruber": {
+    "id": "franz-xaver-gruber",
+    "nome": "Franz Xaver Gruber",
+    "breve": "Gruber",
+    "date": "1787–1863",
+    "nascita": "1787",
+    "morte": 1863,
+    "brani": [
+      "stille-nacht-gruber"
+    ]
+  },
+  "gabriel-faure": {
+    "id": "gabriel-faure",
+    "nome": "Gabriel Fauré",
+    "breve": "Fauré",
+    "date": "1845–1924",
+    "nascita": "1845",
+    "morte": 1924,
+    "periodo": "romantico",
+    "brani": [
+      "tantum-ergo-faure"
+    ]
+  },
+  "geoffrey-shaw": {
+    "id": "geoffrey-shaw",
+    "nome": "Geoffrey Shaw",
+    "breve": "Shaw",
+    "brani": [
+      "good-king-wenceslas-shaw"
+    ]
+  },
+  "george-frideric-handel": {
+    "id": "george-frideric-handel",
+    "nome": "George Frideric Handel",
+    "breve": "Handel",
+    "date": "1685–1759",
+    "nascita": "1685",
+    "morte": 1759,
+    "periodo": "barocco",
+    "varianti": [
+      "Händel",
+      "Haendel",
+      "Georg Friedrich Händel"
+    ],
+    "brani": [
+      "canticorum-jubilo-g-handel",
+      "hallelujah-handel",
+      "no-22-behold-the-lamb-of-god-handel",
+      "for-unto-us-a-child-is-born-handel"
+    ]
+  },
+  "giovanni-battista-casali": {
+    "id": "giovanni-battista-casali",
+    "nome": "Giovanni Battista Casali",
+    "breve": "Casali",
+    "brani": [
+      "kyrie-casali"
+    ]
+  },
+  "giovanni-battista-martini": {
+    "id": "giovanni-battista-martini",
+    "nome": "Giovanni Battista Martini",
+    "breve": "Martini",
+    "brani": [
+      "tristis-est-anima-mea-martini",
+      "adoramus-te-christe-martini"
+    ]
+  },
+  "giovanni-croce": {
+    "id": "giovanni-croce",
+    "nome": "Giovanni Croce",
+    "breve": "Croce",
+    "date": "c. 1557–1609",
+    "nascita": "c. 1557",
+    "morte": 1609,
+    "periodo": "rinascimento",
+    "brani": [
+      "cantate-domino-croce"
+    ]
+  },
+  "giovanni-gabrieli": {
+    "id": "giovanni-gabrieli",
+    "nome": "Giovanni Gabrieli",
+    "breve": "Gabrieli",
+    "date": "c. 1554–1612",
+    "nascita": "c. 1554",
+    "morte": 1612,
+    "periodo": "rinascimento",
+    "brani": [
+      "da-quei-begl-occhi-gabrieli"
+    ]
+  },
+  "giovanni-giacomo-gastoldi": {
+    "id": "giovanni-giacomo-gastoldi",
+    "nome": "Giovanni Giacomo Gastoldi",
+    "breve": "Gastoldi",
+    "date": "c. 1554–1609",
+    "nascita": "c. 1554",
+    "morte": 1609,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Gastoldi"
+    ],
+    "brani": [
+      "l-innamorato-a-lieta-vita-gastoldi"
+    ]
+  },
+  "giovanni-pierluigi-da-palestrina": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ],
+    "brani": [
+      "sicut-cervus-palestrina",
+      "ave-maria-ii-palestrina",
+      "super-flumina-babylonis-palestrina",
+      "veni-sponsa-christi-palestrina",
+      "stabat-mater-palestrina",
+      "exultate-deo-palestrina",
+      "o-domine-jesu-christe-palestrina",
+      "o-memoriale-palestrina"
+    ]
+  },
+  "giuseppe-concone": {
+    "id": "giuseppe-concone",
+    "nome": "Giuseppe Concone",
+    "breve": "Concone",
+    "brani": [
+      "concone-50-lezioni-op-9-n-1"
+    ]
+  },
+  "giuseppe-verdi": {
+    "id": "giuseppe-verdi",
+    "nome": "Giuseppe Verdi",
+    "breve": "Verdi",
+    "date": "1813–1901",
+    "nascita": "1813",
+    "morte": 1901,
+    "periodo": "romantico",
+    "brani": [
+      "laudi-alla-vergine-maria-verdi"
+    ]
+  },
+  "grzegorz-gorczycki": {
+    "id": "grzegorz-gorczycki",
+    "nome": "Grzegorz Gorczycki",
+    "breve": "Gorczycki",
+    "brani": [
+      "omni-die-dic-mariae-gorczycki"
+    ]
+  },
+  "gustav-holst": {
+    "id": "gustav-holst",
+    "nome": "Gustav Holst",
+    "breve": "Holst",
+    "date": "1874–1934",
+    "nascita": "1874",
+    "morte": 1934,
+    "periodo": "novecento",
+    "brani": [
+      "in-the-bleak-midwinter-holst"
+    ]
+  },
+  "hector-berlioz": {
+    "id": "hector-berlioz",
+    "nome": "Hector Berlioz",
+    "breve": "Berlioz",
+    "date": "1803–1869",
+    "nascita": "1803",
+    "morte": 1869,
+    "periodo": "romantico",
+    "brani": [
+      "the-shepherds-farewell-berlioz"
+    ]
+  },
+  "henry-j-gauntlett": {
+    "id": "henry-j-gauntlett",
+    "nome": "Henry J. Gauntlett",
+    "breve": "Gauntlett",
+    "brani": [
+      "once-in-royal-david-s-city-gauntlett"
+    ]
+  },
+  "henry-purcell": {
+    "id": "henry-purcell",
+    "nome": "Henry Purcell",
+    "breve": "Purcell",
+    "date": "1659–1695",
+    "nascita": "1659",
+    "morte": 1695,
+    "periodo": "barocco",
+    "brani": [
+      "if-love-s-a-sweet-passion-purcell",
+      "thou-knowest-lord-the-secrets-of-our-hearts-purcell",
+      "hush-no-more-purcell",
+      "in-these-delightful-pleasant-groves-purcell"
+    ]
+  },
+  "jacobus-gallus": {
+    "id": "jacobus-gallus",
+    "nome": "Jacobus Gallus",
+    "breve": "Gallus",
+    "date": "1550–1591",
+    "nascita": "1550",
+    "morte": 1591,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Jacobus Handl"
+    ],
+    "brani": [
+      "handl-gallus-quod-chorus-vatum",
+      "resonet-in-laudibus-gallus"
+    ]
+  },
+  "jacques-arcadelt": {
+    "id": "jacques-arcadelt",
+    "nome": "Jacques Arcadelt",
+    "breve": "Arcadelt",
+    "date": "c. 1507–1568",
+    "nascita": "c. 1507",
+    "morte": 1568,
+    "periodo": "rinascimento",
+    "brani": [
+      "ave-maria-arcadelt"
+    ]
+  },
+  "johannes-brahms": {
+    "id": "johannes-brahms",
+    "nome": "Johannes Brahms",
+    "breve": "Brahms",
+    "date": "1833–1897",
+    "nascita": "1833",
+    "morte": 1897,
+    "periodo": "romantico",
+    "brani": [
+      "gaudeamus-igitur-brahms"
+    ]
+  },
+  "john-dowland": {
+    "id": "john-dowland",
+    "nome": "John Dowland",
+    "breve": "Dowland",
+    "date": "1563–1626",
+    "nascita": "1563",
+    "morte": 1626,
+    "periodo": "rinascimento",
+    "brani": [
+      "come-again-sweet-love-dowland",
+      "can-she-excuse-my-wrongs-dowland",
+      "what-if-i-never-speed-dowland",
+      "weepe-you-no-more-sad-fountaines-dowland",
+      "now-o-now-i-needs-must-part-dowland",
+      "fine-knacks-for-ladies-dowland"
+    ]
+  },
+  "john-farmer": {
+    "id": "john-farmer",
+    "nome": "John Farmer",
+    "breve": "Farmer",
+    "brani": [
+      "fair-phyllis-i-saw-farmer"
+    ]
+  },
+  "john-henry-hopkins-jr": {
+    "id": "john-henry-hopkins-jr",
+    "nome": "John Henry Hopkins Jr.",
+    "breve": "Hopkins",
+    "brani": [
+      "we-three-kings-of-orient-are-hopkins"
+    ]
+  },
+  "john-stafford-smith": {
+    "id": "john-stafford-smith",
+    "nome": "John Stafford Smith",
+    "breve": "Smith",
+    "date": "1750–1836",
+    "nascita": "1750",
+    "morte": 1836,
+    "brani": [
+      "the-star-spangled-banner-smith"
+    ]
+  },
+  "john-stainer": {
+    "id": "john-stainer",
+    "nome": "John Stainer",
+    "breve": "Stainer",
+    "date": "1840–1901",
+    "nascita": "1840",
+    "morte": 1901,
+    "periodo": "romantico",
+    "brani": [
+      "god-so-loved-the-world-stainer",
+      "what-child-is-this-stainer",
+      "the-first-nowell-stainer"
+    ]
+  },
+  "john-wilbye": {
+    "id": "john-wilbye",
+    "nome": "John Wilbye",
+    "breve": "Wilbye",
+    "brani": [
+      "adieu-sweet-amaryllis-wilbye"
+    ]
+  },
+  "jose-mauricio-nunes-garcia": {
+    "id": "jose-mauricio-nunes-garcia",
+    "nome": "José Maurício Nunes Garcia",
+    "breve": "Garcia",
+    "brani": [
+      "domine-jesu-garcia"
+    ]
+  },
+  "joseph-haydn": {
+    "id": "joseph-haydn",
+    "nome": "Joseph Haydn",
+    "breve": "Haydn",
+    "date": "1732–1809",
+    "nascita": "1732",
+    "morte": 1809,
+    "periodo": "classico",
+    "varianti": [
+      "Franz Joseph Haydn"
+    ],
+    "brani": [
+      "missa-brevis-sancti-02-gloria-haydn",
+      "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn"
+    ]
+  },
+  "josquin-des-prez": {
+    "id": "josquin-des-prez",
+    "nome": "Josquin des Prez",
+    "breve": "Josquin",
+    "date": "c. 1450–1521",
+    "nascita": "c. 1450",
+    "morte": 1521,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Josquin Desprez",
+      "Josquin"
+    ],
+    "brani": [
+      "ave-maria-josquin",
+      "tu-pauperum-refugium-josquin",
+      "agnus-dei-josquin",
+      "salve-regina-josquin"
+    ]
+  },
+  "juan-del-encina": {
+    "id": "juan-del-encina",
+    "nome": "Juan del Encina",
+    "breve": "Encina",
+    "date": "1468–1529",
+    "nascita": "1468",
+    "morte": 1529,
+    "periodo": "rinascimento",
+    "brani": [
+      "cucu-cucu-encina",
+      "triste-espana-encina"
+    ]
+  },
+  "lewis-redner": {
+    "id": "lewis-redner",
+    "nome": "Lewis Redner",
+    "breve": "Redner",
+    "brani": [
+      "o-little-town-of-bethlehem-redner"
+    ]
+  },
+  "luca-marenzio": {
+    "id": "luca-marenzio",
+    "nome": "Luca Marenzio",
+    "breve": "Marenzio",
+    "date": "1553–1599",
+    "nascita": "1553",
+    "morte": 1599,
+    "periodo": "rinascimento",
+    "brani": [
+      "a-d-una-fresca-riva-marenzio"
+    ]
+  },
+  "ludovico-da-viadana": {
+    "id": "ludovico-da-viadana",
+    "nome": "Ludovico da Viadana",
+    "breve": "Viadana",
+    "brani": [
+      "exultate-justi-viadana"
+    ]
+  },
+  "ludwig-van-beethoven": {
+    "id": "ludwig-van-beethoven",
+    "nome": "Ludwig van Beethoven",
+    "breve": "Beethoven",
+    "date": "1770–1827",
+    "nascita": "1770",
+    "morte": 1827,
+    "periodo": "classico",
+    "brani": [
+      "o-salutaris-hostia-beethoven",
+      "o-sanctissima-beethoven"
+    ]
+  },
+  "maddalena-casulana": {
+    "id": "maddalena-casulana",
+    "nome": "Maddalena Casulana",
+    "breve": "Casulana",
+    "brani": [
+      "morir-non-puo-il-mio-cuore-casulana"
+    ]
+  },
+  "menegali": {
+    "id": "menegali",
+    "nome": "Menegali",
+    "breve": "Menegali",
+    "brani": [
+      "jesu-salvator-mundi-menegali"
+    ]
+  },
+  "michael-haydn": {
+    "id": "michael-haydn",
+    "nome": "Michael Haydn",
+    "breve": "Haydn",
+    "date": "1737–1806",
+    "nascita": "1737",
+    "morte": 1806,
+    "periodo": "classico",
+    "varianti": [
+      "Johann Michael Haydn"
+    ],
+    "brani": [
+      "o-esca-viatorum-haydn"
+    ]
+  },
+  "michael-praetorius": {
+    "id": "michael-praetorius",
+    "nome": "Michael Praetorius",
+    "breve": "Praetorius",
+    "date": "1571–1621",
+    "nascita": "1571",
+    "morte": 1621,
+    "brani": [
+      "audite-silete-praetorius",
+      "en-natus-est-emmanuel-praetorius",
+      "quem-pastores-laudavere-praetorius"
+    ]
+  },
+  "orlando-di-lasso": {
+    "id": "orlando-di-lasso",
+    "nome": "Orlando di Lasso",
+    "breve": "Lasso",
+    "date": "c. 1532–1594",
+    "nascita": "c. 1532",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Orlande de Lassus",
+      "Lassus"
+    ],
+    "brani": [
+      "o-la-o-che-bon-eccho-lasso",
+      "surrexit-pastor-bonus-lasso",
+      "matona-mia-cara-lasso",
+      "musica-est-dei-donum-optimi-lasso"
+    ]
+  },
+  "orlando-gibbons": {
+    "id": "orlando-gibbons",
+    "nome": "Orlando Gibbons",
+    "breve": "Gibbons",
+    "date": "1583–1625",
+    "nascita": "1583",
+    "morte": 1625,
+    "periodo": "rinascimento",
+    "brani": [
+      "the-silver-swan-gibbons"
+    ]
+  },
+  "pavel-chesnokov": {
+    "id": "pavel-chesnokov",
+    "nome": "Pavel Chesnokov",
+    "breve": "Chesnokov",
+    "date": "1877–1944",
+    "nascita": "1877",
+    "morte": 1944,
+    "varianti": [
+      "Tchesnokov",
+      "Tschesnokow"
+    ],
+    "brani": [
+      "salvation-is-created-chesnokov",
+      "tebe-poem-chesnokov"
+    ]
+  },
+  "peter-christian-lutkin": {
+    "id": "peter-christian-lutkin",
+    "nome": "Peter Christian Lutkin",
+    "breve": "Lutkin",
+    "brani": [
+      "the-lord-bless-you-and-keep-you-lutkin",
+      "the-lord-bless-you-and-keep-you-lutkin-2"
+    ]
+  },
+  "richard-allison": {
+    "id": "richard-allison",
+    "nome": "Richard Allison",
+    "breve": "Allison",
+    "brani": [
+      "while-shepherds-watched-their-flocks-by-night-allison"
+    ]
+  },
+  "richard-farrant": {
+    "id": "richard-farrant",
+    "nome": "Richard Farrant",
+    "breve": "Farrant",
+    "brani": [
+      "lord-for-thy-tender-mercy-s-sake-farrant"
+    ]
+  },
+  "robert-lucas-pearsall": {
+    "id": "robert-lucas-pearsall",
+    "nome": "Robert Lucas Pearsall",
+    "breve": "Pearsall",
+    "date": "1795–1856",
+    "nascita": "1795",
+    "morte": 1856,
+    "periodo": "romantico",
+    "brani": [
+      "lay-a-garland-pearsall"
+    ]
+  },
+  "s-s-wesley": {
+    "id": "s-s-wesley",
+    "nome": "S. S. Wesley",
+    "breve": "Wesley",
+    "brani": [
+      "lead-me-lord-samuel-sebastian-wesley"
+    ]
+  },
+  "samuel-coleridge-taylor": {
+    "id": "samuel-coleridge-taylor",
+    "nome": "Samuel Coleridge-Taylor",
+    "breve": "Coleridge-Taylor",
+    "date": "1875–1912",
+    "nascita": "1875",
+    "morte": 1912,
+    "periodo": "romantico",
+    "brani": [
+      "summer-is-gone-coleridge-taylor"
+    ]
+  },
+  "thomas-morley": {
+    "id": "thomas-morley",
+    "nome": "Thomas Morley",
+    "breve": "Morley",
+    "date": "1557–1602",
+    "nascita": "1557",
+    "morte": 1602,
+    "periodo": "rinascimento",
+    "brani": [
+      "april-is-in-my-mistress-face-morley",
+      "sing-we-and-chant-it-morley",
+      "it-was-a-lover-and-his-lass-morley",
+      "though-philomela-lost-her-love-morley"
+    ]
+  },
+  "thomas-tallis": {
+    "id": "thomas-tallis",
+    "nome": "Thomas Tallis",
+    "breve": "Tallis",
+    "date": "c. 1505–1585",
+    "nascita": "c. 1505",
+    "morte": 1585,
+    "periodo": "rinascimento",
+    "brani": [
+      "verily-verily-i-say-unto-you-tallis",
+      "o-lord-in-thee-is-all-my-trust-tallis",
+      "sancte-deus-tallis",
+      "o-nata-lux-de-lumine-tallis"
+    ]
+  },
+  "tomas-luis-de-victoria": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ],
+    "brani": [
+      "o-vos-omnes-victoria",
+      "jesu-dulcis-memoria-victoria",
+      "duo-seraphim-victoria",
+      "vere-languores-victoria",
+      "verbum-caro-victoria",
+      "hic-vir-despiciens-mundum-victoria",
+      "ave-maria-victoria"
+    ]
+  },
+  "wallace-a-sabin": {
+    "id": "wallace-a-sabin",
+    "nome": "Wallace A. Sabin",
+    "breve": "Sabin",
+    "brani": [
+      "she-walks-in-beauty-sabin"
+    ]
+  },
+  "william-byrd": {
+    "id": "william-byrd",
+    "nome": "William Byrd",
+    "breve": "Byrd",
+    "date": "c. 1540–1623",
+    "nascita": "c. 1540",
+    "morte": 1623,
+    "periodo": "rinascimento",
+    "brani": [
+      "ave-verum-corpus-byrd",
+      "sing-joyfully-byrd",
+      "miserere-mei-deus-byrd",
+      "teach-me-o-lord-byrd"
+    ]
+  },
+  "wolfgang-amadeus-mozart": {
+    "id": "wolfgang-amadeus-mozart",
+    "nome": "Wolfgang Amadeus Mozart",
+    "breve": "Mozart",
+    "date": "1756–1791",
+    "nascita": "1756",
+    "morte": 1791,
+    "periodo": "classico",
+    "brani": [
+      "jubilate-deo-mozart",
+      "lacrymosa-from-requiem-mozart",
+      "due-pupille-amabili-mozart",
+      "luci-care-luci-belle-mozart",
+      "sancta-maria-mater-dei-mozart",
+      "ave-verum-corpus-mozart"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-elgar",
+  "linea": "coro",
+  "rank": "135",
+  "ranks": [
+    "135"
+  ],
+  "titolo": "Ave, Maria",
+  "compositore": {
+    "id": "edward-elgar",
+    "nome": "Edward Elgar",
+    "breve": "Elgar",
+    "date": "1857–1934",
+    "nascita": "1857",
+    "morte": 1934
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "Bb",
+    "modo": "major"
+  },
+  "tempo_bpm": 44,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "ChoralWiki License",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "E040LyrVOwc",
+      "pubblica_dal": "2026-10-21T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "SadYpdUDc38",
+      "pubblica_dal": "2026-10-21T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "AzWSwfty3Ak",
+      "pubblica_dal": "2026-10-21T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "IQ_Q6P-cKkY",
+      "pubblica_dal": "2026-10-21T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-21T14:30:00Z"
+}

@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "it-was-a-lover-and-his-lass-morley",
+  "linea": "coro",
+  "rank": "310",
+  "ranks": [
+    "310"
+  ],
+  "titolo": "It was a lover and his lass",
+  "compositore": {
+    "id": "thomas-morley",
+    "nome": "Thomas Morley",
+    "breve": "Morley",
+    "date": "1557–1602",
+    "nascita": "1557",
+    "morte": 1602,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 160,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "d0WGPWtLGPs",
+      "pubblica_dal": "2026-10-11T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "OK9aRnm5gN4",
+      "pubblica_dal": "2026-10-11T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "o0Qvngv3Vz8",
+      "pubblica_dal": "2026-10-11T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "2PLi2u0yUb0",
+      "pubblica_dal": "2026-10-11T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-11T14:30:00Z"
+}

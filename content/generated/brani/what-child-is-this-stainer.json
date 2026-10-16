@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "slug": "what-child-is-this-stainer",
+  "linea": "coro",
+  "rank": "032",
+  "ranks": [
+    "032"
+  ],
+  "titolo": "What Child Is This",
+  "compositore": {
+    "id": "john-stainer",
+    "nome": "John Stainer",
+    "breve": "Stainer",
+    "date": "1840–1901",
+    "nascita": "1840",
+    "morte": 1901,
+    "periodo": "romantico"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "minor"
+  },
+  "tempo_bpm": 72,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "KP7PfX0ZaW8",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "vYhW_bjFIzk",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "T",
+      "video_id": "zy7xd3bsXqk",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "B",
+      "video_id": "SBCvVUkBnVE",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-09-01"
+}

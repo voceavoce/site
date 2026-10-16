@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "slug": "verily-verily-i-say-unto-you-tallis",
+  "linea": "coro",
+  "rank": "133",
+  "ranks": [
+    "133"
+  ],
+  "titolo": "Verily, verily I say unto you",
+  "compositore": {
+    "id": "thomas-tallis",
+    "nome": "Thomas Tallis",
+    "breve": "Tallis",
+    "date": "c. 1505–1585",
+    "nascita": "c. 1505",
+    "morte": 1585,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": 90,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "taA5-Ggj468",
+      "pubblica_dal": "2026-10-06T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "B4Uugj0iJc8",
+      "pubblica_dal": "2026-10-06T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "CtuXEcytEDo",
+      "pubblica_dal": "2026-10-06T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "EfFz4zTastw",
+      "pubblica_dal": "2026-10-06T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-06T14:30:00Z"
+}

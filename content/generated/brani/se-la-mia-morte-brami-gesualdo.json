@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "slug": "se-la-mia-morte-brami-gesualdo",
+  "linea": "coro",
+  "rank": "278",
+  "ranks": [
+    "278"
+  ],
+  "titolo": "Se la mia morte brami",
+  "compositore": {
+    "id": "carlo-gesualdo",
+    "nome": "Carlo Gesualdo",
+    "breve": "Gesualdo",
+    "date": "1566–1613",
+    "nascita": "1566",
+    "morte": 1613,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Gesualdo da Venosa"
+    ]
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SSATB",
+  "tempo_bpm": 112,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "GxF8cfoNefw",
+      "pubblica_dal": "2026-12-10T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "B600dW2Ny2Y",
+      "pubblica_dal": "2026-12-10T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "fXyJGy3f9fk",
+      "pubblica_dal": "2026-12-10T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "o49zLAmW8ck",
+      "pubblica_dal": "2026-12-10T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "TvaCHc0U4C0",
+      "pubblica_dal": "2026-12-10T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-10T15:30:00Z"
+}

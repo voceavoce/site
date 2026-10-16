@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "slug": "summer-is-gone-coleridge-taylor",
+  "linea": "coro",
+  "rank": "478",
+  "ranks": [
+    "478"
+  ],
+  "titolo": "Summer is gone",
+  "compositore": {
+    "id": "samuel-coleridge-taylor",
+    "nome": "Samuel Coleridge-Taylor",
+    "breve": "Coleridge-Taylor",
+    "date": "1875–1912",
+    "nascita": "1875",
+    "morte": 1912,
+    "periodo": "romantico"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SSAATTTB",
+  "tonalita": {
+    "tonica": "A",
+    "modo": "minor"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "S. Coleridge-Taylor, Summer is gone (poesia di Christina Rossetti), arr. as part-song for men's voices by John Bateson (Curwen Edition 50678): T I, T II, B I, B II + pianoforte per le prove. La nostra versione (S A T B) e la stessa musica una terza maggiore sotto (La minore contro Do# minore a 4 diesis) con S=T I, A=T II, T=B I, B=B II",
+      "editore": "J. Curwen & Sons, London",
+      "anno": 1931,
+      "url": "https://imslp.org/wiki/Summer_is_Gone_(Coleridge-Taylor,_Samuel) (file #595793)"
+    }
+  ],
+  "testo": {
+    "lingua": "en",
+    "testo": "Summer is gone with all its roses,\nIts sun and perfumes and sweet flowers,\nIts warm air and refreshing showers:\nAnd even Autumn closes.\n\nYea, Autumn's chilly self is going,\nAnd winter comes which is yet colder;\nEach day the hoar-frost waxes bolder\nAnd the last buds cease blowing.",
+    "fonte": {
+      "sito": "poetryfoundation.org",
+      "url": "https://www.poetryfoundation.org/poems/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "8G3rNSNrSoY",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "kpS259tAFJA",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "-nwPMrMgQ1U",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "ptyoGme0c-0",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "DJ_EZDZmShg",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "em5t5-0Z5I4",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    },
+    {
+      "voce": "T3",
+      "video_id": "-KiVdcFfPFU",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "QA2EWKxeHXc",
+      "pubblica_dal": "2027-01-21T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-21T15:30:00Z"
+}

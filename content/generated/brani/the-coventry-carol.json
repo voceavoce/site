@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "slug": "the-coventry-carol",
+  "linea": "coro",
+  "rank": "488",
+  "ranks": [
+    "488"
+  ],
+  "titolo": "The Coventry Carol",
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 112,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "testo": {
+    "lingua": "en",
+    "testo": "Lully, lulla, thou little tiny child,\nBy, by, lully, lullay.\nO sisters too, how may we do\nFor to preserve this day\nThis poor youngling for whom we sing,\nBy, by, lully, lullay.\nHerod the king, in his raging,\nCharged he hath this day\nHis men of might, in his own sight,\nAll young children to slay.\nThat woe is me, poor child, for thee\nAnd ever mourn and may,\nFor thy parting neither say nor sing,\nBy, by, lully, lullay.",
+    "fonte": {
+      "sito": "classical-music.com",
+      "url": "https://www.classical-music.com/articles/coventry-carol-lyrics"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "taX0CawkStU",
+      "pubblica_dal": "2026-11-12T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "2-2Z5lwC7Tw",
+      "pubblica_dal": "2026-11-12T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "TvTf4ed28L8",
+      "pubblica_dal": "2026-11-12T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "JtqSJWXYtUw",
+      "pubblica_dal": "2026-11-12T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-12T15:30:00Z"
+}

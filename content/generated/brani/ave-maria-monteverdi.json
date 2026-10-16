@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-monteverdi",
+  "linea": "coro",
+  "rank": "407",
+  "ranks": [
+    "407"
+  ],
+  "titolo": "Ave Maria",
+  "compositore": {
+    "id": "claudio-monteverdi",
+    "nome": "Claudio Monteverdi",
+    "breve": "Monteverdi",
+    "date": "1567–1643",
+    "nascita": "1567",
+    "morte": 1643
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SAB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "1Z15hDe_HQo",
+      "pubblica_dal": "2026-10-13T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "7266-8mkg9o",
+      "pubblica_dal": "2026-10-13T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "DEj76vsFjB8",
+      "pubblica_dal": "2026-10-13T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-13T14:30:00Z"
+}

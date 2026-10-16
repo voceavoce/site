@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "slug": "o-vos-omnes-victoria",
+  "linea": "coro",
+  "rank": "045",
+  "ranks": [
+    "045"
+  ],
+  "titolo": "O vos omnes",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ]
+  },
+  "stagioni": [
+    "quaresima"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 108,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "YfwbuJQInaM",
+      "pubblica_dal": "2026-10-01T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "hcKy8DVUJSU",
+      "pubblica_dal": "2026-10-01T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "MufUzd3IrF4",
+      "pubblica_dal": "2026-10-01T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "IUW3bx0PnZw",
+      "pubblica_dal": "2026-10-01T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-01T14:30:00Z"
+}

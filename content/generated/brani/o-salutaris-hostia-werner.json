@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "o-salutaris-hostia-werner",
+  "linea": "coro",
+  "rank": "005",
+  "ranks": [
+    "005"
+  ],
+  "titolo": "O salutaris hostia",
+  "compositore": {
+    "id": "anthony-werner",
+    "nome": "Anthony Werner",
+    "breve": "Werner"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "Ab",
+    "modo": "major"
+  },
+  "tempo_bpm": 88,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "RsSGlRnNLSQ",
+      "pubblica_dal": "2027-01-02T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "rXdXMsPsAXY",
+      "pubblica_dal": "2027-01-02T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "SIGe3-DuYDU",
+      "pubblica_dal": "2027-01-02T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "YQ3ulUE8k-o",
+      "pubblica_dal": "2027-01-02T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-02T15:30:00Z"
+}

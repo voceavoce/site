@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "slug": "miserere-mei-deus-byrd",
+  "linea": "coro",
+  "rank": "282",
+  "ranks": [
+    "282"
+  ],
+  "titolo": "Miserere mei Deus",
+  "compositore": {
+    "id": "william-byrd",
+    "nome": "William Byrd",
+    "breve": "Byrd",
+    "date": "c. 1540–1623",
+    "nascita": "c. 1540",
+    "morte": 1623,
+    "periodo": "rinascimento"
+  },
+  "stagioni": [
+    "quaresima"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATTB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 144,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "_xb_caMnFa8",
+      "pubblica_dal": "2026-11-02T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "kl8JAU-yNFI",
+      "pubblica_dal": "2026-11-02T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "sJOKxzEwR3s",
+      "pubblica_dal": "2026-11-02T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "53X6fK-hy0o",
+      "pubblica_dal": "2026-11-02T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "Z5KKEHShHxk",
+      "pubblica_dal": "2026-11-02T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-02T15:30:00Z"
+}

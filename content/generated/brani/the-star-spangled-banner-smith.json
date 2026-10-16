@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "slug": "the-star-spangled-banner-smith",
+  "linea": "coro",
+  "rank": "004",
+  "ranks": [
+    "004"
+  ],
+  "titolo": "The Star-Spangled Banner",
+  "compositore": {
+    "id": "john-stafford-smith",
+    "nome": "John Stafford Smith",
+    "breve": "Smith",
+    "date": "1750–1836",
+    "nascita": "1750",
+    "morte": 1836
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "Ab",
+    "modo": "major"
+  },
+  "tempo_bpm": 88,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "3D-2rn5LVjo",
+      "pubblica_dal": "2026-09-21T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "sQSd4lhB7d0",
+      "pubblica_dal": "2026-09-21T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "IOXWrHxiAAE",
+      "pubblica_dal": "2026-09-21T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "pn4TQsl-xEQ",
+      "pubblica_dal": "2026-09-21T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-21T14:30:00Z"
+}

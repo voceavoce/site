@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "o-little-town-of-bethlehem-redner",
+  "linea": "coro",
+  "rank": "017",
+  "ranks": [
+    "017"
+  ],
+  "titolo": "O Little Town of Bethlehem",
+  "compositore": {
+    "id": "lewis-redner",
+    "nome": "Lewis Redner",
+    "breve": "Redner"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 96,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "T-PCBcsh6cg",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "RGH2UtdEGrw",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "T",
+      "video_id": "HmLthzPNduw",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    },
+    {
+      "voce": "B",
+      "video_id": "YX2QrilWLIU",
+      "pubblica_dal": "2026-09-01",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-09-01"
+}

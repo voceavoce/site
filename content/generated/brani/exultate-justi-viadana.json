@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "exultate-justi-viadana",
+  "linea": "coro",
+  "rank": "247",
+  "ranks": [
+    "247"
+  ],
+  "titolo": "Exultate justi",
+  "compositore": {
+    "id": "ludovico-da-viadana",
+    "nome": "Ludovico da Viadana",
+    "breve": "Viadana"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 162,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "xg7nut3EteQ",
+      "pubblica_dal": "2026-11-06T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "jztg5IQCrK0",
+      "pubblica_dal": "2026-11-06T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "gCEv1HKuLW4",
+      "pubblica_dal": "2026-11-06T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "bmukFkJllSY",
+      "pubblica_dal": "2026-11-06T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-06T15:30:00Z"
+}

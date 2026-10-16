@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "slug": "concone-50-lezioni-op-9-n-1",
+  "linea": "metodo",
+  "rank": "metodo-001",
+  "ranks": [
+    "metodo-001-alta",
+    "metodo-001-media",
+    "metodo-001-bassa"
+  ],
+  "titolo": "Concone, 50 Lezioni op. 9 n. 1",
+  "titolo_breve": "Lezione n. 1",
+  "compositore": {
+    "id": "giuseppe-concone",
+    "nome": "Giuseppe Concone",
+    "breve": "Concone"
+  },
+  "raccolta": {
+    "id": "concone-50-lezioni-op-9",
+    "titolo": "Concone, 50 Lezioni op. 9",
+    "numero": 1
+  },
+  "generi": [
+    "metodo-vocale"
+  ],
+  "lingua": "it",
+  "accompagnamento": "pianoforte",
+  "tonalita": {
+    "tonica": "Eb",
+    "modo": "major"
+  },
+  "tempo_bpm": 88,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "alta",
+      "video_id": "7RMVvAh2PTY",
+      "pubblica_dal": "2026-10-06T09:00:00Z"
+    },
+    {
+      "voce": "media",
+      "video_id": "DPNfoGnqqkA",
+      "pubblica_dal": "2026-10-06T09:00:00Z"
+    },
+    {
+      "voce": "bassa",
+      "video_id": "T4Pm73Uvq2U",
+      "pubblica_dal": "2026-10-06T09:00:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-06T09:00:00Z"
+}

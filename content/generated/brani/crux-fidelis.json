@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "slug": "crux-fidelis",
+  "linea": "coro",
+  "rank": "228",
+  "ranks": [
+    "228"
+  ],
+  "titolo": "Crux Fidelis",
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 48,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "EsIp5lrutkQ",
+      "pubblica_dal": "2026-10-27T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "0aWQ9r8On14",
+      "pubblica_dal": "2026-10-27T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "PwfUcigpvjo",
+      "pubblica_dal": "2026-10-27T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "vH28p4Ae_uI",
+      "pubblica_dal": "2026-10-27T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-27T15:30:00Z"
+}

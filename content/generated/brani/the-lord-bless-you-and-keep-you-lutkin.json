@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "slug": "the-lord-bless-you-and-keep-you-lutkin",
+  "linea": "coro",
+  "rank": "065",
+  "ranks": [
+    "065"
+  ],
+  "titolo": "The Lord bless you and keep you",
+  "compositore": {
+    "id": "peter-christian-lutkin",
+    "nome": "Peter Christian Lutkin",
+    "breve": "Lutkin"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": 48,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "_BkLNFGj7Dk",
+      "pubblica_dal": "2026-12-05T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "pGxHSWnHlg0",
+      "pubblica_dal": "2026-12-05T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "-4sfBqu2G5Y",
+      "pubblica_dal": "2026-12-05T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "XWo8KTdYYu8",
+      "pubblica_dal": "2026-12-05T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-05T15:30:00Z"
+}

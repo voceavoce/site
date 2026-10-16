@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "slug": "agnus-dei-josquin",
+  "linea": "coro",
+  "rank": "416",
+  "ranks": [
+    "416"
+  ],
+  "titolo": "Agnus Dei",
+  "compositore": {
+    "id": "josquin-des-prez",
+    "nome": "Josquin des Prez",
+    "breve": "Josquin",
+    "date": "c. 1450–1521",
+    "nascita": "c. 1450",
+    "morte": 1521,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Josquin Desprez",
+      "Josquin"
+    ]
+  },
+  "stagioni": [
+    "quaresima"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "STB",
+  "tempo_bpm": 75,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Agnus Dei, qui tollis peccata mundi, miserere nobis.\nAgnus Dei, qui tollis peccata mundi, dona nobis pacem.",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Agnus_Dei"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "bLuhhhCGHyY",
+      "pubblica_dal": "2026-12-20T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "JS5otIdndm0",
+      "pubblica_dal": "2026-12-20T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "NBnefitfUHE",
+      "pubblica_dal": "2026-12-20T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-20T15:30:00Z"
+}

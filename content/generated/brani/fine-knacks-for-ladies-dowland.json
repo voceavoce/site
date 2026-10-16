@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "slug": "fine-knacks-for-ladies-dowland",
+  "linea": "coro",
+  "rank": "381",
+  "ranks": [
+    "381"
+  ],
+  "titolo": "Fine knacks for ladies",
+  "compositore": {
+    "id": "john-dowland",
+    "nome": "John Dowland",
+    "breve": "Dowland",
+    "date": "1563–1626",
+    "nascita": "1563",
+    "morte": 1626,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 152,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "SJA4ZDmaYoI",
+      "pubblica_dal": "2026-11-21T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "P6Djwym4vOE",
+      "pubblica_dal": "2026-11-21T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "FDYYKoSkctU",
+      "pubblica_dal": "2026-11-21T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "e4k6gSRN7a4",
+      "pubblica_dal": "2026-11-21T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-21T15:30:00Z"
+}

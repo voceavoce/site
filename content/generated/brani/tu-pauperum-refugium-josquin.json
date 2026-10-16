@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "tu-pauperum-refugium-josquin",
+  "linea": "coro",
+  "rank": "202",
+  "ranks": [
+    "202"
+  ],
+  "titolo": "Tu pauperum refugium",
+  "compositore": {
+    "id": "josquin-des-prez",
+    "nome": "Josquin des Prez",
+    "breve": "Josquin",
+    "date": "c. 1450–1521",
+    "nascita": "c. 1450",
+    "morte": 1521,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Josquin Desprez",
+      "Josquin"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 146,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "ChoralWiki License",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "FgAY_-65Q78",
+      "pubblica_dal": "2026-10-24T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "hlYfwoQ-jYw",
+      "pubblica_dal": "2026-10-24T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "s4WELWBDH_4",
+      "pubblica_dal": "2026-10-24T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "OGqgbFx3jyA",
+      "pubblica_dal": "2026-10-24T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-24T14:30:00Z"
+}

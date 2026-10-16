@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "slug": "matona-mia-cara-lasso",
+  "linea": "coro",
+  "rank": "258",
+  "ranks": [
+    "258"
+  ],
+  "titolo": "Matona mia cara",
+  "compositore": {
+    "id": "orlando-di-lasso",
+    "nome": "Orlando di Lasso",
+    "breve": "Lasso",
+    "date": "c. 1532–1594",
+    "nascita": "c. 1532",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Orlande de Lassus",
+      "Lassus"
+    ]
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 128,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "Matona mia cara, mi follere canzon\ncantar sotto finestra, Lanze bon compagnon.\nDon don don diridiridon don don don\nTi prego m'ascoltare che mi cantar de bon\ne mi ti foller bene come greco e capon.\nDon don don diridiridon don don don\nCom'andar alle cazze, cazzar con le falcon,\nmi ti portar beccazze, grasse come rognon\nDon don don diridiridon don don don\nSe mi non saper dire tante belle rason\nPetrarca mi non saper, ne fonte d'Helicon.\nDon don don diridiridon don don don\nSe ti mi foller bene mi non esser poltron;\nmi ficcar tutta notte, urtar come monton\nDon don don diridiridon don don don",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=1092"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "qX_LB3Ggz2k",
+      "pubblica_dal": "2026-11-28T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "UT6FOhtnZ_w",
+      "pubblica_dal": "2026-11-28T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "VKnoS4XTwJU",
+      "pubblica_dal": "2026-11-28T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "O-Q-NIcmA8o",
+      "pubblica_dal": "2026-11-28T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-28T15:30:00Z"
+}

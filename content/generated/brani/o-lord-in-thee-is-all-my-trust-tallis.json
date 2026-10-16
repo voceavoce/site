@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "o-lord-in-thee-is-all-my-trust-tallis",
+  "linea": "coro",
+  "rank": "146",
+  "ranks": [
+    "146"
+  ],
+  "titolo": "O Lord in thee is all my trust",
+  "compositore": {
+    "id": "thomas-tallis",
+    "nome": "Thomas Tallis",
+    "breve": "Tallis",
+    "date": "c. 1505–1585",
+    "nascita": "c. 1505",
+    "morte": 1585,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 150,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "AiuPJTjzGps",
+      "pubblica_dal": "2026-10-19T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "ifSt62zWwb0",
+      "pubblica_dal": "2026-10-19T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "gVJEGf-tW5Y",
+      "pubblica_dal": "2026-10-19T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "WghjuSq2RH8",
+      "pubblica_dal": "2026-10-19T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-19T14:30:00Z"
+}

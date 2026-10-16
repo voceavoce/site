@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "o-salutaris-hostia-beethoven",
+  "linea": "coro",
+  "rank": "118",
+  "ranks": [
+    "118"
+  ],
+  "titolo": "O salutaris hostia",
+  "compositore": {
+    "id": "ludwig-van-beethoven",
+    "nome": "Ludwig van Beethoven",
+    "breve": "Beethoven",
+    "date": "1770–1827",
+    "nascita": "1770",
+    "morte": 1827,
+    "periodo": "classico"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "Ab",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "CUPfKAdICP4",
+      "pubblica_dal": "2026-10-10T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "e3_5u-PcWOw",
+      "pubblica_dal": "2026-10-10T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "rxcPYCJHXdc",
+      "pubblica_dal": "2026-10-10T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "d9A4qy7MYhA",
+      "pubblica_dal": "2026-10-10T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-10T14:30:00Z"
+}

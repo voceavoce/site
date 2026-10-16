@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "slug": "salvation-is-created-chesnokov",
+  "linea": "coro",
+  "rank": "001",
+  "ranks": [
+    "001"
+  ],
+  "titolo": "Salvation is Created",
+  "compositore": {
+    "id": "pavel-chesnokov",
+    "nome": "Pavel Chesnokov",
+    "breve": "Chesnokov",
+    "date": "1877–1944",
+    "nascita": "1877",
+    "morte": 1944,
+    "varianti": [
+      "Tchesnokov",
+      "Tschesnokow"
+    ]
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATTBB",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": 88,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "IO6Wlec74NQ",
+      "pubblica_dal": "2026-11-25T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "n9gkskz7luc",
+      "pubblica_dal": "2026-11-25T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "yASqgz333Cs",
+      "pubblica_dal": "2026-11-25T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "1eKHTMFQ-Yk",
+      "pubblica_dal": "2026-11-25T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "K-VmWFRCBJ0",
+      "pubblica_dal": "2026-11-25T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "59JhjbOW9JE",
+      "pubblica_dal": "2026-11-25T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-25T15:30:00Z"
+}

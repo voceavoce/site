@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "o-nata-lux-de-lumine-tallis",
+  "linea": "coro",
+  "rank": "287",
+  "ranks": [
+    "287"
+  ],
+  "titolo": "O nata lux de lumine",
+  "compositore": {
+    "id": "thomas-tallis",
+    "nome": "Thomas Tallis",
+    "breve": "Tallis",
+    "date": "c. 1505–1585",
+    "nascita": "c. 1505",
+    "morte": 1585,
+    "periodo": "rinascimento"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSATB",
+  "tempo_bpm": 66,
+  "fonte_spartito": "Mutopia Project",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "Sbw4xH9WfLk",
+      "pubblica_dal": "2026-10-09T14:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "YtIQgThug2A",
+      "pubblica_dal": "2026-10-09T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "VIIJM_fEdZg",
+      "pubblica_dal": "2026-10-09T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "8V_eCl5pREw",
+      "pubblica_dal": "2026-10-09T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "8OUSUwYArwM",
+      "pubblica_dal": "2026-10-09T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-09T14:30:00Z"
+}

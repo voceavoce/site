@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "slug": "hallelujah-handel",
+  "linea": "coro",
+  "rank": "174",
+  "ranks": [
+    "174"
+  ],
+  "titolo": "Hallelujah",
+  "compositore": {
+    "id": "george-frideric-handel",
+    "nome": "George Frideric Handel",
+    "breve": "Handel",
+    "date": "1685–1759",
+    "nascita": "1685",
+    "morte": 1759,
+    "periodo": "barocco",
+    "varianti": [
+      "Händel",
+      "Haendel",
+      "Georg Friedrich Händel"
+    ]
+  },
+  "opera": {
+    "id": "messiah-hwv-56",
+    "titolo": "Messiah HWV 56"
+  },
+  "stagioni": [
+    "pasqua"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": [
+    55,
+    110
+  ],
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "MirOS License",
+  "edizioni_verifica": [
+    {
+      "edizione": "Messiah, vocal score complete (riduzione per canto e pianoforte)",
+      "editore": "G. Schirmer, New York (lastra 22945)",
+      "anno": 1912,
+      "url": "https://archive.org/details/messiahoratoriof00hand_1"
+    },
+    {
+      "edizione": "Messiah, a sacred oratorio, partitura (full score) a cura di Ebenezer Prout (archi, voci e Bassi di Handel; fiati aggiunti da Prout)",
+      "editore": "Novello, London (lastra 11570)",
+      "anno": 1902,
+      "url": "https://archive.org/details/messiahsacredora00hand_0"
+    }
+  ],
+  "testo": {
+    "lingua": "en",
+    "testo": "Hallelujah: for the Lord God omnipotent reigneth. ; The kingdom of this world is become the kingdom of our Lord, and of his Christ; and he shall reign for ever and ever. ; King of Kings, and Lord of Lords.  Hallelujah!",
+    "fonte": {
+      "sito": "haventoday.org",
+      "url": "https://haventoday.org/blog/handels-messiah-lyrics-verse-references/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "RuWPddSIH0g",
+      "pubblica_dal": "2027-01-13T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "MQmGJSBYQUc",
+      "pubblica_dal": "2027-01-13T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "gX8fEMZYBjo",
+      "pubblica_dal": "2027-01-13T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "CoDxdS3hjDc",
+      "pubblica_dal": "2027-01-13T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-13T15:30:00Z"
+}

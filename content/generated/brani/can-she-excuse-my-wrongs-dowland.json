@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "slug": "can-she-excuse-my-wrongs-dowland",
+  "linea": "coro",
+  "rank": "087",
+  "ranks": [
+    "087"
+  ],
+  "titolo": "Can she excuse my wrongs",
+  "compositore": {
+    "id": "john-dowland",
+    "nome": "John Dowland",
+    "breve": "Dowland",
+    "date": "1563–1626",
+    "nascita": "1563",
+    "morte": 1626,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": 126,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "qTDatkxCCKE",
+      "pubblica_dal": "2027-01-10T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "L-2C_uwb7K8",
+      "pubblica_dal": "2027-01-10T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "0Bh3ZkM_49o",
+      "pubblica_dal": "2027-01-10T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "94Qx9Nqtysw",
+      "pubblica_dal": "2027-01-10T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-10T15:30:00Z"
+}

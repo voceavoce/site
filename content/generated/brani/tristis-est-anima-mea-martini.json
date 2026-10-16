@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "slug": "tristis-est-anima-mea-martini",
+  "linea": "coro",
+  "rank": "224",
+  "ranks": [
+    "224"
+  ],
+  "titolo": "Tristis est anima mea",
+  "compositore": {
+    "id": "giovanni-battista-martini",
+    "nome": "Giovanni Battista Martini",
+    "breve": "Martini"
+  },
+  "stagioni": [
+    "quaresima"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "TTB",
+  "tempo_bpm": 58,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "T1",
+      "video_id": "8d2XGF8SD9g",
+      "pubblica_dal": "2026-10-25T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "SoXaRA-NiSo",
+      "pubblica_dal": "2026-10-25T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "fgAX9uPK0Co",
+      "pubblica_dal": "2026-10-25T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-25T15:30:00Z"
+}

@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "slug": "ave-maris-stella-grieg",
+  "linea": "coro",
+  "rank": "034",
+  "ranks": [
+    "034"
+  ],
+  "titolo": "Ave Maris Stella",
+  "compositore": {
+    "id": "edvard-grieg",
+    "nome": "Edvard Grieg",
+    "breve": "Grieg",
+    "date": "1843–1907",
+    "nascita": "1843",
+    "morte": 1907,
+    "periodo": "romantico"
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "organico": "SSAATTBB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 66,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "2lc6yoRj5I8",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    },
+    {
+      "voce": "S2",
+      "video_id": "5riUYRs4IMs",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    },
+    {
+      "voce": "A1",
+      "video_id": "-gXeuzYtRz4",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    },
+    {
+      "voce": "A2",
+      "video_id": "6X0nME6g-18",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    },
+    {
+      "voce": "T1",
+      "video_id": "sQzNVrwJhUs",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    },
+    {
+      "voce": "T2",
+      "video_id": "4S-Sa-z2OEE",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    },
+    {
+      "voce": "B1",
+      "video_id": "NE524FscLq8",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    },
+    {
+      "voce": "B2",
+      "video_id": "b-5G6NzfS4A",
+      "pubblica_dal": "2026-10-01",
+      "pubblica": true
+    }
+  ],
+  "prima_uscita": "2026-10-01"
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "slug": "resonet-in-laudibus-gallus",
+  "linea": "coro",
+  "rank": "284",
+  "ranks": [
+    "284"
+  ],
+  "titolo": "Resonet in laudibus",
+  "compositore": {
+    "id": "jacobus-gallus",
+    "nome": "Jacobus Gallus",
+    "breve": "Gallus",
+    "date": "1550–1591",
+    "nascita": "1550",
+    "morte": 1591,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Jacobus Handl"
+    ]
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio",
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 90,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "Z7Gsaezy4Hw",
+      "pubblica_dal": "2026-11-15T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "X71kDdNzOqs",
+      "pubblica_dal": "2026-11-15T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "eHSkzt3Q0dI",
+      "pubblica_dal": "2026-11-15T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "nZGzhVXtUzI",
+      "pubblica_dal": "2026-11-15T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-15T15:30:00Z"
+}

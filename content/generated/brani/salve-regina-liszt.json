@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "slug": "salve-regina-liszt",
+  "linea": "coro",
+  "rank": "474",
+  "ranks": [
+    "474"
+  ],
+  "titolo": "Salve Regina S. 66",
+  "compositore": {
+    "id": "franz-liszt",
+    "nome": "Franz Liszt",
+    "breve": "Liszt",
+    "date": "1811–1886",
+    "nascita": "1811",
+    "morte": 1886,
+    "periodo": "romantico",
+    "varianti": [
+      "Liszt Ferenc"
+    ]
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 72,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "testo": {
+    "lingua": "la",
+    "testo": "Salve, Regina, Mater misericordiae:\nVita, dulcedo et spes nostra, salve.\nAd te clamamus, exsules, filii Hevae.\nAd te suspiramus, gementes et flentes\nin hac lacrimarum valle.\nEia, ergo, Advocata nostra,\nillos tuos misericordes oculos ad nos converte.\nEt Iesum, benedictum fructum ventris tui,\nnobis post hoc exsilium ostende.\nO clemens, O pia,\nO dulcis Virgo Maria.",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Salve_Regina"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "iyy5BuMj7u0",
+      "pubblica_dal": "2026-12-26T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "tbWk3FPwELg",
+      "pubblica_dal": "2026-12-26T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "r1G2urqBchg",
+      "pubblica_dal": "2026-12-26T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "kz_4BB7yx0o",
+      "pubblica_dal": "2026-12-26T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-26T15:30:00Z"
+}

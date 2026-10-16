@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "slug": "vexilla-regis-wab-51-bruckner",
+  "linea": "coro",
+  "rank": "481",
+  "ranks": [
+    "481"
+  ],
+  "titolo": "Vexilla Regis WAB 51",
+  "compositore": {
+    "id": "anton-bruckner",
+    "nome": "Anton Bruckner",
+    "breve": "Bruckner",
+    "date": "1824–1896",
+    "nascita": "1824",
+    "morte": 1896,
+    "periodo": "romantico"
+  },
+  "stagioni": [
+    "quaresima"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATBB",
+  "tempo_bpm": 112,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "Autografo di Anton Bruckner, «Vexilla regis», Wien 9. Februar 1892 (partitura, 2 pagine: strofa 1 con testo delle strofe 1-3, e «Die zwei letzten Strophen» 6-7 con musica scritta a parte)",
+      "editore": "Österreichische Nationalbibliothek, Musiksammlung",
+      "anno": 1892,
+      "url": "https://onb.digital/result/1321BF45"
+    },
+    {
+      "edizione": "Prima edizione, Josef Weinberger, Wien 1892 (J. W. / W. M. A.), p. 8: «Vexilla regis», S/A e T/B su due righi, strofa 1",
+      "editore": "Josef Weinberger, Wien (esemplare ONB MS 66.924-4°)",
+      "anno": 1892,
+      "url": "https://onb.digital/result/131C9E80"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "Vexilla regis prodeunt:\nFulget crucis mysterium\nQuo carne carnis conditor,\nSuspensus est patibulo.\nO Crux ave, spes unica,\nHoc passionis tempore\nAuge piis justitiam,\nReisque dona veniam.\nTe, summa Deus Trinitas,\nCollaudet omnis spiritus:\nQuos per crucis mysterium\nSalvas, rege per saecula. Amen.",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Vexilla_regis_prodeunt"
+    }
+  },
+  "nota": {
+    "it": "Nota sul testo: Bruckner musicò il testo antico di Venanzio Fortunato; qui si canta il testo del Breviario rivisto da Urbano VIII.",
+    "en": "Note on the text: Bruckner set the ancient text by Venantius Fortunatus; here we sing the text of the Breviary as revised by Urban VIII.",
+    "es": "Nota sobre el texto: Bruckner musicalizó el texto antiguo de Venancio Fortunato; aquí se canta el texto del Breviario revisado por Urbano VIII."
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "WLT_kFfouvg",
+      "pubblica_dal": "2027-01-03T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "fRkWwyGNDQQ",
+      "pubblica_dal": "2027-01-03T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "kqa3l0yj_xk",
+      "pubblica_dal": "2027-01-03T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "f5xF_arm22E",
+      "pubblica_dal": "2027-01-03T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "cHxBe5d1AzI",
+      "pubblica_dal": "2027-01-03T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-03T15:30:00Z"
+}

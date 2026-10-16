@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "if-love-s-a-sweet-passion-purcell",
+  "linea": "coro",
+  "rank": "014",
+  "ranks": [
+    "014"
+  ],
+  "titolo": "If love's a sweet passion",
+  "compositore": {
+    "id": "henry-purcell",
+    "nome": "Henry Purcell",
+    "breve": "Purcell",
+    "date": "1659–1695",
+    "nascita": "1659",
+    "morte": 1695,
+    "periodo": "barocco"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "d0zzHGJhKlE",
+      "pubblica_dal": "2027-01-04T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "oErYBh8bWC0",
+      "pubblica_dal": "2027-01-04T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "V-YM4HdP5QA",
+      "pubblica_dal": "2027-01-04T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "bvN0X6ala1M",
+      "pubblica_dal": "2027-01-04T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-04T15:30:00Z"
+}

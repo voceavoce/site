@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "ecce-panis-angelorum-lotti",
+  "linea": "coro",
+  "rank": "231",
+  "ranks": [
+    "231"
+  ],
+  "titolo": "Ecce panis angelorum",
+  "compositore": {
+    "id": "antonio-lotti",
+    "nome": "Antonio Lotti",
+    "breve": "Lotti",
+    "date": "1667–1740",
+    "nascita": "1667",
+    "morte": 1740,
+    "periodo": "barocco"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 138,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "ChoralWiki License",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "uZ8NpqCBy18",
+      "pubblica_dal": "2026-10-26T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Paco8EKgCi8",
+      "pubblica_dal": "2026-10-26T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "boXaFomgxQQ",
+      "pubblica_dal": "2026-10-26T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "upXRkn7AMfw",
+      "pubblica_dal": "2026-10-26T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-26T15:30:00Z"
+}

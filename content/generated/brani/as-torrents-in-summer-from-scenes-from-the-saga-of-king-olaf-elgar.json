@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar",
+  "linea": "coro",
+  "rank": "200",
+  "ranks": [
+    "200"
+  ],
+  "titolo": "As torrents in summer from Scenes from the Saga of King Olaf Op. 30",
+  "compositore": {
+    "id": "edward-elgar",
+    "nome": "Edward Elgar",
+    "breve": "Elgar",
+    "date": "1857–1934",
+    "nascita": "1857",
+    "morte": 1934
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "Eb",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "wSuzkhCmJ5w",
+      "pubblica_dal": "2026-10-28T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "U-hiS5pmVvk",
+      "pubblica_dal": "2026-10-28T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "ukQ_ce9LPGE",
+      "pubblica_dal": "2026-10-28T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "51TUs6St7DY",
+      "pubblica_dal": "2026-10-28T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-28T15:30:00Z"
+}

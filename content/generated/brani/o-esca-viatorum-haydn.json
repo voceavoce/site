@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "o-esca-viatorum-haydn",
+  "linea": "coro",
+  "rank": "008",
+  "ranks": [
+    "008"
+  ],
+  "titolo": "O esca viatorum",
+  "compositore": {
+    "id": "michael-haydn",
+    "nome": "Michael Haydn",
+    "breve": "Haydn",
+    "date": "1737–1806",
+    "nascita": "1737",
+    "morte": 1806,
+    "periodo": "classico",
+    "varianti": [
+      "Johann Michael Haydn"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "SkRfte9isoc",
+      "pubblica_dal": "2026-12-11T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "91wjTEBZi2o",
+      "pubblica_dal": "2026-12-11T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "WmAR3R28P2k",
+      "pubblica_dal": "2026-12-11T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "nJIYqtTAU5k",
+      "pubblica_dal": "2026-12-11T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-11T15:30:00Z"
+}

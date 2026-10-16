@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "slug": "tantum-ergo-faure",
+  "linea": "coro",
+  "rank": "163",
+  "ranks": [
+    "163"
+  ],
+  "titolo": "Tantum Ergo (Op. 65, No. 2)",
+  "compositore": {
+    "id": "gabriel-faure",
+    "nome": "Gabriel Fauré",
+    "breve": "Fauré",
+    "date": "1845–1924",
+    "nascita": "1845",
+    "morte": 1924,
+    "periodo": "romantico"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SSA",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "major"
+  },
+  "tempo_bpm": 62,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Tantum ergo sacramentum\nVeneremur cernui,\net antiquum documentum\nnovo cedat ritui.\nPræstet fides supplementum\nsensuum defectui.\nGenitori genitoque\nlaus et jubilatio,\nSalus, honor, virtus quoque\nsit et benedictio!\nProcedenti ab utroque\ncompar sit laudatio!\nAmen.",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Tantum_ergo"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "-_LHMdvfb5Q",
+      "pubblica_dal": "2026-12-08T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "TKl8vt8P3hw",
+      "pubblica_dal": "2026-12-08T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Ex-_tKQ3AmU",
+      "pubblica_dal": "2026-12-08T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-08T15:30:00Z"
+}

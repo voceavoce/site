@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "slug": "hic-vir-despiciens-mundum-victoria",
+  "linea": "coro",
+  "rank": "206",
+  "ranks": [
+    "206"
+  ],
+  "titolo": "Hic Vir Despiciens Mundum",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria",
+    "breve": "Victoria",
+    "date": "1548–1611",
+    "nascita": "1548",
+    "morte": 1611,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Tomas Luis de Victoria",
+      "Tomás Luis de Victoria",
+      "Victoria"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 90,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "a5PUGjyfFFk",
+      "pubblica_dal": "2026-11-04T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "ErBDyP7N5L8",
+      "pubblica_dal": "2026-11-04T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "MmtlTDx8FUE",
+      "pubblica_dal": "2026-11-04T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "8cOeIrTRN9U",
+      "pubblica_dal": "2026-11-04T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-04T15:30:00Z"
+}

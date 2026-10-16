@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "slug": "ave-verum-corpus-mozart",
+  "linea": "coro",
+  "rank": "475",
+  "ranks": [
+    "475"
+  ],
+  "titolo": "Ave verum corpus K. 618",
+  "compositore": {
+    "id": "wolfgang-amadeus-mozart",
+    "nome": "Wolfgang Amadeus Mozart",
+    "breve": "Mozart",
+    "date": "1756–1791",
+    "nascita": "1756",
+    "morte": 1791,
+    "periodo": "classico"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "major"
+  },
+  "tempo_bpm": 72,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "edizioni_verifica": [
+    {
+      "edizione": "Neue Mozart-Ausgabe (NMA) I/3, Kirchenmusikalische Werke: Kleinere Kirchenwerke, a cura di Hellmut Federhofer",
+      "editore": "Bärenreiter",
+      "anno": 1963,
+      "url": "https://dme.mozarteum.at/DME/objs/ed/ucb03_20_261.jpg"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "Ave verum corpus, natum\nde Maria Virgine,\nvere passum, immolatum\nin cruce pro homine\ncuius latus perforatum\nfluxit aqua et sanguine:\nesto nobis praegustatum\nin mortis examine.\nO Iesu dulcis, O Iesu pie,\nO Iesu, fili Mariae.\nMiserere mei. Amen.\nunda fluxit et sanguine",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Ave_verum_corpus"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "uPTe7OoL7JU",
+      "pubblica_dal": "2026-12-29T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "bumEX2wj6Sg",
+      "pubblica_dal": "2026-12-29T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "9g4Q_z70w0c",
+      "pubblica_dal": "2026-12-29T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "BA6RrV-I8hc",
+      "pubblica_dal": "2026-12-29T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-29T15:30:00Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "slug": "missa-brevis-sancti-02-gloria-haydn",
+  "linea": "coro",
+  "rank": "308",
+  "ranks": [
+    "308"
+  ],
+  "titolo": "Missa brevis Sancti 02 Gloria",
+  "compositore": {
+    "id": "joseph-haydn",
+    "nome": "Joseph Haydn",
+    "breve": "Haydn",
+    "date": "1732–1809",
+    "nascita": "1732",
+    "morte": 1809,
+    "periodo": "classico",
+    "varianti": [
+      "Franz Joseph Haydn"
+    ]
+  },
+  "opera": {
+    "id": "missa-brevis-sancti-joannis-de-deo",
+    "titolo": "Missa brevis Sancti Joannis de Deo"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "Bb",
+    "modo": "major"
+  },
+  "tempo_bpm": 128,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Gloria in excelsis Deo,\nEt in terra pax hominibus bonae voluntatis.\nLaudamus te, benedicimus te,\nAdoramus te, glorificamus te.\nGratias agimus tibi propter magnam gloriam tuam.\nDomine Deus, Rex coelestis,\nDeus Pater omnipotens.\nDomine Fili unigenite, Jesu Christe.\nDomine Deus, Agnus Dei, Filius Patris.\nQui tollis peccata mundi,\nMiserere nobis.\nQui tollis peccata mundi,\nSuscipe deprecationem nostram.\nQui sedes ad dexteram Patris,\nmiserere nobis.\nQuoniam tu solus sanctus, tu solus Dominus,\nTu solus altissimus, Jesu Christe.\nCum Sancto Spiritu in gloria Dei Patris, Amen.",
+    "fonte": {
+      "sito": "emmanuelmusic.org",
+      "url": "https://www.emmanuelmusic.org/other-translations/haydn-missa-brevis-sancti-joannis-de-deo"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "xRZGNgG0mKU",
+      "pubblica_dal": "2026-12-12T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "IHSAUmC5Y-8",
+      "pubblica_dal": "2026-12-12T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "13RpclYxpBk",
+      "pubblica_dal": "2026-12-12T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "m_hTnLYYb4A",
+      "pubblica_dal": "2026-12-12T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-12T15:30:00Z"
+}

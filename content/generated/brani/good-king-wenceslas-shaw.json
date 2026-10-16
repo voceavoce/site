@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "slug": "good-king-wenceslas-shaw",
+  "linea": "coro",
+  "rank": "259",
+  "ranks": [
+    "259"
+  ],
+  "titolo": "Good King Wenceslas",
+  "compositore": {
+    "id": "geoffrey-shaw",
+    "nome": "Geoffrey Shaw",
+    "breve": "Shaw"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "en",
+  "organico": "SSAATTBB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "Ab",
+    "modo": "major"
+  },
+  "tempo_bpm": 140,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "iAmAfMWfxKA",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "l0ngzgTmCxA",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "4-1kwQv_nUs",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "6QxvGaX9P8w",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "M3TFWknRaV8",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "wf4U6zWOpl8",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "BJ5n1Gb22DQ",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "-pXCLctZRuc",
+      "pubblica_dal": "2026-12-27T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-27T15:30:00Z"
+}

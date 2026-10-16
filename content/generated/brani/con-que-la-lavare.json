@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "slug": "con-que-la-lavare",
+  "linea": "coro",
+  "rank": "285",
+  "ranks": [
+    "285"
+  ],
+  "titolo": "Con qué la lavaré",
+  "generi": [],
+  "lingua": "es",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "minor"
+  },
+  "tempo_bpm": 104,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "es",
+    "testo": "¿Con qué la lavaré\nla flor de la mi cara?\n¿Con qué la lavaré\nque vivo mal penada?\nLávanse las casadas\ncon agua de limones;\nlávome yo cuitada,\ncon penas y dolores.",
+    "fonte": {
+      "sito": "paularcher.net",
+      "url": "http://www.paularcher.net/translations/early_music_texts/juan_vasquez/con_que_la_lavare.html"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "SBHcQZAkfMc",
+      "pubblica_dal": "2026-11-13T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "pyDFYvQ0yO0",
+      "pubblica_dal": "2026-11-13T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "ATX6LiYE_D4",
+      "pubblica_dal": "2026-11-13T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "9x5EM8vIDTo",
+      "pubblica_dal": "2026-11-13T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-13T15:30:00Z"
+}

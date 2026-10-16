@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "slug": "lay-a-garland-pearsall",
+  "linea": "coro",
+  "rank": "129",
+  "ranks": [
+    "129"
+  ],
+  "titolo": "Lay a garland",
+  "compositore": {
+    "id": "robert-lucas-pearsall",
+    "nome": "Robert Lucas Pearsall",
+    "breve": "Pearsall",
+    "date": "1795–1856",
+    "nascita": "1795",
+    "morte": 1856,
+    "periodo": "romantico"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SSAATTBB",
+  "tonalita": {
+    "tonica": "Eb",
+    "modo": "major"
+  },
+  "tempo_bpm": 96,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "Lay a Garland (Pearsall, 1840), edizione moderna Lilysetter 2025 (IMSLP964492), 8 voci SSAATTBB, 3 pagine",
+      "editore": "Lilysetter (moderna), da IMSLP",
+      "anno": 2025
+    }
+  ],
+  "testo": {
+    "lingua": "en",
+    "testo": "Lay a garland on her hearse\nof dismal yew.\nMaidens, willow branches wear,\nsay she died true.\nHer love was false, but she was firm.\nUpon her buried body lie\nlightly, thou gentle earth.",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Lay_a_garland"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "hF995585T5o",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "Cq4RrI2uHj8",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "B3LkUQTadVA",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "q80c10joEG4",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "V_z7-wzaSuw",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "--iP1xTYxKY",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "xfHnPb74jzQ",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "DC9Y1c_03wo",
+      "pubblica_dal": "2027-01-22T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-22T15:30:00Z"
+}

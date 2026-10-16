@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "slug": "no-22-behold-the-lamb-of-god-handel",
+  "linea": "coro",
+  "rank": "311",
+  "ranks": [
+    "311"
+  ],
+  "titolo": "No.22 Behold the Lamb of God",
+  "compositore": {
+    "id": "george-frideric-handel",
+    "nome": "George Frideric Handel",
+    "breve": "Handel",
+    "date": "1685–1759",
+    "nascita": "1685",
+    "morte": 1759,
+    "periodo": "barocco",
+    "varianti": [
+      "Händel",
+      "Haendel",
+      "Georg Friedrich Händel"
+    ]
+  },
+  "opera": {
+    "id": "messiah-hwv-56",
+    "titolo": "Messiah HWV 56"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 50,
+  "fonte_spartito": "PDMX / MuseScore",
+  "testo": {
+    "lingua": "en",
+    "testo": "Behold the Lamb of God, that taketh away the sin of the world.",
+    "fonte": {
+      "sito": "haventoday.org",
+      "url": "https://haventoday.org/blog/handels-messiah-lyrics-verse-references/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "MSQHVesnmlM",
+      "pubblica_dal": "2026-12-02T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "FGcHTfyYwUk",
+      "pubblica_dal": "2026-12-02T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "v5XjDi5dSQg",
+      "pubblica_dal": "2026-12-02T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "mAzeYMzYHag",
+      "pubblica_dal": "2026-12-02T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-02T15:30:00Z"
+}

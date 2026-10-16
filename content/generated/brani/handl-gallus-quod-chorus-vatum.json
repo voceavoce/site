@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "handl-gallus-quod-chorus-vatum",
+  "linea": "coro",
+  "rank": "063",
+  "ranks": [
+    "063"
+  ],
+  "titolo": "Handl-Gallus - Quod Chorus vatum",
+  "compositore": {
+    "id": "jacobus-gallus",
+    "nome": "Jacobus Gallus",
+    "breve": "Gallus",
+    "date": "1550–1591",
+    "nascita": "1550",
+    "morte": 1591,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Jacobus Handl"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "minor"
+  },
+  "tempo_bpm": 110,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "y8AgFxuoiiY",
+      "pubblica_dal": "2026-12-17T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "xAz5G5iCIlo",
+      "pubblica_dal": "2026-12-17T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "C36Q5GbqTFQ",
+      "pubblica_dal": "2026-12-17T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "9oC2TJagWn8",
+      "pubblica_dal": "2026-12-17T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-17T15:30:00Z"
+}

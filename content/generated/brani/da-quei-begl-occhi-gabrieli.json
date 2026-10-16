@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "slug": "da-quei-begl-occhi-gabrieli",
+  "linea": "coro",
+  "rank": "324",
+  "ranks": [
+    "324"
+  ],
+  "titolo": "Da quei begl' occhi",
+  "compositore": {
+    "id": "giovanni-gabrieli",
+    "nome": "Giovanni Gabrieli",
+    "breve": "Gabrieli",
+    "date": "c. 1554–1612",
+    "nascita": "c. 1554",
+    "morte": 1612,
+    "periodo": "rinascimento"
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SAATB",
+  "tempo_bpm": 138,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "Da quei begl' occhi ove s'accese il foco\nChe m'ard' a poco a poco\nVidi lagrime uscir, ond' io pensai\nCh'amorzasse la fiamma il novo umore,\nE mi sentì nel core\nFiamma ch'estinguer non potrò più mai.",
+    "fonte": {
+      "sito": "cpdl.org",
+      "url": "https://www.cpdl.org/wiki/index.php/Da_quei_begl'_occhi_(Giovanni_Gabrieli)"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "bd0CGauIjOc",
+      "pubblica_dal": "2026-12-14T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "JXn8_0PkbzA",
+      "pubblica_dal": "2026-12-14T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "WUr2eY1f94k",
+      "pubblica_dal": "2026-12-14T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "fqBfbkcY-W8",
+      "pubblica_dal": "2026-12-14T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "5P1CHhP5zK0",
+      "pubblica_dal": "2026-12-14T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-14T15:30:00Z"
+}

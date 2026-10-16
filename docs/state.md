@@ -23,3 +23,6 @@ Aggiornato: 2026-10-16
 ## Avanzamento
 
 - 2026-10-16 — Piano approvato. Scritti in AIVideoCreator `common/sito.py` e `cli/job_sito_esporta.py` (non ancora committati). Primo dry-run: 142 schede (140 coro, 1 aria, 1 metodo), 41 visibili oggi, 93 compositori. Pulizia di titoli e compositori in corso; la regex `_TRATTINO` in `sito.py` è da correggere (il modulo al momento non si importa).
+- 2026-10-16 — Accesso GitHub sistemato dall'utente. Regex corretta, commit WIP `T-905` pushato su AIVideoCreator (branch `claude/voceavocecoro-video-portal-s3o8vi`). Dati di esempio reali copiati in `content/generated/` del sito (142 schede, 70 compositori, 7 opere/raccolte): servono a sviluppare il sito, saranno rigenerati dal primo export ufficiale (A8), che salverà anche gli slug in roadmap.
+- 2026-10-16 — Tag `landing-v1` creato su `c50b793`, ma il push del tag è rifiutato (403: l'ambiente permette solo il branch di lavoro). Per pubblicarlo, dal tuo computer: `git tag landing-v1 c50b793 && git push origin landing-v1`.
+- 2026-10-16 — Organizzazione del lavoro: i sotto-agenti modificano i file ma non fanno commit; commit, push e aggiornamento di `task.md`/`state.md` li fa l'agente principale.

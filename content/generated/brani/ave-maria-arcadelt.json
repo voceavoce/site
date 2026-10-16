@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-arcadelt",
+  "linea": "coro",
+  "rank": "012",
+  "ranks": [
+    "012"
+  ],
+  "titolo": "Ave Maria",
+  "compositore": {
+    "id": "jacques-arcadelt",
+    "nome": "Jacques Arcadelt",
+    "breve": "Arcadelt",
+    "date": "c. 1507–1568",
+    "nascita": "c. 1507",
+    "morte": 1568,
+    "periodo": "rinascimento"
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 76,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "zWLzu8r_Frw",
+      "pubblica_dal": "2026-11-07T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Al5PHxGsHdk",
+      "pubblica_dal": "2026-11-07T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "El9a0NDAtM8",
+      "pubblica_dal": "2026-11-07T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "FM3ax-l9hr8",
+      "pubblica_dal": "2026-11-07T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-07T15:30:00Z"
+}

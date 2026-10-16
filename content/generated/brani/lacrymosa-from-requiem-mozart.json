@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "slug": "lacrymosa-from-requiem-mozart",
+  "linea": "coro",
+  "rank": "104",
+  "ranks": [
+    "104"
+  ],
+  "titolo": "Lacrymosa from Requiem",
+  "compositore": {
+    "id": "wolfgang-amadeus-mozart",
+    "nome": "Wolfgang Amadeus Mozart",
+    "breve": "Mozart",
+    "date": "1756–1791",
+    "nascita": "1756",
+    "morte": 1791,
+    "periodo": "classico"
+  },
+  "stagioni": [
+    "quaresima"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "D",
+    "modo": "minor"
+  },
+  "tempo_bpm": 60,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Lacrimosa dies illa\nQua resurget ex favilla\nJudicandus homo reus.\nHuic ergo parce, Deus,\nPie Jesu Domine,\nDona eis requiem.",
+    "fonte": {
+      "sito": "oxfordsong.org",
+      "url": "https://oxfordsong.org/song/lacrimosa"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "6CoZyXnxp5Q",
+      "pubblica_dal": "2026-11-30T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "DdY43C0JfJw",
+      "pubblica_dal": "2026-11-30T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "aMuy7wD08SA",
+      "pubblica_dal": "2026-11-30T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "yuha6S-Iga0",
+      "pubblica_dal": "2026-11-30T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-30T15:30:00Z"
+}

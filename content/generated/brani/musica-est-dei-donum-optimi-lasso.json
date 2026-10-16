@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "slug": "musica-est-dei-donum-optimi-lasso",
+  "linea": "coro",
+  "rank": "344",
+  "ranks": [
+    "344"
+  ],
+  "titolo": "Musica est Dei donum optimi",
+  "compositore": {
+    "id": "orlando-di-lasso",
+    "nome": "Orlando di Lasso",
+    "breve": "Lasso",
+    "date": "c. 1532–1594",
+    "nascita": "c. 1532",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Orlande de Lassus",
+      "Lassus"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "E",
+    "modo": "major"
+  },
+  "tempo_bpm": 92,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "apqQNaVN0yc",
+      "pubblica_dal": "2026-11-16T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "5K26xHQ63bY",
+      "pubblica_dal": "2026-11-16T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "1tayyBxu1Gk",
+      "pubblica_dal": "2026-11-16T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "SFKl05El3gs",
+      "pubblica_dal": "2026-11-16T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-16T15:30:00Z"
+}

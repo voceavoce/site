@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "slug": "luci-care-luci-belle-mozart",
+  "linea": "coro",
+  "rank": "241",
+  "ranks": [
+    "241"
+  ],
+  "titolo": "Luci care, luci belle",
+  "compositore": {
+    "id": "wolfgang-amadeus-mozart",
+    "nome": "Wolfgang Amadeus Mozart",
+    "breve": "Mozart",
+    "date": "1756–1791",
+    "nascita": "1756",
+    "morte": 1791,
+    "periodo": "classico"
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SAB",
+  "accompagnamento": "organo",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 112,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "Luci care, luci belle\nCari lumi amate stelle\nDate calma a questo core.\nSe per voi sospiro e moro\nIdol mio, mio bel tesoro\nForza e solo del Dio d'amore.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=54604"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "_vvWP8c_VOI",
+      "pubblica_dal": "2026-11-27T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "ngOAjXkih08",
+      "pubblica_dal": "2026-11-27T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "XFPy6jRFWF0",
+      "pubblica_dal": "2026-11-27T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-27T15:30:00Z"
+}

@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "gaudeamus-igitur-brahms",
+  "linea": "coro",
+  "rank": "061",
+  "ranks": [
+    "061"
+  ],
+  "titolo": "Gaudeamus Igitur",
+  "compositore": {
+    "id": "johannes-brahms",
+    "nome": "Johannes Brahms",
+    "breve": "Brahms",
+    "date": "1833–1897",
+    "nascita": "1833",
+    "morte": 1897,
+    "periodo": "romantico"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 116,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "ZAZ4rCOcZmA",
+      "pubblica_dal": "2026-10-05T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "1xT_HDLnHOI",
+      "pubblica_dal": "2026-10-05T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "Qw_Z51wC5a8",
+      "pubblica_dal": "2026-10-05T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "bFyZVFFIubU",
+      "pubblica_dal": "2026-10-05T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-05T14:30:00Z"
+}

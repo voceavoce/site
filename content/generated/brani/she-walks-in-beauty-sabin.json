@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "slug": "she-walks-in-beauty-sabin",
+  "linea": "coro",
+  "rank": "470",
+  "ranks": [
+    "470"
+  ],
+  "titolo": "She Walks in Beauty",
+  "compositore": {
+    "id": "wallace-a-sabin",
+    "nome": "Wallace A. Sabin",
+    "breve": "Sabin"
+  },
+  "generi": [],
+  "lingua": "en",
+  "tempo_bpm": [
+    53,
+    71
+  ],
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "CC0",
+  "edizioni_verifica": [
+    {
+      "edizione": "Wallace A. Sabin, She Walks in Beauty, part-song for men's voices (poesia di Lord Byron), G. S. 8vo Chorus No. 6709, partitura (T I, T II, B I, B II + pianoforte solo per le prove)",
+      "editore": "G. Schirmer, New York (lastra 28022)",
+      "anno": 1918,
+      "url": "https://imslp.org/wiki/She_Walks_in_Beauty_(Sabin,_Wallace_Arthur) (file #316813)"
+    }
+  ],
+  "voci": [
+    {
+      "voce": "T1",
+      "video_id": "-KItbU5nGIg",
+      "pubblica_dal": "2027-01-25T15:30:00Z"
+    },
+    {
+      "voce": "T1'",
+      "video_id": "AUsm6l6v2Cw",
+      "pubblica_dal": "2027-01-25T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "Qah7hy9pv04",
+      "pubblica_dal": "2027-01-25T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "D8mZlDrnfBY",
+      "pubblica_dal": "2027-01-25T15:30:00Z"
+    },
+    {
+      "voce": "B1'",
+      "video_id": "_oBuNoHGzv4",
+      "pubblica_dal": "2027-01-25T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "G5-d-kz47ZI",
+      "pubblica_dal": "2027-01-25T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2027-01-25T15:30:00Z"
+}

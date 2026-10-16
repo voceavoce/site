@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "slug": "adieu-sweet-amaryllis-wilbye",
+  "linea": "coro",
+  "rank": "100",
+  "ranks": [
+    "100"
+  ],
+  "titolo": "Adieu Sweet Amaryllis",
+  "compositore": {
+    "id": "john-wilbye",
+    "nome": "John Wilbye",
+    "breve": "Wilbye"
+  },
+  "generi": [],
+  "lingua": "en",
+  "organico": "SATB",
+  "tempo_bpm": 124,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "5yY0mIUlu5s",
+      "pubblica_dal": "2026-10-14T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "HTAjXROolJk",
+      "pubblica_dal": "2026-10-14T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "a3iDmAYBzkw",
+      "pubblica_dal": "2026-10-14T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "fKer4UdtObo",
+      "pubblica_dal": "2026-10-14T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-14T14:30:00Z"
+}

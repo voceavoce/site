@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "slug": "cantate-domino-croce",
+  "linea": "coro",
+  "rank": "197",
+  "ranks": [
+    "197"
+  ],
+  "titolo": "Cantate Domino",
+  "compositore": {
+    "id": "giovanni-croce",
+    "nome": "Giovanni Croce",
+    "breve": "Croce",
+    "date": "c. 1557–1609",
+    "nascita": "c. 1557",
+    "morte": 1609,
+    "periodo": "rinascimento"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 132,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "BrzkXqUfcZk",
+      "pubblica_dal": "2026-09-30T14:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Sm-mkYLDg7M",
+      "pubblica_dal": "2026-09-30T14:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "WlgQsUj9dbk",
+      "pubblica_dal": "2026-09-30T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "KULWDzb58X0",
+      "pubblica_dal": "2026-09-30T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-30T14:30:00Z"
+}

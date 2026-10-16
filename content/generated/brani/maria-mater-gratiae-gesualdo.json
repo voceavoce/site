@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "slug": "maria-mater-gratiae-gesualdo",
+  "linea": "coro",
+  "rank": "438",
+  "ranks": [
+    "438"
+  ],
+  "titolo": "Maria, mater gratiae",
+  "compositore": {
+    "id": "carlo-gesualdo",
+    "nome": "Carlo Gesualdo",
+    "breve": "Gesualdo",
+    "date": "1566–1613",
+    "nascita": "1566",
+    "morte": 1613,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Gesualdo da Venosa"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATTB",
+  "tonalita": {
+    "tonica": "F",
+    "modo": "major"
+  },
+  "tempo_bpm": 80,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Maria, Mater gratiae, Mater misericordiae: tu nos ab hoste protege et hora mortis suscipe.",
+    "fonte": {
+      "sito": "traditionalcatholicprayers.com",
+      "url": "https://traditionalcatholicprayers.com/2019/11/11/sanctissimum-rosarium/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "ZmOKM_gxLLk",
+      "pubblica_dal": "2026-12-22T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "M2RViWV0ukw",
+      "pubblica_dal": "2026-12-22T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "CLw-luQMsbY",
+      "pubblica_dal": "2026-12-22T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "-8m6UACNpK4",
+      "pubblica_dal": "2026-12-22T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "VCS3nWKkws8",
+      "pubblica_dal": "2026-12-22T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-22T15:30:00Z"
+}

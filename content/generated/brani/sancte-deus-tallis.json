@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "sancte-deus-tallis",
+  "linea": "coro",
+  "rank": "198",
+  "ranks": [
+    "198"
+  ],
+  "titolo": "Sancte Deus",
+  "compositore": {
+    "id": "thomas-tallis",
+    "nome": "Thomas Tallis",
+    "breve": "Tallis",
+    "date": "c. 1505–1585",
+    "nascita": "c. 1505",
+    "morte": 1585,
+    "periodo": "rinascimento"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "minor"
+  },
+  "tempo_bpm": 85,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "lFYpT7CIhJs",
+      "pubblica_dal": "2026-10-30T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "taro-0WBX4w",
+      "pubblica_dal": "2026-10-30T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "x3J_C_Msa6A",
+      "pubblica_dal": "2026-10-30T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "cF7fOmLoYXM",
+      "pubblica_dal": "2026-10-30T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-10-30T15:30:00Z"
+}

@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "slug": "o-la-o-che-bon-eccho-lasso",
+  "linea": "coro",
+  "rank": "049",
+  "ranks": [
+    "049"
+  ],
+  "titolo": "O la, o che bon eccho!",
+  "compositore": {
+    "id": "orlando-di-lasso",
+    "nome": "Orlando di Lasso",
+    "breve": "Lasso",
+    "date": "c. 1532–1594",
+    "nascita": "c. 1532",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Orlande de Lassus",
+      "Lassus"
+    ]
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SSAATTBB",
+  "tonalita": {
+    "tonica": "G",
+    "modo": "major"
+  },
+  "tempo_bpm": 240,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "O la, o che bon eccho!\nO la, o che bon echo! Pigliamo ci, piacere!\nHa ha ha ha ha, ridiamo tutti!\nO bon compagno! Che voi tu? Voria che tu cantassi una canzona.\nPerchè? Perchè si? Perchè no? Perchè non voglio. Perchè non voi?\nPerchè non mi piace! Taci dico!\nTaci tu! O gran poltron! Signor, si!\nOrsu non più! Andiamo! Adio bon echo! Adio bon echo!\nRest’ in pace! Basta! Basta! Basta! Basta!",
+    "fonte": {
+      "sito": "recursocoral.com.ar",
+      "url": "https://recursocoral.com.ar/archivos/o-la-o-che-bon-eccho/"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S1",
+      "video_id": "Px6FoyI39T4",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    },
+    {
+      "voce": "S2",
+      "video_id": "oIPW5ERdLg0",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    },
+    {
+      "voce": "A1",
+      "video_id": "1YOVYsgaW94",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    },
+    {
+      "voce": "A2",
+      "video_id": "zncNSHOTt0A",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    },
+    {
+      "voce": "T1",
+      "video_id": "tzwlBiZbW18",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    },
+    {
+      "voce": "T2",
+      "video_id": "hkQdELtRjFM",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    },
+    {
+      "voce": "B1",
+      "video_id": "SHWXy1dxdpc",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    },
+    {
+      "voce": "B2",
+      "video_id": "SOVsM8fDUcU",
+      "pubblica_dal": "2026-12-04T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-04T15:30:00Z"
+}

@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-ii-palestrina",
+  "linea": "coro",
+  "rank": "054",
+  "ranks": [
+    "054"
+  ],
+  "titolo": "Ave Maria II",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina",
+    "breve": "Palestrina",
+    "date": "c. 1525–1594",
+    "nascita": "c. 1525",
+    "morte": 1594,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Pierluigi da Palestrina"
+    ]
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 78,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "pEmQFjXWe3E",
+      "pubblica_dal": "2026-11-26T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "b7NayYwcqdU",
+      "pubblica_dal": "2026-11-26T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "qxcGP1GIvZA",
+      "pubblica_dal": "2026-11-26T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "nBw5JZT0qZQ",
+      "pubblica_dal": "2026-11-26T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-26T15:30:00Z"
+}

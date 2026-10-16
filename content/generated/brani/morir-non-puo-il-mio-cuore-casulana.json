@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "slug": "morir-non-puo-il-mio-cuore-casulana",
+  "linea": "coro",
+  "rank": "050",
+  "ranks": [
+    "050"
+  ],
+  "titolo": "Morir non puo il mio cuore",
+  "compositore": {
+    "id": "maddalena-casulana",
+    "nome": "Maddalena Casulana",
+    "breve": "Casulana"
+  },
+  "generi": [],
+  "lingua": "it",
+  "organico": "SATB",
+  "tempo_bpm": 108,
+  "fonte_spartito": "PDMX / MuseScore",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "8-YRhoyY-fE",
+      "pubblica_dal": "2026-11-29T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "Len_TeRa72M",
+      "pubblica_dal": "2026-11-29T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "wevnU2-p8TU",
+      "pubblica_dal": "2026-11-29T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "ddez5WVpDio",
+      "pubblica_dal": "2026-11-29T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-29T15:30:00Z"
+}

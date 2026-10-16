@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "slug": "adoramus-te-christe-martini",
+  "linea": "coro",
+  "rank": "300",
+  "ranks": [
+    "300"
+  ],
+  "titolo": "Adoramus te Christe",
+  "compositore": {
+    "id": "giovanni-battista-martini",
+    "nome": "Giovanni Battista Martini",
+    "breve": "Martini"
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SAB",
+  "tempo_bpm": 60,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "qxtMMO2M2B0",
+      "pubblica_dal": "2026-11-01T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "2A9R-ooxLys",
+      "pubblica_dal": "2026-11-01T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "1SS4_NC-N-w",
+      "pubblica_dal": "2026-11-01T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-11-01T15:30:00Z"
+}

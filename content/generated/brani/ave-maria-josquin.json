@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-josquin",
+  "linea": "coro",
+  "rank": "093",
+  "ranks": [
+    "093"
+  ],
+  "titolo": "Ave Maria",
+  "compositore": {
+    "id": "josquin-des-prez",
+    "nome": "Josquin des Prez",
+    "breve": "Josquin",
+    "date": "c. 1450–1521",
+    "nascita": "c. 1450",
+    "morte": 1521,
+    "periodo": "rinascimento",
+    "varianti": [
+      "Josquin Desprez",
+      "Josquin"
+    ]
+  },
+  "stagioni": [
+    "mariano"
+  ],
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": [
+    130,
+    195
+  ],
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "ZBmO2C93m0Y",
+      "pubblica_dal": "2026-12-28T15:30:00Z"
+    },
+    {
+      "voce": "A",
+      "video_id": "dbKaNlrzH_o",
+      "pubblica_dal": "2026-12-28T15:30:00Z"
+    },
+    {
+      "voce": "T",
+      "video_id": "axDwf7rKNGo",
+      "pubblica_dal": "2026-12-28T15:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "9rfOimiicC0",
+      "pubblica_dal": "2026-12-28T15:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-12-28T15:30:00Z"
+}

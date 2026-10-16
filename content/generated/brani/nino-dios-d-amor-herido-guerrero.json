@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "slug": "nino-dios-d-amor-herido-guerrero",
+  "linea": "coro",
+  "rank": "446",
+  "ranks": [
+    "446"
+  ],
+  "titolo": "Niño Dios d'amor herido",
+  "compositore": {
+    "id": "francisco-guerrero",
+    "nome": "Francisco Guerrero",
+    "breve": "Guerrero",
+    "date": "1528–1599",
+    "nascita": "1528",
+    "morte": 1599,
+    "periodo": "rinascimento"
+  },
+  "stagioni": [
+    "natale"
+  ],
+  "generi": [
+    "canto-natalizio"
+  ],
+  "lingua": "es",
+  "organico": "SATB",
+  "tempo_bpm": 82,
+  "fonte_spartito": "PDMX / MuseScore",
+  "licenza_spartito": "PD",
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "oavoKCHS9Zg",
+      "pubblica_dal": "2026-09-05",
+      "pubblica": true
+    },
+    {
+      "voce": "A",
+      "video_id": "yoh7C4nlA1E",
+      "pubblica_dal": "2026-09-05",
+      "pubblica": true
+    },
+    {
+      "voce": "T",
+      "video_id": "qlAJLKkZ6o4",
+      "pubblica_dal": "2026-09-13T14:30:00Z"
+    },
+    {
+      "voce": "B",
+      "video_id": "7kSvBHvp9IQ",
+      "pubblica_dal": "2026-09-13T14:30:00Z"
+    }
+  ],
+  "prima_uscita": "2026-09-05"
+}
