@@ -17,6 +17,13 @@ eleventyExcludeFromCollections: true
       <h1>VOCE <span class="a">a</span> VOCE</h1>
       <p class="tag">{{ 'tag' | t(lang) }}</p>
       <p class="lead">{{ 'lead' | t(lang) | safe }}</p>
+      <form class="hero-search" role="search" action="{{ lang | routeUrl('search') }}" method="get">
+        <label for="hero-q">{{ 'search.homeLabel' | t(lang) }}</label>
+        <div class="search-form__row">
+          <input class="search-input" type="search" id="hero-q" name="q" autocomplete="off">
+          <button class="btn" type="submit">{{ 'search.homeButton' | t(lang) }}</button>
+        </div>
+      </form>
       <div class="cta-row">
         <a class="btn" href="#catalogo">{{ 'home.ctaExplore' | t(lang) }}</a>
         <a class="btn btn--ghost" href="#how">{{ 'home.ctaHow' | t(lang) }}</a>

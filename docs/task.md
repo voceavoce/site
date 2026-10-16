@@ -23,7 +23,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] B4 (S) `catalog.js`: unisce `content/generated` + `content/curated`, filtra voci per `pubblica_dal`, noindex sulle schede solo programmate
 - [x] B5 (S) Scheda brano: In breve, facade video + selettore voce, capitoli, note, testo/traduzioni, spartito, correlati
 - [x] B6 (S) Liste: compositori, opere/raccolte, generi, stagioni, linee (coro/arie/metodi), home
-- [~] B7 (S) Ricerca Pagefind con UI accessibile (filtri, aria-live, stato in URL)
+- [x] B7 (S) Ricerca Pagefind con UI accessibile (filtri, aria-live, stato in URL)
 - [x] B8 (S) SEO: JSON-LD (WebSite, Organization, MusicComposition, VideoObject, Breadcrumb, Person, ItemList), sitemap con hreflang, robots, llms.txt, feed Atom, OG
 - [x] B9 (H) Pagine istituzionali IT/EN/ES: come funziona, fonti e licenze, chi siamo, privacy, trasparenza affiliazioni
 - [x] B10 (H) Componenti `ad-slot` e `affiliate` dietro `site.ads.enabled = false`

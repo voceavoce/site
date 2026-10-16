@@ -7,7 +7,9 @@ const base = `http://127.0.0.1:${port}`;
 const gen = spawnSync("node", ["scripts/a11y-urls.mjs", base, "_site"], { stdio: "inherit" });
 if (gen.status !== 0) process.exit(gen.status ?? 1);
 
-const server = spawn("npx", ["http-server", "_site", "-p", port, "-a", "127.0.0.1", "-s"], { stdio: "inherit" });
+// http-server lanciato direttamente con node (non via npx): cosi' kill() ferma davvero il server
+// e lo script termina (con npx restava vivo il processo figlio e il comando non finiva mai).
+const server = spawn(process.execPath, ["node_modules/http-server/bin/http-server", "_site", "-p", port, "-a", "127.0.0.1", "-s"], { stdio: "inherit" });
 let code = 1;
 try {
   for (let i = 0; i < 30; i++) {

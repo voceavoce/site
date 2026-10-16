@@ -267,5 +267,37 @@
       "quaresima": "Pieces for Lent and the Passion.",
       "mariano": "Pieces in honour of the Virgin Mary."
     }
+  },
+  "search": {
+    "title": "Search the catalogue",
+    "description": "Search pieces, composers and lyrics in the Voce a Voce catalogue and filter by line, voice, season and genre.",
+    "h1": "Search",
+    "intro": "Search for a piece, a composer or a word from the text. You can narrow the results by composer, line, voice, season and genre.",
+    "label": "Search the catalogue",
+    "button": "Search",
+    "filters": "Filter the results",
+    "reset": "Clear filters",
+    "f": {
+      "compositore": "Composer",
+      "linea": "Line",
+      "voce": "Voice",
+      "stagione": "Season",
+      "genere": "Genre"
+    },
+    "otherComposers": "More composers ({n})",
+    "hint": "Type one or more words, or choose a filter.",
+    "countNone": "No results",
+    "countOne": "1 result",
+    "countMany": "{n} results",
+    "loading": "Searching…",
+    "noResults": "No results. Try fewer words, check the spelling or remove a filter.",
+    "browseH": "Or browse the indexes",
+    "more": "Show more results",
+    "error": "Search is not available right now. You can still browse the indexes below.",
+    "nojs": "Search needs JavaScript. Without it, you can browse the catalogue with the indexes below.",
+    "by": "by",
+    "resultsLabel": "Search results",
+    "homeLabel": "Search pieces or composers",
+    "homeButton": "Search"
   }
 }

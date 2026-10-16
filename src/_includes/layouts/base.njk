@@ -47,6 +47,9 @@
 {%- if routeSection == "pieces" and routeSlug %}
 <script src="/assets/js/player.js" defer></script>
 {%- endif %}
+{%- if routeSection == "search" %}
+<script src="/assets/js/search.js" defer></script>
+{%- endif %}
 <script type="application/ld+json">{{ lang | siteLd | safe }}</script>
 {%- if ogPiece %}
 <script type="application/ld+json">{{ ogPiece | pieceLd(lang) | safe }}</script>

@@ -267,5 +267,37 @@
       "quaresima": "Obras de Cuaresma y Pasión.",
       "mariano": "Obras en honor de la Virgen María."
     }
+  },
+  "search": {
+    "title": "Buscar en el catálogo",
+    "description": "Busca obras, compositores y textos en el catálogo de Voce a Voce y filtra por línea, voz, temporada y género.",
+    "h1": "Buscar",
+    "intro": "Busca una obra, un compositor o una palabra del texto. Puedes acotar los resultados por compositor, línea, voz, temporada y género.",
+    "label": "Buscar en el catálogo",
+    "button": "Buscar",
+    "filters": "Filtrar los resultados",
+    "reset": "Quitar los filtros",
+    "f": {
+      "compositore": "Compositor",
+      "linea": "Línea",
+      "voce": "Voz",
+      "stagione": "Temporada",
+      "genere": "Género"
+    },
+    "otherComposers": "Más compositores ({n})",
+    "hint": "Escribe una o más palabras, o elige un filtro.",
+    "countNone": "Sin resultados",
+    "countOne": "1 resultado",
+    "countMany": "{n} resultados",
+    "loading": "Buscando…",
+    "noResults": "Sin resultados. Prueba con menos palabras, revisa la ortografía o quita algún filtro.",
+    "browseH": "O explora los índices",
+    "more": "Mostrar más resultados",
+    "error": "La búsqueda no está disponible en este momento. Aun así puedes explorar los índices de abajo.",
+    "nojs": "La búsqueda necesita JavaScript. Sin él, puedes explorar el catálogo con los índices de abajo.",
+    "by": "de",
+    "resultsLabel": "Resultados de la búsqueda",
+    "homeLabel": "Buscar obras o compositores",
+    "homeButton": "Buscar"
   }
 }

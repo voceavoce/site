@@ -8,7 +8,7 @@
   {%- if thumbId %}
   <img class="card__thumb" src="https://i.ytimg.com/vi/{{ thumbId }}/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="">
   {%- else %}
-  <div class="card__thumb card__thumb--empty" aria-hidden="true">♪</div>
+  <div class="card__thumb card__thumb--empty" aria-hidden="true"></div>
   {%- endif %}
   <div class="card__body">
     <h3 class="card__title">{% if showNo and piece.raccolta.numero %}<span class="card__no">{{ piece.raccolta.numero }}.</span> {% endif %}<a href="{{ lang | routeUrl('pieces', piece.slug) }}">{{ title }}</a></h3>

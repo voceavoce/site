@@ -43,6 +43,10 @@
     "nascita": "1824",
     "morte": 1896,
     "periodo": "romantico",
+    "alias": [
+      "Joseph Anton Bruckner",
+      "Bruckner"
+    ],
     "brani": [
       "locus-iste-bruckner",
       "pange-lingua-recte-tantum-ergo-wab-32-bruckner",
@@ -71,6 +75,9 @@
     "nascita": "1842",
     "morte": 1900,
     "periodo": "romantico",
+    "alias": [
+      "Sir Arthur Sullivan"
+    ],
     "brani": [
       "the-long-day-closes-sullivan"
     ]
@@ -86,6 +93,10 @@
     "varianti": [
       "Gesualdo da Venosa"
     ],
+    "alias": [
+      "Gesualdo",
+      "Carlo Gesualdo da Venosa"
+    ],
     "brani": [
       "se-la-mia-morte-brami-gesualdo",
       "moro-lasso-al-mio-duolo-gesualdo",
@@ -100,6 +111,11 @@
     "nascita": "1852",
     "morte": 1924,
     "periodo": "romantico",
+    "alias": [
+      "Charles Viliers Stanford",
+      "Stanford",
+      "C. V. Stanford"
+    ],
     "brani": [
       "beati-quorum-via-stanford"
     ]
@@ -119,6 +135,9 @@
     "date": "1567–1643",
     "nascita": "1567",
     "morte": 1643,
+    "alias": [
+      "Monteverdi"
+    ],
     "brani": [
       "adoramus-te-christe-monteverdi",
       "ave-maria-monteverdi"
@@ -132,6 +151,10 @@
     "nascita": "c. 1500",
     "morte": 1553,
     "periodo": "rinascimento",
+    "alias": [
+      "Cristobal de Morales",
+      "Morales"
+    ],
     "brani": [
       "parce-mihi-domine-morales"
     ]
@@ -144,6 +167,10 @@
     "nascita": "1843",
     "morte": 1907,
     "periodo": "romantico",
+    "alias": [
+      "Edvard Hagerup Grieg",
+      "Grieg"
+    ],
     "brani": [
       "ave-maris-stella-grieg"
     ]
@@ -155,6 +182,10 @@
     "date": "1857–1934",
     "nascita": "1857",
     "morte": 1934,
+    "alias": [
+      "Sir Edward Elgar",
+      "Elgar"
+    ],
     "brani": [
       "ave-maria-elgar",
       "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar"
@@ -168,6 +199,9 @@
     "nascita": "1528",
     "morte": 1599,
     "periodo": "rinascimento",
+    "alias": [
+      "Guerrero"
+    ],
     "brani": [
       "prado-verde-y-florido-guerrero",
       "los-reyes-siguen-la-estrella-guerrero",
@@ -197,6 +231,9 @@
     "nascita": "1797",
     "morte": 1828,
     "periodo": "romantico",
+    "alias": [
+      "Schubert"
+    ],
     "brani": [
       "kyrie-in-b-flat-major-schubert",
       "hosanna-filio-david-d-696-n-1-schubert"
@@ -209,6 +246,10 @@
     "date": "1787–1863",
     "nascita": "1787",
     "morte": 1863,
+    "alias": [
+      "Franz Gruber",
+      "Franz X. Gruber"
+    ],
     "brani": [
       "stille-nacht-gruber"
     ]
@@ -221,6 +262,9 @@
     "nascita": "1845",
     "morte": 1924,
     "periodo": "romantico",
+    "alias": [
+      "Gabriel Faure"
+    ],
     "brani": [
       "tantum-ergo-faure"
     ]
@@ -245,6 +289,16 @@
       "Händel",
       "Haendel",
       "Georg Friedrich Händel"
+    ],
+    "alias": [
+      "Handel",
+      "Händel",
+      "Haendel",
+      "Georg Friedrich Händel",
+      "Georg Friedrich Handel",
+      "G. F. Handel",
+      "G.F. Handel",
+      "G. F. Händel"
     ],
     "brani": [
       "canticorum-jubilo-g-handel",
@@ -305,6 +359,10 @@
     "varianti": [
       "Gastoldi"
     ],
+    "alias": [
+      "Giovanni Gastoldi",
+      "Gastoldi"
+    ],
     "brani": [
       "l-innamorato-a-lieta-vita-gastoldi"
     ]
@@ -319,6 +377,12 @@
     "periodo": "rinascimento",
     "varianti": [
       "Pierluigi da Palestrina"
+    ],
+    "alias": [
+      "Palestrina",
+      "da Palestrina",
+      "Pierluigi da Palestrina",
+      "G. P. da Palestrina"
     ],
     "brani": [
       "sicut-cervus-palestrina",
@@ -417,8 +481,13 @@
     "varianti": [
       "Jacobus Handl"
     ],
+    "alias": [
+      "Jacobus Handl",
+      "Jacob Handl",
+      "Jacobus Gallus Carniolus"
+    ],
     "brani": [
-      "handl-gallus-quod-chorus-vatum",
+      "quod-chorus-vatum-gallus",
       "resonet-in-laudibus-gallus"
     ]
   },
@@ -442,6 +511,9 @@
     "nascita": "1833",
     "morte": 1897,
     "periodo": "romantico",
+    "alias": [
+      "Brahms"
+    ],
     "brani": [
       "gaudeamus-igitur-brahms"
     ]
@@ -531,6 +603,10 @@
     "varianti": [
       "Franz Joseph Haydn"
     ],
+    "alias": [
+      "Franz Joseph Haydn",
+      "J. Haydn"
+    ],
     "brani": [
       "missa-brevis-sancti-02-gloria-haydn",
       "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn"
@@ -548,6 +624,14 @@
       "Josquin Desprez",
       "Josquin"
     ],
+    "alias": [
+      "Josquin des Prés",
+      "Josquin Desprez",
+      "Josquin desPrez",
+      "Josquin Des Pres",
+      "Josquin",
+      "des Prez"
+    ],
     "brani": [
       "ave-maria-josquin",
       "tu-pauperum-refugium-josquin",
@@ -563,6 +647,9 @@
     "nascita": "1468",
     "morte": 1529,
     "periodo": "rinascimento",
+    "alias": [
+      "Encina"
+    ],
     "brani": [
       "cucu-cucu-encina",
       "triste-espana-encina"
@@ -604,6 +691,9 @@
     "nascita": "1770",
     "morte": 1827,
     "periodo": "classico",
+    "alias": [
+      "Beethoven"
+    ],
     "brani": [
       "o-salutaris-hostia-beethoven",
       "o-sanctissima-beethoven"
@@ -636,6 +726,9 @@
     "varianti": [
       "Johann Michael Haydn"
     ],
+    "alias": [
+      "Johann Michael Haydn"
+    ],
     "brani": [
       "o-esca-viatorum-haydn"
     ]
@@ -647,6 +740,9 @@
     "date": "1571–1621",
     "nascita": "1571",
     "morte": 1621,
+    "alias": [
+      "Michael Prätorius"
+    ],
     "brani": [
       "audite-silete-praetorius",
       "en-natus-est-emmanuel-praetorius",
@@ -664,6 +760,13 @@
     "varianti": [
       "Orlande de Lassus",
       "Lassus"
+    ],
+    "alias": [
+      "Orlande de Lassus",
+      "Roland de Lassus",
+      "Orlando Lasso",
+      "Lassus",
+      "Lasso"
     ],
     "brani": [
       "o-la-o-che-bon-eccho-lasso",
@@ -694,6 +797,12 @@
     "varianti": [
       "Tchesnokov",
       "Tschesnokow"
+    ],
+    "alias": [
+      "Pavel Tsjesnokov",
+      "Pavel Tchesnokov",
+      "Pavel Tschesnokow",
+      "Pavel Tchesnokoff"
     ],
     "brani": [
       "salvation-is-created-chesnokov",
@@ -737,14 +846,6 @@
       "lay-a-garland-pearsall"
     ]
   },
-  "s-s-wesley": {
-    "id": "s-s-wesley",
-    "nome": "S. S. Wesley",
-    "breve": "Wesley",
-    "brani": [
-      "lead-me-lord-samuel-sebastian-wesley"
-    ]
-  },
   "samuel-coleridge-taylor": {
     "id": "samuel-coleridge-taylor",
     "nome": "Samuel Coleridge-Taylor",
@@ -755,6 +856,14 @@
     "periodo": "romantico",
     "brani": [
       "summer-is-gone-coleridge-taylor"
+    ]
+  },
+  "samuel-sebastian-wesley": {
+    "id": "samuel-sebastian-wesley",
+    "nome": "Samuel Sebastian Wesley",
+    "breve": "Wesley",
+    "brani": [
+      "lead-me-lord-wesley"
     ]
   },
   "thomas-morley": {
@@ -780,6 +889,9 @@
     "nascita": "c. 1505",
     "morte": 1585,
     "periodo": "rinascimento",
+    "alias": [
+      "Tallis"
+    ],
     "brani": [
       "verily-verily-i-say-unto-you-tallis",
       "o-lord-in-thee-is-all-my-trust-tallis",
@@ -799,6 +911,11 @@
       "Tomas Luis de Victoria",
       "Tomás Luis de Victoria",
       "Victoria"
+    ],
+    "alias": [
+      "Tomas Luis de Victoria",
+      "Victoria",
+      "T. L. de Victoria"
     ],
     "brani": [
       "o-vos-omnes-victoria",
@@ -826,6 +943,9 @@
     "nascita": "c. 1540",
     "morte": 1623,
     "periodo": "rinascimento",
+    "alias": [
+      "Byrd"
+    ],
     "brani": [
       "ave-verum-corpus-byrd",
       "sing-joyfully-byrd",
@@ -841,6 +961,12 @@
     "nascita": "1756",
     "morte": 1791,
     "periodo": "classico",
+    "alias": [
+      "W. A. Mozart",
+      "W.A. Mozart",
+      "WA Mozart",
+      "Mozart"
+    ],
     "brani": [
       "jubilate-deo-mozart",
       "lacrymosa-from-requiem-mozart",

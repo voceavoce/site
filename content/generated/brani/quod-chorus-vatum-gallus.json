@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "slug": "handl-gallus-quod-chorus-vatum",
+  "slug": "quod-chorus-vatum-gallus",
   "linea": "coro",
   "rank": "063",
   "ranks": [
     "063"
   ],
-  "titolo": "Handl-Gallus - Quod Chorus vatum",
+  "titolo": "Quod Chorus vatum",
   "compositore": {
     "id": "jacobus-gallus",
     "nome": "Jacobus Gallus",
@@ -17,6 +17,11 @@
     "periodo": "rinascimento",
     "varianti": [
       "Jacobus Handl"
+    ],
+    "alias": [
+      "Jacobus Handl",
+      "Jacob Handl",
+      "Jacobus Gallus Carniolus"
     ]
   },
   "generi": [

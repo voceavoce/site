@@ -49,6 +49,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — CI «Check» rossa dal commit `5a6c69f`: fallisce solo il controllo di accessibilità (contrasto delle sigle voce e del ♪ nelle card senza miniatura; regola axe `frame-tested` sull'iframe YouTube, da escludere perché cross-origin). Correzione affidata all'agente di B7. Regola da ora: prima di ogni push con codice, oltre a `npm run check` lanciare anche `npm run a11y`.
 
+- 2026-10-16 — B7 fatto (Sonnet): ricerca Pagefind in 3 lingue (/cerca/, /en/search/, /es/buscar/) con filtri compositore/linea/voce/stagione/genere, conteggio aria-live, stato nell'URL, campo di ricerca nella home; indicizzate solo le schede pubblicabili (41 per lingua). Corretti gli errori di accessibilità della CI (contrasto sigle voce e ♪ delle card; `frame-tested` escluso per l'iframe YouTube) e lo script `npm run a11y` che restava appeso. Verificato: `npm run check` verde, pa11y/axe 10/10 pagine 0 errori. Dati del sito rigenerati dalla pipeline (R4): 2 slug cambiati, i compositori ora portano anche gli `alias` del registro.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.

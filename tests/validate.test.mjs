@@ -84,7 +84,7 @@ test("contenuto reale del repo", () => {
   assert.deepEqual(validate().errors, []);
 });
 
-test("a11y-urls: home nelle 3 lingue", () => {
+test("a11y-urls: home, ricerca nelle 3 lingue e un indice", () => {
   const urls = sampleUrls("http://x:1", "/inesistente");
-  assert.deepEqual(urls, ["http://x:1/", "http://x:1/en/", "http://x:1/es/"]);
+  assert.deepEqual(urls, ["/", "/en/", "/es/", "/cerca/", "/en/search/", "/es/buscar/", "/autori/"].map((p) => "http://x:1" + p));
 });

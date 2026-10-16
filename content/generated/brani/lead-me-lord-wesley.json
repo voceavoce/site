@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "slug": "lead-me-lord-samuel-sebastian-wesley",
+  "slug": "lead-me-lord-wesley",
   "linea": "coro",
   "rank": "111",
   "ranks": [
     "111"
   ],
-  "titolo": "Lead Me Lord - Samuel Sebastian Wesley",
+  "titolo": "Lead Me Lord",
   "compositore": {
-    "id": "s-s-wesley",
-    "nome": "S. S. Wesley",
+    "id": "samuel-sebastian-wesley",
+    "nome": "Samuel Sebastian Wesley",
     "breve": "Wesley"
   },
   "generi": [],

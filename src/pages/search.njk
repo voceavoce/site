@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: site.langs
+  size: 1
+  alias: lang
+permalink: "{{ lang | routeUrl('search') }}index.html"
+routeSection: search
+eleventyComputed:
+  title: "{{ 'search.title' | t(lang) | safe }}"
+  description: "{{ 'search.description' | t(lang) | safe }}"
+eleventyExcludeFromCollections: true
+---
+{#- Ricerca (B7). Senza JS: spiegazione + indici. Con JS: search.js attiva il modulo (Pagefind). La pagina non ha data-pagefind-body, quindi non e' indicizzata. -#}
+<div class="wrap list-page search-page">
+  <header class="list-head">
+    <h1>{{ 'search.h1' | t(lang) }}</h1>
+    <p class="lead">{{ 'search.intro' | t(lang) }}</p>
+  </header>
+
+  <p class="search-nojs" data-search-nojs>{{ 'search.nojs' | t(lang) }}</p>
+
+  <div class="search-app" data-search-app hidden
+    data-lang="{{ lang }}"
+    data-t="{{ {
+      count0: ('search.countNone' | t(lang)), count1: ('search.countOne' | t(lang)), countN: ('search.countMany' | t(lang)),
+      hint: ('search.hint' | t(lang)), loading: ('search.loading' | t(lang)), noResults: ('search.noResults' | t(lang)),
+      more: ('search.more' | t(lang)), error: ('search.error' | t(lang)), by: ('search.by' | t(lang)),
+      otherComposers: ('search.otherComposers' | t(lang)),
+      f_compositore: ('search.f.compositore' | t(lang)), f_linea: ('search.f.linea' | t(lang)), f_voce: ('search.f.voce' | t(lang)),
+      f_stagione: ('search.f.stagione' | t(lang)), f_genere: ('search.f.genere' | t(lang))
+    } | dump }}">
+    <form class="search-form" role="search" action="{{ lang | routeUrl('search') }}" method="get" data-search-form>
+      <label class="search-form__label" for="q">{{ 'search.label' | t(lang) }}</label>
+      <div class="search-form__row">
+        <input class="search-input" type="search" id="q" name="q" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <button class="btn" type="submit">{{ 'search.button' | t(lang) }}</button>
+      </div>
+      <details class="search-fdet" data-search-fdet>
+        <summary>{{ 'search.filters' | t(lang) }}<span data-search-active></span></summary>
+        <div class="search-filters" data-search-filters></div>
+      </details>
+      <p><button class="btn btn--ghost btn--small" type="button" data-search-reset hidden>{{ 'search.reset' | t(lang) }}</button></p>
+    </form>
+    <p class="search-count" data-search-count role="status" aria-live="polite" aria-atomic="true"></p>
+    <ol class="search-results plain" data-search-results aria-label="{{ 'search.resultsLabel' | t(lang) }}"></ol>
+    <p class="search-more" data-search-more hidden><button class="btn btn--ghost" type="button">{{ 'search.more' | t(lang) }}</button></p>
+    <p class="search-empty" data-search-empty hidden>{{ 'search.noResults' | t(lang) }}</p>
+  </div>
+
+  <nav class="search-browse" aria-labelledby="browse-h">
+    <h2 id="browse-h">{{ 'search.browseH' | t(lang) }}</h2>
+    <ul class="search-browse__list plain">
+      <li><a href="{{ lang | routeUrl('composers') }}">{{ 'nav.compositori' | t(lang) }}</a></li>
+      <li><a href="{{ lang | routeUrl('works') }}">{{ 'lists.works.h1' | t(lang) }}</a></li>
+      <li><a href="{{ lang | routeUrl('genres') }}">{{ 'lists.genres.h1' | t(lang) }}</a></li>
+      <li><a href="{{ lang | routeUrl('seasons') }}">{{ 'nav.stagioni' | t(lang) }}</a></li>
+      <li><a href="{{ lang | routeUrl('choir') }}">{{ 'nav.coro' | t(lang) }}</a></li>
+      <li><a href="{{ lang | routeUrl('arias') }}">{{ 'nav.arie' | t(lang) }}</a></li>
+      <li><a href="{{ lang | routeUrl('methods') }}">{{ 'nav.metodi' | t(lang) }}</a></li>
+    </ul>
+  </nav>
+</div>

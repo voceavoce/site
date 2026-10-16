@@ -1,11 +1,11 @@
-// Elenco di pagine campione per pa11y-ci: home nelle 3 lingue + le prime 3 schede in _site/brani/.
+// Elenco di pagine campione per pa11y-ci: home e ricerca nelle 3 lingue, un indice (/autori/) + le prime 3 schede in _site/brani/.
 // Uso: node scripts/a11y-urls.mjs [base-url] [cartella-output]  -> scrive node_modules/.cache/pa11yci.json
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 export function sampleUrls(base = "http://localhost:8080", site = "_site") {
-  const paths = ["/", "/en/", "/es/"];
+  const paths = ["/", "/en/", "/es/", "/cerca/", "/en/search/", "/es/buscar/", "/autori/"];
   const dir = path.join(site, "brani");
   if (existsSync(dir)) {
     const schede = readdirSync(dir, { withFileTypes: true })
@@ -23,6 +23,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const config = {
     defaults: {
       runners: ["axe"],
+      // frame-tested: l'iframe di YouTube (youtube-nocookie.com) e' cross-origin, axe non puo' entrarci
+      // e lo segnala come "non testato": non e' un difetto del sito.
+      ignore: ["frame-tested"],
       standard: "WCAG2AA",
       timeout: 60000,
       chromeLaunchConfig: {

@@ -27,29 +27,29 @@ eleventyExcludeFromCollections: true
       <h2 id="brief-h">{{ 'piece.brief' | t(lang) }}</h2>
       <dl class="brief__list">
         {%- if piece.organico %}
-        <div><dt>{{ 'piece.org' | t(lang) }}</dt><dd>{{ piece.organico }}</dd></div>
+        <div><dt>{{ 'piece.org' | t(lang) }}</dt> <dd>{{ piece.organico }}</dd></div>
         {%- endif %}
         {%- if piece.accompagnamento %}
-        <div><dt>{{ 'piece.acc' | t(lang) }}</dt><dd>{{ ('accomp.' ~ piece.accompagnamento) | t(lang) }}</dd></div>
+        <div><dt>{{ 'piece.acc' | t(lang) }}</dt> <dd>{{ ('accomp.' ~ piece.accompagnamento) | t(lang) }}</dd></div>
         {%- endif %}
         {%- if piece.lingua %}
-        <div><dt>{{ 'piece.textLang' | t(lang) }}</dt><dd>{{ piece.lingua | langLabel(lang) }}</dd></div>
+        <div><dt>{{ 'piece.textLang' | t(lang) }}</dt> <dd>{{ piece.lingua | langLabel(lang) }}</dd></div>
         {%- endif %}
         {%- if piece.tonalita %}
-        <div><dt>{{ 'piece.key' | t(lang) }}</dt><dd>{{ piece.tonalita | tonality(lang) }}</dd></div>
+        <div><dt>{{ 'piece.key' | t(lang) }}</dt> <dd>{{ piece.tonalita | tonality(lang) }}</dd></div>
         {%- endif %}
         {%- if piece.generi.length %}
-        <div><dt>{{ 'piece.genre' | t(lang) }}</dt><dd>{% for g in piece.generi %}<span data-pagefind-filter="genere">{{ ('genres.' ~ g) | t(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        <div><dt>{{ 'piece.genre' | t(lang) }}</dt> <dd>{% for g in piece.generi %}<span data-pagefind-filter="genere">{{ ('genres.' ~ g) | t(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
         {%- endif %}
         {%- if piece.stagioni.length %}
-        <div><dt>{{ 'piece.season' | t(lang) }}</dt><dd>{% for s in piece.stagioni %}<span data-pagefind-filter="stagione">{{ ('seasons.' ~ s) | t(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        <div><dt>{{ 'piece.season' | t(lang) }}</dt> <dd>{% for s in piece.stagioni %}<span data-pagefind-filter="stagione">{{ ('seasons.' ~ s) | t(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
         {%- endif %}
-        <div><dt>{{ 'piece.line' | t(lang) }}</dt><dd><span data-pagefind-filter="linea">{{ ('lines.' ~ piece.linea) | t(lang) }}</span></dd></div>
+        <div><dt>{{ 'piece.line' | t(lang) }}</dt> <dd><span data-pagefind-filter="linea">{{ ('lines.' ~ piece.linea) | t(lang) }}</span></dd></div>
         {%- if piece.voci.length %}
-        <div><dt>{{ 'piece.voices' | t(lang) }}</dt><dd>{% for v in piece.voci %}<span data-pagefind-filter="voce">{{ v.voce | voiceName(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        <div><dt>{{ 'piece.voices' | t(lang) }}</dt> <dd>{% for v in piece.voci %}<span data-pagefind-filter="voce">{{ v.voce | voiceName(lang) }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
         {%- endif %}
         {%- if piece.fonte_spartito %}
-        <div><dt>{{ 'piece.score' | t(lang) }}</dt><dd>{{ 'piece.scoreFrom' | tv(lang, { source: piece.fonte_spartito, license: (('license.' ~ piece.licenza_spartito) | t(lang)) if piece.licenza_spartito else '—' }) }}</dd></div>
+        <div><dt>{{ 'piece.score' | t(lang) }}</dt> <dd>{{ 'piece.scoreFrom' | tv(lang, { source: piece.fonte_spartito, license: (('license.' ~ piece.licenza_spartito) | t(lang)) if piece.licenza_spartito else '—' }) }}</dd></div>
         {%- endif %}
       </dl>
     </section>

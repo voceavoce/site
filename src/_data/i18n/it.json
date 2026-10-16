@@ -267,5 +267,37 @@
       "quaresima": "Brani della Quaresima e della Passione.",
       "mariano": "Brani in onore della Vergine Maria."
     }
+  },
+  "search": {
+    "title": "Cerca nel catalogo",
+    "description": "Cerca brani, compositori e testi nel catalogo di Voce a Voce e filtra per linea, voce, stagione e genere.",
+    "h1": "Cerca",
+    "intro": "Cerca un brano, un compositore o una parola del testo. Puoi restringere i risultati per compositore, linea, voce, stagione e genere.",
+    "label": "Cerca nel catalogo",
+    "button": "Cerca",
+    "filters": "Filtra i risultati",
+    "reset": "Azzera i filtri",
+    "f": {
+      "compositore": "Compositore",
+      "linea": "Linea",
+      "voce": "Voce",
+      "stagione": "Stagione",
+      "genere": "Genere"
+    },
+    "otherComposers": "Altri compositori ({n})",
+    "hint": "Scrivi una o più parole, oppure scegli un filtro.",
+    "countNone": "Nessun risultato",
+    "countOne": "1 risultato",
+    "countMany": "{n} risultati",
+    "loading": "Ricerca in corso…",
+    "noResults": "Nessun risultato. Prova con meno parole, controlla l'ortografia o togli qualche filtro.",
+    "browseH": "Oppure sfoglia gli indici",
+    "more": "Mostra altri risultati",
+    "error": "La ricerca non è disponibile in questo momento. Puoi comunque sfogliare gli indici qui sotto.",
+    "nojs": "La ricerca richiede JavaScript. Senza, puoi sfogliare il catalogo con gli indici qui sotto.",
+    "by": "di",
+    "resultsLabel": "Risultati della ricerca",
+    "homeLabel": "Cerca brani o compositori",
+    "homeButton": "Cerca"
   }
 }
