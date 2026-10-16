@@ -11,3 +11,8 @@ _site/
 /audio/
 /audio-local/
 .env.local
+
+# build e report dei test end-to-end (locali)
+/_site-e2e/
+/playwright-report/
+/test-results/
