@@ -342,6 +342,10 @@ export async function main(argv) {
   console.log(`Destinazione: ${cfg.remote}:${cfg.bucket}${opts.slug ? `/${opts.slug}` : ""}`);
   console.log(`File audio locali: ${locali.length}${cfg.r2 ? " (remote creato al volo dalle variabili R2_*)" : ""}`);
 
+  if (opts.sync && !opts.dryRun && !process.stdin.isTTY) {
+    console.error("--sync richiede un terminale interattivo per la conferma. Annullato.");
+    return 1;
+  }
   if (opts.sync) {
     // Anteprima obbligatoria: mostra cosa verrebbe cancellato.
     let cancellazioni = 0;
@@ -360,10 +364,6 @@ export async function main(argv) {
     }
     console.log(`\nSYNC: su R2 verrebbero CANCELLATI ${cancellazioni} file che non esistono in locale.`);
     if (opts.dryRun) return 0;
-    if (!process.stdin.isTTY) {
-      console.error("--sync richiede un terminale interattivo per la conferma. Annullato.");
-      return 1;
-    }
     if (!(await chiediConfermaBucket(cfg.bucket))) {
       console.log("Conferma non corrispondente: annullato, nessuna modifica.");
       return 1;
@@ -406,7 +406,12 @@ export async function main(argv) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  main(process.argv.slice(2)).then((code) => {
-    process.exitCode = code;
-  });
+  main(process.argv.slice(2))
+    .then((code) => {
+      process.exitCode = code;
+    })
+    .catch((err) => {
+      console.error(`Errore: ${err.message}`);
+      process.exitCode = 1;
+    });
 }

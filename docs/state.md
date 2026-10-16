@@ -66,6 +66,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — PR #1 unita dall'utente (`bb36fe5`). Workflow Deploy verde: il nuovo sito è online su voceavoce.com. Il branch di lavoro riparte da `main` per la Fase 2.
 
+- 2026-10-16 — P2 fatto (Haiku): `.gitignore` per gli audio, `.env.example` fittizio, `scripts/upload-audio.mjs` (rclone `copy` per default con un passaggio per estensione e Content-Type corretto; `--sync` solo dopo anteprima e conferma digitando il nome del bucket; credenziali solo come variabili d'ambiente; rifiuto se la cartella audio è dentro il repo e non ignorata; verifica HEAD finale), `scripts/serve-audio.mjs` (server di sviluppo con Range e CORS solo per localhost). 17 test. Da provare con rclone vero: qui rclone non c'è.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.

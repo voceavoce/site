@@ -52,7 +52,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 ## P — Player di studio, Fase 1 (ok dell'utente 2026-10-16)
 
 - [~] P1 (S) AIVideoCreator `job_sito_player`: manifest, sync.json dal modello di tempo dei video, copia del MusicXML, audio Opus/MP3 in `VOCEAVOCE_AUDIO_DIR` + test (Locus iste, Ave verum)
-- [~] P2 (H) Sito: `.gitignore` audio, `.env.example`, `scripts/upload-audio.mjs` (rclone, dry-run, nessuna cancellazione senza conferma, verifica HEAD)
+- [x] P2 (H) Sito: `.gitignore` audio, `.env.example`, `scripts/upload-audio.mjs` (rclone, dry-run, nessuna cancellazione senza conferma, verifica HEAD)
 - [~] P3 (S) Player: Web Audio + SoundTouch, mixer, loop, tempo, `resolveAudioUrl`, flag delle funzioni
 - [~] P4 (S) Partitura Verovio dal MusicXML con battuta corrente evidenziata, mobile-first
 - [ ] P5 (H) PWA: manifest + service worker che non mette in cache l'audio
