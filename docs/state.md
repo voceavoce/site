@@ -34,3 +34,11 @@ Aggiornato: 2026-10-16
 - 2026-10-16 — B1-B3 fatti (Sonnet): Eleventy 3, IT alla radice + /en/ /es/ con hreflang e canonical, design system chiaro/scuro (contrasti AA: testo 16.5/15.2:1, accento 7.1/10.8:1; sul chiaro l'ambra dei testi è scurita a #7a4a00 perché #ffc24d su chiaro dà 1.5:1), home in 3 lingue, html-validate 0 errori, nessuno scroll orizzontale a 375/1280. Corretto un testo ereditato dalla landing: «ogni brano in versione chiara e scura» era falso (la pipeline produce solo il tema chiaro), sostituito con la struttura reale della lezione. Il menu punta a pagine non ancora create (B6/B7). Font dei titoli: serif di sistema per ora.
 - 2026-10-16 — B9-B10 fatti (Haiku): 5 pagine istituzionali × 3 lingue in `src/pages/info/` (privacy aggiornata al player incorporato), componenti `ad-slot` e `affiliate` spenti, etichette in `src/_data/labels.js`, html-validate 0 errori. Allineato `affiliate.njk` al formato dei file curati (`vendor`, `url`, `label`, `enabled`). Da fare: includere `info-links.njk` nel footer e i due componenti nella scheda.
 - 2026-10-16 — B11-B12 fatti (Sonnet): `scripts/validate-content.mjs` + schemi JSON (brano, curato), 9 test; `npm run check` = validate + test + build + lint:html; workflow `deploy.yml` (main, avvio manuale, cron 04:15 UTC giornaliero, Pagefind, pa11y/axe, deploy Pages) e `check.yml` (PR e altri branch, senza deploy). pa11y sulle 3 home: 0 errori. Il deploy parte solo dopo il merge su main e il passaggio di Pages a «GitHub Actions» (M1).
+
+## Messa online (da fare quando il sito è pronto)
+
+1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
+2. Merge del branch `claude/voceavocecoro-video-portal-s3o8vi` su `main` (pull request). Il push su `main` avvia `deploy.yml`.
+3. Se il merge è avvenuto prima del passo 1: Actions → Deploy → Run workflow su `main`.
+4. Verifica: workflow verde, voceavoce.com nuovo, voceavoce.com/classic/ con la vecchia landing.
+5. Facoltativo, dal proprio computer: `git tag landing-v1 c50b793 && git push origin landing-v1`.
