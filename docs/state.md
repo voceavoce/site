@@ -68,6 +68,8 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — P2 fatto (Haiku): `.gitignore` per gli audio, `.env.example` fittizio, `scripts/upload-audio.mjs` (rclone `copy` per default con un passaggio per estensione e Content-Type corretto; `--sync` solo dopo anteprima e conferma digitando il nome del bucket; credenziali solo come variabili d'ambiente; rifiuto se la cartella audio è dentro il repo e non ignorata; verifica HEAD finale), `scripts/serve-audio.mjs` (server di sviluppo con Range e CORS solo per localhost). 17 test. Da provare con rclone vero: qui rclone non c'è.
 
+- 2026-10-16 — P1 fatto (Sonnet), commit `80f43da` su AIVideoCreator: `job_sito_player` scrive manifest, sync e partitura in `content/player/<slug>/` e gli audio (Opus mono 64k + MP3 di riserva) in `VOCEAVOCE_AUDIO_DIR`. Il sync usa `choir._timing_regions` e `_time_at`, le stesse funzioni di stem, cursore e durata. `t` include i 0,5 s di LEAD_IN, perché `job_svs_adopt` li lascia in testa agli stem Synth V; all'accompagnamento (FluidSynth, senza lead-in) si aggiungono 0,5 s in conversione. Stem cercati in `runtime/inbox/choir/<job>/stems/<V>.svs.wav|flac` e `accompaniment.wav`. Prove: 002 Locus iste 63 bpm, 48 battute, 189,6 s, una corona a b. 29; 475 Ave verum 72 bpm, 46 battute, 158,3 s. 79 test. Da verificare sulla macchina RENDER: durate reali degli stem e sincronia all'ascolto. Trovato un comportamento esistente della pipeline: una sola corona a metà brano viene trattata come finale e l'allargando finale finisce lì (task P8, da decidere).
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.

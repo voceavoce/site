@@ -51,10 +51,11 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 ## P — Player di studio, Fase 1 (ok dell'utente 2026-10-16)
 
-- [~] P1 (S) AIVideoCreator `job_sito_player`: manifest, sync.json dal modello di tempo dei video, copia del MusicXML, audio Opus/MP3 in `VOCEAVOCE_AUDIO_DIR` + test (Locus iste, Ave verum)
+- [x] P1 (S) AIVideoCreator `job_sito_player`: manifest, sync.json dal modello di tempo dei video, copia del MusicXML, audio Opus/MP3 in `VOCEAVOCE_AUDIO_DIR` + test (Locus iste, Ave verum)
 - [x] P2 (H) Sito: `.gitignore` audio, `.env.example`, `scripts/upload-audio.mjs` (rclone, dry-run, nessuna cancellazione senza conferma, verifica HEAD)
 - [~] P3 (S) Player: Web Audio + SoundTouch, mixer, loop, tempo, `resolveAudioUrl`, flag delle funzioni
 - [~] P4 (S) Partitura Verovio dal MusicXML con battuta corrente evidenziata, mobile-first
 - [ ] P5 (H) PWA: manifest + service worker che non mette in cache l'audio
-- [ ] P6 (H) `docs/player.md`, `docs/r2-setup.md` (con la policy CORS)
+- [~] P6 (H) `docs/player.md`, `docs/r2-setup.md` (con la policy CORS) — r2-setup fatto; player.md da completare a fine Fase 1
 - [ ] P7 (S) Verifica su telefono (emulazione) e desktop, sincronia controllata a orecchio dall'utente
+- [ ] P8 (O) Pipeline, da decidere con l'utente: con una sola corona a metà brano `choir._timing_regions` la tratta come corona finale e mette lì l'allargando finale (es. Locus iste, b. 28-29). Riguarda anche i video già pubblicati
