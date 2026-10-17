@@ -26,11 +26,17 @@ export function checkManifest(slug, m, sync) {
   for (const b of sync.battute) { if (!(b.t >= prev)) fail("sync.json: tempi non crescenti"); prev = b.t; }
 }
 
-export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY_ENV === "production", langs = ["it", "en", "es"] } = {}) {
+/**
+ * `pubblicati`: insieme degli slug con almeno una voce gia' visibile (video pubblicato). Se e' dato, il player di un
+ * brano non ancora pubblicato non viene costruito (ne' pagina, ne' link, ne' partitura copiata); i dati di prova "_"
+ * non dipendono da questo insieme. Senza `pubblicati` (sviluppo) si costruiscono tutti.
+ */
+export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY_ENV === "production", langs = ["it", "en", "es"], pubblicati = null } = {}) {
   const items = {};
   if (existsSync(dir)) {
     for (const d of readdirSync(dir, { withFileTypes: true })) {
       if (!d.isDirectory() || (production && isTestSlug(d.name))) continue;
+      if (pubblicati && !isTestSlug(d.name) && !pubblicati.has(d.name)) continue;
       const mp = path.join(dir, d.name, "manifest.json");
       if (!existsSync(mp)) continue;
       const manifest = JSON.parse(readFileSync(mp, "utf8"));

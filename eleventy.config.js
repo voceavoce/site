@@ -7,7 +7,8 @@ import * as fmt from "./src/_lib/format.js";
 import * as ld from "./src/_lib/jsonld.js";
 import { buildSitemap } from "./src/_lib/sitemap.js";
 import { writeFileSync } from "node:fs";
-import { loadStudio, PLAYER_DIR } from "./src/_lib/studio.js";
+import { PLAYER_DIR } from "./src/_lib/studio.js";
+import studio from "./src/_data/studio.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const i18nDir = path.join(here, "src/_data/i18n");
@@ -37,7 +38,7 @@ export default function (eleventyConfig) {
   }
   eleventyConfig.addPassthroughCopy({ "src/static-vendor/NOTICE.txt": "assets/vendor/NOTICE.txt" });
   // MusicXML del player: /player-data/<slug>/score.musicxml (i dati di prova "_" restano fuori in produzione)
-  for (const it of Object.values(loadStudio({ dir: PLAYER_DIR, langs: site.langs }).items)) {
+  for (const it of Object.values(studio.items)) {
     eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.scoreFile)]: `player-data/${it.slug}/score.musicxml` });
   }
   eleventyConfig.addWatchTarget("src/_data/i18n/");

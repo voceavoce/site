@@ -146,6 +146,11 @@ test("studio: manifest con URL assoluto rifiutato; dati di prova esclusi in prod
   assert.deepEqual(dev.slugs, ["_prova", "vero"]);
   assert.deepEqual(Object.keys(dev.linked), ["vero"]); // nessun link verso i dati di prova
   assert.equal(dev.schede.length, 6);
+  // solo i brani con un video gia' pubblicato: gli altri non hanno ne' pagina, ne' link, ne' partitura
+  const pub = loadStudio({ dir, production: false, pubblicati: new Set(["altro"]) });
+  assert.deepEqual(pub.slugs, ["_prova"]); // "vero" non e' pubblicato; i dati di prova restano (solo fuori produzione)
+  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set(["vero"]) }).slugs, ["vero"]);
+  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set() }).slugs, []);
 });
 
 test("latenza dello stretcher: tabella monotona, interpolata e limitata", () => {

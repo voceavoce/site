@@ -54,6 +54,17 @@ function group(pieces, keysOf) {
   return out;
 }
 
+/** Slug dei brani con almeno una voce visibile adesso: sono i soli per cui il player e' pubblicabile. */
+export function publishedSlugs(now = site.buildTime) {
+  const dir = path.join(genDir, "brani");
+  return new Set(
+    readdirSync(dir).filter((f) => f.endsWith(".json"))
+      .map((f) => readJson(path.join(dir, f)))
+      .filter((g) => splitVoices(g.voci, now).visibili.length > 0)
+      .map((g) => g.slug),
+  );
+}
+
 export function buildCatalog(now = site.buildTime) {
   const compositori = readJson(path.join(genDir, "compositori.json"));
   const opere = readJson(path.join(genDir, "opere.json"));
