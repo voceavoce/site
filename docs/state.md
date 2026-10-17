@@ -49,6 +49,7 @@ Aggiornato: 2026-10-16
 - **Dominio e posta su Aruba, non si toccano** (utente 2026-10-16): niente spostamento del DNS su Cloudflare per ora, e MAI il trasferimento della registrazione, che farebbe cessare la casella info@voceavoce.com. Gli audio li serve un Cloudflare Worker su `*.workers.dev` collegato al bucket R2 privato; il CORS sta nel Worker; il deploy del Worker lo fa l'utente con wrangler.
 - **Statistiche** (utente 2026-10-17): Google Search Console + Cloudflare Web Analytics, senza cookie; sul DNS Aruba si aggiunge solo il TXT di Google. Guida `docs/statistiche.md`.
 - **Lingue DE/FR del sito** (utente 2026-10-17): l'interfaccia resta IT/EN/ES per ora; DE e FR si aggiungono insieme alle traduzioni dei testi cantati e alle note (C1/C2 → C3), così le schede nascono complete. Motivo: le note della pipeline esistono solo in it/en/es, e schede DE/FR senza testo proprio sarebbero contenuto sottile per Google.
+- **Testi e note** (utente 2026-10-17): prima A9 (testi cantati nell'export); traduzioni pubblicate anche se non rivista, con l'etichetta «non rivista»; note DE/FR generate nella pipeline (`nota_descrizione` con de/fr), non solo nel sito.
 
 ## Fatti accertati
 

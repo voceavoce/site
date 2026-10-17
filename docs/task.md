@@ -13,6 +13,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] A6 (H) `.env.example`: `VOCEAVOCE_SITE_DIR`; skill `voceavoce-publish-choir`: passo finale export + commit del sito
 - [x] A7 (H) `CLAUDE.md`: una riga sul nuovo export; numero T-905 in `tasks.md`
 - [ ] A8 (S) primo export reale verso `voceavoce/site/content/generated/` + commit slug in roadmap — il branch è su main dal 2026-10-16: da lanciare sul PC dell'utente con lo STAGE 5 della skill
+- [~] A9 (S) (ok utente 2026-10-17) Testi cantati nell'export (T-906, branch `claude/voceavocecoro-video-portal-s3o8vi` di AIVideoCreator): ripiego sui testi comuni `_comuni/`, anomalie (surrexit senza testo, «Testo» in testa), `slug_sito` salvati in roadmap; elenco dei brani usciti ancora senza testo → ricerca con gli strumenti del gate dei testi
 
 ## B — Sito (`voceavoce/site`, branch `claude/voceavocecoro-video-portal-s3o8vi`)
 
@@ -42,9 +43,9 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 ## C — Contenuti editoriali (costano token: stima prima di partire)
 
-- [ ] C1 (O) (rimandato dall'utente, 2026-10-16) Traduzioni dei 19 testi comuni (`testi/_comuni`) in IT/EN/ES/DE/FR
+- [ ] C1 (O) (dopo A9; decisione utente 2026-10-17: le traduzioni non rivista si pubblicano con l'etichetta «non rivista», campo `reviewed: false`) Traduzioni dei 19 testi comuni (`testi/_comuni`) in IT/EN/ES/DE/FR
 - [ ] C2 (S) Note dei brani con video pubblici
-- [ ] C3 (S) Interfaccia in **DE e FR** (decisione utente 2026-10-17: insieme a C1/C2, non prima): `de.json`/`fr.json` (316 testi ciascuno), 5 pagine istituzionali per lingua, percorsi localizzati, etichette di generi e stagioni, `site.langs`; note dei brani anche in DE/FR (oggi la pipeline le dà solo in it/en/es, `_NOTA_LINGUE` in `sito.py`), così le schede DE/FR nascono complete e non sono contenuto sottile (~730 → ~1.200 pagine)
+- [ ] C3 (S) Interfaccia in **DE e FR** (decisione utente 2026-10-17: insieme a C1/C2, non prima): `de.json`/`fr.json` (316 testi ciascuno), 5 pagine istituzionali per lingua, percorsi localizzati, etichette di generi e stagioni, `site.langs`; note dei brani anche in DE/FR **nella pipeline** (decisione utente 2026-10-17: `nota_descrizione` del contratto estesa a de/fr, `_NOTA_LINGUE` in `sito.py`; servono anche alle localizzazioni YouTube), così le schede DE/FR nascono complete e non sono contenuto sottile (~730 → ~1.200 pagine)
 
 ## Manuale (utente)
 
