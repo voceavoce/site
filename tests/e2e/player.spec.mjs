@@ -240,7 +240,7 @@ test.describe("tastiera e ARIA", () => {
     for (let i = 0; i < 60; i++) {
       const info = await page.evaluate(() => {
         const e = document.activeElement;
-        const d = [...Object.keys(e.dataset)].find((k) => /^(zoomOut|zoomIn|loopPick|score|loopFrom|loopTo|loopToggle|volume|mute|solo|myvoiceSelect|myvoice|play|seek|speed)$/.test(k));
+        const d = [...Object.keys(e.dataset)].find((k) => /^(zoomOut|zoomIn|scoreOptionsToggle|loopPick|score|loopFrom|loopTo|loopToggle|volume|mute|solo|myvoiceSelect|myvoice|play|seek|speed)$/.test(k));
         const riga = e.closest("[data-track]")?.dataset.track;
         const c = getComputedStyle(e);
         return { id: d ? d + (riga ? `:${riga}` : "") : null, visibile: e.matches(":focus-visible"), contorno: c.outlineStyle !== "none" && parseFloat(c.outlineWidth) > 0 || c.boxShadow !== "none" };
@@ -249,7 +249,7 @@ test.describe("tastiera e ARIA", () => {
       if (info.id === "loopToggle" && visti.filter((x) => x === "loopToggle").length === 2) break; // ultimo controllo della barra
       await page.keyboard.press("Tab");
     }
-    const atteso = ["zoomOut", "zoomIn", "loopPick", "score", "loopFrom", "loopTo", "loopToggle",
+    const atteso = ["zoomOut", "zoomIn", "scoreOptionsToggle", "score", "loopFrom", "loopTo", "loopPick", "loopToggle",
       ...CHIAVI.flatMap((k) => [`volume:${k}`, `mute:${k}`, `solo:${k}`]),
       "myvoiceSelect", "myvoice", "play", "seek", "speed", "loopToggle"];
     expect(visti).toEqual(atteso);

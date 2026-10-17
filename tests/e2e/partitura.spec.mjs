@@ -216,6 +216,7 @@ test.describe("scelta della battuta toccando la partitura", () => {
   /** Punto (px di pagina) nel mezzo di una battuta, in alto nel suo sistema: spesso e' spazio vuoto, senza segni. */
   const centro = (page, i) => page.evaluate((k) => {
     const g = document.querySelectorAll("[data-score] g.measure")[k];
+    document.querySelector("[data-score]").scrollIntoView({ block: "center", behavior: "instant" }); // il tasto Scegli e' piu' in basso: la pagina puo' essere scorsa
     const r = g.getBoundingClientRect(), s = g.closest("g.system").getBoundingClientRect();
     return { x: r.left + r.width * 0.5 + 3, y: s.top + s.height * 0.1 };
   }, i);
