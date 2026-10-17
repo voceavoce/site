@@ -41,9 +41,10 @@ export async function createScore({ container, xmlUrl, onMeasureTap, onError }) 
   const tk = new VerovioToolkit(mod);
   if (!tk.loadData(abbreviaParti(xml))) throw new Error("MusicXML non leggibile da Verovio");
 
-  // Zoom iniziale un passo sopra il vecchio 50 (note piu' leggibili); sugli schermi larghi, dove la partitura e' a tutta
-  // larghezza, due passi (a 50 starebbe tutta su un rigo con note minuscole). Con A- / A+ si cambia.
-  let zoom = container.clientWidth >= 800 ? 75 : 60;
+  // Zoom iniziale: note ben leggibili senza dover premere A+. Piu' alto sugli schermi larghi (partitura a tutta
+  // larghezza), piu' basso sui telefoni. Con A- / A+ si cambia.
+  const w0 = container.clientWidth;
+  let zoom = w0 >= 800 ? 100 : w0 >= 560 ? 75 : 60;
   let measures = [];
   let current = -1;
   let lastWidth = 0;
