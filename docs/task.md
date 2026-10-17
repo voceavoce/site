@@ -44,6 +44,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 - [ ] C1 (O) (rimandato dall'utente, 2026-10-16) Traduzioni dei 19 testi comuni (`testi/_comuni`) in IT/EN/ES/DE/FR
 - [ ] C2 (S) Note dei brani con video pubblici
+- [ ] C3 (S) Interfaccia in **DE e FR** (decisione utente 2026-10-17: insieme a C1/C2, non prima): `de.json`/`fr.json` (316 testi ciascuno), 5 pagine istituzionali per lingua, percorsi localizzati, etichette di generi e stagioni, `site.langs`; note dei brani anche in DE/FR (oggi la pipeline le dà solo in it/en/es, `_NOTA_LINGUE` in `sito.py`), così le schede DE/FR nascono complete e non sono contenuto sottile (~730 → ~1.200 pagine)
 
 ## Manuale (utente)
 

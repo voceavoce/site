@@ -48,6 +48,7 @@ Aggiornato: 2026-10-16
 
 - **Dominio e posta su Aruba, non si toccano** (utente 2026-10-16): niente spostamento del DNS su Cloudflare per ora, e MAI il trasferimento della registrazione, che farebbe cessare la casella info@voceavoce.com. Gli audio li serve un Cloudflare Worker su `*.workers.dev` collegato al bucket R2 privato; il CORS sta nel Worker; il deploy del Worker lo fa l'utente con wrangler.
 - **Statistiche** (utente 2026-10-17): Google Search Console + Cloudflare Web Analytics, senza cookie; sul DNS Aruba si aggiunge solo il TXT di Google. Guida `docs/statistiche.md`.
+- **Lingue DE/FR del sito** (utente 2026-10-17): l'interfaccia resta IT/EN/ES per ora; DE e FR si aggiungono insieme alle traduzioni dei testi cantati e alle note (C1/C2 → C3), così le schede nascono complete. Motivo: le note della pipeline esistono solo in it/en/es, e schede DE/FR senza testo proprio sarebbero contenuto sottile per Google.
 
 ## Fatti accertati
 
@@ -117,6 +118,7 @@ Aggiornato: 2026-10-16
 - 2026-10-16 — **Fase 3 fatta (P12–P14):** test end-to-end Playwright in `tests/e2e/` (13 player + 5 PWA, compreso l'aggiornamento del SW che cancella le cache `vav-*` vecchie e l'audio mai in cache con Range e workers.dev), `npm run e2e`, passo nel workflow Check con report caricato se fallisce. 3 run di fila verdi (~45 s). Nessun bug trovato in player o SW. `@playwright/test` fissato a 1.56.1 (stessa versione del Chromium in /opt/pw-browsers).
 - 2026-10-17 — **Statistiche (S1):** GitHub Pages non dà statistiche delle visite. Decisione utente: Google Search Console (verifica con TXT sul DNS Aruba, nessuno script) + Cloudflare Web Analytics (senza cookie, stesso account dell'audio, nessuno spostamento del DNS). Codice pronto e spento (`CLOUDFLARE_ANALYTICS_TOKEN = null`), guida `docs/statistiche.md`, compito utente U8.
 - 2026-10-17 — **P15 fatto:** `tests/e2e/sync-audio.spec.mjs` misura il clic che esce davvero dal grafo audio (AudioWorklet «spia» su dry+wet, `getOutputTimestamp`) e lo confronta con il cambio di battuta evidenziata. Con compensazione: mediana −5…+8 ms a 1×, +11…+26 a 0,75×, +2…+8 a 0,5× (max 49). Senza compensazione dello stretcher o del dispositivo: −46…−116 ms, il test fallisce. Soglie: |mediana| ≤ 40 ms, max ≤ 80 ms. Suite e2e ~105 s, 3 run verdi. Nota: in Chrome `getOutputTimestamp()` include già la latenza d'uscita, quindi il test non somma `outputLatency`.
+- 2026-10-17 — Decisione sulle lingue: DE/FR rimandate a C3, insieme a C1/C2 (vedi Decisioni prese).
 
 ## Messa online (da fare quando il sito è pronto)
 
