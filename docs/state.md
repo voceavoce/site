@@ -124,6 +124,12 @@ Aggiornato: 2026-10-16
 - 2026-10-17 — Decisione sulle lingue: DE/FR rimandate a C3, insieme a C1/C2 (vedi Decisioni prese).
 - 2026-10-17 — **A9 fatto (T-906):** testi cantati nell'export, vedi task A9. Verificato a campione: l'Ave verum di Byrd nell'XML canta davvero «unda fluxit sanguine», quindi la variante nel testo è corretta. Scheda: nota «testo liturgico tradizionale, riportato per intero» per i testi comuni, etichetta «traduzione non rivista». Restano 35 brani usciti senza testo (A10, `docs/testi-mancanti.md`). AIVideoCreator T-906 è sul branch, non su main (A11).
 - 2026-10-17 — AIVideoCreator T-906 su main (fast-forward a d37860b, render fermi confermati). A10 (T-907) avviato: testi dei 35 brani usciti, ≥2 fonti per brano, verifica con `job_choir_testo`, solo testi di pubblico dominio.
+- 2026-10-17 — **A10 bloccato**: nella sessione cloud i siti dei testi non sono raggiungibili (DNS/proxy), nessun file scritto, nessun testo scritto a memoria. Dall'analisi degli XML (da usare alla ripresa):
+  - 053 Gorczycki «Omni die dic Mariae»: cantato in **polacco** («Dnia każdego Boga mego Matkę…»), non in latino: la lingua nel contratto va corretta;
+  - 015 Chesnokov «Tebe poem»: cantato in inglese, traduzione non standard e probabilmente moderna → da escludere dal sito salvo fonte PD;
+  - 034 Ave maris stella (Grieg): inno completo di 7 strofe, manca una chiave in `_comuni` (candidato da aggiungere);
+  - 080 Stille Nacht e 004 Star-Spangled Banner: nell'XML solo la prima strofa;
+  - 446 e 283 (Guerrero): sillabe fuse nell'XML («dea mor», «queapenas»), da gestire nel gate dei testi.
 
 ## Messa online (da fare quando il sito è pronto)
 
