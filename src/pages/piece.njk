@@ -127,6 +127,9 @@ eleventyExcludeFromCollections: true
             <p>{% for line in st %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
             {%- endfor %}
           </div>
+          {%- if piece.testo.comune %}
+          <p class="credit">{{ 'piece.commonText' | t(lang) }}</p>
+          {%- endif %}
           {%- if piece.testo.fonte %}
           <p class="credit">{{ 'piece.textSource' | t(lang) }}: {% if piece.testo.fonte.url %}<a href="{{ piece.testo.fonte.url }}" rel="noopener">{{ piece.testo.fonte.sito }}</a>{% else %}{{ piece.testo.fonte.sito }}{% endif %}</p>
           {%- endif %}
