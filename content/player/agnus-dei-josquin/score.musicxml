@@ -5,7 +5,7 @@
   <identification>
     <creator type="composer">Music21</creator>
     <encoding>
-      <encoding-date>2026-09-28</encoding-date>
+      <encoding-date>2026-10-17</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -16,64 +16,47 @@
   </identification>
   <defaults>
     <scaling>
-      <millimeters>7.05556</millimeters>
+      <millimeters>7</millimeters>
       <tenths>40</tenths>
     </scaling>
-    <page-layout>
-      <page-height>1683.36</page-height>
-      <page-width>1190.88</page-width>
-      <page-margins>
-        <left-margin>56.6929</left-margin>
-        <right-margin>56.6929</right-margin>
-        <top-margin>56.6929</top-margin>
-        <bottom-margin>113.386</bottom-margin>
-      </page-margins>
-    </page-layout>
-    <word-font font-family="FreeSerif" font-size="10" />
-    <lyric-font font-family="FreeSerif" font-size="11" />
   </defaults>
   <part-list>
-    <part-group number="1" type="start">
-      <group-symbol>bracket</group-symbol>
-      <group-barline>yes</group-barline>
-    </part-group>
     <score-part id="P1">
-      <part-name print-object="no">Soprano</part-name>
+      <part-name>Soprano</part-name>
       <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I4656ee80a266197480db5fd761d9b30b">
+      <score-instrument id="I2d0dadb08b91acc8027edfa920604331">
         <instrument-name>Soprano</instrument-name>
         <instrument-abbreviation>Ch</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I4656ee80a266197480db5fd761d9b30b">
+      <midi-instrument id="I2d0dadb08b91acc8027edfa920604331">
         <midi-channel>1</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name print-object="no">Tenor</part-name>
+      <part-name>Tenor</part-name>
       <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I10122db61ee489c74d59a50388a23e74">
+      <score-instrument id="I872ba3c588ac6670055880e27e072c54">
         <instrument-name>Tenor</instrument-name>
         <instrument-abbreviation>Ch</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I10122db61ee489c74d59a50388a23e74">
+      <midi-instrument id="I872ba3c588ac6670055880e27e072c54">
         <midi-channel>2</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name print-object="no">Bass</part-name>
+      <part-name>Bass</part-name>
       <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="Ibc0254822044e786701888f9417acf06">
+      <score-instrument id="I39d94aafa52a67fcd8666784cc4fe03b">
         <instrument-name>Bass</instrument-name>
         <instrument-abbreviation>Ch</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ibc0254822044e786701888f9417acf06">
+      <midi-instrument id="I39d94aafa52a67fcd8666784cc4fe03b">
         <midi-channel>3</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
-    <part-group number="1" type="stop" />
   </part-list>
   <!--=========================== Part 1 ===========================-->
   <part id="P1">
@@ -1706,13 +1689,6 @@
         <bar-style>light-heavy</bar-style>
       </barline>
     </measure>
-    <!--========================= Measure 26 =========================-->
-    <measure implicit="no" number="26">
-      <note>
-        <rest measure="yes" />
-        <duration>20160</duration>
-      </note>
-    </measure>
   </part>
   <!--=========================== Part 2 ===========================-->
   <part id="P2">
@@ -2180,13 +2156,6 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
       </barline>
-    </measure>
-    <!--========================= Measure 26 =========================-->
-    <measure implicit="no" number="26">
-      <note>
-        <rest measure="yes" />
-        <duration>20160</duration>
-      </note>
     </measure>
   </part>
   <!--=========================== Part 3 ===========================-->
@@ -3007,13 +2976,6 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
       </barline>
-    </measure>
-    <!--========================= Measure 26 =========================-->
-    <measure implicit="no" number="26">
-      <note>
-        <rest measure="yes" />
-        <duration>20160</duration>
-      </note>
     </measure>
   </part>
 </score-partwise>

@@ -5,7 +5,7 @@
   <identification>
     <creator type="composer">Music21</creator>
     <encoding>
-      <encoding-date>2026-09-19</encoding-date>
+      <encoding-date>2026-10-17</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -1455,13 +1455,6 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
       </barline>
-    </measure>
-    <!--========================= Measure 36 =========================-->
-    <measure implicit="no" number="36">
-      <note>
-        <rest measure="yes" />
-        <duration>40320</duration>
-      </note>
     </measure>
   </part>
   <!--=========================== Part 2 ===========================-->
@@ -2979,13 +2972,6 @@
         <bar-style>light-heavy</bar-style>
       </barline>
     </measure>
-    <!--========================= Measure 36 =========================-->
-    <measure implicit="no" number="36">
-      <note>
-        <rest measure="yes" />
-        <duration>40320</duration>
-      </note>
-    </measure>
   </part>
   <!--=========================== Part 3 ===========================-->
   <part id="P28f172bdf970393b2d572def2ccb9206">
@@ -4269,13 +4255,6 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
       </barline>
-    </measure>
-    <!--========================= Measure 36 =========================-->
-    <measure implicit="no" number="36">
-      <note>
-        <rest measure="yes" />
-        <duration>40320</duration>
-      </note>
     </measure>
   </part>
 </score-partwise>
