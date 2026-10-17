@@ -219,3 +219,14 @@ test("tempo udibile nel loop: rientra dopo il motore e non esce mai dal loop", (
     assert.ok(p >= 5 - 1e-9 && p <= 7 + 1e-9 || t < 1.15 && p >= 6 - 1e-9, `fuori dal loop a t=${t}: ${p}`);
   }
 });
+
+test("titolo della pagina del player: al massimo 70 caratteri col suffisso del sito", async () => {
+  const { titoloBreve } = await import("../src/_lib/study-title.js");
+  const lungo = "While shepherds watched their flocks by night (Allison, from the Christmas collection)";
+  for (const lang of ["it", "en", "es"]) {
+    const t = titoloBreve(lang, lungo);
+    assert.ok(t.endsWith("…"), lang);
+    assert.ok(t.length < lungo.length);
+    assert.equal(titoloBreve(lang, "Locus iste"), "Locus iste");
+  }
+});

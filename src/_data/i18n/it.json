@@ -323,7 +323,7 @@
     "pickHint": "Con questa opzione attiva, tocca una battuta per l'inizio e un'altra per la fine del passaggio; con l'opzione spenta, un tocco porta la riproduzione a quella battuta.",
     "scoreLabel": "Partitura di {title}",
     "mixer": "Mixer",
-    "mixerHint": "Regola il volume di ogni voce, silenziala (Muta) o ascoltala da sola (Solo).",
+    "mixerHint": "Regola il volume di ogni voce, silenziala (Muta) o ascoltala da sola (Solo mette in muta tutte le altre: per un duetto togli la muta a un'altra voce).",
     "volume": "Volume: {voice}",
     "mute": "Muta",
     "solo": "Solo",

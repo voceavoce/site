@@ -1,5 +1,6 @@
 import { routeUrl } from "../_data/routes.js";
 import { t } from "../_lib/format.js";
+import { titoloBreve } from "../_lib/study-title.js";
 
 export default {
   eleventyComputed: {
@@ -10,7 +11,7 @@ export default {
     routeSlug: (d) => d.entry.slug,
     permalink: (d) => `${routeUrl(d.entry.lang, "study", d.entry.slug)}index.html`,
     pieceTitle: (d) => d.catalog.perSlug[d.entry.slug]?.titolo ?? d.studio.items[d.entry.slug].manifest.titolo,
-    title: (d) => t("study.pageTitle", d.entry.lang, { title: d.catalog.perSlug[d.entry.slug]?.titolo ?? d.studio.items[d.entry.slug].manifest.titolo }),
+    title: (d) => t("study.pageTitle", d.entry.lang, { title: titoloBreve(d.entry.lang, d.catalog.perSlug[d.entry.slug]?.titolo ?? d.studio.items[d.entry.slug].manifest.titolo) }),
     description: (d) => t("study.desc", d.entry.lang, { title: d.catalog.perSlug[d.entry.slug]?.titolo ?? d.studio.items[d.entry.slug].manifest.titolo }),
     noindex: () => true, // per ora il player non si indicizza
     breadcrumbs: (d) => {

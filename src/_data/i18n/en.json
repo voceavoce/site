@@ -323,7 +323,7 @@
     "pickHint": "When on, tap one bar for the start and another for the end of the passage; when off, a tap moves playback to that bar.",
     "scoreLabel": "Score of {title}",
     "mixer": "Mixer",
-    "mixerHint": "Set the volume of each voice, silence it (Mute) or hear it alone (Solo).",
+    "mixerHint": "Set the volume of each voice, silence it (Mute) or hear it alone (Solo mutes all the others: for a duet, unmute one more voice).",
     "volume": "Volume: {voice}",
     "mute": "Mute",
     "solo": "Solo",

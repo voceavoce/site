@@ -323,7 +323,7 @@
     "pickHint": "Con esta opción activada, toca un compás para el inicio y otro para el final del pasaje; desactivada, un toque lleva la reproducción a ese compás.",
     "scoreLabel": "Partitura de {title}",
     "mixer": "Mezclador",
-    "mixerHint": "Ajusta el volumen de cada voz, silénciala (Silenciar) o escúchala sola (Solo).",
+    "mixerHint": "Ajusta el volumen de cada voz, silénciala (Silenciar) o escúchala sola (Solo silencia todas las demás: para un dúo, quita el silencio a otra voz).",
     "volume": "Volumen: {voice}",
     "mute": "Silenciar",
     "solo": "Solo",
