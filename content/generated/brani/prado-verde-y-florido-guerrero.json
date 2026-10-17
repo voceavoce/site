@@ -29,26 +29,190 @@
   "tempo_bpm": 80,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "es",
+    "testo": "Prado verde y florido, fuentes claras,\nalegres arboledas y sombrías.\nPues veis las penas mías cada hora,\ncontadlas blandamente a mi pastora,\nque si conmigo es dura,\nquizá la ablandara vuestra frescura.\nEl fresco y manso viento que os alegra,\nestá de mis suspiros inflamado.\nY pues os ha dañado hasta ahora,\npedid vuestro remedio a mi pastora,\nque si conmigo es dura,\nquizá la ablandará vuestra frescura.",
+    "fonte": {
+      "sito": "cristobaldemorales.net",
+      "url": "https://cristobaldemorales.net/medios/repertorio/prado_verde_florido"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "6TcWSDnxxZ8",
-      "pubblica_dal": "2026-10-12T14:30:00Z"
+      "pubblica_dal": "2026-10-12T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 137,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 265,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 442,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 567,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 693,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 818,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 943,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 963
     },
     {
       "voce": "A",
       "video_id": "2JHje6Kat7o",
-      "pubblica_dal": "2026-10-12T14:30:00Z"
+      "pubblica_dal": "2026-10-12T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 137,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 265,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 442,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 567,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 693,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 818,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 943,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 963
     },
     {
       "voce": "T",
       "video_id": "o6Lng1RAMLw",
-      "pubblica_dal": "2026-10-12T14:30:00Z"
+      "pubblica_dal": "2026-10-12T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 137,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 262,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 439,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 564,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 690,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 815,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 940,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 960
     },
     {
       "voce": "B",
       "video_id": "5yC5Ip0mIXc",
-      "pubblica_dal": "2026-10-12T14:30:00Z"
+      "pubblica_dal": "2026-10-12T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 137,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 262,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 439,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 564,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 690,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 815,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 940,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 960
     }
   ],
   "prima_uscita": "2026-10-12T14:30:00Z"

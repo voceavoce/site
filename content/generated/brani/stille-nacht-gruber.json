@@ -34,30 +34,194 @@
   "tempo_bpm": 42,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "de",
+    "testo": "Stille Nacht, heilige Nacht,\nalles schläft, einsam wacht\nnur das traute hochheilige Paar,\nholder Knabe im lockigen Haar.\nSchlaf in himmlischer Ruh'!\nStille Nacht, heilige Nacht,\nHirten erst kundgemacht\ndurch der Engel Halleluja\ntönt es laut von fern und nah:\nChrist, der Retter, ist da!\nStille Nacht, heilige Nacht!\nGottes Sohn, o wie lacht\nLieb aus deinem göttlichen Mund,\nda uns schlägt die rettende Stund,\nChrist, in deiner Geburt!",
+    "fonte": {
+      "sito": "gedichte-lyrik-poesie.de",
+      "url": "https://www.gedichte-lyrik-poesie.de/Mohr_Stille_Nacht/"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "gSHEQ02ZUa0",
       "pubblica_dal": "2026-08-29",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 174,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 340,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 570,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 732,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 894,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1056,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1218,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1078
     },
     {
       "voce": "A",
       "video_id": "Gzw-HjfYe2c",
       "pubblica_dal": "2026-08-29",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 174,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 340,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 570,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 732,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 894,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1056,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1218,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1078
     },
     {
       "voce": "T",
       "video_id": "fsasEXx86iI",
       "pubblica_dal": "2026-08-29",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 174,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 340,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 570,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 732,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 894,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1056,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1218,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1078
     },
     {
       "voce": "B",
       "video_id": "-k-55omcIbY",
       "pubblica_dal": "2026-08-29",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 174,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 340,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 570,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 732,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 894,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1056,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1218,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1078
     }
   ],
   "prima_uscita": "2026-08-29"

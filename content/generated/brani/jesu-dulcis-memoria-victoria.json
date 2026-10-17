@@ -38,22 +38,178 @@
     {
       "voce": "S",
       "video_id": "cpffXMkPonI",
-      "pubblica_dal": "2026-12-07T15:30:00Z"
+      "pubblica_dal": "2026-12-07T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 148,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 289,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 482,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 618,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 754,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 890,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1026,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1046
     },
     {
       "voce": "A",
       "video_id": "se6_irqs76s",
-      "pubblica_dal": "2026-12-07T15:30:00Z"
+      "pubblica_dal": "2026-12-07T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 148,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 289,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 482,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 618,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 754,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 890,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1026,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1046
     },
     {
       "voce": "T",
       "video_id": "WPOWe36h0KM",
-      "pubblica_dal": "2026-12-07T15:30:00Z"
+      "pubblica_dal": "2026-12-07T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 148,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 289,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 482,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 618,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 754,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 890,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1026,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1046
     },
     {
       "voce": "B",
       "video_id": "hvRKz9f7DRk",
-      "pubblica_dal": "2026-12-07T15:30:00Z"
+      "pubblica_dal": "2026-12-07T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 148,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 289,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 482,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 618,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 754,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 890,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1026,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1046
     }
   ],
   "prima_uscita": "2026-12-07T15:30:00Z"

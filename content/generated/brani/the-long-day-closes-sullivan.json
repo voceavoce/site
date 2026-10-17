@@ -42,22 +42,178 @@
     {
       "voce": "S",
       "video_id": "XHsVShhMZuY",
-      "pubblica_dal": "2027-01-17T15:30:00Z"
+      "pubblica_dal": "2027-01-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 159,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 308,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 516,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 662,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 809,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 956,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1103,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1123
     },
     {
       "voce": "A",
       "video_id": "MSYRjZOwvDY",
-      "pubblica_dal": "2027-01-17T15:30:00Z"
+      "pubblica_dal": "2027-01-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 159,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 308,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 516,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 662,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 809,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 956,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1103,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1123
     },
     {
       "voce": "T",
       "video_id": "WAi44y2Lsf4",
-      "pubblica_dal": "2027-01-17T15:30:00Z"
+      "pubblica_dal": "2027-01-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 159,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 308,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 516,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 662,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 809,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 956,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1103,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1123
     },
     {
       "voce": "B",
       "video_id": "f2TfWeCgGbg",
-      "pubblica_dal": "2027-01-17T15:30:00Z"
+      "pubblica_dal": "2027-01-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 159,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 308,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 516,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 662,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 809,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 956,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1103,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1123
     }
   ],
   "prima_uscita": "2027-01-17T15:30:00Z"

@@ -29,26 +29,190 @@
   "tempo_bpm": 126,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "es",
+    "testo": "Los reyes siguen la estrella,\nLa estrella sigue al Señor\nY el Señor de ellos y de ella,\nSigue y busca al pecador.\nTeniendo de Dios noticia,\nBuscan con divino celo,\nLa estrella al sol de justicia,\nLos Reyes al Rey del cielo.\nGuiados son de una estrella,\nLa estrella de su Señor\nY el Señor de ellos y de ella,\nSigue y busca al pecador.",
+    "fonte": {
+      "sito": "stcpress.org",
+      "url": "https://stcpress.org/pieces/los_reyes_siguen_la_estrella"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "WtH1Zy_-6Wk",
-      "pubblica_dal": "2026-09-24T14:30:00Z"
+      "pubblica_dal": "2026-09-24T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 157,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 301,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 506,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 651,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 795,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 940,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1085,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1105
     },
     {
       "voce": "A",
       "video_id": "VMiOmVw-nxo",
-      "pubblica_dal": "2026-09-24T14:30:00Z"
+      "pubblica_dal": "2026-09-24T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 157,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 303,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 508,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 652,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 797,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 942,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1086,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1106
     },
     {
       "voce": "T",
       "video_id": "r-cBW_yRGKI",
-      "pubblica_dal": "2026-09-24T14:30:00Z"
+      "pubblica_dal": "2026-09-24T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 157,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 301,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 506,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 651,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 795,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 940,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1085,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1105
     },
     {
       "voce": "B",
       "video_id": "pA-astvvES0",
-      "pubblica_dal": "2026-09-24T14:30:00Z"
+      "pubblica_dal": "2026-09-24T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 157,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 301,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 506,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 651,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 795,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 940,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1085,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1105
     }
   ],
   "prima_uscita": "2026-09-24T14:30:00Z"

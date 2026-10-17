@@ -50,32 +50,194 @@
     {
       "voce": "S1",
       "video_id": "3gDPLS0sz4M",
-      "pubblica_dal": "2027-01-23T15:30:00Z"
+      "pubblica_dal": "2027-01-23T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 320,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 625,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 930,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1235,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1255
     },
     {
       "voce": "S2",
       "video_id": "LIKM2ilA0mU",
-      "pubblica_dal": "2027-01-23T15:30:00Z"
+      "pubblica_dal": "2027-01-23T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 320,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 625,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 930,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1235,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1255
     },
     {
       "voce": "A",
       "video_id": "N9I3ESZACM0",
-      "pubblica_dal": "2027-01-23T15:30:00Z"
+      "pubblica_dal": "2027-01-23T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 320,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 625,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 930,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1235,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1255
     },
     {
       "voce": "T1",
       "video_id": "0BSKnlh6Do4",
-      "pubblica_dal": "2027-01-23T15:30:00Z"
+      "pubblica_dal": "2027-01-23T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 320,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 625,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 930,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1235,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1255
     },
     {
       "voce": "T2",
       "video_id": "0re7fEm8QjI",
-      "pubblica_dal": "2027-01-23T15:30:00Z"
+      "pubblica_dal": "2027-01-23T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 320,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 625,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 930,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1235,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1255
     },
     {
       "voce": "B",
       "video_id": "BZ-5ukvA9ZU",
-      "pubblica_dal": "2027-01-23T15:30:00Z"
+      "pubblica_dal": "2027-01-23T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 320,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 625,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 930,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1235,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1255
     }
   ],
   "prima_uscita": "2027-01-23T15:30:00Z"

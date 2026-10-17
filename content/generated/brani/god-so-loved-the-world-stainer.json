@@ -26,26 +26,190 @@
   "tempo_bpm": 69,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "God so loved the world that He gave His only begotten Son,\nThat whosoever believeth in Him should not perish,\nBut have everlasting life.\nFor God sent not His Son into the world to condemn the world,\nBut that the world through Him might be saved.",
+    "fonte": {
+      "sito": "fbcradio.org",
+      "url": "https://www.fbcradio.org/lyrics/11508/god-so-loved-the-world-from-stainers-the-crucifixion/"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "FxrhUhFZ3jI",
-      "pubblica_dal": "2026-09-23T14:30:00Z"
+      "pubblica_dal": "2026-09-23T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 443,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 748,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 962,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 1177,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1391,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1606,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1626
     },
     {
       "voce": "A",
       "video_id": "rWPxoR3gQLk",
-      "pubblica_dal": "2026-09-23T14:30:00Z"
+      "pubblica_dal": "2026-09-23T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 443,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 748,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 962,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 1177,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1391,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1606,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1626
     },
     {
       "voce": "T",
       "video_id": "_1Onj-GPiuY",
-      "pubblica_dal": "2026-09-23T14:30:00Z"
+      "pubblica_dal": "2026-09-23T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 443,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 748,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 962,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 1177,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1391,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1606,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1626
     },
     {
       "voce": "B",
       "video_id": "jV0Kne_DU5g",
-      "pubblica_dal": "2026-09-23T14:30:00Z"
+      "pubblica_dal": "2026-09-23T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 443,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 748,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 962,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 1177,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1391,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1606,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1626
     }
   ],
   "prima_uscita": "2026-09-23T14:30:00Z"

@@ -71,17 +71,110 @@
     {
       "voce": "alta",
       "video_id": "06640AmEeLo",
-      "pubblica_dal": "2026-10-07T09:00:00Z"
+      "pubblica_dal": "2026-10-07T09:00:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "LISTEN — the sung model with piano"
+        },
+        {
+          "sec": 168,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 324,
+          "titolo": "SLOW — sing along with the guide voice"
+        },
+        {
+          "sec": 545,
+          "titolo": "FULL TEMPO — sing along with the guide voice"
+        },
+        {
+          "sec": 701,
+          "titolo": "PIANO ONLY — the backing track: now you sing"
+        },
+        {
+          "sec": 857,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 877
     },
     {
       "voce": "media",
       "video_id": "VTgAHe9UF3o",
-      "pubblica_dal": "2026-10-07T09:00:00Z"
+      "pubblica_dal": "2026-10-07T09:00:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "LISTEN — the sung model with piano"
+        },
+        {
+          "sec": 168,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 324,
+          "titolo": "SLOW — sing along with the guide voice"
+        },
+        {
+          "sec": 545,
+          "titolo": "FULL TEMPO — sing along with the guide voice"
+        },
+        {
+          "sec": 701,
+          "titolo": "PIANO ONLY — the backing track: now you sing"
+        },
+        {
+          "sec": 857,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 877
     },
     {
       "voce": "bassa",
       "video_id": "Xb2VZQFkS1w",
-      "pubblica_dal": "2026-10-07T09:00:00Z"
+      "pubblica_dal": "2026-10-07T09:00:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "LISTEN — the sung model with piano"
+        },
+        {
+          "sec": 168,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 324,
+          "titolo": "SLOW — sing along with the guide voice"
+        },
+        {
+          "sec": 545,
+          "titolo": "FULL TEMPO — sing along with the guide voice"
+        },
+        {
+          "sec": 701,
+          "titolo": "PIANO ONLY — the backing track: now you sing"
+        },
+        {
+          "sec": 857,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 877
     }
   ],
   "prima_uscita": "2026-10-07T09:00:00Z"

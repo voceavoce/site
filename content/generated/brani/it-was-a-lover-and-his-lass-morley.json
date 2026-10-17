@@ -26,26 +26,190 @@
   "tempo_bpm": 160,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "It was a lover and his lass,\nWith a hey, and a ho, and a hey nonino,\nThat o’er the green cornfield did pass,\nIn springtime, the only pretty ring time,\nWhen birds do sing, hey ding a ding, ding;\nSweet lovers love the spring.\nBetween the acres of the rye,\nWith a hey, and a ho, and a hey nonino,\nThose pretty country folks would lie,\nIn springtime, the only pretty ring time,\nWhen birds do sing, hey ding a ding, ding;\nSweet lovers love the spring.\nThis carol they began that hour,\nWith a hey, and a ho, and a hey nonino,\nHow that a life was but a flower\nIn springtime, the only pretty ring time,\nWhen birds do sing, hey ding a ding, ding;\nSweet lovers love the spring.\nAnd therefore take the present time,\nWith a hey, and a ho, and a hey nonino,\nFor love is crownèd with the prime\nIn springtime, the only pretty ring time,\nWhen birds do sing, hey ding a ding, ding;\nSweet lovers love the spring.",
+    "fonte": {
+      "sito": "poetryfoundation.org",
+      "url": "https://www.poetryfoundation.org/poems/50259/song-it-was-a-lover-and-his-lass"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "d0WGPWtLGPs",
-      "pubblica_dal": "2026-10-11T14:30:00Z"
+      "pubblica_dal": "2026-10-11T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 216,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 420,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 709,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 913,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 1117,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1321,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1524,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1544
     },
     {
       "voce": "A",
       "video_id": "OK9aRnm5gN4",
-      "pubblica_dal": "2026-10-11T14:30:00Z"
+      "pubblica_dal": "2026-10-11T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 216,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 421,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 711,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 914,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 1118,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1322,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1526,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1546
     },
     {
       "voce": "T",
       "video_id": "o0Qvngv3Vz8",
-      "pubblica_dal": "2026-10-11T14:30:00Z"
+      "pubblica_dal": "2026-10-11T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 216,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 421,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 711,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 914,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 1118,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1322,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1526,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1546
     },
     {
       "voce": "B",
       "video_id": "2PLi2u0yUb0",
-      "pubblica_dal": "2026-10-11T14:30:00Z"
+      "pubblica_dal": "2026-10-11T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 216,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 421,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 711,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 914,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 1118,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1322,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1526,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1546
     }
   ],
   "prima_uscita": "2026-10-11T14:30:00Z"

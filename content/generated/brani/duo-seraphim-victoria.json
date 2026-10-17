@@ -38,26 +38,174 @@
   "tempo_bpm": 96,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Duo Seraphim, clamabant alter ad alterum:\nSanctus, Sanctus, Sanctus\nDominus Deus Sabaoth\nPlena est omnis terra gloria eius\nTres sunt qui testimonium dant in coelo:\nPater, Verbum et Spiritus Sanctus\nEt hi tres unum sunt\nSanctus, Sanctus, Sanctus\nDominus Deus Sabaoth\nPlena est omnis terra gloria eius",
+    "fonte": {
+      "sito": "genius.com",
+      "url": "https://genius.com/Tomas-luis-de-victoria-duo-seraphim-clamabant-lyrics"
+    }
+  },
   "voci": [
     {
       "voce": "S1",
       "video_id": "Gdo4lVIN7Kg",
-      "pubblica_dal": "2026-09-26T14:30:00Z"
+      "pubblica_dal": "2026-09-26T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 443,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 747,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 961,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1176,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1390,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1410
     },
     {
       "voce": "S2",
       "video_id": "KLedUjtC88A",
-      "pubblica_dal": "2026-09-26T14:30:00Z"
+      "pubblica_dal": "2026-09-26T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 440,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 745,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 959,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1173,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1387,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1407
     },
     {
       "voce": "A",
       "video_id": "470G-H-S3hM",
-      "pubblica_dal": "2026-09-26T14:30:00Z"
+      "pubblica_dal": "2026-09-26T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 440,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 745,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 959,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1173,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1387,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1407
     },
     {
       "voce": "T",
       "video_id": "WVscOyq-1B0",
-      "pubblica_dal": "2026-09-26T14:30:00Z"
+      "pubblica_dal": "2026-09-26T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 226,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 440,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 745,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 959,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1173,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1387,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1407
     }
   ],
   "prima_uscita": "2026-09-26T14:30:00Z"

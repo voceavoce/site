@@ -45,42 +45,290 @@
     {
       "voce": "S1",
       "video_id": "hF995585T5o",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 321,
+          "titolo": "IN PAIRS — your part and Alto I"
+        },
+        {
+          "sec": 475,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 783,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 803
     },
     {
       "voce": "S2",
       "video_id": "Cq4RrI2uHj8",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 321,
+          "titolo": "IN PAIRS — your part and Alto II"
+        },
+        {
+          "sec": 475,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 783,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 803
     },
     {
       "voce": "A1",
       "video_id": "B3LkUQTadVA",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 323,
+          "titolo": "IN PAIRS — your part and Soprano I"
+        },
+        {
+          "sec": 477,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 632,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 786,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 806
     },
     {
       "voce": "A2",
       "video_id": "q80c10joEG4",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 323,
+          "titolo": "IN PAIRS — your part and Soprano II"
+        },
+        {
+          "sec": 477,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 632,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 786,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 806
     },
     {
       "voce": "T1",
       "video_id": "V_z7-wzaSuw",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 323,
+          "titolo": "IN PAIRS — your part and Basso I"
+        },
+        {
+          "sec": 477,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 632,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 786,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 806
     },
     {
       "voce": "T2",
       "video_id": "--iP1xTYxKY",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 321,
+          "titolo": "IN PAIRS — your part and Basso II"
+        },
+        {
+          "sec": 475,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 783,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 803
     },
     {
       "voce": "B1",
       "video_id": "xfHnPb74jzQ",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 323,
+          "titolo": "IN PAIRS — your part and Tenore I"
+        },
+        {
+          "sec": 477,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 632,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 786,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 806
     },
     {
       "voce": "B2",
       "video_id": "DC9Y1c_03wo",
-      "pubblica_dal": "2027-01-22T15:30:00Z"
+      "pubblica_dal": "2027-01-22T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 166,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 321,
+          "titolo": "IN PAIRS — your part and Tenore II"
+        },
+        {
+          "sec": 475,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 783,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 803
     }
   ],
   "prima_uscita": "2027-01-22T15:30:00Z"

@@ -26,6 +26,7 @@
   "generi": [
     "sacro"
   ],
+  "lingua": "la",
   "organico": "SSAATTBB",
   "tonalita": {
     "tonica": "G",
@@ -34,6 +35,14 @@
   "tempo_bpm": 66,
   "fonte_spartito": "CPDL / ChoralWiki",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Ave maris stella,\nDei Mater alma,\nAtque semper Virgo,\nFelix caeli porta.\nSumens illud Ave\nGabrielis ore,\nFunda nos in pace,\nMutans Hevae nomen.\nSolve vincla reis,\nProfer lumen caecis,\nMala nostra pelle,\nBona cuncta posce.\nMonstra te esse matrem,\nSumat per te preces,\nQui pro nobis natus\nTulit esse tuus\nVirgo singularis,\nInter omnes mitis,\nNos culpis solutos\nMites fac et castos.\nVitam praesta Puram,\nIter para tutum\nUt videntes Jesum,\nSemper collaetemur.\nSit laus Deo Patri,\nSummo Christo decus,\nSpiritui sancto,\nTribus honor unus.",
+    "fonte": {
+      "sito": "catholichymnus.com",
+      "url": "https://catholichymnus.com/ave-maris-stella/"
+    }
+  },
   "voci": [
     {
       "voce": "S1",
