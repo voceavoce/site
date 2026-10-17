@@ -58,6 +58,8 @@ Aggiornato: 2026-10-16
 - Capitoli e durata stanno solo in `runtime/` (macchina RENDER): vanno copiati in roadmap (task A4).
 - Il genere non esiste nel contratto: campo facoltativo `genere` + regola deterministica.
 
+- (2026-10-17) **Testi cantati quasi assenti sul sito:** dei 40 brani corali già usciti solo 1 ha il testo (sing-joyfully-byrd); su tutto il catalogo 41 brani su 142. Cause: (1) `job_sito_esporta` legge solo `testi/<rank>_<stem>.json`, che esiste per 85 brani, quasi tutti i più recenti (gate dei testi nato dopo); (2) nessun ripiego sui 19 testi comuni di `testi/_comuni/` (ave-maria, ave-verum, o-salutaris… non agganciati); (3) surrexit-pastor-bonus-lasso ha il file ma esce senza testo (da capire); (4) a-d-una-fresca-riva ha il testo che comincia con la parola «Testo» (rumore della fonte). Blocca di fatto C1: le traduzioni non avrebbero un testo originale accanto.
+
 ## Avanzamento
 
 - 2026-10-16 — Piano approvato. Scritti in AIVideoCreator `common/sito.py` e `cli/job_sito_esporta.py` (non ancora committati). Primo dry-run: 142 schede (140 coro, 1 aria, 1 metodo), 41 visibili oggi, 93 compositori. Pulizia di titoli e compositori in corso; la regex `_TRATTINO` in `sito.py` è da correggere (il modulo al momento non si importa).
