@@ -173,7 +173,7 @@ test("parseRange: intervalli singoli, suffisso, clamp, non soddisfacibili, ignor
 
 test("risolviPercorso: file normali dentro la root; traversal e file nascosti bloccati", () => {
   const root = "/srv/audio";
-  assert.deepEqual(risolviPercorso(root, "/locus-iste/v1/soprano.opus?x=1"), { ok: true, file: "/srv/audio/locus-iste/v1/soprano.opus" });
+  assert.deepEqual(risolviPercorso(root, "/locus-iste/v1/soprano.opus?x=1"), { ok: true, file: path.resolve(root, "locus-iste", "v1", "soprano.opus") });
   assert.equal(risolviPercorso(root, "/../etc/passwd").stato, 403);
   assert.equal(risolviPercorso(root, "/%2e%2e/etc/passwd").stato, 403);
   assert.equal(risolviPercorso(root, "/a/..%2F..%2Fetc").stato, 403);
