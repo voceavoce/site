@@ -20,8 +20,14 @@ export function abbreviaParti(xml) {
     const attuali = parti.map((p) => p.querySelector("part-abbreviation").textContent.trim());
     if (new Set(attuali).size === attuali.length) return xml;
     for (const p of parti) {
-      const m = p.querySelector("part-name").textContent.trim().match(/^(\p{L})\p{L}*\s*(\d+)?/u);
-      if (m) p.querySelector("part-abbreviation").textContent = m[1].toUpperCase() + (m[2] || "");
+      const nome = p.querySelector("part-name");
+      const m = nome.textContent.trim().match(/^(\p{L})\p{L}*\s*(\d+)?/u);
+      if (!m) continue;
+      const sigla = m[1].toUpperCase() + (m[2] || "");
+      p.querySelector("part-abbreviation").textContent = sigla;
+      // Anche sul primo rigo, dove Verovio mostra il nome (qui nascosto nel file): la sigla breve, non il nome intero.
+      nome.textContent = sigla;
+      nome.removeAttribute("print-object");
     }
     return new XMLSerializer().serializeToString(doc);
   } catch {
