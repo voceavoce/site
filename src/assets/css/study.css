@@ -24,12 +24,30 @@
     padding: var(--space-2); touch-action: pan-x pan-y pinch-zoom;
   }
   .score-scroll.is-inverted { --paper: #101828; --ink: #eef0f5; }
-  .score-scroll > svg { width: 100%; height: auto; overflow: visible; color: var(--ink); }
+  .score-scroll { position: relative; }
+  .score-scroll > svg { position: relative; z-index: 2; width: 100%; height: auto; overflow: visible; color: var(--ink); }
+  /* Cursore che scorre sul sistema (come nei video) e fascia gialla del rigo della propria voce: sono <div> DIETRO la
+     partitura (fascia sotto, cursore sopra la fascia), cosi' note e testo restano nitidi; posizionati da score.js. */
+  .score-cursor {
+    position: absolute; left: 0; top: 0; z-index: 1; width: 4px; border-radius: 2px; pointer-events: none;
+    background: var(--cursor-color, #f2a900); opacity: .8; will-change: transform;
+  }
+  .score-cursor[hidden], .score-scroll.no-cursor .score-cursor { display: none; }
+  /* la fascia sulla battuta corrente e' un'opzione (spenta di default) */
+  .score-scroll:not(.show-measure) .measure-bg { display: none; }
+  .score-options { font-size: var(--step--1); }
+  .score-options summary { cursor: pointer; font-weight: 700; min-height: var(--tap); display: flex; align-items: center; }
+  .score-options__body { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); padding-bottom: var(--space-2); }
+  .opt { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--tap); cursor: pointer; }
+  .opt input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: var(--accent); }
+  .opt input[type="color"] { width: 2.25rem; height: 2rem; padding: 0; border: 2px solid var(--border); border-radius: var(--radius-sm); background: none; cursor: pointer; }
+  .opt input:disabled { opacity: .5; cursor: not-allowed; }
+  .score-voice-band { position: absolute; z-index: 0; border-radius: var(--radius-sm); background: rgb(255 204 0 / .32); pointer-events: none; }
   /* Verovio scrive color="black" sull'svg interno e lascia i glifi senza fill (nero di default): il colore va
      impostato qui. Le fasce .measure-bg hanno la loro regola e non ne risentono. */
   .score-scroll svg svg { color: var(--ink); fill: currentColor; }
   .score-scroll g.measure { cursor: pointer; }
-  .score-scroll .measure-bg { fill: var(--accent-fill); fill-opacity: .38; pointer-events: none; }
+  .score-scroll .measure-bg { fill: var(--accent-fill); fill-opacity: .2; pointer-events: none; }
 
   .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); display: grid; gap: var(--space-3); min-width: 0; }
 

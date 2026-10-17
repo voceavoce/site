@@ -34,6 +34,14 @@ eleventyExcludeFromCollections: true
           <button type="button" class="tool tool--text" data-loop-pick data-feature="loop" aria-pressed="false" aria-describedby="study-pick-hint" data-needs-audio disabled>{{ 'study.pick' | t(lang) }}</button>
         </div>
       </div>
+      <details class="score-options" data-score-options>
+        <summary>{{ 'study.options' | t(lang) }}</summary>
+        <div class="score-options__body">
+          <label class="opt"><input type="checkbox" data-opt-cursor checked> <span>{{ 'study.optCursor' | t(lang) }}</span></label>
+          <label class="opt"><input type="color" data-opt-cursor-color value="#f2a900"> <span>{{ 'study.optCursorColor' | t(lang) }}</span></label>
+          <label class="opt"><input type="checkbox" data-opt-measure> <span>{{ 'study.optMeasure' | t(lang) }}</span></label>
+        </div>
+      </details>
       <section class="score-scroll" data-score tabindex="0" aria-label="{{ 'study.scoreLabel' | tv(lang, { title: pieceTitle }) }}" data-label="{{ 'study.scoreLabel' | tv(lang, { title: pieceTitle }) }}"></section>
       <p id="study-pick-hint" class="study__hint" data-feature="loop">{{ 'study.pickHint' | t(lang) }}</p>
     </section>
