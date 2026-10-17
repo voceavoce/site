@@ -123,6 +123,7 @@ Aggiornato: 2026-10-16
 - 2026-10-17 — **P15 fatto:** `tests/e2e/sync-audio.spec.mjs` misura il clic che esce davvero dal grafo audio (AudioWorklet «spia» su dry+wet, `getOutputTimestamp`) e lo confronta con il cambio di battuta evidenziata. Con compensazione: mediana −5…+8 ms a 1×, +11…+26 a 0,75×, +2…+8 a 0,5× (max 49). Senza compensazione dello stretcher o del dispositivo: −46…−116 ms, il test fallisce. Soglie: |mediana| ≤ 40 ms, max ≤ 80 ms. Suite e2e ~105 s, 3 run verdi. Nota: in Chrome `getOutputTimestamp()` include già la latenza d'uscita, quindi il test non somma `outputLatency`.
 - 2026-10-17 — Decisione sulle lingue: DE/FR rimandate a C3, insieme a C1/C2 (vedi Decisioni prese).
 - 2026-10-17 — **A9 fatto (T-906):** testi cantati nell'export, vedi task A9. Verificato a campione: l'Ave verum di Byrd nell'XML canta davvero «unda fluxit sanguine», quindi la variante nel testo è corretta. Scheda: nota «testo liturgico tradizionale, riportato per intero» per i testi comuni, etichetta «traduzione non rivista». Restano 35 brani usciti senza testo (A10, `docs/testi-mancanti.md`). AIVideoCreator T-906 è sul branch, non su main (A11).
+- 2026-10-17 — AIVideoCreator T-906 su main (fast-forward a d37860b, render fermi confermati). A10 (T-907) avviato: testi dei 35 brani usciti, ≥2 fonti per brano, verifica con `job_choir_testo`, solo testi di pubblico dominio.
 
 ## Messa online (da fare quando il sito è pronto)
 
