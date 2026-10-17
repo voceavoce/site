@@ -5,7 +5,7 @@
   <identification>
     <creator type="composer">Music21</creator>
     <encoding>
-      <encoding-date>2026-10-17</encoding-date>
+      <encoding-date>2026-10-18</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -24,11 +24,11 @@
     <score-part id="P1">
       <part-name>Soprano</part-name>
       <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I2d0dadb08b91acc8027edfa920604331">
+      <score-instrument id="Ibfe7f8c9ebdb62bc375b210db2000bb0">
         <instrument-name>Soprano</instrument-name>
         <instrument-abbreviation>Ch</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I2d0dadb08b91acc8027edfa920604331">
+      <midi-instrument id="Ibfe7f8c9ebdb62bc375b210db2000bb0">
         <midi-channel>1</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
@@ -36,11 +36,11 @@
     <score-part id="P2">
       <part-name>Tenor</part-name>
       <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I872ba3c588ac6670055880e27e072c54">
+      <score-instrument id="I59a877d5b20303d25e093e1f6d4c805d">
         <instrument-name>Tenor</instrument-name>
         <instrument-abbreviation>Ch</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I872ba3c588ac6670055880e27e072c54">
+      <midi-instrument id="I59a877d5b20303d25e093e1f6d4c805d">
         <midi-channel>2</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
@@ -48,11 +48,11 @@
     <score-part id="P3">
       <part-name>Bass</part-name>
       <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I39d94aafa52a67fcd8666784cc4fe03b">
+      <score-instrument id="Ia48347fcdf8948803903ea8dc92284ec">
         <instrument-name>Bass</instrument-name>
         <instrument-abbreviation>Ch</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I39d94aafa52a67fcd8666784cc4fe03b">
+      <midi-instrument id="Ia48347fcdf8948803903ea8dc92284ec">
         <midi-channel>3</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>

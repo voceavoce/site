@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "o-sanctissima-beethoven",
+  "titolo": "O sanctissima WoO 157 n. 4",
+  "compositore": {
+    "id": "ludwig-van-beethoven",
+    "nome": "Ludwig van Beethoven"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S1",
+      "chiave": "soprano-1",
+      "tipo": "voce",
+      "file": "o-sanctissima-beethoven/v1/soprano-1.opus",
+      "riserva": "o-sanctissima-beethoven/v1/soprano-1.mp3"
+    },
+    {
+      "voce": "S2",
+      "chiave": "soprano-2",
+      "tipo": "voce",
+      "file": "o-sanctissima-beethoven/v1/soprano-2.opus",
+      "riserva": "o-sanctissima-beethoven/v1/soprano-2.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "o-sanctissima-beethoven/v1/basso.opus",
+      "riserva": "o-sanctissima-beethoven/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 85.9,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

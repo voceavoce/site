@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "sicut-cervus-palestrina",
+  "titolo": "Sicut cervus",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "sicut-cervus-palestrina/v1/soprano.opus",
+      "riserva": "sicut-cervus-palestrina/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "sicut-cervus-palestrina/v1/alto.opus",
+      "riserva": "sicut-cervus-palestrina/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "sicut-cervus-palestrina/v1/tenore.opus",
+      "riserva": "sicut-cervus-palestrina/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "sicut-cervus-palestrina/v1/basso.opus",
+      "riserva": "sicut-cervus-palestrina/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 170.4,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

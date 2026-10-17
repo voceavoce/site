@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "hosanna-filio-david-d-696-n-1-schubert",
+  "titolo": "Hosanna Filio David D 696 n. 1",
+  "compositore": {
+    "id": "franz-schubert",
+    "nome": "Franz Schubert"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "hosanna-filio-david-d-696-n-1-schubert/v1/soprano.opus",
+      "riserva": "hosanna-filio-david-d-696-n-1-schubert/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "hosanna-filio-david-d-696-n-1-schubert/v1/alto.opus",
+      "riserva": "hosanna-filio-david-d-696-n-1-schubert/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "hosanna-filio-david-d-696-n-1-schubert/v1/tenore.opus",
+      "riserva": "hosanna-filio-david-d-696-n-1-schubert/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "hosanna-filio-david-d-696-n-1-schubert/v1/basso.opus",
+      "riserva": "hosanna-filio-david-d-696-n-1-schubert/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 52.2,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

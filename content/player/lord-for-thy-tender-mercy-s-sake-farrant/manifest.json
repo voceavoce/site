@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "lord-for-thy-tender-mercy-s-sake-farrant",
+  "titolo": "Lord for Thy tender mercy's sake",
+  "compositore": {
+    "id": "richard-farrant",
+    "nome": "Richard Farrant"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "lord-for-thy-tender-mercy-s-sake-farrant/v1/soprano.opus",
+      "riserva": "lord-for-thy-tender-mercy-s-sake-farrant/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "lord-for-thy-tender-mercy-s-sake-farrant/v1/alto.opus",
+      "riserva": "lord-for-thy-tender-mercy-s-sake-farrant/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "lord-for-thy-tender-mercy-s-sake-farrant/v1/tenore.opus",
+      "riserva": "lord-for-thy-tender-mercy-s-sake-farrant/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "lord-for-thy-tender-mercy-s-sake-farrant/v1/basso.opus",
+      "riserva": "lord-for-thy-tender-mercy-s-sake-farrant/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 154.7,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

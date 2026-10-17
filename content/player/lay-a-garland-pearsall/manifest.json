@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "slug": "lay-a-garland-pearsall",
+  "titolo": "Lay a garland",
+  "compositore": {
+    "id": "robert-lucas-pearsall",
+    "nome": "Robert Lucas Pearsall"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S1",
+      "chiave": "soprano-1",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/soprano-1.opus",
+      "riserva": "lay-a-garland-pearsall/v1/soprano-1.mp3"
+    },
+    {
+      "voce": "S2",
+      "chiave": "soprano-2",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/soprano-2.opus",
+      "riserva": "lay-a-garland-pearsall/v1/soprano-2.mp3"
+    },
+    {
+      "voce": "A1",
+      "chiave": "alto-1",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/alto-1.opus",
+      "riserva": "lay-a-garland-pearsall/v1/alto-1.mp3"
+    },
+    {
+      "voce": "A2",
+      "chiave": "alto-2",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/alto-2.opus",
+      "riserva": "lay-a-garland-pearsall/v1/alto-2.mp3"
+    },
+    {
+      "voce": "T1",
+      "chiave": "tenore-1",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/tenore-1.opus",
+      "riserva": "lay-a-garland-pearsall/v1/tenore-1.mp3"
+    },
+    {
+      "voce": "T2",
+      "chiave": "tenore-2",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/tenore-2.opus",
+      "riserva": "lay-a-garland-pearsall/v1/tenore-2.mp3"
+    },
+    {
+      "voce": "B1",
+      "chiave": "basso-1",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/basso-1.opus",
+      "riserva": "lay-a-garland-pearsall/v1/basso-1.mp3"
+    },
+    {
+      "voce": "B2",
+      "chiave": "basso-2",
+      "tipo": "voce",
+      "file": "lay-a-garland-pearsall/v1/basso-2.opus",
+      "riserva": "lay-a-garland-pearsall/v1/basso-2.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 150.8,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

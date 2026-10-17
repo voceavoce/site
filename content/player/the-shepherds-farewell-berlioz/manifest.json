@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "slug": "the-shepherds-farewell-berlioz",
+  "titolo": "The Shepherds' Farewell",
+  "compositore": {
+    "id": "hector-berlioz",
+    "nome": "Hector Berlioz"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "the-shepherds-farewell-berlioz/v1/soprano.opus",
+      "riserva": "the-shepherds-farewell-berlioz/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "the-shepherds-farewell-berlioz/v1/alto.opus",
+      "riserva": "the-shepherds-farewell-berlioz/v1/alto.mp3"
+    },
+    {
+      "voce": "T1",
+      "chiave": "tenore-1",
+      "tipo": "voce",
+      "file": "the-shepherds-farewell-berlioz/v1/tenore-1.opus",
+      "riserva": "the-shepherds-farewell-berlioz/v1/tenore-1.mp3"
+    },
+    {
+      "voce": "T2",
+      "chiave": "tenore-2",
+      "tipo": "voce",
+      "file": "the-shepherds-farewell-berlioz/v1/tenore-2.opus",
+      "riserva": "the-shepherds-farewell-berlioz/v1/tenore-2.mp3"
+    },
+    {
+      "voce": "B1",
+      "chiave": "basso-1",
+      "tipo": "voce",
+      "file": "the-shepherds-farewell-berlioz/v1/basso-1.opus",
+      "riserva": "the-shepherds-farewell-berlioz/v1/basso-1.mp3"
+    },
+    {
+      "voce": "B2",
+      "chiave": "basso-2",
+      "tipo": "voce",
+      "file": "the-shepherds-farewell-berlioz/v1/basso-2.opus",
+      "riserva": "the-shepherds-farewell-berlioz/v1/basso-2.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 195.8,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

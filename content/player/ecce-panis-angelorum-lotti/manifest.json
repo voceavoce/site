@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "ecce-panis-angelorum-lotti",
+  "titolo": "Ecce panis angelorum",
+  "compositore": {
+    "id": "antonio-lotti",
+    "nome": "Antonio Lotti"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "ecce-panis-angelorum-lotti/v1/soprano.opus",
+      "riserva": "ecce-panis-angelorum-lotti/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "ecce-panis-angelorum-lotti/v1/alto.opus",
+      "riserva": "ecce-panis-angelorum-lotti/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "ecce-panis-angelorum-lotti/v1/tenore.opus",
+      "riserva": "ecce-panis-angelorum-lotti/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "ecce-panis-angelorum-lotti/v1/basso.opus",
+      "riserva": "ecce-panis-angelorum-lotti/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 84.4,
+  "licenza": {
+    "spartito": "ChoralWiki License",
+    "fonte_spartito": "CPDL / ChoralWiki",
+    "audio": null
+  }
+}

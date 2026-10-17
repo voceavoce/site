@@ -1,0 +1,2548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE score-partwise  PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="4.0">
+  <movement-title>Music21 Fragment</movement-title>
+  <identification>
+    <creator type="composer">Music21</creator>
+    <encoding>
+      <encoding-date>2026-10-18</encoding-date>
+      <software>music21 v.10.5.0</software>
+      <supports element="beam" type="yes" />
+      <supports element="stem" type="yes" />
+      <supports element="accidental" type="yes" />
+      <supports attribute="new-system" element="print" type="yes" value="yes" />
+      <supports attribute="new-page" element="print" type="yes" value="yes" />
+    </encoding>
+  </identification>
+  <defaults>
+    <scaling>
+      <millimeters>7</millimeters>
+      <tenths>40</tenths>
+    </scaling>
+  </defaults>
+  <part-list>
+    <score-part id="P1">
+      <part-name>Soprano</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="Ieddac4392712e0b694358bb0a696557a">
+        <instrument-name>Instrument 1</instrument-name>
+        <instrument-abbreviation>Ch</instrument-abbreviation>
+      </score-instrument>
+      <midi-instrument id="Ieddac4392712e0b694358bb0a696557a">
+        <midi-channel>1</midi-channel>
+        <midi-program>53</midi-program>
+      </midi-instrument>
+    </score-part>
+    <score-part id="P2">
+      <part-name>Alto</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I3ff938fd45583ed8526f7584ee304e88">
+        <instrument-name>Instrument 2</instrument-name>
+        <instrument-abbreviation>Ch</instrument-abbreviation>
+      </score-instrument>
+      <midi-instrument id="I3ff938fd45583ed8526f7584ee304e88">
+        <midi-channel>2</midi-channel>
+        <midi-program>53</midi-program>
+      </midi-instrument>
+    </score-part>
+    <score-part id="P3">
+      <part-name>Tenore</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I4b6d726b846d15691008f1acd6c8d6c0">
+        <instrument-name>Instrument 3</instrument-name>
+        <instrument-abbreviation>Ch</instrument-abbreviation>
+      </score-instrument>
+      <midi-instrument id="I4b6d726b846d15691008f1acd6c8d6c0">
+        <midi-channel>3</midi-channel>
+        <midi-program>53</midi-program>
+      </midi-instrument>
+    </score-part>
+    <score-part id="P4">
+      <part-name>Basso</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I9a7900ac274f05dc9edc23c82c8fbd8a">
+        <instrument-name>Instrument 4</instrument-name>
+        <instrument-abbreviation>Ch</instrument-abbreviation>
+      </score-instrument>
+      <midi-instrument id="I9a7900ac274f05dc9edc23c82c8fbd8a">
+        <midi-channel>4</midi-channel>
+        <midi-program>53</midi-program>
+      </midi-instrument>
+    </score-part>
+  </part-list>
+  <!--=========================== Part 1 ===========================-->
+  <part id="P1">
+    <!--========================= Measure 1 ==========================-->
+    <measure implicit="no" number="1" width="212">
+      <print>
+        <system-layout>
+          <system-margins>
+            <left-margin>159</left-margin>
+            <right-margin>75</right-margin>
+          </system-margins>
+          <top-system-distance>280</top-system-distance>
+        </system-layout>
+        <measure-numbering>system</measure-numbering>
+      </print>
+      <attributes>
+        <divisions>10080</divisions>
+        <key>
+          <fifths>0</fifths>
+          <mode>major</mode>
+        </key>
+        <time symbol="cut">
+          <beats>4</beats>
+          <beat-type>2</beat-type>
+        </time>
+        <clef>
+          <sign>G</sign>
+          <line>2</line>
+        </clef>
+      </attributes>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+      </direction>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+        <sound tempo="80" />
+      </direction>
+      <note default-x="86">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>Ec</text>
+        </lyric>
+      </note>
+      <note default-x="149">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>ce</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 2 ==========================-->
+    <measure implicit="no" number="2" width="155">
+      <note default-x="13">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="76">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 3 ==========================-->
+    <measure implicit="no" number="3" width="149">
+      <note default-x="26">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>an</text>
+        </lyric>
+      </note>
+      <note default-x="87">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ge</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 4 ==========================-->
+    <measure implicit="no" number="4" width="115">
+      <note default-x="13">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>lo</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 5 ==========================-->
+    <measure implicit="no" number="5" width="124">
+      <note default-x="26">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 6 ==========================-->
+    <measure implicit="no" number="6" width="156">
+      <note default-x="13">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="53">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fac</text>
+        </lyric>
+      </note>
+      <note default-x="116">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="10">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>tus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 7 ==========================-->
+    <measure implicit="no" number="7" width="138">
+      <note default-x="14">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ci</text>
+        </lyric>
+      </note>
+      <note default-x="75">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 8 ==========================-->
+    <measure implicit="no" number="8" width="185">
+      <print new-system="yes">
+        <system-layout>
+          <system-margins>
+            <left-margin>75</left-margin>
+            <right-margin>75</right-margin>
+          </system-margins>
+          <system-distance>144</system-distance>
+        </system-layout>
+      </print>
+      <note default-x="66">
+        <pitch>
+          <step>G</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>vi</text>
+        </lyric>
+      </note>
+      <note default-x="125">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>a</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 9 ==========================-->
+    <measure implicit="no" number="9" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <notations>
+          <slur bezier-x="-19" bezier-y="-12" default-x="8" default-y="-43" number="1" placement="below" type="start" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>to</text>
+        </lyric>
+      </note>
+      <note default-x="74">
+        <pitch>
+          <step>G</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <notations>
+          <slur number="1" type="stop" />
+        </notations>
+      </note>
+    </measure>
+    <!--========================= Measure 10 =========================-->
+    <measure implicit="no" number="10" width="112">
+      <note default-x="13">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 11 =========================-->
+    <measure implicit="no" number="11" width="152">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="52">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ve</text>
+        </lyric>
+      </note>
+      <note default-x="114">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="10">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>re</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 12 =========================-->
+    <measure implicit="no" number="12" width="145">
+      <note default-x="26">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 13 =========================-->
+    <measure implicit="no" number="13" width="145">
+      <note default-x="25">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>flat</accidental>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fi</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>li</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 14 =========================-->
+    <measure implicit="no" number="14" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>o</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 15 =========================-->
+    <measure implicit="no" number="15" width="120">
+      <note default-x="25">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <accidental>flat</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 16 =========================-->
+    <measure implicit="no" number="16" width="202">
+      <print new-system="yes">
+        <system-layout>
+          <system-margins>
+            <left-margin>75</left-margin>
+            <right-margin>75</right-margin>
+          </system-margins>
+          <system-distance>144</system-distance>
+        </system-layout>
+      </print>
+      <note default-x="53">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="95">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>flat</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="161">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-55">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 17 =========================-->
+    <measure implicit="no" number="17" width="154">
+      <note default-x="25">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>flat</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="89">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 18 =========================-->
+    <measure implicit="no" number="18" width="162">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="55">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="121">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="10">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 19 =========================-->
+    <measure implicit="no" number="19" width="155">
+      <note default-x="26">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="90">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="start" />
+        <type>whole</type>
+        <notations>
+          <tied orientation="under" placement="below" type="start" />
+        </notations>
+      </note>
+    </measure>
+    <!--========================= Measure 20 =========================-->
+    <measure implicit="no" number="20" width="145">
+      <note default-x="14">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="stop" />
+        <type>whole</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note default-x="78">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 21 =========================-->
+    <measure implicit="no" number="21" width="187">
+      <note default-x="13">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>60480</duration>
+        <type>whole</type>
+        <dot />
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ca</text>
+        </lyric>
+      </note>
+      <note default-x="141">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-5">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ni</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 22 =========================-->
+    <measure implicit="no" number="22" width="128">
+      <note default-x="26">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <accidental>sharp</accidental>
+        <notations>
+          <fermata type="inverted" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+  </part>
+  <!--=========================== Part 2 ===========================-->
+  <part id="P2">
+    <!--========================= Measure 1 ==========================-->
+    <measure implicit="no" number="1" width="212">
+      <print>
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+        <measure-numbering>none</measure-numbering>
+      </print>
+      <attributes>
+        <divisions>10080</divisions>
+        <key>
+          <fifths>0</fifths>
+          <mode>major</mode>
+        </key>
+        <time symbol="cut">
+          <beats>4</beats>
+          <beat-type>2</beat-type>
+        </time>
+        <clef>
+          <sign>G</sign>
+          <line>2</line>
+        </clef>
+        <staff-details print-object="yes" />
+      </attributes>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+      </direction>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+        <sound tempo="80" />
+      </direction>
+      <note default-x="86">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>Ec</text>
+        </lyric>
+      </note>
+      <note default-x="149">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>ce</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 2 ==========================-->
+    <measure implicit="no" number="2" width="155">
+      <note default-x="13">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="76">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 3 ==========================-->
+    <measure implicit="no" number="3" width="149">
+      <note default-x="26">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>an</text>
+        </lyric>
+      </note>
+      <note default-x="87">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ge</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 4 ==========================-->
+    <measure implicit="no" number="4" width="115">
+      <note default-x="13">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>lo</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 5 ==========================-->
+    <measure implicit="no" number="5" width="124">
+      <note default-x="26">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 6 ==========================-->
+    <measure implicit="no" number="6" width="156">
+      <note default-x="13">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="53">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fac</text>
+        </lyric>
+      </note>
+      <note default-x="116">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-5">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>tus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 7 ==========================-->
+    <measure implicit="no" number="7" width="138">
+      <note default-x="14">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ci</text>
+        </lyric>
+      </note>
+      <note default-x="75">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 8 ==========================-->
+    <measure implicit="no" number="8" width="185">
+      <print new-system="yes">
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+      </print>
+      <attributes>
+        <staff-details print-object="yes" />
+      </attributes>
+      <note default-x="66">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>vi</text>
+        </lyric>
+      </note>
+      <note default-x="125">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>a</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 9 ==========================-->
+    <measure implicit="no" number="9" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>to</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 10 =========================-->
+    <measure implicit="no" number="10" width="112">
+      <note default-x="13">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 11 =========================-->
+    <measure implicit="no" number="11" width="152">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="52">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ve</text>
+        </lyric>
+      </note>
+      <note default-x="114">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="0">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>re</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 12 =========================-->
+    <measure implicit="no" number="12" width="145">
+      <note default-x="26">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 13 =========================-->
+    <measure implicit="no" number="13" width="145">
+      <note default-x="25">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fi</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>li</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 14 =========================-->
+    <measure implicit="no" number="14" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <notations>
+          <slur bezier-x="-17" bezier-y="-14" default-x="8" default-y="-45" number="2" placement="below" type="start" />
+        </notations>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>o</text>
+        </lyric>
+      </note>
+      <note default-x="75">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <notations>
+          <slur number="2" type="stop" />
+        </notations>
+      </note>
+    </measure>
+    <!--========================= Measure 15 =========================-->
+    <measure implicit="no" number="15" width="120">
+      <note default-x="25">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 16 =========================-->
+    <measure implicit="no" number="16" width="202">
+      <print new-system="yes">
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+      </print>
+      <attributes>
+        <staff-details print-object="yes" />
+      </attributes>
+      <note default-x="53">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="95">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="161">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="5">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 17 =========================-->
+    <measure implicit="no" number="17" width="154">
+      <note default-x="25">
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="89">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 18 =========================-->
+    <measure implicit="no" number="18" width="162">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="55">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="121">
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="0">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 19 =========================-->
+    <measure implicit="no" number="19" width="155">
+      <note default-x="26">
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>flat</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="90">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="start" />
+        <type>whole</type>
+        <notations>
+          <tied orientation="under" placement="below" type="start" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 20 =========================-->
+    <measure implicit="no" number="20" width="145">
+      <note default-x="14">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="stop" />
+        <type>whole</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note default-x="78">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="start" />
+        <type>whole</type>
+        <notations>
+          <tied orientation="under" placement="below" type="start" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ca</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 21 =========================-->
+    <measure implicit="no" number="21" width="187">
+      <note default-x="13">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <stem default-y="-10">up</stem>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note default-x="54">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+        <stem default-y="-15">up</stem>
+      </note>
+      <note default-x="79">
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-20">up</stem>
+      </note>
+      <note default-x="105">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>30240</duration>
+        <type>half</type>
+        <dot />
+        <stem default-y="-15">up</stem>
+      </note>
+      <note default-x="161">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-15">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ni</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 22 =========================-->
+    <measure implicit="no" number="22" width="128">
+      <note default-x="26">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <notations>
+          <fermata type="inverted" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+  </part>
+  <!--=========================== Part 3 ===========================-->
+  <part id="P3">
+    <!--========================= Measure 1 ==========================-->
+    <measure implicit="no" number="1" width="212">
+      <print>
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+        <measure-numbering>none</measure-numbering>
+      </print>
+      <attributes>
+        <divisions>10080</divisions>
+        <key>
+          <fifths>0</fifths>
+          <mode>major</mode>
+        </key>
+        <time symbol="cut">
+          <beats>4</beats>
+          <beat-type>2</beat-type>
+        </time>
+        <clef>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
+        </clef>
+        <staff-details print-object="yes" />
+      </attributes>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+      </direction>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+        <sound tempo="80" />
+      </direction>
+      <note default-x="86">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>Ec</text>
+        </lyric>
+      </note>
+      <note default-x="149">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>ce</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 2 ==========================-->
+    <measure implicit="no" number="2" width="155">
+      <note default-x="13">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="77">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <accidental>sharp</accidental>
+        <stem default-y="-50">down</stem>
+        <notations>
+          <slur bezier-x="-10" bezier-y="12" default-x="6" default-y="-7" number="3" placement="above" type="start" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+      <note default-x="115">
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-55">down</stem>
+        <notations>
+          <slur number="3" type="stop" />
+        </notations>
+      </note>
+    </measure>
+    <!--========================= Measure 3 ==========================-->
+    <measure implicit="no" number="3" width="149">
+      <note default-x="26">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>an</text>
+        </lyric>
+      </note>
+      <note default-x="87">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ge</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 4 ==========================-->
+    <measure implicit="no" number="4" width="115">
+      <note default-x="13">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>lo</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 5 ==========================-->
+    <measure implicit="no" number="5" width="124">
+      <note default-x="26">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <accidental>sharp</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 6 ==========================-->
+    <measure implicit="no" number="6" width="156">
+      <note default-x="13">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="53">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fac</text>
+        </lyric>
+      </note>
+      <note default-x="116">
+        <pitch>
+          <step>C</step>
+          <alter>1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-50">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>tus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 7 ==========================-->
+    <measure implicit="no" number="7" width="138">
+      <note default-x="14">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ci</text>
+        </lyric>
+      </note>
+      <note default-x="75">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 8 ==========================-->
+    <measure implicit="no" number="8" width="185">
+      <print new-system="yes">
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+      </print>
+      <attributes>
+        <staff-details print-object="yes" />
+      </attributes>
+      <note default-x="66">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>vi</text>
+        </lyric>
+      </note>
+      <note default-x="125">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>a</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 9 ==========================-->
+    <measure implicit="no" number="9" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>to</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 10 =========================-->
+    <measure implicit="no" number="10" width="112">
+      <note default-x="13">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 11 =========================-->
+    <measure implicit="no" number="11" width="152">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="52">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ve</text>
+        </lyric>
+      </note>
+      <note default-x="114">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-50">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>re</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 12 =========================-->
+    <measure implicit="no" number="12" width="145">
+      <note default-x="26">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 13 =========================-->
+    <measure implicit="no" number="13" width="145">
+      <note default-x="25">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fi</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>li</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 14 =========================-->
+    <measure implicit="no" number="14" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>o</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 15 =========================-->
+    <measure implicit="no" number="15" width="120">
+      <note default-x="25">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 16 =========================-->
+    <measure implicit="no" number="16" width="202">
+      <print new-system="yes">
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+      </print>
+      <attributes>
+        <staff-details print-object="yes" />
+      </attributes>
+      <note default-x="53">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="95">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="161">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-45">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 17 =========================-->
+    <measure implicit="no" number="17" width="154">
+      <note default-x="25">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="start" />
+        <type>whole</type>
+        <notations>
+          <tied orientation="over" placement="above" type="start" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="89">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="stop" />
+        <type>whole</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 18 =========================-->
+    <measure implicit="no" number="18" width="162">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="55">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="121">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-50">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 19 =========================-->
+    <measure implicit="no" number="19" width="155">
+      <note default-x="26">
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="90">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>flat</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 20 =========================-->
+    <measure implicit="no" number="20" width="145">
+      <note default-x="14">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <tie type="start" />
+        <type>breve</type>
+        <notations>
+          <tied orientation="under" placement="below" type="start" />
+        </notations>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ca</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 21 =========================-->
+    <measure implicit="no" number="21" width="187">
+      <note default-x="13">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <tie type="stop" />
+        <type>whole</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note default-x="104">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ni</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 22 =========================-->
+    <measure implicit="no" number="22" width="128">
+      <note default-x="26">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <notations>
+          <fermata type="inverted" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+  </part>
+  <!--=========================== Part 4 ===========================-->
+  <part id="P4">
+    <!--========================= Measure 1 ==========================-->
+    <measure implicit="no" number="1" width="212">
+      <print>
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+        <measure-numbering>none</measure-numbering>
+      </print>
+      <attributes>
+        <divisions>10080</divisions>
+        <key>
+          <fifths>0</fifths>
+          <mode>major</mode>
+        </key>
+        <time symbol="cut">
+          <beats>4</beats>
+          <beat-type>2</beat-type>
+        </time>
+        <clef>
+          <sign>F</sign>
+          <line>4</line>
+        </clef>
+        <staff-details print-object="yes" />
+      </attributes>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+      </direction>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+        <sound tempo="80" />
+      </direction>
+      <note default-x="86">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>Ec</text>
+        </lyric>
+      </note>
+      <note default-x="149">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>ce</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 2 ==========================-->
+    <measure implicit="no" number="2" width="155">
+      <note default-x="13">
+        <pitch>
+          <step>E</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="76">
+        <pitch>
+          <step>E</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 3 ==========================-->
+    <measure implicit="no" number="3" width="149">
+      <note default-x="26">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>an</text>
+        </lyric>
+      </note>
+      <note default-x="87">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ge</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 4 ==========================-->
+    <measure implicit="no" number="4" width="115">
+      <note default-x="13">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>lo</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 5 ==========================-->
+    <measure implicit="no" number="5" width="124">
+      <note default-x="26">
+        <pitch>
+          <step>A</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 6 ==========================-->
+    <measure implicit="no" number="6" width="156">
+      <note default-x="13">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="53">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fac</text>
+        </lyric>
+      </note>
+      <note default-x="116">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-35">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>tus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 7 ==========================-->
+    <measure implicit="no" number="7" width="138">
+      <note default-x="14">
+        <pitch>
+          <step>F</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ci</text>
+        </lyric>
+      </note>
+      <note default-x="75">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 8 ==========================-->
+    <measure implicit="no" number="8" width="185">
+      <print new-system="yes">
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+      </print>
+      <attributes>
+        <staff-details print-object="yes" />
+      </attributes>
+      <note default-x="66">
+        <pitch>
+          <step>E</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>vi</text>
+        </lyric>
+      </note>
+      <note default-x="125">
+        <pitch>
+          <step>A</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>a</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 9 ==========================-->
+    <measure implicit="no" number="9" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>E</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>to</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 10 =========================-->
+    <measure implicit="no" number="10" width="112">
+      <note default-x="13">
+        <pitch>
+          <step>A</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 11 =========================-->
+    <measure implicit="no" number="11" width="152">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="52">
+        <pitch>
+          <step>F</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ve</text>
+        </lyric>
+      </note>
+      <note default-x="114">
+        <pitch>
+          <step>F</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-45">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>re</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 12 =========================-->
+    <measure implicit="no" number="12" width="145">
+      <note default-x="26">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>pa</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>nis</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 13 =========================-->
+    <measure implicit="no" number="13" width="145">
+      <note default-x="25">
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>2</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>flat</accidental>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>fi</text>
+        </lyric>
+      </note>
+      <note default-x="85">
+        <pitch>
+          <step>G</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>li</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 14 =========================-->
+    <measure implicit="no" number="14" width="136">
+      <note default-x="13">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>o</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 15 =========================-->
+    <measure implicit="no" number="15" width="120">
+      <note default-x="25">
+        <pitch>
+          <step>G</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>rum</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 16 =========================-->
+    <measure implicit="no" number="16" width="202">
+      <print new-system="yes">
+        <staff-layout number="1">
+          <staff-distance>72</staff-distance>
+        </staff-layout>
+      </print>
+      <attributes>
+        <staff-details print-object="yes" />
+      </attributes>
+      <note default-x="53">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="95">
+        <pitch>
+          <step>G</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="161">
+        <pitch>
+          <step>G</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-40">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 17 =========================-->
+    <measure implicit="no" number="17" width="154">
+      <note default-x="25">
+        <pitch>
+          <step>E</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="89">
+        <pitch>
+          <step>F</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 18 =========================-->
+    <measure implicit="no" number="18" width="162">
+      <note default-x="14">
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note default-x="55">
+        <pitch>
+          <step>F</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>single</syllabic>
+          <text>non</text>
+        </lyric>
+      </note>
+      <note default-x="121">
+        <pitch>
+          <step>F</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="-45">down</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>mit</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 19 =========================-->
+    <measure implicit="no" number="19" width="155">
+      <note default-x="26">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <accidental>sharp</accidental>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ten</text>
+        </lyric>
+      </note>
+      <note default-x="90">
+        <pitch>
+          <step>G</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>40320</duration>
+        <type>whole</type>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>dus</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 20 =========================-->
+    <measure implicit="no" number="20" width="145">
+      <note default-x="14">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <lyric default-y="-80" justify="right" name="1" number="1">
+          <syllabic>begin</syllabic>
+          <text>ca</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 21 =========================-->
+    <measure implicit="no" number="21" width="187">
+      <note default-x="13">
+        <pitch>
+          <step>A</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>60480</duration>
+        <type>whole</type>
+        <dot />
+      </note>
+      <note default-x="141">
+        <pitch>
+          <step>A</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+        <stem default-y="0">up</stem>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>middle</syllabic>
+          <text>ni</text>
+        </lyric>
+      </note>
+    </measure>
+    <!--========================= Measure 22 =========================-->
+    <measure implicit="no" number="22" width="128">
+      <note default-x="26">
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>80640</duration>
+        <type>breve</type>
+        <notations>
+          <fermata type="upright" />
+        </notations>
+        <lyric default-y="-80" name="1" number="1">
+          <syllabic>end</syllabic>
+          <text>bus</text>
+        </lyric>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

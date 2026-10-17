@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn",
+  "titolo": "Missa brevis Sancti Joannis de Deo (Kleine Orgelmesse) - Kyrie",
+  "compositore": {
+    "id": "joseph-haydn",
+    "nome": "Joseph Haydn"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/soprano.opus",
+      "riserva": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/alto.opus",
+      "riserva": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/tenore.opus",
+      "riserva": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/basso.opus",
+      "riserva": "missa-brevis-sancti-joannis-de-deo-kleine-orgelmesse-kyrie-haydn/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 91.5,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

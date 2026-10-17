@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "come-again-sweet-love-dowland",
+  "titolo": "Come again, sweet love",
+  "compositore": {
+    "id": "john-dowland",
+    "nome": "John Dowland"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "come-again-sweet-love-dowland/v1/soprano.opus",
+      "riserva": "come-again-sweet-love-dowland/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "come-again-sweet-love-dowland/v1/alto.opus",
+      "riserva": "come-again-sweet-love-dowland/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "come-again-sweet-love-dowland/v1/tenore.opus",
+      "riserva": "come-again-sweet-love-dowland/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "come-again-sweet-love-dowland/v1/basso.opus",
+      "riserva": "come-again-sweet-love-dowland/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 49.0,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

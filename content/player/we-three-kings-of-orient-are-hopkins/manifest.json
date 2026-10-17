@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "we-three-kings-of-orient-are-hopkins",
+  "titolo": "We Three Kings of Orient Are",
+  "compositore": {
+    "id": "john-henry-hopkins-jr",
+    "nome": "John Henry Hopkins Jr."
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "we-three-kings-of-orient-are-hopkins/v1/soprano.opus",
+      "riserva": "we-three-kings-of-orient-are-hopkins/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "we-three-kings-of-orient-are-hopkins/v1/alto.opus",
+      "riserva": "we-three-kings-of-orient-are-hopkins/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "we-three-kings-of-orient-are-hopkins/v1/tenore.opus",
+      "riserva": "we-three-kings-of-orient-are-hopkins/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "we-three-kings-of-orient-are-hopkins/v1/basso.opus",
+      "riserva": "we-three-kings-of-orient-are-hopkins/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 68.0,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

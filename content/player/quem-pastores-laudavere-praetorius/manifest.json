@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "slug": "quem-pastores-laudavere-praetorius",
+  "titolo": "Quem pastores laudavere",
+  "compositore": {
+    "id": "michael-praetorius",
+    "nome": "Michael Praetorius"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "quem-pastores-laudavere-praetorius/v1/soprano.opus",
+      "riserva": "quem-pastores-laudavere-praetorius/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "quem-pastores-laudavere-praetorius/v1/alto.opus",
+      "riserva": "quem-pastores-laudavere-praetorius/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "quem-pastores-laudavere-praetorius/v1/tenore.opus",
+      "riserva": "quem-pastores-laudavere-praetorius/v1/tenore.mp3"
+    },
+    {
+      "voce": "B1",
+      "chiave": "basso-1",
+      "tipo": "voce",
+      "file": "quem-pastores-laudavere-praetorius/v1/basso-1.opus",
+      "riserva": "quem-pastores-laudavere-praetorius/v1/basso-1.mp3"
+    },
+    {
+      "voce": "B2",
+      "chiave": "basso-2",
+      "tipo": "voce",
+      "file": "quem-pastores-laudavere-praetorius/v1/basso-2.opus",
+      "riserva": "quem-pastores-laudavere-praetorius/v1/basso-2.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 71.0,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

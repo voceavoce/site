@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "canticorum-jubilo-g-handel",
+  "titolo": "Canticorum Jubilo G",
+  "compositore": {
+    "id": "george-frideric-handel",
+    "nome": "George Frideric Handel"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "canticorum-jubilo-g-handel/v1/soprano.opus",
+      "riserva": "canticorum-jubilo-g-handel/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "canticorum-jubilo-g-handel/v1/alto.opus",
+      "riserva": "canticorum-jubilo-g-handel/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "canticorum-jubilo-g-handel/v1/tenore.opus",
+      "riserva": "canticorum-jubilo-g-handel/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "canticorum-jubilo-g-handel/v1/basso.opus",
+      "riserva": "canticorum-jubilo-g-handel/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 57.6,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

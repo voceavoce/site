@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "luci-care-luci-belle-mozart",
+  "titolo": "Luci care, luci belle",
+  "compositore": {
+    "id": "wolfgang-amadeus-mozart",
+    "nome": "Wolfgang Amadeus Mozart"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "luci-care-luci-belle-mozart/v1/soprano.opus",
+      "riserva": "luci-care-luci-belle-mozart/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "luci-care-luci-belle-mozart/v1/alto.opus",
+      "riserva": "luci-care-luci-belle-mozart/v1/alto.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "luci-care-luci-belle-mozart/v1/basso.opus",
+      "riserva": "luci-care-luci-belle-mozart/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 73.7,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

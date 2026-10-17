@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-arcadelt",
+  "titolo": "Ave Maria",
+  "compositore": {
+    "id": "jacques-arcadelt",
+    "nome": "Jacques Arcadelt"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "ave-maria-arcadelt/v1/soprano.opus",
+      "riserva": "ave-maria-arcadelt/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "ave-maria-arcadelt/v1/alto.opus",
+      "riserva": "ave-maria-arcadelt/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "ave-maria-arcadelt/v1/tenore.opus",
+      "riserva": "ave-maria-arcadelt/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "ave-maria-arcadelt/v1/basso.opus",
+      "riserva": "ave-maria-arcadelt/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 108.7,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

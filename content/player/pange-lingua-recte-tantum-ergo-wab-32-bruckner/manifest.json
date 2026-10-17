@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "pange-lingua-recte-tantum-ergo-wab-32-bruckner",
+  "titolo": "Pange lingua recte: Tantum ergo WAB 32",
+  "compositore": {
+    "id": "anton-bruckner",
+    "nome": "Anton Bruckner"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/soprano.opus",
+      "riserva": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/alto.opus",
+      "riserva": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/tenore.opus",
+      "riserva": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/basso.opus",
+      "riserva": "pange-lingua-recte-tantum-ergo-wab-32-bruckner/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 82.5,
+  "licenza": {
+    "spartito": "ChoralWiki License",
+    "fonte_spartito": "CPDL / ChoralWiki",
+    "audio": null
+  }
+}
