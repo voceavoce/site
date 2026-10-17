@@ -93,7 +93,7 @@ async function main(data) {
   // La propria voce: fascia gialla sul suo rigo, come nei video. Parte quando si sceglie la voce o si preme il pulsante.
   const voiceKeys = manifest.tracce.filter((t) => t.tipo !== "accompagnamento").map((t) => t.chiave);
   const mySelect = $("[data-myvoice-select]");
-  let mine = -1;
+  let mine = mySelect ? voiceKeys.indexOf(mySelect.value) : -1; // la voce gia' scelta nel menu all'apertura
   const showMine = () => { mine = voiceKeys.indexOf(mySelect.value); score?.setMyVoice(mine, voiceKeys.length); };
   if (mySelect) { mySelect.addEventListener("change", showMine); $("[data-myvoice]")?.addEventListener("click", showMine); }
   if (isOn("loop")) {
