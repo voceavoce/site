@@ -20,6 +20,15 @@
   "tempo_bpm": 60,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "ADORAMUS te, sanctissime Domine Iesu Christe, hic et ad omnes Ecclesias tuas, quae sunt in toto mundo, et benedicimus tibi; quia per sanctam Crucem tuam redemisti mundum. Amen.",
+    "fonte": {
+      "sito": "preces-latinae.org",
+      "url": "http://www.preces-latinae.org/thesaurus/Filius/Adoramus.html"
+    },
+    "comune": "adoramus-te"
+  },
   "voci": [
     {
       "voce": "S",

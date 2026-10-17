@@ -13,7 +13,9 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] A6 (H) `.env.example`: `VOCEAVOCE_SITE_DIR`; skill `voceavoce-publish-choir`: passo finale export + commit del sito
 - [x] A7 (H) `CLAUDE.md`: una riga sul nuovo export; numero T-905 in `tasks.md`
 - [ ] A8 (S) primo export reale verso `voceavoce/site/content/generated/` + commit slug in roadmap — il branch è su main dal 2026-10-16: da lanciare sul PC dell'utente con lo STAGE 5 della skill
-- [~] A9 (S) (ok utente 2026-10-17) Testi cantati nell'export (T-906, branch `claude/voceavocecoro-video-portal-s3o8vi` di AIVideoCreator): ripiego sui testi comuni `_comuni/`, anomalie (surrexit senza testo, «Testo» in testa), `slug_sito` salvati in roadmap; elenco dei brani usciti ancora senza testo → ricerca con gli strumenti del gate dei testi
+- [x] A9 (S) (ok utente 2026-10-17) Testi cantati nell'export (T-906, AIVideoCreator branch `claude/voceavocecoro-video-portal-s3o8vi`, commit 4e4ae47 + d37860b, NON ancora su main): ripiego sui testi comuni `_comuni/` solo se il brano li canta davvero (controllo sulle parole dell'XML, scelta della fonte che copre meglio le parole cantate), PD dal compositore risolto, pulizia di «Testo» in testa e delle fonti troncate, 146 `slug_sito` salvati in roadmap (0 cambiati). Schede con testo 41 → 52 su 142; brani corali usciti 1 → 5 su 40
+- [ ] A10 (S) Testi dei 35 brani corali usciti ancora senza testo (elenco in [testi-mancanti.md](testi-mancanti.md)): riferimento `testi/<rank>_<stem>.json` da ≥2 siti per brano (ricerca web, costa token: stimare prima), verifica con `job_choir_testo --registra`, poi export
+- [ ] A11 Merge su main di AIVideoCreator (T-906): solo a render fermi, con conferma dell'utente
 
 ## B — Sito (`voceavoce/site`, branch `claude/voceavocecoro-video-portal-s3o8vi`)
 
