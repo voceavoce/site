@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { measureIndexAt, timeOfMeasure, endOfMeasure, loopBounds, indexOfScoreMeasure, computePosition, audiblePosition, measureLabels, formatClock } from "../src/assets/js/study/timeline.js";
 import { stretcherLatency, deviceLatency, totalLatency, STRETCH_LATENCY } from "../src/assets/js/study/latency.js";
 import { resolveAudioUrl, isSafeRelativePath, setAudioBase } from "../src/assets/js/study/config.js";
-import { effectiveGains, myVoiceState, initialMixerState } from "../src/assets/js/study/mixer.js";
+import { effectiveGains, myVoiceState, initialMixerState, soloState, isSolo } from "../src/assets/js/study/mixer.js";
 import { loadStudio, checkManifest } from "../src/_lib/studio.js";
 import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -71,20 +71,64 @@ test("resolveAudioUrl rifiuta URL assoluti e percorsi pericolosi", () => {
   assert.equal(isSafeRelativePath("slug/v1/tenore-1.opus"), true);
 });
 
-test("mixer: mute, solo e La mia voce", () => {
-  const tracks = ["S", "A", "T", "B"].map((c) => ({ chiave: c }));
-  let st = initialMixerState(tracks);
+const voci4 = () => initialMixerState(["S", "A", "T", "B"].map((c) => ({ chiave: c })));
+const mute = (st) => Object.fromEntries(Object.entries(st).map(([k, v]) => [k, v.mute]));
+
+test("mixer: stato di partenza e mute", () => {
+  const st = voci4();
   assert.deepEqual(effectiveGains(st), { S: 1, A: 1, T: 1, B: 1 });
   st.A.mute = true;
   assert.equal(effectiveGains(st).A, 0);
-  st.B.solo = true;
-  assert.deepEqual(effectiveGains(st), { S: 0, A: 0, T: 0, B: 1 });
-  st.A.solo = true; // solo + mute: resta muta
-  assert.deepEqual(effectiveGains(st), { S: 0, A: 0, T: 0, B: 1 });
   st.B.volume = 0.4;
   assert.equal(effectiveGains(st).B, 0.4);
+  st.B.volume = 7; assert.equal(effectiveGains(st).B, 1);   // volume fuori scala: limitato
+  st.B.volume = NaN; assert.equal(effectiveGains(st).B, 0);
+});
+test("mixer: Solo mette in mute tutte le altre voci, e solo quelle", () => {
+  const st = soloState(voci4(), "T");
+  assert.deepEqual(mute(st), { S: true, A: true, T: false, B: true });
+  assert.deepEqual(effectiveGains(st), { S: 0, A: 0, T: 1, B: 0 });
+  assert.equal(isSolo(st, "T"), true);
+  assert.equal(isSolo(st, "S"), false);
+});
+test("mixer: Solo riaccende la voce scelta anche se era in mute e non tocca i volumi", () => {
+  const st = voci4();
+  st.T.mute = true; st.T.volume = 0.6; st.S.volume = 0.5;
+  const dopo = soloState(st, "T");
+  assert.equal(dopo.T.mute, false);
+  assert.equal(dopo.T.volume, 0.6);
+  assert.equal(dopo.S.volume, 0.5);
+  assert.equal(effectiveGains(dopo).T, 0.6);
+});
+test("mixer: secondo tocco su Solo rimette tutte in ascolto; con un'altra voce passa a quella", () => {
+  let st = soloState(voci4(), "T");
+  st = soloState(st, "T");
+  assert.deepEqual(mute(st), { S: false, A: false, T: false, B: false });
+  st = soloState(soloState(voci4(), "T"), "B");
+  assert.deepEqual(mute(st), { S: true, A: true, T: true, B: false });
+});
+test("mixer: duetto = Solo su una voce e poi si toglie il mute a un'altra", () => {
+  const st = soloState(voci4(), "S");
+  st.B.mute = false;
+  assert.deepEqual(effectiveGains(st), { S: 1, A: 0, T: 0, B: 1 });
+  assert.equal(isSolo(st, "S"), false); // ora suonano in due: nessuna e' piu' "sola"
+});
+test("mixer: Solo non fa niente con una traccia sola o una voce sconosciuta, e non modifica lo stato di partenza", () => {
+  const una = initialMixerState([{ chiave: "S" }]);
+  assert.equal(soloState(una, "S"), una);
+  assert.equal(isSolo(una, "S"), false);
+  const st = voci4();
+  assert.equal(soloState(st, "X"), st);
+  const copia = JSON.parse(JSON.stringify(st));
+  soloState(st, "A");
+  assert.deepEqual(st, copia);
+});
+test("mixer: La mia voce porta la scelta al 100%, le altre al 30% e toglie ogni mute", () => {
+  let st = soloState(voci4(), "S");
   st = myVoiceState(st, "T");
   assert.deepEqual(effectiveGains(st), { S: 0.3, A: 0.3, T: 1, B: 0.3 });
+  assert.deepEqual(mute(st), { S: false, A: false, T: false, B: false });
+  assert.equal("solo" in st.T, false);
 });
 
 test("studio: manifest con URL assoluto rifiutato; dati di prova esclusi in produzione", () => {

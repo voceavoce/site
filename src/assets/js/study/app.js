@@ -6,6 +6,7 @@ import { bindMixer } from "./mixer.js";
 import { bindLoop } from "./loop.js";
 import { createScore } from "./score.js";
 import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock } from "./timeline.js";
+import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const dataEl = $("#study-data");
@@ -47,40 +48,40 @@ async function main(data) {
     onError: (e) => fail(L.errScore),
   }).then((s) => { score = s; $("[data-zoom-in]").disabled = $("[data-zoom-out]").disabled = false; if (mine >= 0) score.setMyVoice(mine, voiceKeys.length); update(); }, (e) => { console.error(e); fail(L.errScore); });
 
-  // Partitura su carta bianca di default; "Inverti colori" la scurisce (scelta ricordata, se il browser lo permette).
-  const scoreBox = $("[data-score]"), invertBtn = $("[data-score-invert]");
-  const setInverted = (on, save) => {
-    scoreBox.classList.toggle("is-inverted", on);
-    invertBtn.setAttribute("aria-pressed", String(on));
-    if (save) { try { localStorage.setItem("va-score-inverted", on ? "1" : "0"); } catch { /* storage non disponibile */ } }
-  };
-  try { setInverted(localStorage.getItem("va-score-inverted") === "1", false); } catch { /* resta su carta bianca */ }
-  invertBtn.addEventListener("click", () => setInverted(invertBtn.getAttribute("aria-pressed") !== "true", true));
-
-  // Opzioni della partitura (ricordate nel browser): cursore (si/no e colore) e fascia sulla battuta corrente.
-  // Di default il cursore e' acceso e la fascia sulla battuta spenta.
-  const optCursor = $("[data-opt-cursor]"), optColor = $("[data-opt-cursor-color]"), optMeasure = $("[data-opt-measure]");
+  // Opzioni della partitura (pulsante "Opzioni" -> riquadro), ricordate nel browser. Di default: partitura su carta
+  // bianca, fascia gialla sulla propria parte e cursore accesi, fascia sulla battuta corrente spenta.
+  const scoreBox = $("[data-score]");
+  const optBtn = $("[data-score-options-toggle]"), optBox = $("[data-score-options]");
+  optBtn.addEventListener("click", () => {
+    const open = optBox.hidden;
+    optBox.hidden = !open;
+    optBtn.setAttribute("aria-expanded", String(open));
+  });
+  const optMyPart = $("[data-opt-mypart]"), optCursor = $("[data-opt-cursor]"), optColor = $("[data-opt-cursor-color]");
+  const optMeasure = $("[data-opt-measure]"), optInvert = $("[data-opt-invert]");
   const OPT_KEY = "va-score-opts";
-  const opts = { cursor: true, cursorColor: "#f2a900", measure: false };
-  try {
-    const s = JSON.parse(localStorage.getItem(OPT_KEY) || "{}");
-    if (typeof s.cursor === "boolean") opts.cursor = s.cursor;
-    if (typeof s.measure === "boolean") opts.measure = s.measure;
-    if (/^#[0-9a-f]{6}$/i.test(s.cursorColor || "")) opts.cursorColor = s.cursorColor;
-  } catch { /* opzioni di default */ }
+  let saved = null;
+  try { saved = localStorage.getItem(OPT_KEY); } catch { /* storage non disponibile */ }
+  const opts = opzioniPartitura(saved);
   const applyOpts = (save) => {
+    scoreBox.classList.toggle("no-myband", !opts.myPart);
     scoreBox.classList.toggle("no-cursor", !opts.cursor);
     scoreBox.classList.toggle("show-measure", opts.measure);
+    scoreBox.classList.toggle("is-inverted", opts.invert);
     scoreBox.style.setProperty("--cursor-color", opts.cursorColor);
+    optMyPart.checked = opts.myPart;
     optCursor.checked = opts.cursor;
     optColor.value = opts.cursorColor;
     optColor.disabled = !opts.cursor;
     optMeasure.checked = opts.measure;
+    optInvert.checked = opts.invert;
     if (save) { try { localStorage.setItem(OPT_KEY, JSON.stringify(opts)); } catch { /* storage non disponibile */ } }
   };
+  optMyPart.addEventListener("change", () => { opts.myPart = optMyPart.checked; applyOpts(true); });
   optCursor.addEventListener("change", () => { opts.cursor = optCursor.checked; applyOpts(true); });
   optColor.addEventListener("input", () => { opts.cursorColor = optColor.value; applyOpts(true); });
   optMeasure.addEventListener("change", () => { opts.measure = optMeasure.checked; applyOpts(true); });
+  optInvert.addEventListener("change", () => { opts.invert = optInvert.checked; applyOpts(true); });
   applyOpts(false);
 
   $("[data-zoom-in]").addEventListener("click", () => { const z = score?.setZoom(1); if (z) say(L.zoom.replace("{z}", z)); });
@@ -112,13 +113,7 @@ async function main(data) {
     if (!dragging) el.seek.value = String(pos);
     el.seek.setAttribute("aria-valuetext", `${formatClock(pos)} / ${formatClock(engine.duration || manifest.durata_sec)}`);
     const i = measureIndexAt(sync, pos);
-    if (score && sync.battute.length) {
-      // Cursore: frazione di tempo nella battuta; per l'ultima, la durata e' quella della precedente (dopo c'e' solo
-      // la coda di silenzio, che non si disegna). Prima della prima battuta (lead-in) sta all'inizio.
-      const b = sync.battute, k = Math.max(0, i);
-      const t1 = k + 1 < b.length ? b[k + 1].t : b[k].t + (k > 0 ? b[k].t - b[k - 1].t : sync.fine - b[k].t);
-      score.moveCursor(b[k].m, i < 0 ? 0 : (pos - b[k].t) / Math.max(1e-6, t1 - b[k].t));
-    }
+    if (score && sync.battute.length) score.moveCursor(sync.battute[Math.max(0, i)].m, frazioneInBattuta(sync, i, pos));
     if (i !== currentIdx) {
       currentIdx = i;
       score?.highlight(i >= 0 ? sync.battute[i].m : -1);

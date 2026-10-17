@@ -67,6 +67,27 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [ ] P8 (O) Pipeline, da decidere con l'utente: con una sola corona a metà brano `choir._timing_regions` la tratta come corona finale e mette lì l'allargando finale (es. Locus iste, b. 28-29). Riguarda anche i video già pubblicati
 - [x] P11 (S) [FATTO nel codice, resta la verifica a orecchio: compensazione col tempo udibile + bypass dello stretcher a 1x, vedi player.md] Latenza audio: il suono esce 75–150 ms dopo l'evidenziazione della battuta (buffer di SoundTouch + latenza d'uscita del dispositivo). Compensare l'evidenziazione con la latenza misurata (`AudioContext.outputLatency` / `baseLatency` + latenza dello stretcher); poi verifica a orecchio dell'utente
 
+## P — Player di studio, Fase 4: partitura e mixer (sessione 2026-10-18)
+
+- [x] P16 (S) Partitura su carta bianca, zoom iniziale per larghezza, layout a tutta larghezza (Ripetizione e Mixer sotto, affiancati)
+- [x] P17a (S) Cursore da mappa dei tempi Verovio + `sync.json` (`cursore.js`: `frazioneInBattuta`, `puntiPerBattuta`, `completaBattute`, `xAlCursore`); sta dietro le note; movimento ridotto = salta da nota a nota
+- [x] P17b (S) Fascia gialla sul rigo della propria voce (menu o pulsante, anche all'apertura); solo se i righi sono tanti quante le voci (`rigoDellaVoce`)
+- [x] P17c (S) Riquadro Opzioni (`opzioniPartitura`, `localStorage va-score-opts`): mia parte, cursore, colore, battuta, inverti; pulsante con ingranaggio sulla riga A−/A+
+- [x] P17d (S) `musicxml.js`: sigle dei righi dal manifest (S/A/T/B/S1), nomi nascosti resi visibili, tempi duplicati tolti; jsdom per i test
+- [x] P17e (S) Mixer: Solo = Muta sulle altre (`soloState`, `isSolo`); un solo stato di silenzio
+- [x] P17f (S) «Scegli sulla partitura» dalla posizione (`battutaAlPunto`) e spostato nel riquadro Ripetizione
+- [x] P18 (S) T-908 AIVideoCreator (worktree `sito-player-senza-coda`, `23dece3c`): partitura per il sito senza la battuta vuota di coda; dati dei 3 brani rigenerati
+- [x] P19 (S) Test: `tests/cursore.test.mjs`, `tests/musicxml.test.mjs`, mixer in `tests/study.test.mjs` (146 unit test verdi); `tests/e2e/partitura.spec.mjs` nuovo, `player.spec.mjs` aggiornato per il nuovo Solo
+- [ ] P20 (S) **3 e2e ROSSI da sistemare** (ultimo esito 2026-10-18): (a) `player.spec.mjs` «ordine del focus»: l'ordine atteso va aggiornato (pulsante Opzioni nella barra, «Scegli sulla partitura» ora nel riquadro Ripetizione);
+  (b) `partitura.spec.mjs` «scelta della battuta»: «toccare lo spazio vuoto di battute diverse…» e «prima e ultima battuta…» ricevono "0" invece di "1": capire se e' il test (punto cliccato / ripartenza della scelta) o `battutaAlPunto` nel browser (confrontare `caselle` con le battute reali di `_prova`, 6 battute)
+- [ ] P21 (O) Decidere con l'utente: togliere i tasti **Solo** dal mixer (restano Muta e «La mia voce»), eventualmente con «solo la mia voce»? Se si', aggiornare `mixer.js`, `study.njk`, i18n, test unit ed e2e, `docs/player.md`
+- [ ] P22 (S) Provare il player con un brano **con organo** (475 *Ave verum*, poi 259 *Good King Wenceslas*): traccia di accompagnamento nel mixer, fascia della voce con righi in piu' (la fascia si spegne se righi ≠ voci: verificare che sia sensato), zoom e cursore con l'organo
+- [ ] P23 (S) `npm run a11y` e prova su telefono (375 px) per il nuovo riquadro Opzioni, il colore del cursore, il pulsante spostato; controllo del contrasto della fascia gialla e del cursore (tema chiaro/scuro, carta invertita)
+- [ ] P24 (O) Difetti dell'XML del catalogo (tempi ripetuti, «ARIA Player», «b» sperdute): correggere alla fonte in `score_validate.repair` e controllare un fotogramma del video di Marenzio; poi togliere la pulizia lato sito se superflua
+- [ ] P25 (H) Merge di T-908 su `main` di AIVideoCreator **a render fermi**; poi riesportare 342/416/407 e i prossimi brani dal repo principale
+- [ ] P26 (H) Aggiornare `docs/player.md` e `docs/r2-setup.md` se cambiano le scelte sopra; fermare il server di sviluppo in background (porta 8080)
+- [ ] P27 (H) Merge del player su `main` del sito (PR): prima `npm run check`, `npm run e2e` verde, `npm run a11y`; poi esportare altri brani e caricare gli audio con `scripts/upload-audio.mjs`
+
 ## Q — Robustezza (Fase 3, ok dell'utente 2026-10-16)
 
 - [x] P12 (S) Test end-to-end Playwright in `tests/e2e/` (PWA + player), partendo dalle bozze in `tools/verifica-manuale/`; audio sintetici generati al momento del test, mai nel repo — FATTO: `tests/e2e/{helpers,player.spec,pwa.spec}.mjs`, 18 test, `npm run e2e`
@@ -82,9 +103,9 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 - [ ] U1 AIVideoCreator su `main`: `runtime\venv\Scripts\python.exe -m pytest tests/ -q` (suite completa; rossi noti solo test_monetizable e test_svs_gate)
 - [ ] U2 `.env` di AIVideoCreator: `VOCEAVOCE_SITE_DIR=<clone di voceavoce/site>` (e facoltativo `VOCEAVOCE_AUDIO_DIR`)
-- [ ] U3 `job_sito_player --brano 002 --brano 475 --scrivi` (stem veri → Opus/MP3 + dati del player)
+- [~] U3 `job_sito_player --brano ... --scrivi` (stem veri → Opus/MP3 + dati del player): FATTO per 342, 416, 407 (2026-10-18, audio in `C:\source\repos\audio-sito`); restano gli altri brani, a partire da **475 (Ave verum, con organo)**
 - [ ] U4 Prova in locale (`node scripts/serve-audio.mjs` + `npm run serve`) e ascolto della sincronia, in cuffia e in Bluetooth
-- [ ] U5 Cloudflare secondo `docs/r2-setup.md`: bucket privato, token, rclone, `npx wrangler deploy` del Worker, URL vero in `AUDIO_BASE_PRODUZIONE` (`src/_data/site.js`), caricamento con `scripts/upload-audio.mjs`
-- [ ] U8 Statistiche secondo `docs/statistiche.md`: Search Console (TXT su Aruba, solo aggiunta; sitemap), Cloudflare Web Analytics (token in `CLOUDFLARE_ANALYTICS_TOKEN`). Da fare insieme a U5
+- [x] U5 (FATTO 2026-10-18: account, bucket, token, rclone, Worker su `voceavoce-audio.voceavoce.workers.dev`, `AUDIO_BASE_PRODUZIONE` aggiornato, 18 file caricati e verificati con HEAD) Cloudflare secondo `docs/r2-setup.md`: bucket privato, token, rclone, `npx wrangler deploy` del Worker, URL vero in `AUDIO_BASE_PRODUZIONE` (`src/_data/site.js`), caricamento con `scripts/upload-audio.mjs`
+- [~] U8 (Search Console: TXT su Aruba aggiunto, verifica in attesa della propagazione su 2 name server su 4; sitemap inviata; Bing importato. Resta Cloudflare Web Analytics: token in `CLOUDFLARE_ANALYTICS_TOKEN`) Statistiche secondo `docs/statistiche.md`: Search Console (TXT su Aruba, solo aggiunta; sitemap), Cloudflare Web Analytics (token in `CLOUDFLARE_ANALYTICS_TOKEN`). Da fare insieme a U5
 - [ ] U6 Decidere P8 (corona singola, Locus iste) e la licenza dei voicebank Synth V per il futuro download
 - [ ] U7 Facoltativo: `git tag landing-v1 c50b793 && git push origin landing-v1`

@@ -1,6 +1,44 @@
 # State — avanzamento e decisioni
 
-## Riepilogo per riprendere (aggiornato 2026-10-16, fine sessione)
+## Riepilogo per riprendere (aggiornato 2026-10-18, fine sessione «player in produzione»)
+
+- **Cloudflare fatto.** Account creato; bucket R2 privato `voceavoce-audio`; Worker `voceavoce-audio` pubblicato su
+  **https://voceavoce-audio.voceavoce.workers.dev** (sottodominio `workers.dev` scelto: `voceavoce`); `AUDIO_BASE_PRODUZIONE`
+  in `src/_data/site.js` punta lì. Credenziali SOLO in `.env.local` (ignorato da git). DNS e posta restano su Aruba, nessuna modifica per R2.
+- **3 brani con player e audio su R2** (prova): Marenzio *A d'una fresca riva* (rank 342), Josquin *Agnus Dei* (416), Monteverdi
+  *Ave Maria* (407). Dati in `content/player/<slug>/`, audio (18 file) in `C:\source\repos\audio-sito` (fuori dai due repo). Tutti a cappella.
+- **Brani con organo e stem pronti** (candidati per provare la traccia di accompagnamento): rank 475 *Ave verum corpus* (Mozart, 4 voci) e
+  rank 259 *Good King Wenceslas* (Shaw, 8 voci). Il catalogo ha 24 brani con `accompagnamento: organo` e 2 con pianoforte, ma solo questi due hanno `accompaniment.wav` negli stem.
+- **Search Console / Bing.** TXT di verifica aggiunto su Aruba; al 2026-10-17 presente su 2 name server su 4 (dns3.arubadns.net, dns.technorail.com),
+  mancava su dns4.arubadns.cz e dns2.technorail.com: verifica Google in attesa di propagazione (fino a 24 h). Sitemap inviata, sito importato in Bing.
+- **AIVideoCreator T-908** (branch `sito-player-senza-coda`, worktree `.claude/worktrees/sito-player-senza-coda`, commit `23dece3c`, pushato,
+  **NON unito su main**): `job_sito_player` scrive per il sito la partitura di lavoro senza la battuta vuota di coda (R-11); il sync perde quella battuta,
+  la durata resta quella dell'audio. Merge a render fermi (regola del `CLAUDE.md` di AIVideoCreator), poi riesportare gli altri brani con lo stesso comando.
+- **Branch del sito:** `claude/voceavocecoro-video-portal-s3o8vi` (sempre NON unita su `main`). Ultimo commit pushato `815b83d`; il resto del lavoro
+  di questa sessione (mixer, scelta battuta, test, jsdom) e' in commit WIP successivo, vedi `git log`.
+- **Interfaccia della partitura (fatta questa sessione, vedi `docs/player.md` §Partitura):** carta bianca di default anche nel tema scuro; pulsante **Opzioni**
+  (ingranaggio) nella barra A−/A+ con riquadro: «Evidenzia la mia parte» (fascia gialla sul rigo della voce scelta, acceso), «Cursore che scorre» (acceso)
+  + colore, «Evidenzia la battuta» (spento), «Inverti colori»; opzioni in `localStorage` (`va-score-opts`). Cursore (barra dietro le note) da mappa dei tempi
+  Verovio + `sync.json`. Sigle dei righi S/A/T/B dal manifest; tempi duplicati dell'XML tolti; zoom iniziale 100/75/60 per larghezza.
+- **Mixer: nuova semantica (decisione utente 2026-10-18).** Un solo stato di silenzio: `mute`. **Solo** = scorciatoia che mette in mute tutte le altre voci
+  (secondo tocco: tutte in ascolto); il suo `aria-pressed` e' derivato (`isSolo`). Duetto = Solo + togliere il mute a un'altra. L'utente sta valutando di **togliere i
+  tasti Solo** e lasciare solo Muta (e magari un «solo la mia voce» vicino a «La mia voce»): **decisione aperta**.
+- **Scelta sulla partitura:** ora sceglie la battuta dalla POSIZIONE sul sistema (`battutaAlPunto`), non dal segno colpito; il pulsante e' stato spostato
+  nel riquadro **Ripetizione**.
+- **Test:** `npm test` = **146 unit test** (nuovi `tests/cursore.test.mjs`, `tests/musicxml.test.mjs` con **jsdom** come devDependency, mixer riscritto in `study.test.mjs`).
+  E2E in locale: `PW_CHROMIUM='C:\Program Files\Google\Chrome\Application\chrome.exe'` poi `npm run e2e -- tests/e2e/partitura.spec.mjs` (nuovo spec, ~25 test).
+  **Ultimo esito: 3 e2e ROSSI da sistemare** (vedi task P17).
+- **Difetti dell'XML del catalogo (PDMX), non del pipeline:** per Marenzio tempo ♩=120 scritto 3 volte, nomi parte «ARIA Player», scritte «b» sperdute. Nel sito si puliscono
+  tempi ed etichette; le «b» restano. **Da decidere:** correggere alla fonte (`score_validate.repair`) e controllare se i video li mostrano (le pagine renderizzate sono state cancellate dalla pulizia).
+- **Trappole incontrate (ricordarle):** (1) `eleventy --serve` legge dati e i18n **una volta sola**: dopo aver cambiato `src/_data/i18n/*.json` o `content/player/*` va riavviato `npm run serve`;
+  (2) il browser puo' tenere in cache una copia **troncata** di `verovio-module.mjs` (7 MB) se la apre mentre Eleventy la ricopia → «Non riesco a mostrare la partitura» /
+  `SyntaxError: Invalid or unexpected token`: rifare `fetch(url, {cache:'reload'})` e ricaricare; (3) il service worker serve CSS/JS vecchi in locale: `unregister()` + `caches.delete()`;
+  (4) i file del repo sono CRLF nel working tree (autocrlf): nelle sostituzioni da script leggere in modalita' universale e riscrivere con `\r\n`; (5) `input[type=range]` rifiuta in Playwright
+  `fill("0.0")` (lo normalizza in "0"): passare `String(Number(x.toFixed(1)))`; (6) un `!` del prompt usa Bash, dove non c'e' Node nel PATH: usare PowerShell.
+- **Server di sviluppo** ancora attivo in background sulla porta 8080 (avviato da me con `VOCEAVOCE_AUDIO_BASE` = Worker): fermarlo se non serve.
+
+## Riepilogo precedente (2026-10-16, fine sessione) — in parte superato dal blocco sopra
+
 
 - **Online:** il nuovo sito Eleventy è su voceavoce.com (PR #1 unita, Deploy verde); la vecchia landing è su `/classic/`.
 - **Branch del sito:** `claude/voceavocecoro-video-portal-s3o8vi`. Contiene la Fase 2, cioè il player di studio, NON ancora unita su `main`. Ultimo commit pulito: P11 (`c7be018`), poi questo aggiornamento. Check e a11y sono verdi in locale (81 test, 11/11).
@@ -12,7 +50,7 @@
   - PWA con un SW che non tocca mai l'audio;
   - dati di prova `content/player/_prova/` esclusi dalla build di produzione.
 - **Audio:** MAI in git né in CI. Cartella locale `VOCEAVOCE_AUDIO_DIR` → `scripts/upload-audio.mjs` (rclone, a mano) → bucket R2 **privato** `voceavoce-audio` → Worker `workers/audio/` su `*.workers.dev` (deploy a mano con wrangler).
-- **Segnaposto da sostituire:** `AUDIO_BASE_PRODUZIONE` in `src/_data/site.js` vale ancora `https://voceavoce-audio.CAMBIAMI.workers.dev`. Finché non c'è l'URL vero e gli audio non sono caricati, NON aggiungere dati reali in `content/player/` e NON unire su `main` un player che punti al segnaposto.
+- **(Superato, fatto il 2026-10-18)** Segnaposto `AUDIO_BASE_PRODUZIONE`: ora e' l'URL vero del Worker. Finché non c'è l'URL vero e gli audio non sono caricati, NON aggiungere dati reali in `content/player/` e NON unire su `main` un player che punti al segnaposto.
 - **Vincoli fissi dell'utente:**
   - dominio, DNS e posta su **Aruba**: MAI proporre il trasferimento della registrazione;
   - niente pubblicità (gli spazi esistono ma restano spenti), niente cookie di tracciamento;
@@ -26,7 +64,7 @@
 - **Aperto:** P8, corona singola: `choir._timing_regions` tratta un'unica corona a metà brano come finale e ci mette l'allargando (Locus iste b. 28-29); riguarda anche i video pubblicati. C1–C2, traduzioni e note, rimandate. A8, primo export ufficiale con `slug_sito`, si fa con lo STAGE 5 della skill.
 
 
-Aggiornato: 2026-10-16
+Aggiornato: 2026-10-18
 
 ## Decisioni prese (utente)
 
@@ -50,6 +88,14 @@ Aggiornato: 2026-10-16
 - **Statistiche** (utente 2026-10-17): Google Search Console + Cloudflare Web Analytics, senza cookie; sul DNS Aruba si aggiunge solo il TXT di Google. Guida `docs/statistiche.md`.
 - **Lingue DE/FR del sito** (utente 2026-10-17): l'interfaccia resta IT/EN/ES per ora; DE e FR si aggiungono insieme alle traduzioni dei testi cantati e alle note (C1/C2 → C3), così le schede nascono complete. Motivo: le note della pipeline esistono solo in it/en/es, e schede DE/FR senza testo proprio sarebbero contenuto sottile per Google.
 - **Testi e note** (utente 2026-10-17): prima A9 (testi cantati nell'export); traduzioni pubblicate anche se non rivista, con l'etichetta «non rivista»; note DE/FR generate nella pipeline (`nota_descrizione` con de/fr), non solo nel sito.
+
+- **Player, interfaccia (utente 2026-10-18):** partitura su carta bianca anche nel tema scuro; cursore stile video (sta DIETRO le note, trasparente, colore configurabile);
+  evidenziazione della battuta solo come opzione (spenta); fascia gialla sul rigo della propria voce, anche all'apertura e disattivabile; sigle S/T/B su tutti i righi;
+  opzioni in un pulsante «Opzioni» con ingranaggio (non un titoletto a comparsa), sulla stessa riga di A−/A+; «Inverti colori» dentro le opzioni; «Scegli sulla partitura»
+  dentro il riquadro Ripetizione; zoom iniziale alto (A+).
+- **Mixer (utente 2026-10-18):** Solo = metti in Muta le altre voci (coerente con Muta); per un duetto si toglie il mute a un'altra voce. Valutato: togliere i tasti Solo.
+- **Lavoro su AIVideoCreator in un worktree separato** (utente 2026-10-18), con CRLF, test e push dopo ogni commit; merge in `main` a render fermi.
+- **Test (utente 2026-10-18):** ogni sviluppo ha unit test, il codice deve essere robusto (valori non validi, storage bloccato, dati mancanti) e i test si aggiornano a ogni correzione approvata.
 
 ## Fatti accertati
 

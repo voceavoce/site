@@ -202,6 +202,21 @@ docs/CONTENUTI.md
 
 ---
 
+## Evoluzione del player di studio (2026-10-18)
+
+Dopo la prima messa online con tre brani di prova, l'interfaccia della partitura e' stata rifatta in base all'uso reale. Principi:
+
+- **La partitura e' carta.** Sfondo bianco e inchiostro scuro in ogni tema; l'inversione e' un'opzione, non il default (una partitura scura stanca).
+- **Come i video.** Cursore che scorre sul sistema e fascia gialla sul rigo della propria voce; la fascia sulla battuta e' un'opzione spenta.
+- **Dietro, non sopra.** Cursore e fascia stanno dietro le note (div sotto l'SVG, SVG con sfondo trasparente): note e testo restano nitidi.
+- **Tutto cio' che e' configurabile sta in un pulsante «Opzioni»**, sulla stessa riga degli altri strumenti, con scelte ricordate nel browser e valori di partenza sensati.
+- **Logica pura separata dal DOM** (`cursore.js`, `musicxml.js`, `mixer.js`): testata con unit test, con valori non validi gestiti. Il DOM si prova con jsdom e con Playwright.
+- **Il mixer ha un solo concetto di silenzio.** Solo e' una scorciatoia di Muta.
+- **I difetti dei dati si correggono alla fonte**, e nel sito solo con pulizie piccole e testate: l'XML del catalogo ha tempi ripetuti, nomi parte dello strumento di sintesi, scritte stray.
+- **Un worktree per il codice di AIVideoCreator**, merge a render fermi.
+
+Prossimi passi: vedi `task.md`, sezione P (P20–P27).
+
 ## Ordine di esecuzione
 
 1. **Backup:** tag `landing-v1` su `c50b793` + `src/static/classic/` (noindex, percorsi corretti).

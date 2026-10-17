@@ -204,3 +204,21 @@ Finché i file restano separati, non modificati e con NOTICE, gli obblighi LGPL/
 2. Fase 2 (piano in [plan.md](plan.md)): estendere il player agli altri brani del catalogo, decidere le leve di memoria per i brani lunghi e per i telefoni e l'eventuale piano B `<audio>` con `preservesPitch`.
 3. Premium (solo predisposto, **non implementare ora**): bucket privato `voceavoce-audio-premium` con gli stessi percorsi, servito dal Worker con URL firmati (`authorize()` in `workers/audio/src/index.js` e `resolveAudioUrl` asincrona), scarico degli stem (`features.download`) dopo la verifica della licenza dei voicebank, link per le donazioni, video YouTube accanto al player. Futuro dominio `audio.voceavoce.com` spostando su Cloudflare solo i nameserver, dopo aver copiato i record della posta Aruba (mai trasferire la registrazione).
 4. Pubblicità: gli spazi sono predisposti e restano spenti; nessun cookie di tracciamento.
+
+
+## Partitura: cursore, fascia della voce, opzioni (2026-10-18)
+
+- **Carta bianca.** `.score-scroll` ha `--paper: #fff` e `--ink: #111` in ogni tema; `is-inverted` li scambia con `#101828` / `#eef0f5`. Verovio scrive `color="black"` sull'`<svg>` interno
+  e lascia i glifi senza `fill`: il CSS imposta `color: var(--ink); fill: currentColor` su `.score-scroll svg svg`.
+- **Cursore.** `score.js` chiede a Verovio `renderToTimemap({ includeMeasures, includeRests })` a ogni `layout()`; `cursore.js` ne ricava, per battuta, la x di ogni nota/pausa
+  (`puntiPerBattuta`) e la fine (`completaBattute`: `q1` e `xEnd`). A ogni fotogramma `app.js: update()` passa `frazioneInBattuta(sync, i, pos)` (tempo udibile) e `xAlCursore` interpola in quarti.
+  L'ultima battuta dura quanto la precedente (dopo c'e' solo la coda di silenzio, R-11). Con `prefers-reduced-motion` il cursore salta da nota a nota. E' un `<div class="score-cursor">` dietro l'SVG (z-index 1 contro 2).
+- **Fascia della voce.** `setMyVoice(idx, voci)`: una `<div class="score-voice-band">` per sistema sul rigo `idx`; solo se i righi sono tanti quante le voci (`rigoDellaVoce`). Parte con la voce gia' scelta nel menu all'apertura e si aggiorna a ogni cambio.
+- **Etichette dei righi.** `musicxml.js: abbreviaParti(xml, voci)`: sigle dal manifest (S, A, T, B, S1…) se le voci sono tante quante le parti; altrimenti iniziale del nome, solo se le abbreviazioni non sono gia' tutte diverse.
+  `senzaTempiRipetuti` tiene un solo ♩=… per battuta.
+- **Opzioni** (pulsante «Opzioni» → `#score-options`, `localStorage["va-score-opts"]`, letto con `opzioniPartitura`, che non si fida di nulla): `myPart` (acceso), `cursor` (acceso), `cursorColor` (`#f2a900`), `measure` (spento), `invert` (spento).
+  Se lo storage e' bloccato o rovinato si usano i valori di partenza, senza errori.
+- **Scegli sulla partitura** (nel riquadro Ripetizione): sceglie la battuta dalla posizione del tocco (`battutaAlPunto`), dentro il sistema piu' vicino (margine 24 px); i clic sintetici usano il segno colpito.
+- **Mixer.** Solo stato di silenzio: `mute`. «Solo» (`soloState`) mette in mute le altre voci; secondo tocco = tutte in ascolto; `aria-pressed` di Solo = `isSolo`. «La mia voce»: scelta 100 %, altre 30 %, nessun mute.
+- **Test.** Unit: `tests/cursore.test.mjs`, `tests/musicxml.test.mjs` (jsdom), `tests/study.test.mjs`. E2E: `tests/e2e/partitura.spec.mjs`, `tests/e2e/player.spec.mjs`. In locale:
+  `$env:PW_CHROMIUM='C:\Program Files\Google\Chrome\Application\chrome.exe'; npm run e2e -- tests/e2e/partitura.spec.mjs`.

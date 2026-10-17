@@ -2,27 +2,38 @@
 
 export const MY_VOICE_OTHERS = 0.3;
 
-/** Stato iniziale: tutte le tracce a volume pieno, senza mute ne' solo. */
+/** Stato iniziale: tutte le tracce a volume pieno e non mute. L'unico stato di silenzio e' `mute`. */
 export function initialMixerState(tracks) {
-  return Object.fromEntries(tracks.map((t) => [t.chiave, { volume: 1, mute: false, solo: false }]));
+  return Object.fromEntries(tracks.map((t) => [t.chiave, { volume: 1, mute: false }]));
+}
+
+/** Guadagno effettivo di ogni traccia: 0 se e' mute, altrimenti il suo volume. */
+export function effectiveGains(state) {
+  return Object.fromEntries(Object.entries(state).map(([id, s]) => [id, s.mute ? 0 : clamp01(s.volume)]));
+}
+
+/** Preset «La mia voce»: la voce scelta al 100%, le altre al 30%; azzera i mute. */
+export function myVoiceState(state, id) {
+  return Object.fromEntries(
+    Object.keys(state).map((k) => [k, { volume: k === id ? 1 : MY_VOICE_OTHERS, mute: false }]),
+  );
+}
+
+/** Vero se `id` e' l'unica traccia non mute (e ce n'e' piu' di una): e' lo stato che «Solo» produce. */
+export function isSolo(state, id) {
+  const ids = Object.keys(state);
+  return ids.length > 1 && id in state && ids.every((k) => state[k].mute === (k !== id));
 }
 
 /**
- * Guadagno effettivo di ogni traccia. Con almeno un solo attivo suonano solo le tracce in solo;
- * il mute vince sempre (una traccia in solo e in mute resta muta).
+ * «Solo»: mette in mute tutte le altre voci e riaccende `id`, cosi' si vede in chiaro cosa suona (per fare un duetto
+ * basta togliere il mute a un'altra voce). Se `id` e' gia' l'unica che suona, il secondo tocco rimette tutte in
+ * ascolto. I volumi non cambiano. Con una traccia sola, o un `id` sconosciuto, non fa niente.
  */
-export function effectiveGains(state) {
-  const anySolo = Object.values(state).some((s) => s.solo);
-  return Object.fromEntries(
-    Object.entries(state).map(([id, s]) => [id, s.mute || (anySolo && !s.solo) ? 0 : clamp01(s.volume)]),
-  );
-}
-
-/** Preset «La mia voce»: la voce scelta al 100%, le altre al 30%; azzera mute e solo. */
-export function myVoiceState(state, id) {
-  return Object.fromEntries(
-    Object.keys(state).map((k) => [k, { volume: k === id ? 1 : MY_VOICE_OTHERS, mute: false, solo: false }]),
-  );
+export function soloState(state, id) {
+  if (!(id in state) || Object.keys(state).length < 2) return state;
+  const tutte = isSolo(state, id);
+  return Object.fromEntries(Object.entries(state).map(([k, s]) => [k, { ...s, mute: tutte ? false : k !== id }]));
 }
 
 export function clamp01(x) {
@@ -47,7 +58,7 @@ export function bindMixer(root, tracks, onGains) {
       const out = row.querySelector("[data-volume-out]");
       if (out) out.textContent = `${Math.round(s.volume * 100)}%`;
       row.querySelector("[data-mute]").setAttribute("aria-pressed", String(s.mute));
-      row.querySelector("[data-solo]").setAttribute("aria-pressed", String(s.solo));
+      row.querySelector("[data-solo]").setAttribute("aria-pressed", String(isSolo(state, id)));
       row.classList.toggle("is-silent", effectiveGains(state)[id] === 0);
     }
     onGains(effectiveGains(state));
@@ -66,9 +77,9 @@ export function bindMixer(root, tracks, onGains) {
       const sel = root.querySelector("[data-myvoice-select]");
       state = myVoiceState(state, sel ? sel.value : tracks[0].chiave);
     } else {
-      const s = state[btn.closest("[data-track]").dataset.track];
-      const key = btn.hasAttribute("data-mute") ? "mute" : "solo";
-      s[key] = !s[key];
+      const id = btn.closest("[data-track]").dataset.track;
+      if (btn.hasAttribute("data-solo")) state = soloState(state, id);
+      else if (state[id]) state[id].mute = !state[id].mute;
     }
     render();
   });

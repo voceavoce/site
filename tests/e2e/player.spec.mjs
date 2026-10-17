@@ -166,16 +166,35 @@ test.describe("mixer", () => {
     await expect.poll(() => gain(page, "alto")).toBeCloseTo(1, 2);
   });
 
-  test("solo: suona solo quella voce; il mute vince sul solo", async ({ page }) => {
+  test("solo: mette in mute tutte le altre voci (visibile) e fa suonare solo quella", async ({ page }) => {
     const solo = riga(page, "tenore").locator("[data-solo]");
     await solo.click();
     await expect(solo).toHaveAttribute("aria-pressed", "true");
     await expect.poll(() => gain(page, "tenore")).toBeCloseTo(1, 2);
-    for (const k of ["soprano", "alto", "basso"]) await expect.poll(() => gain(page, k)).toBeLessThan(0.01);
+    for (const k of ["soprano", "alto", "basso"]) {
+      await expect(riga(page, k).locator("[data-mute]")).toHaveAttribute("aria-pressed", "true");
+      await expect.poll(() => gain(page, k)).toBeLessThan(0.01);
+    }
+    await expect(riga(page, "tenore").locator("[data-mute]")).toHaveAttribute("aria-pressed", "false");
     await expect(page.locator(".mix__row.is-silent")).toHaveCount(3);
-    await riga(page, "tenore").locator("[data-mute]").click();
-    await expect.poll(() => gain(page, "tenore")).toBeLessThan(0.01);
-    await expect(page.locator(".mix__row.is-silent")).toHaveCount(4);
+  });
+
+  test("solo: secondo tocco rimette tutte le voci in ascolto", async ({ page }) => {
+    const solo = riga(page, "tenore").locator("[data-solo]");
+    await solo.click();
+    await solo.click();
+    await expect(solo).toHaveAttribute("aria-pressed", "false");
+    for (const k of ["soprano", "alto", "tenore", "basso"]) await expect.poll(() => gain(page, k)).toBeCloseTo(1, 2);
+    await expect(page.locator(".mix__row.is-silent")).toHaveCount(0);
+  });
+
+  test("duetto: Solo su una voce, poi si toglie il mute a un'altra", async ({ page }) => {
+    await riga(page, "soprano").locator("[data-solo]").click();
+    await riga(page, "basso").locator("[data-mute]").click();
+    await expect.poll(() => gain(page, "soprano")).toBeCloseTo(1, 2);
+    await expect.poll(() => gain(page, "basso")).toBeCloseTo(1, 2);
+    for (const k of ["alto", "tenore"]) await expect.poll(() => gain(page, k)).toBeLessThan(0.01);
+    await expect(riga(page, "soprano").locator("[data-solo]")).toHaveAttribute("aria-pressed", "false");
   });
 
   test("«La mia voce»: la voce scelta al 100%, le altre al 30%", async ({ page }) => {
