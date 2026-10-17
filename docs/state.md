@@ -47,6 +47,7 @@ Aggiornato: 2026-10-16
 - Player di studio (Fase 2): partitura dal MusicXML della pipeline (non .krn); prototipo su Locus iste e Ave verum K. 618; rallentamento con Web Audio + SoundTouch (piano B `preservesPitch`); spazi pubblicitari lasciati spenti (utente 2026-10-16). Implementazione in attesa dell'ok.
 
 - **Dominio e posta su Aruba, non si toccano** (utente 2026-10-16): niente spostamento del DNS su Cloudflare per ora, e MAI il trasferimento della registrazione, che farebbe cessare la casella info@voceavoce.com. Gli audio li serve un Cloudflare Worker su `*.workers.dev` collegato al bucket R2 privato; il CORS sta nel Worker; il deploy del Worker lo fa l'utente con wrangler.
+- **Statistiche** (utente 2026-10-17): Google Search Console + Cloudflare Web Analytics, senza cookie; sul DNS Aruba si aggiunge solo il TXT di Google. Guida `docs/statistiche.md`.
 
 ## Fatti accertati
 
@@ -114,6 +115,7 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — P11 fatto (Sonnet): latenza dello stretcher misurata offline (133 ms a 1×, 123 a 0,75×, 94 a 0,5×) e messa in tabella; l'evidenziazione usa il tempo «udibile» = motore − (latenza stretcher + outputLatency). A 1× lo stretcher viene scavalcato (ramo diretto, dissolvenza di 40 ms). Misure evidenziazione contro clic udibile: prima −190…−225 ms, dopo circa ±25 ms (un caso −48 dopo un seek a 1×), anche nel loop e cambiando velocità al volo. Pausa: riparte da ciò che si è sentito. Check verde (81 test), a11y 11/11. Resta la prova a orecchio dell'utente, in cuffia e in Bluetooth. Fase 1 del player COMPLETA lato codice.
 - 2026-10-16 — **Fase 3 fatta (P12–P14):** test end-to-end Playwright in `tests/e2e/` (13 player + 5 PWA, compreso l'aggiornamento del SW che cancella le cache `vav-*` vecchie e l'audio mai in cache con Range e workers.dev), `npm run e2e`, passo nel workflow Check con report caricato se fallisce. 3 run di fila verdi (~45 s). Nessun bug trovato in player o SW. `@playwright/test` fissato a 1.56.1 (stessa versione del Chromium in /opt/pw-browsers).
+- 2026-10-17 — **Statistiche (S1):** GitHub Pages non dà statistiche delle visite. Decisione utente: Google Search Console (verifica con TXT sul DNS Aruba, nessuno script) + Cloudflare Web Analytics (senza cookie, stesso account dell'audio, nessuno spostamento del DNS). Codice pronto e spento (`CLOUDFLARE_ANALYTICS_TOKEN = null`), guida `docs/statistiche.md`, compito utente U8.
 
 ## Messa online (da fare quando il sito è pronto)
 

@@ -70,9 +70,9 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] P14 (H) `npm run e2e` nel workflow Check (solo PR), con l'installazione di Chromium da Playwright in CI
 - [~] P15 (S) Test e2e automatico evidenziazione ↔ clic UDIBILE (ex `tools/verifica-manuale/measure.mjs`) a 1×/0,75×/0,5×, che deve fallire se si toglie la compensazione della latenza (richiesta utente 2026-10-17)
 
-## Statistiche visite (da decidere con l'utente)
+## Statistiche visite
 
-- [ ] S1 Scegliere lo strumento: GitHub Pages non dà statistiche sulle visite. Opzioni senza cookie: Cloudflare Web Analytics (gratis), GoatCounter (gratis per uso non commerciale); più Google Search Console (ricerche, nessuno script). Poi: snippet dietro interruttore in `site.js`, pagina privacy aggiornata
+- [x] S1 (2026-10-17) Scelta dell'utente: **Google Search Console + Cloudflare Web Analytics** (senza cookie). Fatto: interruttore `CLOUDFLARE_ANALYTICS_TOKEN` in `src/_data/site.js` (script solo nella build di produzione), pagine Privacy IT/EN/ES che si aggiornano da sole col token, guida `docs/statistiche.md` (richiamata da r2-setup.md §2)
 
 ## Da fare dall'utente (sul proprio PC)
 
@@ -81,5 +81,6 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [ ] U3 `job_sito_player --brano 002 --brano 475 --scrivi` (stem veri → Opus/MP3 + dati del player)
 - [ ] U4 Prova in locale (`node scripts/serve-audio.mjs` + `npm run serve`) e ascolto della sincronia, in cuffia e in Bluetooth
 - [ ] U5 Cloudflare secondo `docs/r2-setup.md`: bucket privato, token, rclone, `npx wrangler deploy` del Worker, URL vero in `AUDIO_BASE_PRODUZIONE` (`src/_data/site.js`), caricamento con `scripts/upload-audio.mjs`
+- [ ] U8 Statistiche secondo `docs/statistiche.md`: Search Console (TXT su Aruba, solo aggiunta; sitemap), Cloudflare Web Analytics (token in `CLOUDFLARE_ANALYTICS_TOKEN`). Da fare insieme a U5
 - [ ] U6 Decidere P8 (corona singola, Locus iste) e la licenza dei voicebank Synth V per il futuro download
 - [ ] U7 Facoltativo: `git tag landing-v1 c50b793 && git push origin landing-v1`

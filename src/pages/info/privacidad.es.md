@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: Privacidad
-description: "Aviso de privacidad de Voce a Voce: sitio estático sin cookies ni analytics, vídeos de YouTube con youtube-nocookie.com y contacto."
+description: "Aviso de privacidad de Voce a Voce: sitio estático sin cookies, vídeos de YouTube con youtube-nocookie.com y contacto."
 lang: es
 routeSection: privacy
 permalink: /es/privacidad/
@@ -12,7 +12,15 @@ permalink: /es/privacidad/
 
 # Privacidad
 
+{% if site.analytics.attive -%}
+El sitio no usa cookies, y Voce a Voce no recoge datos personales de los visitantes.
+
+## Estadísticas de visitas
+
+Para saber cuántas personas visitan el sitio y qué páginas leen usamos **Cloudflare Web Analytics**, que no usa cookies, no guarda nada en el navegador y no sigue a las personas entre sitios. Solo vemos datos agregados (páginas vistas, país, tipo de dispositivo, sitio de procedencia). El servicio lo presta Cloudflare, Inc.: consulta la [política de privacidad de Cloudflare](https://www.cloudflare.com/privacypolicy/).
+{%- else -%}
 El sitio no usa cookies ni estadísticas propias, y Voce a Voce no recoge datos personales de los visitantes.
+{%- endif %}
 
 ## Vídeos de YouTube
 

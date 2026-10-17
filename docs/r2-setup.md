@@ -35,6 +35,8 @@ Prerequisiti: PC Windows con il repo clonato, Node.js 22 o più recente (`packag
 
 ## 2. Account Cloudflare e piano gratuito
 
+> Con lo stesso account attiva anche **Cloudflare Web Analytics**, e quando entri nel DNS di Aruba aggiungi il TXT di **Google Search Console**: passi in [statistiche.md](statistiche.md).
+
 1. Vai su <https://dash.cloudflare.com/sign-up> e crea l'account con la tua email. **Non aggiungere il dominio** `voceavoce.com` a Cloudflare: non serve e non va fatto ora. Se la procedura lo propone, salta quel passo.
 2. Scegli il **sottodominio workers.dev**: dal pannello, **Workers & Pages** (alla prima visita può chiedere di registrare il sottodominio). Sarà la parte `<sottodominio>` nell'URL `https://voceavoce-audio.<sottodominio>.workers.dev`. È pubblico e difficile da cambiare in seguito: sceglilo con cura.
 3. Abilita **R2** (menu **R2 object storage**). Da verificare: può chiedere un metodo di pagamento anche per restare nel livello gratuito. Controlla sulla pagina ufficiale (<https://developers.cloudflare.com/r2/pricing/>) cosa è incluso e imposta, se il pannello lo permette, gli avvisi di spesa.

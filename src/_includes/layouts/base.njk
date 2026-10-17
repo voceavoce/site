@@ -119,5 +119,8 @@
     <p class="fine">© {{ site.buildTime.slice(0, 4) }} {{ 'footer.rights' | t(lang) }} · {{ 'footer.note' | t(lang) }}</p>
   </div>
 </footer>
+{%- if site.analytics.cloudflareToken %}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.analytics.cloudflareToken }}"}'></script>
+{%- endif %}
 </body>
 </html>
