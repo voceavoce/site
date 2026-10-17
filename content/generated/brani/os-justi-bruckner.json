@@ -30,10 +30,10 @@
   "licenza_spartito": "PD",
   "testo": {
     "lingua": "la",
-    "testo": "Os justi meditabitur sapientiam,\net lingua ejus loquetur judicium.\nLex Dei ejus in corde ipsius\net non supplantabuntur gressus ejus.",
+    "testo": "Os justi meditabitur sapientiam:\net lingua ejus loquetur judicium.\nLex Dei ejus in corde ipsius:\net non supplantabuntur gressus ejus.\nAlleluia.",
     "fonte": {
-      "sito": "lieder.net",
-      "url": "https://www.lieder.net/lieder/get_text.html?TextId=58489"
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Os_justi_(Bruckner)"
     }
   },
   "voci": [

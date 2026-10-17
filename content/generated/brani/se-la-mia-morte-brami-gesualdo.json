@@ -29,6 +29,14 @@
   "tempo_bpm": 112,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "Se la mia morte brami,\ncrudel, lieto ne moro.\nE dopo morte ancor te solo adoro.\nMa se vuoi che non t'ami,\nahi, che a pensarlo solo\nIl duol m'ancide\ne l'alma fugge a volo.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=112486"
+    }
+  },
   "voci": [
     {
       "voce": "S1",

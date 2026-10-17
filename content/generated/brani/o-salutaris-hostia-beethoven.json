@@ -31,6 +31,15 @@
   "tempo_bpm": 80,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "O SALUTARIS Hostia\nQuae caeli pandis ostium.\nBella premunt hostilia;\nDa robur, fer auxilium.\nUni trinoque Domino\nSit sempiterna gloria:\nQui vitam sine termino,\nNobis donet in patria.\nAmen.",
+    "fonte": {
+      "sito": "preces-latinae.org",
+      "url": "http://www.preces-latinae.org/thesaurus/Euch/OSalutaris.html"
+    },
+    "comune": "o-salutaris"
+  },
   "voci": [
     {
       "voce": "S",

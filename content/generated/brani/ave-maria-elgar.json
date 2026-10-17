@@ -32,6 +32,15 @@
   "tempo_bpm": 44,
   "fonte_spartito": "CPDL / ChoralWiki",
   "licenza_spartito": "ChoralWiki License",
+  "testo": {
+    "lingua": "la",
+    "testo": "Ave, Maria, grátia plena,\nDóminus tecum.\nBenedícta tu in muliéribus,\net benedíctus fructus ventris tui,\nIesus.\nSancta María, Mater Dei,\nora pro nobis peccatóribus,\nnunc et in hora mortis nostræ.\nAmen.",
+    "fonte": {
+      "sito": "la.wikisource.org",
+      "url": "https://la.wikisource.org/wiki/Ave_Maria"
+    },
+    "comune": "ave-maria"
+  },
   "voci": [
     {
       "voce": "S",

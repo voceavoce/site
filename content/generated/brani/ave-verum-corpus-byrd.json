@@ -31,6 +31,15 @@
   "tempo_bpm": 70,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "CC0",
+  "testo": {
+    "lingua": "la",
+    "testo": "Ave verum corpus, natum\nde Maria Virgine,\nvere passum, immolatum\nin cruce pro homine\ncuius latus perforatum\nfluxit aqua et sanguine:\nesto nobis praegustatum\nin mortis examine.\nO Iesu dulcis, O Iesu pie,\nO Iesu, fili Mariae.\nMiserere mei. Amen.\nunda fluxit et sanguine",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Ave_verum_corpus"
+    },
+    "comune": "ave-verum-corpus"
+  },
   "voci": [
     {
       "voce": "S",

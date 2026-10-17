@@ -42,6 +42,14 @@
   "tempo_bpm": 96,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Surrexit pastor bonus,\nqui animam suam posuit pro ovibus suis,\net pro grege suo mori dignatus est, alleluia.",
+    "fonte": {
+      "sito": "emmanuelmusic.org",
+      "url": "https://www.emmanuelmusic.org/other-translations/lassus-surrexit-pastor-bonus"
+    }
+  },
   "voci": [
     {
       "voce": "S1",

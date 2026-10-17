@@ -31,6 +31,15 @@
   "tempo_bpm": 92,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Kyrie Eleison\nChriste Eleison\nKyrie Eleison",
+    "fonte": {
+      "sito": "hozana.org",
+      "url": "https://hozana.org/en/prayer/in-latin/kyrie"
+    },
+    "comune": "kyrie"
+  },
   "voci": [
     {
       "voce": "S",
