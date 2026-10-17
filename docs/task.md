@@ -68,7 +68,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] P12 (S) Test end-to-end Playwright in `tests/e2e/` (PWA + player), partendo dalle bozze in `tools/verifica-manuale/`; audio sintetici generati al momento del test, mai nel repo — FATTO: `tests/e2e/{helpers,player.spec,pwa.spec}.mjs`, 18 test, `npm run e2e`
 - [x] P13 (S) Test dell'aggiornamento del service worker (versione nuova → cache vecchie cancellate, audio sempre fuori dalla cache)
 - [x] P14 (H) `npm run e2e` nel workflow Check (solo PR), con l'installazione di Chromium da Playwright in CI
-- [~] P15 (S) Test e2e automatico evidenziazione ↔ clic UDIBILE (ex `tools/verifica-manuale/measure.mjs`) a 1×/0,75×/0,5×, che deve fallire se si toglie la compensazione della latenza (richiesta utente 2026-10-17)
+- [x] P15 (S) Test e2e automatico evidenziazione ↔ clic UDIBILE (ex `tools/verifica-manuale/measure.mjs`) a 1×/0,75×/0,5×, che deve fallire se si toglie la compensazione della latenza (richiesta utente 2026-10-17) — FATTO: `tests/e2e/sync-audio.spec.mjs`, 3 test; errore mediano con compensazione −5…+26 ms, senza compensazione −46…−116 ms (il test fallisce, come deve)
 
 ## Statistiche visite
 
