@@ -313,6 +313,7 @@
     "score": "Partitura",
     "zoomIn": "Ingrandisci la partitura",
     "zoomOut": "Riduci la partitura",
+    "invert": "Inverti colori",
     "pick": "Scegli sulla partitura",
     "pickHint": "Con questa opzione attiva, tocca una battuta per l'inizio e un'altra per la fine del passaggio; con l'opzione spenta, un tocco porta la riproduzione a quella battuta.",
     "scoreLabel": "Partitura di {title}",

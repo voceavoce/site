@@ -18,10 +18,16 @@
 
   .score-scroll {
     max-height: min(62dvh, 40rem); min-height: 8rem; overflow: auto; overscroll-behavior: contain;
-    background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius);
+    /* Come la carta stampata: sfondo bianco e inchiostro scuro in ogni tema; "Inverti colori" la scurisce. */
+    --paper: #ffffff; --ink: #111111;
+    background: var(--paper); color: var(--ink); border: 1px solid var(--border); border-radius: var(--radius);
     padding: var(--space-2); touch-action: pan-x pan-y pinch-zoom;
   }
-  .score-scroll > svg { width: 100%; height: auto; overflow: visible; color: var(--text); }
+  .score-scroll.is-inverted { --paper: #101828; --ink: #eef0f5; }
+  .score-scroll > svg { width: 100%; height: auto; overflow: visible; color: var(--ink); }
+  /* Verovio scrive color="black" sull'svg interno e lascia i glifi senza fill (nero di default): il colore va
+     impostato qui. Le fasce .measure-bg hanno la loro regola e non ne risentono. */
+  .score-scroll svg svg { color: var(--ink); fill: currentColor; }
   .score-scroll g.measure { cursor: pointer; }
   .score-scroll .measure-bg { fill: var(--accent-fill); fill-opacity: .38; pointer-events: none; }
 
@@ -85,8 +91,9 @@
     .study { padding-bottom: 8.5rem; }
   }
   @media (min-width: 60rem) {
-    .study__grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
-    .score-scroll { max-height: min(70dvh, 48rem); }
+    /* Partitura a tutta larghezza (è la parte che si legge); ripetizione e mixer sotto, affiancati. */
+    .study__side { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; }
+    .score-scroll { max-height: min(78dvh, 64rem); }
     .transport { padding-block: var(--space-3); }
     .transport__row { flex-wrap: nowrap; }
     .transport { grid-template-columns: 1fr; }

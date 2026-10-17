@@ -313,6 +313,7 @@
     "score": "Score",
     "zoomIn": "Zoom the score in",
     "zoomOut": "Zoom the score out",
+    "invert": "Invert colours",
     "pick": "Pick on the score",
     "pickHint": "When on, tap one bar for the start and another for the end of the passage; when off, a tap moves playback to that bar.",
     "scoreLabel": "Score of {title}",

@@ -8,6 +8,27 @@ export const ZOOM_STEPS = [25, 30, 35, 40, 50, 60, 75, 100];
 
 const reducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
+// Dalla seconda riga Verovio stampa le abbreviazioni delle parti. In molti file sono identiche per tutte le voci
+// ("Ch" per Soprano, Tenor, Bass) e non dicono quale voce e' quale: in quel caso le sostituisco con l'iniziale del
+// nome della parte (S, A, T, B; "Soprano 2" -> S2). Se le abbreviazioni sono gia' tutte diverse, il file resta com'e'.
+export function abbreviaParti(xml) {
+  try {
+    const doc = new DOMParser().parseFromString(xml, "application/xml");
+    if (doc.querySelector("parsererror")) return xml;
+    const parti = [...doc.querySelectorAll("score-part")].filter((p) => p.querySelector("part-abbreviation") && p.querySelector("part-name"));
+    if (parti.length < 2) return xml;
+    const attuali = parti.map((p) => p.querySelector("part-abbreviation").textContent.trim());
+    if (new Set(attuali).size === attuali.length) return xml;
+    for (const p of parti) {
+      const m = p.querySelector("part-name").textContent.trim().match(/^(\p{L})\p{L}*\s*(\d+)?/u);
+      if (m) p.querySelector("part-abbreviation").textContent = m[1].toUpperCase() + (m[2] || "");
+    }
+    return new XMLSerializer().serializeToString(doc);
+  } catch {
+    return xml;
+  }
+}
+
 export async function createScore({ container, xmlUrl, onMeasureTap, onError }) {
   const [{ default: createVerovioModule }, { VerovioToolkit }] = await Promise.all([
     import(new URL("verovio-module.mjs", VEROVIO).href),
@@ -18,9 +39,11 @@ export async function createScore({ container, xmlUrl, onMeasureTap, onError }) 
     fetch(xmlUrl).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); }),
   ]);
   const tk = new VerovioToolkit(mod);
-  if (!tk.loadData(xml)) throw new Error("MusicXML non leggibile da Verovio");
+  if (!tk.loadData(abbreviaParti(xml))) throw new Error("MusicXML non leggibile da Verovio");
 
-  let zoom = 50;
+  // Zoom iniziale un passo sopra il vecchio 50 (note piu' leggibili); sugli schermi larghi, dove la partitura e' a tutta
+  // larghezza, due passi (a 50 starebbe tutta su un rigo con note minuscole). Con A- / A+ si cambia.
+  let zoom = container.clientWidth >= 800 ? 75 : 60;
   let measures = [];
   let current = -1;
   let lastWidth = 0;

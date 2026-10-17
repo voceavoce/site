@@ -1,7 +1,7 @@
 // Base degli audio del player (UNICO punto di configurazione).
 // Produzione: Worker Cloudflare su workers.dev (bucket R2 privato). Sviluppo: scripts/serve-audio.mjs.
-// Da sostituire con l'URL mostrato da `wrangler deploy` (vedi workers/audio/README.md).
-const AUDIO_BASE_PRODUZIONE = "https://voceavoce-audio.CAMBIAMI.workers.dev";
+// URL mostrato da `wrangler deploy` (vedi workers/audio/README.md).
+const AUDIO_BASE_PRODUZIONE = "https://voceavoce-audio.voceavoce.workers.dev";
 // Statistiche delle visite senza cookie: Cloudflare Web Analytics (guida in docs/statistiche.md).
 // Incolla qui il token del sito ("data-cf-beacon"). Finche' e' null non si carica nessuno script.
 const CLOUDFLARE_ANALYTICS_TOKEN = null;

@@ -46,6 +46,16 @@ async function main(data) {
     onError: (e) => fail(L.errScore),
   }).then((s) => { score = s; $("[data-zoom-in]").disabled = $("[data-zoom-out]").disabled = false; update(); }, (e) => { console.error(e); fail(L.errScore); });
 
+  // Partitura su carta bianca di default; "Inverti colori" la scurisce (scelta ricordata, se il browser lo permette).
+  const scoreBox = $("[data-score]"), invertBtn = $("[data-score-invert]");
+  const setInverted = (on, save) => {
+    scoreBox.classList.toggle("is-inverted", on);
+    invertBtn.setAttribute("aria-pressed", String(on));
+    if (save) { try { localStorage.setItem("va-score-inverted", on ? "1" : "0"); } catch { /* storage non disponibile */ } }
+  };
+  try { setInverted(localStorage.getItem("va-score-inverted") === "1", false); } catch { /* resta su carta bianca */ }
+  invertBtn.addEventListener("click", () => setInverted(invertBtn.getAttribute("aria-pressed") !== "true", true));
+
   $("[data-zoom-in]").addEventListener("click", () => { const z = score?.setZoom(1); if (z) say(L.zoom.replace("{z}", z)); });
   $("[data-zoom-out]").addEventListener("click", () => { const z = score?.setZoom(-1); if (z) say(L.zoom.replace("{z}", z)); });
 

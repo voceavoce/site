@@ -30,6 +30,7 @@ eleventyExcludeFromCollections: true
         <div class="study__tools">
           <button type="button" class="tool" data-zoom-out disabled aria-label="{{ 'study.zoomOut' | t(lang) }}"><span aria-hidden="true">A−</span></button>
           <button type="button" class="tool" data-zoom-in disabled aria-label="{{ 'study.zoomIn' | t(lang) }}"><span aria-hidden="true">A+</span></button>
+          <button type="button" class="tool tool--text" data-score-invert aria-pressed="false">{{ 'study.invert' | t(lang) }}</button>
           <button type="button" class="tool tool--text" data-loop-pick data-feature="loop" aria-pressed="false" aria-describedby="study-pick-hint" data-needs-audio disabled>{{ 'study.pick' | t(lang) }}</button>
         </div>
       </div>
