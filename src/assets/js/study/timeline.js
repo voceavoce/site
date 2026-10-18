@@ -43,6 +43,15 @@ export function loopBounds(sync, from, to) {
 }
 
 /**
+ * Da dove deve partire «Riproduci»: con un ripeti attivo e la testina fuori dal passaggio (prima dell'inizio o oltre
+ * la fine) si parte dall'inizio del passaggio, non dal brano; dentro il passaggio si riprende da dov'e'.
+ */
+export function startForPlay(range, pos) {
+  if (!range || !Number.isFinite(range.start) || !Number.isFinite(range.end) || !(range.end > range.start)) return pos;
+  return pos < range.start - 1e-3 || pos >= range.end ? range.start : pos;
+}
+
+/**
  * Prima occorrenza (o la piu' vicina a `near`) della battuta di partitura `m` nell'elenco di esecuzione.
  * Serve al tocco sulla partitura: con i ritornelli la stessa `m` compare piu' volte.
  */

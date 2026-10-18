@@ -75,6 +75,78 @@ test("tempi: senza metronomi non fa niente; le note non si toccano", () => {
   assert.equal(doc.querySelectorAll("note").length, 2);
 });
 
+// --- tempiRadi ---------------------------------------------------------------------------------------------------
+const bpmDi = (doc) => [...doc.querySelectorAll("per-minute")].map((n) => n.textContent);
+test("tempi radi: il valore si arrotonda all'intero (91.9998 -> 92)", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [METRONOMO(91.999800000000001) + NOTA] }]));
+  assert.equal(M.tempiRadi(doc), 0);
+  assert.deepEqual(bpmDi(doc), ["92"]);
+});
+test("tempi radi: un rallentando scritto battuta per battuta lascia pochi segni leggibili", () => {
+  // come exultate-deo-palestrina: 90, 85.0002, 82.0002, 81, 78, 79.0002 tutti nelle ultime battute
+  const bpm = [90, 85.0002, 82.0002, 81, 78, 79.0002];
+  const doc = leggi(xml([{ nome: "S", battute: bpm.map((b) => METRONOMO(b) + NOTA) }]));
+  assert.equal(M.tempiRadi(doc), 4); // restano 90 e 78 (un -13% a quattro battute dal primo); 85, 82, 81 e 79 spariscono
+  assert.deepEqual(bpmDi(doc), ["90", "78"]);
+  assert.equal(doc.querySelectorAll("sound").length, 6); // la riproduzione non cambia
+});
+test("tempi radi: un cambio netto (>=10%) dopo qualche battuta si tiene", () => {
+  const battute = [METRONOMO(120) + NOTA, NOTA, NOTA, NOTA, NOTA, METRONOMO(80) + NOTA];
+  const doc = leggi(xml([{ nome: "S", battute }]));
+  assert.equal(M.tempiRadi(doc), 0);
+  assert.deepEqual(bpmDi(doc), ["120", "80"]);
+});
+test("tempi radi: un cambio netto ma troppo vicino al segno precedente si toglie", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [METRONOMO(120) + NOTA, METRONOMO(80) + NOTA] }]));
+  assert.equal(M.tempiRadi(doc), 1);
+  assert.deepEqual(bpmDi(doc), ["120"]);
+});
+test("tempi radi: la decisione vale per tutte le parti (stessa battuta, stesso esito)", () => {
+  const battute = [METRONOMO(100) + NOTA, METRONOMO(101) + NOTA];
+  const doc = leggi(xml([{ nome: "S", battute }, { nome: "A", battute }]));
+  assert.equal(M.tempiRadi(doc), 2);
+  assert.deepEqual(bpmDi(doc), ["100", "100"]);
+});
+test("tempi radi: valori non numerici o senza per-minute non si toccano, mai eccezioni", () => {
+  const dir = '<direction><direction-type><metronome><beat-unit>quarter</beat-unit><per-minute>c. 60-70</per-minute></metronome></direction-type></direction>';
+  const doc = leggi(xml([{ nome: "S", battute: [dir + NOTA, NOTA] }]));
+  assert.equal(M.tempiRadi(doc), 0);
+  assert.equal(doc.querySelectorAll("metronome").length, 1);
+});
+test("tempi radi: abbreviaParti li applica", () => {
+  const bpm = [90, 85, 82, 81];
+  const fuori = M.abbreviaParti(xml([{ nome: "S", battute: bpm.map((b) => METRONOMO(b) + NOTA) }]), []);
+  assert.equal(conta(fuori, "metronome"), 1);
+});
+
+// --- chiaviOttavate ----------------------------------------------------------------------------------------------
+const CHIAVE_SOL = "<attributes><clef><sign>G</sign><line>2</line></clef></attributes>";
+const nota = (step, ott) => `<note><pitch><step>${step}</step><octave>${ott}</octave></pitch><duration>4</duration><type>quarter</type></note>`;
+const giro = (ott) => ["E", "F", "G", "A", "G", "F", "E", "D", "E", "F"].map((s) => nota(s, ott)).join("");
+test("chiavi: una parte in chiave di violino che sta sotto il do centrale (tenore) prende la chiave ottavata", () => {
+  const doc = leggi(xml([{ nome: "T", battute: [CHIAVE_SOL + giro(3)] }]));
+  assert.equal(M.chiaviOttavate(doc), 1);
+  assert.equal(doc.querySelector("clef-octave-change").textContent, "-1");
+  assert.deepEqual([...doc.querySelectorAll("clef > *")].map((e) => e.tagName), ["sign", "line", "clef-octave-change"]); // l'ordine che vuole MusicXML
+  assert.equal(doc.querySelectorAll("octave")[0].textContent, "3"); // le altezze non cambiano
+});
+test("chiavi: soprano e contralto (sopra il do centrale) restano come sono", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [CHIAVE_SOL + giro(5)] }, { nome: "A", battute: [CHIAVE_SOL + giro(4)] }]));
+  assert.equal(M.chiaviOttavate(doc), 0);
+  assert.equal(doc.querySelectorAll("clef-octave-change").length, 0);
+});
+test("chiavi: chiave di basso e chiavi gia' ottavate non si toccano; poche note non bastano per decidere", () => {
+  const basso = '<attributes><clef><sign>F</sign><line>4</line></clef></attributes>';
+  const gia = '<attributes><clef><sign>G</sign><line>2</line><clef-octave-change>-1</clef-octave-change></clef></attributes>';
+  const doc = leggi(xml([{ nome: "B", battute: [basso + giro(2)] }, { nome: "T", battute: [gia + giro(3)] }, { nome: "X", battute: [CHIAVE_SOL + nota("C", 3)] }]));
+  assert.equal(M.chiaviOttavate(doc), 0);
+  assert.equal(doc.querySelectorAll("clef-octave-change").length, 1);
+});
+test("chiavi: abbreviaParti la applica", () => {
+  const fuori = M.abbreviaParti(xml([{ nome: "T", battute: [CHIAVE_SOL + giro(3)] }]), []);
+  assert.equal(conta(fuori, "clef-octave-change"), 1);
+});
+
 // --- abbreviaParti -----------------------------------------------------------------------------------------------
 const coro = (extra = {}) => xml([
   { nome: "Soprano", abbr: "Ch", nascosto: true, ...extra },

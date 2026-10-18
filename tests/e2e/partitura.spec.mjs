@@ -1,7 +1,7 @@
 // Partitura del player di studio: carta bianca, cursore che scorre, fascia della propria voce, riquadro delle opzioni
 // (ricordate nel browser) ed etichette dei righi. Sul brano di prova content/player/_prova, con audio sintetici.
 import { expect } from "@playwright/test";
-import { test, apriPlayer, intercettaAudio, raccogliErrori, SYNC } from "./helpers.mjs";
+import { test, apriPlayer, apriRipeti, intercettaAudio, raccogliErrori, SYNC } from "./helpers.mjs";
 
 test.beforeEach(async ({ context }) => {
   await intercettaAudio(context);
@@ -214,15 +214,10 @@ test.describe("riquadro delle opzioni", () => {
 
 test.describe("scelta della battuta toccando la partitura", () => {
   /** Punto (px di pagina) nel mezzo di una battuta, in alto nel suo sistema: spesso e' spazio vuoto, senza segni. */
-  const centro = (page, i) => page.evaluate((k) => {
-    const g = document.querySelectorAll("[data-score] g.measure")[k];
-    document.querySelector("[data-score]").scrollIntoView({ block: "center", behavior: "instant" }); // il tasto Scegli e' piu' in basso: la pagina puo' essere scorsa
-    const r = g.getBoundingClientRect(), s = g.closest("g.system").getBoundingClientRect();
-    return { x: r.left + r.width * 0.5 + 3, y: s.top + s.height * 0.1 };
-  }, i);
 
   test("toccare lo spazio vuoto di battute diverse sceglie battute diverse (e quella giusta)", async ({ page }) => {
     await apriPlayer(page);
+    await apriRipeti(page);
     const scelte = [];
     for (const i of [1, 3]) {
       await page.click("[data-loop-pick]");
@@ -236,6 +231,7 @@ test.describe("scelta della battuta toccando la partitura", () => {
 
   test("prima e ultima battuta: l'intervallo del ciclo e' quello toccato", async ({ page }) => {
     await apriPlayer(page);
+    await apriRipeti(page);
     await page.click("[data-loop-pick]");
     const a = await centro(page, 1), b = await centro(page, 4);
     await page.mouse.click(a.x, a.y);
@@ -257,5 +253,113 @@ test.describe("scelta della battuta toccando la partitura", () => {
     const r = await page.evaluate(() => { const s = document.querySelector("[data-score]").getBoundingClientRect(); return { x: s.left + 20, y: s.bottom - 2 }; });
     await page.mouse.click(r.x, r.y);
     expect(await page.evaluate(() => document.querySelector("[data-seek]").dataset.measure)).toBe(prima);
+  });
+});
+
+const centro = (page, i) => page.evaluate((k) => {
+  const g = document.querySelectorAll("[data-score] g.measure")[k];
+  document.querySelector("[data-score]").scrollIntoView({ block: "center", behavior: "instant" }); // il tasto Scegli e' piu' in basso: la pagina puo' essere scorsa
+  const r = g.getBoundingClientRect(), s = g.closest("g.system").getBoundingClientRect();
+  return { x: r.left + r.width * 0.5 + 3, y: s.top + s.height * 0.1 };
+}, i);
+
+test.describe("scelta della battuta su brani reali (testo e melismi sotto le note)", () => {
+  // Il rettangolo di ogni battuta include versi e trattini che sconfinano nelle vicine: l'estensione giusta e' quella del rigo.
+  for (const slug of ["agnus-dei-josquin", "adieu-sweet-amaryllis-wilbye", "a-d-una-fresca-riva-marenzio"]) {
+    test(`${slug}: toccando il centro di OGNI battuta si sceglie quella battuta`, async ({ page }) => {
+      test.setTimeout(600_000); // brani lunghi: decine di battute, ognuna con il suo tocco
+      await page.goto(`/player/${slug}/`);
+      await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-loop-pick]").disabled, null, { timeout: 180_000 });
+      await apriRipeti(page);
+      const n = await page.evaluate(() => document.querySelectorAll("[data-score] g.measure").length);
+      const sbagliate = [];
+      for (let i = 0; i < n; i++) {
+        await page.click("[data-loop-pick]");
+        const p = await page.evaluate(async (k) => {
+          const g = document.querySelectorAll("[data-score] g.measure")[k];
+          g.scrollIntoView({ block: "center", behavior: "instant" });
+          // lo scroll automatico del tocco precedente puo' ancora girare: si misura quando la battuta sta ferma per 6 frame
+          for (let fermo = 0, y0 = null; fermo < 6;) {
+            await new Promise((ok) => requestAnimationFrame(ok));
+            const y = g.getBoundingClientRect().top;
+            fermo = y === y0 ? fermo + 1 : 0; y0 = y;
+            if (fermo === 0) g.scrollIntoView({ block: "center", behavior: "instant" });
+          }
+          const linee = [...g.querySelector(":scope > g.staff").querySelectorAll(":scope > path")].map((e) => e.getBoundingClientRect());
+          const l = Math.min(...linee.map((r) => r.left)), r = Math.max(...linee.map((r) => r.right));
+          const s = g.closest("g.system").getBoundingClientRect();
+          return { x: (l + r) / 2, y: s.top + s.height * 0.12 };
+        }, i);
+        await page.mouse.click(p.x, p.y);
+        const got = await page.locator("[data-loop-from]").inputValue();
+        if (got !== String(i)) sbagliate.push(`${i}->${got}`);
+        await page.click("[data-loop-pick]"); // spegne la scelta
+      }
+      expect(sbagliate, "battute scelte male (attesa -> ottenuta)").toEqual([]);
+    });
+  }
+
+  test("exultate-deo-palestrina: all'inizio il cursore sta sulla prima nota, non a meta' battuta (le altre voci hanno la pausa di battuta)", async ({ page }) => {
+    await page.goto("/player/exultate-deo-palestrina/?debug");
+    await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && window.__study?.score, null, { timeout: 90_000 });
+    await page.waitForTimeout(1000);
+    const { cursore, nota } = await page.evaluate(() => {
+      const c = document.querySelector("[data-score]").getBoundingClientRect();
+      const m = /translate\(([-\d.]+)px/.exec(document.querySelector(".score-cursor").style.transform);
+      const g0 = document.querySelectorAll("[data-score] g.measure")[0];
+      const xs = [...g0.querySelectorAll(".note .notehead")].map((e) => { const r = e.getBoundingClientRect(); return r.left + r.width / 2 - c.left; });
+      return { cursore: Number(m[1]) + 2, nota: Math.min(...xs) };
+    });
+    expect(Math.abs(cursore - nota), `cursore ${cursore} prima nota ${nota}`).toBeLessThan(8);
+  });
+
+  for (const slug of ["agnus-dei-josquin", "exultate-deo-palestrina"]) {
+    test(`${slug}: Ripeti acceso dalla battuta 5, Riproduci parte dal passaggio e non dal brano`, async ({ page }) => {
+      await page.goto(`/player/${slug}/?debug`);
+      await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-play]").disabled, null, { timeout: 90_000 });
+      await apriRipeti(page);
+      await page.locator("[data-loop-from]").selectOption({ value: "4" });
+      await page.locator("[data-loop-to]").selectOption({ value: "6" });
+      await page.locator("[data-loop-toggle]").click();
+      const t4 = await page.evaluate(() => window.__study.sync.battute[4].t);
+      await page.click("[data-play]");
+      await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
+      expect(await page.evaluate(() => window.__study.engine.position())).toBeGreaterThanOrEqual(t4 - 0.05);
+    });
+  }
+
+  test("scelto un passaggio la testina va al suo inizio e Riproduci parte da li", async ({ page }) => {
+    await apriPlayer(page);
+    await apriRipeti(page);
+    await page.click("[data-loop-pick]");
+    for (const i of [2, 4]) {
+      const { x, y } = await centro(page, i);
+      await page.mouse.click(x, y);
+    }
+    await expect(page.locator("[data-loop-from]")).toHaveValue("2");
+    await expect(page.locator("[data-loop-to]")).toHaveValue("4");
+    const inizio = battuta(2).t;
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeCloseTo(inizio, 1);
+    // le due etichette dei pulsanti Ripeti mostrano il passaggio, e i due pulsanti sono lo stesso interruttore
+    await expect(page.locator("[data-loop-toggle] [data-loop-range]")).toHaveText("3–5");
+    await expect(page.locator("[data-loop-open] [data-loop-range]")).toHaveText("3–5"); // il pulsante della barra mostra il passaggio a ripeti acceso
+    await expect(page.locator("[data-loop-open]")).toHaveClass(/is-on/);
+    // fra la scritta e il passaggio c'e' uno spazio visibile («Ripeti 3–5», non «Ripeti3–5»)
+    expect(await page.locator("[data-loop-range]").first().evaluate((e) => parseFloat(getComputedStyle(e).marginInlineStart))).toBeGreaterThan(2);
+    await page.click("[data-play]");
+    await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeGreaterThanOrEqual(inizio - 0.05);
+  });
+
+  test("Riproduci con un ripeti acceso e la testina prima del passaggio parte dall'inizio del passaggio", async ({ page }) => {
+    await apriPlayer(page);
+    await apriRipeti(page);
+    await page.locator("[data-loop-from]").selectOption({ value: "3" }); // per valore (indice): l'etichetta "3" e' un'altra battuta
+    await page.locator("[data-loop-to]").selectOption({ value: "4" });
+    await page.locator("[data-loop-toggle]").click(); // acceso, testina ancora a 0
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeLessThan(0.5);
+    await page.click("[data-play]");
+    await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeGreaterThanOrEqual(battuta(3).t - 0.05);
   });
 });

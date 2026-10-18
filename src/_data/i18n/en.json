@@ -337,6 +337,7 @@
     "loopFrom": "From bar",
     "loopTo": "To bar",
     "loopBtn": "Repeat this passage",
+    "loopSame": "“Repeat this passage” turns it on and off. If playback is outside the passage, it starts from its beginning.",
     "loopShort": "Loop",
     "speed": "Speed",
     "position": "Position",

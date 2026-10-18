@@ -69,7 +69,12 @@
   .field { display: grid; gap: var(--space-1); font-weight: 600; min-width: 0; }
   .field span { font-size: var(--step--1); color: var(--muted); }
   .field select { min-height: var(--tap); padding: 0 var(--space-3); border: 2px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); width: 100%; }
-  .loop-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .loop-options { display: grid; gap: var(--space-2); }
+  .loop-row { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-3); }
+  .loop-row .field { min-width: 7rem; }
+  /* il passaggio dopo la scritta: «Ripeti 4–11» (lo spazio non puo' stare nel testo, i pulsanti sono flex) */
+  [data-loop-range]:not(:empty) { margin-inline-start: .4em; }
+  .tool.is-on { border-color: var(--accent-fill); box-shadow: inset 0 0 0 1px var(--accent-fill); }
   .myvoice { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3); align-items: end; }
 
   .mix { list-style: none; padding: 0; display: grid; gap: var(--space-3); }

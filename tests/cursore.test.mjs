@@ -61,6 +61,17 @@ test("punti: note e pause per battuta, ordinate; righi diversi allo stesso istan
   assert.deepEqual(g[0], { q0: 0, p: [{ q: 0, x: 15 }, { q: 1, x: 30 }] });
   assert.deepEqual(g[1], { q0: 2, p: [{ q: 2, x: 100 }, { q: 3, x: 130 }] });
 });
+test("punti: una pausa di battuta intera (al centro) non sposta la nota delle altre voci (cursore sulla prima nota)", () => {
+  // come exultate-deo-palestrina: 1 voce canta, 4 hanno la pausa di battuta, centrata a x=167
+  const tm = [{ qstamp: 0, measureOn: "m1", on: ["n1"], restsOn: ["r1", "r2", "r3", "r4"] }, { qstamp: 2, on: ["n2"] }];
+  const x = { n1: 132, n2: 189, r1: 167, r2: 167, r3: 167, r4: 167 };
+  const g = puntiPerBattuta(tm, indice, (id) => x[id] ?? null);
+  assert.deepEqual(g[0].p, [{ q: 0, x: 132 }, { q: 2, x: 189 }]);
+});
+test("punti: con sole pause in un istante si usa la loro posizione", () => {
+  const g = puntiPerBattuta([{ qstamp: 0, measureOn: "m1", restsOn: ["r1", "r2"] }], indice, (id) => ({ r1: 40, r2: 60 })[id] ?? null);
+  assert.deepEqual(g[0].p, [{ q: 0, x: 50 }]);
+});
 test("punti: elementi non trovati o con x non valida vengono saltati", () => {
   const g = puntiPerBattuta(timemap, indice, (id) => (id === "n3" ? NaN : id === "n4" ? null : xDi(id)));
   assert.deepEqual(g[0].p, [{ q: 0, x: 15 }]);
@@ -245,4 +256,17 @@ test("battuta al punto: dati non validi -> -1, senza eccezioni", () => {
   for (const c of [undefined, null, [], "x", [null], [{ i: 0 }], [{ i: 0, l: NaN, r: 1, t: 0, b: 1 }]]) assert.equal(battutaAlPunto(c, 1, 1), -1);
   assert.equal(battutaAlPunto(caselle, NaN, 10), -1);
   assert.equal(battutaAlPunto(caselle, 10, undefined), -1);
+});
+
+test("battutaAlPunto: con caselle sovrapposte (testo e melismi sconfinano) vince la battuta col centro piu' vicino", () => {
+  const sis = {};
+  // la battuta 0 e' larga fin dentro la 1 e la 2 (come i versi di un melisma): prima vinceva sempre la 0
+  const caselle = [
+    { i: 0, sistema: sis, l: 0, r: 260, t: 0, b: 100 },
+    { i: 1, sistema: sis, l: 100, r: 200, t: 0, b: 100 },
+    { i: 2, sistema: sis, l: 200, r: 700, t: 0, b: 100 },
+  ];
+  assert.equal(battutaAlPunto(caselle, 150, 50), 1);
+  assert.equal(battutaAlPunto(caselle, 50, 50), 0);
+  assert.equal(battutaAlPunto(caselle, 450, 50), 2);
 });

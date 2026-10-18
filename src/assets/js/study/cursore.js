@@ -26,7 +26,7 @@ export function frazioneInBattuta(sync, i, pos) {
  *   indiceDi(idBattuta) -> indice della battuta nella pagina (o undefined/-1 se non la conosce)
  *   xDi(idNota)         -> x del centro della nota nel contenitore (o null se l'elemento non c'e')
  * Ritorna un array indicizzato per battuta: { q0, p: [{ q, x }] } con i punti ordinati per q e, se piu' note cadono
- * nello stesso istante (righi diversi), una sola posizione (la media). Le battute senza punti restano {q0, p: []}.
+ * nello stesso istante (righi diversi), una sola posizione (la media delle note; le pause contano solo se non c'e' nessuna nota). Le battute senza punti restano {q0, p: []}.
  */
 export function puntiPerBattuta(timemap, indiceDi, xDi) {
   const geo = [];
@@ -42,16 +42,25 @@ export function puntiPerBattuta(timemap, indiceDi, xDi) {
       }
     }
     if (cur < 0) continue;
-    for (const id of [...(e.on || []), ...(e.restsOn || [])]) {
+    for (const id of e.on || []) {
       const x = xDi(id);
       if (Number.isFinite(x)) geo[cur].p.push({ q: e.qstamp, x });
+    }
+    for (const id of e.restsOn || []) {
+      const x = xDi(id);
+      if (Number.isFinite(x)) geo[cur].p.push({ q: e.qstamp, x, pausa: true });
     }
   }
   for (const g of geo) {
     if (!g) continue;
     const perQ = new Map();
-    for (const { q, x } of g.p) (perQ.get(q) || perQ.set(q, []).get(q)).push(x);
-    g.p = [...perQ].map(([q, xs]) => ({ q, x: xs.reduce((a, b) => a + b, 0) / xs.length })).sort((a, b) => a.q - b.q);
+    for (const { q, x, pausa } of g.p) (perQ.get(q) || perQ.set(q, { note: [], pause: [] }).get(q))[pausa ? "pause" : "note"].push(x);
+    // dove c'e' una nota conta lei: una pausa di battuta intera sta al CENTRO della battuta e, mediata con le note
+    // delle altre voci, porterebbe il cursore a meta' battuta invece che sulla prima nota
+    g.p = [...perQ].map(([q, v]) => {
+      const xs = v.note.length ? v.note : v.pause;
+      return { q, x: xs.reduce((a, b) => a + b, 0) / xs.length };
+    }).sort((a, b) => a.q - b.q);
   }
   return geo;
 }
@@ -119,7 +128,9 @@ export function battutaAlPunto(caselle, x, y, margine = 24) {
   if (!scelte.length || dyMin > margine) return -1;
   const stesso = scelte.filter((c) => c.sistema === scelte[0].sistema);
   const dx = (c) => (x < c.l ? c.l - x : x > c.r ? x - c.r : 0);
-  return stesso.reduce((best, c) => (dx(c) < dx(best) ? c : best), stesso[0]).i;
+  // a parita' (caselle che si sovrappongono) vince la battuta il cui centro e' piu' vicino al punto
+  const centro = (c) => Math.abs(x - (c.l + c.r) / 2);
+  return stesso.reduce((best, c) => (dx(c) < dx(best) || (dx(c) === dx(best) && centro(c) < centro(best)) ? c : best), stesso[0]).i;
 }
 
 /**

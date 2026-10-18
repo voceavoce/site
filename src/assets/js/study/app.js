@@ -5,7 +5,7 @@ import { StudyEngine } from "./engine.js";
 import { bindMixer } from "./mixer.js";
 import { bindLoop } from "./loop.js";
 import { createScore } from "./score.js";
-import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock } from "./timeline.js";
+import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock, startForPlay } from "./timeline.js";
 import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -41,7 +41,12 @@ async function main(data) {
     xmlUrl: data.scoreUrl,
     voiceLabels: manifest.tracce.filter((t) => t.tipo !== "accompagnamento").map((t) => t.voce),
     onMeasureTap: (m) => {
-      if (loop?.tapMeasure(m, Math.max(0, currentIdx))) return;
+      if (loop?.tapMeasure(m, Math.max(0, currentIdx))) {
+        // scelto un passaggio: la testina va al suo inizio (anche in riproduzione), cosi' si sente e si vede dove si ripete
+        const r = loop.range;
+        if (r && engine.tracks.size) { engine.seek(r.start); update(); }
+        return;
+      }
       const i = indexOfScoreMeasure(sync, m, Math.max(0, currentIdx));
       if (i >= 0 && engine.tracks.size) { engine.seek(timeOfMeasure(sync, i)); update(); }
     },
@@ -52,11 +57,14 @@ async function main(data) {
   // bianca, fascia gialla sulla propria parte e cursore accesi, fascia sulla battuta corrente spenta.
   const scoreBox = $("[data-score]");
   const optBtn = $("[data-score-options-toggle]"), optBox = $("[data-score-options]");
-  optBtn.addEventListener("click", () => {
-    const open = optBox.hidden;
-    optBox.hidden = !open;
-    optBtn.setAttribute("aria-expanded", String(open));
-  });
+  // I pulsanti «Opzioni» e «Ripeti» aprono e chiudono ciascuno il proprio riquadro sopra la partitura.
+  for (const [btn, box] of [[optBtn, optBox], [$("[data-loop-open]"), $("[data-loop]")]]) {
+    btn.addEventListener("click", () => {
+      const open = box.hidden;
+      box.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  }
   const optMyPart = $("[data-opt-mypart]"), optCursor = $("[data-opt-cursor]"), optColor = $("[data-opt-cursor-color]");
   const optMeasure = $("[data-opt-measure]"), optInvert = $("[data-opt-invert]");
   const OPT_KEY = "va-score-opts";
@@ -130,7 +138,13 @@ async function main(data) {
   };
   async function toggle() {
     if (el.play.disabled) return;
-    if (engine.playing) engine.pause(); else await engine.play();
+    if (engine.playing) engine.pause();
+    else {
+      // con un ripeti acceso e la testina fuori dal passaggio si parte dall'inizio del passaggio, non dal brano
+      const da = startForPlay(loop?.range, engine.position());
+      if (da !== engine.position()) { engine.seek(da); update(); }
+      await engine.play();
+    }
     setPlayLabel();
     if (!raf) raf = requestAnimationFrame(loopTick);
     update();

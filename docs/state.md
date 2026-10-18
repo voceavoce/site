@@ -1,6 +1,13 @@
 # State — avanzamento e decisioni
 
-## Riepilogo per riprendere (aggiornato 2026-10-18 notte, PR del player pronta)
+## Riepilogo per riprendere (aggiornato 2026-10-18 notte, PR #2 unita, correzioni in corso)
+
+- **PR #2 (player, 140 brani, audio su R2, statistiche) e' gia' unita su `main` e online** (deploy ok). PR #3 (solo docs/script: misura Opus/MP3, punto F1) aperta, da unire. **Lavoro in corso su `fix/player-ripeti-selezione-tempi`** (non ancora in PR): vedi task **P31–P36** in `task.md` (scelta battuta sbagliata sui brani veri, Ripeti poco chiaro e Riproduci dall'inizio, tempi sovrapposti, cursore a meta' battuta, tenore fuori tessitura, e2e da rilanciare).
+- **Strumenti:** `gh` installato (`C:\Program Files\GitHub CLI\gh.exe`, login `ezin82` fatto); e2e: `$env:PW_CHROMIUM='C:\Program Files\Google\Chrome\Application\chrome.exe'; npm run e2e -- tests/e2e/partitura.spec.mjs`; con `E2E_SKIP_BUILD=1` non ricostruisce. In PowerShell evitare le virgolette dentro `Select-String`.
+- **Token Cloudflare Web Analytics** inserito in `src/_data/site.js` (solo produzione).
+
+## Riepilogo precedente (2026-10-18 notte, PR del player pronta)
+
 
 - **Fatto stanotte (autonomia):** esportati e caricati su R2 **tutti i brani con stem** (140 player, 1210 file, 1,4 GB su 10 GB gratuiti, verifica HEAD ok). In produzione il player compare solo sui brani con video gia' pubblicato (oggi 41); gli altri lo ricevono da soli alla build dopo la data. Test: 152 unit; e2e di tutti i brani reali (ha trovato e fatto correggere 3 difetti di layout); a11y 12/12 con il player.
 - **Solo resta** nel mixer (decisione utente). Tutte le impostazioni del player: vedi blocco precedente.

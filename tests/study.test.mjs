@@ -241,3 +241,16 @@ test("titolo della pagina del player: gli apostrofi contano 5 caratteri come nel
     }
   }
 });
+
+test("startForPlay: con un ripeti acceso e la testina fuori dal passaggio si parte dal suo inizio", async () => {
+  const { startForPlay } = await import("../src/assets/js/study/timeline.js");
+  const r = { start: 10, end: 20 };
+  assert.equal(startForPlay(r, 0), 10); // prima del passaggio
+  assert.equal(startForPlay(r, 25), 10); // dopo
+  assert.equal(startForPlay(r, 20), 10); // proprio alla fine
+  assert.equal(startForPlay(r, 10), 10);
+  assert.equal(startForPlay(r, 15.5), 15.5); // dentro: si riprende da dov'e'
+  assert.equal(startForPlay(null, 7), 7); // nessun ripeti
+  assert.equal(startForPlay({ start: 5, end: 5 }, 7), 7); // passaggio non valido
+  assert.equal(startForPlay({ start: NaN, end: 9 }, 7), 7);
+});

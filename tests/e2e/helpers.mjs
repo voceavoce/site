@@ -59,7 +59,9 @@ export async function intercettaAudio(context) {
     const req = route.request();
     const url = new URL(req.url());
     viste.push({ url: req.url(), range: req.headers().range ?? null });
-    const chiave = CHIAVI.find((c) => url.pathname.includes(`/${c}.`));
+    // soprano-1, soprano-2, ...: stessa voce; un file audio con un altro nome (brani reali) riceve comunque un suono valido
+    const nome = url.pathname.split("/").pop().replace(/-\d+(?=\.)/, "");
+    const chiave = CHIAVI.find((c) => url.pathname.includes(`/${c}.`)) ?? (/\.(opus|mp3)$/.test(nome) ? (CHIAVI.find((c) => nome.startsWith(c + ".")) ?? "alto") : null);
     if (!chiave) return route.fulfill({ status: 200, headers: { ...CORS, "content-type": "application/octet-stream" }, body: Buffer.from("x") });
     const wav = wavDi(chiave);
     const m = /^bytes=(\d+)-(\d*)$/.exec(req.headers().range ?? "");
@@ -81,6 +83,11 @@ export function raccogliErrori(page) {
 }
 
 /** Apre il player e aspetta tracce decodificate, partitura disegnata e tasto Play abilitato (Verovio WASM e' lento). */
+/** Apre il riquadro «Ripeti» (a scomparsa, come «Opzioni»): i suoi controlli esistono ma sono nascosti finche' non lo si apre. */
+export async function apriRipeti(page) {
+  if ((await page.locator("[data-loop-open]").getAttribute("aria-expanded")) !== "true") await page.click("[data-loop-open]");
+}
+
 export async function apriPlayer(page, url = PLAYER_URL) {
   await page.goto(url);
   await page.waitForFunction(() => window.__study?.engine.tracks.size === 4 && window.__study.score, null, { timeout: 90_000 });
