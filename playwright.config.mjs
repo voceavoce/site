@@ -22,7 +22,8 @@ export default defineConfig({
   expect: { timeout: 15_000 },
   // Un solo worker: i test misurano tempi di riproduzione, due browser in parallelo li renderebbero instabili.
   workers: 1,
-  fullyParallel: false,
+  // In CI i test si dividono tra piu' job (--shard) test per test; restano indipendenti e ogni job usa un solo worker.
+  fullyParallel: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   forbidOnly: !!process.env.CI,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : [["list"]],
