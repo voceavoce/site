@@ -37,11 +37,12 @@ test("validaSegnalazione: rifiuta formato, testo troppo corto o lungo, titolo ma
   assert.equal(validaSegnalazione({ ...OK, cosa: 42 }).errore, "cosa-corto");
 });
 
-test("costruisciIssue: testo recintato, niente menzioni attive, titolo con battuta e lingua", () => {
+test("costruisciIssue: testo recintato, email copiabile cosi' com'e', titolo con battuta e lingua", () => {
   const i = costruisciIssue(validaSegnalazione({ ...OK, cosa: "ciao @mario\n~~~~\n# titolo", contatto: "io@esempio.it" }).dati);
   assert.equal(i.titolo, "Spartito: Agnus Dei (battuta 12) [fr]");
-  assert.ok(!/@mario/.test(i.corpo), "la menzione va neutralizzata");
-  assert.ok(!i.corpo.includes("~~~~\n# titolo"), "il recinto non si chiude dall'interno");
+  assert.ok(i.corpo.includes("io@esempio.it"), "l'email resta intera, senza caratteri invisibili dopo la @");
+  assert.ok(!i.corpo.includes("\u200b"), "nessun carattere invisibile");
+  assert.ok(i.corpo.includes("~~~~\nciao @mario\n~~\n# titolo\n~~~~"), "la menzione sta dentro il recinto, che non si chiude dall'interno");
   assert.match(i.corpo, /\*\*Contatto \(solo per rispondere\):\*\*/);
   assert.match(i.corpo, /\*\*Battuta:\*\* 12/);
 });

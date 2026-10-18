@@ -47,9 +47,10 @@ export function validaSegnalazione(raw) {
   return { ok: true, dati };
 }
 
-// Il testo delle persone va in un blocco recintato: niente titoli, link o menzioni che GitHub interpreti.
+// Il testo delle persone va in un blocco recintato: GitHub non vi interpreta titoli, link ne' menzioni (@nome), quindi
+// l'email resta copiabile cosi' com'e'. Basta che il testo non possa chiudere il recinto dall'interno.
 function recinto(testo) {
-  return "~~~~\n" + testo.replace(/~{3,}/g, "~~").replace(/@/g, "@​") + "\n~~~~";
+  return "~~~~\n" + testo.replace(/~{3,}/g, "~~") + "\n~~~~";
 }
 
 /** Titolo e testo dell'issue (in italiano per l'intestazione; il testo resta nella lingua della persona). Pura. */

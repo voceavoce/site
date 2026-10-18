@@ -6,7 +6,7 @@ serve nessun account. Chi visita il sito non vede mai GitHub. Dominio e posta re
 
 Cosa fa: accetta solo `POST` JSON dalle origini di `ALLOWED_ORIGINS` (CORS), controlla e ripulisce i campi
 (testo 3-2000 caratteri, email facoltativa), scarta i robot con un campo trappola nascosto, limita a 5 invii al minuto per
-indirizzo, e scrive il testo in un blocco recintato dell'issue (niente menzioni o link attivi).
+indirizzo, e scrive il testo in un blocco recintato dell'issue (GitHub non vi attiva menzioni né link; l'email resta copiabile).
 Senza cookie. Se il Worker non risponde, il modulo mostra l'indirizzo email del sito.
 
 ## Da fare una volta sola (a mano)
