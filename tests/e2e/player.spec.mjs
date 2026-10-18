@@ -333,3 +333,24 @@ test.describe("mobile 375 px", () => {
     }
   });
 });
+
+test.describe("prova sperimentale: uno stretcher per voce", () => {
+  test("?stretch=voci crea 4 stretcher e a velocita' ridotta la riproduzione avanza senza errori", async ({ page }) => {
+    const errori = raccogliErrori(page);
+    await apriPlayer(page, "/player/_prova/?debug&stretch=voci");
+    expect(await page.evaluate(() => window.__study.engine.stretchers.length)).toBe(4);
+    await page.locator("[data-speed]").fill("70");
+    await page.click("[data-play]");
+    await page.waitForTimeout(1500);
+    const pos = await page.evaluate(() => window.__study.engine.position());
+    expect(pos).toBeGreaterThan(0.5);
+    expect(pos).toBeLessThan(1.5); // 1,5 s a 70%: circa 1 s di brano
+    expect(errori).toEqual([]);
+  });
+
+  test("senza il parametro resta un solo stretcher sul mix", async ({ page }) => {
+    await apriPlayer(page);
+    expect(await page.evaluate(() => window.__study.engine.stretchers.length)).toBe(0);
+    expect(await page.evaluate(() => !!window.__study.engine.stretcher)).toBe(true);
+  });
+});

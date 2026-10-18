@@ -31,8 +31,11 @@ export class StudyError extends Error {
 }
 
 export class StudyEngine extends EventTarget {
-  constructor() {
+  /** `perVoce`: SPERIMENTALE (?stretch=voci), uno stretcher per voce invece di uno sul mix: ogni linea e' monofonica, ma le voci possono sfasarsi di qualche ms. */
+  constructor({ perVoce = false } = {}) {
     super();
+    this.perVoce = perVoce;
+    this.stretchers = []; // con perVoce: uno per traccia
     this.ctx = null;
     this.tracks = new Map(); // chiave -> { buffer, gain, source }
     this.bus = null;
@@ -64,11 +67,14 @@ export class StudyEngine extends EventTarget {
     try {
       const { SoundTouchNode } = await import(new URL("index.js", VENDOR).href);
       await SoundTouchNode.register(this.ctx, new URL("soundtouch-processor.js", VENDOR).href);
-      this.stretcher = new SoundTouchNode({ context: this.ctx });
+      this.SoundTouchNode = SoundTouchNode;
       this.wet = this.ctx.createGain();
       this.wet.gain.value = 0; // si parte a 1x: tutto sul ramo diretto
-      this.bus.connect(this.stretcher);
-      this.stretcher.connect(this.wet);
+      if (!this.perVoce) {
+        this.stretcher = new SoundTouchNode({ context: this.ctx });
+        this.bus.connect(this.stretcher);
+        this.stretcher.connect(this.wet);
+      }
       this.wet.connect(this.ctx.destination);
       this.stretchOk = true;
     } catch (e) {
@@ -87,6 +93,13 @@ export class StudyEngine extends EventTarget {
         const gain = this.ctx.createGain();
         gain.connect(this.bus);
         this.tracks.set(tr.chiave, { buffer, gain, source: null });
+        if (this.perVoce && this.stretchOk) {
+          const st = new this.SoundTouchNode({ context: this.ctx });
+          gain.connect(st);
+          st.connect(this.wet);
+          st.playbackRate.setValueAtTime(this.rate, this.ctx.currentTime);
+          this.stretchers.push(st);
+        }
         onProgress(++done, tracks.length);
       }),
     );
@@ -261,6 +274,7 @@ export class StudyEngine extends EventTarget {
     this.rate = r;
     for (const tr of this.tracks.values()) tr.source?.playbackRate.setValueAtTime(r, now);
     this.stretcher?.playbackRate.setValueAtTime(r, now);
+    for (const st of this.stretchers) st.playbackRate.setValueAtTime(r, now);
     this.#setBranch(r < 1 ? 1 : 0);
   }
 

@@ -31,7 +31,8 @@ async function main(data) {
   el.total.textContent = formatClock(manifest.durata_sec ?? sync.fine);
   el.seek.max = String(manifest.durata_sec ?? sync.fine);
 
-  const engine = new StudyEngine();
+  // ?stretch=voci: prova sperimentale con uno stretcher per voce (vedi engine.js)
+  const engine = new StudyEngine({ perVoce: new URLSearchParams(location.search).get("stretch") === "voci" });
   let score = null;
   let currentIdx = -1;
 
