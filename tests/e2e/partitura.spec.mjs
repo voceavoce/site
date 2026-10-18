@@ -214,12 +214,6 @@ test.describe("riquadro delle opzioni", () => {
 
 test.describe("scelta della battuta toccando la partitura", () => {
   /** Punto (px di pagina) nel mezzo di una battuta, in alto nel suo sistema: spesso e' spazio vuoto, senza segni. */
-  const centro = (page, i) => page.evaluate((k) => {
-    const g = document.querySelectorAll("[data-score] g.measure")[k];
-    document.querySelector("[data-score]").scrollIntoView({ block: "center", behavior: "instant" }); // il tasto Scegli e' piu' in basso: la pagina puo' essere scorsa
-    const r = g.getBoundingClientRect(), s = g.closest("g.system").getBoundingClientRect();
-    return { x: r.left + r.width * 0.5 + 3, y: s.top + s.height * 0.1 };
-  }, i);
 
   test("toccare lo spazio vuoto di battute diverse sceglie battute diverse (e quella giusta)", async ({ page }) => {
     await apriPlayer(page);
@@ -259,6 +253,13 @@ test.describe("scelta della battuta toccando la partitura", () => {
     expect(await page.evaluate(() => document.querySelector("[data-seek]").dataset.measure)).toBe(prima);
   });
 });
+
+const centro = (page, i) => page.evaluate((k) => {
+  const g = document.querySelectorAll("[data-score] g.measure")[k];
+  document.querySelector("[data-score]").scrollIntoView({ block: "center", behavior: "instant" }); // il tasto Scegli e' piu' in basso: la pagina puo' essere scorsa
+  const r = g.getBoundingClientRect(), s = g.closest("g.system").getBoundingClientRect();
+  return { x: r.left + r.width * 0.5 + 3, y: s.top + s.height * 0.1 };
+}, i);
 
 test.describe("scelta della battuta su brani reali (testo e melismi sotto le note)", () => {
   // Il rettangolo di ogni battuta include versi e trattini che sconfinano nelle vicine: l'estensione giusta e' quella del rigo.
@@ -308,8 +309,8 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
 
   test("Riproduci con un ripeti acceso e la testina prima del passaggio parte dall'inizio del passaggio", async ({ page }) => {
     await apriPlayer(page);
-    await page.locator("[data-loop-from]").selectOption("3");
-    await page.locator("[data-loop-to]").selectOption("4");
+    await page.locator("[data-loop-from]").selectOption({ value: "3" }); // per valore (indice): l'etichetta "3" e' un'altra battuta
+    await page.locator("[data-loop-to]").selectOption({ value: "4" });
     await page.locator("[data-loop-toggle]").first().click(); // acceso, testina ancora a 0
     expect(await page.evaluate(() => window.__study.engine.position())).toBeLessThan(0.5);
     await page.click("[data-play]");
