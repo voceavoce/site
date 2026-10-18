@@ -1,7 +1,7 @@
 // Player di studio (/player/<slug>/) sul brano di prova content/player/_prova: caricamento, sincronia della battuta
 // evidenziata con sync.json, seek, loop, mixer, tastiera/ARIA e layout mobile. Audio sintetici (helpers.mjs).
 import { expect } from "@playwright/test";
-import { test, apriPlayer, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST } from "./helpers.mjs";
+import { test, apriPlayer, apriRipeti, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST } from "./helpers.mjs";
 
 const TOLLERANZA_S = 0.15; // evidenziazione vs sync.json: un frame di rAF piu' la latenza stimata, in headless
 const battuta = (i) => SYNC.battute[i];
@@ -103,12 +103,14 @@ test.describe("sincronia", () => {
     await apriPlayer(page);
     const a = 2, b = 3; // battute di indice 2..3 = da 6,3 s a 12,1 s
     const inizio = battuta(a).t, fine = battuta(b + 1).t;
+    await expect(page.locator("[data-loop]")).toBeHidden(); // il riquadro Ripeti e' chiuso finche' non si preme il pulsante
+    await apriRipeti(page);
+    await expect(page.locator("[data-loop-open]")).toHaveAttribute("aria-expanded", "true");
     await page.locator("[data-loop-from]").selectOption({ value: String(a) });
     await page.locator("[data-loop-to]").selectOption({ value: String(b) });
     await page.locator("[data-loop] [data-loop-toggle]").click();
     await expect(page.locator("[data-loop] [data-loop-toggle]")).toHaveAttribute("aria-pressed", "true");
-    // i due tasti Loop (pannello e barra) restano sincronizzati
-    await expect(page.locator(".transport [data-loop-toggle]")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("[data-loop-open]")).toHaveClass(/is-on/); // il pulsante della barra segnala che il ripeti e' acceso
     const loop = await page.evaluate(() => window.__study.engine.loop);
     expect(loop.start).toBeCloseTo(inizio, 3);
     expect(loop.end).toBeCloseTo(fine, 3);
@@ -240,18 +242,19 @@ test.describe("tastiera e ARIA", () => {
     for (let i = 0; i < 60; i++) {
       const info = await page.evaluate(() => {
         const e = document.activeElement;
-        const d = [...Object.keys(e.dataset)].find((k) => /^(zoomOut|zoomIn|scoreOptionsToggle|loopPick|score|loopFrom|loopTo|loopToggle|volume|mute|solo|myvoiceSelect|myvoice|play|seek|speed)$/.test(k));
+        const d = [...Object.keys(e.dataset)].find((k) => /^(zoomOut|zoomIn|loopOpen|scoreOptionsToggle|loopPick|score|loopFrom|loopTo|loopToggle|volume|mute|solo|myvoiceSelect|myvoice|play|seek|speed)$/.test(k));
         const riga = e.closest("[data-track]")?.dataset.track;
         const c = getComputedStyle(e);
         return { id: d ? d + (riga ? `:${riga}` : "") : null, visibile: e.matches(":focus-visible"), contorno: c.outlineStyle !== "none" && parseFloat(c.outlineWidth) > 0 || c.boxShadow !== "none" };
       });
       if (info.id) { visti.push(info.id); expect(info.visibile && info.contorno, `focus visibile su ${info.id}`).toBe(true); }
-      if (info.id === "loopToggle" && visti.filter((x) => x === "loopToggle").length === 2) break; // ultimo controllo della barra
+      if (info.id === "speed") break; // ultimo controllo della barra
       await page.keyboard.press("Tab");
     }
-    const atteso = ["zoomOut", "zoomIn", "scoreOptionsToggle", "score", "loopFrom", "loopTo", "loopPick", "loopToggle",
+    // il riquadro Ripeti e' chiuso: i suoi controlli non sono raggiungibili finche' non si apre
+    const atteso = ["zoomOut", "zoomIn", "loopOpen", "scoreOptionsToggle", "score",
       ...CHIAVI.flatMap((k) => [`volume:${k}`, `mute:${k}`, `solo:${k}`]),
-      "myvoiceSelect", "myvoice", "play", "seek", "speed", "loopToggle"];
+      "myvoiceSelect", "myvoice", "play", "seek", "speed"];
     expect(visti).toEqual(atteso);
   });
 
@@ -289,6 +292,7 @@ test.describe("tastiera e ARIA", () => {
     await page.keyboard.press("Home");
     await expect(page.locator("[data-seek]")).toHaveValue("0");
     // Spazio dentro un menu non avvia il brano
+    await apriRipeti(page);
     await page.locator("[data-loop-from]").focus();
     await page.keyboard.press("Space");
     await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "false");

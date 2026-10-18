@@ -1,7 +1,7 @@
 // Partitura del player di studio: carta bianca, cursore che scorre, fascia della propria voce, riquadro delle opzioni
 // (ricordate nel browser) ed etichette dei righi. Sul brano di prova content/player/_prova, con audio sintetici.
 import { expect } from "@playwright/test";
-import { test, apriPlayer, intercettaAudio, raccogliErrori, SYNC } from "./helpers.mjs";
+import { test, apriPlayer, apriRipeti, intercettaAudio, raccogliErrori, SYNC } from "./helpers.mjs";
 
 test.beforeEach(async ({ context }) => {
   await intercettaAudio(context);
@@ -217,6 +217,7 @@ test.describe("scelta della battuta toccando la partitura", () => {
 
   test("toccare lo spazio vuoto di battute diverse sceglie battute diverse (e quella giusta)", async ({ page }) => {
     await apriPlayer(page);
+    await apriRipeti(page);
     const scelte = [];
     for (const i of [1, 3]) {
       await page.click("[data-loop-pick]");
@@ -230,6 +231,7 @@ test.describe("scelta della battuta toccando la partitura", () => {
 
   test("prima e ultima battuta: l'intervallo del ciclo e' quello toccato", async ({ page }) => {
     await apriPlayer(page);
+    await apriRipeti(page);
     await page.click("[data-loop-pick]");
     const a = await centro(page, 1), b = await centro(page, 4);
     await page.mouse.click(a.x, a.y);
@@ -268,6 +270,7 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
       test.setTimeout(600_000); // brani lunghi: decine di battute, ognuna con il suo tocco
       await page.goto(`/player/${slug}/`);
       await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-loop-pick]").disabled, null, { timeout: 180_000 });
+      await apriRipeti(page);
       const n = await page.evaluate(() => document.querySelectorAll("[data-score] g.measure").length);
       const sbagliate = [];
       for (let i = 0; i < n; i++) {
@@ -314,9 +317,10 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
     test(`${slug}: Ripeti acceso dalla battuta 5, Riproduci parte dal passaggio e non dal brano`, async ({ page }) => {
       await page.goto(`/player/${slug}/?debug`);
       await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-play]").disabled, null, { timeout: 90_000 });
+      await apriRipeti(page);
       await page.locator("[data-loop-from]").selectOption({ value: "4" });
       await page.locator("[data-loop-to]").selectOption({ value: "6" });
-      await page.locator("[data-loop-toggle]").first().click();
+      await page.locator("[data-loop-toggle]").click();
       const t4 = await page.evaluate(() => window.__study.sync.battute[4].t);
       await page.click("[data-play]");
       await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
@@ -326,6 +330,7 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
 
   test("scelto un passaggio la testina va al suo inizio e Riproduci parte da li", async ({ page }) => {
     await apriPlayer(page);
+    await apriRipeti(page);
     await page.click("[data-loop-pick]");
     for (const i of [2, 4]) {
       const { x, y } = await centro(page, i);
@@ -336,8 +341,11 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
     const inizio = battuta(2).t;
     expect(await page.evaluate(() => window.__study.engine.position())).toBeCloseTo(inizio, 1);
     // le due etichette dei pulsanti Ripeti mostrano il passaggio, e i due pulsanti sono lo stesso interruttore
-    await expect(page.locator("[data-loop-toggle]").first().locator("[data-loop-range]")).toHaveText("3–5");
-    await expect(page.locator("[data-loop-toggle]").nth(1).locator("[data-loop-range]")).toHaveText("3–5");
+    await expect(page.locator("[data-loop-toggle] [data-loop-range]")).toHaveText("3–5");
+    await expect(page.locator("[data-loop-open] [data-loop-range]")).toHaveText("3–5"); // il pulsante della barra mostra il passaggio a ripeti acceso
+    await expect(page.locator("[data-loop-open]")).toHaveClass(/is-on/);
+    // fra la scritta e il passaggio c'e' uno spazio visibile («Ripeti 3–5», non «Ripeti3–5»)
+    expect(await page.locator("[data-loop-range]").first().evaluate((e) => parseFloat(getComputedStyle(e).marginInlineStart))).toBeGreaterThan(2);
     await page.click("[data-play]");
     await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
     expect(await page.evaluate(() => window.__study.engine.position())).toBeGreaterThanOrEqual(inizio - 0.05);
@@ -345,9 +353,10 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
 
   test("Riproduci con un ripeti acceso e la testina prima del passaggio parte dall'inizio del passaggio", async ({ page }) => {
     await apriPlayer(page);
+    await apriRipeti(page);
     await page.locator("[data-loop-from]").selectOption({ value: "3" }); // per valore (indice): l'etichetta "3" e' un'altra battuta
     await page.locator("[data-loop-to]").selectOption({ value: "4" });
-    await page.locator("[data-loop-toggle]").first().click(); // acceso, testina ancora a 0
+    await page.locator("[data-loop-toggle]").click(); // acceso, testina ancora a 0
     expect(await page.evaluate(() => window.__study.engine.position())).toBeLessThan(0.5);
     await page.click("[data-play]");
     await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");

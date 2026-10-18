@@ -83,6 +83,11 @@ export function raccogliErrori(page) {
 }
 
 /** Apre il player e aspetta tracce decodificate, partitura disegnata e tasto Play abilitato (Verovio WASM e' lento). */
+/** Apre il riquadro «Ripeti» (a scomparsa, come «Opzioni»): i suoi controlli esistono ma sono nascosti finche' non lo si apre. */
+export async function apriRipeti(page) {
+  if ((await page.locator("[data-loop-open]").getAttribute("aria-expanded")) !== "true") await page.click("[data-loop-open]");
+}
+
 export async function apriPlayer(page, url = PLAYER_URL) {
   await page.goto(url);
   await page.waitForFunction(() => window.__study?.engine.tracks.size === 4 && window.__study.score, null, { timeout: 90_000 });

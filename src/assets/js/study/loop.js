@@ -31,7 +31,11 @@ export function bindLoop({ root, sync, onChange, announce = () => {}, labels = {
     onChange(active && r ? r : null);
     for (const b of toggles) b.setAttribute("aria-pressed", String(active));
     const testo = r ? `${names[r.from]}–${names[r.to]}` : "";
-    for (const s of document.querySelectorAll("[data-loop-range]")) s.textContent = testo;
+    for (const s of document.querySelectorAll("[data-loop-range]")) {
+      // nel pulsante della barra il passaggio si vede solo a ripeti acceso; in quello del riquadro sempre
+      s.textContent = !s.closest("[data-loop-open]") || active ? testo : "";
+    }
+    for (const o of document.querySelectorAll("[data-loop-open]")) o.classList.toggle("is-on", active);
     if (pick) pick.setAttribute("aria-pressed", String(picking));
   }
   function setRange(a, b) {

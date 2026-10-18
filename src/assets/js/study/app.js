@@ -57,11 +57,14 @@ async function main(data) {
   // bianca, fascia gialla sulla propria parte e cursore accesi, fascia sulla battuta corrente spenta.
   const scoreBox = $("[data-score]");
   const optBtn = $("[data-score-options-toggle]"), optBox = $("[data-score-options]");
-  optBtn.addEventListener("click", () => {
-    const open = optBox.hidden;
-    optBox.hidden = !open;
-    optBtn.setAttribute("aria-expanded", String(open));
-  });
+  // I pulsanti «Opzioni» e «Ripeti» aprono e chiudono ciascuno il proprio riquadro sopra la partitura.
+  for (const [btn, box] of [[optBtn, optBox], [$("[data-loop-open]"), $("[data-loop]")]]) {
+    btn.addEventListener("click", () => {
+      const open = box.hidden;
+      box.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  }
   const optMyPart = $("[data-opt-mypart]"), optCursor = $("[data-opt-cursor]"), optColor = $("[data-opt-cursor-color]");
   const optMeasure = $("[data-opt-measure]"), optInvert = $("[data-opt-invert]");
   const OPT_KEY = "va-score-opts";
