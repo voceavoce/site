@@ -24,7 +24,7 @@ Senza cookie. Se il Worker non risponde, il modulo mostra l'indirizzo email del 
    Il token non va mai in chat, in `wrangler.toml` o nel repository. Il deploy lo fai tu, mai la CI.
 4. `wrangler deploy` stampa l'URL `https://voceavoce-segnala.<sottodominio>.workers.dev`. Copialo in
    `src/_data/site.js`, costante `SEGNALA_URL_PRODUZIONE` (oppure variabile `VOCEAVOCE_SEGNALA_URL` in build).
-   Finche' e' `null` il sito non mostra il modulo e il link apre l'email gia' scritta.
+   Finche' e' `null` il sito non mostra il modulo e il link apre l'email gia' scritta. (Attivato il 2026-10-18: `https://voceavoce-segnala.voceavoce.workers.dev`.)
 
 ## Prova
 

@@ -7,6 +7,8 @@ compatibility_date = "2026-10-01"
 
 # Pubblica su https://voceavoce-segnala.<tuo-sottodominio>.workers.dev (gratuito).
 workers_dev = true
+# Niente URL di anteprima: il Worker ha un solo indirizzo.
+preview_urls = false
 
 [vars]
 # Repo PRIVATO dove nascono le issue (cambialo se lo chiami diversamente).

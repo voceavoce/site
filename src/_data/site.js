@@ -7,7 +7,7 @@ const AUDIO_BASE_PRODUZIONE = "https://voceavoce-audio.voceavoce.workers.dev";
 const CLOUDFLARE_ANALYTICS_TOKEN = "671e07d6535a4584ac3fbb7681a7f97a";
 // Modulo «Segnala un errore nello spartito» (workers/segnala/README.md). Finche' e' null il link apre l'email gia' scritta.
 // Incolla qui l'URL che stampa `wrangler deploy` (o usa VOCEAVOCE_SEGNALA_URL in build).
-const SEGNALA_URL_PRODUZIONE = null;
+const SEGNALA_URL_PRODUZIONE = "https://voceavoce-segnala.voceavoce.workers.dev";
 const audioBase =
   process.env.VOCEAVOCE_AUDIO_BASE ||
   (process.env.ELEVENTY_ENV === "production" ? AUDIO_BASE_PRODUZIONE : "http://localhost:8787");
