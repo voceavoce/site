@@ -380,5 +380,20 @@
     "optFullscreenPlay": "Vollbild beim Drücken von Abspielen (Smartphones)",
     "allVoices": "Alle Stimmen gleich laut",
     "reportScore": "Fehler in der Partitur melden"
+  },
+  "report": {
+    "title": "Fehler in der Partitur melden",
+    "bar": "Takt",
+    "what": "Was ist falsch?",
+    "whatHint": "Zum Beispiel: „In Takt 7 hat der Tenor ein F, es müsste ein Fis sein“. Mehr ist nicht nötig.",
+    "contact": "Deine E-Mail (nur wenn du eine Antwort möchtest)",
+    "privacy": "Wir verwenden deinen Text nur, um die Partitur zu korrigieren und, falls du deine E-Mail angegeben hast, um dir zu antworten.",
+    "send": "Senden",
+    "sending": "Wird gesendet…",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "thanks": "Danke! Wir haben deine Meldung erhalten.",
+    "short": "Schreib bitte ein paar Worte dazu, was nicht stimmt.",
+    "error": "Das Senden hat nicht geklappt. Du kannst uns an {email} schreiben."
   }
 }

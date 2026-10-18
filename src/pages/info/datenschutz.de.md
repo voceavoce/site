@@ -26,6 +26,10 @@ Voce a Voce ist eine statische Website. Sie verwendet weder eigene Cookies noch 
 
 Die Seiten der Stücke binden den YouTube-Player im erweiterten Datenschutzmodus über die Domain **youtube-nocookie.com** ein. Wenn eine Seite geöffnet und der Player geladen wird, kann YouTube Daten in deinem Browser speichern. Ab diesem Moment gelten die Regeln von YouTube und Google. Siehe die [Datenschutzerklärung von Google](https://policies.google.com/privacy).
 
+## Fehlermeldungen
+
+Wenn du das Formular „Fehler in der Partitur melden“ nutzt, gelangen dein Text, das Stück, die Seite und der Takt in ein privates Archiv auf GitHub, das nur die Betreuer der Website einsehen können. Die E-Mail-Adresse ist freiwillig: Wenn du sie angibst, nutzen wir sie nur, um dir zu antworten. Das Formular verwendet keine Cookies. Wenn du möchtest, schreib an {{ site.email }}; um eine Meldung löschen zu lassen, schreib uns ebenfalls.
+
 ## Kontakt
 
 Bei Fragen zu diesem Hinweis schreib an [{{ site.email }}](mailto:{{ site.email }}).

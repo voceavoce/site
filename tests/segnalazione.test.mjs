@@ -43,3 +43,9 @@ test("ogni lingua del sito ha tutti i testi della segnalazione", async () => {
     assert.ok(!oggetto.includes("undefined") && !corpo.includes("undefined"), l);
   }
 });
+
+test("payloadSegnalazione: campi ripuliti, mai undefined, il campo trappola passa com'e'", async () => {
+  const { payloadSegnalazione } = await import("../src/assets/js/study/segnalazione.js");
+  assert.deepEqual(payloadSegnalazione({ titolo: " A ", cosa: " nota sbagliata ", sito: "" }), { titolo: "A", pagina: "", battuta: "", lingua: "", cosa: "nota sbagliata", contatto: "", sito: "" });
+  assert.deepEqual(Object.keys(payloadSegnalazione()).sort(), ["battuta", "contatto", "cosa", "lingua", "pagina", "sito", "titolo"]);
+});

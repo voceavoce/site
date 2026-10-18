@@ -428,3 +428,44 @@ test.describe("segnala un errore nello spartito", () => {
     expect(corpo).toContain(new URL(page.url()).pathname);
   });
 });
+
+test.describe('modulo di segnalazione', () => {
+  const ENDPOINT = 'http://localhost:8788/segnala';
+  test('il clic apre il modulo con brano e battuta; testo troppo corto non parte', async ({ page }) => {
+    await apriPlayer(page);
+    await page.evaluate(() => { document.querySelector('[data-seek]').dataset.measure = '7'; });
+    let inviato = false;
+    await page.route(ENDPOINT, (r) => { inviato = true; r.fulfill({ status: 200, contentType: 'application/json', body: '{\"ok\":true}' }); });
+    await page.click('[data-report]');
+    const dlg = page.locator('[data-report-dialog]');
+    await expect(dlg).toBeVisible();
+    await expect(dlg.locator('[data-report-bar-n]')).toHaveText('7');
+    await expect(dlg.locator('textarea[name=cosa]')).toBeFocused();
+    await dlg.locator('[data-report-send]').click();
+    await expect(dlg.locator('[data-report-status]')).not.toBeEmpty();
+    expect(inviato).toBe(false);
+    await page.keyboard.press('Escape');
+    await expect(dlg).toBeHidden();
+  });
+  test('invio riuscito: manda il JSON giusto e ringrazia', async ({ page }) => {
+    await apriPlayer(page);
+    await page.evaluate(() => { document.querySelector('[data-seek]').dataset.measure = '7'; });
+    let corpo = null;
+    await page.route(ENDPOINT, async (r) => { corpo = r.request().postDataJSON(); await r.fulfill({ status: 200, contentType: 'application/json', body: '{\"ok\":true}' }); });
+    await page.click('[data-report]');
+    await page.fill('textarea[name=cosa]', 'Alla battuta 7 il tenore ha un fa');
+    await page.click('[data-report-send]');
+    await expect(page.locator('[data-report-status]')).toContainText(/Grazie/);
+    expect(corpo).toMatchObject({ battuta: '7', lingua: 'it', cosa: 'Alla battuta 7 il tenore ha un fa', sito: '' });
+    expect(corpo.pagina).toContain('/player/');
+  });
+  test('invio fallito: si resta nel modulo e compare l indirizzo email', async ({ page }) => {
+    await apriPlayer(page);
+    await page.route(ENDPOINT, (r) => r.fulfill({ status: 502, contentType: 'application/json', body: '{\"ok\":false}' }));
+    await page.click('[data-report]');
+    await page.fill('textarea[name=cosa]', 'nota sbagliata');
+    await page.click('[data-report-send]');
+    await expect(page.locator('[data-report-status] a')).toHaveAttribute('href', 'mailto:info@voceavoce.com');
+    await expect(page.locator('[data-report-send]')).toBeEnabled();
+  });
+});

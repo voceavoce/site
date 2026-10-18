@@ -380,5 +380,20 @@
     "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)",
     "allVoices": "Toutes les voix égales",
     "reportScore": "Signaler une erreur dans la partition"
+  },
+  "report": {
+    "title": "Signaler une erreur dans la partition",
+    "bar": "mesure",
+    "what": "Qu'est-ce qui ne va pas ?",
+    "whatHint": "Par exemple : « à la mesure 7 le ténor a un fa, ce devrait être un fa dièse ». Pas besoin de plus.",
+    "contact": "Ton e-mail (seulement si tu veux une réponse)",
+    "privacy": "Nous utilisons ce que tu écris uniquement pour corriger la partition et, si tu as laissé ton e-mail, pour te répondre.",
+    "send": "Envoyer",
+    "sending": "Envoi…",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "thanks": "Merci ! Nous avons bien reçu ton signalement.",
+    "short": "Écris au moins quelques mots sur ce qui ne va pas.",
+    "error": "Nous n'avons pas pu l'envoyer. Tu peux nous écrire à {email}."
   }
 }

@@ -68,7 +68,7 @@ eleventyExcludeFromCollections: true
         <p id="study-pick-hint" class="study__hint">{{ 'study.pickHint' | t(lang) }} {{ 'study.loopSame' | t(lang) }}</p>
       </div>
       <section class="score-scroll" data-score tabindex="0" aria-label="{{ 'study.scoreLabel' | tv(lang, { title: pieceTitle }) }}" data-label="{{ 'study.scoreLabel' | tv(lang, { title: pieceTitle }) }}"></section>
-      <p class="study__report"><a href="{{ pieceTitle | reportMail(page.url | absUrl, lang) }}" data-report data-titolo="{{ pieceTitle }}" data-lingua="{{ lang }}" data-pagina="{{ page.url | absUrl }}" data-email="{{ site.email }}">{{ 'study.reportScore' | t(lang) }}</a> <span class="study__hint">({{ site.email }})</span></p>
+      <p class="study__report"><a href="{{ pieceTitle | reportMail(page.url | absUrl, lang) }}" data-report{% if site.segnalaUrl %} data-modulo{% endif %} data-titolo="{{ pieceTitle }}" data-lingua="{{ lang }}" data-pagina="{{ page.url | absUrl }}" data-email="{{ site.email }}">{{ 'study.reportScore' | t(lang) }}</a> <span class="study__hint">({{ site.email }})</span></p>
     </section>
 
     <div class="study__side">
@@ -152,4 +152,5 @@ eleventyExcludeFromCollections: true
       <output data-speed-out for="study-speed">100%</output></div>
   </div>
 </div>
+{%- if site.segnalaUrl %}{% include "components/report-dialog.njk" %}{% endif %}
 <script type="application/json" id="study-data">{{ studyData | jsonSafe | safe }}</script>

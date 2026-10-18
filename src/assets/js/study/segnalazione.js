@@ -34,3 +34,9 @@ export function mailSegnalazione({ email, ...dati } = {}) {
   const crlf = (s) => s.replace(/\n/g, "\r\n"); // i client di posta vogliono CRLF nel corpo
   return `mailto:${email || ""}?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(crlf(corpo))}`;
 }
+
+/** Corpo JSON che il modulo invia al Worker (workers/segnala): i campi come li valida il Worker. */
+export function payloadSegnalazione({ titolo, pagina, battuta, lingua, cosa, contatto, sito } = {}) {
+  const s = (v) => String(v ?? "").trim();
+  return { titolo: s(titolo), pagina: s(pagina), battuta: s(battuta), lingua: s(lingua), cosa: s(cosa), contatto: s(contatto), sito: s(sito) };
+}

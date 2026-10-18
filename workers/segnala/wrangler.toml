@@ -1,0 +1,15 @@
+# Worker che riceve le segnalazioni di errori negli spartiti e le gira come issue di un repo GitHub PRIVATO.
+# Nessun segreto qui: il token si dà con `npx wrangler secret put GITHUB_TOKEN` (vedi README). Il deploy lo fa
+# l'utente a mano, MAI la CI. Dominio e posta restano su Aruba.
+name = "voceavoce-segnala"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Pubblica su https://voceavoce-segnala.<tuo-sottodominio>.workers.dev (gratuito).
+workers_dev = true
+
+[vars]
+# Repo PRIVATO dove nascono le issue (cambialo se lo chiami diversamente).
+GITHUB_REPO = "voceavoce/segnalazioni"
+# Origini da cui il modulo puo' inviare (CORS), separate da virgole.
+ALLOWED_ORIGINS = "https://voceavoce.com,https://www.voceavoce.com,https://voceavoce.github.io,http://localhost:8080,http://127.0.0.1:8080"

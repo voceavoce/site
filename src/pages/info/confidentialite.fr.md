@@ -26,6 +26,10 @@ Voce a Voce est un site statique. Il n'utilise ni cookies propres ni statistique
 
 Les fiches des pièces intègrent le lecteur YouTube en mode de confidentialité renforcée, via le domaine **youtube-nocookie.com**. Lorsqu'une fiche s'ouvre et que le lecteur se charge, YouTube peut stocker des données dans ton navigateur. À partir de ce moment, les règles de YouTube et de Google s'appliquent. Voir la [politique de confidentialité de Google](https://policies.google.com/privacy).
 
+## Signalements d'erreurs
+
+Si tu utilises le formulaire « Signaler une erreur dans la partition », le texte que tu écris, la pièce, la page et la mesure arrivent dans une archive privée sur GitHub, accessible uniquement à celles et ceux qui s'occupent du site. L'e-mail est facultatif : si tu le donnes, nous l'utilisons seulement pour te répondre. Le formulaire n'utilise pas de cookies. Si tu préfères, écris à {{ site.email }} ; pour faire supprimer un signalement, écris-nous aussi.
+
 ## Contact
 
 Pour toute question sur cette notice, écris à [{{ site.email }}](mailto:{{ site.email }}).

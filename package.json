@@ -13,7 +13,7 @@
     "secrets": "node scripts/scan-secrets.mjs",
     "search": "npx pagefind --site _site",
     "test": "node --test \"tests/**/*.test.mjs\"",
-    "test:worker": "node --test tests/worker-audio.test.mjs",
+    "test:worker": "node --test tests/worker-audio.test.mjs tests/worker-segnala.test.mjs",
     "lint:html": "node scripts/lint-html.mjs",
     "serve": "eleventy --serve",
     "check": "npm run validate && npm run secrets && npm test && npm run build && npm run lint:html",

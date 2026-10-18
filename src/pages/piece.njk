@@ -177,9 +177,10 @@ eleventyExcludeFromCollections: true
     </section>
     {%- endif %}
 
+    {%- if site.segnalaUrl %}{% include "components/report-dialog.njk" %}{% endif %}
     <section class="report" aria-labelledby="report-h">
       <h2 id="report-h">{{ 'piece.report' | t(lang) }}</h2>
-      <p>{{ 'piece.reportP' | t(lang) }} <a href="{{ piece.titolo | reportMail(page.url | absUrl, lang) }}">{{ 'piece.reportLink' | t(lang) }}</a> <span class="study__hint">({{ site.email }})</span></p>
+      <p>{{ 'piece.reportP' | t(lang) }} <a href="{{ piece.titolo | reportMail(page.url | absUrl, lang) }}" data-report{% if site.segnalaUrl %} data-modulo{% endif %} data-titolo="{{ piece.titolo }}" data-pagina="{{ page.url | absUrl }}" data-lingua="{{ lang }}">{{ 'piece.reportLink' | t(lang) }}</a> <span class="study__hint">({{ site.email }})</span></p>
     </section>
 
     {%- if piece.correlati.length %}
