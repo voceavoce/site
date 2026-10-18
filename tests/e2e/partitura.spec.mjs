@@ -310,6 +310,20 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
     expect(Math.abs(cursore - nota), `cursore ${cursore} prima nota ${nota}`).toBeLessThan(8);
   });
 
+  for (const slug of ["agnus-dei-josquin", "exultate-deo-palestrina"]) {
+    test(`${slug}: Ripeti acceso dalla battuta 5, Riproduci parte dal passaggio e non dal brano`, async ({ page }) => {
+      await page.goto(`/player/${slug}/?debug`);
+      await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-play]").disabled, null, { timeout: 90_000 });
+      await page.locator("[data-loop-from]").selectOption({ value: "4" });
+      await page.locator("[data-loop-to]").selectOption({ value: "6" });
+      await page.locator("[data-loop-toggle]").first().click();
+      const t4 = await page.evaluate(() => window.__study.sync.battute[4].t);
+      await page.click("[data-play]");
+      await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
+      expect(await page.evaluate(() => window.__study.engine.position())).toBeGreaterThanOrEqual(t4 - 0.05);
+    });
+  }
+
   test("scelto un passaggio la testina va al suo inizio e Riproduci parte da li", async ({ page }) => {
     await apriPlayer(page);
     await page.click("[data-loop-pick]");
