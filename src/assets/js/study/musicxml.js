@@ -34,6 +34,41 @@ export function senzaTempiRipetuti(doc) {
   return tolti;
 }
 
+/**
+ * Ripulisce i segni di metronomo (= 90): il valore si arrotonda all'intero (nei file nati da un'esportazione escono
+ * cose come 91.9998) e si tiene il primo segno e poi solo i cambi di tempo veri, cioe' di almeno `soglia` (10%) e a
+ * `distanza` battute dall'ultimo segno mostrato. Con un rallentando scritto battuta per battuta (90, 85.0002, 82...)
+ * restano pochi segni leggibili invece di una pila sovrapposta. Il <sound tempo> non si tocca: la riproduzione e' un'altra.
+ * Le decisioni si prendono sulla prima parte che ha metronomi e valgono per tutte (per numero di battuta).
+ * Ritorna quanti segni ha tolto.
+ */
+export function tempiRadi(doc, { soglia = 0.1, distanza = 4 } = {}) {
+  const decisioni = new Map(); // numero di battuta -> true (si tiene) / false (si toglie)
+  let ultimo = null, tolti = 0;
+  for (const parte of doc.querySelectorAll("part")) {
+    let n = 0;
+    for (const m of parte.querySelectorAll(":scope > measure")) {
+      n++;
+      const chiaveM = m.getAttribute("number") ?? String(n);
+      for (const d of m.querySelectorAll(":scope > direction")) {
+        const met = d.querySelector("metronome");
+        const pm = met?.querySelector("per-minute");
+        if (!met || !pm) continue;
+        const bpm = parseFloat(pm.textContent);
+        if (!Number.isFinite(bpm)) continue;
+        if (!decisioni.has(chiaveM)) {
+          const tieni = !ultimo || (Math.abs(bpm - ultimo.bpm) / ultimo.bpm >= soglia && n - ultimo.n >= distanza);
+          decisioni.set(chiaveM, tieni);
+          if (tieni) ultimo = { bpm, n };
+        }
+        if (decisioni.get(chiaveM)) pm.textContent = String(Math.round(bpm));
+        else { togliTipo(d, met.closest("direction-type")); tolti++; }
+      }
+    }
+  }
+  return tolti;
+}
+
 /** Toglie dal MusicXML l'elemento visibile `tipo` (un <direction-type>) lasciando il resto della <direction> se serve. */
 function togliTipo(d, tipo) {
   if (tipo && (d.querySelectorAll("direction-type").length > 1 || d.querySelector("sound"))) tipo.remove();
@@ -68,7 +103,7 @@ export function abbreviaParti(xml, voci = []) {
   try {
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     if (doc.querySelector("parsererror")) return xml;
-    const tolti = senzaTempiRipetuti(doc) + senzaTestiLunghi(doc);
+    const tolti = senzaTempiRipetuti(doc) + tempiRadi(doc) + senzaTestiLunghi(doc);
     const fuori = () => (tolti ? new XMLSerializer().serializeToString(doc) : xml);
     const parti = [...doc.querySelectorAll("score-part")];
     if (parti.length < 2) return fuori();

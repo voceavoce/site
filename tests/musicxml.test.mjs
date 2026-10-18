@@ -75,6 +75,50 @@ test("tempi: senza metronomi non fa niente; le note non si toccano", () => {
   assert.equal(doc.querySelectorAll("note").length, 2);
 });
 
+// --- tempiRadi ---------------------------------------------------------------------------------------------------
+const bpmDi = (doc) => [...doc.querySelectorAll("per-minute")].map((n) => n.textContent);
+test("tempi radi: il valore si arrotonda all'intero (91.9998 -> 92)", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [METRONOMO(91.999800000000001) + NOTA] }]));
+  assert.equal(M.tempiRadi(doc), 0);
+  assert.deepEqual(bpmDi(doc), ["92"]);
+});
+test("tempi radi: un rallentando scritto battuta per battuta lascia pochi segni leggibili", () => {
+  // come exultate-deo-palestrina: 90, 85.0002, 82.0002, 81, 78, 79.0002 tutti nelle ultime battute
+  const bpm = [90, 85.0002, 82.0002, 81, 78, 79.0002];
+  const doc = leggi(xml([{ nome: "S", battute: bpm.map((b) => METRONOMO(b) + NOTA) }]));
+  assert.equal(M.tempiRadi(doc), 4); // restano 90 e 78 (un -13% a quattro battute dal primo); 85, 82, 81 e 79 spariscono
+  assert.deepEqual(bpmDi(doc), ["90", "78"]);
+  assert.equal(doc.querySelectorAll("sound").length, 6); // la riproduzione non cambia
+});
+test("tempi radi: un cambio netto (>=10%) dopo qualche battuta si tiene", () => {
+  const battute = [METRONOMO(120) + NOTA, NOTA, NOTA, NOTA, NOTA, METRONOMO(80) + NOTA];
+  const doc = leggi(xml([{ nome: "S", battute }]));
+  assert.equal(M.tempiRadi(doc), 0);
+  assert.deepEqual(bpmDi(doc), ["120", "80"]);
+});
+test("tempi radi: un cambio netto ma troppo vicino al segno precedente si toglie", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [METRONOMO(120) + NOTA, METRONOMO(80) + NOTA] }]));
+  assert.equal(M.tempiRadi(doc), 1);
+  assert.deepEqual(bpmDi(doc), ["120"]);
+});
+test("tempi radi: la decisione vale per tutte le parti (stessa battuta, stesso esito)", () => {
+  const battute = [METRONOMO(100) + NOTA, METRONOMO(101) + NOTA];
+  const doc = leggi(xml([{ nome: "S", battute }, { nome: "A", battute }]));
+  assert.equal(M.tempiRadi(doc), 2);
+  assert.deepEqual(bpmDi(doc), ["100", "100"]);
+});
+test("tempi radi: valori non numerici o senza per-minute non si toccano, mai eccezioni", () => {
+  const dir = '<direction><direction-type><metronome><beat-unit>quarter</beat-unit><per-minute>c. 60-70</per-minute></metronome></direction-type></direction>';
+  const doc = leggi(xml([{ nome: "S", battute: [dir + NOTA, NOTA] }]));
+  assert.equal(M.tempiRadi(doc), 0);
+  assert.equal(doc.querySelectorAll("metronome").length, 1);
+});
+test("tempi radi: abbreviaParti li applica", () => {
+  const bpm = [90, 85, 82, 81];
+  const fuori = M.abbreviaParti(xml([{ nome: "S", battute: bpm.map((b) => METRONOMO(b) + NOTA) }]), []);
+  assert.equal(conta(fuori, "metronome"), 1);
+});
+
 // --- abbreviaParti -----------------------------------------------------------------------------------------------
 const coro = (extra = {}) => xml([
   { nome: "Soprano", abbr: "Ch", nascosto: true, ...extra },
