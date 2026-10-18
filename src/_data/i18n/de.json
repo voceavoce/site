@@ -1,0 +1,375 @@
+{
+  "htmlLang": "de",
+  "siteName": "Voce a Voce",
+  "nav": {
+    "label": "Hauptnavigation",
+    "coro": "Chor",
+    "arie": "Arien",
+    "metodi": "Methoden",
+    "compositori": "Komponisten",
+    "stagioni": "Jahreszeiten",
+    "cerca": "Suchen"
+  },
+  "skip": "Zum Inhalt springen",
+  "home": {
+    "label": "Voce a Voce, Startseite",
+    "title": "Voce a Voce – übe deine Stimme",
+    "description": "Voce a Voce: Chor-Übevideos Stimme für Stimme (S/A/T/B). Folge deiner Stimme in der Partitur, mit Cursor, hervorgehobener Stimme und Untertiteln. Gemeinfreies Repertoire.",
+    "ctaYoutube": "Auf YouTube ansehen",
+    "ctaHow": "So funktioniert es",
+    "ctaExplore": "Katalog entdecken",
+    "latest": "Neueste Videos",
+    "latestP": "Die neuesten Veröffentlichungen, Stimme für Stimme.",
+    "soon": "Demnächst",
+    "soonP": "Die nächsten geplanten Veröffentlichungen.",
+    "soonOn": "Erscheint am {date}",
+    "linesH": "Katalog durchstöbern",
+    "linesP": "Vier Wege hinein: Wähle deine Übungslinie.",
+    "tile": {
+      "choir": {
+        "h": "Chor",
+        "p": "Mehrstimmige Chorwerke, eine Lektion für jede Stimme."
+      },
+      "methods": {
+        "h": "Gesangsmethoden",
+        "p": "Geordnete Übungswege, etwa die Vokalisen von Concone."
+      },
+      "arias": {
+        "h": "Übungsarien",
+        "p": "Alte Arien in drei Lagen: hoch, mittel und tief."
+      },
+      "seasons": {
+        "h": "Jahreszeitliches",
+        "p": "Weihnachten, Ostern, Fastenzeit und Marienrepertoire.",
+        "feat": "Im Fokus: Weihnachten"
+      }
+    }
+  },
+  "tag": "übe deine Stimme",
+  "lead": "Chor-Übevideos <strong>Stimme für Stimme</strong> (Sopran, Alt, Tenor, Bass): Folge deiner Linie in der Partitur, mit taktgenauem Cursor, deiner hervorgehobenen Stimme und den anderen abgedämpft.",
+  "how": {
+    "h": "So funktioniert es",
+    "f1_h": "Deine Stimme im Fokus",
+    "f1_p": "Die zu übende Stimme in kontrastreichem Schwarz, die anderen Stimmen grau abgedämpft.",
+    "f2_h": "Cursor im Takt",
+    "f2_p": "Ein Balken folgt dem Rhythmus deiner Linie, auch über Pausen und Fermaten.",
+    "f3_h": "Text und Untertitel",
+    "f3_p": "Der Text unter deiner Stimme und Untertitel Vers für Vers, synchronisiert.",
+    "f4_h": "Eine Lektion pro Stimme",
+    "f4_p": "Erstes Hören, langsames Lesen, im Tempo, zweistimmig, mit dem Chor und zum Schluss „Jetzt bist du dran“, mit deiner Stimme aus dem Mix genommen. Kapitel zum Springen in den Abschnitt."
+  },
+  "voicesDemo": "Die vier Stimmen: eine hervorgehoben, die anderen abgedämpft",
+  "sources": {
+    "h": "Quellen und Lizenzen",
+    "p": "Wir verwenden ausschließlich <strong>gemeinfreie</strong> Partituren (z. B. CPDL/ChoralWiki, IMSLP, OpenScore). Quelle und Ausgabe jedes Stücks sind in der Beschreibung des jeweiligen Videos genannt."
+  },
+  "theme": {
+    "toggle": "Dunkles Design"
+  },
+  "langSwitch": {
+    "label": "Sprache"
+  },
+  "langName": {
+    "it": "Italiano",
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "breadcrumb": {
+    "label": "Brotkrumennavigation",
+    "home": "Start"
+  },
+  "footer": {
+    "note": "Gemeinfreie Partituren · Arrangements und Quellenangaben je Stück.",
+    "follow": "Folge uns",
+    "contact": "Kontakt",
+    "rights": "Voce a Voce"
+  },
+  "social": {
+    "youtube": "YouTube",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "card": {
+    "voices": "Stimmen",
+    "play": "Seite des Stücks",
+    "soon": "demnächst",
+    "anon": "Anonym / Volksweise"
+  },
+  "voice": {
+    "S": "Sopran",
+    "A": "Alt",
+    "T": "Tenor",
+    "B": "Bass",
+    "alta": "Hohe Stimme",
+    "media": "Mittlere Stimme",
+    "bassa": "Tiefe Stimme",
+    "ACC": "Begleitung"
+  },
+  "lines": {
+    "coro": "Chor",
+    "aria": "Arie",
+    "metodo": "Methode"
+  },
+  "seasons": {
+    "natale": "Weihnachten",
+    "pasqua": "Ostern",
+    "quaresima": "Fastenzeit",
+    "mariano": "Marianisch"
+  },
+  "piece": {
+    "brief": "Kurzinfo",
+    "composer": "Komponist",
+    "work": "Werk",
+    "period": "Epoche",
+    "org": "Besetzung",
+    "acc": "Begleitung",
+    "textLang": "Sprache des Textes",
+    "key": "Tonart",
+    "genre": "Gattung",
+    "season": "Jahreszeit",
+    "line": "Linie",
+    "voices": "Verfügbare Stimmen",
+    "score": "Partitur",
+    "scoreFrom": "{source}, Lizenz {license}",
+    "pick": "Stimme wählen",
+    "iframeTitle": "{title} – Stimme {voice}",
+    "watchVoice": "Stimme {voice} auf YouTube ansehen",
+    "watchAll": "Auf YouTube ansehen",
+    "soonOn": "erscheint am",
+    "noVideo": "Für dieses Stück ist noch kein Video veröffentlicht: schau bald wieder vorbei.",
+    "chapters": "Kapitel",
+    "chaptersFor": "Kapitel, Stimme {voice}",
+    "notes": "Anmerkungen zum Stück",
+    "aiNote": "Mit KI-Unterstützung",
+    "lyrics": "Text und Übersetzungen",
+    "original": "Originaltext",
+    "translation": "Übersetzung: {lang}",
+    "translationBy": "Übersetzung von {credit}",
+    "license": "Lizenz: {license}",
+    "draft": "Übersetzung nicht geprüft",
+    "textSource": "Quelle des Textes",
+    "commonText": "Traditioneller liturgischer Text, vollständig wiedergegeben: das Stück kann nur einen Teil davon vertonen.",
+    "scoreH": "Partitur",
+    "scoreP": "Quelle und Lizenz der Partitur sind genannt; die Ausgaben unten dienen dem Vergleich.",
+    "verify": "Vergleichsausgaben",
+    "edition": "{edition}{publisher}{year}",
+    "report": "Fehler gehört?",
+    "reportP": "Ein falsches Vorzeichen, eine verrutschte Note, ein falsch geschriebener Vers: sag uns, wo.",
+    "reportLink": "Auf GitHub melden",
+    "related": "Verwandte Stücke",
+    "descr": {
+      "base": "{title} – {composer}: Übevideo Stimme für Stimme.",
+      "org": "Besetzung: {org}.",
+      "voices": "Verfügbare Stimmen: {voices}.",
+      "soon": "Video demnächst."
+    },
+    "no": "Nr. {n}",
+    "study": "Mit dem Player üben"
+  },
+  "mode": {
+    "major": "Dur",
+    "minor": "Moll"
+  },
+  "accomp": {
+    "a_cappella": "A cappella",
+    "organo": "Orgel",
+    "pianoforte": "Klavier",
+    "accompagnamento": "Mit Begleitung"
+  },
+  "license": {
+    "PD": "Gemeinfrei",
+    "CC0": "CC0",
+    "ChoralWiki License": "ChoralWiki License",
+    "MirOS License": "MirOS License"
+  },
+  "genres": {
+    "sacro": "Geistlich",
+    "canto-natalizio": "Weihnachtslied",
+    "aria": "Arie",
+    "aria-antica": "Alte Arie",
+    "metodo-vocale": "Gesangsmethode"
+  },
+  "periods": {
+    "rinascimento": "Renaissance",
+    "barocco": "Barock",
+    "classico": "Klassik",
+    "romantico": "Romantik",
+    "novecento": "20. Jahrhundert"
+  },
+  "lists": {
+    "count": {
+      "one": "{n} Stück",
+      "other": "{n} Stücke"
+    },
+    "pieces": "Stücke",
+    "path": "Übungsweg",
+    "soonH": "Demnächst",
+    "soonP": "Stücke mit geplanten, noch nicht veröffentlichten Videos.",
+    "none": "Noch kein Video veröffentlicht: schau bald wieder vorbei.",
+    "browse": "Durchsuchen nach",
+    "releaseOn": "ab {date}",
+    "alpha": "Alphabetisches Verzeichnis",
+    "type": {
+      "opera": "Werk",
+      "raccolta": "Sammlung"
+    },
+    "choir": {
+      "h1": "Chor: Stücke Stimme für Stimme",
+      "title": "Chor: mehrstimmige Stücke",
+      "desc": "Das Chorrepertoire von Voce a Voce: eine Videolektion für jede Stimme (Sopran, Alt, Tenor, Bass), mit Partitur und Text."
+    },
+    "arias": {
+      "h1": "Übungsarien",
+      "title": "Übungsarien in drei Lagen",
+      "desc": "Alte Arien und Kammerarien zum Üben in hoher, mittlerer oder tiefer Lage, mit Anleitungsvideo, Text und gemeinfreier Partitur."
+    },
+    "methods": {
+      "h1": "Gesangsmethoden",
+      "title": "Gesangsmethoden und Vokalisen",
+      "desc": "Geordnete Übungswege für den Gesang, etwa die Vokalisen von Concone, in drei Lagen mit Anleitungsvideo."
+    },
+    "composers": {
+      "h1": "Komponisten",
+      "title": "Komponisten des Repertoires",
+      "desc": "Alle Komponisten des Katalogs in alphabetischer Reihenfolge, mit Lebensdaten und Anzahl der Stücke mit Übevideo."
+    },
+    "works": {
+      "h1": "Werke und Sammlungen",
+      "title": "Werke und Sammlungen",
+      "desc": "Werke, Messen, Oratorien und Lehrsammlungen des Katalogs, mit den Stücken in der richtigen Reihenfolge."
+    },
+    "genres": {
+      "h1": "Gattungen",
+      "title": "Gattungen des Repertoires",
+      "desc": "Stücke nach Gattung durchsuchen: geistlich, Weihnachtslied, Arie, alte Arie, Gesangsmethode."
+    },
+    "seasons": {
+      "h1": "Kirchenjahreszeiten",
+      "title": "Jahreszeiten: Weihnachten, Ostern, Fastenzeit",
+      "desc": "Chorstücke für Weihnachten, Ostern, Fastenzeit und das Marienrepertoire, mit Videos Stimme für Stimme."
+    },
+    "composer": {
+      "title": "{name}: Stücke und Übevideos",
+      "desc": "{who}: {n} mit Übevideo Stimme für Stimme, gemeinfreie Partitur und Text."
+    },
+    "work": {
+      "title": "{name}: Stücke und Videos",
+      "desc": "{name}: {n} mit Übevideo Stimme für Stimme, in der Reihenfolge des Werks oder der Sammlung."
+    },
+    "genre": {
+      "title": "Gattung {name}: Stücke und Videos",
+      "desc": "Gattung „{name}“: {n} mit Übevideo Stimme für Stimme, mit Partitur und Text."
+    },
+    "season": {
+      "title": "{name}: Chorstücke und Videos",
+      "desc": "Stücke für {name}: {n} mit Übevideo Stimme für Stimme, mit Partitur und Text."
+    },
+    "seasonIntro": {
+      "natale": "Lieder des Advents und der Weihnachtszeit, vom geistlichen Repertoire bis zu den Carols.",
+      "pasqua": "Stücke für die Osterzeit.",
+      "quaresima": "Stücke der Fasten- und Passionszeit.",
+      "mariano": "Stücke zu Ehren der Jungfrau Maria."
+    }
+  },
+  "search": {
+    "title": "Im Katalog suchen",
+    "description": "Suche Stücke, Komponisten und Texte im Katalog von Voce a Voce und filtere nach Linie, Stimme, Jahreszeit und Gattung.",
+    "h1": "Suchen",
+    "intro": "Suche ein Stück, einen Komponisten oder ein Wort aus dem Text. Du kannst die Ergebnisse nach Komponist, Linie, Stimme, Jahreszeit und Gattung eingrenzen.",
+    "label": "Im Katalog suchen",
+    "button": "Suchen",
+    "filters": "Ergebnisse filtern",
+    "reset": "Filter zurücksetzen",
+    "f": {
+      "compositore": "Komponist",
+      "linea": "Linie",
+      "voce": "Stimme",
+      "stagione": "Jahreszeit",
+      "genere": "Gattung"
+    },
+    "otherComposers": "Weitere Komponisten ({n})",
+    "hint": "Gib ein oder mehrere Wörter ein oder wähle einen Filter.",
+    "countNone": "Keine Ergebnisse",
+    "countOne": "1 Ergebnis",
+    "countMany": "{n} Ergebnisse",
+    "loading": "Suche läuft…",
+    "noResults": "Keine Ergebnisse. Versuche es mit weniger Wörtern, prüfe die Schreibweise oder entferne einen Filter.",
+    "browseH": "Oder durchsuche die Verzeichnisse",
+    "more": "Weitere Ergebnisse anzeigen",
+    "error": "Die Suche ist im Moment nicht verfügbar. Du kannst die Verzeichnisse unten trotzdem durchsuchen.",
+    "nojs": "Die Suche benötigt JavaScript. Ohne es kannst du den Katalog über die Verzeichnisse unten durchsuchen.",
+    "by": "von",
+    "resultsLabel": "Suchergebnisse",
+    "homeLabel": "Stücke oder Komponisten suchen",
+    "homeButton": "Suchen"
+  },
+  "study": {
+    "title": "Übungsplayer",
+    "pageTitle": "{title}: Übungsplayer",
+    "desc": "Übe deine Stimme in „{title}“ mit dem Player: getrennte Spuren je Stimme, mitlaufende Partitur, Wiederholung einer Passage und verlangsamtes Tempo ohne Veränderung der Tonhöhe.",
+    "h1": "Üben: {title}",
+    "back": "Seite des Stücks",
+    "noscript": "Der Übungsplayer benötigt JavaScript. Die Videos des Stücks kannst du trotzdem auf seiner Seite ansehen.",
+    "score": "Partitur",
+    "zoomIn": "Partitur vergrößern",
+    "zoomOut": "Partitur verkleinern",
+    "invert": "Farben umkehren",
+    "options": "Optionen",
+    "optCursor": "Mitlaufender Cursor",
+    "optCursorColor": "Farbe des Cursors",
+    "optMeasure": "Takt hervorheben",
+    "optMyPart": "Meine Stimme hervorheben",
+    "pick": "In der Partitur wählen",
+    "pickHint": "Ist diese Option an, tippe einen Takt für den Anfang und einen weiteren für das Ende der Passage; ist sie aus, springt die Wiedergabe mit einem Tippen zu diesem Takt.",
+    "scoreLabel": "Partitur von {title}",
+    "mixer": "Mixer",
+    "mixerHint": "Stelle die Lautstärke jeder Stimme ein, schalte sie stumm (Stumm) oder höre sie allein (Solo schaltet alle anderen stumm: für ein Duett hebe die Stummschaltung einer weiteren Stimme auf).",
+    "volume": "Lautstärke: {voice}",
+    "mute": "Stumm",
+    "solo": "Solo",
+    "muteOf": "{voice} stumm",
+    "soloOf": "{voice} solo",
+    "myVoice": "Meine Stimme",
+    "myVoiceSelect": "Wähle deine Stimme",
+    "myVoiceBtn": "Anwenden",
+    "myVoiceHint": "Die gewählte Stimme auf 100 %, die anderen auf 30 %.",
+    "loop": "Wiederholung",
+    "loopFrom": "Ab Takt",
+    "loopTo": "Bis Takt",
+    "loopBtn": "Diese Passage wiederholen",
+    "loopSame": "„Diese Passage wiederholen“ schaltet sie ein und aus. Liegt die Wiedergabe außerhalb der Passage, beginnt sie an deren Anfang.",
+    "loopShort": "Wiederholen",
+    "speed": "Tempo",
+    "position": "Position",
+    "play": "Abspielen",
+    "pause": "Pause",
+    "transport": "Wiedergabesteuerung",
+    "bar": "Takt",
+    "video": "Das Video des Stücks",
+    "support": "Das Projekt unterstützen",
+    "testNotice": "Testdaten: Diese Seite gehört nicht zur öffentlichen Website.",
+    "js": {
+      "loading": "Audio wird geladen: {n} von {total} Spuren…",
+      "ready": "Audio bereit. Drücke Abspielen.",
+      "ended": "Ende des Stücks.",
+      "zoom": "Partitur bei {z} %.",
+      "play": "Abspielen",
+      "pause": "Pause",
+      "errNetwork": "Das Audio konnte nicht heruntergeladen werden. Prüfe die Verbindung und versuche es erneut; besteht das Problem weiter, könnte es an einem Fehler unseres Servers (CORS) liegen.",
+      "errDecode": "Dein Browser kann das Audio dieses Stücks nicht dekodieren.",
+      "errUnsupported": "Dein Browser unterstützt das vom Player benötigte erweiterte Audio (Web Audio und AudioWorklet) nicht. Versuche es mit einem aktuellen Browser.",
+      "errScore": "Die Partitur kann nicht angezeigt werden. Der Audioplayer funktioniert trotzdem.",
+      "noStretch": "Die Verlangsamung ist in diesem Browser nicht verfügbar: Es wird in normalem Tempo gespielt.",
+      "loop": {
+        "on": "Wiederholung aktiv: Takte {a} bis {b}.",
+        "off": "Wiederholung aus.",
+        "pickOn": "Auswahl in der Partitur aktiv: tippe den ersten und den letzten Takt.",
+        "pickOff": "Auswahl in der Partitur aus: ein Tippen springt zum Takt.",
+        "range": "Gewählte Passage: Takte {a} bis {b}."
+      }
+    }
+  }
+}

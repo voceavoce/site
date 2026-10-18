@@ -168,16 +168,33 @@
     .header-tools { margin-inline-start: auto; }
   }
 
-  /* Cambio lingua: elenco di link */
-  .lang-switch ul { display: flex; gap: var(--space-1); list-style: none; padding: 0; }
-  .lang-switch a {
-    display: inline-flex; align-items: center; justify-content: center;
-    min-width: 2.5rem; min-height: 2.5rem; padding-inline: var(--space-2);
+  /* Cambio lingua: menu a tendina (details) con link; il pannello si apre sotto il pulsante */
+  .lang-switch { position: relative; }
+  .lang-switch summary {
+    display: inline-flex; align-items: center; gap: var(--space-2); cursor: pointer; list-style: none;
+    min-width: 2.5rem; min-height: 2.5rem; padding-inline: var(--space-3);
     border: 1px solid var(--border); border-radius: var(--radius-sm);
-    color: var(--muted); font-size: var(--step--1); font-weight: 700; text-decoration: none;
+    color: var(--text); font-size: var(--step--1); font-weight: 700;
   }
-  .lang-switch a:hover { border-color: var(--accent); color: var(--accent); }
-  .lang-switch a[aria-current="true"] { background: var(--accent-fill); border-color: var(--accent); color: var(--on-accent); }
+  .lang-switch summary::-webkit-details-marker { display: none; }
+  .lang-switch summary::after {
+    content: ""; width: 0.45rem; height: 0.45rem; margin-top: -0.2rem;
+    border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg);
+  }
+  .lang-switch[open] summary::after { transform: rotate(225deg); margin-top: 0.2rem; }
+  .lang-switch summary:hover { border-color: var(--accent); color: var(--accent); }
+  .lang-switch ul {
+    position: absolute; inset-inline-end: 0; top: calc(100% + 0.25rem); z-index: 20; min-width: 10rem;
+    margin: 0; padding: var(--space-1); list-style: none;
+    background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  }
+  .lang-switch a {
+    display: flex; align-items: center; min-height: 2.5rem; padding-inline: var(--space-3);
+    border-radius: var(--radius-sm); color: var(--text); text-decoration: none; font-weight: 600;
+  }
+  .lang-switch a:hover { background: var(--surface-2); color: var(--accent); }
+  .lang-switch a[aria-current="true"] { background: var(--accent-fill); color: var(--on-accent); }
 
   /* Interruttore tema */
   .theme-toggle {

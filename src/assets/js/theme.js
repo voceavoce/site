@@ -1,3 +1,13 @@
+// Menu della lingua (details): si chiude con Esc e con un clic fuori. Senza JS resta un details nativo.
+(function () {
+  var menu = document.querySelector("details.lang-switch");
+  if (!menu) return;
+  document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  menu.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); }
+  });
+})();
+
 // Interruttore tema chiaro/scuro. Miglioramento progressivo: senza JS vale prefers-color-scheme.
 (function () {
   var root = document.documentElement;

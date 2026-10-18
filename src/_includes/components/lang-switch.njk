@@ -1,8 +1,9 @@
-{#- Elenco di LINK alla stessa pagina nelle altre lingue. Usa: lang, routeSection, routeSlug -#}
-<nav class="lang-switch" aria-label="{{ 'langSwitch.label' | t(lang) }}">
-  <ul>
+{#- Cambio lingua: menu a tendina (<details>) con LINK alla stessa pagina nelle altre lingue (restano indicizzabili). Usa: lang, routeSection, routeSlug -#}
+<details class="lang-switch">
+  <summary aria-label="{{ 'langSwitch.label' | t(lang) }}: {{ ('langName.' ~ lang) | t(lang) }}"><span aria-hidden="true">{{ lang | upper }}</span></summary>
+  <ul aria-label="{{ 'langSwitch.label' | t(lang) }}">
     {%- for alt in routeSection | altUrls(routeSlug) %}
-    <li><a href="{{ alt.url }}" hreflang="{{ alt.lang }}" lang="{{ alt.lang }}" aria-label="{{ ('langName.' ~ alt.lang) | t(alt.lang) }}"{% if alt.lang == lang %} aria-current="true"{% endif %}>{{ alt.lang | upper }}</a></li>
+    <li><a href="{{ alt.url }}" hreflang="{{ alt.lang }}" lang="{{ alt.lang }}"{% if alt.lang == lang %} aria-current="true"{% endif %}>{{ ('langName.' ~ alt.lang) | t(alt.lang) }}</a></li>
     {%- endfor %}
   </ul>
-</nav>
+</details>

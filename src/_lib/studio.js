@@ -31,7 +31,7 @@ export function checkManifest(slug, m, sync) {
  * brano non ancora pubblicato non viene costruito (ne' pagina, ne' link, ne' partitura copiata); i dati di prova "_"
  * non dipendono da questo insieme. Senza `pubblicati` (sviluppo) si costruiscono tutti.
  */
-export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY_ENV === "production", langs = ["it", "en", "es"], pubblicati = null } = {}) {
+export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY_ENV === "production", langs = ["it", "en", "es", "de", "fr"], pubblicati = null } = {}) {
   const items = {};
   if (existsSync(dir)) {
     for (const d of readdirSync(dir, { withFileTypes: true })) {

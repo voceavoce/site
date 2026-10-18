@@ -41,11 +41,18 @@ export function dateLong(iso, lang) {
 export const isoDay = (iso) => new Date(iso).toISOString().slice(0, 10);
 
 const SOL = { C: "Do", D: "Re", E: "Mi", F: "Fa", G: "Sol", A: "La", B: "Si" };
+const SOL_FR = { ...SOL, D: "Ré" };
 export function tonality(ton, lang) {
   if (!ton?.tonica) return "";
   const letter = ton.tonica[0];
   const acc = ton.tonica.slice(1).replace("b", "♭").replace("#", "♯");
-  const name = lang === "en" ? letter : SOL[letter] || letter;
+  if (lang === "de") {
+    // Notazione tedesca: B naturale = H, Si bemolle = B.
+    const flatB = letter === "B" && acc === "♭";
+    const name = letter === "B" ? (flatB ? "B" : "H") : letter;
+    return `${name}${flatB ? "" : acc}-${t(`mode.${ton.modo}`, lang)}`;
+  }
+  const name = lang === "en" ? letter : (lang === "fr" ? SOL_FR : SOL)[letter] || letter;
   return `${name}${acc} ${t(`mode.${ton.modo}`, lang)}`;
 }
 

@@ -1,11 +1,11 @@
-// Elenco di pagine campione per pa11y-ci: home e ricerca nelle 3 lingue, un indice (/autori/) + le prime 3 schede in _site/brani/.
+// Elenco di pagine campione per pa11y-ci: home e ricerca nelle 5 lingue, un indice (/autori/) + le prime 3 schede in _site/brani/.
 // Uso: node scripts/a11y-urls.mjs [base-url] [cartella-output]  -> scrive node_modules/.cache/pa11yci.json
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 export function sampleUrls(base = "http://localhost:8080", site = "_site") {
-  const paths = ["/", "/en/", "/es/", "/cerca/", "/en/search/", "/es/buscar/", "/autori/"];
+  const paths = ["/", "/en/", "/es/", "/de/", "/fr/", "/cerca/", "/en/search/", "/es/buscar/", "/de/suche/", "/fr/recherche/", "/autori/"];
   const dir = path.join(site, "brani");
   if (existsSync(dir)) {
     const schede = readdirSync(dir, { withFileTypes: true })
