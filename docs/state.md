@@ -77,7 +77,7 @@
 - **Test:** `npm test` = 81 unit test; `npm run e2e` = 21 test end-to-end (compreso P15, sincronia contro il clic udibile) Playwright di player e PWA (build non di produzione in `_site-e2e`, dati `_prova`, audio sintetici in memoria), anche nel workflow Check sulle PR. Fase 3 (P12–P14) fatta il 2026-10-16.
 - **Prossimo passo:** compiti dell'utente U1–U7 in `task.md` (audio veri, Cloudflare/Worker, URL vero al posto di `CAMBIAMI`), poi PR e merge del player su main.
 - **Cose che l'utente fa sul suo PC:** sezione «Da fare dall'utente» in `task.md` (U1–U7).
-- **Aperto:** P8, corona singola: `choir._timing_regions` tratta un'unica corona a metà brano come finale e ci mette l'allargando (Locus iste b. 28-29); riguarda anche i video pubblicati. C1 fatto (traduzioni comuni, branch feat/c1-traduzioni-comuni); C2, note, rimandata. A8, primo export ufficiale con `slug_sito`, si fa con lo STAGE 5 della skill.
+- **Aperto:** P8, corona singola: `choir._timing_regions` tratta un'unica corona a metà brano come finale e ci mette l'allargando (Locus iste b. 28-29); riguarda anche i video pubblicati. C1 (traduzioni comuni), C2 (note it/en/es) e C3 (interfaccia DE/FR, note DE/FR) fatti il 2026-10-18; restano le note DE/FR nella pipeline e la rilettura umana. A8, primo export ufficiale con `slug_sito`, si fa con lo STAGE 5 della skill.
 
 
 Aggiornato: 2026-10-18
