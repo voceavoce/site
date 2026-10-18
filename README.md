@@ -11,7 +11,7 @@ A static website built with [Eleventy 3](https://www.11ty.dev/). It has no clien
   Pages link to their translations with `hreflang`, and the sitemap lists them.
 - **Search** with [Pagefind](https://pagefind.app/), which builds a static index at build time.
   The author and genre pages work without JavaScript.
-- **No cookies of its own.** There are no analytics and no tracking scripts.
+- **No cookies of its own.** Visit statistics come from Cloudflare Web Analytics, which sets no cookies and stores nothing in the browser (the privacy pages say so); there are no ads and no other tracking scripts.
 - **Videos** are embedded from YouTube through `youtube-nocookie.com`, the privacy-enhanced domain.
 
 ## Where the data comes from

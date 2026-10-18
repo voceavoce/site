@@ -4,7 +4,7 @@
 const AUDIO_BASE_PRODUZIONE = "https://voceavoce-audio.voceavoce.workers.dev";
 // Statistiche delle visite senza cookie: Cloudflare Web Analytics (guida in docs/statistiche.md).
 // Incolla qui il token del sito ("data-cf-beacon"). Finche' e' null non si carica nessuno script.
-const CLOUDFLARE_ANALYTICS_TOKEN = null;
+const CLOUDFLARE_ANALYTICS_TOKEN = "671e07d6535a4584ac3fbb7681a7f97a";
 const audioBase =
   process.env.VOCEAVOCE_AUDIO_BASE ||
   (process.env.ELEVENTY_ENV === "production" ? AUDIO_BASE_PRODUZIONE : "http://localhost:8787");
