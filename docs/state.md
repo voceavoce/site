@@ -1,6 +1,15 @@
 # State — avanzamento e decisioni
 
-## Riepilogo per riprendere (aggiornato 2026-10-18, fine sessione «player in produzione»)
+## Riepilogo per riprendere (aggiornato 2026-10-18 notte, PR del player pronta)
+
+- **Fatto stanotte (autonomia):** esportati e caricati su R2 **tutti i brani con stem** (140 player, 1210 file, 1,4 GB su 10 GB gratuiti, verifica HEAD ok). In produzione il player compare solo sui brani con video gia' pubblicato (oggi 40); gli altri lo ricevono da soli alla build dopo la data. Test: 152 unit; e2e di tutti i brani reali (ha trovato e fatto correggere 3 difetti di layout); a11y 12/12 con il player.
+- **Solo resta** nel mixer (decisione utente). Tutte le impostazioni del player: vedi blocco precedente.
+- **Non verificato:** l'ultima suite e2e completa e' stata fermata dal sistema (poca memoria) a 244/331 senza errori; mancano partitura/player/pwa/sync-audio dopo le ultime modifiche CSS/JS (task P26). L'organo non e' stato ascoltato.
+- **AIVideoCreator:** T-908 ancora solo sul branch `sito-player-senza-coda` (P25); i dati del sito sono gia' generati con quel codice.
+- **Ricetta export (da `pipeline-core` del worktree):** `RUNTIME_DIR=C:/source/repos/AIVideoCreator/runtime ../../../../runtime/venv/Scripts/python.exe -m scripts.cli.job_sito_player --brano <rank> ... --scrivi --out C:/source/repos/site --audio-dir C:/source/repos/audio-sito`; poi togliere dai manifest le tracce senza file, `node scripts/upload-audio.mjs` (PowerShell, rclone dal PATH di sistema), commit di `content/player/`.
+
+## Riepilogo precedente (2026-10-18, fine sessione «player in produzione»)
+
 
 - **Cloudflare fatto.** Account creato; bucket R2 privato `voceavoce-audio`; Worker `voceavoce-audio` pubblicato su
   **https://voceavoce-audio.voceavoce.workers.dev** (sottodominio `workers.dev` scelto: `voceavoce`); `AUDIO_BASE_PRODUZIONE`

@@ -78,15 +78,18 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [x] P17f (S) «Scegli sulla partitura» dalla posizione (`battutaAlPunto`) e spostato nel riquadro Ripetizione
 - [x] P18 (S) T-908 AIVideoCreator (worktree `sito-player-senza-coda`, `23dece3c`): partitura per il sito senza la battuta vuota di coda; dati dei 3 brani rigenerati
 - [x] P19 (S) Test: `tests/cursore.test.mjs`, `tests/musicxml.test.mjs`, mixer in `tests/study.test.mjs` (146 unit test verdi); `tests/e2e/partitura.spec.mjs` nuovo, `player.spec.mjs` aggiornato per il nuovo Solo
-- [ ] P20 (S) **3 e2e ROSSI da sistemare** (ultimo esito 2026-10-18): (a) `player.spec.mjs` «ordine del focus»: l'ordine atteso va aggiornato (pulsante Opzioni nella barra, «Scegli sulla partitura» ora nel riquadro Ripetizione);
+- [x] P20 (S) e2e sistemati: ordine del focus aggiornato; nei test «scelta della battuta» il punto va calcolato dopo lo scorrimento della pagina (il codice era giusto)
+- [x] P21 (O) Decisione utente: i tasti **Solo restano** («idea comoda… fatto cosi'»); chiarito il suggerimento del mixer nelle 3 lingue
+- [x] P22 (S) Brani con organo (475, 259) esportati con la traccia `accompagnamento`; la partitura di entrambi e' nel test su tutti i brani. **Da ascoltare a mano** l'organo nel mixer
+- [x] P23 (S) `npm run a11y` 12/12 (ora include un player reale in IT e EN) e funzionante su Windows; nessuno scroll laterale a 375 px su tutti i brani (scritte lunghe tolte dal MusicXML, fascia nel foglio, mixer con `minmax(0,1fr)`)
+- [x] P28 (S) Export di TUTTI i brani da `job_sito_player` (T-908 dal worktree, `RUNTIME_DIR` del repo principale): 140 player in `content/player/` (tolti `ave-maris-stella-grieg`, senza stem, e le tracce senza file); audio 1,4 GB (1210 file) in `C:\sourceeposudio-sito` e **su R2, verificati con HEAD**
+- [x] P29 (S) In produzione il player esiste solo per i brani con una voce gia' visibile (`publishedSlugs` in `catalog.js`, `loadStudio({pubblicati})`): pagina, link dalla scheda e partitura copiata; gli altri lo ricevono alla build dopo la data (build notturna 04:15 UTC). In sviluppo si vedono tutti
+- [x] P30 (S) `tests/e2e/brani-reali.spec.mjs`: la partitura di ogni brano reale a telefono e desktop (+ tablet e largo per 3 brani): battute = sync, nessuno scroll laterale, righi non sovrapposti. Ha trovato 3 difetti veri (ora corretti)
+- [ ] P24 (O) Difetti dell'XML del catalogo (tempi ripetuti, «ARIA Player», «b» sperdute, traduzioni lunghe come testo): ora ripuliti nel sito (`musicxml.js`); correggere alla fonte in `score_validate.repair` e controllare un fotogramma del video di Marenzio
+- [ ] P25 (H) Merge di T-908 su `main` di AIVideoCreator **a render fermi** (l'export di stanotte e' stato fatto dal worktree, il codice e' lo stesso)
+- [ ] P26 (H) **Rilanciare la suite e2e completa** (`npm run e2e`): l'ultimo giro e' stato fermato dal sistema per poca memoria a 244/331 con 0 errori; restano da rivedere partitura/player/pwa/sync-audio dopo le ultime modifiche CSS/JS. Poi controllare a mano un brano con organo (475) e *Agnus Dei* da telefono vero
+- [ ] P27 (H) Merge della PR del player su `main` (decisione dell'utente) e verifica del deploy; poi nuove esportazioni man mano che si programmano i video (comando in `docs/player.md`)
   (b) `partitura.spec.mjs` «scelta della battuta»: «toccare lo spazio vuoto di battute diverse…» e «prima e ultima battuta…» ricevono "0" invece di "1": capire se e' il test (punto cliccato / ripartenza della scelta) o `battutaAlPunto` nel browser (confrontare `caselle` con le battute reali di `_prova`, 6 battute)
-- [ ] P21 (O) Decidere con l'utente: togliere i tasti **Solo** dal mixer (restano Muta e «La mia voce»), eventualmente con «solo la mia voce»? Se si', aggiornare `mixer.js`, `study.njk`, i18n, test unit ed e2e, `docs/player.md`
-- [ ] P22 (S) Provare il player con un brano **con organo** (475 *Ave verum*, poi 259 *Good King Wenceslas*): traccia di accompagnamento nel mixer, fascia della voce con righi in piu' (la fascia si spegne se righi ≠ voci: verificare che sia sensato), zoom e cursore con l'organo
-- [ ] P23 (S) `npm run a11y` e prova su telefono (375 px) per il nuovo riquadro Opzioni, il colore del cursore, il pulsante spostato; controllo del contrasto della fascia gialla e del cursore (tema chiaro/scuro, carta invertita)
-- [ ] P24 (O) Difetti dell'XML del catalogo (tempi ripetuti, «ARIA Player», «b» sperdute): correggere alla fonte in `score_validate.repair` e controllare un fotogramma del video di Marenzio; poi togliere la pulizia lato sito se superflua
-- [ ] P25 (H) Merge di T-908 su `main` di AIVideoCreator **a render fermi**; poi riesportare 342/416/407 e i prossimi brani dal repo principale
-- [ ] P26 (H) Aggiornare `docs/player.md` e `docs/r2-setup.md` se cambiano le scelte sopra; fermare il server di sviluppo in background (porta 8080)
-- [ ] P27 (H) Merge del player su `main` del sito (PR): prima `npm run check`, `npm run e2e` verde, `npm run a11y`; poi esportare altri brani e caricare gli audio con `scripts/upload-audio.mjs`
 
 ## Q — Robustezza (Fase 3, ok dell'utente 2026-10-16)
 
