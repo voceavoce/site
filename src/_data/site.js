@@ -33,5 +33,5 @@ export default {
   audioBase: audioBase.replace(/\/+$/, ""),
   // TODO: link per le donazioni (Ko-fi, PayPal, ...). Finche' e' null il link «Sostieni il progetto» non si mostra.
   donazioni: null,
-  buildTime: new Date().toISOString(),
+  buildTime: process.env.VOCEAVOCE_NOW || new Date().toISOString(), // VOCEAVOCE_NOW: simula una data futura (uscite programmate) in locale
 };

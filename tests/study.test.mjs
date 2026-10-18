@@ -230,3 +230,14 @@ test("titolo della pagina del player: al massimo 70 caratteri col suffisso del s
     assert.equal(titoloBreve(lang, "Locus iste"), "Locus iste");
   }
 });
+
+test("titolo della pagina del player: gli apostrofi contano 5 caratteri come nell'HTML (&#39;)", async () => {
+  const { titoloBreve, lunghezzaHtml } = await import("../src/_lib/study-title.js");
+  assert.equal(lunghezzaHtml("a'b&c"), 1 + 5 + 1 + 5 + 1);
+  for (const lang of ["it", "en", "es"]) {
+    for (const titolo of ["April is in my mistress' face", "Lord for Thy tender mercy's sake", "O''''''''''''''''''''''''''''''''''''"]) {
+      const html = lunghezzaHtml(titoloBreve(lang, titolo)) + lunghezzaHtml(lang === "es" ? ": reproductor de estudio" : lang === "en" ? ": practice player" : ": player di studio") + " · Voce a Voce".length;
+      assert.ok(html <= 70, `${lang} ${titolo}: ${html}`);
+    }
+  }
+});
