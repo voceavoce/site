@@ -30,6 +30,8 @@ export function bindLoop({ root, sync, onChange, announce = () => {}, labels = {
     const r = range();
     onChange(active && r ? r : null);
     for (const b of toggles) b.setAttribute("aria-pressed", String(active));
+    const testo = r ? `${names[r.from]}–${names[r.to]}` : "";
+    for (const s of document.querySelectorAll("[data-loop-range]")) s.textContent = testo;
     if (pick) pick.setAttribute("aria-pressed", String(picking));
   }
   function setRange(a, b) {
@@ -52,6 +54,8 @@ export function bindLoop({ root, sync, onChange, announce = () => {}, labels = {
   return {
     get picking() { return picking; },
     get active() { return active; },
+    /** Limiti del passaggio se il ripeti e' acceso, altrimenti null. */
+    get range() { return active ? range() : null; },
     setActive,
     /** Tocco su una battuta di partitura (indice `m`). Ritorna true se e' stato consumato dalla scelta del loop. */
     tapMeasure(m, nearIndex) {

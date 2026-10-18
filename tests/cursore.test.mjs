@@ -246,3 +246,16 @@ test("battuta al punto: dati non validi -> -1, senza eccezioni", () => {
   assert.equal(battutaAlPunto(caselle, NaN, 10), -1);
   assert.equal(battutaAlPunto(caselle, 10, undefined), -1);
 });
+
+test("battutaAlPunto: con caselle sovrapposte (testo e melismi sconfinano) vince la battuta col centro piu' vicino", () => {
+  const sis = {};
+  // la battuta 0 e' larga fin dentro la 1 e la 2 (come i versi di un melisma): prima vinceva sempre la 0
+  const caselle = [
+    { i: 0, sistema: sis, l: 0, r: 260, t: 0, b: 100 },
+    { i: 1, sistema: sis, l: 100, r: 200, t: 0, b: 100 },
+    { i: 2, sistema: sis, l: 200, r: 700, t: 0, b: 100 },
+  ];
+  assert.equal(battutaAlPunto(caselle, 150, 50), 1);
+  assert.equal(battutaAlPunto(caselle, 50, 50), 0);
+  assert.equal(battutaAlPunto(caselle, 450, 50), 2);
+});

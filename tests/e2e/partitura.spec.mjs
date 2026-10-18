@@ -259,3 +259,61 @@ test.describe("scelta della battuta toccando la partitura", () => {
     expect(await page.evaluate(() => document.querySelector("[data-seek]").dataset.measure)).toBe(prima);
   });
 });
+
+test.describe("scelta della battuta su brani reali (testo e melismi sotto le note)", () => {
+  // Il rettangolo di ogni battuta include versi e trattini che sconfinano nelle vicine: l'estensione giusta e' quella del rigo.
+  for (const slug of ["agnus-dei-josquin", "adieu-sweet-amaryllis-wilbye", "a-d-una-fresca-riva-marenzio"]) {
+    test(`${slug}: toccando il centro di OGNI battuta si sceglie quella battuta`, async ({ page }) => {
+      await page.goto(`/player/${slug}/`);
+      await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-loop-pick]").disabled, null, { timeout: 90_000 });
+      const n = await page.evaluate(() => document.querySelectorAll("[data-score] g.measure").length);
+      const sbagliate = [];
+      for (let i = 0; i < n; i++) {
+        await page.click("[data-loop-pick]");
+        const p = await page.evaluate((k) => {
+          const g = document.querySelectorAll("[data-score] g.measure")[k];
+          g.scrollIntoView({ block: "center", behavior: "instant" });
+          const linee = [...g.querySelector(":scope > g.staff").querySelectorAll(":scope > path")].map((e) => e.getBoundingClientRect());
+          const l = Math.min(...linee.map((r) => r.left)), r = Math.max(...linee.map((r) => r.right));
+          const s = g.closest("g.system").getBoundingClientRect();
+          return { x: (l + r) / 2, y: s.top + s.height * 0.12 };
+        }, i);
+        await page.mouse.click(p.x, p.y);
+        const got = await page.locator("[data-loop-from]").inputValue();
+        if (got !== String(i)) sbagliate.push(`${i}->${got}`);
+        await page.click("[data-loop-pick]"); // spegne la scelta
+      }
+      expect(sbagliate, "battute scelte male (attesa -> ottenuta)").toEqual([]);
+    });
+  }
+
+  test("scelto un passaggio la testina va al suo inizio e Riproduci parte da li", async ({ page }) => {
+    await apriPlayer(page);
+    await page.click("[data-loop-pick]");
+    for (const i of [2, 4]) {
+      const { x, y } = await centro(page, i);
+      await page.mouse.click(x, y);
+    }
+    await expect(page.locator("[data-loop-from]")).toHaveValue("2");
+    await expect(page.locator("[data-loop-to]")).toHaveValue("4");
+    const inizio = battuta(2).t;
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeCloseTo(inizio, 1);
+    // le due etichette dei pulsanti Ripeti mostrano il passaggio, e i due pulsanti sono lo stesso interruttore
+    await expect(page.locator("[data-loop-toggle]").first().locator("[data-loop-range]")).toHaveText("3–5");
+    await expect(page.locator("[data-loop-toggle]").nth(1).locator("[data-loop-range]")).toHaveText("3–5");
+    await page.click("[data-play]");
+    await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeGreaterThanOrEqual(inizio - 0.05);
+  });
+
+  test("Riproduci con un ripeti acceso e la testina prima del passaggio parte dall'inizio del passaggio", async ({ page }) => {
+    await apriPlayer(page);
+    await page.locator("[data-loop-from]").selectOption("3");
+    await page.locator("[data-loop-to]").selectOption("4");
+    await page.locator("[data-loop-toggle]").first().click(); // acceso, testina ancora a 0
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeLessThan(0.5);
+    await page.click("[data-play]");
+    await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
+    expect(await page.evaluate(() => window.__study.engine.position())).toBeGreaterThanOrEqual(battuta(3).t - 0.05);
+  });
+});

@@ -5,7 +5,7 @@ import { StudyEngine } from "./engine.js";
 import { bindMixer } from "./mixer.js";
 import { bindLoop } from "./loop.js";
 import { createScore } from "./score.js";
-import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock } from "./timeline.js";
+import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock, startForPlay } from "./timeline.js";
 import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -41,7 +41,12 @@ async function main(data) {
     xmlUrl: data.scoreUrl,
     voiceLabels: manifest.tracce.filter((t) => t.tipo !== "accompagnamento").map((t) => t.voce),
     onMeasureTap: (m) => {
-      if (loop?.tapMeasure(m, Math.max(0, currentIdx))) return;
+      if (loop?.tapMeasure(m, Math.max(0, currentIdx))) {
+        // scelto un passaggio: la testina va al suo inizio (anche in riproduzione), cosi' si sente e si vede dove si ripete
+        const r = loop.range;
+        if (r && engine.tracks.size) { engine.seek(r.start); update(); }
+        return;
+      }
       const i = indexOfScoreMeasure(sync, m, Math.max(0, currentIdx));
       if (i >= 0 && engine.tracks.size) { engine.seek(timeOfMeasure(sync, i)); update(); }
     },
@@ -130,7 +135,13 @@ async function main(data) {
   };
   async function toggle() {
     if (el.play.disabled) return;
-    if (engine.playing) engine.pause(); else await engine.play();
+    if (engine.playing) engine.pause();
+    else {
+      // con un ripeti acceso e la testina fuori dal passaggio si parte dall'inizio del passaggio, non dal brano
+      const da = startForPlay(loop?.range, engine.position());
+      if (da !== engine.position()) { engine.seek(da); update(); }
+      await engine.play();
+    }
     setPlayLabel();
     if (!raf) raf = requestAnimationFrame(loopTick);
     update();

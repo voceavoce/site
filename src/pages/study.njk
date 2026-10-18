@@ -54,7 +54,8 @@ eleventyExcludeFromCollections: true
         </div>
         <button type="button" class="tool tool--wide tool--text" data-loop-pick aria-pressed="false" aria-describedby="study-pick-hint" data-needs-audio disabled>{{ 'study.pick' | t(lang) }}</button>
         <p id="study-pick-hint" class="study__hint">{{ 'study.pickHint' | t(lang) }}</p>
-        <button type="button" class="tool tool--wide" data-loop-toggle aria-pressed="false" data-needs-audio disabled>{{ 'study.loopBtn' | t(lang) }}</button>
+        <button type="button" class="tool tool--wide" data-loop-toggle aria-pressed="false" data-needs-audio disabled>{{ 'study.loopBtn' | t(lang) }} <span data-loop-range></span></button>
+        <p class="study__hint">{{ 'study.loopSame' | t(lang) }}</p>
       </section>
 
       <section class="panel" data-mixer data-feature="mixer" aria-labelledby="study-mixer-h">
@@ -133,7 +134,7 @@ eleventyExcludeFromCollections: true
     <div class="transport__speed" data-feature="tempo"><label for="study-speed">{{ 'study.speed' | t(lang) }}</label>
       <input type="range" id="study-speed" data-speed data-needs-audio disabled min="50" max="100" step="5" value="100" aria-valuetext="100%">
       <output data-speed-out for="study-speed">100%</output></div>
-    <button type="button" class="tool tool--text" data-loop-toggle data-feature="loop" aria-pressed="false" data-needs-audio disabled>{{ 'study.loopShort' | t(lang) }}</button>
+    <button type="button" class="tool tool--text" data-loop-toggle data-feature="loop" aria-pressed="false" data-needs-audio disabled>{{ 'study.loopShort' | t(lang) }} <span data-loop-range></span></button>
   </div>
 </div>
 <script type="application/json" id="study-data">{{ studyData | jsonSafe | safe }}</script>

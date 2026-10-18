@@ -87,6 +87,14 @@ export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasu
     return { l: r.left - ox, r: r.right - ox, t: r.top - oy, b: r.bottom - oy };
   }
 
+  // Estensione orizzontale di una battuta = quella delle linee del suo rigo, NON il rettangolo del gruppo: quello include
+  // i versi del testo, i trattini dei melismi e le legature, che sconfinano nelle battute vicine (battute sovrapposte).
+  function estensione(g) {
+    const linee = [...(g.querySelector(":scope > g.staff")?.querySelectorAll(":scope > path") ?? [])].map(inContainer).filter((r) => r.r - r.l > 1);
+    if (!linee.length) { const b = inContainer(g); return { l: b.l, r: b.r }; }
+    return { l: Math.min(...linee.map((r) => r.l)), r: Math.max(...linee.map((r) => r.r)) };
+  }
+
   // Posizione orizzontale di ogni nota/pausa dalla mappa dei tempi di Verovio (la matematica e' in cursore.js).
   function buildGeometry() {
     let tm = [];
@@ -102,14 +110,14 @@ export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasu
     measures.forEach((g, i) => {
       const sys = g.closest("g.system");
       if (!sys) return;
-      const b = inContainer(g), sb = inContainer(sys);
+      const b = estensione(g), sb = inContainer(sys);
       caselle.push({ i, sistema: sys, l: b.l, r: b.r, t: sb.t, b: sb.b });
     });
     geo = completaBattute(puntiPerBattuta(tm, (id) => indice.get(id), xDi), (i) => {
       const sys = measures[i]?.closest("g.system");
       if (!sys) return null;
       const sb = inContainer(sys);
-      return { sistema: sys, top: sb.t, bottom: sb.b, right: inContainer(measures[i]).r };
+      return { sistema: sys, top: sb.t, bottom: sb.b, right: estensione(measures[i]).r };
     });
   }
 
@@ -206,6 +214,7 @@ export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasu
       drawBands();
     },
     get measureCount() { return measures.length; },
+    get caselle() { return caselle.map(({ i, l, r, t, b }) => ({ i, l, r, t, b })); }, // per i test: dove il codice crede che stia ogni battuta
     get zoom() { return zoom; },
     setZoom(delta) {
       const i = Math.min(ZOOM_STEPS.length - 1, Math.max(0, ZOOM_STEPS.indexOf(zoom) + delta));

@@ -119,7 +119,9 @@ export function battutaAlPunto(caselle, x, y, margine = 24) {
   if (!scelte.length || dyMin > margine) return -1;
   const stesso = scelte.filter((c) => c.sistema === scelte[0].sistema);
   const dx = (c) => (x < c.l ? c.l - x : x > c.r ? x - c.r : 0);
-  return stesso.reduce((best, c) => (dx(c) < dx(best) ? c : best), stesso[0]).i;
+  // a parita' (caselle che si sovrappongono) vince la battuta il cui centro e' piu' vicino al punto
+  const centro = (c) => Math.abs(x - (c.l + c.r) / 2);
+  return stesso.reduce((best, c) => (dx(c) < dx(best) || (dx(c) === dx(best) && centro(c) < centro(best)) ? c : best), stesso[0]).i;
 }
 
 /**
