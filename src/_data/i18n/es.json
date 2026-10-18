@@ -370,6 +370,7 @@
         "pickOff": "Elegir en la partitura está desactivado: un toque lleva a ese compás.",
         "range": "Pasaje elegido: compases {a} a {b}."
       }
-    }
+    },
+    "allVoices": "Todas las voces iguales"
   }
 }

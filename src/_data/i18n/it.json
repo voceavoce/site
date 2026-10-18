@@ -370,6 +370,7 @@
         "pickOff": "Scelta sulla partitura spenta: un tocco porta alla battuta.",
         "range": "Passaggio scelto: battute da {a} a {b}."
       }
-    }
+    },
+    "allVoices": "Tutte le voci pari"
   }
 }

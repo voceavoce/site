@@ -370,6 +370,7 @@
         "pickOff": "Picking on the score is off: a tap moves to that bar.",
         "range": "Passage chosen: bars {a} to {b}."
       }
-    }
+    },
+    "allVoices": "All voices level"
   }
 }

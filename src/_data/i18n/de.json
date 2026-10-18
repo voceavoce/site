@@ -370,6 +370,7 @@
         "pickOff": "Auswahl in der Partitur aus: ein Tippen springt zum Takt.",
         "range": "Gewählte Passage: Takte {a} bis {b}."
       }
-    }
+    },
+    "allVoices": "Alle Stimmen gleich laut"
   }
 }

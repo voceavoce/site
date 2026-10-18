@@ -370,6 +370,7 @@
         "pickOff": "Choix sur la partition désactivé : un toucher amène à la mesure.",
         "range": "Passage choisi : mesures {a} à {b}."
       }
-    }
+    },
+    "allVoices": "Toutes les voix égales"
   }
 }
