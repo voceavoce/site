@@ -225,6 +225,14 @@ Prossimi passi: vedi `task.md`, sezione P (P20–P27).
 - **CI:** controlli rapidi in un job, e2e in 3 job paralleli (`--shard`).
 - **Player:** pannello di caricamento con avanzamento, partitura a schermo intero (automatica su telefono), «Tutte le voci pari». Aperto: qualità del rallentamento (R4 in `task.md`).
 
+## Segnalazioni, partiture del video, player anticipato (2026-10-18 notte)
+
+- **Una sola partitura:** il sito pubblica la partitura come la vede il video (`score.video.musicxml`, scritta dagli assets; chiavi corali, sigle, dinamiche sopra), non più lo score di lavoro. Il sito può adattarla, ma parte da quella. Non si pubblica su un repo `scores` separato: le correzioni restano in pipeline e sito.
+- **Segnalare un errore (coristi, non programmatori):** link nel player e nella scheda → modulo nel sito → Worker Cloudflare gratuito → issue nel repo privato `voceavoce/segnalazioni` (notifica GitHub all'utente). Se il Worker non c'è o fallisce, resta l'email già scritta. Nessun cookie; privacy aggiornata nelle 5 lingue.
+- **Dalla segnalazione alla correzione (flusso):** issue → verifica su edizione autorevole (gate T-796) → correzione come *repair* nella pipeline (mai nel file del sito) → score rigenerato → PR → l'utente risponde e chiude. Una skill `/voceavoce-segnalazioni` (R14) guiderà i passi, dopo il primo caso fatto a mano (Lutkin, R13).
+- **Player anticipato:** la pagina `/player/<slug>/` esiste per ogni brano con dati pronti ma resta nascosta (noindex, nessun link) fino all'uscita; serve al link «Studia la tua parte nel player» nelle descrizioni YouTube (T-912) dal primo minuto. YouTube resta il primo passo (scoperta), il player lo strumento per lavorare sui passaggi.
+- **Rallentamento:** il «suono sporco» sotto il 100% è il vibrato delle voci Synth V rallentato dal time-stretching; must have (R4): provare ad attenuarlo nei rendering (T-911).
+
 ## Ordine di esecuzione
 
 1. **Backup:** tag `landing-v1` su `c50b793` + `src/static/classic/` (noindex, percorsi corretti).
