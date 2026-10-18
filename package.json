@@ -10,12 +10,13 @@
   "scripts": {
     "build": "eleventy",
     "validate": "node scripts/validate-content.mjs",
+    "secrets": "node scripts/scan-secrets.mjs",
     "search": "npx pagefind --site _site",
     "test": "node --test \"tests/**/*.test.mjs\"",
     "test:worker": "node --test tests/worker-audio.test.mjs",
     "lint:html": "node scripts/lint-html.mjs",
     "serve": "eleventy --serve",
-    "check": "npm run validate && npm test && npm run build && npm run lint:html",
+    "check": "npm run validate && npm run secrets && npm test && npm run build && npm run lint:html",
     "a11y": "node scripts/a11y.mjs",
     "e2e": "node scripts/e2e.mjs"
   },
