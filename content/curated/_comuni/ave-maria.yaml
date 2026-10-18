@@ -1,0 +1,15 @@
+comune: ave-maria
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Ave Maria", it: "Ave, Maria", en: "Hail Mary", es: "Dios te salve, María", de: "Gegrüßet seist du, Maria", fr: "Je vous salue, Marie" }
+  - { la: "gratia plena", it: "piena di grazia", en: "full of grace", es: "llena eres de gracia", de: "voll der Gnade", fr: "pleine de grâce" }
+  - { la: "Dominus tecum", it: "il Signore è con te", en: "the Lord is with you", es: "el Señor es contigo", de: "der Herr ist mit dir", fr: "le Seigneur est avec vous" }
+  - { la: "Benedicta tu in mulieribus", it: "tu sei benedetta fra le donne", en: "blessed are you among women", es: "bendita tú eres entre todas las mujeres", de: "du bist gesegnet unter den Frauen", fr: "vous êtes bénie entre toutes les femmes" }
+  - { la: "et benedictus fructus ventris tui", it: "e benedetto il frutto del tuo grembo", en: "and blessed is the fruit of your womb", es: "y bendito es el fruto de tu vientre", de: "und gesegnet ist die Frucht deines Leibes", fr: "et béni est le fruit de vos entrailles" }
+  - { la: "Iesus", it: "Gesù", en: "Jesus", es: "Jesús", de: "Jesus", fr: "Jésus" }
+  - { la: "Sancta Maria", it: "Santa Maria", en: "Holy Mary", es: "Santa María", de: "Heilige Maria", fr: "Sainte Marie" }
+  - { la: "Mater Dei", it: "Madre di Dio", en: "Mother of God", es: "Madre de Dios", de: "Mutter Gottes", fr: "Mère de Dieu" }
+  - { la: "ora pro nobis peccatoribus", it: "prega per noi peccatori", en: "pray for us sinners", es: "ruega por nosotros pecadores", de: "bitte für uns Sünder", fr: "priez pour nous pécheurs" }
+  - { la: "nunc et in hora mortis nostrae", it: "adesso e nell'ora della nostra morte", en: "now and at the hour of our death", es: "ahora y en la hora de nuestra muerte", de: "jetzt und in der Stunde unseres Todes", fr: "maintenant et à l'heure de notre mort" }
+  - { la: "Amen", it: "Amen", en: "Amen", es: "Amén", de: "Amen", fr: "Amen" }

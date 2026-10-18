@@ -83,6 +83,27 @@ export function validate(dir = path.join(here, "../content")) {
     if (!v.curated(data)) for (const m of fmt(v.curated.errors)) err(rel, m);
   }
 
+  // Traduzioni dei testi comuni: curated/_comuni/<comune>.yaml, 5 lingue per ogni frase.
+  const comDir = path.join(curDir, "_comuni");
+  for (const name of listFiles(comDir, ".yaml")) {
+    const rel = `curated/_comuni/${name}`;
+    let d;
+    try {
+      d = yaml.load(readFileSync(path.join(comDir, name), "utf8"));
+    } catch (e) {
+      err(rel, `YAML non valido (${e.message.split(String.fromCharCode(10))[0]})`);
+      continue;
+    }
+    if (!d?.credit || !d?.license) err(rel, "mancano credit/license");
+    if (d?.comune !== name.slice(0, -5)) err(rel, `comune "${d?.comune}" diverso dal nome file`);
+    if (!Array.isArray(d?.righe) || !d.righe.length) err(rel, "nessuna riga");
+    for (const [i, r] of (d?.righe ?? []).entries()) {
+      for (const k of ["la", "it", "en", "es", "de", "fr"]) {
+        if (typeof r?.[k] !== "string" || !r[k].trim()) err(rel, `riga ${i + 1}: manca "${k}"`);
+      }
+    }
+  }
+
   return { errors, brani: slugs.size };
 }
 

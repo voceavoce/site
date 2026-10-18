@@ -1,0 +1,42 @@
+comune: pange-lingua
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Pange lingua gloriosi", it: "Canta, o lingua, il mistero", en: "Sing, my tongue, the mystery", es: "Canta, lengua, el misterio", de: "Besinge, Zunge, das Geheimnis", fr: "Chante, ma langue, le mystère" }
+  - { la: "Corporis mysterium", it: "del Corpo glorioso", en: "of the glorious Body", es: "del glorioso Cuerpo", de: "des ruhmreichen Leibes", fr: "du Corps glorieux" }
+  - { la: "Sanguinisque pretiosi", it: "e del Sangue prezioso", en: "and of the precious Blood", es: "y de la Sangre preciosa", de: "und des kostbaren Blutes", fr: "et du Sang précieux" }
+  - { la: "quem in mundi pretium", it: "che come prezzo per il mondo", en: "which as the world's ransom", es: "que como rescate del mundo", de: "das als Lösegeld für die Welt", fr: "que, rançon du monde," }
+  - { la: "fructus ventris generosi", it: "frutto di un grembo nobile", en: "the fruit of a noble womb", es: "fruto de un vientre generoso", de: "die Frucht eines edlen Schoßes", fr: "fruit d'un sein généreux" }
+  - { la: "Rex effudit gentium", it: "il Re dei popoli ha versato", en: "the King of the nations poured out", es: "el Rey de las naciones derramó", de: "der König der Völker vergossen hat", fr: "le Roi des nations a répandu" }
+  - { la: "Nobis datus nobis natus", it: "Dato a noi, nato per noi", en: "Given to us, born for us", es: "Dado a nosotros, nacido para nosotros", de: "Uns gegeben, uns geboren", fr: "Donné à nous, né pour nous" }
+  - { la: "ex intacta Virgine", it: "da una Vergine intatta", en: "of a Virgin untouched", es: "de una Virgen intacta", de: "aus der unversehrten Jungfrau", fr: "d'une Vierge intacte" }
+  - { la: "et in mundo conversatus", it: "e vissuto nel mondo", en: "and having lived in the world", es: "y habiendo vivido en el mundo", de: "und nachdem er in der Welt gelebt", fr: "et ayant vécu dans le monde" }
+  - { la: "sparso verbi semine", it: "dopo aver sparso il seme della Parola", en: "and sown the seed of the Word", es: "esparcida la semilla de la Palabra", de: "den Samen des Wortes ausgestreut", fr: "après avoir semé la semence de la Parole" }
+  - { la: "sui moras incolatus", it: "il tempo della sua dimora", en: "the days of his sojourn", es: "el tiempo de su estancia", de: "die Zeit seines Aufenthalts", fr: "le temps de son séjour" }
+  - { la: "miro clausit ordine", it: "chiuse con un ordine mirabile", en: "he ended in a wondrous way", es: "lo cerró con un orden admirable", de: "beschloss er auf wunderbare Weise", fr: "il le termina d'une manière admirable" }
+  - { la: "In supremae nocte cenae", alt: ["In supremae nocte coenae"], it: "Nella notte dell'ultima cena", en: "On the night of the last supper", es: "En la noche de la última cena", de: "In der Nacht des letzten Abendmahls", fr: "Dans la nuit de la dernière cène" }
+  - { la: "recumbens cum fratribus", it: "a tavola con i suoi fratelli", en: "reclining with his brethren", es: "recostado con sus hermanos", de: "zu Tisch mit seinen Brüdern", fr: "à table avec ses frères" }
+  - { la: "observata lege plene", it: "osservata pienamente la legge", en: "having fully kept the law", es: "cumplida plenamente la ley", de: "nachdem er das Gesetz vollständig erfüllt", fr: "ayant pleinement observé la loi" }
+  - { la: "cibis in legalibus", it: "con i cibi prescritti", en: "with the foods it prescribes", es: "con los alimentos legales", de: "mit den vorgeschriebenen Speisen", fr: "avec les mets prescrits" }
+  - { la: "cibum turbae duodenae", it: "come cibo al gruppo dei dodici", en: "as food for the band of twelve", es: "como alimento para el grupo de los doce", de: "als Speise für die Schar der Zwölf", fr: "comme nourriture pour la troupe des douze" }
+  - { la: "se dat suis manibus", it: "si dà con le sue mani", en: "he gives himself with his own hands", es: "se da con sus propias manos", de: "gibt er sich mit eigenen Händen", fr: "il se donne de ses propres mains" }
+  - { la: "Verbum caro panem verum", it: "Il Verbo fatto carne cambia il pane vero", en: "The Word made flesh makes true bread", es: "El Verbo hecho carne convierte el pan verdadero", de: "Das Wort, Fleisch geworden, macht das wahre Brot", fr: "Le Verbe fait chair change le vrai pain" }
+  - { la: "verbo carnem efficit", it: "in carne con la sua parola", en: "into flesh by his word", es: "en carne con su palabra", de: "durch sein Wort zu Fleisch", fr: "en chair par sa parole" }
+  - { la: "fitque sanguis Christi merum", it: "e il vino puro diventa sangue di Cristo", en: "and wine becomes the blood of Christ", es: "y el vino puro se hace sangre de Cristo", de: "und der reine Wein wird Blut Christi", fr: "et le vin pur devient le sang du Christ" }
+  - { la: "et si sensus deficit", it: "e se i sensi vengono meno", en: "and if the senses fail", es: "y si los sentidos fallan", de: "und wenn die Sinne versagen", fr: "et si les sens défaillent" }
+  - { la: "ad firmandum cor sincerum", it: "a rafforzare il cuore sincero", en: "to strengthen the sincere heart", es: "para fortalecer el corazón sincero", de: "genügt, das aufrichtige Herz zu stärken", fr: "pour affermir le cœur sincère" }
+  - { la: "sola fides sufficit", it: "basta la sola fede", en: "faith alone suffices", es: "basta la sola fe", de: "der Glaube allein", fr: "la foi seule suffit" }
+  - { la: "Tantum ergo sacramentum", it: "Un così grande sacramento", en: "So great a sacrament", es: "Tan grande sacramento", de: "Ein so großes Sakrament", fr: "Un si grand sacrement" }
+  - { la: "veneremur cernui", it: "veneriamo prostrati", en: "we venerate with bowed heads", es: "veneremos inclinados", de: "lasst uns ehrfürchtig verehren", fr: "vénérons-le prosternés" }
+  - { la: "et antiquum documentum", it: "e l'antica alleanza", en: "and let the ancient covenant", es: "y la antigua ley", de: "und die alte Ordnung", fr: "et que l'ancienne loi" }
+  - { la: "novo cedat ritui", it: "ceda il passo al nuovo rito", en: "give way to the new rite", es: "ceda ante el nuevo rito", de: "weiche dem neuen Ritus", fr: "cède devant le nouveau rite" }
+  - { la: "praestet fides supplementum", it: "la fede supplisca", en: "let faith supply", es: "que la fe supla", de: "der Glaube ersetze", fr: "que la foi supplée" }
+  - { la: "sensuum defectui", it: "al difetto dei sensi", en: "the failing of the senses", es: "la deficiencia de los sentidos", de: "den Mangel der Sinne", fr: "à la défaillance des sens" }
+  - { la: "Genitori genitoque", it: "Al Genitore e al Generato", en: "To the Father and the Son", es: "Al Padre y al Hijo", de: "Dem Erzeuger und dem Gezeugten", fr: "Au Père et au Fils" }
+  - { la: "laus et iubilatio", it: "lode e giubilo", en: "praise and jubilation", es: "alabanza y júbilo", de: "Lob und Jubel", fr: "louange et jubilation" }
+  - { la: "salus honor virtus quoque", it: "salvezza, onore e potenza", en: "salvation, honor and power too", es: "salvación, honor y poder también", de: "Heil, Ehre und auch Macht", fr: "salut, honneur et puissance aussi" }
+  - { la: "sit et benedictio", it: "e benedizione", en: "and blessing be", es: "y bendición sean", de: "und Segen sei", fr: "et bénédiction soient" }
+  - { la: "procedenti ab utroque", it: "A colui che procede da entrambi", en: "To him who proceeds from both", es: "Al que procede de ambos", de: "Dem, der von beiden ausgeht", fr: "À celui qui procède des deux" }
+  - { la: "compar sit laudatio", it: "sia pari la lode", en: "be equal praise", es: "sea igual la alabanza", de: "sei gleiches Lob", fr: "soit égale la louange" }
+  - { la: "Amen", it: "Amen", en: "Amen", es: "Amén", de: "Amen", fr: "Amen" }
+  - { la: "Alleluia", it: "Alleluia", en: "Alleluia", es: "Aleluya", de: "Halleluja", fr: "Alléluia" }

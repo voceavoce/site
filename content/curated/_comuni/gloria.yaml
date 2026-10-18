@@ -1,0 +1,26 @@
+comune: gloria
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Gloria in excelsis Deo", it: "Gloria a Dio nell'alto dei cieli", en: "Glory to God in the highest", es: "Gloria a Dios en las alturas", de: "Ehre sei Gott in der Höhe", fr: "Gloire à Dieu au plus haut des cieux" }
+  - { la: "Et in terra pax hominibus bonae voluntatis", it: "e sulla terra pace agli uomini di buona volontà", en: "and on earth peace to people of good will", es: "y en la tierra paz a los hombres de buena voluntad", de: "und auf Erden Friede den Menschen guten Willens", fr: "et sur la terre paix aux hommes de bonne volonté" }
+  - { la: "Laudamus te", it: "Ti lodiamo", en: "We praise you", es: "Te alabamos", de: "Wir loben dich", fr: "Nous te louons" }
+  - { la: "benedicimus te", it: "ti benediciamo", en: "we bless you", es: "te bendecimos", de: "wir preisen dich", fr: "nous te bénissons" }
+  - { la: "adoramus te", it: "ti adoriamo", en: "we adore you", es: "te adoramos", de: "wir beten dich an", fr: "nous t'adorons" }
+  - { la: "glorificamus te", it: "ti glorifichiamo", en: "we glorify you", es: "te glorificamos", de: "wir verherrlichen dich", fr: "nous te glorifions" }
+  - { la: "Gratias agimus tibi propter magnam gloriam tuam", it: "ti rendiamo grazie per la tua grande gloria", en: "we give you thanks for your great glory", es: "te damos gracias por tu gran gloria", de: "wir danken dir wegen deiner großen Herrlichkeit", fr: "nous te rendons grâce pour ta grande gloire" }
+  - { la: "Domine Deus Rex caelestis", alt: ["Domine Deus Rex coelestis"], it: "Signore Dio, Re del cielo", en: "Lord God, King of heaven", es: "Señor Dios, Rey celestial", de: "Herr und Gott, König des Himmels", fr: "Seigneur Dieu, Roi du ciel" }
+  - { la: "Deus Pater omnipotens", it: "Dio Padre onnipotente", en: "God the Father almighty", es: "Dios Padre todopoderoso", de: "Gott, allmächtiger Vater", fr: "Dieu le Père tout-puissant" }
+  - { la: "Domine Fili unigenite Iesu Christe", it: "Signore, Figlio unigenito, Gesù Cristo", en: "Lord, only-begotten Son, Jesus Christ", es: "Señor, Hijo unigénito, Jesucristo", de: "Herr, eingeborener Sohn, Jesus Christus", fr: "Seigneur, Fils unique, Jésus-Christ" }
+  - { la: "Domine Deus Agnus Dei Filius Patris", it: "Signore Dio, Agnello di Dio, Figlio del Padre", en: "Lord God, Lamb of God, Son of the Father", es: "Señor Dios, Cordero de Dios, Hijo del Padre", de: "Herr und Gott, Lamm Gottes, Sohn des Vaters", fr: "Seigneur Dieu, Agneau de Dieu, Fils du Père" }
+  - { la: "Qui tollis peccata mundi", it: "Tu che togli i peccati del mondo", en: "You who take away the sins of the world", es: "Tú que quitas los pecados del mundo", de: "Du nimmst hinweg die Sünden der Welt", fr: "Toi qui enlèves les péchés du monde" }
+  - { la: "miserere nobis", it: "abbi pietà di noi", en: "have mercy on us", es: "ten piedad de nosotros", de: "erbarme dich unser", fr: "prends pitié de nous" }
+  - { la: "suscipe deprecationem nostram", it: "accogli la nostra supplica", en: "receive our prayer", es: "acoge nuestra súplica", de: "nimm unser Flehen an", fr: "reçois notre prière" }
+  - { la: "Qui sedes ad dexteram Patris", it: "Tu che siedi alla destra del Padre", en: "You who sit at the right hand of the Father", es: "Tú que estás sentado a la derecha del Padre", de: "Du sitzest zur Rechten des Vaters", fr: "Toi qui es assis à la droite du Père" }
+  - { la: "Quoniam tu solus sanctus", it: "Perché tu solo il Santo", en: "For you alone are holy", es: "Porque solo tú eres santo", de: "Denn du allein bist heilig", fr: "Car toi seul es saint" }
+  - { la: "tu solus Dominus", it: "tu solo il Signore", en: "you alone are Lord", es: "solo tú Señor", de: "du allein bist der Herr", fr: "toi seul es Seigneur" }
+  - { la: "tu solus altissimus", it: "tu solo l'Altissimo", en: "you alone are the Most High", es: "solo tú altísimo", de: "du allein bist der Höchste", fr: "toi seul es le Très-Haut" }
+  - { la: "Iesu Christe", it: "Gesù Cristo", en: "Jesus Christ", es: "Jesucristo", de: "Jesus Christus", fr: "Jésus-Christ" }
+  - { la: "Cum Sancto Spiritu", it: "con lo Spirito Santo", en: "with the Holy Spirit", es: "con el Espíritu Santo", de: "mit dem Heiligen Geist", fr: "avec le Saint-Esprit" }
+  - { la: "in gloria Dei Patris", it: "nella gloria di Dio Padre", en: "in the glory of God the Father", es: "en la gloria de Dios Padre", de: "in der Herrlichkeit Gottes des Vaters", fr: "dans la gloire de Dieu le Père" }
+  - { la: "Amen", it: "Amen", en: "Amen", es: "Amén", de: "Amen", fr: "Amen" }

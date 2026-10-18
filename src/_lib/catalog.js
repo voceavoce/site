@@ -4,12 +4,14 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import yaml from "js-yaml";
+import { caricaComuni, traduciComune } from "./comuni.js";
 import site from "../_data/site.js";
 import { sortVoices, listEntries } from "./listing.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const genDir = path.join(root, "content/generated");
 const curDir = path.join(root, "content/curated");
+const comuni = caricaComuni(path.join(curDir, "_comuni"));
 
 /** Una voce e' visibile se `pubblica` e' true oppure `pubblica_dal` <= now. */
 export function isVoiceVisible(voce, now) {
@@ -81,7 +83,7 @@ export function buildCatalog(now = site.buildTime) {
       ...g,
       generi: c.generi ?? g.generi ?? [],
       nota: { ...(g.nota || {}), ...(c.nota || {}) },
-      traduzioni: c.traduzioni || {},
+      traduzioni: { ...traduciComune(g.testo?.testo, comuni[g.testo?.comune]), ...(c.traduzioni || {}) },
       affiliazioni: (c.affiliazioni || []).filter((a) => a && a.enabled === true),
       percorsi: c.percorsi || [],
       voci: sortVoices(visibili).map(mapVoice), // solo le visibili (cosi' anche card.njk e' corretto)
