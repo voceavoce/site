@@ -20,7 +20,7 @@
 ## Riepilogo precedente (2026-10-18 notte, PR del player pronta)
 
 
-- **Fatto stanotte (autonomia):** esportati e caricati su R2 **tutti i brani con stem** (140 player, 1210 file, 1,4 GB su 10 GB gratuiti, verifica HEAD ok). In produzione il player compare solo sui brani con video gia' pubblicato (oggi 41); gli altri lo ricevono da soli alla build dopo la data. Test: 152 unit; e2e di tutti i brani reali (ha trovato e fatto correggere 3 difetti di layout); a11y 12/12 con il player.
+- **Fatto stanotte (autonomia):** esportati e caricati su R2 **tutti i brani con stem** (140 player, 1210 file, 1,4 GB su 10 GB gratuiti, verifica HEAD ok). Il player esiste per tutti (pagina nascosta prima dell'uscita: noindex, niente link, sitemap o ricerca; decisione 2026-10-18) e il link dalla scheda compare solo per i brani con video gia' pubblicato (oggi 42), alla build dopo la data. Test: 152 unit; e2e di tutti i brani reali (ha trovato e fatto correggere 3 difetti di layout); a11y 12/12 con il player.
 - **Solo resta** nel mixer (decisione utente). Tutte le impostazioni del player: vedi blocco precedente.
 - **Non verificato:** l'ultima suite e2e completa e' stata fermata dal sistema (poca memoria) a 244/331 senza errori; mancano partitura/player/pwa/sync-audio dopo le ultime modifiche CSS/JS (task P26). L'organo non e' stato ascoltato.
 - **AIVideoCreator:** T-908 ancora solo sul branch `sito-player-senza-coda` (P25); i dati del sito sono gia' generati con quel codice.

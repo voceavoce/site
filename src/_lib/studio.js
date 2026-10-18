@@ -27,16 +27,17 @@ export function checkManifest(slug, m, sync) {
 }
 
 /**
- * `pubblicati`: insieme degli slug con almeno una voce gia' visibile (video pubblicato). Se e' dato, il player di un
- * brano non ancora pubblicato non viene costruito (ne' pagina, ne' link, ne' partitura copiata); i dati di prova "_"
- * non dipendono da questo insieme. Senza `pubblicati` (sviluppo) si costruiscono tutti.
+ * Il player di OGNI brano con i dati pronti viene costruito, pubblicato o no: la pagina e' sempre noindex e il suo
+ * indirizzo e' prevedibile, cosi' il link nella descrizione del video funziona dal primo minuto. Resta "nascosto" finche'
+ * il brano non e' uscito: nessun link lo raggiunge (`linked`), non e' in sitemap ne' nella ricerca.
+ * `pubblicati`: insieme degli slug con almeno una voce gia' visibile (video pubblicato); solo questi hanno il link dalla
+ * scheda del brano (alla build dopo la data di uscita). Senza `pubblicati` (sviluppo) tutti i brani veri sono linkati.
  */
 export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY_ENV === "production", langs = ["it", "en", "es", "de", "fr"], pubblicati = null } = {}) {
   const items = {};
   if (existsSync(dir)) {
     for (const d of readdirSync(dir, { withFileTypes: true })) {
       if (!d.isDirectory() || (production && isTestSlug(d.name))) continue;
-      if (pubblicati && !isTestSlug(d.name) && !pubblicati.has(d.name)) continue;
       const mp = path.join(dir, d.name, "manifest.json");
       if (!existsSync(mp)) continue;
       const manifest = JSON.parse(readFileSync(mp, "utf8"));
@@ -44,15 +45,15 @@ export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY
       const scoreFile = manifest.partitura || "score.musicxml";
       checkManifest(d.name, manifest, sync);
       if (!existsSync(path.join(dir, d.name, scoreFile))) throw new Error(`content/player/${d.name}: manca ${scoreFile}`);
-      items[d.name] = { slug: d.name, manifest, sync, scoreFile, test: isTestSlug(d.name) };
+      items[d.name] = { slug: d.name, manifest, sync, scoreFile, test: isTestSlug(d.name), pubblicato: !pubblicati || pubblicati.has(d.name) };
     }
   }
   const slugs = Object.keys(items).sort();
   return {
     items,
     slugs,
-    /** Slug con link dalla scheda del brano: mai quelli di prova. */
-    linked: Object.fromEntries(slugs.filter((s) => !items[s].test).map((s) => [s, true])),
+    /** Slug con link dalla scheda del brano: solo i brani veri e gia' usciti, mai quelli di prova ne' le anteprime. */
+    linked: Object.fromEntries(slugs.filter((s) => !items[s].test && items[s].pubblicato).map((s) => [s, true])),
     schede: slugs.flatMap((slug) => langs.map((lang) => ({ slug, lang }))),
   };
 }

@@ -3,8 +3,9 @@ import { loadStudio } from "../_lib/studio.js";
 import { publishedSlugs } from "../_lib/catalog.js";
 import site from "./site.js";
 
-// In produzione il player esiste solo per i brani con un video gia' pubblicato (le uscite programmate lo ricevono
-// al primo build dopo la data: la build notturna le raccoglie). In sviluppo si vedono tutti, per provarli.
+// Il player esiste per tutti i brani con i dati pronti, ma solo quelli con un video gia' pubblicato hanno il link dalla
+// scheda (le uscite programmate lo ricevono alla prima build dopo la data: la build notturna le raccoglie). Gli altri sono
+// pagine nascoste (noindex, niente link, niente sitemap) raggiungibili dall'indirizzo: serve al link nelle descrizioni.
 const pubblicati = process.env.ELEVENTY_ENV === "production" ? publishedSlugs(site.buildTime) : null;
 
 export default loadStudio({ langs: site.langs, pubblicati });

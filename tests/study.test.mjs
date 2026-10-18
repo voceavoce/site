@@ -146,11 +146,16 @@ test("studio: manifest con URL assoluto rifiutato; dati di prova esclusi in prod
   assert.deepEqual(dev.slugs, ["_prova", "vero"]);
   assert.deepEqual(Object.keys(dev.linked), ["vero"]); // nessun link verso i dati di prova
   assert.equal(dev.schede.length, 10); // 2 brani x 5 lingue
-  // solo i brani con un video gia' pubblicato: gli altri non hanno ne' pagina, ne' link, ne' partitura
-  const pub = loadStudio({ dir, production: false, pubblicati: new Set(["altro"]) });
-  assert.deepEqual(pub.slugs, ["_prova"]); // "vero" non e' pubblicato; i dati di prova restano (solo fuori produzione)
-  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set(["vero"]) }).slugs, ["vero"]);
-  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set() }).slugs, []);
+  // il player c'e' per tutti i brani con i dati pronti; il link dalla scheda solo per quelli gia' usciti
+  const pub = loadStudio({ dir, production: true, pubblicati: new Set(["altro"]) });
+  assert.deepEqual(pub.slugs, ["vero"]);
+  assert.deepEqual(Object.keys(pub.linked), []); // "vero" non e' ancora uscito: pagina nascosta, nessun link
+  assert.equal(pub.items.vero.pubblicato, false);
+  const usciti = loadStudio({ dir, production: true, pubblicati: new Set(["vero"]) });
+  assert.deepEqual(usciti.slugs, ["vero"]);
+  assert.deepEqual(Object.keys(usciti.linked), ["vero"]);
+  assert.equal(usciti.items.vero.pubblicato, true);
+  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set() }).slugs, ["vero"]);
 });
 
 test("latenza dello stretcher: tabella monotona, interpolata e limitata", () => {
