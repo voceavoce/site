@@ -1,7 +1,7 @@
 // Player di studio (/player/<slug>/) sul brano di prova content/player/_prova: caricamento, sincronia della battuta
 // evidenziata con sync.json, seek, loop, mixer, tastiera/ARIA e layout mobile. Audio sintetici (helpers.mjs).
 import { expect } from "@playwright/test";
-import { test, apriPlayer, apriRipeti, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST } from "./helpers.mjs";
+import { test, apriPlayer, apriRipeti, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST, PLAYER_URL } from "./helpers.mjs";
 
 const TOLLERANZA_S = 0.15; // evidenziazione vs sync.json: un frame di rAF piu' la latenza stimata, in headless
 const battuta = (i) => SYNC.battute[i];
@@ -331,5 +331,74 @@ test.describe("mobile 375 px", () => {
       expect(b.x).toBeGreaterThanOrEqual(0);
       expect(b.x + b.width).toBeLessThanOrEqual(375.5);
     }
+  });
+});
+
+test.describe("pannello di caricamento", () => {
+  test("compare con la barra di avanzamento mentre l'audio scarica e sparisce a player pronto", async ({ page, context }) => {
+    // ritarda ogni file audio, poi lascia rispondere l'intercettazione di base
+    await context.route((u) => u.host === "localhost:8787", async (route) => {
+      await new Promise((r) => setTimeout(r, 1500));
+      await route.fallback();
+    });
+    await page.goto(PLAYER_URL);
+    const loader = page.locator("[data-loader]");
+    await expect(loader).toBeVisible();
+    const bar = page.locator("[data-loader-bar]");
+    await expect(bar).toHaveAttribute("max", "100");
+    expect(Number(await bar.getAttribute("value"))).toBeGreaterThanOrEqual(3);
+    await expect(page.locator("[data-loader-pct]")).toContainText("%");
+    await page.waitForFunction(() => window.__study?.engine.tracks.size === 4, null, { timeout: 90_000 });
+    await expect(loader).toBeHidden({ timeout: 5_000 });
+    expect(Number(await bar.getAttribute("value"))).toBe(100);
+  });
+});
+
+test.describe("partitura a schermo intero", () => {
+  test("il pulsante la porta sopra la pagina, Chiudi ed Esc la richiudono", async ({ page }) => {
+    await apriPlayer(page);
+    const html = page.locator("html");
+    await expect(page.locator("[data-fs-close]")).toBeHidden();
+    await page.click("[data-fs-open]");
+    await expect(html).toHaveClass(/study-immersive/);
+    await expect(page.locator("[data-fs-close]")).toBeVisible();
+    const box = await page.locator(".study__score").boundingBox();
+    expect(box.y).toBeLessThanOrEqual(1);
+    expect(box.x).toBeLessThanOrEqual(1);
+    await expect(page.locator("[data-play]")).toBeVisible(); // il trasporto resta
+    await page.click("[data-fs-close]");
+    await expect(html).not.toHaveClass(/study-immersive/);
+    await page.click("[data-fs-open]");
+    await page.keyboard.press("Escape");
+    await expect(html).not.toHaveClass(/study-immersive/);
+  });
+});
+
+test.describe("schermo intero su telefono", () => {
+  test.use({ viewport: { width: 375, height: 667 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+
+  test("premendo Riproduci si passa a schermo intero con i tasti minimi; Chiudi esce", async ({ page }) => {
+    await apriPlayer(page);
+    await page.tap("[data-play]");
+    await expect(page.locator("html")).toHaveClass(/study-immersive/);
+    await expect(page.locator("[data-fs-close]")).toBeVisible();
+    await expect(page.locator("[data-loop-open]")).toBeHidden();
+    await expect(page.locator("[data-score-options-toggle]")).toBeHidden();
+    const orizz = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+    expect(orizz).toBe(true);
+    await page.tap("[data-fs-close]");
+    await expect(page.locator("html")).not.toHaveClass(/study-immersive/);
+  });
+
+  test("con l'opzione spenta (ricordata) Riproduci non cambia schermata", async ({ page }) => {
+    await apriPlayer(page);
+    await page.tap("[data-score-options-toggle]");
+    await page.uncheck("[data-opt-fullscreen-play]");
+    await page.tap("[data-play]");
+    await expect(page.locator("html")).not.toHaveClass(/study-immersive/);
+    await page.reload();
+    await page.waitForFunction(() => !document.querySelector("[data-play]").disabled, null, { timeout: 60_000 });
+    await page.tap("[data-score-options-toggle]");
+    await expect(page.locator("[data-opt-fullscreen-play]")).not.toBeChecked();
   });
 });

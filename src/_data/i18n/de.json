@@ -369,7 +369,14 @@
         "pickOn": "Auswahl in der Partitur aktiv: tippe den ersten und den letzten Takt.",
         "pickOff": "Auswahl in der Partitur aus: ein Tippen springt zum Takt.",
         "range": "Gewählte Passage: Takte {a} bis {b}."
-      }
-    }
+      },
+      "fsOn": "Partitur im Vollbild.",
+      "fsOff": "Vollbild geschlossen."
+    },
+    "loaderTitle": "Die Stimmen werden vorbereitet…",
+    "loaderHint": "Beim ersten Öffnen kann es einige Sekunden dauern: Wir laden das Audio aller Stimmen herunter.",
+    "fullscreen": "Partitur im Vollbild",
+    "fullscreenClose": "Schließen",
+    "optFullscreenPlay": "Vollbild beim Drücken von Abspielen (Smartphones)"
   }
 }

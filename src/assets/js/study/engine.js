@@ -17,6 +17,7 @@
 import { resolveAudioUrl } from "./config.js";
 import { computePosition, audiblePosition } from "./timeline.js";
 import { deviceLatency, totalLatency } from "./latency.js";
+import { progressoTotale } from "./schermo.js";
 
 const TARGET_RATE = 24000; // le voci non hanno contenuto utile oltre i 12 kHz: si dimezza la memoria
 const XFADE = 0.04; // dissolvenza (s) tra ramo diretto e ramo con stretcher
@@ -28,6 +29,26 @@ export class StudyError extends Error {
     this.kind = kind; // "network" | "decode" | "worklet" | "unsupported"
     this.cause = cause;
   }
+}
+
+/** Legge il corpo della risposta riportando la frazione scaricata (0..1) quando la dimensione e' nota. */
+async function leggiConAvanzamento(res, onFrac) {
+  const totale = Number(res.headers.get("content-length"));
+  if (!res.body || !totale) return res.arrayBuffer();
+  const reader = res.body.getReader();
+  const parti = [];
+  let letti = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    parti.push(value);
+    letti += value.length;
+    onFrac(Math.min(1, letti / totale));
+  }
+  const out = new Uint8Array(letti);
+  let o = 0;
+  for (const p of parti) { out.set(p, o); o += p.length; }
+  return out.buffer;
 }
 
 export class StudyEngine extends EventTarget {
@@ -79,11 +100,15 @@ export class StudyEngine extends EventTarget {
   }
 
   /** Scarica e decodifica le tracce del manifest (in parallelo). `onProgress(fatte, totale)`. */
-  async load(tracks, onProgress = () => {}) {
+  async load(tracks, onProgress = () => {}, onFraction = () => {}) {
     let done = 0;
+    const frac = tracks.map(() => 0);
+    const emit = () => onFraction(progressoTotale(frac));
     await Promise.all(
-      tracks.map(async (tr) => {
-        const buffer = await this.#fetchDecode(tr);
+      tracks.map(async (tr, i) => {
+        const buffer = await this.#fetchDecode(tr, (f) => { frac[i] = f; emit(); });
+        frac[i] = 1;
+        emit();
         const gain = this.ctx.createGain();
         gain.connect(this.bus);
         this.tracks.set(tr.chiave, { buffer, gain, source: null });
@@ -94,7 +119,7 @@ export class StudyEngine extends EventTarget {
     this.setGains(this.gains);
   }
 
-  async #fetchDecode(tr) {
+  async #fetchDecode(tr, onFrac = () => {}) {
     // Prima Opus (o l'MP3 se il browser non lo decodifica); se la decodifica fallisce, riprova con l'MP3 di riserva.
     const attempts = [resolveAudioUrl(tr)];
     if (tr.riserva) {
@@ -107,7 +132,7 @@ export class StudyEngine extends EventTarget {
       try {
         const res = await fetch(url, { mode: "cors", credentials: "omit" });
         if (!res.ok) throw new StudyError("network", `HTTP ${res.status} per ${url}`);
-        data = await res.arrayBuffer();
+        data = await leggiConAvanzamento(res, (f) => onFrac(f * 0.9)); // il resto e' la decodifica
       } catch (e) {
         // fetch() lancia TypeError sia per rete assente sia per CORS negato: dal client sono indistinguibili.
         lastErr = e instanceof StudyError ? e : new StudyError("network", `Impossibile scaricare ${url}`, e);
