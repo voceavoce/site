@@ -1,0 +1,9 @@
+comune: agnus-dei
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Agnus Dei qui tollis peccata mundi", it: "Agnello di Dio, che togli i peccati del mondo", en: "Lamb of God, who takes away the sins of the world", es: "Cordero de Dios, que quitas los pecados del mundo", de: "Lamm Gottes, du nimmst hinweg die Sünden der Welt", fr: "Agneau de Dieu, qui enlèves les péchés du monde" }
+  - { la: "Agnus Dei", it: "Agnello di Dio", en: "Lamb of God", es: "Cordero de Dios", de: "Lamm Gottes", fr: "Agneau de Dieu" }
+  - { la: "qui tollis peccata mundi", it: "che togli i peccati del mondo", en: "who takes away the sins of the world", es: "que quitas los pecados del mundo", de: "du nimmst hinweg die Sünden der Welt", fr: "qui enlèves les péchés du monde" }
+  - { la: "miserere nobis", it: "abbi pietà di noi", en: "have mercy on us", es: "ten piedad de nosotros", de: "erbarme dich unser", fr: "prends pitié de nous" }
+  - { la: "dona nobis pacem", it: "dona a noi la pace", en: "grant us peace", es: "danos la paz", de: "gib uns Frieden", fr: "donne-nous la paix" }

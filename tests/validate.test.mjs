@@ -88,3 +88,14 @@ test("a11y-urls: home, ricerca nelle 3 lingue e un indice", () => {
   const urls = sampleUrls("http://x:1", "/inesistente");
   assert.deepEqual(urls, ["/", "/en/", "/es/", "/cerca/", "/en/search/", "/es/buscar/", "/autori/"].map((p) => "http://x:1" + p));
 });
+
+test("curated/_comuni: lingue mancanti, credit e nome file", () => {
+  const riga = { la: "Amen", it: "Amen", en: "Amen", es: "Amén", de: "Amen", fr: "Amen" };
+  const ok = `comune: amen\ncredit: C\nlicense: L\nrighe:\n  - ${JSON.stringify(riga)}\n`;
+  assert.deepEqual(run({ "curated/_comuni/amen.yaml": ok }), []);
+  const senzaFr = ok.replace(',"fr":"Amen"', "");
+  has(run({ "curated/_comuni/amen.yaml": senzaFr }), /manca "fr"/);
+  has(run({ "curated/_comuni/amen.yaml": ok.replace("credit: C\n", "") }), /credit\/license/);
+  has(run({ "curated/_comuni/altro.yaml": ok }), /diverso dal nome file/);
+  has(run({ "curated/_comuni/amen.yaml": "comune: amen\ncredit: C\nlicense: L\nrighe: []\n" }), /nessuna riga/);
+});

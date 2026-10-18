@@ -1,0 +1,8 @@
+# Traduzioni dei testi comuni, allineate per frase (vedi src/_lib/comuni.js).
+# Ogni riga: la = frase latina (alt = varianti), poi it/en/es/de/fr.
+comune: kyrie
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Kyrie eleison", it: "Signore, pietà", en: "Lord, have mercy", es: "Señor, ten piedad", de: "Herr, erbarme dich", fr: "Seigneur, prends pitié" }
+  - { la: "Christe eleison", it: "Cristo, pietà", en: "Christ, have mercy", es: "Cristo, ten piedad", de: "Christus, erbarme dich", fr: "Christ, prends pitié" }

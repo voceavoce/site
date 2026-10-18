@@ -1,0 +1,22 @@
+comune: salve-regina
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Salve Regina", it: "Salve, Regina", en: "Hail, Holy Queen", es: "Salve, Reina", de: "Sei gegrüßt, Königin", fr: "Salut, ô Reine" }
+  - { la: "Mater misericordiae", it: "Madre di misericordia", en: "Mother of mercy", es: "Madre de misericordia", de: "Mutter der Barmherzigkeit", fr: "Mère de miséricorde" }
+  - { la: "Vita dulcedo et spes nostra", it: "vita, dolcezza e speranza nostra", en: "our life, our sweetness and our hope", es: "vida, dulzura y esperanza nuestra", de: "unser Leben, unsere Wonne und unsere Hoffnung", fr: "notre vie, notre douceur et notre espérance" }
+  - { la: "salve", it: "salve", en: "hail", es: "salve", de: "sei gegrüßt", fr: "salut" }
+  - { la: "Ad te clamamus", it: "A te gridiamo", en: "To you we cry", es: "A ti clamamos", de: "Zu dir rufen wir", fr: "Vers toi nous crions" }
+  - { la: "exsules filii Hevae", it: "esuli figli di Eva", en: "poor banished children of Eve", es: "desterrados hijos de Eva", de: "verbannte Kinder Evas", fr: "pauvres enfants d'Ève exilés" }
+  - { la: "Ad te suspiramus", it: "A te sospiriamo", en: "To you we sigh", es: "A ti suspiramos", de: "Zu dir seufzen wir", fr: "Vers toi nous soupirons" }
+  - { la: "gementes et flentes", it: "gementi e piangenti", en: "mourning and weeping", es: "gimiendo y llorando", de: "trauernd und weinend", fr: "gémissants et pleurants" }
+  - { la: "in hac lacrimarum valle", it: "in questa valle di lacrime", en: "in this valley of tears", es: "en este valle de lágrimas", de: "in diesem Tal der Tränen", fr: "dans cette vallée de larmes" }
+  - { la: "Eia ergo Advocata nostra", it: "Orsù dunque, avvocata nostra", en: "Turn then, our advocate", es: "Ea, pues, abogada nuestra", de: "Wohlan denn, unsere Fürsprecherin", fr: "Allons donc, notre avocate" }
+  - { la: "illos tuos misericordes oculos ad nos converte", it: "rivolgi a noi quegli occhi tuoi misericordiosi", en: "turn your merciful eyes toward us", es: "vuelve a nosotros esos tus ojos misericordiosos", de: "wende deine barmherzigen Augen uns zu", fr: "tourne vers nous tes yeux miséricordieux" }
+  - { la: "Et Iesum", it: "E Gesù", en: "And Jesus", es: "Y a Jesús", de: "Und Jesus", fr: "Et Jésus" }
+  - { la: "benedictum fructum ventris tui", it: "benedetto frutto del tuo grembo", en: "the blessed fruit of your womb", es: "bendito fruto de tu vientre", de: "die gesegnete Frucht deines Leibes", fr: "béni fruit de tes entrailles" }
+  - { la: "nobis post hoc exsilium ostende", it: "mostraci dopo questo esilio", en: "show to us after this exile", es: "muéstranoslo después de este destierro", de: "zeige uns nach diesem Exil", fr: "montre-nous après cet exil" }
+  - { la: "O clemens", it: "O clemente", en: "O clement", es: "Oh clemente", de: "O gütige", fr: "Ô clémente" }
+  - { la: "O pia", it: "o pia", en: "O loving", es: "oh piadosa", de: "o milde", fr: "ô pieuse" }
+  - { la: "O dulcis Virgo Maria", it: "o dolce Vergine Maria", en: "O sweet Virgin Mary", es: "oh dulce Virgen María", de: "o süße Jungfrau Maria", fr: "ô douce Vierge Marie" }
+  - { la: "Amen", it: "Amen", en: "Amen", es: "Amén", de: "Amen", fr: "Amen" }

@@ -1,0 +1,11 @@
+comune: regina-caeli
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Regina caeli laetare", it: "Regina del cielo, rallégrati", en: "Queen of heaven, rejoice", es: "Reina del cielo, alégrate", de: "Himmelskönigin, frohlocke", fr: "Reine du ciel, réjouis-toi" }
+  - { la: "alleluia", it: "alleluia", en: "alleluia", es: "aleluya", de: "Halleluja", fr: "alléluia" }
+  - { la: "Quia quem meruisti portare", it: "Perché colui che hai meritato di portare", en: "For he whom you were worthy to bear", es: "Porque el que mereciste llevar en tu seno", de: "Denn er, den zu tragen du würdig warst", fr: "Car celui que tu as mérité de porter" }
+  - { la: "Resurrexit sicut dixit", it: "è risorto, come aveva detto", en: "has risen, as he said", es: "ha resucitado, como dijo", de: "ist auferstanden, wie er gesagt hat", fr: "est ressuscité, comme il l'avait dit" }
+  - { la: "Ora pro nobis Deum", it: "Prega Dio per noi", en: "Pray to God for us", es: "Ruega a Dios por nosotros", de: "Bitte Gott für uns", fr: "Prie Dieu pour nous" }
+  - { la: "Gaude et laetare Virgo Maria", it: "Godi e rallégrati, Vergine Maria", en: "Rejoice and be glad, Virgin Mary", es: "Goza y alégrate, Virgen María", de: "Freue dich und frohlocke, Jungfrau Maria", fr: "Réjouis-toi et exulte, Vierge Marie" }
+  - { la: "Quia surrexit Dominus vere", it: "Perché il Signore è veramente risorto", en: "For the Lord has truly risen", es: "Porque el Señor ha resucitado de veras", de: "Denn der Herr ist wahrhaft auferstanden", fr: "Car le Seigneur est vraiment ressuscité" }
