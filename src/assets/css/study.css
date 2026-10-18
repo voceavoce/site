@@ -126,4 +126,57 @@
     .transport__row { flex-wrap: nowrap; }
     .transport { grid-template-columns: 1fr; }
   }
+
+  /* Pannello di caricamento dell'audio: scheda al centro con barra di avanzamento, finche' le voci non sono pronte */
+  .loader {
+    position: fixed; inset: 0; z-index: 70; display: grid; place-items: center; padding: var(--gutter);
+    background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(3px); transition: opacity .3s;
+  }
+  .loader[hidden] { display: none; }
+  .loader.is-done { opacity: 0; pointer-events: none; }
+  .loader__card {
+    width: min(26rem, 100%); display: grid; gap: var(--space-3); padding: var(--space-5); text-align: center;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 10px 40px rgb(0 0 0 / .25);
+  }
+  .loader__card h2 { font-size: var(--step-1); }
+  .loader__wave { display: flex; justify-content: center; align-items: end; gap: .3rem; height: 2.5rem; }
+  .loader__wave span { width: .45rem; height: 100%; border-radius: 3px; background: var(--accent-fill); transform-origin: bottom; animation: loader-wave 1s ease-in-out infinite; }
+  .loader__wave span:nth-child(2) { animation-delay: .12s; }
+  .loader__wave span:nth-child(3) { animation-delay: .24s; }
+  .loader__wave span:nth-child(4) { animation-delay: .36s; }
+  .loader__wave span:nth-child(5) { animation-delay: .48s; }
+  @keyframes loader-wave { 0%, 100% { transform: scaleY(.25); } 50% { transform: scaleY(1); } }
+  .loader__row { display: flex; align-items: center; gap: var(--space-3); }
+  .loader__bar { flex: 1 1 auto; min-width: 0; height: .85rem; appearance: none; border: 0; border-radius: 999px; overflow: hidden; background: var(--surface-2); }
+  .loader__bar::-webkit-progress-bar { background: var(--surface-2); }
+  .loader__bar::-webkit-progress-value { background: var(--accent-fill); border-radius: 999px; transition: width .25s ease; }
+  .loader__bar::-moz-progress-bar { background: var(--accent-fill); border-radius: 999px; }
+  .loader__pct { flex: none; min-width: 3.2ch; text-align: end; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .loader__count { color: var(--muted); font-size: var(--step--1); font-variant-numeric: tabular-nums; }
+  .loader__hint { color: var(--muted); font-size: var(--step--1); }
+  @media (prefers-reduced-motion: reduce) {
+    .loader__wave span { animation: none; transform: scaleY(.6); }
+    .loader, .loader__bar::-webkit-progress-value { transition: none; }
+  }
+
+  /* Partitura a schermo intero: la classe su <html> porta il riquadro della partitura sopra la pagina, con la barra di
+     trasporto (solo riga principale) sempre visibile; su telefono restano solo zoom e Chiudi. */
+  html.study-immersive { overflow: hidden; }
+  html.study-immersive .study__score {
+    position: fixed; inset: 0; z-index: 40; margin: 0; background: var(--bg);
+    display: flex; flex-direction: column; gap: var(--space-2);
+    padding: calc(var(--space-2) + env(safe-area-inset-top, 0px)) var(--space-3) calc(4.5rem + env(safe-area-inset-bottom, 0px)); /* sotto, la barra di trasporto */
+  }
+  html.study-immersive .study__score .score-scroll { flex: 1 1 auto; min-height: 0; max-height: none; }
+  html.study-immersive .study__bar { justify-content: flex-end; }
+  html.study-immersive [data-fs-open] { display: none; }
+  html.study-immersive .transport { z-index: 60; }
+  html.study-immersive .transport__row--2 { display: none; }
+  .fs-close { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--on-accent); }
+  .fs-close[hidden] { display: none; }
+  @media (max-width: 40rem) {
+    html.study-immersive .study__bar h2,
+    html.study-immersive [data-loop-open],
+    html.study-immersive [data-score-options-toggle] { display: none; }
+  }
 }

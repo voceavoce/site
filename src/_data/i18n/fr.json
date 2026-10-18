@@ -369,8 +369,15 @@
         "pickOn": "Choix sur la partition activé : touche la première et la dernière mesure.",
         "pickOff": "Choix sur la partition désactivé : un toucher amène à la mesure.",
         "range": "Passage choisi : mesures {a} à {b}."
-      }
+      },
+      "fsOn": "Partition en plein écran.",
+      "fsOff": "Plein écran fermé."
     },
+    "loaderTitle": "Préparation des voix…",
+    "loaderHint": "À la première ouverture, cela peut prendre quelques secondes : nous téléchargeons l'audio de toutes les voix.",
+    "fullscreen": "Partition en plein écran",
+    "fullscreenClose": "Fermer",
+    "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)",
     "allVoices": "Toutes les voix égales"
   }
 }

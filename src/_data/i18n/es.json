@@ -369,8 +369,15 @@
         "pickOn": "Elegir en la partitura está activado: toca el primer y el último compás.",
         "pickOff": "Elegir en la partitura está desactivado: un toque lleva a ese compás.",
         "range": "Pasaje elegido: compases {a} a {b}."
-      }
+      },
+      "fsOn": "Partitura a pantalla completa.",
+      "fsOff": "Pantalla completa cerrada."
     },
+    "loaderTitle": "Preparando las voces…",
+    "loaderHint": "La primera vez puede tardar unos segundos: descargamos el audio de todas las voces.",
+    "fullscreen": "Partitura a pantalla completa",
+    "fullscreenClose": "Cerrar",
+    "optFullscreenPlay": "Pantalla completa al pulsar Reproducir (móviles)",
     "allVoices": "Todas las voces iguales"
   }
 }

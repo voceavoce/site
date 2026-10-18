@@ -369,8 +369,15 @@
         "pickOn": "Scelta sulla partitura attiva: tocca la prima e l'ultima battuta.",
         "pickOff": "Scelta sulla partitura spenta: un tocco porta alla battuta.",
         "range": "Passaggio scelto: battute da {a} a {b}."
-      }
+      },
+      "fsOn": "Partitura a schermo intero.",
+      "fsOff": "Schermo intero chiuso."
     },
+    "loaderTitle": "Sto preparando le voci…",
+    "loaderHint": "Alla prima apertura può volerci qualche secondo: scarichiamo l'audio di tutte le voci.",
+    "fullscreen": "Partitura a schermo intero",
+    "fullscreenClose": "Chiudi",
+    "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)",
     "allVoices": "Tutte le voci pari"
   }
 }

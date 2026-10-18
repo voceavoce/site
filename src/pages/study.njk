@@ -20,6 +20,18 @@ eleventyExcludeFromCollections: true
   </header>
 
   <p class="study__status" role="status" data-status></p>
+  <div class="loader" data-loader hidden role="group" aria-labelledby="loader-h">
+    <div class="loader__card">
+      <div class="loader__wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      <h2 id="loader-h">{{ 'study.loaderTitle' | t(lang) }}</h2>
+      <div class="loader__row">
+        <progress class="loader__bar" data-loader-bar max="100" value="3" aria-labelledby="loader-h"></progress>
+        <span class="loader__pct" data-loader-pct aria-hidden="true">3%</span>
+      </div>
+      <p class="loader__count" data-loader-count></p>
+      <p class="loader__hint">{{ 'study.loaderHint' | t(lang) }}</p>
+    </div>
+  </div>
   <p class="study__error" role="alert" data-error hidden></p>
   <noscript><p class="study__error">{{ 'study.noscript' | t(lang) }}</p></noscript>
 
@@ -28,6 +40,8 @@ eleventyExcludeFromCollections: true
       <div class="study__bar">
         <h2 id="study-score-h">{{ 'study.score' | t(lang) }}</h2>
         <div class="study__tools">
+          <button type="button" class="tool tool--text fs-close" data-fs-close hidden><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>{{ 'study.fullscreenClose' | t(lang) }}</button>
+          <button type="button" class="tool" data-fs-open aria-expanded="false" aria-label="{{ 'study.fullscreen' | t(lang) }}"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
           <button type="button" class="tool" data-zoom-out disabled aria-label="{{ 'study.zoomOut' | t(lang) }}"><span aria-hidden="true">A−</span></button>
           <button type="button" class="tool" data-zoom-in disabled aria-label="{{ 'study.zoomIn' | t(lang) }}"><span aria-hidden="true">A+</span></button>
           <button type="button" class="tool tool--text" data-loop-open aria-expanded="false" aria-controls="loop-options">{{ 'study.loopShort' | t(lang) }}<span data-loop-range></span></button>
@@ -39,6 +53,7 @@ eleventyExcludeFromCollections: true
         <label class="opt"><input type="checkbox" data-opt-cursor checked> <span>{{ 'study.optCursor' | t(lang) }}</span></label>
         <label class="opt"><input type="color" data-opt-cursor-color value="#f2a900"> <span>{{ 'study.optCursorColor' | t(lang) }}</span></label>
         <label class="opt"><input type="checkbox" data-opt-measure> <span>{{ 'study.optMeasure' | t(lang) }}</span></label>
+        <label class="opt"><input type="checkbox" data-opt-fullscreen-play checked> <span>{{ 'study.optFullscreenPlay' | t(lang) }}</span></label>
         <label class="opt"><input type="checkbox" data-opt-invert> <span>{{ 'study.invert' | t(lang) }}</span></label>
       </div>
       <div class="score-options loop-options" id="loop-options" data-loop data-feature="loop" role="group" aria-label="{{ 'study.loop' | t(lang) }}" hidden>
