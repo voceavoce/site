@@ -337,7 +337,7 @@
     "loopFrom": "Da battuta",
     "loopTo": "A battuta",
     "loopBtn": "Ripeti questo passaggio",
-    "loopSame": "Il pulsante Ripeti nella barra in basso accende e spegne questo stesso passaggio. Se la riproduzione è fuori dal passaggio, parte dal suo inizio.",
+    "loopSame": "«Ripeti questo passaggio» lo accende e lo spegne. Se la riproduzione è fuori dal passaggio, parte dal suo inizio.",
     "loopShort": "Ripeti",
     "speed": "Velocità",
     "position": "Posizione",

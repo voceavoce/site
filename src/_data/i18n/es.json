@@ -337,7 +337,7 @@
     "loopFrom": "Desde el compás",
     "loopTo": "Hasta el compás",
     "loopBtn": "Repetir este pasaje",
-    "loopSame": "El botón Repetir de la barra inferior activa y desactiva este mismo pasaje. Si la reproducción está fuera del pasaje, empieza desde su inicio.",
+    "loopSame": "«Repetir este pasaje» lo activa y desactiva. Si la reproducción está fuera del pasaje, empieza desde su inicio.",
     "loopShort": "Repetir",
     "speed": "Velocidad",
     "position": "Posición",
