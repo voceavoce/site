@@ -1,0 +1,17 @@
+comune: ave-verum-corpus
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Ave verum corpus natum", it: "Ave, vero corpo, nato", en: "Hail, true body, born", es: "Salve, verdadero cuerpo, nacido", de: "Sei gegrüßt, wahrer Leib, geboren", fr: "Salut, vrai corps, né" }
+  - { la: "de Maria Virgine", it: "da Maria Vergine", en: "of the Virgin Mary", es: "de María Virgen", de: "von der Jungfrau Maria", fr: "de la Vierge Marie" }
+  - { la: "vere passum immolatum", it: "che hai veramente sofferto, immolato", en: "who truly suffered and was sacrificed", es: "que verdaderamente padeciste y fuiste inmolado", de: "der wahrhaft gelitten hat und geopfert wurde", fr: "qui as vraiment souffert et as été immolé" }
+  - { la: "in cruce pro homine", it: "sulla croce per l'uomo", en: "on the cross for mankind", es: "en la cruz por el hombre", de: "am Kreuz für den Menschen", fr: "sur la croix pour l'homme" }
+  - { la: "cuius latus perforatum", it: "il cui fianco trafitto", en: "whose pierced side", es: "cuyo costado traspasado", de: "dessen durchbohrte Seite", fr: "dont le côté transpercé" }
+  - { la: "fluxit aqua et sanguine", alt: ["unda fluxit et sanguine"], it: "versò acqua e sangue", en: "flowed with water and blood", es: "derramó agua y sangre", de: "Wasser und Blut vergoss", fr: "laissa couler l'eau et le sang" }
+  - { la: "esto nobis praegustatum", it: "sii per noi pregustazione", en: "be for us a foretaste", es: "sé para nosotros un anticipo", de: "sei uns ein Vorgeschmack", fr: "sois pour nous un avant-goût" }
+  - { la: "in mortis examine", alt: ["mortis in examine"], it: "nell'ora della prova della morte", en: "in the trial of death", es: "en la prueba de la muerte", de: "in der Prüfung des Todes", fr: "dans l'épreuve de la mort" }
+  - { la: "O Iesu dulcis", it: "O dolce Gesù", en: "O sweet Jesus", es: "Oh dulce Jesús", de: "O süßer Jesus", fr: "Ô doux Jésus" }
+  - { la: "O Iesu pie", it: "o Gesù pietoso", en: "O loving Jesus", es: "oh Jesús piadoso", de: "o gütiger Jesus", fr: "ô Jésus plein de bonté" }
+  - { la: "O Iesu fili Mariae", it: "o Gesù, figlio di Maria", en: "O Jesus, son of Mary", es: "oh Jesús, hijo de María", de: "o Jesus, Sohn Marias", fr: "ô Jésus, fils de Marie" }
+  - { la: "Miserere mei", it: "Abbi pietà di me", en: "Have mercy on me", es: "Ten piedad de mí", de: "Erbarme dich meiner", fr: "Aie pitié de moi" }
+  - { la: "Amen", it: "Amen", en: "Amen", es: "Amén", de: "Amen", fr: "Amen" }

@@ -1,0 +1,33 @@
+comune: ave-maris-stella
+credit: "Traduzione automatica (Claude), non rivista"
+license: "CC0 1.0"
+righe:
+  - { la: "Ave maris stella", it: "Ave, stella del mare", en: "Hail, star of the sea", es: "Salve, estrella del mar", de: "Sei gegrüßt, Meeresstern", fr: "Salut, étoile de la mer" }
+  - { la: "Dei Mater alma", it: "nutrice Madre di Dio", en: "nurturing Mother of God", es: "Madre nutricia de Dios", de: "gütige Mutter Gottes", fr: "Mère nourricière de Dieu" }
+  - { la: "Atque semper Virgo", it: "e sempre Vergine", en: "and ever Virgin", es: "y siempre Virgen", de: "und immer Jungfrau", fr: "et toujours Vierge" }
+  - { la: "Felix caeli porta", it: "felice porta del cielo", en: "happy gate of heaven", es: "dichosa puerta del cielo", de: "glückliche Pforte des Himmels", fr: "heureuse porte du ciel" }
+  - { la: "Sumens illud Ave", it: "Accogliendo quell'Ave", en: "Receiving that Ave", es: "Al recibir aquel Ave", de: "Du hast jenes Ave empfangen", fr: "En recevant cet Ave" }
+  - { la: "Gabrielis ore", it: "dalla bocca di Gabriele", en: "from Gabriel's lips", es: "de labios de Gabriel", de: "aus Gabriels Mund", fr: "de la bouche de Gabriel" }
+  - { la: "Funda nos in pace", it: "rendici saldi nella pace", en: "establish us in peace", es: "afiánzanos en la paz", de: "gründe uns im Frieden", fr: "affermis-nous dans la paix" }
+  - { la: "Mutans Hevae nomen", it: "trasformando il nome di Eva", en: "changing the name of Eve", es: "cambiando el nombre de Eva", de: "wandle den Namen Evas", fr: "changeant le nom d'Ève" }
+  - { la: "Solve vincla reis", it: "Sciogli le catene ai colpevoli", en: "Loose the chains of the guilty", es: "Rompe las cadenas de los culpables", de: "Löse die Fesseln der Schuldigen", fr: "Brise les chaînes des coupables" }
+  - { la: "Profer lumen caecis", it: "porta luce ai ciechi", en: "bring light to the blind", es: "trae luz a los ciegos", de: "bring den Blinden Licht", fr: "apporte la lumière aux aveugles" }
+  - { la: "Mala nostra pelle", it: "scaccia i nostri mali", en: "drive away our evils", es: "aparta nuestros males", de: "vertreibe unsere Übel", fr: "chasse nos maux" }
+  - { la: "Bona cuncta posce", it: "chiedi per noi ogni bene", en: "ask for every good thing", es: "pide todos los bienes", de: "erbitte alles Gute", fr: "demande tous les biens" }
+  - { la: "Monstra te esse matrem", it: "Mostrati madre", en: "Show yourself a mother", es: "Muéstrate madre", de: "Zeige dich als Mutter", fr: "Montre que tu es mère" }
+  - { la: "Sumat per te preces", it: "per mezzo tuo accolga le preghiere", en: "may he receive our prayers through you", es: "que por ti acoja las súplicas", de: "durch dich nehme er die Bitten an", fr: "que par toi il accueille nos prières" }
+  - { la: "Qui pro nobis natus", it: "colui che per noi è nato", en: "he who was born for us", es: "el que por nosotros nació", de: "der für uns geboren wurde", fr: "celui qui est né pour nous" }
+  - { la: "Tulit esse tuus", it: "ha voluto essere tuo", en: "consented to be yours", es: "quiso ser tuyo", de: "wollte der Deine sein", fr: "a voulu être le tien" }
+  - { la: "Virgo singularis", it: "Vergine unica", en: "Unique Virgin", es: "Virgen singular", de: "einzigartige Jungfrau", fr: "Vierge incomparable" }
+  - { la: "Inter omnes mitis", it: "mite fra tutte", en: "gentle above all", es: "dulce entre todas", de: "sanft vor allen", fr: "douce entre toutes" }
+  - { la: "Nos culpis solutos", it: "rendici, sciolti dalle colpe", en: "make us, freed from sins", es: "haznos, libres de culpas", de: "mache uns, von Schuld befreit", fr: "rends-nous, libérés des fautes" }
+  - { la: "Mites fac et castos", it: "miti e casti", en: "gentle and chaste", es: "mansos y castos", de: "sanft und rein", fr: "doux et chastes" }
+  - { la: "Vitam praesta puram", it: "Concedici una vita pura", en: "Grant a pure life", es: "Concédenos una vida pura", de: "Schenke ein reines Leben", fr: "Accorde-nous une vie pure" }
+  - { la: "Iter para tutum", it: "prepara un cammino sicuro", en: "prepare a safe way", es: "prepara un camino seguro", de: "bereite einen sicheren Weg", fr: "prépare un chemin sûr" }
+  - { la: "Ut videntes Iesum", it: "perché, vedendo Gesù", en: "so that, seeing Jesus", es: "para que, viendo a Jesús", de: "damit wir, Jesus schauend", fr: "afin que, voyant Jésus" }
+  - { la: "Semper collaetemur", it: "possiamo gioire insieme per sempre", en: "we may rejoice together forever", es: "nos alegremos juntos para siempre", de: "wir uns für immer mitfreuen", fr: "nous nous réjouissions ensemble pour toujours" }
+  - { la: "Sit laus Deo Patri", it: "Sia lode a Dio Padre", en: "Praise be to God the Father", es: "Alabanza a Dios Padre", de: "Lob sei Gott dem Vater", fr: "Louange à Dieu le Père" }
+  - { la: "Summo Christo decus", it: "gloria a Cristo altissimo", en: "glory to Christ most high", es: "gloria a Cristo altísimo", de: "Ehre dem höchsten Christus", fr: "gloire au Christ très haut" }
+  - { la: "Spiritui Sancto", it: "allo Spirito Santo", en: "to the Holy Spirit", es: "al Espíritu Santo", de: "dem Heiligen Geist", fr: "à l'Esprit Saint" }
+  - { la: "Tribus honor unus", it: "ai tre un solo onore", en: "to the three, one honor", es: "a los tres un solo honor", de: "den Dreien eine Ehre", fr: "aux trois un seul honneur" }
+  - { la: "Amen", it: "Amen", en: "Amen", es: "Amén", de: "Amen", fr: "Amen" }
