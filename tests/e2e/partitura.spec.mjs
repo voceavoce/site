@@ -265,15 +265,23 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
   // Il rettangolo di ogni battuta include versi e trattini che sconfinano nelle vicine: l'estensione giusta e' quella del rigo.
   for (const slug of ["agnus-dei-josquin", "adieu-sweet-amaryllis-wilbye", "a-d-una-fresca-riva-marenzio"]) {
     test(`${slug}: toccando il centro di OGNI battuta si sceglie quella battuta`, async ({ page }) => {
+      test.setTimeout(600_000); // brani lunghi: decine di battute, ognuna con il suo tocco
       await page.goto(`/player/${slug}/`);
-      await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-loop-pick]").disabled, null, { timeout: 90_000 });
+      await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && !document.querySelector("[data-loop-pick]").disabled, null, { timeout: 180_000 });
       const n = await page.evaluate(() => document.querySelectorAll("[data-score] g.measure").length);
       const sbagliate = [];
       for (let i = 0; i < n; i++) {
         await page.click("[data-loop-pick]");
-        const p = await page.evaluate((k) => {
+        const p = await page.evaluate(async (k) => {
           const g = document.querySelectorAll("[data-score] g.measure")[k];
           g.scrollIntoView({ block: "center", behavior: "instant" });
+          // lo scroll automatico del tocco precedente puo' ancora girare: si misura quando la battuta sta ferma per 6 frame
+          for (let fermo = 0, y0 = null; fermo < 6;) {
+            await new Promise((ok) => requestAnimationFrame(ok));
+            const y = g.getBoundingClientRect().top;
+            fermo = y === y0 ? fermo + 1 : 0; y0 = y;
+            if (fermo === 0) g.scrollIntoView({ block: "center", behavior: "instant" });
+          }
           const linee = [...g.querySelector(":scope > g.staff").querySelectorAll(":scope > path")].map((e) => e.getBoundingClientRect());
           const l = Math.min(...linee.map((r) => r.left)), r = Math.max(...linee.map((r) => r.right));
           const s = g.closest("g.system").getBoundingClientRect();

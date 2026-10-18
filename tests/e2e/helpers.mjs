@@ -59,7 +59,9 @@ export async function intercettaAudio(context) {
     const req = route.request();
     const url = new URL(req.url());
     viste.push({ url: req.url(), range: req.headers().range ?? null });
-    const chiave = CHIAVI.find((c) => url.pathname.includes(`/${c}.`));
+    // soprano-1, soprano-2, ...: stessa voce; un file audio con un altro nome (brani reali) riceve comunque un suono valido
+    const nome = url.pathname.split("/").pop().replace(/-\d+(?=\.)/, "");
+    const chiave = CHIAVI.find((c) => url.pathname.includes(`/${c}.`)) ?? (/\.(opus|mp3)$/.test(nome) ? (CHIAVI.find((c) => nome.startsWith(c + ".")) ?? "alto") : null);
     if (!chiave) return route.fulfill({ status: 200, headers: { ...CORS, "content-type": "application/octet-stream" }, body: Buffer.from("x") });
     const wav = wavDi(chiave);
     const m = /^bytes=(\d+)-(\d*)$/.exec(req.headers().range ?? "");
