@@ -69,6 +69,37 @@ export function tempiRadi(doc, { soglia = 0.1, distanza = 4 } = {}) {
   return tolti;
 }
 
+/**
+ * Una parte scritta in chiave di violino ma che canta quasi tutta sotto il do centrale (il tenore: mi3-fa4) si
+ * disegnerebbe sotto il rigo, su tagli addizionali. Si usa la chiave di violino «ottavata» (8 sotto), come si
+ * scrive il tenore: le altezze nel file restano quelle vere (l'audio non cambia), cambia solo dove si disegnano.
+ * Si tocca solo con almeno 8 note e la mediana sotto il do4; chiavi che hanno gia' un'ottava non si toccano.
+ * Ritorna quante chiavi ha cambiato.
+ */
+export function chiaviOttavate(doc) {
+  const NOTE = { C: 0, D: 1, E: 2, F: 3, G: 4, A: 5, B: 6 };
+  const DO4 = 4 * 7;
+  let cambiate = 0;
+  for (const parte of doc.querySelectorAll("part")) {
+    const alt = [];
+    for (const p of parte.querySelectorAll("note > pitch")) {
+      const step = NOTE[p.querySelector("step")?.textContent.trim()], ott = parseInt(p.querySelector("octave")?.textContent, 10);
+      if (step !== undefined && Number.isFinite(ott)) alt.push(ott * 7 + step);
+    }
+    if (alt.length < 8) continue;
+    alt.sort((a, b) => a - b);
+    if (alt[Math.floor(alt.length / 2)] >= DO4) continue;
+    for (const c of parte.querySelectorAll("clef")) {
+      if (c.querySelector("sign")?.textContent.trim() !== "G" || c.querySelector("clef-octave-change")) continue;
+      const o = doc.createElement("clef-octave-change");
+      o.textContent = "-1";
+      (c.querySelector("line") ?? c.querySelector("sign")).after(o);
+      cambiate++;
+    }
+  }
+  return cambiate;
+}
+
 /** Toglie dal MusicXML l'elemento visibile `tipo` (un <direction-type>) lasciando il resto della <direction> se serve. */
 function togliTipo(d, tipo) {
   if (tipo && (d.querySelectorAll("direction-type").length > 1 || d.querySelector("sound"))) tipo.remove();
@@ -103,7 +134,7 @@ export function abbreviaParti(xml, voci = []) {
   try {
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     if (doc.querySelector("parsererror")) return xml;
-    const tolti = senzaTempiRipetuti(doc) + tempiRadi(doc) + senzaTestiLunghi(doc);
+    const tolti = senzaTempiRipetuti(doc) + tempiRadi(doc) + senzaTestiLunghi(doc) + chiaviOttavate(doc);
     const fuori = () => (tolti ? new XMLSerializer().serializeToString(doc) : xml);
     const parti = [...doc.querySelectorAll("score-part")];
     if (parti.length < 2) return fuori();

@@ -119,6 +119,34 @@ test("tempi radi: abbreviaParti li applica", () => {
   assert.equal(conta(fuori, "metronome"), 1);
 });
 
+// --- chiaviOttavate ----------------------------------------------------------------------------------------------
+const CHIAVE_SOL = "<attributes><clef><sign>G</sign><line>2</line></clef></attributes>";
+const nota = (step, ott) => `<note><pitch><step>${step}</step><octave>${ott}</octave></pitch><duration>4</duration><type>quarter</type></note>`;
+const giro = (ott) => ["E", "F", "G", "A", "G", "F", "E", "D", "E", "F"].map((s) => nota(s, ott)).join("");
+test("chiavi: una parte in chiave di violino che sta sotto il do centrale (tenore) prende la chiave ottavata", () => {
+  const doc = leggi(xml([{ nome: "T", battute: [CHIAVE_SOL + giro(3)] }]));
+  assert.equal(M.chiaviOttavate(doc), 1);
+  assert.equal(doc.querySelector("clef-octave-change").textContent, "-1");
+  assert.deepEqual([...doc.querySelectorAll("clef > *")].map((e) => e.tagName), ["sign", "line", "clef-octave-change"]); // l'ordine che vuole MusicXML
+  assert.equal(doc.querySelectorAll("octave")[0].textContent, "3"); // le altezze non cambiano
+});
+test("chiavi: soprano e contralto (sopra il do centrale) restano come sono", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [CHIAVE_SOL + giro(5)] }, { nome: "A", battute: [CHIAVE_SOL + giro(4)] }]));
+  assert.equal(M.chiaviOttavate(doc), 0);
+  assert.equal(doc.querySelectorAll("clef-octave-change").length, 0);
+});
+test("chiavi: chiave di basso e chiavi gia' ottavate non si toccano; poche note non bastano per decidere", () => {
+  const basso = '<attributes><clef><sign>F</sign><line>4</line></clef></attributes>';
+  const gia = '<attributes><clef><sign>G</sign><line>2</line><clef-octave-change>-1</clef-octave-change></clef></attributes>';
+  const doc = leggi(xml([{ nome: "B", battute: [basso + giro(2)] }, { nome: "T", battute: [gia + giro(3)] }, { nome: "X", battute: [CHIAVE_SOL + nota("C", 3)] }]));
+  assert.equal(M.chiaviOttavate(doc), 0);
+  assert.equal(doc.querySelectorAll("clef-octave-change").length, 1);
+});
+test("chiavi: abbreviaParti la applica", () => {
+  const fuori = M.abbreviaParti(xml([{ nome: "T", battute: [CHIAVE_SOL + giro(3)] }]), []);
+  assert.equal(conta(fuori, "clef-octave-change"), 1);
+});
+
 // --- abbreviaParti -----------------------------------------------------------------------------------------------
 const coro = (extra = {}) => xml([
   { nome: "Soprano", abbr: "Ch", nascosto: true, ...extra },
