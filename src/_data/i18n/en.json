@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Did you hear a mistake?",
     "reportP": "A wrong accidental, a misplaced note, a misspelt word: tell us where.",
-    "reportLink": "Report it on GitHub",
+    "reportLink": "Report by email",
     "related": "Related pieces",
     "descr": {
       "base": "{title} – {composer}: part-by-part rehearsal video.",
@@ -380,5 +380,20 @@
     "optFullscreenPlay": "Full screen when I press Play (phones)",
     "allVoices": "All voices level",
     "reportScore": "Report an error in the score"
+  },
+  "report": {
+    "title": "Report an error in the score",
+    "bar": "bar",
+    "what": "What is wrong?",
+    "whatHint": "For example: “in bar 7 the tenor has an F, it should be an F sharp”. Nothing else is needed.",
+    "contact": "Your email (only if you want a reply)",
+    "privacy": "We use what you write only to correct the score and, if you left your email, to reply.",
+    "send": "Send",
+    "sending": "Sending…",
+    "cancel": "Cancel",
+    "close": "Close",
+    "thanks": "Thank you! We have received your report.",
+    "short": "Please write a few words about what is wrong.",
+    "error": "We could not send it. You can write to us at {email}."
   }
 }

@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "¿Has oído un error?",
     "reportP": "Una alteración equivocada, una nota fuera de lugar, una palabra mal escrita: dinos dónde.",
-    "reportLink": "Avisar en GitHub",
+    "reportLink": "Señalar por correo",
     "related": "Obras relacionadas",
     "descr": {
       "base": "{title} – {composer}: vídeo de estudio voz por voz.",
@@ -380,5 +380,20 @@
     "optFullscreenPlay": "Pantalla completa al pulsar Reproducir (móviles)",
     "allVoices": "Todas las voces iguales",
     "reportScore": "Señalar un error en la partitura"
+  },
+  "report": {
+    "title": "Señalar un error en la partitura",
+    "bar": "compás",
+    "what": "¿Qué está mal?",
+    "whatHint": "Por ejemplo: «en el compás 7 el tenor tiene un fa, debería ser un fa sostenido». No hace falta más.",
+    "contact": "Tu correo (solo si quieres respuesta)",
+    "privacy": "Usamos lo que escribes solo para corregir la partitura y, si dejaste tu correo, para responderte.",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "thanks": "¡Gracias! Hemos recibido tu aviso.",
+    "short": "Escribe al menos unas palabras sobre lo que está mal.",
+    "error": "No hemos podido enviarlo. Puedes escribirnos a {email}."
   }
 }

@@ -8,7 +8,7 @@ import { createScore } from "./score.js";
 import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock, startForPlay } from "./timeline.js";
 import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
 import { percentuale, pienoAlPlay } from "./schermo.js";
-import { urlSegnalazione } from "./segnalazione.js";
+import { mailSegnalazione } from "./segnalazione.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const dataEl = $("#study-data");
@@ -30,7 +30,10 @@ async function main(data) {
   // «Segnala un errore nello spartito»: la issue si apre gia' con la battuta in cui si e' arrivati
   const report = $("[data-report]");
   if (report) {
-    const aggiorna = () => { report.href = urlSegnalazione({ titolo: report.dataset.titolo, pagina: report.dataset.pagina, battuta: el.seek.dataset.measure }); };
+    const aggiorna = () => {
+      const d = report.dataset;
+      report.href = mailSegnalazione({ email: d.email, titolo: d.titolo, pagina: d.pagina, lingua: d.lingua, battuta: el.seek.dataset.measure });
+    };
     for (const ev of ["pointerdown", "focus", "click"]) report.addEventListener(ev, aggiorna);
   }
   const controls = [...document.querySelectorAll("[data-needs-audio]")];

@@ -27,7 +27,7 @@ Cuando corregimos una partitura, actualizamos el reproductor y la ficha de la ob
 
 ## Cómo señalar un error
 
-¿Has notado una nota o una palabra incorrecta? En el reproductor y en la ficha de la obra encontrarás el enlace «Señalar un error en la partitura»: abre una [issue en GitHub](https://github.com/voceavoce/site/issues) ya rellenada. Indica:
+¿Has notado una nota o una palabra incorrecta? En el reproductor y en la ficha de la obra encontrarás el enlace «Señalar un error en la partitura»: abre un correo ya redactado, con la obra y el compás. Si lo prefieres, escribe a info@voceavoce.com. Indica:
 
 - la obra y la voz;
 - el compás (o el minuto del vídeo) donde aparece el error;

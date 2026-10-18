@@ -27,7 +27,7 @@ When we correct a score, we update the player and the piece's page.
 
 ## Reporting an error
 
-Did you notice a wrong note or word? The player and the piece's page have a “Report an error in the score” link: it opens a pre-filled [GitHub issue](https://github.com/voceavoce/site/issues). Include:
+Did you notice a wrong note or word? The player and the piece's page have a “Report an error in the score” link: it opens a ready-written email with the piece and the bar. If you prefer, write to info@voceavoce.com. Include:
 
 - the piece and the voice;
 - the bar (or the minute of the video) where the error appears;

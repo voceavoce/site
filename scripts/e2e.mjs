@@ -4,7 +4,7 @@
 // e usa la base audio di sviluppo (http://localhost:8787), che i test intercettano con audio sintetici.
 import { spawnSync } from "node:child_process";
 
-const env = { ...process.env, VOCEAVOCE_AUDIO_BASE: "http://localhost:8787" };
+const env = { ...process.env, VOCEAVOCE_AUDIO_BASE: "http://localhost:8787", VOCEAVOCE_SEGNALA_URL: "http://localhost:8788/segnala" };
 delete env.ELEVENTY_ENV;
 
 const run = (args) => spawnSync(process.execPath, args, { stdio: "inherit", env }).status ?? 1;
