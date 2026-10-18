@@ -84,9 +84,9 @@ test("contenuto reale del repo", () => {
   assert.deepEqual(validate().errors, []);
 });
 
-test("a11y-urls: home, ricerca nelle 3 lingue e un indice", () => {
+test("a11y-urls: home, ricerca nelle 5 lingue e un indice", () => {
   const urls = sampleUrls("http://x:1", "/inesistente");
-  assert.deepEqual(urls, ["/", "/en/", "/es/", "/cerca/", "/en/search/", "/es/buscar/", "/autori/"].map((p) => "http://x:1" + p));
+  assert.deepEqual(urls, ["/", "/en/", "/es/", "/de/", "/fr/", "/cerca/", "/en/search/", "/es/buscar/", "/de/suche/", "/fr/recherche/", "/autori/"].map((p) => "http://x:1" + p));
 });
 
 test("curated/_comuni: lingue mancanti, credit e nome file", () => {

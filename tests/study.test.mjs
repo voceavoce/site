@@ -145,7 +145,7 @@ test("studio: manifest con URL assoluto rifiutato; dati di prova esclusi in prod
   const dev = loadStudio({ dir, production: false });
   assert.deepEqual(dev.slugs, ["_prova", "vero"]);
   assert.deepEqual(Object.keys(dev.linked), ["vero"]); // nessun link verso i dati di prova
-  assert.equal(dev.schede.length, 6);
+  assert.equal(dev.schede.length, 10); // 2 brani x 5 lingue
   // solo i brani con un video gia' pubblicato: gli altri non hanno ne' pagina, ne' link, ne' partitura
   const pub = loadStudio({ dir, production: false, pubblicati: new Set(["altro"]) });
   assert.deepEqual(pub.slugs, ["_prova"]); // "vero" non e' pubblicato; i dati di prova restano (solo fuori produzione)
@@ -223,7 +223,7 @@ test("tempo udibile nel loop: rientra dopo il motore e non esce mai dal loop", (
 test("titolo della pagina del player: al massimo 70 caratteri col suffisso del sito", async () => {
   const { titoloBreve } = await import("../src/_lib/study-title.js");
   const lungo = "While shepherds watched their flocks by night (Allison, from the Christmas collection)";
-  for (const lang of ["it", "en", "es"]) {
+  for (const lang of ["it", "en", "es", "de", "fr"]) {
     const t = titoloBreve(lang, lungo);
     assert.ok(t.endsWith("…"), lang);
     assert.ok(t.length < lungo.length);
@@ -233,10 +233,11 @@ test("titolo della pagina del player: al massimo 70 caratteri col suffisso del s
 
 test("titolo della pagina del player: gli apostrofi contano 5 caratteri come nell'HTML (&#39;)", async () => {
   const { titoloBreve, lunghezzaHtml } = await import("../src/_lib/study-title.js");
+  const { t } = await import("../src/_lib/format.js");
   assert.equal(lunghezzaHtml("a'b&c"), 1 + 5 + 1 + 5 + 1);
-  for (const lang of ["it", "en", "es"]) {
+  for (const lang of ["it", "en", "es", "de", "fr"]) {
     for (const titolo of ["April is in my mistress' face", "Lord for Thy tender mercy's sake", "O''''''''''''''''''''''''''''''''''''"]) {
-      const html = lunghezzaHtml(titoloBreve(lang, titolo)) + lunghezzaHtml(lang === "es" ? ": reproductor de estudio" : lang === "en" ? ": practice player" : ": player di studio") + " · Voce a Voce".length;
+      const html = lunghezzaHtml(titoloBreve(lang, titolo)) + lunghezzaHtml(t("study.pageTitle", lang, { title: "" })) + " · Voce a Voce".length;
       assert.ok(html <= 70, `${lang} ${titolo}: ${html}`);
     }
   }

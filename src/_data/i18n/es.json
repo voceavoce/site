@@ -72,7 +72,9 @@
   "langName": {
     "it": "Italiano",
     "en": "English",
-    "es": "Español"
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français"
   },
   "breadcrumb": {
     "label": "Ruta de navegación",

@@ -1,0 +1,375 @@
+{
+  "htmlLang": "fr",
+  "siteName": "Voce a Voce",
+  "nav": {
+    "label": "Navigation principale",
+    "coro": "Chœur",
+    "arie": "Airs",
+    "metodi": "Méthodes",
+    "compositori": "Compositeurs",
+    "stagioni": "Saisons",
+    "cerca": "Rechercher"
+  },
+  "skip": "Aller au contenu",
+  "home": {
+    "label": "Voce a Voce, page d'accueil",
+    "title": "Voce a Voce – travaille ta voix",
+    "description": "Voce a Voce : vidéos d'étude chorale voix par voix (S/A/T/B). Suis ta ligne sur la partition, avec curseur, voix en évidence et sous-titres. Répertoire du domaine public.",
+    "ctaYoutube": "Voir sur YouTube",
+    "ctaHow": "Comment ça marche",
+    "ctaExplore": "Explorer le catalogue",
+    "latest": "Dernières vidéos",
+    "latestP": "Les dernières sorties, voix par voix.",
+    "soon": "Bientôt",
+    "soonP": "Les prochaines sorties au calendrier.",
+    "soonOn": "Sortie le {date}",
+    "linesH": "Parcourir le catalogue",
+    "linesP": "Quatre portes d'entrée : choisis ta ligne d'étude.",
+    "tile": {
+      "choir": {
+        "h": "Chœur",
+        "p": "Pièces chorales à plusieurs voix, une leçon pour chaque voix."
+      },
+      "methods": {
+        "h": "Méthodes vocales",
+        "p": "Parcours d'étude ordonnés, comme les vocalises de Concone."
+      },
+      "arias": {
+        "h": "Airs d'étude",
+        "p": "Airs anciens en trois tessitures : voix haute, moyenne et grave."
+      },
+      "seasons": {
+        "h": "Temps de l'année",
+        "p": "Noël, Pâques, Carême et répertoire marial.",
+        "feat": "À la une : Noël"
+      }
+    }
+  },
+  "tag": "travaille ta voix",
+  "lead": "Vidéos d'étude chorale <strong>voix par voix</strong> (soprano, alto, ténor, basse) : suis ta ligne sur la partition, avec un curseur en mesure, ta voix en évidence et les autres atténuées.",
+  "how": {
+    "h": "Comment ça marche",
+    "f1_h": "Ta voix en évidence",
+    "f1_p": "La partie à étudier en noir très contrasté, les autres voix atténuées en gris.",
+    "f2_h": "Curseur en mesure",
+    "f2_p": "Une barre suit le rythme de ta ligne, y compris sur les silences et les points d'orgue.",
+    "f3_h": "Texte et sous-titres",
+    "f3_p": "Les paroles sous ta voix et des sous-titres vers par vers, synchronisés.",
+    "f4_h": "Une leçon par voix",
+    "f4_p": "Première écoute, lecture lente, en mesure, à deux voix, avec le chœur et enfin « à toi de jouer », avec ta voix retirée du mixage. Des chapitres pour aller directement à la section."
+  },
+  "voicesDemo": "Les quatre voix : une en évidence, les autres atténuées",
+  "sources": {
+    "h": "Sources et licences",
+    "p": "Nous utilisons exclusivement des partitions du <strong>domaine public</strong> (p. ex. CPDL/ChoralWiki, IMSLP, OpenScore). La source et l'édition de chaque pièce sont citées dans la description de la vidéo correspondante."
+  },
+  "theme": {
+    "toggle": "Thème sombre"
+  },
+  "langSwitch": {
+    "label": "Langue"
+  },
+  "langName": {
+    "it": "Italiano",
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "breadcrumb": {
+    "label": "Fil d'Ariane",
+    "home": "Accueil"
+  },
+  "footer": {
+    "note": "Partitions du domaine public · arrangements et attributions cités pour chaque pièce.",
+    "follow": "Suis-nous",
+    "contact": "Contact",
+    "rights": "Voce a Voce"
+  },
+  "social": {
+    "youtube": "YouTube",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "card": {
+    "voices": "Voix",
+    "play": "Fiche de la pièce",
+    "soon": "bientôt",
+    "anon": "Anonyme / traditionnel"
+  },
+  "voice": {
+    "S": "Soprano",
+    "A": "Alto",
+    "T": "Ténor",
+    "B": "Basse",
+    "alta": "Voix haute",
+    "media": "Voix moyenne",
+    "bassa": "Voix grave",
+    "ACC": "Accompagnement"
+  },
+  "lines": {
+    "coro": "Chœur",
+    "aria": "Air",
+    "metodo": "Méthode"
+  },
+  "seasons": {
+    "natale": "Noël",
+    "pasqua": "Pâques",
+    "quaresima": "Carême",
+    "mariano": "Marial"
+  },
+  "piece": {
+    "brief": "En bref",
+    "composer": "Compositeur",
+    "work": "Œuvre",
+    "period": "Époque",
+    "org": "Effectif",
+    "acc": "Accompagnement",
+    "textLang": "Langue du texte",
+    "key": "Tonalité",
+    "genre": "Genre",
+    "season": "Saison",
+    "line": "Ligne",
+    "voices": "Voix disponibles",
+    "score": "Partition",
+    "scoreFrom": "{source}, licence {license}",
+    "pick": "Choisis la voix",
+    "iframeTitle": "{title} – voix {voice}",
+    "watchVoice": "Voir la voix {voice} sur YouTube",
+    "watchAll": "Voir sur YouTube",
+    "soonOn": "bientôt, le",
+    "noVideo": "Aucune vidéo n'est encore publiée pour cette pièce : reviens bientôt.",
+    "chapters": "Chapitres",
+    "chaptersFor": "Chapitres, voix {voice}",
+    "notes": "Notes sur la pièce",
+    "aiNote": "Avec l'aide de l'IA",
+    "lyrics": "Texte et traductions",
+    "original": "Texte original",
+    "translation": "Traduction : {lang}",
+    "translationBy": "Traduction de {credit}",
+    "license": "Licence : {license}",
+    "draft": "Traduction non relue",
+    "textSource": "Source du texte",
+    "commonText": "Texte liturgique traditionnel, reproduit en entier : la pièce peut n'en mettre en musique qu'une partie.",
+    "scoreH": "Partition",
+    "scoreP": "La source et la licence de la partition sont reconnues et citées ; les éditions ci-dessous servent à la comparaison.",
+    "verify": "Éditions de vérification",
+    "edition": "{edition}{publisher}{year}",
+    "report": "Tu as entendu une erreur ?",
+    "reportP": "Une altération fausse, une note déplacée, un vers mal écrit : dis-nous où.",
+    "reportLink": "Signaler sur GitHub",
+    "related": "Pièces liées",
+    "descr": {
+      "base": "{title} – {composer} : vidéo d'étude voix par voix.",
+      "org": "Effectif : {org}.",
+      "voices": "Voix disponibles : {voices}.",
+      "soon": "Vidéo bientôt disponible."
+    },
+    "no": "n° {n}",
+    "study": "Étudier avec le lecteur"
+  },
+  "mode": {
+    "major": "majeur",
+    "minor": "mineur"
+  },
+  "accomp": {
+    "a_cappella": "A cappella",
+    "organo": "Orgue",
+    "pianoforte": "Piano",
+    "accompagnamento": "Avec accompagnement"
+  },
+  "license": {
+    "PD": "Domaine public",
+    "CC0": "CC0",
+    "ChoralWiki License": "ChoralWiki License",
+    "MirOS License": "MirOS License"
+  },
+  "genres": {
+    "sacro": "Sacré",
+    "canto-natalizio": "Chant de Noël",
+    "aria": "Air",
+    "aria-antica": "Air ancien",
+    "metodo-vocale": "Méthode vocale"
+  },
+  "periods": {
+    "rinascimento": "Renaissance",
+    "barocco": "Baroque",
+    "classico": "Classicisme",
+    "romantico": "Romantisme",
+    "novecento": "XXe siècle"
+  },
+  "lists": {
+    "count": {
+      "one": "{n} pièce",
+      "other": "{n} pièces"
+    },
+    "pieces": "Pièces",
+    "path": "Parcours d'étude",
+    "soonH": "Bientôt",
+    "soonP": "Pièces dont la vidéo est programmée, pas encore publiée.",
+    "none": "Aucune vidéo n'est encore publiée : reviens bientôt.",
+    "browse": "Parcourir par",
+    "releaseOn": "dès le {date}",
+    "alpha": "Index alphabétique",
+    "type": {
+      "opera": "Œuvre",
+      "raccolta": "Recueil"
+    },
+    "choir": {
+      "h1": "Chœur : pièces voix par voix",
+      "title": "Chœur : pièces à plusieurs voix",
+      "desc": "Le répertoire choral de Voce a Voce : une leçon vidéo pour chaque voix (soprano, alto, ténor, basse), avec partition et texte."
+    },
+    "arias": {
+      "h1": "Airs d'étude",
+      "title": "Airs d'étude en trois tessitures",
+      "desc": "Airs anciens et de chambre à étudier en voix haute, moyenne ou grave, avec vidéo-guide, texte et partition du domaine public."
+    },
+    "methods": {
+      "h1": "Méthodes vocales",
+      "title": "Méthodes vocales et vocalises",
+      "desc": "Parcours d'étude ordonnés pour le chant, comme les vocalises de Concone, en trois tessitures avec vidéo-guide."
+    },
+    "composers": {
+      "h1": "Compositeurs",
+      "title": "Compositeurs du répertoire",
+      "desc": "Tous les compositeurs du catalogue par ordre alphabétique, avec dates et nombre de pièces ayant une vidéo d'étude."
+    },
+    "works": {
+      "h1": "Œuvres et recueils",
+      "title": "Œuvres et recueils",
+      "desc": "Œuvres, messes, oratorios et recueils pédagogiques du catalogue, avec les pièces dans l'ordre."
+    },
+    "genres": {
+      "h1": "Genres",
+      "title": "Genres du répertoire",
+      "desc": "Parcours les pièces par genre : sacré, chant de Noël, air, air ancien, méthode vocale."
+    },
+    "seasons": {
+      "h1": "Temps liturgiques",
+      "title": "Saisons : Noël, Pâques, Carême",
+      "desc": "Pièces chorales pour Noël, Pâques, le Carême et le répertoire marial, avec vidéos voix par voix."
+    },
+    "composer": {
+      "title": "{name} : pièces et vidéos",
+      "desc": "{who} : {n} avec vidéo d'étude voix par voix, partition et texte du domaine public."
+    },
+    "work": {
+      "title": "{name} : pièces et vidéos",
+      "desc": "{name} : {n} avec vidéo d'étude voix par voix, dans l'ordre de l'œuvre ou du recueil."
+    },
+    "genre": {
+      "title": "Genre {name} : pièces et vidéos",
+      "desc": "Genre « {name} » : {n} avec vidéo d'étude voix par voix, avec partition et texte."
+    },
+    "season": {
+      "title": "{name} : pièces chorales et vidéos",
+      "desc": "Pièces pour {name} : {n} avec vidéo d'étude voix par voix, avec partition et texte."
+    },
+    "seasonIntro": {
+      "natale": "Chants de l'Avent et de Noël, du répertoire sacré aux noëls.",
+      "pasqua": "Pièces pour le temps pascal.",
+      "quaresima": "Pièces du Carême et de la Passion.",
+      "mariano": "Pièces en l'honneur de la Vierge Marie."
+    }
+  },
+  "search": {
+    "title": "Rechercher dans le catalogue",
+    "description": "Recherche des pièces, des compositeurs et des textes dans le catalogue de Voce a Voce et filtre par ligne, voix, saison et genre.",
+    "h1": "Rechercher",
+    "intro": "Recherche une pièce, un compositeur ou un mot du texte. Tu peux restreindre les résultats par compositeur, ligne, voix, saison et genre.",
+    "label": "Rechercher dans le catalogue",
+    "button": "Rechercher",
+    "filters": "Filtrer les résultats",
+    "reset": "Réinitialiser les filtres",
+    "f": {
+      "compositore": "Compositeur",
+      "linea": "Ligne",
+      "voce": "Voix",
+      "stagione": "Saison",
+      "genere": "Genre"
+    },
+    "otherComposers": "Autres compositeurs ({n})",
+    "hint": "Écris un ou plusieurs mots, ou choisis un filtre.",
+    "countNone": "Aucun résultat",
+    "countOne": "1 résultat",
+    "countMany": "{n} résultats",
+    "loading": "Recherche en cours…",
+    "noResults": "Aucun résultat. Essaie avec moins de mots, vérifie l'orthographe ou retire un filtre.",
+    "browseH": "Ou parcours les index",
+    "more": "Afficher d'autres résultats",
+    "error": "La recherche n'est pas disponible pour le moment. Tu peux tout de même parcourir les index ci-dessous.",
+    "nojs": "La recherche nécessite JavaScript. Sans lui, tu peux parcourir le catalogue avec les index ci-dessous.",
+    "by": "de",
+    "resultsLabel": "Résultats de la recherche",
+    "homeLabel": "Rechercher des pièces ou des compositeurs",
+    "homeButton": "Rechercher"
+  },
+  "study": {
+    "title": "Lecteur d'étude",
+    "pageTitle": "{title} : lecteur d'étude",
+    "desc": "Étudie ta partie de « {title} » avec le lecteur : pistes séparées par voix, partition qui défile, répétition d'un passage et vitesse réduite sans changer la hauteur.",
+    "h1": "Étudier : {title}",
+    "back": "Fiche de la pièce",
+    "noscript": "Le lecteur d'étude nécessite JavaScript. Tu peux tout de même regarder les vidéos de la pièce sur sa fiche.",
+    "score": "Partition",
+    "zoomIn": "Agrandir la partition",
+    "zoomOut": "Réduire la partition",
+    "invert": "Inverser les couleurs",
+    "options": "Options",
+    "optCursor": "Curseur qui défile",
+    "optCursorColor": "Couleur du curseur",
+    "optMeasure": "Mettre la mesure en évidence",
+    "optMyPart": "Mettre ma partie en évidence",
+    "pick": "Choisir sur la partition",
+    "pickHint": "Avec cette option activée, touche une mesure pour le début et une autre pour la fin du passage ; désactivée, un toucher amène la lecture à cette mesure.",
+    "scoreLabel": "Partition de {title}",
+    "mixer": "Mixeur",
+    "mixerHint": "Règle le volume de chaque voix, coupe-la (Muet) ou écoute-la seule (Solo met toutes les autres en muet : pour un duo, retire le muet d'une autre voix).",
+    "volume": "Volume : {voice}",
+    "mute": "Muet",
+    "solo": "Solo",
+    "muteOf": "Muet {voice}",
+    "soloOf": "Solo {voice}",
+    "myVoice": "Ma voix",
+    "myVoiceSelect": "Choisis ta voix",
+    "myVoiceBtn": "Appliquer",
+    "myVoiceHint": "La voix choisie à 100 %, les autres à 30 %.",
+    "loop": "Répétition",
+    "loopFrom": "De la mesure",
+    "loopTo": "À la mesure",
+    "loopBtn": "Répéter ce passage",
+    "loopSame": "« Répéter ce passage » l'active et le désactive. Si la lecture est hors du passage, elle repart de son début.",
+    "loopShort": "Répéter",
+    "speed": "Vitesse",
+    "position": "Position",
+    "play": "Lire",
+    "pause": "Pause",
+    "transport": "Commandes de lecture",
+    "bar": "Mesure",
+    "video": "La vidéo de la pièce",
+    "support": "Soutenir le projet",
+    "testNotice": "Données de test : cette page ne fait pas partie du site public.",
+    "js": {
+      "loading": "Chargement de l'audio : {n} pistes sur {total}…",
+      "ready": "Audio prêt. Appuie sur Lire.",
+      "ended": "Fin de la pièce.",
+      "zoom": "Partition à {z} %.",
+      "play": "Lire",
+      "pause": "Pause",
+      "errNetwork": "Impossible de télécharger l'audio. Vérifie la connexion et réessaie ; si le problème persiste, il peut s'agir d'une erreur de notre serveur (CORS).",
+      "errDecode": "Ton navigateur ne parvient pas à décoder l'audio de cette pièce.",
+      "errUnsupported": "Ton navigateur ne prend pas en charge l'audio avancé (Web Audio et AudioWorklet) requis par le lecteur. Essaie avec un navigateur à jour.",
+      "errScore": "Impossible d'afficher la partition. Le lecteur audio peut fonctionner quand même.",
+      "noStretch": "Le ralentissement n'est pas disponible sur ce navigateur : la lecture se fait à vitesse normale.",
+      "loop": {
+        "on": "Répétition active : mesures {a} à {b}.",
+        "off": "Répétition désactivée.",
+        "pickOn": "Choix sur la partition activé : touche la première et la dernière mesure.",
+        "pickOff": "Choix sur la partition désactivé : un toucher amène à la mesure.",
+        "range": "Passage choisi : mesures {a} à {b}."
+      }
+    }
+  }
+}

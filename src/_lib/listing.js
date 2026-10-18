@@ -64,10 +64,10 @@ export function groupByInitial(items, keyOf) {
 
 // Slug tradotti delle stagioni (gli altri id restano uguali in tutte le lingue).
 export const SEASON_SLUGS = {
-  natale: { it: "natale", en: "christmas", es: "navidad" },
-  pasqua: { it: "pasqua", en: "easter", es: "pascua" },
-  quaresima: { it: "quaresima", en: "lent", es: "cuaresma" },
-  mariano: { it: "mariano", en: "marian", es: "mariano" },
+  natale: { it: "natale", en: "christmas", es: "navidad", de: "weihnachten", fr: "noel" },
+  pasqua: { it: "pasqua", en: "easter", es: "pascua", de: "ostern", fr: "paques" },
+  quaresima: { it: "quaresima", en: "lent", es: "cuaresma", de: "fastenzeit", fr: "careme" },
+  mariano: { it: "mariano", en: "marian", es: "mariano", de: "marianisch", fr: "marial" },
 };
 
 const LINE_KIND = { choir: "coro", arias: "aria", methods: "metodo" };

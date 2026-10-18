@@ -83,7 +83,7 @@
     },
     "nota": {
       "type": "object",
-      "properties": { "it": { "type": "string" }, "en": { "type": "string" }, "es": { "type": "string" } }
+      "properties": { "it": { "type": "string" }, "en": { "type": "string" }, "es": { "type": "string" }, "de": { "type": "string" }, "fr": { "type": "string" } }
     },
     "voci": {
       "type": "array",

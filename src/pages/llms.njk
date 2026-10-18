@@ -5,7 +5,9 @@ eleventyExcludeFromCollections: true
 {%- set nomi = {
   "it": {"choir": "Coro", "arias": "Arie", "methods": "Metodi vocali", "composers": "Compositori", "works": "Opere e raccolte", "genres": "Generi", "seasons": "Stagioni", "search": "Cerca", "howItWorks": "Come funziona", "sources": "Fonti e licenze", "about": "Chi siamo", "privacy": "Privacy", "disclosure": "Trasparenza"},
   "en": {"choir": "Choir", "arias": "Arias", "methods": "Vocal methods", "composers": "Composers", "works": "Works and collections", "genres": "Genres", "seasons": "Seasons", "search": "Search", "howItWorks": "How it works", "sources": "Sources and licences", "about": "About", "privacy": "Privacy", "disclosure": "Disclosure"},
-  "es": {"choir": "Coro", "arias": "Arias", "methods": "Métodos vocales", "composers": "Compositores", "works": "Obras y colecciones", "genres": "Géneros", "seasons": "Temporadas", "search": "Buscar", "howItWorks": "Cómo funciona", "sources": "Fuentes y licencias", "about": "Quiénes somos", "privacy": "Privacidad", "disclosure": "Transparencia"}
+  "es": {"choir": "Coro", "arias": "Arias", "methods": "Métodos vocales", "composers": "Compositores", "works": "Obras y colecciones", "genres": "Géneros", "seasons": "Temporadas", "search": "Buscar", "howItWorks": "Cómo funciona", "sources": "Fuentes y licencias", "about": "Quiénes somos", "privacy": "Privacidad", "disclosure": "Transparencia"},
+  "de": {"choir": "Chor", "arias": "Arien", "methods": "Gesangsmethoden", "composers": "Komponisten", "works": "Werke und Sammlungen", "genres": "Gattungen", "seasons": "Jahreszeiten", "search": "Suchen", "howItWorks": "So funktioniert es", "sources": "Quellen und Lizenzen", "about": "Über uns", "privacy": "Datenschutz", "disclosure": "Transparenz"},
+  "fr": {"choir": "Chœur", "arias": "Airs", "methods": "Méthodes vocales", "composers": "Compositeurs", "works": "Œuvres et recueils", "genres": "Genres", "seasons": "Saisons", "search": "Rechercher", "howItWorks": "Comment ça marche", "sources": "Sources et licences", "about": "À propos", "privacy": "Confidentialité", "disclosure": "Transparence"}
 } -%}
 # {{ site.name }}
 
@@ -32,3 +34,5 @@ eleventyExcludeFromCollections: true
 - {{ ("it" | routeUrl) | absUrl }}feed.xml
 - {{ ("en" | routeUrl) | absUrl }}feed.xml
 - {{ ("es" | routeUrl) | absUrl }}feed.xml
+- {{ ("de" | routeUrl) | absUrl }}feed.xml
+- {{ ("fr" | routeUrl) | absUrl }}feed.xml

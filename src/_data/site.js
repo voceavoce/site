@@ -12,9 +12,9 @@ const audioBase =
 export default {
   url: "https://voceavoce.com",
   name: "Voce a Voce",
-  langs: ["it", "en", "es"],
+  langs: ["it", "en", "es", "de", "fr"],
   defaultLang: "it",
-  locales: { it: "it_IT", en: "en_US", es: "es_ES" },
+  locales: { it: "it_IT", en: "en_US", es: "es_ES", de: "de_DE", fr: "fr_FR" },
   social: {
     youtube: "https://youtube.com/@voceavocecoro",
     facebook: "https://www.facebook.com/voceavocecoro",

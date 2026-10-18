@@ -3,22 +3,22 @@
 import site from "./site.js";
 
 export const sections = {
-  pieces: { it: "brani", en: "pieces", es: "obras" },
-  composers: { it: "autori", en: "composers", es: "compositores" },
-  works: { it: "opere", en: "works", es: "colecciones" },
-  genres: { it: "generi", en: "genres", es: "generos" },
-  seasons: { it: "stagioni", en: "seasons", es: "temporadas" },
-  search: { it: "cerca", en: "search", es: "buscar" },
-  choir: { it: "coro", en: "choir", es: "coro" },
-  arias: { it: "arie", en: "arias", es: "arias" },
-  methods: { it: "metodi", en: "methods", es: "metodos" },
-  study: { it: "player", en: "player", es: "player" }, // /player/<slug>/ (player di studio)
+  pieces: { it: "brani", en: "pieces", es: "obras", de: "stuecke", fr: "pieces" },
+  composers: { it: "autori", en: "composers", es: "compositores", de: "komponisten", fr: "compositeurs" },
+  works: { it: "opere", en: "works", es: "colecciones", de: "werke", fr: "oeuvres" },
+  genres: { it: "generi", en: "genres", es: "generos", de: "gattungen", fr: "genres" },
+  seasons: { it: "stagioni", en: "seasons", es: "temporadas", de: "jahreszeiten", fr: "saisons" },
+  search: { it: "cerca", en: "search", es: "buscar", de: "suche", fr: "recherche" },
+  choir: { it: "coro", en: "choir", es: "coro", de: "chor", fr: "choeur" },
+  arias: { it: "arie", en: "arias", es: "arias", de: "arien", fr: "airs" },
+  methods: { it: "metodi", en: "methods", es: "metodos", de: "methoden", fr: "methodes" },
+  study: { it: "player", en: "player", es: "player", de: "player", fr: "player" }, // /player/<slug>/ (player di studio)
   // Pagine istituzionali (src/pages/info/): permalink esatti, senza slug.
-  howItWorks: { it: "come-funziona", en: "how-it-works", es: "como-funciona" },
-  sources: { it: "fonti-e-licenze", en: "sources-and-licences", es: "fuentes-y-licencias" },
-  about: { it: "chi-siamo", en: "about", es: "quienes-somos" },
-  privacy: { it: "privacy", en: "privacy", es: "privacidad" },
-  disclosure: { it: "trasparenza", en: "disclosure", es: "transparencia" },
+  howItWorks: { it: "come-funziona", en: "how-it-works", es: "como-funciona", de: "so-funktioniert-es", fr: "comment-ca-marche" },
+  sources: { it: "fonti-e-licenze", en: "sources-and-licences", es: "fuentes-y-licencias", de: "quellen-und-lizenzen", fr: "sources-et-licences" },
+  about: { it: "chi-siamo", en: "about", es: "quienes-somos", de: "ueber-uns", fr: "a-propos" },
+  privacy: { it: "privacy", en: "privacy", es: "privacidad", de: "datenschutz", fr: "confidentialite" },
+  disclosure: { it: "trasparenza", en: "disclosure", es: "transparencia", de: "transparenz", fr: "transparence" },
 };
 
 export const prefix = (lang) => (lang === site.defaultLang ? "" : `/${lang}`);
