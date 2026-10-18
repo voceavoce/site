@@ -61,6 +61,17 @@ test("punti: note e pause per battuta, ordinate; righi diversi allo stesso istan
   assert.deepEqual(g[0], { q0: 0, p: [{ q: 0, x: 15 }, { q: 1, x: 30 }] });
   assert.deepEqual(g[1], { q0: 2, p: [{ q: 2, x: 100 }, { q: 3, x: 130 }] });
 });
+test("punti: una pausa di battuta intera (al centro) non sposta la nota delle altre voci (cursore sulla prima nota)", () => {
+  // come exultate-deo-palestrina: 1 voce canta, 4 hanno la pausa di battuta, centrata a x=167
+  const tm = [{ qstamp: 0, measureOn: "m1", on: ["n1"], restsOn: ["r1", "r2", "r3", "r4"] }, { qstamp: 2, on: ["n2"] }];
+  const x = { n1: 132, n2: 189, r1: 167, r2: 167, r3: 167, r4: 167 };
+  const g = puntiPerBattuta(tm, indice, (id) => x[id] ?? null);
+  assert.deepEqual(g[0].p, [{ q: 0, x: 132 }, { q: 2, x: 189 }]);
+});
+test("punti: con sole pause in un istante si usa la loro posizione", () => {
+  const g = puntiPerBattuta([{ qstamp: 0, measureOn: "m1", restsOn: ["r1", "r2"] }], indice, (id) => ({ r1: 40, r2: 60 })[id] ?? null);
+  assert.deepEqual(g[0].p, [{ q: 0, x: 50 }]);
+});
 test("punti: elementi non trovati o con x non valida vengono saltati", () => {
   const g = puntiPerBattuta(timemap, indice, (id) => (id === "n3" ? NaN : id === "n4" ? null : xDi(id)));
   assert.deepEqual(g[0].p, [{ q: 0, x: 15 }]);

@@ -296,6 +296,20 @@ test.describe("scelta della battuta su brani reali (testo e melismi sotto le not
     });
   }
 
+  test("exultate-deo-palestrina: all'inizio il cursore sta sulla prima nota, non a meta' battuta (le altre voci hanno la pausa di battuta)", async ({ page }) => {
+    await page.goto("/player/exultate-deo-palestrina/?debug");
+    await page.waitForFunction(() => document.querySelectorAll("[data-score] g.measure").length > 0 && window.__study?.score, null, { timeout: 90_000 });
+    await page.waitForTimeout(1000);
+    const { cursore, nota } = await page.evaluate(() => {
+      const c = document.querySelector("[data-score]").getBoundingClientRect();
+      const m = /translate\(([-\d.]+)px/.exec(document.querySelector(".score-cursor").style.transform);
+      const g0 = document.querySelectorAll("[data-score] g.measure")[0];
+      const xs = [...g0.querySelectorAll(".note .notehead")].map((e) => { const r = e.getBoundingClientRect(); return r.left + r.width / 2 - c.left; });
+      return { cursore: Number(m[1]) + 2, nota: Math.min(...xs) };
+    });
+    expect(Math.abs(cursore - nota), `cursore ${cursore} prima nota ${nota}`).toBeLessThan(8);
+  });
+
   test("scelto un passaggio la testina va al suo inizio e Riproduci parte da li", async ({ page }) => {
     await apriPlayer(page);
     await page.click("[data-loop-pick]");
