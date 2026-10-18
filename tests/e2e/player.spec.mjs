@@ -415,16 +415,57 @@ test.describe("schermo intero su telefono", () => {
 });
 
 test.describe("segnala un errore nello spartito", () => {
-  test("il link apre una issue del sito gia' compilata, con la battuta in cui si e' arrivati", async ({ page }) => {
+  test("un solo link, l'email gia' scritta con la battuta in cui si e' arrivati; l'indirizzo e' scritto accanto", async ({ page }) => {
     await apriPlayer(page);
     const link = page.locator("[data-report]");
     await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute("target", "_blank");
-    expect(await link.getAttribute("href")).toContain("https://github.com/voceavoce/site/issues/new?title=");
+    await expect(page.locator(".study__report")).toContainText("info@voceavoce.com");
+    expect(await link.getAttribute("href")).toMatch(/^mailto:info@voceavoce[.]com[?]subject=/);
     await page.evaluate(() => { document.querySelector("[data-seek]").dataset.measure = "7"; });
     await link.focus();
-    const u = new URL(await link.getAttribute("href"));
-    expect(u.searchParams.get("body")).toContain("**Battuta:** 7");
-    expect(u.searchParams.get("body")).toContain(new URL(page.url()).pathname);
+    const corpo = decodeURIComponent(await link.getAttribute("href"));
+    expect(corpo).toContain("Battuta: 7");
+    expect(corpo).toContain(new URL(page.url()).pathname);
+  });
+});
+
+test.describe('modulo di segnalazione', () => {
+  const ENDPOINT = 'http://localhost:8788/segnala';
+  test('il clic apre il modulo con brano e battuta; testo troppo corto non parte', async ({ page }) => {
+    await apriPlayer(page);
+    await page.evaluate(() => { document.querySelector('[data-seek]').dataset.measure = '7'; });
+    let inviato = false;
+    await page.route(ENDPOINT, (r) => { inviato = true; r.fulfill({ status: 200, contentType: 'application/json', body: '{\"ok\":true}' }); });
+    await page.click('[data-report]');
+    const dlg = page.locator('[data-report-dialog]');
+    await expect(dlg).toBeVisible();
+    await expect(dlg.locator('[data-report-bar-n]')).toHaveText('7');
+    await expect(dlg.locator('textarea[name=cosa]')).toBeFocused();
+    await dlg.locator('[data-report-send]').click();
+    await expect(dlg.locator('[data-report-status]')).not.toBeEmpty();
+    expect(inviato).toBe(false);
+    await page.keyboard.press('Escape');
+    await expect(dlg).toBeHidden();
+  });
+  test('invio riuscito: manda il JSON giusto e ringrazia', async ({ page }) => {
+    await apriPlayer(page);
+    await page.evaluate(() => { document.querySelector('[data-seek]').dataset.measure = '7'; });
+    let corpo = null;
+    await page.route(ENDPOINT, async (r) => { corpo = r.request().postDataJSON(); await r.fulfill({ status: 200, contentType: 'application/json', body: '{\"ok\":true}' }); });
+    await page.click('[data-report]');
+    await page.fill('textarea[name=cosa]', 'Alla battuta 7 il tenore ha un fa');
+    await page.click('[data-report-send]');
+    await expect(page.locator('[data-report-status]')).toContainText(/Grazie/);
+    expect(corpo).toMatchObject({ battuta: '7', lingua: 'it', cosa: 'Alla battuta 7 il tenore ha un fa', sito: '' });
+    expect(corpo.pagina).toContain('/player/');
+  });
+  test('invio fallito: si resta nel modulo e compare l indirizzo email', async ({ page }) => {
+    await apriPlayer(page);
+    await page.route(ENDPOINT, (r) => r.fulfill({ status: 502, contentType: 'application/json', body: '{\"ok\":false}' }));
+    await page.click('[data-report]');
+    await page.fill('textarea[name=cosa]', 'nota sbagliata');
+    await page.click('[data-report-send]');
+    await expect(page.locator('[data-report-status] a')).toHaveAttribute('href', 'mailto:info@voceavoce.com');
+    await expect(page.locator('[data-report-send]')).toBeEnabled();
   });
 });

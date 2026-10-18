@@ -27,7 +27,7 @@ Quando correggiamo uno spartito, aggiorniamo il player e la scheda del brano.
 
 ## Segnalare un errore
 
-Hai notato una nota o una parola sbagliata? Nel player e nella scheda del brano trovi il link «Segnala un errore nello spartito»: apre una [issue su GitHub](https://github.com/voceavoce/site/issues) già compilata. Indica:
+Hai notato una nota o una parola sbagliata? Nel player e nella scheda del brano trovi il link «Segnala un errore nello spartito»: apre un'email già scritta, con il brano e la battuta. Se preferisci, scrivi a info@voceavoce.com. Indica:
 
 - il brano e la voce;
 - la battuta (o il minuto del video) in cui compare l'errore;

@@ -27,7 +27,7 @@ Quand nous corrigeons une partition, nous mettons à jour le lecteur et la fiche
 
 ## Signaler une erreur
 
-Tu as remarqué une note ou un mot erroné ? Dans le lecteur et sur la fiche de la pièce, le lien « Signaler une erreur dans la partition » ouvre une [issue GitHub](https://github.com/voceavoce/site/issues) déjà remplie. Indique :
+Tu as remarqué une note ou un mot erroné ? Dans le lecteur et sur la fiche de la pièce, le lien « Signaler une erreur dans la partition » ouvre un e-mail déjà rédigé, avec la pièce et la mesure. Si tu préfères, écris à info@voceavoce.com. Indique :
 
 - la pièce et la voix ;
 - la mesure (ou la minute de la vidéo) où apparaît l'erreur ;

@@ -1,19 +1,42 @@
-// Segnalazione di un errore nello spartito: una issue di GitHub gia' compilata (titolo, brano, pagina, battuta).
-// Nessun dato parte dal sito: il link si apre solo se la persona lo clicca. Niente DOM: la usa anche la build.
-export const REPO_SEGNALAZIONI = "voceavoce/site";
+// Segnalazione di un errore nello spartito: un'email gia' scritta (brano, pagina, battuta), nella lingua del sito in
+// cui si trova la persona. Chi visita e' un corista, non serve nessun account. Nessun dato parte dal sito: il link si
+// apre solo se lo si clicca. Niente DOM: la usa anche la build.
 
-/** URL di «nuova issue» con titolo e testo precompilati. La issue e' in italiano: la legge chi cura il sito. */
-export function urlSegnalazione({ titolo, pagina, battuta } = {}) {
-  const testo = [
-    `**Brano:** ${titolo || ""}`,
-    `**Pagina:** ${pagina || ""}`,
-    `**Battuta:** ${battuta || "(indica il numero)"}`,
+const TESTI = {
+  it: { titolo: "Spartito", brano: "Brano", pagina: "Pagina", battuta: "Battuta", numero: "(indica il numero)", cosa: "Cosa non va (nota, alterazione, ritmo, parola, chiave…)", invece: "Cosa dovrebbe esserci (con la fonte, se la conosci)" },
+  en: { titolo: "Score", brano: "Piece", pagina: "Page", battuta: "Bar", numero: "(please give the number)", cosa: "What is wrong (note, accidental, rhythm, word, clef…)", invece: "What it should be (with the source, if you know it)" },
+  es: { titolo: "Partitura", brano: "Obra", pagina: "Página", battuta: "Compás", numero: "(indica el número)", cosa: "Qué está mal (nota, alteración, ritmo, palabra, clave…)", invece: "Qué debería haber (con la fuente, si la conoces)" },
+  de: { titolo: "Partitur", brano: "Stück", pagina: "Seite", battuta: "Takt", numero: "(bitte die Nummer angeben)", cosa: "Was ist falsch (Note, Vorzeichen, Rhythmus, Wort, Schlüssel…)", invece: "Was stehen müsste (mit Quelle, falls bekannt)" },
+  fr: { titolo: "Partition", brano: "Pièce", pagina: "Page", battuta: "Mesure", numero: "(indique le numéro)", cosa: "Ce qui ne va pas (note, altération, rythme, mot, clé…)", invece: "Ce qui devrait figurer (avec la source, si tu la connais)" },
+};
+
+/** Oggetto e testo della segnalazione nella lingua del sito (italiano se non la conosce). */
+export function testoSegnalazione({ titolo, pagina, battuta, lingua } = {}) {
+  const t = TESTI[lingua] || TESTI.it;
+  const nl = "\n";
+  const corpo = [
+    `${t.brano + ":"} ${titolo || ""}`,
+    `${t.pagina + ":"} ${pagina || ""}`,
+    `${t.battuta + ":"} ${battuta || t.numero}`,
+    `${"Lingua / Language:"} ${TESTI[lingua] ? lingua : "it"}`,
     "",
-    "**Cosa non va** (nota, alterazione, ritmo, parola, chiave…):",
+    `${t.cosa + ":"}`,
     "",
-    "**Cosa dovrebbe esserci** (con la fonte, se la conosci):",
+    `${t.invece + ":"}`,
     "",
-  ].join("\n");
-  const q = (s) => encodeURIComponent(s);
-  return `https://github.com/${REPO_SEGNALAZIONI}/issues/new?title=${q(`Spartito: ${titolo || ""}`)}&body=${q(testo)}`;
+  ].join(nl);
+  return { oggetto: `${t.titolo}: ${titolo || ""}`, corpo };
+}
+
+/** Email gia' scritta (mailto:) all'indirizzo del sito: non serve nessun account. */
+export function mailSegnalazione({ email, ...dati } = {}) {
+  const { oggetto, corpo } = testoSegnalazione(dati);
+  const crlf = (s) => s.replace(/\n/g, "\r\n"); // i client di posta vogliono CRLF nel corpo
+  return `mailto:${email || ""}?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(crlf(corpo))}`;
+}
+
+/** Corpo JSON che il modulo invia al Worker (workers/segnala): i campi come li valida il Worker. */
+export function payloadSegnalazione({ titolo, pagina, battuta, lingua, cosa, contatto, sito } = {}) {
+  const s = (v) => String(v ?? "").trim();
+  return { titolo: s(titolo), pagina: s(pagina), battuta: s(battuta), lingua: s(lingua), cosa: s(cosa), contatto: s(contatto), sito: s(sito) };
 }

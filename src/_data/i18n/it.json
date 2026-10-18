@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Hai sentito un errore?",
     "reportP": "Un'alterazione sbagliata, una nota fuori posto, un verso mal scritto: dicci dove.",
-    "reportLink": "Segnala su GitHub",
+    "reportLink": "Segnala per email",
     "related": "Brani correlati",
     "descr": {
       "base": "{title} – {composer}: video di studio voce per voce.",
@@ -380,5 +380,20 @@
     "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)",
     "allVoices": "Tutte le voci pari",
     "reportScore": "Segnala un errore nello spartito"
+  },
+  "report": {
+    "title": "Segnala un errore nello spartito",
+    "bar": "battuta",
+    "what": "Cosa non va?",
+    "whatHint": "Per esempio: «alla battuta 7 il tenore ha un fa, dovrebbe essere un fa diesis». Non serve altro.",
+    "contact": "La tua email (solo se vuoi una risposta)",
+    "privacy": "Usiamo quello che scrivi solo per correggere lo spartito e, se hai lasciato l'email, per risponderti.",
+    "send": "Invia",
+    "sending": "Invio…",
+    "cancel": "Annulla",
+    "close": "Chiudi",
+    "thanks": "Grazie! Abbiamo ricevuto la segnalazione.",
+    "short": "Scrivi almeno qualche parola su cosa non va.",
+    "error": "Non siamo riusciti a inviarla. Puoi scriverci a {email}."
   }
 }
