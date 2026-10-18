@@ -6,6 +6,7 @@ import { sections, routeUrl, altUrls, seasonSlugs } from "./src/_data/routes.js"
 import * as fmt from "./src/_lib/format.js";
 import * as ld from "./src/_lib/jsonld.js";
 import { buildSitemap } from "./src/_lib/sitemap.js";
+import { versionaAsset } from "./src/_lib/asset-version.js";
 import { writeFileSync, mkdirSync } from "node:fs";
 import { PLAYER_DIR } from "./src/_lib/studio.js";
 import studio from "./src/_data/studio.js";
@@ -74,6 +75,10 @@ export default function (eleventyConfig) {
   eleventyConfig.on("eleventy.after", ({ dir, results }) => {
     mkdirSync(dir.output, { recursive: true }); // con 0 pagine scritte (build di prova) la cartella puo' non esserci
     writeFileSync(path.join(dir.output, "sitemap.xml"), buildSitemap(results));
+    // cartella di uscita reale: con --output (build degli e2e) dir.output resta quella della configurazione, ricavarla dai risultati
+    const pagina = results.find((r) => r.url && r.outputPath);
+    const uscita = pagina ? pagina.outputPath.slice(0, pagina.outputPath.length - (pagina.url.endsWith("/") ? pagina.url + "index.html" : pagina.url).length) : dir.output;
+    versionaAsset(uscita); // ?v=<hash> sugli asset: niente copie vecchie dopo un deploy (src/_lib/asset-version.js)
   });
 
   return {
