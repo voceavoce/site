@@ -20,16 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="Pbb98ba74387cc4096c081cccc8274b52">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="If4bec5ebe01e29153fb74f6ea1c6406b">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P1b757c8d326eb6784ac6a0df275b78c0">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I63f2a5ba98d3b237e17343558db66e45">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pc94e2870b738b774fdab0d4937e22bea">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I8c1d9f7a30d5eb54c691d4c4d41cb2ef">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pea8f76e00fe794b5da4a4bf27f0f8495">
-      <part-name>Bass (2)</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I6cdc4bb5287155d299e49b056493977b">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -68,9 +88,9 @@
         </direction-type>
         <sound tempo="43.99998" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -114,9 +134,9 @@
           <words>semplice</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -267,7 +287,7 @@
           <text>ple</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -333,7 +353,7 @@
           <text>nus</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -379,9 +399,9 @@
         <type>quarter</type>
         <dot />
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <mf />
           </dynamics>
         </direction-type>
@@ -596,9 +616,9 @@
           <text>in</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -681,9 +701,9 @@
           <text>ri</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -707,9 +727,9 @@
           <words>tranquillamente</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -845,7 +865,7 @@
           <text>ven</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="diminuendo" />
         </direction-type>
@@ -910,7 +930,7 @@
           <text>Je</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="stop" />
         </direction-type>
@@ -1005,9 +1025,9 @@
           <words>molto express.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
@@ -1229,9 +1249,9 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -1434,9 +1454,9 @@
           <text>ri</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -1763,9 +1783,9 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -1882,9 +1902,9 @@
           <words>rall.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -1981,9 +2001,9 @@
           <line>2</line>
         </clef>
       </attributes>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -2018,9 +2038,9 @@
     </measure>
     <!--========================= Measure 2 ==========================-->
     <measure implicit="no" number="2">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -2174,7 +2194,7 @@
           <text>ple</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -2239,7 +2259,7 @@
           <text>nus</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -2285,9 +2305,9 @@
         <type>quarter</type>
         <dot />
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <mf />
           </dynamics>
         </direction-type>
@@ -2471,9 +2491,9 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -2552,9 +2572,9 @@
           <text>ri</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -2574,9 +2594,9 @@
           <text>bus,</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -2723,7 +2743,7 @@
           <text>ven</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="diminuendo" />
         </direction-type>
@@ -2789,7 +2809,7 @@
           <text>Je</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="stop" />
         </direction-type>
@@ -2972,9 +2992,9 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -3016,9 +3036,9 @@
           <words>molto express.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
@@ -3208,9 +3228,9 @@
           <text>i,</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -3470,9 +3490,9 @@
           <text>bis,</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -3804,9 +3824,9 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -3924,9 +3944,9 @@
           <words>rall.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -4066,13 +4086,14 @@
           <beat-type>8</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -4108,9 +4129,9 @@
     </measure>
     <!--========================= Measure 2 ==========================-->
     <measure implicit="no" number="2">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -4249,7 +4270,7 @@
           <text>ple</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -4313,7 +4334,7 @@
           <text>nus</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -4360,9 +4381,9 @@
         <type>quarter</type>
         <dot />
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <mf />
           </dynamics>
         </direction-type>
@@ -4576,9 +4597,9 @@
           <text>in</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -4661,9 +4682,9 @@
           <text>ri</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -4682,9 +4703,9 @@
           <text>bus,</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -4830,7 +4851,7 @@
           <text>ven</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="diminuendo" />
         </direction-type>
@@ -4895,7 +4916,7 @@
           <text>Je</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="stop" />
         </direction-type>
@@ -5091,9 +5112,9 @@
           <words>molto express.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
@@ -5242,9 +5263,9 @@
           <text>i,</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -5488,9 +5509,9 @@
     </measure>
     <!--========================= Measure 22 =========================-->
     <measure implicit="no" number="22">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -5787,9 +5808,9 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -5874,9 +5895,9 @@
           <words>rall.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -5978,9 +5999,9 @@
           <line>4</line>
         </clef>
       </attributes>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -6017,9 +6038,9 @@
     </measure>
     <!--========================= Measure 2 ==========================-->
     <measure implicit="no" number="2">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -6156,7 +6177,7 @@
           <text>ple</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -6221,7 +6242,7 @@
           <text>nus</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -6261,9 +6282,9 @@
         <type>quarter</type>
         <dot />
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <mf />
           </dynamics>
         </direction-type>
@@ -6452,9 +6473,9 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -6535,9 +6556,9 @@
           <text>ri</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -6556,9 +6577,9 @@
           <text>bus,</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -6702,7 +6723,7 @@
           <text>ven</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="diminuendo" />
         </direction-type>
@@ -6771,7 +6792,7 @@
           <text>Je</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="stop" />
         </direction-type>
@@ -6929,9 +6950,9 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -6978,9 +6999,9 @@
           <words>molto express.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
@@ -7188,9 +7209,9 @@
         <type>quarter</type>
         <dot />
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -7399,9 +7420,9 @@
           <text>bus,</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>
@@ -7696,9 +7717,9 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -7802,9 +7823,9 @@
           <words>rall.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <pp />
           </dynamics>
         </direction-type>

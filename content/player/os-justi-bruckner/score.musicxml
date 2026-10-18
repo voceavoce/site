@@ -20,97 +20,97 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano 1</part-name>
-      <part-abbreviation>S.</part-abbreviation>
-      <score-instrument id="I10076610aa6b9429eae91b64b64067af">
-        <instrument-name>Flute</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <part-name>S1</part-name>
+      <part-abbreviation>S1</part-abbreviation>
+      <score-instrument id="Iedaf38e60272452eb6eba43360ba5d53">
+        <instrument-name>S1</instrument-name>
+        <instrument-abbreviation>S1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I10076610aa6b9429eae91b64b64067af">
+      <midi-instrument id="Iedaf38e60272452eb6eba43360ba5d53">
         <midi-channel>2</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P8a7c045612d671ad49d37531aa2b1626">
-      <part-name>Soprano 2</part-name>
-      <part-abbreviation>S.</part-abbreviation>
-      <score-instrument id="I0754b130d6c9df78c8177681edf910f0">
-        <instrument-name>Flute</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <part-name>S2</part-name>
+      <part-abbreviation>S2</part-abbreviation>
+      <score-instrument id="I127d7c02d2489896aceff4b3d3533cd7">
+        <instrument-name>S2</instrument-name>
+        <instrument-abbreviation>S2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I0754b130d6c9df78c8177681edf910f0">
+      <midi-instrument id="I127d7c02d2489896aceff4b3d3533cd7">
         <midi-channel>1</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alto 1</part-name>
-      <part-abbreviation>A.</part-abbreviation>
-      <score-instrument id="I951870fa21939dd4835a86c987bfebc7">
-        <instrument-name>Oboe</instrument-name>
-        <instrument-abbreviation>Ob</instrument-abbreviation>
+      <part-name>A1</part-name>
+      <part-abbreviation>A1</part-abbreviation>
+      <score-instrument id="I4219f2dd78c3477dd6a08bc69342bd76">
+        <instrument-name>A1</instrument-name>
+        <instrument-abbreviation>A1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I951870fa21939dd4835a86c987bfebc7">
+      <midi-instrument id="I4219f2dd78c3477dd6a08bc69342bd76">
         <midi-channel>4</midi-channel>
         <midi-program>69</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P80ae50299e1240998fe7a38c574eb0eb">
-      <part-name>Alto 2</part-name>
-      <part-abbreviation>A.</part-abbreviation>
-      <score-instrument id="I32b3500818bc2c42ab063cbc27bf2cf7">
-        <instrument-name>Oboe</instrument-name>
-        <instrument-abbreviation>Ob</instrument-abbreviation>
+      <part-name>A2</part-name>
+      <part-abbreviation>A2</part-abbreviation>
+      <score-instrument id="Ie6f45bc5b9b4ddce7c8b3a23500caf9f">
+        <instrument-name>A2</instrument-name>
+        <instrument-abbreviation>A2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I32b3500818bc2c42ab063cbc27bf2cf7">
+      <midi-instrument id="Ie6f45bc5b9b4ddce7c8b3a23500caf9f">
         <midi-channel>3</midi-channel>
         <midi-program>69</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenor 1</part-name>
-      <part-abbreviation>T.</part-abbreviation>
-      <score-instrument id="Ib3a05eed08a6a416ef88267bd1c618b4">
-        <instrument-name>Tenor</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>T1</part-name>
+      <part-abbreviation>T1</part-abbreviation>
+      <score-instrument id="I0d5ecbd6078e08f021b96cce6c127e07">
+        <instrument-name>T1</instrument-name>
+        <instrument-abbreviation>T1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ib3a05eed08a6a416ef88267bd1c618b4">
+      <midi-instrument id="I0d5ecbd6078e08f021b96cce6c127e07">
         <midi-channel>6</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4a52c18fbb9634834e191417ad0e06a3">
-      <part-name>Tenor 2</part-name>
-      <part-abbreviation>T.</part-abbreviation>
-      <score-instrument id="I7cd18b8361c1dda3b8168b3a51331ffa">
-        <instrument-name>Tenor</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>T2</part-name>
+      <part-abbreviation>T2</part-abbreviation>
+      <score-instrument id="Ifae6ed71e777d14c6483eadf3ade9b90">
+        <instrument-name>T2</instrument-name>
+        <instrument-abbreviation>T2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I7cd18b8361c1dda3b8168b3a51331ffa">
+      <midi-instrument id="Ifae6ed71e777d14c6483eadf3ade9b90">
         <midi-channel>5</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Bass 1</part-name>
-      <part-abbreviation>B.</part-abbreviation>
-      <score-instrument id="I97652024eb80a17fc0060c4f2acdc0b3">
-        <instrument-name>Tuba</instrument-name>
-        <instrument-abbreviation>Tba</instrument-abbreviation>
+      <part-name>B1</part-name>
+      <part-abbreviation>B1</part-abbreviation>
+      <score-instrument id="Ifc3f2c9b66768d2cf41ff3a396af96ae">
+        <instrument-name>B1</instrument-name>
+        <instrument-abbreviation>B1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I97652024eb80a17fc0060c4f2acdc0b3">
+      <midi-instrument id="Ifc3f2c9b66768d2cf41ff3a396af96ae">
         <midi-channel>8</midi-channel>
         <midi-program>59</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="Pd97bcdd92bfd7948efd10afaf16ad4b4">
-      <part-name>Bass 2</part-name>
-      <part-abbreviation>B.</part-abbreviation>
-      <score-instrument id="I77e24fd5e9f9624b5dc1e59f260b7d56">
-        <instrument-name>Tuba</instrument-name>
-        <instrument-abbreviation>Tba</instrument-abbreviation>
+      <part-name>B2</part-name>
+      <part-abbreviation>B2</part-abbreviation>
+      <score-instrument id="I3bc707075b1655f9268ea3730a09baeb">
+        <instrument-name>B2</instrument-name>
+        <instrument-abbreviation>B2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I77e24fd5e9f9624b5dc1e59f260b7d56">
+      <midi-instrument id="I3bc707075b1655f9268ea3730a09baeb">
         <midi-channel>7</midi-channel>
         <midi-program>59</midi-program>
       </midi-instrument>
@@ -150,7 +150,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="9.39" relative-x="2.83" relative-y="9.14">
+          <dynamics default-x="6.58" relative-x="2.83">
             <p />
           </dynamics>
         </direction-type>
@@ -280,7 +280,7 @@
     <measure implicit="no" number="5" width="98.44">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="5.58" relative-x="1.17" relative-y="11.7">
+          <dynamics default-x="3.29" relative-x="1.17">
             <mf />
           </dynamics>
         </direction-type>
@@ -382,7 +382,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="8.67" relative-x="2.32" relative-y="9.85">
+          <dynamics default-x="6.58" relative-x="2.32">
             <p />
           </dynamics>
         </direction-type>
@@ -441,7 +441,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="23.11" relative-x="2.74" relative-y="10.86">
+          <dynamics default-x="6.58" relative-x="2.74">
             <f />
           </dynamics>
         </direction-type>
@@ -678,7 +678,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="1.19" relative-x="3.29" relative-y="9.58">
+          <dynamics default-x="3.29" relative-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -1066,7 +1066,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="20.58" relative-x="-1.83" relative-y="12.14">
+          <dynamics default-x="3.29" relative-x="-1.83">
             <mf />
           </dynamics>
         </direction-type>
@@ -1170,7 +1170,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="6.66" relative-x="4.57" relative-y="9.58">
+          <dynamics default-x="3.29" relative-x="4.57">
             <f />
           </dynamics>
         </direction-type>
@@ -1321,7 +1321,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="17.28" relative-x="3.29" relative-y="9.58">
+          <dynamics default-x="3.29" relative-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -1559,7 +1559,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="20.42" relative-x="4.57" relative-y="9.58">
+          <dynamics default-x="3.29" relative-x="4.57">
             <pp />
           </dynamics>
         </direction-type>
@@ -1674,7 +1674,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="3.9" relative-y="7.32">
+          <dynamics default-x="3.29">
             <mf />
           </dynamics>
         </direction-type>
@@ -1983,7 +1983,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="14.58" relative-x="3.11" relative-y="12.41">
+          <dynamics default-x="3.29" relative-x="3.11">
             <ff />
           </dynamics>
         </direction-type>
@@ -2094,7 +2094,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="3.64" relative-x="1.67" relative-y="11.13">
+          <dynamics default-x="6.58" relative-x="1.67">
             <p />
           </dynamics>
         </direction-type>
@@ -2298,7 +2298,7 @@
       </direction>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="6.62" relative-x="2.6" relative-y="18.51">
+          <dynamics default-x="6.58" relative-x="2.6">
             <pp />
           </dynamics>
         </direction-type>
@@ -2366,7 +2366,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="23.11" relative-x="2.74" relative-y="10.86">
+          <dynamics default-x="6.58" relative-x="2.74">
             <ff />
           </dynamics>
         </direction-type>
@@ -2622,7 +2622,7 @@
       </print>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="5.19" relative-x="6.58" relative-y="9.58">
+          <dynamics default-x="6.58" relative-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -2716,7 +2716,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="5.19" relative-x="4.02" relative-y="9.58">
+          <dynamics default-x="6.58" relative-x="4.02">
             <pp />
           </dynamics>
         </direction-type>
@@ -2839,7 +2839,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="3.52" relative-x="9.92" relative-y="15">
+          <dynamics default-x="6.58" relative-x="9.92">
             <ppp />
           </dynamics>
         </direction-type>
@@ -3077,7 +3077,7 @@
       </direction>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <mp />
           </dynamics>
         </direction-type>
@@ -3160,7 +3160,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -3249,7 +3249,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <pp />
           </dynamics>
         </direction-type>
@@ -6172,7 +6172,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="1.83" relative-x="2.83" relative-y="9.2">
+          <dynamics default-x="6.58" relative-x="2.83">
             <p />
           </dynamics>
         </direction-type>
@@ -6302,7 +6302,7 @@
     <measure implicit="no" number="5" width="98.44">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="8.08" relative-x="2.45" relative-y="9.2">
+          <dynamics default-x="6.58" relative-x="2.45">
             <mf />
           </dynamics>
         </direction-type>
@@ -6454,7 +6454,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="1.04" relative-y="12.12">
+          <dynamics default-x="6.58" relative-x="1.04">
             <p />
           </dynamics>
         </direction-type>
@@ -6512,7 +6512,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="6.35" relative-x="0.32" relative-y="8.87">
+          <dynamics default-x="6.58" relative-x="0.32">
             <f />
           </dynamics>
         </direction-type>
@@ -6727,7 +6727,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="5.19" relative-x="0.18" relative-y="9.58">
+          <dynamics default-x="6.58" relative-x="0.18">
             <p />
           </dynamics>
         </direction-type>
@@ -7269,7 +7269,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-80" relative-x="2.01" relative-y="12.14">
+          <dynamics default-x="3.29" relative-x="2.01">
             <mf />
           </dynamics>
         </direction-type>
@@ -7785,7 +7785,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="20.42" relative-x="5.3" relative-y="9.58">
+          <dynamics default-x="6.58" relative-x="5.3">
             <pp />
           </dynamics>
         </direction-type>
@@ -7991,7 +7991,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="7.75" relative-y="11.22">
+          <dynamics default-x="6.58">
             <mf />
           </dynamics>
         </direction-type>
@@ -8152,7 +8152,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="7.78" relative-x="1.83" relative-y="11.19">
+          <dynamics default-x="6.58" relative-x="1.83">
             <ff />
           </dynamics>
         </direction-type>
@@ -8232,7 +8232,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="2.95" relative-y="10.84">
+          <dynamics default-x="6.58" relative-x="2.95">
             <p />
           </dynamics>
         </direction-type>
@@ -8442,7 +8442,7 @@
       </direction>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="1.47" relative-x="7.89" relative-y="9.56">
+          <dynamics default-x="6.58" relative-x="7.89">
             <pp />
           </dynamics>
         </direction-type>
@@ -8511,7 +8511,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="19.16" relative-x="2.31" relative-y="10.84">
+          <dynamics default-x="6.58" relative-x="2.31">
             <ff />
           </dynamics>
         </direction-type>
@@ -8778,7 +8778,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="0.16" relative-x="4.02" relative-y="10.86">
+          <dynamics default-x="6.58" relative-x="4.02">
             <p />
           </dynamics>
         </direction-type>
@@ -8887,7 +8887,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="2.72" relative-x="1.46" relative-y="8.3">
+          <dynamics default-x="6.58" relative-x="1.46">
             <pp />
           </dynamics>
         </direction-type>
@@ -9021,7 +9021,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="3.64" relative-x="11.2" relative-y="7.38">
+          <dynamics default-x="6.58" relative-x="11.2">
             <ppp />
           </dynamics>
         </direction-type>
@@ -9203,7 +9203,7 @@
     <measure implicit="no" number="70" width="415.63">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <mp />
           </dynamics>
         </direction-type>
@@ -9286,7 +9286,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -9375,7 +9375,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <pp />
           </dynamics>
         </direction-type>
@@ -12457,6 +12457,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
         <staff-details print-object="yes" />
       </attributes>
@@ -12467,7 +12468,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="1.52" relative-x="1.56" relative-y="9.26">
+          <dynamics default-x="3.29" relative-x="1.56">
             <p />
           </dynamics>
         </direction-type>
@@ -12597,7 +12598,7 @@
     <measure implicit="no" number="5" width="98.44">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="8.48" relative-x="1.17" relative-y="7.98">
+          <dynamics default-x="3.29" relative-x="1.17">
             <mf />
           </dynamics>
         </direction-type>
@@ -12704,7 +12705,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="16.77" relative-x="2.09" relative-y="9.26">
+          <dynamics default-x="6.58" relative-x="2.09">
             <p />
           </dynamics>
         </direction-type>
@@ -12755,14 +12756,14 @@
       <note>
         <rest>
           <display-step>E</display-step>
-          <display-octave>4</display-octave>
+          <display-octave>3</display-octave>
         </rest>
         <duration>20160</duration>
         <type>half</type>
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="16.17" relative-x="-0.14" relative-y="14.05">
+          <dynamics default-x="6.58" relative-x="-0.14">
             <mf />
           </dynamics>
         </direction-type>
@@ -13126,7 +13127,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="0.38" relative-x="0.73" relative-y="10.86">
+          <dynamics default-x="3.29" relative-x="0.73">
             <mf />
           </dynamics>
         </direction-type>
@@ -13312,7 +13313,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="0.36" relative-x="2.01" relative-y="10.86">
+          <dynamics default-x="3.29" relative-x="2.01">
             <f />
           </dynamics>
         </direction-type>
@@ -13576,7 +13577,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="1.19" relative-x="2.01" relative-y="9.58">
+          <dynamics default-x="3.29" relative-x="2.01">
             <p />
           </dynamics>
         </direction-type>
@@ -13786,7 +13787,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="22.02" relative-x="5.74" relative-y="7.98">
+          <dynamics default-x="3.29" relative-x="5.74">
             <pp />
           </dynamics>
         </direction-type>
@@ -13976,7 +13977,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="8.35" relative-x="9.8" relative-y="7.45">
+          <dynamics default-x="3.29" relative-x="9.8">
             <mf />
           </dynamics>
         </direction-type>
@@ -14195,7 +14196,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="3.78" relative-x="3.11" relative-y="11.25">
+          <dynamics default-x="3.29" relative-x="3.11">
             <ff />
           </dynamics>
         </direction-type>
@@ -14334,7 +14335,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-80" relative-x="1.67" relative-y="11.82">
+          <dynamics default-x="3.29" relative-x="1.67">
             <p />
           </dynamics>
         </direction-type>
@@ -14517,7 +14518,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="7.49" relative-x="5.3" relative-y="18.54">
+          <dynamics default-x="6.58" relative-x="5.3">
             <pp />
           </dynamics>
         </direction-type>
@@ -14580,7 +14581,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="2.92" relative-x="-4.39" relative-y="8.3">
+          <dynamics default-x="3.29" relative-x="-4.39">
             <mf />
           </dynamics>
         </direction-type>
@@ -14929,7 +14930,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="23.88" relative-x="-0.55" relative-y="9.58">
+          <dynamics default-x="3.29" relative-x="-0.55">
             <p />
           </dynamics>
         </direction-type>
@@ -15041,7 +15042,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="6.54" relative-x="2.5" relative-y="9.26">
+          <dynamics default-x="3.29" relative-x="2.5">
             <pp />
           </dynamics>
         </direction-type>
@@ -15174,7 +15175,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="5.78" relative-x="8.64" relative-y="20.24">
+          <dynamics default-x="6.58" relative-x="8.64">
             <ppp />
           </dynamics>
         </direction-type>
@@ -15335,7 +15336,7 @@
       <note>
         <rest>
           <display-step>E</display-step>
-          <display-octave>4</display-octave>
+          <display-octave>3</display-octave>
         </rest>
         <duration>20160</duration>
         <type>half</type>
@@ -15348,7 +15349,7 @@
     <measure implicit="no" number="70" width="415.63">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <mp />
           </dynamics>
         </direction-type>
@@ -15431,7 +15432,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -15520,7 +15521,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-x="6.58" relative-y="20">
+          <dynamics default-x="6.58" relative-x="6.58">
             <pp />
           </dynamics>
         </direction-type>
@@ -15556,6 +15557,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -15829,7 +15831,7 @@
       <note>
         <rest>
           <display-step>E</display-step>
-          <display-octave>4</display-octave>
+          <display-octave>3</display-octave>
         </rest>
         <duration>20160</duration>
         <type>half</type>
@@ -18237,7 +18239,7 @@
       <note>
         <rest>
           <display-step>E</display-step>
-          <display-octave>4</display-octave>
+          <display-octave>3</display-octave>
         </rest>
         <duration>20160</duration>
         <type>half</type>
@@ -18449,7 +18451,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="1.46" relative-x="1.56" relative-y="9.32">
+          <dynamics default-x="3.29" relative-x="1.56">
             <p />
           </dynamics>
         </direction-type>
@@ -18575,7 +18577,7 @@
     <measure implicit="no" number="5" width="98.44">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="13.36" relative-x="-1.39" relative-y="10.6">
+          <dynamics default-x="3.29" relative-x="-1.39">
             <mf />
           </dynamics>
         </direction-type>
@@ -18664,7 +18666,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="2.74" relative-x="2.09" relative-y="8.04">
+          <dynamics default-x="3.29" relative-x="2.09">
             <p />
           </dynamics>
         </direction-type>
@@ -18725,7 +18727,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="22.51" relative-x="-2.7" relative-y="7.71">
+          <dynamics default-x="6.58" relative-x="-2.7">
             <mf />
           </dynamics>
         </direction-type>
@@ -18808,7 +18810,7 @@
       </attributes>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="19.69" relative-x="2.09" relative-y="10.27">
+          <dynamics default-x="6.58" relative-x="2.09">
             <f />
           </dynamics>
         </direction-type>
@@ -19054,7 +19056,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="2.37" relative-x="-9.15" relative-y="13.42">
+          <dynamics default-x="3.29" relative-x="-9.15">
             <p />
           </dynamics>
         </direction-type>
@@ -19589,7 +19591,7 @@
     <measure implicit="no" number="29" width="207.64">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="1.19" relative-x="4.02" relative-y="9.58">
+          <dynamics default-x="6.58" relative-x="4.02">
             <p />
           </dynamics>
         </direction-type>
@@ -19694,7 +19696,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="2.65" relative-x="10.97" relative-y="13.14">
+          <dynamics default-x="3.29" relative-x="10.97">
             <pp />
           </dynamics>
         </direction-type>
@@ -19896,7 +19898,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="5.09" relative-x="13.64" relative-y="8.79">
+          <dynamics default-x="6.58" relative-x="13.64">
             <mf />
           </dynamics>
         </direction-type>
@@ -20098,7 +20100,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="7.46" relative-x="3.11" relative-y="11.31">
+          <dynamics default-x="6.58" relative-x="3.11">
             <ff />
           </dynamics>
         </direction-type>
@@ -20186,7 +20188,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="0.58" relative-x="2.95" relative-y="10.24">
+          <dynamics default-x="3.29" relative-x="2.95">
             <p />
           </dynamics>
         </direction-type>
@@ -20369,7 +20371,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="6.81" relative-x="3.14" relative-y="8.79">
+          <dynamics default-x="3.29" relative-x="3.14">
             <pp />
           </dynamics>
         </direction-type>
@@ -20435,7 +20437,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="2.48" relative-x="-14.48" relative-y="8.74">
+          <dynamics default-x="3.29" relative-x="-14.48">
             <mf />
           </dynamics>
         </direction-type>
@@ -20730,7 +20732,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="21.7" relative-x="2.01" relative-y="8.3">
+          <dynamics default-x="3.29" relative-x="2.01">
             <p />
           </dynamics>
         </direction-type>
@@ -20801,7 +20803,7 @@
     <measure implicit="no" number="61" width="84">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="2.47" relative-x="4.02" relative-y="8.3">
+          <dynamics default-x="6.58" relative-x="4.02">
             <pp />
           </dynamics>
         </direction-type>
@@ -20916,7 +20918,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="3.34" relative-x="7.36" relative-y="15.18">
+          <dynamics default-x="6.58" relative-x="7.36">
             <ppp />
           </dynamics>
         </direction-type>
@@ -21090,7 +21092,7 @@
     <measure implicit="no" number="70" width="415.63">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="14.8" relative-x="6.58" relative-y="20">
+          <dynamics default-x="3.29" relative-x="6.58">
             <mp />
           </dynamics>
         </direction-type>
@@ -21173,7 +21175,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="14.8" relative-x="6.58" relative-y="20">
+          <dynamics default-x="3.29" relative-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -21262,7 +21264,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="5.08" relative-x="6.58" relative-y="20">
+          <dynamics default-x="3.29" relative-x="6.58">
             <pp />
           </dynamics>
         </direction-type>

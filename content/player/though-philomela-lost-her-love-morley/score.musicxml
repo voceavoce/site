@@ -20,13 +20,28 @@
   </defaults>
   <part-list>
     <score-part id="P61fae696248758d9dba6dc3e334bacfc">
-      <part-name>Sopran</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I18b6c3e1f8ad6e32f536849a15bdd430">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P810704a9f8a62b030f8a13894ec97aa2">
-      <part-name>Alt</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Ifac05dd5a6302e9751234b27ee3e728f">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Peb66c4d64f760dea6d8c1e1549226a8b">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I5bf602cd7f0c06f6ece7dc2b7316738a">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -4858,8 +4873,9 @@
           <beat-type>4</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

@@ -20,23 +20,43 @@
   </defaults>
   <part-list>
     <score-part id="Pc763530254de2988de6acfc61a2a3a7d">
-      <part-name>Midi_74</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="Ic0a7a502baf52d0206c179b73dc80fa3">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pfcd2786ee4e82b3e2c8f2aec9a6e8b12">
-      <part-name>Midi_74</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I50e61fb571a5175028d6074fbff367ee">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P3f22a6cacd15cb296098859cae1fab08">
-      <part-name>Midi_74</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I554b611555fcf67a674993f6fae4a18e">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P623da5f738862a85d33a9b73760e0bc4">
-      <part-name>Midi_74</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I03ef1955bbccbea0bbd94c7067e964b7">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P893d76ad25d4a1670d3cd0ec47c65ded">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="If1d50b92ca24ebe9320a49c505f6bdb4">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="Ie805ddaf6c91487dc99a5c752aa1e971">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
     </score-part>
   </part-list>
@@ -198,9 +218,9 @@
           <words>Full</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -998,9 +1018,9 @@
           <text>dwell</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -1166,9 +1186,9 @@
           <words>Solo</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -1439,9 +1459,9 @@
     </measure>
     <!--========================= Measure 13 =========================-->
     <measure implicit="no" number="13">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -1991,9 +2011,9 @@
           <text>dwell</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -2071,8 +2091,9 @@
           <beat-type>4</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -2168,9 +2189,9 @@
     </measure>
     <!--========================= Measure 13 =========================-->
     <measure implicit="no" number="13">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -2688,9 +2709,9 @@
           <text>dwell</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -2866,9 +2887,9 @@
     </measure>
     <!--========================= Measure 13 =========================-->
     <measure implicit="no" number="13">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -3411,9 +3432,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -3486,9 +3507,9 @@
           <line>4</line>
         </clef>
       </attributes>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -4613,9 +4634,9 @@
     </measure>
     <!--========================= Measure 13 =========================-->
     <measure implicit="no" number="13">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -6346,9 +6367,9 @@
     </measure>
     <!--========================= Measure 29 =========================-->
     <measure implicit="no" number="29">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
@@ -6966,9 +6987,9 @@
           <words>dim.</words>
         </direction-type>
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>

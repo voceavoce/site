@@ -20,61 +20,61 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
       <part-abbreviation>S</part-abbreviation>
-      <score-instrument id="Ibd6115087e5a0460f1bfc5860cafe0ca">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <score-instrument id="Ic06534140a55c9c3936a190b1a15f18a">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ibd6115087e5a0460f1bfc5860cafe0ca">
+      <midi-instrument id="Ic06534140a55c9c3936a190b1a15f18a">
         <midi-channel>1</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
       <part-abbreviation>A</part-abbreviation>
-      <score-instrument id="I17da12d588025d9f799bf2ae74840dbe">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <score-instrument id="I239f3d24df01218b7b98fbf05357b571">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I17da12d588025d9f799bf2ae74840dbe">
+      <midi-instrument id="I239f3d24df01218b7b98fbf05357b571">
         <midi-channel>2</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
       <part-abbreviation>T</part-abbreviation>
-      <score-instrument id="Icb7590dc61a22ebc08db3e87936714c1">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <score-instrument id="I42a4c7a59018e9d010487c6a655ea31a">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Icb7590dc61a22ebc08db3e87936714c1">
+      <midi-instrument id="I42a4c7a59018e9d010487c6a655ea31a">
         <midi-channel>3</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Bass 1</part-name>
-      <part-abbreviation>B</part-abbreviation>
-      <score-instrument id="Ie9b8175f17dcd24e21c28177490657f6">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <part-name>B1</part-name>
+      <part-abbreviation>B1</part-abbreviation>
+      <score-instrument id="I5b6d9450064ece379beca7aa528d79e2">
+        <instrument-name>B1</instrument-name>
+        <instrument-abbreviation>B1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ie9b8175f17dcd24e21c28177490657f6">
+      <midi-instrument id="I5b6d9450064ece379beca7aa528d79e2">
         <midi-channel>4</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P7ab47a696c422c783fd87706940389c4">
-      <part-name>Bass 2</part-name>
-      <part-abbreviation>B</part-abbreviation>
-      <score-instrument id="Ia9a197fd27e1e019a3d81db15789934c">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <part-name>B2</part-name>
+      <part-abbreviation>B2</part-abbreviation>
+      <score-instrument id="I82e884425ecf4c2a1864e0f1b586aff0">
+        <instrument-name>B2</instrument-name>
+        <instrument-abbreviation>B2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ia9a197fd27e1e019a3d81db15789934c">
+      <midi-instrument id="I82e884425ecf4c2a1864e0f1b586aff0">
         <midi-channel>5</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
@@ -697,10 +697,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -1291,10 +1287,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -2444,10 +2436,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">
@@ -3003,10 +2991,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">
@@ -4109,11 +4093,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-          <clef-octave-change>-1</clef-octave-change>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">
@@ -4652,11 +4631,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-          <clef-octave-change>-1</clef-octave-change>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">
@@ -5756,10 +5730,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">
@@ -6313,10 +6283,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">
@@ -7431,10 +7397,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">
@@ -7988,10 +7950,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <barline location="left">

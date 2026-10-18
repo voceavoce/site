@@ -20,19 +20,44 @@
   </defaults>
   <part-list>
     <score-part id="P37ba810be8607179b2e68ac8406440b3">
-      <part-name>Choir Aahs</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I84e16a073d98572a0e2a5d9254a50992">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P40b2568a3b271e413f6da5b18ad03931">
-      <part-name>Choir Aahs</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I2c2bfdb0c0c835e952ab022a3903ddf1">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P1e6f7f638e78309b3011d0ed4f197b33">
-      <part-name>Choir Aahs</part-name>
+      <part-name>T1</part-name>
+      <part-abbreviation>T1</part-abbreviation>
+      <score-instrument id="I6da2efc40a065a397b9ba807d52a51a5">
+        <instrument-name>T1</instrument-name>
+        <instrument-abbreviation>T1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P64c9da3eb4c8fb9fc4416e1764400b62">
-      <part-name>Choir Aahs</part-name>
+      <part-name>T2</part-name>
+      <part-abbreviation>T2</part-abbreviation>
+      <score-instrument id="I856f760ca98c9bead085d2fc0be2838e">
+        <instrument-name>T2</instrument-name>
+        <instrument-abbreviation>T2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P2771b6977625b0c07ac5f171fb74da59">
-      <part-name>Choir Aahs</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I19792aff4d367e054b5cf89d4a2c914d">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -4773,8 +4798,9 @@
           <beat-type>2</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -6952,8 +6978,9 @@
           <beat-type>2</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

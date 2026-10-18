@@ -20,61 +20,61 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
       <part-abbreviation>S</part-abbreviation>
-      <score-instrument id="Ie42752c8fe8d745c7a23ae1e6ce41b10">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <score-instrument id="I6911d64bdc2729c29bb3d06441c58fe9">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ie42752c8fe8d745c7a23ae1e6ce41b10">
+      <midi-instrument id="I6911d64bdc2729c29bb3d06441c58fe9">
         <midi-channel>1</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
       <part-abbreviation>A</part-abbreviation>
-      <score-instrument id="I4afd8d8279928574767f494388a453b4">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <score-instrument id="I77f631b5b65ef2ecdee48f0115e3eb18">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I4afd8d8279928574767f494388a453b4">
+      <midi-instrument id="I77f631b5b65ef2ecdee48f0115e3eb18">
         <midi-channel>2</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
       <part-abbreviation>T</part-abbreviation>
-      <score-instrument id="I4757d441089e72a07dfd709153870dea">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <score-instrument id="I5e379e2ca00553971d1071b69d50ba7e">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I4757d441089e72a07dfd709153870dea">
+      <midi-instrument id="I5e379e2ca00553971d1071b69d50ba7e">
         <midi-channel>3</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Bass 1</part-name>
-      <part-abbreviation>B</part-abbreviation>
-      <score-instrument id="I8ef48fba4be3884761e224d518dc95b6">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <part-name>B1</part-name>
+      <part-abbreviation>B1</part-abbreviation>
+      <score-instrument id="I5ab9ea6231a1599e64359f66ef90f7e8">
+        <instrument-name>B1</instrument-name>
+        <instrument-abbreviation>B1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I8ef48fba4be3884761e224d518dc95b6">
+      <midi-instrument id="I5ab9ea6231a1599e64359f66ef90f7e8">
         <midi-channel>4</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="Pee1d363d952e08ce151283932078946e">
-      <part-name>Bass 2</part-name>
-      <part-abbreviation>B</part-abbreviation>
-      <score-instrument id="If871d2bec73592f9d294685af942f05f">
-        <instrument-name>Midi_74</instrument-name>
-        <instrument-abbreviation>Fl</instrument-abbreviation>
+      <part-name>B2</part-name>
+      <part-abbreviation>B2</part-abbreviation>
+      <score-instrument id="Ifc1ec354e617770d1ee7c9e706fbb2df">
+        <instrument-name>B2</instrument-name>
+        <instrument-abbreviation>B2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="If871d2bec73592f9d294685af942f05f">
+      <midi-instrument id="Ifc1ec354e617770d1ee7c9e706fbb2df">
         <midi-channel>5</midi-channel>
         <midi-program>74</midi-program>
       </midi-instrument>
@@ -143,9 +143,9 @@
         </direction-type>
         <sound tempo="160" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -166,7 +166,7 @@
     </measure>
     <!--========================= Measure 2 ==========================-->
     <measure implicit="no" number="2" width="79.28">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="crescendo" />
         </direction-type>
@@ -197,7 +197,7 @@
           <text>la</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="stop" />
         </direction-type>
@@ -237,7 +237,7 @@
     </measure>
     <!--========================= Measure 4 ==========================-->
     <measure implicit="no" number="4" width="103.26">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="diminuendo" />
         </direction-type>
@@ -295,7 +295,7 @@
           <slur number="2" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="stop" />
         </direction-type>
@@ -484,9 +484,9 @@
     </measure>
     <!--========================= Measure 9 ==========================-->
     <measure implicit="no" number="9" width="108.21">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <f />
           </dynamics>
         </direction-type>
@@ -742,9 +742,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -766,7 +766,7 @@
     </measure>
     <!--========================= Measure 17 =========================-->
     <measure implicit="no" number="17" width="78.15">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="crescendo" />
         </direction-type>
@@ -786,7 +786,7 @@
           <text>car-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="stop" />
         </direction-type>
@@ -846,7 +846,7 @@
     </measure>
     <!--========================= Measure 20 =========================-->
     <measure implicit="no" number="20" width="67.65">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="diminuendo" />
         </direction-type>
@@ -877,7 +877,7 @@
           <text>nis</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="stop" />
         </direction-type>
@@ -885,9 +885,9 @@
     </measure>
     <!--========================= Measure 21 =========================-->
     <measure implicit="no" number="21" width="66.91">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -1023,7 +1023,7 @@
     </measure>
     <!--========================= Measure 25 =========================-->
     <measure implicit="no" number="25" width="85.99">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="crescendo" />
         </direction-type>
@@ -1042,7 +1042,7 @@
           <text>spen</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="stop" />
         </direction-type>
@@ -1132,7 +1132,7 @@
     </measure>
     <!--========================= Measure 29 =========================-->
     <measure implicit="no" number="29" width="74.04">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="diminuendo" />
         </direction-type>
@@ -1167,7 +1167,7 @@
           <slur number="2" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="stop" />
         </direction-type>
@@ -1232,7 +1232,7 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32" width="103.92">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="crescendo" />
         </direction-type>
@@ -1251,7 +1251,7 @@
           <tied type="start" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="stop" />
         </direction-type>
@@ -1290,7 +1290,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="diminuendo" />
         </direction-type>
@@ -1326,7 +1326,7 @@
           <text>lo.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="stop" />
         </direction-type>
@@ -1346,15 +1346,15 @@
           <system-distance>150</system-distance>
         </system-layout>
       </print>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="crescendo" />
         </direction-type>
@@ -1375,7 +1375,7 @@
           <text>O</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="stop" />
         </direction-type>
@@ -1450,7 +1450,7 @@
     </measure>
     <!--========================= Measure 39 =========================-->
     <measure implicit="no" number="39" width="109.99">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="diminuendo" />
         </direction-type>
@@ -1508,7 +1508,7 @@
           <slur number="5" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="stop" />
         </direction-type>
@@ -1701,9 +1701,9 @@
     </measure>
     <!--========================= Measure 44 =========================-->
     <measure implicit="no" number="44" width="156.14">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <f />
           </dynamics>
         </direction-type>
@@ -1955,9 +1955,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -1984,7 +1984,7 @@
     </measure>
     <!--========================= Measure 52 =========================-->
     <measure implicit="no" number="52" width="84.4">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="crescendo" />
         </direction-type>
@@ -2001,7 +2001,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="stop" />
         </direction-type>
@@ -2054,7 +2054,7 @@
     </measure>
     <!--========================= Measure 55 =========================-->
     <measure implicit="no" number="55" width="79.26">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="diminuendo" />
         </direction-type>
@@ -2085,7 +2085,7 @@
           <text>ju</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="stop" />
         </direction-type>
@@ -2223,7 +2223,7 @@
     </measure>
     <!--========================= Measure 60 =========================-->
     <measure implicit="no" number="60" width="71.72">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="crescendo" />
         </direction-type>
@@ -2260,7 +2260,7 @@
           <slur number="5" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="stop" />
         </direction-type>
@@ -2334,7 +2334,7 @@
     </measure>
     <!--========================= Measure 64 =========================-->
     <measure implicit="no" number="64" width="93.69">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="diminuendo" />
         </direction-type>
@@ -2367,7 +2367,7 @@
           <text>na,</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="stop" />
         </direction-type>
@@ -2447,7 +2447,7 @@
     </measure>
     <!--========================= Measure 68 =========================-->
     <measure implicit="no" number="68" width="60.5">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="crescendo" />
         </direction-type>
@@ -2483,7 +2483,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="stop" />
         </direction-type>
@@ -2504,7 +2504,7 @@
     </measure>
     <!--========================= Measure 70 =========================-->
     <measure implicit="no" number="70" width="70.27">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="diminuendo" />
         </direction-type>
@@ -2524,7 +2524,7 @@
           <text>am.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="stop" />
         </direction-type>
@@ -2544,9 +2544,9 @@
           <top-system-distance>70</top-system-distance>
         </system-layout>
       </print>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -2865,9 +2865,9 @@
     </measure>
     <!--========================= Measure 79 =========================-->
     <measure implicit="no" number="79" width="105.47">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <f />
           </dynamics>
         </direction-type>
@@ -3107,9 +3107,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -3136,7 +3136,7 @@
     </measure>
     <!--========================= Measure 87 =========================-->
     <measure implicit="no" number="87" width="89.53">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="crescendo" />
         </direction-type>
@@ -3153,7 +3153,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="stop" />
         </direction-type>
@@ -3211,7 +3211,7 @@
     </measure>
     <!--========================= Measure 90 =========================-->
     <measure implicit="no" number="90" width="102.24">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="diminuendo" />
         </direction-type>
@@ -3242,7 +3242,7 @@
           <text>my</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="stop" />
         </direction-type>
@@ -3382,7 +3382,7 @@
     </measure>
     <!--========================= Measure 95 =========================-->
     <measure implicit="no" number="95" width="67.45">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="crescendo" />
         </direction-type>
@@ -3412,7 +3412,7 @@
           <slur number="1" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="stop" />
         </direction-type>
@@ -3482,7 +3482,7 @@
     </measure>
     <!--========================= Measure 99 =========================-->
     <measure implicit="no" number="99" width="120.12">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="diminuendo" />
         </direction-type>
@@ -3517,7 +3517,7 @@
           <text>cu</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="stop" />
         </direction-type>
@@ -3610,7 +3610,7 @@
     </measure>
     <!--======================== Measure 103 =========================-->
     <measure implicit="no" number="103" width="56.49">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="crescendo" />
         </direction-type>
@@ -3629,7 +3629,7 @@
           <tied type="start" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="stop" />
         </direction-type>
@@ -3637,7 +3637,7 @@
     </measure>
     <!--======================== Measure 104 =========================-->
     <measure implicit="no" number="104" width="76.08">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="diminuendo" />
         </direction-type>
@@ -3654,7 +3654,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="stop" />
         </direction-type>
@@ -3662,15 +3662,15 @@
     </measure>
     <!--======================== Measure 105 =========================-->
     <measure implicit="no" number="105" width="80.68">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <pp />
           </dynamics>
         </direction-type>
         <sound dynamics="31" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -3690,7 +3690,7 @@
           <text>men.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -3724,9 +3724,9 @@
         </clef>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -3772,7 +3772,7 @@
     </measure>
     <!--========================= Measure 2 ==========================-->
     <measure implicit="no" number="2" width="79.28">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -3803,7 +3803,7 @@
           <text>la</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -3829,7 +3829,7 @@
     </measure>
     <!--========================= Measure 4 ==========================-->
     <measure implicit="no" number="4" width="103.26">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -3859,7 +3859,7 @@
           <text>gis</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -4000,9 +4000,9 @@
     </measure>
     <!--========================= Measure 9 ==========================-->
     <measure implicit="no" number="9" width="108.21">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -4255,15 +4255,15 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="crescendo" />
         </direction-type>
@@ -4281,7 +4281,7 @@
           <text>quo</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="stop" />
         </direction-type>
@@ -4360,7 +4360,7 @@
     </measure>
     <!--========================= Measure 20 =========================-->
     <measure implicit="no" number="20" width="67.65">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -4390,7 +4390,7 @@
           <text>nis</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -4398,9 +4398,9 @@
     </measure>
     <!--========================= Measure 21 =========================-->
     <measure implicit="no" number="21" width="66.91">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -4519,7 +4519,7 @@
     </measure>
     <!--========================= Measure 25 =========================-->
     <measure implicit="no" number="25" width="85.99">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="crescendo" />
         </direction-type>
@@ -4538,7 +4538,7 @@
           <text>spen</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="stop" />
         </direction-type>
@@ -4626,7 +4626,7 @@
     </measure>
     <!--========================= Measure 29 =========================-->
     <measure implicit="no" number="29" width="74.04">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -4647,7 +4647,7 @@
           <text>est</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -4703,7 +4703,7 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32" width="103.92">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -4726,7 +4726,7 @@
         <type>half</type>
         <stem>up</stem>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -4745,7 +4745,7 @@
     </measure>
     <!--========================= Measure 34 =========================-->
     <measure implicit="no" number="34" width="89.31">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -4776,7 +4776,7 @@
           <text>bu</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -4813,15 +4813,15 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-51.62" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="crescendo" />
         </direction-type>
@@ -4860,7 +4860,7 @@
         <type>quarter</type>
         <stem>up</stem>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="stop" />
         </direction-type>
@@ -4911,7 +4911,7 @@
     </measure>
     <!--========================= Measure 39 =========================-->
     <measure implicit="no" number="39" width="109.99">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -4928,7 +4928,7 @@
           <text>ve</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -5073,9 +5073,9 @@
     </measure>
     <!--========================= Measure 44 =========================-->
     <measure implicit="no" number="44" width="156.14">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -5326,15 +5326,15 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="crescendo" />
         </direction-type>
@@ -5370,7 +5370,7 @@
           <slur number="1" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="stop" />
         </direction-type>
@@ -5431,7 +5431,7 @@
     </measure>
     <!--========================= Measure 55 =========================-->
     <measure implicit="no" number="55" width="79.26">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -5462,7 +5462,7 @@
           <text>ju</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -5583,7 +5583,7 @@
     </measure>
     <!--========================= Measure 60 =========================-->
     <measure implicit="no" number="60" width="71.72">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -5623,7 +5623,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -5694,7 +5694,7 @@
     </measure>
     <!--========================= Measure 64 =========================-->
     <measure implicit="no" number="64" width="93.69">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -5715,7 +5715,7 @@
           <text>do-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -5792,7 +5792,7 @@
     </measure>
     <!--========================= Measure 68 =========================-->
     <measure implicit="no" number="68" width="60.5">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="crescendo" />
         </direction-type>
@@ -5821,7 +5821,7 @@
           <slur number="5" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="stop" />
         </direction-type>
@@ -5842,7 +5842,7 @@
     </measure>
     <!--========================= Measure 70 =========================-->
     <measure implicit="no" number="70" width="70.27">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -5862,7 +5862,7 @@
           <text>am.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -5881,9 +5881,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -6137,9 +6137,9 @@
     </measure>
     <!--========================= Measure 79 =========================-->
     <measure implicit="no" number="79" width="105.47">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -6380,15 +6380,15 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-49.04" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="crescendo" />
         </direction-type>
@@ -6424,7 +6424,7 @@
           <slur number="4" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="stop" />
         </direction-type>
@@ -6487,7 +6487,7 @@
     </measure>
     <!--========================= Measure 90 =========================-->
     <measure implicit="no" number="90" width="102.24">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -6518,7 +6518,7 @@
           <text>my</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -6636,7 +6636,7 @@
     </measure>
     <!--========================= Measure 95 =========================-->
     <measure implicit="no" number="95" width="67.45">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -6655,7 +6655,7 @@
           <tied type="start" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -6663,7 +6663,7 @@
     </measure>
     <!--========================= Measure 96 =========================-->
     <measure implicit="no" number="96" width="96.8">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="crescendo" />
         </direction-type>
@@ -6683,7 +6683,7 @@
           <slur number="5" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="stop" />
         </direction-type>
@@ -6752,7 +6752,7 @@
     </measure>
     <!--========================= Measure 99 =========================-->
     <measure implicit="no" number="99" width="120.12">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="diminuendo" />
         </direction-type>
@@ -6773,7 +6773,7 @@
           <text>sae-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="stop" />
         </direction-type>
@@ -6855,7 +6855,7 @@
     </measure>
     <!--======================== Measure 103 =========================-->
     <measure implicit="no" number="103" width="56.49">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="crescendo" />
         </direction-type>
@@ -6875,7 +6875,7 @@
           <text>A-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="stop" />
         </direction-type>
@@ -6883,7 +6883,7 @@
     </measure>
     <!--======================== Measure 104 =========================-->
     <measure implicit="no" number="104" width="76.08">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="diminuendo" />
         </direction-type>
@@ -6910,7 +6910,7 @@
           <slur number="6" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="stop" />
         </direction-type>
@@ -6918,15 +6918,15 @@
     </measure>
     <!--======================== Measure 105 =========================-->
     <measure implicit="no" number="105" width="80.68">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-57.05" relative-y="-40">
+          <dynamics default-x="6.58">
             <pp />
           </dynamics>
         </direction-type>
         <sound dynamics="31" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -6946,7 +6946,7 @@
           <text>men.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -6981,9 +6981,9 @@
         </clef>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -7004,7 +7004,7 @@
     </measure>
     <!--========================= Measure 2 ==========================-->
     <measure implicit="no" number="2" width="79.28">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -7035,7 +7035,7 @@
           <text>la</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -7061,7 +7061,7 @@
     </measure>
     <!--========================= Measure 4 ==========================-->
     <measure implicit="no" number="4" width="103.26">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -7091,7 +7091,7 @@
           <text>gis</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -7248,9 +7248,9 @@
     </measure>
     <!--========================= Measure 9 ==========================-->
     <measure implicit="no" number="9" width="108.21">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -7326,11 +7326,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-          <clef-octave-change>-1</clef-octave-change>
-        </clef>
         <staff-details print-object="yes" />
       </attributes>
       <note default-x="113.84" default-y="-362.27">
@@ -7527,9 +7522,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -7551,7 +7546,7 @@
     </measure>
     <!--========================= Measure 17 =========================-->
     <measure implicit="no" number="17" width="78.15">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="crescendo" />
         </direction-type>
@@ -7571,7 +7566,7 @@
           <text>car-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="stop" />
         </direction-type>
@@ -7649,7 +7644,7 @@
     </measure>
     <!--========================= Measure 20 =========================-->
     <measure implicit="no" number="20" width="67.65">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -7679,7 +7674,7 @@
           <text>nis</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -7687,9 +7682,9 @@
     </measure>
     <!--========================= Measure 21 =========================-->
     <measure implicit="no" number="21" width="66.91">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -7793,7 +7788,7 @@
     </measure>
     <!--========================= Measure 25 =========================-->
     <measure implicit="no" number="25" width="85.99">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="crescendo" />
         </direction-type>
@@ -7810,7 +7805,7 @@
           <text>spen</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="stop" />
         </direction-type>
@@ -7912,7 +7907,7 @@
     </measure>
     <!--========================= Measure 29 =========================-->
     <measure implicit="no" number="29" width="74.04">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -7935,7 +7930,7 @@
           <text>est</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -7992,7 +7987,7 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32" width="103.92">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -8019,7 +8014,7 @@
         <accidental parentheses="yes">natural</accidental>
         <stem>up</stem>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -8051,7 +8046,7 @@
           <slur number="3" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -8087,7 +8082,7 @@
           <text>lo.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -8106,15 +8101,15 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="crescendo" />
         </direction-type>
@@ -8131,7 +8126,7 @@
           <text>O</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="stop" />
         </direction-type>
@@ -8188,7 +8183,7 @@
     </measure>
     <!--========================= Measure 39 =========================-->
     <measure implicit="no" number="39" width="109.99">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -8218,7 +8213,7 @@
           <text>ve</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -8379,9 +8374,9 @@
     </measure>
     <!--========================= Measure 44 =========================-->
     <measure implicit="no" number="44" width="156.14">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -8650,9 +8645,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -8678,7 +8673,7 @@
     </measure>
     <!--========================= Measure 52 =========================-->
     <measure implicit="no" number="52" width="84.4">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="crescendo" />
         </direction-type>
@@ -8695,7 +8690,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="stop" />
         </direction-type>
@@ -8770,7 +8765,7 @@
     </measure>
     <!--========================= Measure 55 =========================-->
     <measure implicit="no" number="55" width="79.26">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -8801,7 +8796,7 @@
           <text>ju</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -8907,7 +8902,7 @@
     </measure>
     <!--========================= Measure 60 =========================-->
     <measure implicit="no" number="60" width="71.72">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -8944,7 +8939,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -9030,7 +9025,7 @@
     </measure>
     <!--========================= Measure 64 =========================-->
     <measure implicit="no" number="64" width="93.69">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -9053,7 +9048,7 @@
           <text>do-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -9135,7 +9130,7 @@
     </measure>
     <!--========================= Measure 68 =========================-->
     <measure implicit="no" number="68" width="60.5">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="crescendo" />
         </direction-type>
@@ -9164,7 +9159,7 @@
           <slur number="6" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="stop" />
         </direction-type>
@@ -9185,7 +9180,7 @@
     </measure>
     <!--========================= Measure 70 =========================-->
     <measure implicit="no" number="70" width="70.27">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -9205,7 +9200,7 @@
           <text>am.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -9224,9 +9219,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -9471,9 +9466,9 @@
     </measure>
     <!--========================= Measure 79 =========================-->
     <measure implicit="no" number="79" width="105.47">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -9716,9 +9711,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -9744,7 +9739,7 @@
     </measure>
     <!--========================= Measure 87 =========================-->
     <measure implicit="no" number="87" width="89.53">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="crescendo" />
         </direction-type>
@@ -9761,7 +9756,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="stop" />
         </direction-type>
@@ -9839,7 +9834,7 @@
     </measure>
     <!--========================= Measure 90 =========================-->
     <measure implicit="no" number="90" width="102.24">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="15" type="diminuendo" />
         </direction-type>
@@ -9870,7 +9865,7 @@
           <text>my</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="5" spread="0" type="stop" />
         </direction-type>
@@ -9980,7 +9975,7 @@
     </measure>
     <!--========================= Measure 95 =========================-->
     <measure implicit="no" number="95" width="67.45">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="0" type="crescendo" />
         </direction-type>
@@ -10015,7 +10010,7 @@
           <tied type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="6" spread="15" type="stop" />
         </direction-type>
@@ -10099,7 +10094,7 @@
     </measure>
     <!--========================= Measure 99 =========================-->
     <measure implicit="no" number="99" width="120.12">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="15" type="diminuendo" />
         </direction-type>
@@ -10122,7 +10117,7 @@
           <text>sae-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="1" spread="0" type="stop" />
         </direction-type>
@@ -10209,7 +10204,7 @@
     </measure>
     <!--======================== Measure 103 =========================-->
     <measure implicit="no" number="103" width="56.49">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="0" type="crescendo" />
         </direction-type>
@@ -10229,7 +10224,7 @@
           <text>A-</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="2" spread="15" type="stop" />
         </direction-type>
@@ -10237,7 +10232,7 @@
     </measure>
     <!--======================== Measure 104 =========================-->
     <measure implicit="no" number="104" width="76.08">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="15" type="diminuendo" />
         </direction-type>
@@ -10264,7 +10259,7 @@
           <slur number="1" type="stop" />
         </notations>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="3" spread="0" type="stop" />
         </direction-type>
@@ -10272,15 +10267,15 @@
     </measure>
     <!--======================== Measure 105 =========================-->
     <measure implicit="no" number="105" width="80.68">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <pp />
           </dynamics>
         </direction-type>
         <sound dynamics="31" />
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="15" type="diminuendo" />
         </direction-type>
@@ -10300,7 +10295,7 @@
           <text>men.</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
           <wedge number="4" spread="0" type="stop" />
         </direction-type>
@@ -10334,9 +10329,9 @@
         </clef>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -10568,9 +10563,9 @@
     </measure>
     <!--========================= Measure 9 ==========================-->
     <measure implicit="no" number="9" width="108.21">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -10821,9 +10816,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -10940,9 +10935,9 @@
     </measure>
     <!--========================= Measure 21 =========================-->
     <measure implicit="no" number="21" width="66.91">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -11286,9 +11281,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -11510,9 +11505,9 @@
     </measure>
     <!--========================= Measure 44 =========================-->
     <measure implicit="no" number="44" width="156.14">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -11759,9 +11754,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -12215,9 +12210,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -12449,9 +12444,9 @@
     </measure>
     <!--========================= Measure 79 =========================-->
     <measure implicit="no" number="79" width="105.47">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -12694,9 +12689,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -13128,9 +13123,9 @@
     </measure>
     <!--======================== Measure 105 =========================-->
     <measure implicit="no" number="105" width="80.68">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <pp />
           </dynamics>
         </direction-type>
@@ -13177,9 +13172,9 @@
         </clef>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -13411,9 +13406,9 @@
     </measure>
     <!--========================= Measure 9 ==========================-->
     <measure implicit="no" number="9" width="108.21">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -13664,9 +13659,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -13783,9 +13778,9 @@
     </measure>
     <!--========================= Measure 21 =========================-->
     <measure implicit="no" number="21" width="66.91">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -14129,9 +14124,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -14353,9 +14348,9 @@
     </measure>
     <!--========================= Measure 44 =========================-->
     <measure implicit="no" number="44" width="156.14">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -14602,9 +14597,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -15058,9 +15053,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -15292,9 +15287,9 @@
     </measure>
     <!--========================= Measure 79 =========================-->
     <measure implicit="no" number="79" width="105.47">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <f />
           </dynamics>
         </direction-type>
@@ -15537,9 +15532,9 @@
         <duration>20160</duration>
         <type>half</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -15971,9 +15966,9 @@
     </measure>
     <!--======================== Measure 105 =========================-->
     <measure implicit="no" number="105" width="80.68">
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <pp />
           </dynamics>
         </direction-type>

@@ -20,16 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="P5466df6ce2c1c838e573e0f099a03aec">
-      <part-name>Midi_74</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="Icbdda6bd9cdee93b16760a2f69e0c031">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P0d38430a89c3ae3dfce5456b8b8dcf36">
-      <part-name>Midi_74</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I8cdd495c207b3d34e9beda5f7ab0f598">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P6bf01d787b40e134321ff12f69b9376a">
-      <part-name>Midi_74</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I170eca15b5911382bf28776ce47f4ab9">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P8ec063404073817a7c616cbf68541c74">
-      <part-name>Midi_74</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="Ibf6b62e0c3a971a3d425bcea197eb7e8">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -8297,6 +8317,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

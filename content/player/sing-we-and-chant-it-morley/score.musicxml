@@ -20,24 +20,44 @@
   </defaults>
   <part-list>
     <score-part id="P6ed80f7a04ba64d3b55d2e066cf1473d">
-      <part-name>Soprano 1</part-name>
+      <part-name>S1</part-name>
       <part-abbreviation>S1</part-abbreviation>
+      <score-instrument id="I7c2d45fa06896e6699fd41dd428c67b4">
+        <instrument-name>S1</instrument-name>
+        <instrument-abbreviation>S1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pc4699c9c777d7ff99a4cbff89085e6f9">
-      <part-name>Soprano 2</part-name>
+      <part-name>S2</part-name>
       <part-abbreviation>S2</part-abbreviation>
+      <score-instrument id="Ieecbb6e9f00d786df686da46ee319f93">
+        <instrument-name>S2</instrument-name>
+        <instrument-abbreviation>S2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pf7350470174709ca84eba57d9f1c560f">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
       <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Id981e831a2997809163dea357940188d">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P516d907c6cb58505738dd65573967665">
-      <part-name>Tenore</part-name>
+      <part-name>T</part-name>
       <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Ia8dcff171059862b7e4bea89840aeb79">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pd5deaa1de237cddef243db25e9a247df">
-      <part-name>Basso</part-name>
+      <part-name>B</part-name>
       <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I58b261c52765f23b2e50d6b18a7dc4eb">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -695,17 +715,17 @@
     </measure>
     <!--========================= Measure 17 =========================-->
     <measure implicit="no" number="17">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -1145,17 +1165,17 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -1600,10 +1620,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -2245,17 +2261,17 @@
     </measure>
     <!--========================= Measure 63 =========================-->
     <measure implicit="no" number="63">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -2695,17 +2711,17 @@
     </measure>
     <!--========================= Measure 78 =========================-->
     <measure implicit="no" number="78">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -3810,17 +3826,17 @@
     </measure>
     <!--========================= Measure 17 =========================-->
     <measure implicit="no" number="17">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -4332,17 +4348,17 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -4859,10 +4875,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -5496,17 +5508,17 @@
     </measure>
     <!--========================= Measure 63 =========================-->
     <measure implicit="no" number="63">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -6018,17 +6030,17 @@
     </measure>
     <!--========================= Measure 78 =========================-->
     <measure implicit="no" number="78">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -7147,17 +7159,17 @@
     </measure>
     <!--========================= Measure 17 =========================-->
     <measure implicit="no" number="17">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -7682,17 +7694,17 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -8222,10 +8234,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -8801,17 +8809,17 @@
     </measure>
     <!--========================= Measure 63 =========================-->
     <measure implicit="no" number="63">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -9336,17 +9344,17 @@
     </measure>
     <!--========================= Measure 78 =========================-->
     <measure implicit="no" number="78">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -9900,8 +9908,9 @@
           <beat-type>4</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -10436,17 +10445,17 @@
     </measure>
     <!--========================= Measure 17 =========================-->
     <measure implicit="no" number="17">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -10966,17 +10975,17 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -11501,10 +11510,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -12038,17 +12043,17 @@
     </measure>
     <!--========================= Measure 63 =========================-->
     <measure implicit="no" number="63">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -12568,17 +12573,17 @@
     </measure>
     <!--========================= Measure 78 =========================-->
     <measure implicit="no" number="78">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -13787,17 +13792,17 @@
     </measure>
     <!--========================= Measure 17 =========================-->
     <measure implicit="no" number="17">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -14325,17 +14330,17 @@
     </measure>
     <!--========================= Measure 32 =========================-->
     <measure implicit="no" number="32">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -14868,10 +14873,6 @@
           <beats>3</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -15529,17 +15530,17 @@
     </measure>
     <!--========================= Measure 63 =========================-->
     <measure implicit="no" number="63">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -16067,17 +16068,17 @@
     </measure>
     <!--========================= Measure 78 =========================-->
     <measure implicit="no" number="78">
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <p />
           </dynamics>
         </direction-type>
         <sound dynamics="44" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>

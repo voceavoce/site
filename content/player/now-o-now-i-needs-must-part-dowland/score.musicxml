@@ -20,23 +20,43 @@
   </defaults>
   <part-list>
     <score-part id="Pb7734097048ac2550c85730e7e643006">
-      <part-name>Midi_74</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I3b9a369cfc323fefa3ccea8c0c74c222">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P2a8cc26f7be8adb0d264da6a9d03d37f">
-      <part-name>Midi_74</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Ie5be8d3f083084b762569520c1447fe3">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P8675f61afdc9331b6c68f83b2333f519">
-      <part-name>Midi_74</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I9a73a799c900cecce1651ab86766df2f">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P22594f801ae228392e3837742a80c1c2">
-      <part-name>Midi_74</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I4d582072b6b81490703dd42f5c339c57">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P8a7845790c226e40838c769fa19b0e2a">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="Ia4cef3f2570d96bcd69754c4e2bba553">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="Ifa2b62bbdbc5a46aee218e601fbb9972">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
     </score-part>
   </part-list>
@@ -1312,10 +1332,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -3786,10 +3802,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -5004,6 +5016,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -6273,10 +6286,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -8746,10 +8755,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>

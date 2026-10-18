@@ -23,36 +23,42 @@
   <part-list>
     <score-part id="P2">
       <part-name>S1</part-name>
-      <score-instrument id="I012ed64cb283d20535941b3a7cabf02b">
-        <instrument-name>(9)</instrument-name>
+      <part-abbreviation>S1</part-abbreviation>
+      <score-instrument id="I2f1586496cdf2cc4b591afcb398f9397">
+        <instrument-name>S1</instrument-name>
+        <instrument-abbreviation>S1</instrument-abbreviation>
       </score-instrument>
     </score-part>
     <score-part id="P3">
       <part-name>S2</part-name>
-      <score-instrument id="I8eabb9a2089f19a8eff20f0024adb2cc">
-        <instrument-name>(9)</instrument-name>
+      <part-abbreviation>S2</part-abbreviation>
+      <score-instrument id="I25af4cb2df2ff9949ca7d0b4c650f19e">
+        <instrument-name>S2</instrument-name>
+        <instrument-abbreviation>S2</instrument-abbreviation>
       </score-instrument>
     </score-part>
     <score-part id="P4">
       <part-name>A</part-name>
-      <score-instrument id="Iea9fbcf4ad4c184729bf914528db6447">
-        <instrument-name>(9)</instrument-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Id70f0e2df25a22d199993eac6dffa980">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
     </score-part>
     <score-part id="P1">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="I9b43ecb39c8e2c72ac11d9cf43057419">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="I000857076c37e6f490cc3a8914e1eca1">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
     </score-part>
     <score-part id="P9015ab3bd80c9daf4c7a55e361ca3e3e">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="I9d34f10151704db458206e55ed81d3ec">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name />
+      <part-abbreviation />
+      <score-instrument id="Ib4637c28cc5d0b7509d9a0a0a96f2f57">
+        <instrument-name />
+        <instrument-abbreviation />
       </score-instrument>
     </score-part>
   </part-list>

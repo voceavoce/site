@@ -20,17 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="P8c4e6285345369c1d550f5a8281461e9">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I8f82b6adbbec4dfe1149ddea4436c24c">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P0ae8d0744c999699496a9535b74f64e8">
-      <part-name />
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I947d03abcfd66ff2fc34df3eafb29c06">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P846811df6c1b1d34ff97e9b3b73898c2">
-      <part-name />
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Iaa64ec1cf655b4d2acea29c5872d4575">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P44d31bab04316cc4d63d838d0fe7422d">
-      <part-name />
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I5da453983a9265099c9b6b1a1bab1090">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -710,10 +729,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -1366,10 +1381,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -2674,10 +2685,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -3307,10 +3314,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -3952,8 +3955,9 @@
           <beat-type>4</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -4505,10 +4509,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -5051,10 +5051,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -6169,10 +6165,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -6722,10 +6714,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>

@@ -20,36 +20,68 @@
   </defaults>
   <part-list>
     <score-part id="P86bd35308a7ed294a874fda6644332bf">
-      <part-name>Soprano 1</part-name>
+      <part-name>S1</part-name>
       <part-abbreviation>S1</part-abbreviation>
+      <score-instrument id="I6c20207fd0ac24f4fad94f995f43e462">
+        <instrument-name>S1</instrument-name>
+        <instrument-abbreviation>S1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P18f5f832bd6774f77b4f129e5f652102">
-      <part-name>Alto 1</part-name>
+      <part-name>A1</part-name>
       <part-abbreviation>A1</part-abbreviation>
+      <score-instrument id="Ie68a6ac73afb16a5c4e865769514e4e4">
+        <instrument-name>A1</instrument-name>
+        <instrument-abbreviation>A1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pd3d1b6b958451fdf7e371b5943cd20d0">
-      <part-name>Tenore 1</part-name>
+      <part-name>T1</part-name>
       <part-abbreviation>T1</part-abbreviation>
+      <score-instrument id="If351bb5df7551744b57a1a45cf77e4ce">
+        <instrument-name>T1</instrument-name>
+        <instrument-abbreviation>T1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P58abf8625d358a201bb4e86c55cfc87f">
-      <part-name>Basso 1</part-name>
+      <part-name>B1</part-name>
       <part-abbreviation>B1</part-abbreviation>
+      <score-instrument id="I4d751e09437ab96b11f96ecad0ee1b86">
+        <instrument-name>B1</instrument-name>
+        <instrument-abbreviation>B1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P86e0f2d06ec72f65f097593b3ceb767a">
-      <part-name>Soprano 2</part-name>
+      <part-name>S2</part-name>
       <part-abbreviation>S2</part-abbreviation>
+      <score-instrument id="I81dce3cb9965ef73577692d1f079fef4">
+        <instrument-name>S2</instrument-name>
+        <instrument-abbreviation>S2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pbf93fc05cdd0ea42d46b64c025af6b6a">
-      <part-name>Alto 2</part-name>
+      <part-name>A2</part-name>
       <part-abbreviation>A2</part-abbreviation>
+      <score-instrument id="I344d77749730da70f22c7255ddc05cec">
+        <instrument-name>A2</instrument-name>
+        <instrument-abbreviation>A2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P7e547ddc0a3237e4aecb969023ff3146">
-      <part-name>Tenore 2</part-name>
+      <part-name>T2</part-name>
       <part-abbreviation>T2</part-abbreviation>
+      <score-instrument id="I8b17942a9f690aff657427651e7cc891">
+        <instrument-name>T2</instrument-name>
+        <instrument-abbreviation>T2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P3c074301decaf80ec606de916b710c32">
-      <part-name>Basso 2</part-name>
+      <part-name>B2</part-name>
       <part-abbreviation>B2</part-abbreviation>
+      <score-instrument id="I85b54d29bdc6e54307b88ab1c37eae1f">
+        <instrument-name>B2</instrument-name>
+        <instrument-abbreviation>B2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -13177,6 +13209,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -37550,6 +37583,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

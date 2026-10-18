@@ -20,16 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="Pd1cdc3ce32f50b084cbbbb2eee6699e4">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I08c07b1cc5d657d528806d3e88912e02">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pf4935adec92dabccd04829ac95a54d02">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Ib1ae169e4b981bd58de17e0ae55d64d2">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pf30113deafadeb1d7bddf80311b55783">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Ic53fa8d96a72161bac285f323c2d9944">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pf47b5131b79b19da6e9160e165f7b736">
-      <part-name>Bass</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I57f7c0e992b785e1f3376221db0666a6">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -839,10 +859,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -1637,10 +1653,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -2431,10 +2443,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -4021,10 +4029,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -4817,10 +4821,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -5609,10 +5609,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -6406,8 +6402,9 @@
           <beat-type>4</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <barline location="left">
@@ -7211,10 +7208,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -8021,10 +8014,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -8827,10 +8816,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -10394,10 +10379,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -11155,10 +11136,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -11912,10 +11889,6 @@
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>

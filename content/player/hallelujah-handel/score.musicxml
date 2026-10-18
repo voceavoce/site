@@ -22,61 +22,61 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Sopran</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I11ee5f751dd6a1331c1d94cbf768a2ba">
-        <instrument-name>Soprano</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I5f7370b939d529f592ebb5ca1c179d76">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I11ee5f751dd6a1331c1d94cbf768a2ba">
+      <midi-instrument id="I5f7370b939d529f592ebb5ca1c179d76">
         <midi-channel>1</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alt</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="Ic230c251b948b3a3bfb21bfffe0ab76a">
-        <instrument-name>Alto</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="If9928e3deef8706ad74515c0f8d90b32">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ic230c251b948b3a3bfb21bfffe0ab76a">
+      <midi-instrument id="If9928e3deef8706ad74515c0f8d90b32">
         <midi-channel>2</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenor</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I2d8e9a1df59b5d46f1bfa2198764d24b">
-        <instrument-name>Tenor</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Ie6ad85955110f964aecd61aab8fb5d41">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I2d8e9a1df59b5d46f1bfa2198764d24b">
+      <midi-instrument id="Ie6ad85955110f964aecd61aab8fb5d41">
         <midi-channel>3</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Baß</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I42aff6f3a269a70cab7cca3c0f1f2a15">
-        <instrument-name>Bass</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I2dee871b5a3300f6d0dc8fdee4cc63a0">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I42aff6f3a269a70cab7cca3c0f1f2a15">
+      <midi-instrument id="I2dee871b5a3300f6d0dc8fdee4cc63a0">
         <midi-channel>4</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P5">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="Iea852a6116b6310a44f8c2deb4faf69c">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="Iddff4c7587592652c252165db88ff078">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Iea852a6116b6310a44f8c2deb4faf69c">
+      <midi-instrument id="Iddff4c7587592652c252165db88ff078">
         <midi-channel>5</midi-channel>
         <midi-program>7</midi-program>
       </midi-instrument>
@@ -150,9 +150,9 @@
           <top-system-distance>40</top-system-distance>
         </system-layout>
       </print>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <mf />
           </dynamics>
         </direction-type>
@@ -2546,9 +2546,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -2742,7 +2742,7 @@
       </direction>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="6.32" relative-x="-7.71" relative-y="10">
+          <dynamics default-x="3.29" relative-x="-7.71">
             <f />
           </dynamics>
         </direction-type>
@@ -3036,9 +3036,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <mf />
           </dynamics>
         </direction-type>
@@ -5437,9 +5437,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <mf />
           </dynamics>
         </direction-type>
@@ -7785,9 +7785,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -7955,7 +7955,7 @@
       </direction>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="9.05" relative-x="-4.42" relative-y="10">
+          <dynamics default-x="6.58" relative-x="-4.42">
             <f />
           </dynamics>
         </direction-type>
@@ -8233,9 +8233,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-40" relative-y="-40">
+          <dynamics default-x="6.58">
             <mf />
           </dynamics>
         </direction-type>
@@ -11477,9 +11477,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <mf />
           </dynamics>
         </direction-type>
@@ -13830,9 +13830,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -14013,7 +14013,7 @@
       </direction>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="1.3" relative-x="-7.71" relative-y="10">
+          <dynamics default-x="3.29" relative-x="-7.71">
             <ff />
           </dynamics>
         </direction-type>
@@ -14250,9 +14250,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <mf />
           </dynamics>
         </direction-type>
@@ -17794,9 +17794,9 @@
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <mf />
           </dynamics>
         </direction-type>
@@ -20089,9 +20089,9 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -20271,9 +20271,9 @@
           <bracket line-end="none" line-type="dashed" number="4" type="stop" />
         </direction-type>
       </direction>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <f />
           </dynamics>
         </direction-type>
@@ -20501,9 +20501,9 @@
           <text>Christ,</text>
         </lyric>
       </note>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="-40" relative-y="-40">
+          <dynamics default-x="3.29">
             <mf />
           </dynamics>
         </direction-type>
@@ -24628,7 +24628,7 @@
       </backup>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="16.23" relative-x="-9.2" relative-y="14.25">
+          <dynamics default-x="6.58" relative-x="-9.2">
             <mp />
           </dynamics>
         </direction-type>
@@ -25804,9 +25804,9 @@
       <backup>
         <duration>40320</duration>
       </backup>
-      <direction placement="below">
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-44.56" relative-y="-40">
+          <dynamics default-x="6.58">
             <mf />
           </dynamics>
         </direction-type>

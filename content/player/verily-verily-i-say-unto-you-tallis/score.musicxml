@@ -20,16 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="P23def3a911a2d0e463ef6c2f1fb4e096">
-      <part-name>Choir Aahs</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="Ie432590ffb134cfe4189d48663652ab3">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P5f5f0f75d604f315c5c4468c534978f1">
-      <part-name>Choir Aahs</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I44c6ee23db7fe5fc4fbfbd48eb8b14ac">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P04589f2d4b49ef6eec46abd3c67a6821">
-      <part-name>Choir Aahs</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I04164066fc6c1a20097bfb2fae3cecf6">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P4610eac207349f178a081f8536dd7467">
-      <part-name>Choir Aahs</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="Ic0d60ec243eae9fb7ef833ec2ee8fdd0">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -3427,6 +3447,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

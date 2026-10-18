@@ -20,16 +20,28 @@
   </defaults>
   <part-list>
     <score-part id="P55f20d8cf771c9776d214ade18acd1cf">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
       <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I147616efc82de79196c514d833a7bb20">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P5f2517b75a91db7215d2f29684ed45d8">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
       <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I8de2cf05d9cc92e3b530b4cb612740e9">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pfdfef46429f9104cf7dc1bf414aaf8fb">
-      <part-name>Basso</part-name>
+      <part-name>B</part-name>
       <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="Ib5db1ab52fc6cfddccb052a4cd535082">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->

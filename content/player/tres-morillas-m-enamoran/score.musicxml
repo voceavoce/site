@@ -20,16 +20,28 @@
   </defaults>
   <part-list>
     <score-part id="P48d22d32767e0242874bfe37dc3fd526">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
       <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="Iaeaa99d2ecda50c72df740375b9dc4f8">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P32e85fa44431ead2d0d664e846180d3c">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
       <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Id47b62a543d11fd634e1487fc1f2e07c">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P6cd2d2f24791d60b377983a61326514b">
-      <part-name>Basso</part-name>
+      <part-name>B</part-name>
       <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I613afdb5540d3267b195f32fa03817aa">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -579,10 +591,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -1116,10 +1124,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -1653,10 +1657,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -2533,10 +2533,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -3107,10 +3103,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -3681,10 +3673,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -4496,10 +4484,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -5018,10 +5002,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -5540,10 +5520,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>

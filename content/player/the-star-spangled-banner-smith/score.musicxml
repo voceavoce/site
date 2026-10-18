@@ -20,16 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="Pe35d9aab6107adc85188ce87b272ec7f">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I6e490c09fc982af0152d02d38ac8c641">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P262f1b3df60afae088ec66e000e6807e">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Id76798c8999e699c250cc19c87a40423">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pf06fe686374fcca23fc9fc5785b740d8">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I41675fce452d319990c48f4a1a1e9a6a">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P6f021b46f35b701ad65b81a6bd57e36a">
-      <part-name>Bass</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I22f299d2d2cc637f66178de27999da93">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -59,9 +79,9 @@
         </direction-type>
         <sound tempo="79.9998" />
       </direction>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -1156,9 +1176,9 @@
           <text>O</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -1436,9 +1456,9 @@
           <text>the</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
@@ -1568,9 +1588,9 @@
           <line>2</line>
         </clef>
       </attributes>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -2656,9 +2676,9 @@
           <text>O</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -2896,9 +2916,9 @@
           <text>the</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
@@ -3024,13 +3044,14 @@
           <beat-type>4</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -4116,9 +4137,9 @@
           <text>O</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -4374,9 +4395,9 @@
           <text>the</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
@@ -4505,9 +4526,9 @@
           <line>4</line>
         </clef>
       </attributes>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -5593,9 +5614,9 @@
           <text>O</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <f />
           </dynamics>
         </direction-type>
@@ -5856,9 +5877,9 @@
           <text>the</text>
         </lyric>
       </note>
-      <direction>
+      <direction placement="above">
         <direction-type>
-          <dynamics default-x="-36" default-y="-80">
+          <dynamics default-x="-36">
             <ff />
           </dynamics>
         </direction-type>
