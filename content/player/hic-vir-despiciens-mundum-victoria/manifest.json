@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "hic-vir-despiciens-mundum-victoria",
+  "titolo": "Hic Vir Despiciens Mundum",
+  "compositore": {
+    "id": "tomas-luis-de-victoria",
+    "nome": "Tomás Luis de Victoria"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "hic-vir-despiciens-mundum-victoria/v1/soprano.opus",
+      "riserva": "hic-vir-despiciens-mundum-victoria/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "hic-vir-despiciens-mundum-victoria/v1/alto.opus",
+      "riserva": "hic-vir-despiciens-mundum-victoria/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "hic-vir-despiciens-mundum-victoria/v1/tenore.opus",
+      "riserva": "hic-vir-despiciens-mundum-victoria/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "hic-vir-despiciens-mundum-victoria/v1/basso.opus",
+      "riserva": "hic-vir-despiciens-mundum-victoria/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 129.4,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

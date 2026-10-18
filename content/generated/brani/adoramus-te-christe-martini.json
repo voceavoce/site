@@ -20,21 +20,135 @@
   "tempo_bpm": 60,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "ADORAMUS te, sanctissime Domine Iesu Christe, hic et ad omnes Ecclesias tuas, quae sunt in toto mundo, et benedicimus tibi; quia per sanctam Crucem tuam redemisti mundum. Amen.",
+    "fonte": {
+      "sito": "preces-latinae.org",
+      "url": "http://www.preces-latinae.org/thesaurus/Filius/Adoramus.html"
+    },
+    "comune": "adoramus-te"
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "qxtMMO2M2B0",
-      "pubblica_dal": "2026-11-01T15:30:00Z"
+      "pubblica_dal": "2026-11-01T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 149,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 289,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 482,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 619,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 755,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 892,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 912
     },
     {
       "voce": "A",
       "video_id": "2A9R-ooxLys",
-      "pubblica_dal": "2026-11-01T15:30:00Z"
+      "pubblica_dal": "2026-11-01T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 149,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 289,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 482,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 619,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 755,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 892,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 912
     },
     {
       "voce": "B",
       "video_id": "1SS4_NC-N-w",
-      "pubblica_dal": "2026-11-01T15:30:00Z"
+      "pubblica_dal": "2026-11-01T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 149,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 289,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 482,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 619,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 755,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 892,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 912
     }
   ],
   "prima_uscita": "2026-11-01T15:30:00Z"

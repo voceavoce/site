@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "le-violette-scarlatti",
+  "titolo": "Le violette",
+  "compositore": {
+    "id": "alessandro-scarlatti",
+    "nome": "Alessandro Scarlatti"
+  },
+  "linea": "aria",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "alta",
+      "tipo": "voce",
+      "file": "le-violette-scarlatti/v1/alta.opus",
+      "riserva": "le-violette-scarlatti/v1/alta.mp3"
+    },
+    {
+      "voce": "S",
+      "chiave": "media",
+      "tipo": "voce",
+      "file": "le-violette-scarlatti/v1/media.opus",
+      "riserva": "le-violette-scarlatti/v1/media.mp3"
+    },
+    {
+      "voce": "S",
+      "chiave": "bassa",
+      "tipo": "voce",
+      "file": "le-violette-scarlatti/v1/bassa.opus",
+      "riserva": "le-violette-scarlatti/v1/bassa.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 152.5,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar",
+  "titolo": "As torrents in summer from Scenes from the Saga of King Olaf Op. 30",
+  "compositore": {
+    "id": "edward-elgar",
+    "nome": "Edward Elgar"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/soprano.opus",
+      "riserva": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/alto.opus",
+      "riserva": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/tenore.opus",
+      "riserva": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/basso.opus",
+      "riserva": "as-torrents-in-summer-from-scenes-from-the-saga-of-king-olaf-elgar/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 102.5,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

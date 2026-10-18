@@ -11,7 +11,7 @@ A static website built with [Eleventy 3](https://www.11ty.dev/). It has no clien
   Pages link to their translations with `hreflang`, and the sitemap lists them.
 - **Search** with [Pagefind](https://pagefind.app/), which builds a static index at build time.
   The author and genre pages work without JavaScript.
-- **No cookies of its own.** There are no analytics and no tracking scripts.
+- **No cookies of its own.** Visit statistics come from Cloudflare Web Analytics, which sets no cookies and stores nothing in the browser (the privacy pages say so); there are no ads and no other tracking scripts.
 - **Videos** are embedded from YouTube through `youtube-nocookie.com`, the privacy-enhanced domain.
 
 ## Where the data comes from
@@ -37,6 +37,17 @@ npm run a11y         # accessibility checks with pa11y-ci and axe
 
 `npm run a11y` needs a Chromium browser. The one installed by `npm ci` is used by default. To use
 another one, set `PUPPETEER_EXECUTABLE_PATH`.
+
+## End-to-end tests
+
+Playwright tests for the study player and the PWA live in `tests/e2e/` (`*.spec.mjs`, separate from the unit tests of `npm test`):
+
+```bash
+npm run e2e                    # builds the site into _site-e2e (non-production, with the test piece) and runs Playwright
+npm run e2e -- --grep mixer    # extra arguments go to `playwright test`
+```
+
+Audio is synthetic: it is generated in memory at test time and served by intercepting the audio requests, so no audio file ever enters the repo. Locally the system Chromium is used if `PW_CHROMIUM` points to it (or if it is at the default path of the dev environment); in CI the browser comes from `npx playwright install --with-deps chromium`. The HTML report and traces are in `playwright-report/` and `test-results/` (git-ignored). Details: [docs/player.md](docs/player.md#test-end-to-end).
 
 ## Deployment
 

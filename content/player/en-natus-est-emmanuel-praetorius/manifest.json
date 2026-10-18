@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "en-natus-est-emmanuel-praetorius",
+  "titolo": "En natus est Emmanuel",
+  "compositore": {
+    "id": "michael-praetorius",
+    "nome": "Michael Praetorius"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "en-natus-est-emmanuel-praetorius/v1/soprano.opus",
+      "riserva": "en-natus-est-emmanuel-praetorius/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "en-natus-est-emmanuel-praetorius/v1/alto.opus",
+      "riserva": "en-natus-est-emmanuel-praetorius/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "en-natus-est-emmanuel-praetorius/v1/tenore.opus",
+      "riserva": "en-natus-est-emmanuel-praetorius/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "en-natus-est-emmanuel-praetorius/v1/basso.opus",
+      "riserva": "en-natus-est-emmanuel-praetorius/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 94.1,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

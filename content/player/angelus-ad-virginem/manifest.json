@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "slug": "angelus-ad-virginem",
+  "titolo": "Angelus ad Virginem",
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "angelus-ad-virginem/v1/soprano.opus",
+      "riserva": "angelus-ad-virginem/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "angelus-ad-virginem/v1/alto.opus",
+      "riserva": "angelus-ad-virginem/v1/alto.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "angelus-ad-virginem/v1/basso.opus",
+      "riserva": "angelus-ad-virginem/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 193.0,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

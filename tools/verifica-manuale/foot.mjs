@@ -1,0 +1,10 @@
+import { chromium } from "/opt/node-tools/node_modules/playwright/index.mjs";
+const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const p = await (await b.newContext({ viewport: { width: 375, height: 667 }, isMobile: true })).newPage();
+await p.goto("http://127.0.0.1:8080/player/locus-iste-bruckner/?debug");
+await p.waitForTimeout(3000);
+console.log(await p.evaluate(async () => { window.scrollTo({ top: 1e6, behavior: "instant" }); await new Promise(r => setTimeout(r, 800));
+  const f = document.querySelector("footer"); const els = [...f.querySelectorAll("a, p, li, small")].map(e => e.getBoundingClientRect().bottom); const t = document.querySelector(".transport").getBoundingClientRect().top;
+  return JSON.stringify({ footerBottom: f.getBoundingClientRect().bottom, maxContentBottom: Math.max(...els), transportTop: t, footerPaddingBottom: getComputedStyle(f).paddingBottom }); }));
+await p.screenshot({ path: process.argv[2] + "/foot.png" });
+await b.close();

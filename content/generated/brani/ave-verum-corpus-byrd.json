@@ -31,26 +31,191 @@
   "tempo_bpm": 70,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "CC0",
+  "testo": {
+    "lingua": "la",
+    "testo": "Ave verum corpus, natum\nde Maria Virgine,\nvere passum, immolatum\nin cruce pro homine\ncuius latus perforatum\nfluxit aqua et sanguine:\nesto nobis praegustatum\nin mortis examine.\nO Iesu dulcis, O Iesu pie,\nO Iesu, fili Mariae.\nMiserere mei. Amen.\nunda fluxit et sanguine",
+    "fonte": {
+      "sito": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Ave_verum_corpus"
+    },
+    "comune": "ave-verum-corpus"
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "cwclEqvVvV4",
-      "pubblica_dal": "2026-09-16T14:30:00Z"
+      "pubblica_dal": "2026-09-16T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 233,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 458,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 772,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 994,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 1215,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1436,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1658,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1678
     },
     {
       "voce": "A",
       "video_id": "fY8QRadf7nk",
-      "pubblica_dal": "2026-09-16T14:30:00Z"
+      "pubblica_dal": "2026-09-16T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 233,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 458,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 772,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 994,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 1215,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1436,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1658,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1678
     },
     {
       "voce": "T",
       "video_id": "lB9WnFo9IqM",
-      "pubblica_dal": "2026-09-17T14:30:00Z"
+      "pubblica_dal": "2026-09-17T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 233,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 458,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 772,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 994,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 1215,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1436,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1658,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1678
     },
     {
       "voce": "B",
       "video_id": "GaF7fmZVKNI",
-      "pubblica_dal": "2026-09-17T14:30:00Z"
+      "pubblica_dal": "2026-09-17T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 233,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 458,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 772,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 994,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 1215,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1436,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1658,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1678
     }
   ],
   "prima_uscita": "2026-09-16T14:30:00Z"

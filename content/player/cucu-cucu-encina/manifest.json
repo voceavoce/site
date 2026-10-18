@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "cucu-cucu-encina",
+  "titolo": "Cucú, cucú!",
+  "compositore": {
+    "id": "juan-del-encina",
+    "nome": "Juan del Encina"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "cucu-cucu-encina/v1/soprano.opus",
+      "riserva": "cucu-cucu-encina/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "cucu-cucu-encina/v1/alto.opus",
+      "riserva": "cucu-cucu-encina/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "cucu-cucu-encina/v1/tenore.opus",
+      "riserva": "cucu-cucu-encina/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "cucu-cucu-encina/v1/basso.opus",
+      "riserva": "cucu-cucu-encina/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 103.2,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

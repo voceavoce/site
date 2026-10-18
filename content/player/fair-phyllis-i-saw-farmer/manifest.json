@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "fair-phyllis-i-saw-farmer",
+  "titolo": "Fair Phyllis I saw",
+  "compositore": {
+    "id": "john-farmer",
+    "nome": "John Farmer"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "fair-phyllis-i-saw-farmer/v1/soprano.opus",
+      "riserva": "fair-phyllis-i-saw-farmer/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "fair-phyllis-i-saw-farmer/v1/alto.opus",
+      "riserva": "fair-phyllis-i-saw-farmer/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "fair-phyllis-i-saw-farmer/v1/tenore.opus",
+      "riserva": "fair-phyllis-i-saw-farmer/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "fair-phyllis-i-saw-farmer/v1/basso.opus",
+      "riserva": "fair-phyllis-i-saw-farmer/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 100.5,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

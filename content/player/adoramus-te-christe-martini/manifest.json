@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "adoramus-te-christe-martini",
+  "titolo": "Adoramus te Christe",
+  "compositore": {
+    "id": "giovanni-battista-martini",
+    "nome": "Giovanni Battista Martini"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "adoramus-te-christe-martini/v1/soprano.opus",
+      "riserva": "adoramus-te-christe-martini/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "adoramus-te-christe-martini/v1/alto.opus",
+      "riserva": "adoramus-te-christe-martini/v1/alto.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "adoramus-te-christe-martini/v1/basso.opus",
+      "riserva": "adoramus-te-christe-martini/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 133.0,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

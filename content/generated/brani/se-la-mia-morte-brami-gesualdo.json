@@ -29,31 +29,214 @@
   "tempo_bpm": 112,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "it",
+    "testo": "Se la mia morte brami,\ncrudel, lieto ne moro.\nE dopo morte ancor te solo adoro.\nMa se vuoi che non t'ami,\nahi, che a pensarlo solo\nIl duol m'ancide\ne l'alma fugge a volo.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=112486"
+    }
+  },
   "voci": [
     {
       "voce": "S1",
       "video_id": "GxF8cfoNefw",
-      "pubblica_dal": "2026-12-10T15:30:00Z"
+      "pubblica_dal": "2026-12-10T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 229,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 446,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 754,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 971,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1188,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1404,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1424
     },
     {
       "voce": "S2",
       "video_id": "B600dW2Ny2Y",
-      "pubblica_dal": "2026-12-10T15:30:00Z"
+      "pubblica_dal": "2026-12-10T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 229,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 448,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 756,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 973,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1190,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1407,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1427
     },
     {
       "voce": "A",
       "video_id": "fXyJGy3f9fk",
-      "pubblica_dal": "2026-12-10T15:30:00Z"
+      "pubblica_dal": "2026-12-10T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 229,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 446,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 754,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 971,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1188,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1404,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1424
     },
     {
       "voce": "T",
       "video_id": "o49zLAmW8ck",
-      "pubblica_dal": "2026-12-10T15:30:00Z"
+      "pubblica_dal": "2026-12-10T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 229,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 446,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 754,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 971,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1188,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1404,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1424
     },
     {
       "voce": "B",
       "video_id": "TvaCHc0U4C0",
-      "pubblica_dal": "2026-12-10T15:30:00Z"
+      "pubblica_dal": "2026-12-10T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 229,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 446,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 754,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 971,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1188,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1404,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1424
     }
   ],
   "prima_uscita": "2026-12-10T15:30:00Z"

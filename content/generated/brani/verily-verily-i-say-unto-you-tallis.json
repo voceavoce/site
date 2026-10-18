@@ -25,26 +25,190 @@
   "tempo_bpm": 90,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "Verily, verily I say unto you:\nexcept ye eat the flesh of the Son of Man,\nand drink his blood,\nye have no life in you.\nWhoso eateth my flesh,\nand drinketh my blood, hath eternal life;\nand I will raise him up at the last day.\nFor my flesh is meat indeed,\nand my blood is drink indeed.\nHe that eateth my flesh,\nand drinketh my blood, dwelleth in me,\nand I in him.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=105420"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "taA5-Ggj468",
-      "pubblica_dal": "2026-10-06T14:30:00Z"
+      "pubblica_dal": "2026-10-06T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 113,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 216,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 359,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 460,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 561,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 662,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 763,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 782
     },
     {
       "voce": "A",
       "video_id": "B4Uugj0iJc8",
-      "pubblica_dal": "2026-10-06T14:30:00Z"
+      "pubblica_dal": "2026-10-06T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 113,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 216,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 359,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 460,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 561,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 662,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 763,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 782
     },
     {
       "voce": "T",
       "video_id": "CtuXEcytEDo",
-      "pubblica_dal": "2026-10-06T14:30:00Z"
+      "pubblica_dal": "2026-10-06T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 113,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 216,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 359,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 460,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 561,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 662,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 763,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 782
     },
     {
       "voce": "B",
       "video_id": "EfFz4zTastw",
-      "pubblica_dal": "2026-10-06T14:30:00Z"
+      "pubblica_dal": "2026-10-06T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 113,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 216,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 359,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 460,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 561,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 662,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 763,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 782
     }
   ],
   "prima_uscita": "2026-10-06T14:30:00Z"

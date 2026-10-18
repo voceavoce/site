@@ -1,0 +1,17 @@
+# Worker che serve gli audio dal bucket R2 privato. Nessun segreto e nessun account_id:
+# wrangler li prende dal login (npx wrangler login). Il deploy lo fa l'utente a mano, MAI la CI.
+name = "voceavoce-audio"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Pubblica su https://voceavoce-audio.<tuo-sottodominio>.workers.dev (gratuito).
+workers_dev = true
+
+# Il bucket resta PRIVATO: il Worker lo legge tramite binding.
+[[r2_buckets]]
+binding = "AUDIO"
+bucket_name = "voceavoce-audio"
+
+[vars]
+# Origini che possono leggere gli audio dal browser (CORS), separate da virgole.
+ALLOWED_ORIGINS = "https://voceavoce.com,https://www.voceavoce.com,https://voceavoce.github.io,http://localhost:8080,http://127.0.0.1:8080"

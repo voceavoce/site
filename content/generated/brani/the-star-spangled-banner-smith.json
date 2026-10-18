@@ -25,26 +25,190 @@
   "tempo_bpm": 88,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "O! say can you see, by the dawn's early light,\nWhat so proudly we hail'd at the twilight's last gleaming,\nWhose broad stripes and bright stars thro' the perilous fight,\nO'er the ramparts we watch'd were so gallantly streaming?\nAnd the rockets' red glare, the bombs burst - in air,\nGave proof thro' the night that our flag was still there;\nO ! say does the Star-spangled Banner yet wave\nO'er the land of the free and the home of the brave?",
+    "fonte": {
+      "sito": "en.wikisource.org (Riverside song book)",
+      "url": "https://en.wikisource.org/wiki/The_Riverside_song_book/The_Star-Spangled_Banner"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "3D-2rn5LVjo",
-      "pubblica_dal": "2026-09-21T14:30:00Z"
+      "pubblica_dal": "2026-09-21T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 85,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 160,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 263,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 336,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 409,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 482,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 555,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 575
     },
     {
       "voce": "A",
       "video_id": "sQSd4lhB7d0",
-      "pubblica_dal": "2026-09-21T14:30:00Z"
+      "pubblica_dal": "2026-09-21T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 85,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 160,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 263,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 336,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 409,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 482,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 555,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 575
     },
     {
       "voce": "T",
       "video_id": "IOXWrHxiAAE",
-      "pubblica_dal": "2026-09-21T14:30:00Z"
+      "pubblica_dal": "2026-09-21T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 85,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 160,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 263,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 336,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 409,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 482,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 555,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 575
     },
     {
       "voce": "B",
       "video_id": "pn4TQsl-xEQ",
-      "pubblica_dal": "2026-09-21T14:30:00Z"
+      "pubblica_dal": "2026-09-21T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 85,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 160,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 263,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 336,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 409,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 482,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 555,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 575
     }
   ],
   "prima_uscita": "2026-09-21T14:30:00Z"

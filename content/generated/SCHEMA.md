@@ -26,7 +26,7 @@ Schema versione 1.
 | `tempo_bpm` | int \| [min, max] | |
 | `fonte_spartito`, `licenza_spartito` | str | piattaforma e licenza RICONOSCIUTE (mai testo libero) |
 | `edizioni_verifica` | [{edizione, editore?, anno?, url?}] | edizioni autorevoli del gate dello spartito |
-| `testo` | {lingua, testo, fonte?: {sito, url}} | testo cantato originale (solo musica di pubblico dominio) |
+| `testo` | {lingua, testo, fonte?: {sito, url}, comune?} | testo cantato originale (solo musica di pubblico dominio). `comune` = chiave del testo liturgico STANDARD (es. `ave-verum-corpus`): il brano non ha un riferimento proprio, il testo e' quello tradizionale (la musica puo' omettere o ripetere parti); il sito puo' dirlo |
 | `nota` | {it?, en?, es?} | nota pubblica del brano |
 | `voci` | [{voce, video_id, pubblica_dal, pubblica?, capitoli?, durata_sec?}] | `voce` = S/A/T/B/T1... o registro alta/media/bassa |
 | `prima_uscita` | str ISO | |

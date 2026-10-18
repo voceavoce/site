@@ -37,31 +37,214 @@
   "tempo_bpm": 120,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Exsultate Deo adjutori nostro; jubilate Deo Jacob.\nSumite psalmum, et date tympanum; psalterium jucundum cum cithara.\nBuccinate in neomenia tuba, in insigni die solemnitatis vestræ:\nquia præceptum in Israël est, et judicium Deo Jacob.",
+    "fonte": {
+      "sito": "flaminioonline.it",
+      "url": "https://www.flaminioonline.it/Guide/Palestrina/Palestrina-Mottetto271.html"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "ZI0oIGZJ8qQ",
-      "pubblica_dal": "2026-10-17T14:30:00Z"
+      "pubblica_dal": "2026-10-17T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 154,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 299,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 500,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 642,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 785,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 927,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 947
     },
     {
       "voce": "A1",
       "video_id": "-mGExY-y5uo",
-      "pubblica_dal": "2026-10-17T14:30:00Z"
+      "pubblica_dal": "2026-10-17T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 154,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 297,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 498,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 640,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 783,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 925,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 945
     },
     {
       "voce": "A2",
       "video_id": "Cxw_DOoSFKI",
-      "pubblica_dal": "2026-10-17T14:30:00Z"
+      "pubblica_dal": "2026-10-17T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 154,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 297,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 498,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 640,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 783,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 925,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 945
     },
     {
       "voce": "T",
       "video_id": "a8TOWrsqlnA",
-      "pubblica_dal": "2026-10-17T14:30:00Z"
+      "pubblica_dal": "2026-10-17T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 154,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 297,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 498,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 640,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 783,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 925,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 945
     },
     {
       "voce": "B",
       "video_id": "2CgYYPWqwQI",
-      "pubblica_dal": "2026-10-17T14:30:00Z"
+      "pubblica_dal": "2026-10-17T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 154,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 297,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 498,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 640,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 783,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 925,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 945
     }
   ],
   "prima_uscita": "2026-10-17T14:30:00Z"

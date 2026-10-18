@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "tantum-ergo-faure",
+  "titolo": "Tantum Ergo (Op. 65, No. 2)",
+  "compositore": {
+    "id": "gabriel-faure",
+    "nome": "Gabriel Fauré"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S1",
+      "chiave": "soprano-1",
+      "tipo": "voce",
+      "file": "tantum-ergo-faure/v1/soprano-1.opus",
+      "riserva": "tantum-ergo-faure/v1/soprano-1.mp3"
+    },
+    {
+      "voce": "S2",
+      "chiave": "soprano-2",
+      "tipo": "voce",
+      "file": "tantum-ergo-faure/v1/soprano-2.opus",
+      "riserva": "tantum-ergo-faure/v1/soprano-2.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "tantum-ergo-faure/v1/alto.opus",
+      "riserva": "tantum-ergo-faure/v1/alto.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 142.4,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

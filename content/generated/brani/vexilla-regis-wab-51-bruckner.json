@@ -62,27 +62,202 @@
     {
       "voce": "S",
       "video_id": "WLT_kFfouvg",
-      "pubblica_dal": "2027-01-03T15:30:00Z"
+      "pubblica_dal": "2027-01-03T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 248,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 486,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 821,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1057,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1293,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1529,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1548
     },
     {
       "voce": "A",
       "video_id": "fRkWwyGNDQQ",
-      "pubblica_dal": "2027-01-03T15:30:00Z"
+      "pubblica_dal": "2027-01-03T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 248,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 486,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 821,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1057,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1293,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1529,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1548
     },
     {
       "voce": "T",
       "video_id": "kqa3l0yj_xk",
-      "pubblica_dal": "2027-01-03T15:30:00Z"
+      "pubblica_dal": "2027-01-03T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 248,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 486,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 821,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1057,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1293,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1529,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1548
     },
     {
       "voce": "B1",
       "video_id": "f5xF_arm22E",
-      "pubblica_dal": "2027-01-03T15:30:00Z"
+      "pubblica_dal": "2027-01-03T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 248,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 486,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 821,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1057,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1293,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1529,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1548
     },
     {
       "voce": "B2",
       "video_id": "cHxBe5d1AzI",
-      "pubblica_dal": "2027-01-03T15:30:00Z"
+      "pubblica_dal": "2027-01-03T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 248,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 486,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 821,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1057,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1293,
+          "titolo": "YOUR TURN — the choir without your part — sing it yourself"
+        },
+        {
+          "sec": 1529,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1548
     }
   ],
   "prima_uscita": "2027-01-03T15:30:00Z"

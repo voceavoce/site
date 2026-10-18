@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "concone-50-lezioni-op-9-n-1",
+  "titolo": "Concone, 50 Lezioni op. 9 n. 1",
+  "compositore": {
+    "id": "giuseppe-concone",
+    "nome": "Giuseppe Concone"
+  },
+  "linea": "metodo",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "alta",
+      "tipo": "voce",
+      "file": "concone-50-lezioni-op-9-n-1/v1/alta.opus",
+      "riserva": "concone-50-lezioni-op-9-n-1/v1/alta.mp3"
+    },
+    {
+      "voce": "S",
+      "chiave": "media",
+      "tipo": "voce",
+      "file": "concone-50-lezioni-op-9-n-1/v1/media.opus",
+      "riserva": "concone-50-lezioni-op-9-n-1/v1/media.mp3"
+    },
+    {
+      "voce": "S",
+      "chiave": "bassa",
+      "tipo": "voce",
+      "file": "concone-50-lezioni-op-9-n-1/v1/bassa.opus",
+      "riserva": "concone-50-lezioni-op-9-n-1/v1/bassa.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 69.2,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

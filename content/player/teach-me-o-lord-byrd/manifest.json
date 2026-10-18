@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "slug": "teach-me-o-lord-byrd",
+  "titolo": "Teach me, O Lord",
+  "compositore": {
+    "id": "william-byrd",
+    "nome": "William Byrd"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "teach-me-o-lord-byrd/v1/soprano.opus",
+      "riserva": "teach-me-o-lord-byrd/v1/soprano.mp3"
+    },
+    {
+      "voce": "A1",
+      "chiave": "alto-1",
+      "tipo": "voce",
+      "file": "teach-me-o-lord-byrd/v1/alto-1.opus",
+      "riserva": "teach-me-o-lord-byrd/v1/alto-1.mp3"
+    },
+    {
+      "voce": "A2",
+      "chiave": "alto-2",
+      "tipo": "voce",
+      "file": "teach-me-o-lord-byrd/v1/alto-2.opus",
+      "riserva": "teach-me-o-lord-byrd/v1/alto-2.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "teach-me-o-lord-byrd/v1/tenore.opus",
+      "riserva": "teach-me-o-lord-byrd/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "teach-me-o-lord-byrd/v1/basso.opus",
+      "riserva": "teach-me-o-lord-byrd/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 187.6,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "IMSLP",
+    "audio": null
+  }
+}

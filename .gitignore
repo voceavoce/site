@@ -1,2 +1,18 @@
 node_modules/
 _site/
+
+# gli audio non entrano MAI nel repo: stanno in VOCEAVOCE_AUDIO_DIR e si caricano su R2 a mano
+*.opus
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.m4a
+/audio/
+/audio-local/
+.env.local
+
+# build e report dei test end-to-end (locali)
+/_site-e2e/
+/playwright-report/
+/test-results/

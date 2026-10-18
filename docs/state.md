@@ -1,6 +1,79 @@
 # State — avanzamento e decisioni
 
-Aggiornato: 2026-10-16
+## Riepilogo per riprendere (aggiornato 2026-10-18 notte, PR del player pronta)
+
+- **Fatto stanotte (autonomia):** esportati e caricati su R2 **tutti i brani con stem** (140 player, 1210 file, 1,4 GB su 10 GB gratuiti, verifica HEAD ok). In produzione il player compare solo sui brani con video gia' pubblicato (oggi 41); gli altri lo ricevono da soli alla build dopo la data. Test: 152 unit; e2e di tutti i brani reali (ha trovato e fatto correggere 3 difetti di layout); a11y 12/12 con il player.
+- **Solo resta** nel mixer (decisione utente). Tutte le impostazioni del player: vedi blocco precedente.
+- **Non verificato:** l'ultima suite e2e completa e' stata fermata dal sistema (poca memoria) a 244/331 senza errori; mancano partitura/player/pwa/sync-audio dopo le ultime modifiche CSS/JS (task P26). L'organo non e' stato ascoltato.
+- **AIVideoCreator:** T-908 ancora solo sul branch `sito-player-senza-coda` (P25); i dati del sito sono gia' generati con quel codice.
+- **Ricetta export (da `pipeline-core` del worktree):** `RUNTIME_DIR=C:/source/repos/AIVideoCreator/runtime ../../../../runtime/venv/Scripts/python.exe -m scripts.cli.job_sito_player --brano <rank> ... --scrivi --out C:/source/repos/site --audio-dir C:/source/repos/audio-sito`; poi togliere dai manifest le tracce senza file, `node scripts/upload-audio.mjs` (PowerShell, rclone dal PATH di sistema), commit di `content/player/`.
+
+## Riepilogo precedente (2026-10-18, fine sessione «player in produzione»)
+
+
+- **Cloudflare fatto.** Account creato; bucket R2 privato `voceavoce-audio`; Worker `voceavoce-audio` pubblicato su
+  **https://voceavoce-audio.voceavoce.workers.dev** (sottodominio `workers.dev` scelto: `voceavoce`); `AUDIO_BASE_PRODUZIONE`
+  in `src/_data/site.js` punta lì. Credenziali SOLO in `.env.local` (ignorato da git). DNS e posta restano su Aruba, nessuna modifica per R2.
+- **3 brani con player e audio su R2** (prova): Marenzio *A d'una fresca riva* (rank 342), Josquin *Agnus Dei* (416), Monteverdi
+  *Ave Maria* (407). Dati in `content/player/<slug>/`, audio (18 file) in `C:\source\repos\audio-sito` (fuori dai due repo). Tutti a cappella.
+- **Brani con organo e stem pronti** (candidati per provare la traccia di accompagnamento): rank 475 *Ave verum corpus* (Mozart, 4 voci) e
+  rank 259 *Good King Wenceslas* (Shaw, 8 voci). Il catalogo ha 24 brani con `accompagnamento: organo` e 2 con pianoforte, ma solo questi due hanno `accompaniment.wav` negli stem.
+- **Search Console / Bing.** TXT di verifica aggiunto su Aruba; al 2026-10-17 presente su 2 name server su 4 (dns3.arubadns.net, dns.technorail.com),
+  mancava su dns4.arubadns.cz e dns2.technorail.com: verifica Google in attesa di propagazione (fino a 24 h). Sitemap inviata, sito importato in Bing.
+- **AIVideoCreator T-908** (branch `sito-player-senza-coda`, worktree `.claude/worktrees/sito-player-senza-coda`, commit `23dece3c`, pushato,
+  **NON unito su main**): `job_sito_player` scrive per il sito la partitura di lavoro senza la battuta vuota di coda (R-11); il sync perde quella battuta,
+  la durata resta quella dell'audio. Merge a render fermi (regola del `CLAUDE.md` di AIVideoCreator), poi riesportare gli altri brani con lo stesso comando.
+- **Branch del sito:** `claude/voceavocecoro-video-portal-s3o8vi` (sempre NON unita su `main`). Ultimo commit pushato `815b83d`; il resto del lavoro
+  di questa sessione (mixer, scelta battuta, test, jsdom) e' in commit WIP successivo, vedi `git log`.
+- **Interfaccia della partitura (fatta questa sessione, vedi `docs/player.md` §Partitura):** carta bianca di default anche nel tema scuro; pulsante **Opzioni**
+  (ingranaggio) nella barra A−/A+ con riquadro: «Evidenzia la mia parte» (fascia gialla sul rigo della voce scelta, acceso), «Cursore che scorre» (acceso)
+  + colore, «Evidenzia la battuta» (spento), «Inverti colori»; opzioni in `localStorage` (`va-score-opts`). Cursore (barra dietro le note) da mappa dei tempi
+  Verovio + `sync.json`. Sigle dei righi S/A/T/B dal manifest; tempi duplicati dell'XML tolti; zoom iniziale 100/75/60 per larghezza.
+- **Mixer: nuova semantica (decisione utente 2026-10-18).** Un solo stato di silenzio: `mute`. **Solo** = scorciatoia che mette in mute tutte le altre voci
+  (secondo tocco: tutte in ascolto); il suo `aria-pressed` e' derivato (`isSolo`). Duetto = Solo + togliere il mute a un'altra. L'utente sta valutando di **togliere i
+  tasti Solo** e lasciare solo Muta (e magari un «solo la mia voce» vicino a «La mia voce»): **decisione aperta**.
+- **Scelta sulla partitura:** ora sceglie la battuta dalla POSIZIONE sul sistema (`battutaAlPunto`), non dal segno colpito; il pulsante e' stato spostato
+  nel riquadro **Ripetizione**.
+- **Test:** `npm test` = **146 unit test** (nuovi `tests/cursore.test.mjs`, `tests/musicxml.test.mjs` con **jsdom** come devDependency, mixer riscritto in `study.test.mjs`).
+  E2E in locale: `PW_CHROMIUM='C:\Program Files\Google\Chrome\Application\chrome.exe'` poi `npm run e2e -- tests/e2e/partitura.spec.mjs` (nuovo spec, ~25 test).
+  **Ultimo esito: 3 e2e ROSSI da sistemare** (vedi task P17).
+- **Difetti dell'XML del catalogo (PDMX), non del pipeline:** per Marenzio tempo ♩=120 scritto 3 volte, nomi parte «ARIA Player», scritte «b» sperdute. Nel sito si puliscono
+  tempi ed etichette; le «b» restano. **Da decidere:** correggere alla fonte (`score_validate.repair`) e controllare se i video li mostrano (le pagine renderizzate sono state cancellate dalla pulizia).
+- **Trappole incontrate (ricordarle):** (1) `eleventy --serve` legge dati e i18n **una volta sola**: dopo aver cambiato `src/_data/i18n/*.json` o `content/player/*` va riavviato `npm run serve`;
+  (2) il browser puo' tenere in cache una copia **troncata** di `verovio-module.mjs` (7 MB) se la apre mentre Eleventy la ricopia → «Non riesco a mostrare la partitura» /
+  `SyntaxError: Invalid or unexpected token`: rifare `fetch(url, {cache:'reload'})` e ricaricare; (3) il service worker serve CSS/JS vecchi in locale: `unregister()` + `caches.delete()`;
+  (4) i file del repo sono CRLF nel working tree (autocrlf): nelle sostituzioni da script leggere in modalita' universale e riscrivere con `\r\n`; (5) `input[type=range]` rifiuta in Playwright
+  `fill("0.0")` (lo normalizza in "0"): passare `String(Number(x.toFixed(1)))`; (6) un `!` del prompt usa Bash, dove non c'e' Node nel PATH: usare PowerShell.
+- **Server di sviluppo** ancora attivo in background sulla porta 8080 (avviato da me con `VOCEAVOCE_AUDIO_BASE` = Worker): fermarlo se non serve.
+
+## Riepilogo precedente (2026-10-16, fine sessione) — in parte superato dal blocco sopra
+
+
+- **Online:** il nuovo sito Eleventy è su voceavoce.com (PR #1 unita, Deploy verde); la vecchia landing è su `/classic/`.
+- **Branch del sito:** `claude/voceavocecoro-video-portal-s3o8vi`. Contiene la Fase 2, cioè il player di studio, NON ancora unita su `main`. Ultimo commit pulito: P11 (`c7be018`), poi questo aggiornamento. Check e a11y sono verdi in locale (81 test, 11/11).
+- **AIVideoCreator:** T-905 unito su `main` (`80f43da`): `job_sito_esporta` (catalogo) e `job_sito_player` (player). Il branch omonimo resta solo come riferimento.
+- **Player (Fase 2, codice completo):**
+  - Web Audio a 24 kHz mono, un GainNode per voce, un solo SoundTouch (scavalcato a 1×);
+  - evidenziazione compensata per la latenza (`src/assets/js/study/latency.js`, tabella misurata offline: 133/123/94 ms a 1×/0,75×/0,5×);
+  - Verovio dal MusicXML;
+  - PWA con un SW che non tocca mai l'audio;
+  - dati di prova `content/player/_prova/` esclusi dalla build di produzione.
+- **Audio:** MAI in git né in CI. Cartella locale `VOCEAVOCE_AUDIO_DIR` → `scripts/upload-audio.mjs` (rclone, a mano) → bucket R2 **privato** `voceavoce-audio` → Worker `workers/audio/` su `*.workers.dev` (deploy a mano con wrangler).
+- **(Superato, fatto il 2026-10-18)** Segnaposto `AUDIO_BASE_PRODUZIONE`: ora e' l'URL vero del Worker. Finché non c'è l'URL vero e gli audio non sono caricati, NON aggiungere dati reali in `content/player/` e NON unire su `main` un player che punti al segnaposto.
+- **Vincoli fissi dell'utente:**
+  - dominio, DNS e posta su **Aruba**: MAI proporre il trasferimento della registrazione;
+  - niente pubblicità (gli spazi esistono ma restano spenti), niente cookie di tracciamento;
+  - niente YouTube API;
+  - commit e push frequenti;
+  - sotto-agenti Sonnet/Haiku; solo l'agente principale aggiorna `task.md` e `state.md`.
+- **CI:** «Check» gira solo sulle PR (e a mano); «Deploy» su push a `main`, a mano e ogni giorno alle 04:15 UTC. Prima di ogni push con codice: `npm run check` e `npm run a11y` in locale (per a11y serve `PUPPETEER_EXECUTABLE_PATH` verso un Chromium).
+- **Test:** `npm test` = 81 unit test; `npm run e2e` = 21 test end-to-end (compreso P15, sincronia contro il clic udibile) Playwright di player e PWA (build non di produzione in `_site-e2e`, dati `_prova`, audio sintetici in memoria), anche nel workflow Check sulle PR. Fase 3 (P12–P14) fatta il 2026-10-16.
+- **Prossimo passo:** compiti dell'utente U1–U7 in `task.md` (audio veri, Cloudflare/Worker, URL vero al posto di `CAMBIAMI`), poi PR e merge del player su main.
+- **Cose che l'utente fa sul suo PC:** sezione «Da fare dall'utente» in `task.md` (U1–U7).
+- **Aperto:** P8, corona singola: `choir._timing_regions` tratta un'unica corona a metà brano come finale e ci mette l'allargando (Locus iste b. 28-29); riguarda anche i video pubblicati. C1–C2, traduzioni e note, rimandate. A8, primo export ufficiale con `slug_sito`, si fa con lo STAGE 5 della skill.
+
+
+Aggiornato: 2026-10-18
 
 ## Decisioni prese (utente)
 
@@ -18,6 +91,21 @@ Aggiornato: 2026-10-16
 
 - Traduzioni e note editoriali (C1, C2) rimandate a più avanti (utente 2026-10-16).
 
+- Player di studio (Fase 2): partitura dal MusicXML della pipeline (non .krn); prototipo su Locus iste e Ave verum K. 618; rallentamento con Web Audio + SoundTouch (piano B `preservesPitch`); spazi pubblicitari lasciati spenti (utente 2026-10-16). Implementazione in attesa dell'ok.
+
+- **Dominio e posta su Aruba, non si toccano** (utente 2026-10-16): niente spostamento del DNS su Cloudflare per ora, e MAI il trasferimento della registrazione, che farebbe cessare la casella info@voceavoce.com. Gli audio li serve un Cloudflare Worker su `*.workers.dev` collegato al bucket R2 privato; il CORS sta nel Worker; il deploy del Worker lo fa l'utente con wrangler.
+- **Statistiche** (utente 2026-10-17): Google Search Console + Cloudflare Web Analytics, senza cookie; sul DNS Aruba si aggiunge solo il TXT di Google. Guida `docs/statistiche.md`.
+- **Lingue DE/FR del sito** (utente 2026-10-17): l'interfaccia resta IT/EN/ES per ora; DE e FR si aggiungono insieme alle traduzioni dei testi cantati e alle note (C1/C2 → C3), così le schede nascono complete. Motivo: le note della pipeline esistono solo in it/en/es, e schede DE/FR senza testo proprio sarebbero contenuto sottile per Google.
+- **Testi e note** (utente 2026-10-17): prima A9 (testi cantati nell'export); traduzioni pubblicate anche se non rivista, con l'etichetta «non rivista»; note DE/FR generate nella pipeline (`nota_descrizione` con de/fr), non solo nel sito.
+
+- **Player, interfaccia (utente 2026-10-18):** partitura su carta bianca anche nel tema scuro; cursore stile video (sta DIETRO le note, trasparente, colore configurabile);
+  evidenziazione della battuta solo come opzione (spenta); fascia gialla sul rigo della propria voce, anche all'apertura e disattivabile; sigle S/T/B su tutti i righi;
+  opzioni in un pulsante «Opzioni» con ingranaggio (non un titoletto a comparsa), sulla stessa riga di A−/A+; «Inverti colori» dentro le opzioni; «Scegli sulla partitura»
+  dentro il riquadro Ripetizione; zoom iniziale alto (A+).
+- **Mixer (utente 2026-10-18):** Solo = metti in Muta le altre voci (coerente con Muta); per un duetto si toglie il mute a un'altra voce. Valutato: togliere i tasti Solo.
+- **Lavoro su AIVideoCreator in un worktree separato** (utente 2026-10-18), con CRLF, test e push dopo ogni commit; merge in `main` a render fermi.
+- **Test (utente 2026-10-18):** ogni sviluppo ha unit test, il codice deve essere robusto (valori non validi, storage bloccato, dati mancanti) e i test si aggiornano a ogni correzione approvata.
+
 ## Fatti accertati
 
 - La pipeline non chiama API AI: i metadati YouTube sono template Python (`choir_publish.py`, `metadati_seo.py`). L'export costa zero token.
@@ -25,6 +113,8 @@ Aggiornato: 2026-10-16
 - Solo il tema chiaro è prodotto: niente selettore chiaro/scuro dei video.
 - Capitoli e durata stanno solo in `runtime/` (macchina RENDER): vanno copiati in roadmap (task A4).
 - Il genere non esiste nel contratto: campo facoltativo `genere` + regola deterministica.
+
+- (2026-10-17) **Testi cantati quasi assenti sul sito:** dei 40 brani corali già usciti solo 1 ha il testo (sing-joyfully-byrd); su tutto il catalogo 41 brani su 142. Cause: (1) `job_sito_esporta` legge solo `testi/<rank>_<stem>.json`, che esiste per 85 brani, quasi tutti i più recenti (gate dei testi nato dopo); (2) nessun ripiego sui 19 testi comuni di `testi/_comuni/` (ave-maria, ave-verum, o-salutaris… non agganciati); (3) surrexit-pastor-bonus-lasso ha il file ma esce senza testo (da capire); (4) a-d-una-fresca-riva ha il testo che comincia con la parola «Testo» (rumore della fonte). Blocca di fatto C1: le traduzioni non avrebbero un testo originale accanto.
 
 ## Avanzamento
 
@@ -62,6 +152,40 @@ Aggiornato: 2026-10-16
 
 - 2026-10-16 — Aperta la pull request https://github.com/voceavoce/site/pull/1 verso `main`. Il merge lo fa l'utente.
 
+- 2026-10-16 — PR #1 unita dall'utente (`bb36fe5`). Workflow Deploy verde: il nuovo sito è online su voceavoce.com. Il branch di lavoro riparte da `main` per la Fase 2.
+
+- 2026-10-16 — P2 fatto (Haiku): `.gitignore` per gli audio, `.env.example` fittizio, `scripts/upload-audio.mjs` (rclone `copy` per default con un passaggio per estensione e Content-Type corretto; `--sync` solo dopo anteprima e conferma digitando il nome del bucket; credenziali solo come variabili d'ambiente; rifiuto se la cartella audio è dentro il repo e non ignorata; verifica HEAD finale), `scripts/serve-audio.mjs` (server di sviluppo con Range e CORS solo per localhost). 17 test. Da provare con rclone vero: qui rclone non c'è.
+
+- 2026-10-16 — P1 fatto (Sonnet), commit `80f43da` su AIVideoCreator: `job_sito_player` scrive manifest, sync e partitura in `content/player/<slug>/` e gli audio (Opus mono 64k + MP3 di riserva) in `VOCEAVOCE_AUDIO_DIR`. Il sync usa `choir._timing_regions` e `_time_at`, le stesse funzioni di stem, cursore e durata. `t` include i 0,5 s di LEAD_IN, perché `job_svs_adopt` li lascia in testa agli stem Synth V; all'accompagnamento (FluidSynth, senza lead-in) si aggiungono 0,5 s in conversione. Stem cercati in `runtime/inbox/choir/<job>/stems/<V>.svs.wav|flac` e `accompaniment.wav`. Prove: 002 Locus iste 63 bpm, 48 battute, 189,6 s, una corona a b. 29; 475 Ave verum 72 bpm, 46 battute, 158,3 s. 79 test. Da verificare sulla macchina RENDER: durate reali degli stem e sincronia all'ascolto. Trovato un comportamento esistente della pipeline: una sola corona a metà brano viene trattata come finale e l'allargando finale finisce lì (task P8, da decidere).
+
+- 2026-10-16 — P3+P4 fatti (Sonnet): pagina `/player/<slug>/` in 3 lingue. Web Audio: decodifica a 24 kHz mono, un GainNode per traccia, un solo SoundTouchNode (`@soundtouchjs/audio-worklet` 2.1.1, MPL-2.0) sul mix; loop nativo senza vuoti. Mixer con muta, solo e «La mia voce». Partitura Verovio (LGPL, 7 MB, circa 2,3 MB compressa, caricata solo nel player) con la battuta corrente evidenziata e il tocco per spostarsi o scegliere il loop. Prove Playwright: sincronia, velocità 0,75 con intonazione invariata (soprano 393 → 390 Hz), loop. Dati di prova `content/player/_prova/` esclusi dalla build di produzione (`ELEVENTY_ENV=production` nel deploy). Check verde (57 test), a11y 11/11. I dati reali di Locus iste e Ave verum NON entrano ancora nel sito: senza audio su R2 il player sarebbe rotto in produzione. Vanno aggiunti con `job_sito_player --scrivi` dopo il primo caricamento.
+
+- 2026-10-16 — P5 fatto (Sonnet): PWA con `/manifest.webmanifest`, icone rigenerate dall'avatar 800 px, `/sw.js` (navigazioni network-first con pagina `/offline/`, asset stale-while-revalidate, audio, Range, cross-origin, `*.workers.dev` e host di `site.audioBase` mai intercettati); provata offline vera fermando il server. Scelta mia: Verovio (7 MB) NON è nel precache, altrimenti ogni visitatore lo scaricherebbe; entra in cache alla prima apertura del player. P9 fatto (Sonnet): Worker `workers/audio/` (GET/HEAD/OPTIONS, 405, Range 206/416, 304, CORS solo per le origini ammesse, 404 senza elenco, `authorize()` unico punto per il premium, nessuna cache d'edge), `wrangler.toml` senza segreti, 11 test. `site.audioBase` di produzione = costante `AUDIO_BASE_PRODUZIONE` in `src/_data/site.js`, oggi segnaposto `https://voceavoce-audio.CAMBIAMI.workers.dev`, da sostituire dopo il primo `wrangler deploy`. Check verde (75 test), a11y 11/11.
+
+- 2026-10-16 — P10 fatto (Sonnet): `docs/r2-setup.md` riscritto per il Worker (bucket privato, nessuna CORS nel bucket, deploy con wrangler, test con curl compreso Range, futuro solo con i nameserver e la posta Aruba copiata prima; il divieto di trasferire la registrazione è in evidenza). Da verificare dal vivo: limiti del piano gratuito, voci di menu del pannello Cloudflare, `wrangler dev --remote`, percorso locale di AIVideoCreator.
+
+- 2026-10-16 — CI rossa dal commit `b0b4b68`: la regola `audio/` del `.gitignore` escludeva anche `workers/audio/`, quindi il codice del Worker non era mai entrato in git e in CI il suo test non trovava il modulo (in locale passava perché i file c'erano). Corretto ancorando le regole alla radice (`/audio/`, `/audio-local/`) e aggiungendo il Worker. Lezione: dopo ogni modifica al `.gitignore` controllare `git status --ignored`. I run `WIP` dei salvataggi automatici possono risultare rossi perché fotografano lavoro a metà.
+
+- 2026-10-16 — Workflow «Check» ora solo sulle pull request (e avvio manuale), per scelta dell'utente: niente CI a ogni push del branch di lavoro. Prima di aprire una PR lanciare in locale `npm run check` e `npm run a11y`.
+
+- 2026-10-16 — P6 fatto e P7 quasi (Sonnet): `docs/player.md` completo (architettura, flusso di pubblicazione, licenze, limiti). Verifica sul vero Locus iste (48 battute, audio sintetici di 189,6 s): evidenziazione contro sync 3–19 ms a 1× e 0,75×, dopo un seek e dentro un loop; mobile senza scroll orizzontale; tastiera e ARIA ok; memoria: buffer 73 MB teorici, heap JS 164 MB. Build di produzione senza player di prova né audio. Corretto: la barra fissa copriva il footer. Aperto (P11): il suono esce 75–150 ms DOPO l'evidenziazione per la latenza di SoundTouch e del dispositivo.
+
+- 2026-10-16 — Branch di AIVideoCreator portato su `main` (fast-forward a `80f43da`, 5 commit T-905; autorizzazione dell'utente, nessun render in corso). Test toccati qui: 137 verdi. Da lanciare sul PC dell'utente: la suite completa `runtime\venv\Scripts\python.exe -m pytest tests/ -q`. Ora si può fare A8 (primo export ufficiale con `slug_sito` in roadmap) con lo STAGE 5 della skill `/voceavoce-publish-choir`.
+
+- 2026-10-16 — P11 fatto (Sonnet): latenza dello stretcher misurata offline (133 ms a 1×, 123 a 0,75×, 94 a 0,5×) e messa in tabella; l'evidenziazione usa il tempo «udibile» = motore − (latenza stretcher + outputLatency). A 1× lo stretcher viene scavalcato (ramo diretto, dissolvenza di 40 ms). Misure evidenziazione contro clic udibile: prima −190…−225 ms, dopo circa ±25 ms (un caso −48 dopo un seek a 1×), anche nel loop e cambiando velocità al volo. Pausa: riparte da ciò che si è sentito. Check verde (81 test), a11y 11/11. Resta la prova a orecchio dell'utente, in cuffia e in Bluetooth. Fase 1 del player COMPLETA lato codice.
+- 2026-10-16 — **Fase 3 fatta (P12–P14):** test end-to-end Playwright in `tests/e2e/` (13 player + 5 PWA, compreso l'aggiornamento del SW che cancella le cache `vav-*` vecchie e l'audio mai in cache con Range e workers.dev), `npm run e2e`, passo nel workflow Check con report caricato se fallisce. 3 run di fila verdi (~45 s). Nessun bug trovato in player o SW. `@playwright/test` fissato a 1.56.1 (stessa versione del Chromium in /opt/pw-browsers).
+- 2026-10-17 — **Statistiche (S1):** GitHub Pages non dà statistiche delle visite. Decisione utente: Google Search Console (verifica con TXT sul DNS Aruba, nessuno script) + Cloudflare Web Analytics (senza cookie, stesso account dell'audio, nessuno spostamento del DNS). Codice pronto e spento (`CLOUDFLARE_ANALYTICS_TOKEN = null`), guida `docs/statistiche.md`, compito utente U8.
+- 2026-10-17 — **P15 fatto:** `tests/e2e/sync-audio.spec.mjs` misura il clic che esce davvero dal grafo audio (AudioWorklet «spia» su dry+wet, `getOutputTimestamp`) e lo confronta con il cambio di battuta evidenziata. Con compensazione: mediana −5…+8 ms a 1×, +11…+26 a 0,75×, +2…+8 a 0,5× (max 49). Senza compensazione dello stretcher o del dispositivo: −46…−116 ms, il test fallisce. Soglie: |mediana| ≤ 40 ms, max ≤ 80 ms. Suite e2e ~105 s, 3 run verdi. Nota: in Chrome `getOutputTimestamp()` include già la latenza d'uscita, quindi il test non somma `outputLatency`.
+- 2026-10-17 — Decisione sulle lingue: DE/FR rimandate a C3, insieme a C1/C2 (vedi Decisioni prese).
+- 2026-10-17 — **A9 fatto (T-906):** testi cantati nell'export, vedi task A9. Verificato a campione: l'Ave verum di Byrd nell'XML canta davvero «unda fluxit sanguine», quindi la variante nel testo è corretta. Scheda: nota «testo liturgico tradizionale, riportato per intero» per i testi comuni, etichetta «traduzione non rivista». Restano 35 brani usciti senza testo (A10, `docs/testi-mancanti.md`). AIVideoCreator T-906 è sul branch, non su main (A11).
+- 2026-10-17 — AIVideoCreator T-906 su main (fast-forward a d37860b, render fermi confermati). A10 (T-907) avviato: testi dei 35 brani usciti, ≥2 fonti per brano, verifica con `job_choir_testo`, solo testi di pubblico dominio.
+- 2026-10-17 — **A10 bloccato**: nella sessione cloud i siti dei testi non sono raggiungibili (DNS/proxy), nessun file scritto, nessun testo scritto a memoria. Dall'analisi degli XML (da usare alla ripresa):
+  - 053 Gorczycki «Omni die dic Mariae»: cantato in **polacco** («Dnia każdego Boga mego Matkę…»), non in latino: la lingua nel contratto va corretta;
+  - 015 Chesnokov «Tebe poem»: cantato in inglese, traduzione non standard e probabilmente moderna → da escludere dal sito salvo fonte PD;
+  - 034 Ave maris stella (Grieg): inno completo di 7 strofe, manca una chiave in `_comuni` (candidato da aggiungere);
+  - 080 Stille Nacht e 004 Star-Spangled Banner: nell'XML solo la prima strofa;
+  - 446 e 283 (Guerrero): sillabe fuse nell'XML («dea mor», «queapenas»), da gestire nel gate dei testi.
+
 ## Messa online (da fare quando il sito è pronto)
 
 1. GitHub → `voceavoce/site` → Settings → Pages → Build and deployment → Source: da «Deploy from a branch» a **GitHub Actions**. Controllare Custom domain `voceavoce.com` ed Enforce HTTPS.
@@ -69,3 +193,11 @@ Aggiornato: 2026-10-16
 3. Se il merge è avvenuto prima del passo 1: Actions → Deploy → Run workflow su `main`.
 4. Verifica: workflow verde, voceavoce.com nuovo, voceavoce.com/classic/ con la vecchia landing.
 5. Facoltativo, dal proprio computer: `git tag landing-v1 c50b793 && git push origin landing-v1`.
+
+## Come riprendere in locale
+
+1. Sito: `git clone https://github.com/voceavoce/site && cd site && git checkout claude/voceavocecoro-video-portal-s3o8vi && npm ci && npm run serve`.
+2. Pipeline: in AIVideoCreator `git fetch && git checkout claude/voceavocecoro-video-portal-s3o8vi`.
+3. Stato del lavoro: questo file (sezione Avanzamento) e `task.md`: `[~]` = in corso, `[ ]` = da fare.
+4. I commit `WIP …` sono salvataggi automatici fatti ogni 10 minuti mentre gli agenti lavoravano: il codice può essere incompleto. Prima di continuare lancia `npm run check` (sito) e `pytest tests/test_sito_*.py` (pipeline).
+5. Gli audio non sono mai nel repo: si rigenerano con `job_sito_player --scrivi` nella cartella `VOCEAVOCE_AUDIO_DIR`.

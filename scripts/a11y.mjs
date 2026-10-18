@@ -16,7 +16,8 @@ try {
     try { if ((await fetch(base + "/")).ok) break; } catch {}
     await sleep(500);
   }
-  code = spawnSync("npx", ["pa11y-ci", "--config", "node_modules/.cache/pa11yci.json"], { stdio: "inherit" }).status ?? 1;
+  // pa11y-ci lanciato con node (non via npx): su Windows spawnSync("npx") non trova npx.cmd e usciva in silenzio con 1
+  code = spawnSync(process.execPath, ["node_modules/pa11y-ci/bin/pa11y-ci.js", "--config", "node_modules/.cache/pa11yci.json"], { stdio: "inherit" }).status ?? 1;
 } finally {
   server.kill();
 }

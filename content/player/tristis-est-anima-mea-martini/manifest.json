@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "tristis-est-anima-mea-martini",
+  "titolo": "Tristis est anima mea",
+  "compositore": {
+    "id": "giovanni-battista-martini",
+    "nome": "Giovanni Battista Martini"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "T1",
+      "chiave": "tenore-1",
+      "tipo": "voce",
+      "file": "tristis-est-anima-mea-martini/v1/tenore-1.opus",
+      "riserva": "tristis-est-anima-mea-martini/v1/tenore-1.mp3"
+    },
+    {
+      "voce": "T2",
+      "chiave": "tenore-2",
+      "tipo": "voce",
+      "file": "tristis-est-anima-mea-martini/v1/tenore-2.opus",
+      "riserva": "tristis-est-anima-mea-martini/v1/tenore-2.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "tristis-est-anima-mea-martini/v1/basso.opus",
+      "riserva": "tristis-est-anima-mea-martini/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 98.4,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

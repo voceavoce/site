@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "sancte-deus-tallis",
+  "titolo": "Sancte Deus",
+  "compositore": {
+    "id": "thomas-tallis",
+    "nome": "Thomas Tallis"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "sancte-deus-tallis/v1/soprano.opus",
+      "riserva": "sancte-deus-tallis/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "sancte-deus-tallis/v1/alto.opus",
+      "riserva": "sancte-deus-tallis/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "sancte-deus-tallis/v1/tenore.opus",
+      "riserva": "sancte-deus-tallis/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "sancte-deus-tallis/v1/basso.opus",
+      "riserva": "sancte-deus-tallis/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 327.7,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

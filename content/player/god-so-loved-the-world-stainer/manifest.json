@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "god-so-loved-the-world-stainer",
+  "titolo": "God so loved the world",
+  "compositore": {
+    "id": "john-stainer",
+    "nome": "John Stainer"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "god-so-loved-the-world-stainer/v1/soprano.opus",
+      "riserva": "god-so-loved-the-world-stainer/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "god-so-loved-the-world-stainer/v1/alto.opus",
+      "riserva": "god-so-loved-the-world-stainer/v1/alto.mp3"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce",
+      "file": "god-so-loved-the-world-stainer/v1/tenore.opus",
+      "riserva": "god-so-loved-the-world-stainer/v1/tenore.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "god-so-loved-the-world-stainer/v1/basso.opus",
+      "riserva": "god-so-loved-the-world-stainer/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 210.9,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

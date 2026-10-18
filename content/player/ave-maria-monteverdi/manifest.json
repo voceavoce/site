@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "ave-maria-monteverdi",
+  "titolo": "Ave Maria",
+  "compositore": {
+    "id": "claudio-monteverdi",
+    "nome": "Claudio Monteverdi"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce",
+      "file": "ave-maria-monteverdi/v1/soprano.opus",
+      "riserva": "ave-maria-monteverdi/v1/soprano.mp3"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce",
+      "file": "ave-maria-monteverdi/v1/alto.opus",
+      "riserva": "ave-maria-monteverdi/v1/alto.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "ave-maria-monteverdi/v1/basso.opus",
+      "riserva": "ave-maria-monteverdi/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 109.5,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

@@ -22,30 +22,194 @@
   "tempo_bpm": 90,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "I saw three ships come sailing in\nOn Christmas day, on Christmas day;\nI saw three ships come sailing in\nOn Christmas day in the morning.\nAnd what was in those ships all three,\nOn Christmas day, on Christmas day?\nAnd what was in those ships all three,\nOn Christmas day in the morning?\nOur Savior Christ and His lady,\nOn Christmas day, on Christmas day;\nOur Savior Christ and His lady,\nOn Christmas day in the morning.\nPray whither sailed those ships all three,\nOn Christmas day, on Christmas day?\nPray whither sailed those ships all three,\nOn Christmas day in the morning?\nO they sailed into Bethlehem,\nOn Christmas day, on Christmas day,\nO they sailed into Bethlehem,\nOn Christmas day in the morning.\nAnd all the bells on Earth shall ring,\nOn Christmas day, on Christmas day;\nAnd all the bells on Earth shall ring,\nOn Christmas day in the morning.\nAnd all the angels in Heav’n shall sing,\nOn Christmas day, on Christmas day;\nAnd all the angels in Heav’n shall sing,\nOn Christmas day in the morning.\nAnd all the souls on Earth shall sing,\nOn Christmas day, on Christmas day;\nAnd all the souls on Earth shall sing,\nOn Christmas day in the morning.\nThen let us all rejoice amain,\nOn Christmas day, on Christmas day;\nThen let us rejoice amain,\nOn Christmas day in the morning.",
+    "fonte": {
+      "sito": "lyricsforchristmas.com",
+      "url": "https://www.lyricsforchristmas.com/christmas-carols/i-saw-three-ships/"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "yUDYndIU2uw",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 146,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 283,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 473,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 607,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 742,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 876,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1010,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1030
     },
     {
       "voce": "A",
       "video_id": "f-qwIWCqliU",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 146,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 283,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 473,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 607,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 742,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 876,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1010,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1030
     },
     {
       "voce": "T",
       "video_id": "g92C4ALvHvg",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 146,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 283,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 473,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 607,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 742,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 876,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1010,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1030
     },
     {
       "voce": "B",
       "video_id": "IFug6DkaapU",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 146,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 283,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 473,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 607,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 742,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 876,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1010,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1030
     }
   ],
   "prima_uscita": "2026-09-01"

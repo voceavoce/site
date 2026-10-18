@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "jesu-salvator-mundi-menegali",
+  "titolo": "Jesu Salvator mundi",
+  "compositore": {
+    "id": "menegali",
+    "nome": "Menegali"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "T1",
+      "chiave": "tenore-1",
+      "tipo": "voce",
+      "file": "jesu-salvator-mundi-menegali/v1/tenore-1.opus",
+      "riserva": "jesu-salvator-mundi-menegali/v1/tenore-1.mp3"
+    },
+    {
+      "voce": "T2",
+      "chiave": "tenore-2",
+      "tipo": "voce",
+      "file": "jesu-salvator-mundi-menegali/v1/tenore-2.opus",
+      "riserva": "jesu-salvator-mundi-menegali/v1/tenore-2.mp3"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce",
+      "file": "jesu-salvator-mundi-menegali/v1/basso.opus",
+      "riserva": "jesu-salvator-mundi-menegali/v1/basso.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 118.8,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

@@ -27,26 +27,190 @@
   "tempo_bpm": 116,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Gaudeamus igitur,\nIuvenes dum sumus;\nPost iucundam iuventutem,\nPost molestam senectutem\nNos habebit humus,\nNos habebit humus.\nUbi sunt, qui ante nos\nIn mundo fuere?\nVadite ad superos,\nTransite ad inferos,\nUbi iam fuere,\nUbi iam fuere.\nVita nostra brevis est,\nBrevi finietur;\nVenit mors velociter,\nRapit nos atrociter;\nNemini parcetur,\nNemini parcetur.\nVivat academia,\nVivant professores,\nVivat membrum quod libet,\nVivant membra quae libet;\nSemper sint in flore,\nSemper sint in flore.\nVivat et respublica\nEt qui illam regit,\nVivat nostra civitas,\nMaecenatum caritas,\nQuae nos hic protegit.\nVivant omnes virgines,\nFaciles, formosae,\nVivant et mulieres,\nTenerae, amabiles,\nBonae, laboriosae.\nPereat tristitia,\nPereant osores,\nPereat diabolus\nQuivis antiburschius,\nAtque irrisores.",
+    "fonte": {
+      "sito": "thelatinlibrary.com",
+      "url": "https://thelatinlibrary.com/gaud.html"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "ZAZ4rCOcZmA",
-      "pubblica_dal": "2026-10-05T14:30:00Z"
+      "pubblica_dal": "2026-10-05T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 94,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 178,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 294,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 377,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 459,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 542,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 624,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 644
     },
     {
       "voce": "A",
       "video_id": "1xT_HDLnHOI",
-      "pubblica_dal": "2026-10-05T14:30:00Z"
+      "pubblica_dal": "2026-10-05T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 94,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 178,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 294,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 377,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 459,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 542,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 624,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 644
     },
     {
       "voce": "T",
       "video_id": "Qw_Z51wC5a8",
-      "pubblica_dal": "2026-10-05T14:30:00Z"
+      "pubblica_dal": "2026-10-05T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 94,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 178,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 294,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 377,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 459,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 542,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 624,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 644
     },
     {
       "voce": "B",
       "video_id": "bFyZVFFIubU",
-      "pubblica_dal": "2026-10-05T14:30:00Z"
+      "pubblica_dal": "2026-10-05T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 94,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 178,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 294,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 377,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 459,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 542,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 624,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 644
     }
   ],
   "prima_uscita": "2026-10-05T14:30:00Z"

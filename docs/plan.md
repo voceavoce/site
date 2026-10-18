@@ -202,6 +202,21 @@ docs/CONTENUTI.md
 
 ---
 
+## Evoluzione del player di studio (2026-10-18)
+
+Dopo la prima messa online con tre brani di prova, l'interfaccia della partitura e' stata rifatta in base all'uso reale. Principi:
+
+- **La partitura e' carta.** Sfondo bianco e inchiostro scuro in ogni tema; l'inversione e' un'opzione, non il default (una partitura scura stanca).
+- **Come i video.** Cursore che scorre sul sistema e fascia gialla sul rigo della propria voce; la fascia sulla battuta e' un'opzione spenta.
+- **Dietro, non sopra.** Cursore e fascia stanno dietro le note (div sotto l'SVG, SVG con sfondo trasparente): note e testo restano nitidi.
+- **Tutto cio' che e' configurabile sta in un pulsante «Opzioni»**, sulla stessa riga degli altri strumenti, con scelte ricordate nel browser e valori di partenza sensati.
+- **Logica pura separata dal DOM** (`cursore.js`, `musicxml.js`, `mixer.js`): testata con unit test, con valori non validi gestiti. Il DOM si prova con jsdom e con Playwright.
+- **Il mixer ha un solo concetto di silenzio.** Solo e' una scorciatoia di Muta.
+- **I difetti dei dati si correggono alla fonte**, e nel sito solo con pulizie piccole e testate: l'XML del catalogo ha tempi ripetuti, nomi parte dello strumento di sintesi, scritte stray.
+- **Un worktree per il codice di AIVideoCreator**, merge a render fermi.
+
+Prossimi passi: vedi `task.md`, sezione P (P20–P27).
+
 ## Ordine di esecuzione
 
 1. **Backup:** tag `landing-v1` su `c50b793` + `src/static/classic/` (noindex, percorsi corretti).
@@ -236,3 +251,51 @@ docs/CONTENUTI.md
   - Lighthouse ≥ 95.
   - Sitemap con le alternate e JSON-LD valido (parse e campi obbligatori). Dopo il deploy: Rich Results Test di Google e invio della sitemap in Search Console (istruzioni nel README).
   - `/classic/` identica alla landing di oggi, con `noindex`.
+
+---
+
+# Fase 2 — Player di studio (PWA), prototipo
+
+Richiesta dell'utente del 2026-10-16. Ok per l'implementazione dato lo stesso giorno. Formati dei dati in [player.md](player.md).
+
+**Obiettivo.** Una pagina `/player/<slug>/` per esercitarsi sulla propria parte: tracce separate per voce (stem Synth V), mixer con volume, mute e solo, partitura renderizzata con Verovio che evidenzia la battuta corrente, loop di battute, rallentamento senza cambiare l'intonazione. Mobile-first e installabile come PWA. Prototipo su 2 brani: **Locus iste** (Bruckner, SATB a cappella, con corone) e **Ave verum corpus K. 618** (Mozart, con accompagnamento).
+
+**Scelte (decise con l'utente):**
+- **Partitura:** il MusicXML verificato della pipeline, che Verovio legge direttamente. Niente Humdrum.
+- **Sincronia:** `sync.json` con l'inizio di ogni battuta, calcolato in AIVideoCreator con lo **stesso modello di tempo dei video** (`choir.TempoMap`, `_time_at`: corone, respiri, ritardando, `LEAD_IN_SEC`). Non si ricava da tempo e metrica né dalla timemap di Verovio, perché non sarebbe allineato agli stem.
+- **Dati per il player:** li produce un nuovo CLI `job_sito_player` in AIVideoCreator. Nel sito scrive `content/player/<slug>/{manifest.json, sync.json, score.musicxml}`. Gli audio Opus (più un MP3 di riserva per Safari) vanno in `VOCEAVOCE_AUDIO_DIR`, **fuori da ogni repo**.
+- **Audio mai nel repo e mai nella CI.** Il `.gitignore` blocca `*.opus *.mp3 *.wav *.flac` e la cartella audio. Il caricamento su Cloudflare R2 lo lancia l'utente a mano con `scripts/upload-audio.mjs`, uno script che usa rclone: `copy` per default, `sync` solo con conferma esplicita, `--dry-run`, controllo HEAD degli URL pubblici. Le credenziali restano solo in locale (`.env.local` o config di rclone); `.env.example` contiene solo valori fittizi.
+- **R2 + Worker (aggiornamento dell'utente, 2026-10-16):** il dominio voceavoce.com resta registrato su **Aruba**, e il DNS e la casella info@voceavoce.com restano lì. **Mai proporre il trasferimento della registrazione**: farebbe cessare la posta. Il bucket `voceavoce-audio` è **privato**: niente accesso pubblico e niente r2.dev. Gli audio li serve un **Cloudflare Worker gratuito** su `*.workers.dev`, collegato al bucket tramite binding. Il Worker accetta GET, HEAD e OPTIONS (gli altri metodi danno 405), gestisce Range (206), Content-Type, ETag, `Cache-Control: public, max-age=31536000, immutable` e il CORS (solo il sito, il suo URL GitHub Pages e localhost), e restituisce 404 puliti senza mai elencare il bucket. C'è un solo punto dove in futuro si inserirà la verifica dell'abbonamento. Codice in `workers/audio/`, `wrangler.toml` senza segreti, deploy fatto a mano dall'utente con wrangler (mai dalla CI). Percorsi `{slug}/{versione}/{voce}.opus`. Token R2 con permesso Object Read & Write limitato al solo bucket, per lo script di caricamento, che non cambia. Futuro, solo documentato: `audio.voceavoce.com` spostando su Cloudflare SOLO i nameserver, dopo aver copiato tutti i record della posta Aruba e quelli di GitHub Pages in modalità «DNS only». Passi in `docs/r2-setup.md`.
+- **Rallentamento:** Web Audio con le tracce decodificate (mono, 24 kHz) → un GainNode per voce → **un solo** stretcher SoundTouch in AudioWorklet sul mix. Così le voci restano in sincronia esatta. Piano B: `<audio>` con `preservesPitch`.
+- **Codice:** vanilla JS a moduli ES dentro Eleventy. Le funzioni sono separate (`mixer`, `loop`, `tempo`, `download`) e accese da flag in `features.js`, pronte per un futuro premium. Gli URL audio passano solo da `resolveAudioUrl(track)`, con la base configurabile in un solo punto (localhost in sviluppo, l'URL `workers.dev` del Worker in produzione). Nessuna credenziale nel client.
+- **PWA:** manifest più un service worker essenziale che mette in cache pagina, script e Verovio, ma **mai l'audio**.
+- **Predisposizione futura, da non implementare ora:** bucket privato `voceavoce-audio-premium` con gli stessi percorsi, servito da un Cloudflare Worker con URL firmati; link per le donazioni; video YouTube accanto al player.
+- **Pubblicità:** gli spazi già predisposti restano spenti. Niente cookie di tracciamento.
+
+**Da verificare:** la licenza dei voicebank Synth V per il download degli stem (funzione premium futura); la decodifica Opus su Safari; la memoria sui telefoni per i brani lunghi.
+
+**Documenti:** `docs/player.md` (architettura, formato di manifest e sync, limiti, prossimi passi) e `docs/r2-setup.md`.
+
+---
+
+# Fase 3 — Robustezza: test end-to-end di player e PWA (ok dell'utente 2026-10-16, FATTA)
+
+**Perché.** Gli unit test (81, `npm test`) coprono la logica pura: classificazione del service worker, tempi, loop, `resolveAudioUrl`, Worker, script R2. Le prove nel browser vero (registrazione e aggiornamento del SW, offline, audio mai in cache, player sincronizzato, tastiera, mobile) finora sono state fatte a mano con Playwright. Gli script sono salvati in `tools/verifica-manuale/` come bozze, ma non girano in CI.
+
+**Cosa fare:**
+- `@playwright/test` come devDependency, test in `tests/e2e/`, comando `npm run e2e`. In locale usa il Chromium di sistema; in CI quello scaricato da Playwright.
+- Audio sintetici (con un clic a ogni battuta) generati AL MOMENTO del test da uno script Node in una cartella temporanea: mai file audio nel repo. Server audio di prova = `scripts/serve-audio.mjs`.
+- **PWA:**
+  - il SW si registra e si attiva; il manifest e le icone sono validi;
+  - offline: le pagine visitate si aprono dalla cache, quelle nuove mostrano `/offline/` (va simulato fermando il server, perché `setOffline` non vale per le richieste del SW);
+  - dopo la riproduzione `caches` non contiene audio;
+  - **aggiornamento**: una versione nuova del SW si attiva e cancella le cache `vav-*` vecchie.
+- **Player:**
+  - caricamento delle tracce;
+  - battuta evidenziata contro `sync.json` a 1× e 0,75×;
+  - seek, loop, mixer (muta, solo, «La mia voce»);
+  - tastiera e ARIA;
+  - layout a 375 px.
+- **CI:** `npm run e2e` nel workflow **Check**, che gira solo sulle pull request.
+
+**Com'è stata fatta (2026-10-16):** 18 test (13 player, 5 PWA), ~45 s, 3 run di fila verdi. Audio WAV sintetici costruiti in memoria e serviti con `context.route` (Range compreso): nessun file audio su disco. Offline e aggiornamento del SW usano un piccolo server statico in-process (`tests/e2e/helpers.mjs`, `avviaSito`) che si può fermare e che può servire `/sw.js` con un'altra `VERSION`. Le richieste esterne (miniature i.ytimg) ricevono una GIF 1×1, così i test non dipendono da internet. Resta manuale il confronto evidenziazione ↔ clic udibile (`tools/verifica-manuale/measure.mjs`, P11): il test automatico confronta la posizione udibile del motore con `sync.json`.

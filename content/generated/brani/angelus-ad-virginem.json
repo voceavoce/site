@@ -23,24 +23,137 @@
   "tempo_bpm": 104,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Angelus ad Virginem,\nSubintrans in conclave.\nVirginis formidinem,\nDemulcens inquit: “Ave,\nAve Regina Virginum,\nCoeliteraeque Dominum,\nConcipies et paries intacta,\nSalutem hominum.\nTu porta Coeli facta,\nMedella criminum.”\n“Quomodo conciperem,\nQuae virum non cognovi?\nQualiter infringerem,\nQuae firma mente vovi?”\n“Spiritus Sancti gratia,\nPerficiet haec omnia.\nNe timeas, sed gaudeas, secura,\nQuod castimonia,\nManebit in te pura,\nDei potentia.”\nAd haec Virgo nobilis,\nRespondens inquit ei:\n“Ancilla sum humilis,\nOmnipotentis Dei.\nTibi coelesti nuntio,\nTanta secreti conscio,\nConsentiens et cupiens videre,\nFactum quod audio.\nParata sum parere,\nDei consilio.”\nAngelus disparuit,\nEtstatim puellaris,\nUterus intumuit,\nVi partus salutaris.\nQui, circumdatus utero,\nNovem mensium numero.\nHinc exiit et iniit conflictum,\nAffigens humero,\nCrucem, qua dedit ictum,\nHosti mortifero.\nEia, Mater Domini,\nQuae pacem reddidisti,\nAngelis et homini,\nCum Christum genuisti.\nTuum exora Filium,\nUt se nobis propitium,\nExhibeat, et deleat peccata,\nPraestans auxilium,\nVita frui beata,\nPost hoc exsilium.",
+    "fonte": {
+      "sito": "traditioninaction.org",
+      "url": "https://www.traditioninaction.org/religious/Music_P000_files/P032_AngVir.htm"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "y5jy-RNQvyQ",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 208,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 407,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 686,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 882,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1079,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1275,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1295
     },
     {
       "voce": "A",
       "video_id": "vJDNs3dHYcs",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 208,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 407,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 686,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 882,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1079,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1275,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1295
     },
     {
       "voce": "B",
       "video_id": "Jc7jhh7bm0g",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 208,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 407,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 686,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 882,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 1079,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 1275,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 1295
     }
   ],
   "prima_uscita": "2026-09-01"

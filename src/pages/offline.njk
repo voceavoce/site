@@ -1,0 +1,33 @@
+---
+permalink: /offline/
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offline · {{ site.name }}</title>
+<meta name="description" content="Sei offline.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#fbf9f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121a2c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script>try{var t=localStorage.getItem("vav_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+{#- Pagina di ripiego del service worker (src/pages/sw.njk): standalone, senza layout, in tre lingue. #}
+<main id="main" class="wrap">
+<article class="info-page">
+<h1 lang="it">Sei offline</h1>
+<p lang="it">Questa pagina non è disponibile senza connessione. Riprova quando sei di nuovo online: le pagine già visitate restano consultabili.</p>
+<h2 lang="en">You are offline</h2>
+<p lang="en">This page is not available without a connection. Try again when you are back online: pages you have already visited stay available.</p>
+<h2 lang="es">Sin conexión</h2>
+<p lang="es">Esta página no está disponible sin conexión. Vuelve a intentarlo cuando estés en línea: las páginas ya visitadas siguen disponibles.</p>
+<p><a href="/">{{ site.name }}</a></p>
+</article>
+</main>
+</body>
+</html>

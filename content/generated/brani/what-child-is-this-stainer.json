@@ -31,30 +31,194 @@
   "tempo_bpm": 72,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "What Child is this who, laid to rest\nOn Mary’s lap is sleeping?\nWhom angels greet with anthems sweet,\nWhile shepherds watch are keeping?\nThis, this is Christ the King,\nWhom shepherds guard and angels sing;\nHaste, haste, to bring Him laud,\nThe Babe, the Son of Mary.\nWhy lies He in such mean estate,\nWhere ox and ass are feeding?\nGood Christians, fear, for sinners here\nThe silent Word is pleading.\nNails, spear shall pierce Him through,\nThe cross be borne for me, for you.\nHail, hail the Word made flesh,\nThe Babe, the Son of Mary.\nSo bring Him incense, gold and myrrh,\nCome peasant, king to own Him;\nThe King of kings salvation brings,\nLet loving hearts enthrone Him.\nRaise, raise a song on high,\nThe virgin sings her lullaby.\nJoy, joy for Christ is born,\nThe Babe, the Son of Mary.",
+    "fonte": {
+      "sito": "en.wikisource.org",
+      "url": "https://en.wikisource.org/wiki/What_Child_Is_This%3F"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "KP7PfX0ZaW8",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 139,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 268,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 448,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 575,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 702,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 829,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 956,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 976
     },
     {
       "voce": "A",
       "video_id": "vYhW_bjFIzk",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 139,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 268,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 448,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 575,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 702,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 829,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 956,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 976
     },
     {
       "voce": "T",
       "video_id": "zy7xd3bsXqk",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 139,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 268,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 448,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 575,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 702,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 829,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 956,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 976
     },
     {
       "voce": "B",
       "video_id": "SBCvVUkBnVE",
       "pubblica_dal": "2026-09-01",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 139,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 268,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 448,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 575,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 702,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 829,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 956,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 976
     }
   ],
   "prima_uscita": "2026-09-01"

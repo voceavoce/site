@@ -1,9 +1,11 @@
 name: Check
 
+# Gira SOLO sulle pull request (scelta dell'utente, 2026-10-16): i push sui branch di lavoro non
+# fanno partire la CI, i controlli arrivano quando si apre la PR, prima del merge. Si puo' anche
+# avviare a mano da Actions -> Check -> Run workflow.
 on:
   pull_request:
-  push:
-    branches-ignore: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -29,3 +31,17 @@ jobs:
       - run: npm run lint:html
       - name: Accessibilita (pa11y-ci, axe)
         run: npm run a11y
+      - name: Browser per i test end-to-end (Chromium di Playwright)
+        run: npx playwright install --with-deps chromium
+      - name: Test end-to-end (Playwright)
+        run: npm run e2e
+      - name: Report e trace dei test end-to-end
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore

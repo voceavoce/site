@@ -7,6 +7,8 @@ import * as fmt from "./src/_lib/format.js";
 import * as ld from "./src/_lib/jsonld.js";
 import { buildSitemap } from "./src/_lib/sitemap.js";
 import { writeFileSync } from "node:fs";
+import { PLAYER_DIR } from "./src/_lib/studio.js";
+import studio from "./src/_data/studio.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const i18nDir = path.join(here, "src/_data/i18n");
@@ -24,9 +26,26 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets/");
+
+  // Librerie di terze parti del player, copiate da node_modules come FILE SEPARATI e NON minificati insieme al
+  // nostro codice (Verovio: LGPL-3.0; SoundTouchJS audio-worklet: MPL-2.0). Vedi src/static-vendor/NOTICE.txt.
+  const st = "node_modules/@soundtouchjs/audio-worklet/.dist/";
+  for (const f of ["index.js", "SoundTouchNode.js", "constants.js", "processOffline.js", "soundtouch-processor.js"]) {
+    eleventyConfig.addPassthroughCopy({ [st + f]: `assets/vendor/soundtouch/${f}` });
+  }
+  for (const f of ["verovio-module.mjs", "verovio.mjs"]) {
+    eleventyConfig.addPassthroughCopy({ [`node_modules/verovio/dist/${f}`]: `assets/vendor/verovio/${f}` });
+  }
+  eleventyConfig.addPassthroughCopy({ "src/static-vendor/NOTICE.txt": "assets/vendor/NOTICE.txt" });
+  // MusicXML del player: /player-data/<slug>/score.musicxml (i dati di prova "_" restano fuori in produzione)
+  for (const it of Object.values(studio.items)) {
+    eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.scoreFile)]: `player-data/${it.slug}/score.musicxml` });
+  }
   eleventyConfig.addWatchTarget("src/_data/i18n/");
 
   // t: chiave con punti ("nav.coro"), lingua; ripiega sulla lingua predefinita, poi sulla chiave.
+  // JSON sicuro dentro un <script type="application/json">: niente "</script>" ne' "<!--"
+  eleventyConfig.addFilter("jsonSafe", (v) => JSON.stringify(v).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029"));
   eleventyConfig.addFilter("t", (key, lang) => fmt.t(String(key), lang));
   eleventyConfig.addFilter("routeUrl", routeUrl);
   eleventyConfig.addFilter("altUrls", altUrls);

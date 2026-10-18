@@ -27,30 +27,194 @@
   "tempo_bpm": 90,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "The first Nowell the angel did say\nWas to certain poor shepherds in fields as they lay,\nIn fields where they lay keeping their sheep,\nOn a cold winter’s night that was so deep.\nRefrain:\nNowell, Nowell, Nowell, Nowell,\nBorn is the King of Israel.",
+    "fonte": {
+      "sito": "songsofzion.org",
+      "url": "https://songsofzion.org/songs/the-first-nowel-the-angel-did-say-1Hh"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "Wemtf1UcOjs",
       "pubblica_dal": "2026-08-27",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 66,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 123,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 199,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 254,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 308,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 363,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 417,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 437
     },
     {
       "voce": "A",
       "video_id": "O6cBaKrE3x4",
       "pubblica_dal": "2026-08-27",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 66,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 123,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 199,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 254,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 308,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 363,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 417,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 437
     },
     {
       "voce": "T",
       "video_id": "JZBil0EvpCE",
       "pubblica_dal": "2026-08-27",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 66,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 123,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 199,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 254,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 308,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 363,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 417,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 437
     },
     {
       "voce": "B",
       "video_id": "1iZNYqWNmAQ",
       "pubblica_dal": "2026-08-27",
-      "pubblica": true
+      "pubblica": true,
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 66,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 123,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 199,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 254,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 308,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 363,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 417,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 437
     }
   ],
   "prima_uscita": "2026-08-27"

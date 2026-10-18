@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { splitVoices, isVoiceVisible, buildCatalog } from "../src/_lib/catalog.js";
+import { splitVoices, isVoiceVisible, buildCatalog, publishedSlugs } from "../src/_lib/catalog.js";
 
 const now = "2026-10-16T12:00:00Z";
 
@@ -26,4 +26,13 @@ test("catalogo: brano senza voci visibili ha noindex", () => {
   assert.ok(far.brani.some((p) => p.noindex));
   const late = buildCatalog("2100-01-01T00:00:00Z");
   assert.ok(late.brani.every((p) => !p.noindex));
+});
+
+test("publishedSlugs: esattamente i brani con almeno una voce visibile alla data data", () => {
+  for (const now of ["2000-01-01T00:00:00Z", "2026-11-06T00:00:00Z", "2100-01-01T00:00:00Z"]) {
+    const cat = buildCatalog(now);
+    const attesi = Object.values(cat.perSlug).filter((p) => p.voci.length > 0).map((p) => p.slug).sort();
+    assert.deepEqual([...publishedSlugs(now)].sort(), attesi, now);
+  }
+  assert.ok(publishedSlugs("2100-01-01T00:00:00Z").size > publishedSlugs("2000-01-01T00:00:00Z").size);
 });

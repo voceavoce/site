@@ -1,0 +1,11 @@
+Librerie di terze parti usate dal player di studio (/player/<slug>/).
+Sono servite come file SEPARATI, non minificati insieme al codice del sito, senza modifiche.
+
+Verovio 6.x - https://www.verovio.org - LGPL-3.0-or-later
+  /assets/vendor/verovio/verovio-module.mjs (toolkit compilato in WebAssembly) e verovio.mjs.
+  Sorgenti: https://github.com/rism-digital/verovio
+
+SoundTouchJS (@soundtouchjs/audio-worklet 2.x) - https://github.com/cutterbl/SoundTouchJS - MPL-2.0
+  /assets/vendor/soundtouch/*.js (nodo AudioWorklet per il time-stretch). L'algoritmo SoundTouch originale
+  e' di Olli Parviainen (LGPL-2.1); la porta JavaScript e' distribuita con licenza MPL-2.0.
+  I file restano in chiaro (non minificati insieme al codice del sito) e modificabili/sostituibili.

@@ -102,6 +102,10 @@ eleventyExcludeFromCollections: true
     </section>
     {%- if firstVoice %}<img src="https://i.ytimg.com/vi/{{ firstVoice.video_id }}/hqdefault.jpg" alt="" hidden loading="lazy" data-pagefind-meta="image[src]">{% endif %}
 
+    {%- if studio.linked[piece.slug] %}
+    <p class="study-cta"><a class="btn" href="{{ lang | routeUrl('study', piece.slug) }}">{{ 'piece.study' | t(lang) }}</a></p>
+    {%- endif %}
+
     {%- if piece.nota[noteLang] %}
     <section class="notes" aria-labelledby="notes-h">
       <h2 id="notes-h">{{ 'piece.notes' | t(lang) }}</h2>
@@ -123,6 +127,9 @@ eleventyExcludeFromCollections: true
             <p>{% for line in st %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
             {%- endfor %}
           </div>
+          {%- if piece.testo.comune %}
+          <p class="credit">{{ 'piece.commonText' | t(lang) }}</p>
+          {%- endif %}
           {%- if piece.testo.fonte %}
           <p class="credit">{{ 'piece.textSource' | t(lang) }}: {% if piece.testo.fonte.url %}<a href="{{ piece.testo.fonte.url }}" rel="noopener">{{ piece.testo.fonte.sito }}</a>{% else %}{{ piece.testo.fonte.sito }}{% endif %}</p>
           {%- endif %}

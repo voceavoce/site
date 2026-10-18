@@ -34,26 +34,190 @@
   "tempo_bpm": 144,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Jubilate Deo, omnis terra ; servite Domino in lætitia. Introite in conspectu ejus in exsultatione.\nScitote quoniam Dominus ipse est Deus ; ipse fecit nos, et non ipsi nos ; populus ejus, et oves pascuæ ejus.\nIntroite portas ejus in confessione, atria ejus in hymnis ; confitemini illi. Laudate nomen ejus,\nquoniam suavis est Dominus ; in æternum misericordia ejus, et usque in generationem et generationem veritas ejus.",
+    "fonte": {
+      "sito": "biblehub.com",
+      "url": "https://biblehub.com/vul/psalms/100.htm"
+    }
+  },
   "voci": [
     {
       "voce": "S",
       "video_id": "u3KMARpfdtI",
-      "pubblica_dal": "2026-10-04T14:30:00Z"
+      "pubblica_dal": "2026-10-04T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 108,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 206,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 341,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 437,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 533,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 725,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 745
     },
     {
       "voce": "A",
       "video_id": "cdch057_wgU",
-      "pubblica_dal": "2026-10-04T14:30:00Z"
+      "pubblica_dal": "2026-10-04T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 108,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 206,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 341,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 437,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 533,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 725,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 745
     },
     {
       "voce": "T",
       "video_id": "YjjMDcMSwHk",
-      "pubblica_dal": "2026-10-04T14:30:00Z"
+      "pubblica_dal": "2026-10-04T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 108,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 206,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 341,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 437,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 533,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 725,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 745
     },
     {
       "voce": "B",
       "video_id": "tPqDiacIqUU",
-      "pubblica_dal": "2026-10-04T14:30:00Z"
+      "pubblica_dal": "2026-10-04T14:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "FIRST LISTEN — the whole piece, all voices"
+        },
+        {
+          "sec": 108,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 206,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 341,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 437,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 533,
+          "titolo": "WITH THE CHOIR — your part highlighted"
+        },
+        {
+          "sec": 629,
+          "titolo": "BALANCE CHECK — all voices equal"
+        },
+        {
+          "sec": 725,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 745
     }
   ],
   "prima_uscita": "2026-10-04T14:30:00Z"

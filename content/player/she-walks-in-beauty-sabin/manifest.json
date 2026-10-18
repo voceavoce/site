@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "slug": "she-walks-in-beauty-sabin",
+  "titolo": "She Walks in Beauty",
+  "compositore": {
+    "id": "wallace-a-sabin",
+    "nome": "Wallace A. Sabin"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "T1",
+      "chiave": "tenore-1",
+      "tipo": "voce",
+      "file": "she-walks-in-beauty-sabin/v1/tenore-1.opus",
+      "riserva": "she-walks-in-beauty-sabin/v1/tenore-1.mp3"
+    },
+    {
+      "voce": "T1'",
+      "chiave": "t1",
+      "tipo": "voce",
+      "file": "she-walks-in-beauty-sabin/v1/t1.opus",
+      "riserva": "she-walks-in-beauty-sabin/v1/t1.mp3"
+    },
+    {
+      "voce": "T2",
+      "chiave": "tenore-2",
+      "tipo": "voce",
+      "file": "she-walks-in-beauty-sabin/v1/tenore-2.opus",
+      "riserva": "she-walks-in-beauty-sabin/v1/tenore-2.mp3"
+    },
+    {
+      "voce": "B1",
+      "chiave": "basso-1",
+      "tipo": "voce",
+      "file": "she-walks-in-beauty-sabin/v1/basso-1.opus",
+      "riserva": "she-walks-in-beauty-sabin/v1/basso-1.mp3"
+    },
+    {
+      "voce": "B1'",
+      "chiave": "b1",
+      "tipo": "voce",
+      "file": "she-walks-in-beauty-sabin/v1/b1.opus",
+      "riserva": "she-walks-in-beauty-sabin/v1/b1.mp3"
+    },
+    {
+      "voce": "B2",
+      "chiave": "basso-2",
+      "tipo": "voce",
+      "file": "she-walks-in-beauty-sabin/v1/basso-2.opus",
+      "riserva": "she-walks-in-beauty-sabin/v1/basso-2.mp3"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 190.2,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}
