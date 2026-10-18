@@ -52,6 +52,12 @@ test("traduciComune: la frase piu' lunga vince sulla piu' corta", () => {
   assert.equal(traduciComune("Sanctus, Sanctus, Sanctus", c).it.testo, "it:sss");
 });
 
+test("traduciComune: le varianti `alt` abbinano la stessa frase", () => {
+  const r = { ...riga("Caeli", "c"), chiavi: [parole("Caeli"), parole("Coeli")] };
+  assert.equal(traduciComune("Coeli", { righe: [r] }).it.testo, "it:c");
+  assert.equal(comuni["sanctus-benedictus"].righe.some((x) => x.chiavi.length > 1), true);
+});
+
 test("traduciComune: lingua incompleta viene omessa", () => {
   const r = riga("Amen", "a");
   delete r.es;

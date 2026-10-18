@@ -45,7 +45,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 
 ## C — Contenuti editoriali (costano token: stima prima di partire)
 
-- [ ] C1 (O) (dopo A9; decisione utente 2026-10-17: le traduzioni non rivista si pubblicano con l'etichetta «non rivista», campo `reviewed: false`) Traduzioni dei 19 testi comuni (`testi/_comuni`) in IT/EN/ES/DE/FR
+- [x] C1 (O) FATTO 2026-10-18 (20 testi comuni, non 19; scelta «traduzione comune», file `content/curated/_comuni/<comune>.yaml` con frasi `{la, alt, it, en, es, de, fr}`, `src/_lib/comuni.js` abbina il testo cantato del brano alle frasi e compone la traduzione con quelle trovate, copertura minima 70%, i `curated/<slug>.yaml` per brano vincono; valida in `validate-content.mjs`; tutte le fonti dei 20 testi risultano coperte oltre il 90%) (dopo A9; decisione utente 2026-10-17: le traduzioni non rivista si pubblicano con l'etichetta «non rivista», campo `reviewed: false`) Traduzioni dei 19 testi comuni (`testi/_comuni`) in IT/EN/ES/DE/FR
 - [ ] C2 (S) Note dei brani con video pubblici
 - [ ] C3 (S) Interfaccia in **DE e FR** (decisione utente 2026-10-17: insieme a C1/C2, non prima): `de.json`/`fr.json` (316 testi ciascuno), 5 pagine istituzionali per lingua, percorsi localizzati, etichette di generi e stagioni, `site.langs`; note dei brani anche in DE/FR **nella pipeline** (decisione utente 2026-10-17: `nota_descrizione` del contratto estesa a de/fr, `_NOTA_LINGUE` in `sito.py`; servono anche alle localizzazioni YouTube), così le schede DE/FR nascono complete e non sono contenuto sottile (~730 → ~1.200 pagine)
 
