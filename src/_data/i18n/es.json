@@ -378,6 +378,7 @@
     "fullscreen": "Partitura a pantalla completa",
     "fullscreenClose": "Cerrar",
     "optFullscreenPlay": "Pantalla completa al pulsar Reproducir (móviles)",
-    "allVoices": "Todas las voces iguales"
+    "allVoices": "Todas las voces iguales",
+    "reportScore": "Señalar un error en la partitura"
   }
 }

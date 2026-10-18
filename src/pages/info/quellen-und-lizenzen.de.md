@@ -23,14 +23,14 @@ Für jedes Stück nennen wir Quelle und Ausgabe. Du findest sie auf der Seite de
 
 ## Korrigierte Partituren
 
-Wenn wir eine Partitur korrigieren, wird die korrigierte Fassung auf GitHub veröffentlicht, im Repository [voceavoce/scores](https://github.com/voceavoce/scores).
+Wenn wir eine Partitur korrigieren, aktualisieren wir den Player und die Seite des Stücks.
 
 ## Einen Fehler melden
 
-Eine falsche Note oder ein falsches Wort bemerkt? Eröffne ein [GitHub-Issue](https://github.com/voceavoce/scores/issues) und nenne:
+Eine falsche Note oder ein falsches Wort bemerkt? Im Player und auf der Seite des Stücks findest du den Link „Fehler in der Partitur melden“: Er öffnet ein vorausgefülltes [GitHub-Issue](https://github.com/voceavoce/site/issues). Nenne:
 
 - das Stück und die Stimme;
-- die Minute im Video, in der der Fehler vorkommt;
+- den Takt (oder die Minute im Video), in dem der Fehler vorkommt;
 - was stattdessen stehen müsste, mit Quelle, falls du sie kennst.
 
 </article>

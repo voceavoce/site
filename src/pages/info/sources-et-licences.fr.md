@@ -23,14 +23,14 @@ Pour chaque pièce nous indiquons la source et l'édition. Tu les trouveras sur 
 
 ## Partitions corrigées
 
-Quand nous corrigeons une partition, la version corrigée est publiée sur GitHub, dans le dépôt [voceavoce/scores](https://github.com/voceavoce/scores).
+Quand nous corrigeons une partition, nous mettons à jour le lecteur et la fiche de la pièce.
 
 ## Signaler une erreur
 
-Tu as remarqué une note ou un mot erroné ? Ouvre une [issue GitHub](https://github.com/voceavoce/scores/issues) en indiquant :
+Tu as remarqué une note ou un mot erroné ? Dans le lecteur et sur la fiche de la pièce, le lien « Signaler une erreur dans la partition » ouvre une [issue GitHub](https://github.com/voceavoce/site/issues) déjà remplie. Indique :
 
 - la pièce et la voix ;
-- la minute de la vidéo où apparaît l'erreur ;
+- la mesure (ou la minute de la vidéo) où apparaît l'erreur ;
 - ce qui devrait figurer à la place, avec la source si tu la connais.
 
 </article>
