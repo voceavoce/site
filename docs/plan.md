@@ -217,6 +217,14 @@ Dopo la prima messa online con tre brani di prova, l'interfaccia della partitura
 
 Prossimi passi: vedi `task.md`, sezione P (P20–P27).
 
+## Contenuti in 5 lingue, CI e player (2026-10-18 sera)
+
+- **Lingue:** it/en/es/de/fr con un solo modello di rotte (`routes.js`) e chiavi i18n identiche (test `tests/lingue.test.mjs`); cambio lingua con menu a tendina per il mobile. Traduzioni e note scritte dall'IA e dichiarate come tali (pagina Trasparenza, etichetta sulle note, «non rivista» sui testi).
+- **Traduzioni dei testi comuni:** file `content/curated/_comuni/<comune>.yaml` con frasi `{la, alt, it, en, es, de, fr}`; `comuni.js` abbina il testo cantato del brano alle frasi (parole normalizzate, copertura minima 70%); i `curated/<slug>.yaml` per brano prevalgono.
+- **Guardie automatiche:** note in 5 lingue per ogni brano pubblicato, anti-segreti sui file tracciati, chiavi i18n e segnaposto coerenti.
+- **CI:** controlli rapidi in un job, e2e in 3 job paralleli (`--shard`).
+- **Player:** pannello di caricamento con avanzamento, partitura a schermo intero (automatica su telefono), «Tutte le voci pari». Aperto: qualità del rallentamento (R4 in `task.md`).
+
 ## Ordine di esecuzione
 
 1. **Backup:** tag `landing-v1` su `c50b793` + `src/static/classic/` (noindex, percorsi corretti).

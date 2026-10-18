@@ -1,6 +1,16 @@
 # State — avanzamento e decisioni
 
-## Riepilogo per riprendere (aggiornato 2026-10-18 notte, PR #2 unita, correzioni in corso)
+## Riepilogo per riprendere (aggiornato 2026-10-18 sera, C1-C3 fatti, player in rifinitura)
+
+- **Unite su `main` (online):** #4 (player: scelta battuta, Ripeti in riquadro, tempi radi, cursore sulla prima nota), #5 (asset versionati `?v=hash`), #6 (C1, traduzioni dei 20 testi comuni in 5 lingue, non riviste), #7 (dichiarazione sull'uso dell'IA: pagina Trasparenza + etichetta sulle note), #8 (anti-segreti: `npm run secrets`, in `check` e in CI), #9 (CI: e2e in 3 job paralleli, ~6 min invece di ~15), #10 (C2, note it/en/es dei brani pubblicati), #11 (C3, interfaccia in tedesco e francese + note de/fr, menu lingua a tendina), #12 (player: pannello di caricamento con barra, partitura a schermo intero, su telefono al Riproduci).
+- **Aperta:** **#13** «Tutte le voci pari» (pulsante nel mixer che annulla La mia voce e Solo); conflitti risolti, check in corso, la unisce l'utente.
+- **Branch sperimentale (non in PR):** `fix/player-qualita-rallentamento`: `?debug&stretch=voci` usa uno stretcher SoundTouch per voce (default invariato: uno sul mix). Serve a capire se i suoni «sporchi»/l'intonazione instabile a velocità ridotta dipendono dal mix delle quattro voci. Misure in Node sul soprano di Agnus Dei (70% e 50%): scarto d'intonazione ~10-11 cent (Rubber Band 12), nessuna differenza cambiando i parametri WSOLA (`quickSeek`, overlap, sequenza, finestra) né il resampling lineare/Lanczos: l'algoritmo da solo non spiega ciò che l'utente sente; da capire con la prova in browser.
+- **AIVideoCreator (`main`, pushato):** T-908 unito (copia della partitura senza battuta vuota di coda), T-909 (`_NOTA_LINGUE` con de/fr nell'export per il sito). Le note de/fr dei brani restano nel sito (`content/curated`), non nel contratto `nota_descrizione`.
+- **Test da fare dall'utente** (cosa verificare a mano): vedi `task.md`, sezione R, «Prove a mano».
+- **Strumenti:** `gh` in `C:\Program Files\GitHub CLI\gh.exe` (login `ezin82`); e2e: `$env:PW_CHROMIUM='C:\Program Files\Google\Chrome\Application\chrome.exe'; npm run e2e -- tests/e2e/player.spec.mjs` (un file alla volta); `npm run check` = validate + secrets + test + build + lint:html. Il test `tests/note.test.mjs` fallisce se un brano appena pubblicato non ha la nota in 5 lingue: è voluto, serve scrivere la nota (`content/curated/<slug>.yaml`).
+- **Server locali:** sito su 8080 (`npm run serve`) e audio su 8787 (`node scripts/serve-audio.mjs`), avviati da me; fermarli a fine lavoro.
+
+## Riepilogo precedente (2026-10-18 notte, PR #2 unita, correzioni in corso)
 
 - **PR #2 (player, 140 brani, audio su R2, statistiche) e' gia' unita su `main` e online** (deploy ok). PR #3 (solo docs/script: misura Opus/MP3, punto F1) aperta, da unire. **Lavoro in corso su `fix/player-ripeti-selezione-tempi`** (non ancora in PR): vedi task **P31–P36** in `task.md` (scelta battuta sbagliata sui brani veri, Ripeti poco chiaro e Riproduci dall'inizio, tempi sovrapposti, cursore a meta' battuta, tenore fuori tessitura, e2e da rilanciare).
 - **Strumenti:** `gh` installato (`C:\Program Files\GitHub CLI\gh.exe`, login `ezin82` fatto); e2e: `$env:PW_CHROMIUM='C:\Program Files\Google\Chrome\Application\chrome.exe'; npm run e2e -- tests/e2e/partitura.spec.mjs`; con `E2E_SKIP_BUILD=1` non ricostruisce. In PowerShell evitare le virgolette dentro `Select-String`.
