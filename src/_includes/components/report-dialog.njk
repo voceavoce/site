@@ -1,5 +1,5 @@
 {#- Modulo «Segnala un errore nello spartito»: c'e' solo se il Worker e' configurato (site.segnalaUrl). Logica in /assets/js/segnala.js -#}
-<dialog class="report-dialog" data-report-dialog data-endpoint="{{ site.segnalaUrl }}" data-email="{{ site.email }}" data-error="{{ 'report.error' | tv(lang, { email: site.email }) }}" data-short="{{ 'report.short' | t(lang) }}" data-thanks="{{ 'report.thanks' | t(lang) }}" data-sending="{{ 'report.sending' | t(lang) }}" aria-labelledby="report-dlg-h">
+<dialog class="report-dialog" data-report-dialog data-endpoint="{{ site.segnalaUrl }}" data-email="{{ site.email }}" data-failure="{{ 'report.error' | tv(lang, { email: site.email }) }}" data-short="{{ 'report.short' | t(lang) }}" data-thanks="{{ 'report.thanks' | t(lang) }}" data-sending="{{ 'report.sending' | t(lang) }}" aria-labelledby="report-dlg-h">
   <form class="report-form" data-report-form novalidate>
     <h2 id="report-dlg-h">{{ 'report.title' | t(lang) }}</h2>
     <p class="report-where"><span data-report-title></span><span data-report-bar hidden> · {{ 'report.bar' | t(lang) }} <strong data-report-bar-n></strong></span></p>

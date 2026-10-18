@@ -17,7 +17,7 @@ if (dialog && links.length && typeof dialog.showModal === "function") {
 
   const mostraErrore = () => {
     stato.textContent = "";
-    const [prima, dopo] = dialog.dataset.error.split(dialog.dataset.email);
+    const [prima, dopo] = dialog.dataset.failure.split(dialog.dataset.email);
     const mail = Object.assign(document.createElement("a"), { href: `mailto:${dialog.dataset.email}`, textContent: dialog.dataset.email });
     stato.append(prima ?? "", mail, dopo ?? "");
   };
