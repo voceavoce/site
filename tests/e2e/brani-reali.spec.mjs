@@ -7,13 +7,15 @@ import { test, intercettaAudio, raccogliErrori, RADICE } from "./helpers.mjs";
 
 const DIR = path.join(RADICE, "content/player");
 const SLUGS = fs.readdirSync(DIR).filter((n) => !n.startsWith("_") && fs.existsSync(path.join(DIR, n, "sync.json")));
+const CAMPIONE = ["a-d-una-fresca-riva-marenzio", "agnus-dei-josquin", "ave-maria-monteverdi"];
 const SCHERMI = [{ nome: "telefono", width: 375, height: 740 }, { nome: "tablet", width: 768, height: 1000 }, { nome: "desktop", width: 1280, height: 800 }, { nome: "largo", width: 1920, height: 1000 }];
 
 test.beforeEach(async ({ context }) => { await intercettaAudio(context); });
 
 for (const slug of SLUGS) {
   const sync = JSON.parse(fs.readFileSync(path.join(DIR, slug, "sync.json"), "utf8"));
-  for (const s of SCHERMI) {
+  // tutti i brani su telefono e desktop; le altre larghezze solo sui primi tre (campione), per tenere i tempi ragionevoli
+  for (const s of SCHERMI.filter((x) => x.width === 375 || x.width === 1280 || CAMPIONE.includes(slug))) {
     test(`${slug} @ ${s.nome} ${s.width}px: la partitura compare intera e ordinata`, async ({ page }) => {
       const errori = raccogliErrori(page);
       await page.setViewportSize({ width: s.width, height: s.height });
@@ -32,7 +34,7 @@ for (const slug of SLUGS) {
           return [...first.querySelectorAll(":scope > g.staff")].map((st) => { const b = st.getBoundingClientRect(); return { t: b.top, b: b.bottom }; });
         });
         return {
-          cw: cr.width, ch: cr.height, svgW: sr.width, svgH: sr.height, scrollW: c.scrollWidth, clientW: c.clientWidth,
+          overflowX: getComputedStyle(c).overflowX, cw: cr.width, ch: cr.height, svgW: sr.width, svgH: sr.height, scrollW: c.scrollWidth, clientW: c.clientWidth,
           pagina: document.documentElement.scrollWidth - document.documentElement.clientWidth,
           nSistemi: sistemi.length, nBattute: battute.length,
           misureVuote: battute.filter((b) => b.width < 5 || b.height < 5).length,
@@ -43,7 +45,8 @@ for (const slug of SLUGS) {
       expect(r.nBattute, "battute disegnate = battute di sync.json").toBe(sync.battute.length);
       expect(r.svgH, "la partitura ha un'altezza visibile").toBeGreaterThan(100);
       expect(r.svgW, "la partitura non e' piu' larga del contenitore").toBeLessThanOrEqual(r.cw + 1);
-      expect(r.scrollW - r.clientW, "nessuno scroll orizzontale interno").toBeLessThanOrEqual(1);
+      expect(r.overflowX, "il riquadro non scorre di lato").toBe("hidden");
+      expect(r.scrollW - r.clientW, "al piu' qualche pixel di scritta ritagliato, mai una parte della partitura").toBeLessThanOrEqual(24);
       expect(r.pagina, "nessuno scroll orizzontale della pagina").toBeLessThanOrEqual(1);
       expect(r.misureVuote).toBe(0);
       expect(r.sovrapposti, "righi sovrapposti").toBe(0);

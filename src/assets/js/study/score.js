@@ -133,6 +133,8 @@ export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasu
         .filter((s) => [...s.parentElement.children].filter((n) => n.matches("g.staff")).indexOf(s) === myStaff);
       if (!staves.length) continue;
       const rs = staves.map(inContainer), sb = inContainer(sys);
+      const foglio = inContainer(container.querySelector("svg"));
+      sb.l = Math.max(sb.l, foglio.l); sb.r = Math.min(sb.r, foglio.r); // la fascia non esce mai dal foglio (niente scroll laterale)
       const top = Math.min(...rs.map((r) => r.t)) - 4, bottom = Math.max(...rs.map((r) => r.b)) + 4;
       const band = document.createElement("div");
       band.className = "score-voice-band";

@@ -17,7 +17,7 @@
   .study__tools { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
   .score-scroll {
-    max-height: min(62dvh, 40rem); min-height: 8rem; overflow: auto; overscroll-behavior: contain;
+    max-height: min(62dvh, 40rem); min-height: 8rem; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; /* la partitura si adatta alla larghezza: mai scroll laterale */
     /* Come la carta stampata: sfondo bianco e inchiostro scuro in ogni tema; "Inverti colori" la scurisce. */
     --paper: #ffffff; --ink: #111111;
     background: var(--paper); color: var(--ink); border: 1px solid var(--border); border-radius: var(--radius);
@@ -73,10 +73,10 @@
   .myvoice { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3); align-items: end; }
 
   .mix { list-style: none; padding: 0; display: grid; gap: var(--space-3); }
-  .mix__row { display: grid; grid-template-columns: 1fr auto auto; grid-template-areas: "name mute solo" "vol vol out"; gap: var(--space-2) var(--space-3); align-items: center;
+  .mix__row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "name mute solo" "vol vol out"; gap: var(--space-2) var(--space-3); align-items: center;
     padding-bottom: var(--space-3); border-bottom: 1px solid var(--border); }
   .mix__row:last-child { border-bottom: 0; padding-bottom: 0; }
-  .mix__name { grid-area: name; font-weight: 700; display: flex; align-items: center; gap: var(--space-2); }
+  .mix__name { grid-area: name; min-width: 0; overflow-wrap: anywhere; font-weight: 700; display: flex; align-items: center; gap: var(--space-2); }
   .mix__vol { grid-area: vol; width: 100%; min-height: var(--tap); accent-color: var(--accent); }
   .mix__out { grid-area: out; min-width: 3.2ch; text-align: end; font-variant-numeric: tabular-nums; color: var(--muted); }
   .mix__row > [data-mute] { grid-area: mute; }

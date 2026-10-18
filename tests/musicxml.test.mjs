@@ -147,3 +147,37 @@ test("senza DOMParser (ambiente senza DOM) il testo torna com'e'", () => {
     assert.equal(M.abbreviaParti(dentro, ["S", "T", "B"]), dentro);
   } finally { globalThis.DOMParser = salvato; }
 });
+
+// --- senzaTestiLunghi --------------------------------------------------------------------------------------------
+const PAROLE = (t, extra = "") => `<direction><direction-type><words>${t}</words></direction-type>${extra}</direction>`;
+const LUNGA = "Translation: The mouth of the righteous utters wisdom, and his tongue speaks what is just.";
+
+test("senzaTestiLunghi: toglie le traduzioni, tiene le indicazioni normali", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [PAROLE(LUNGA) + PAROLE("Allegro moderato") + NOTA] }]));
+  assert.equal(M.senzaTestiLunghi(doc), 1);
+  const testo = new finestra.XMLSerializer().serializeToString(doc);
+  assert.ok(!testo.includes("Translation"));
+  assert.ok(testo.includes("Allegro moderato"));
+});
+
+test("senzaTestiLunghi: tiene <sound> e gli altri segni della stessa direzione", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [PAROLE(LUNGA, '<sound tempo="90"/>') + NOTA] }]));
+  assert.equal(M.senzaTestiLunghi(doc), 1);
+  assert.equal(doc.querySelectorAll("sound").length, 1);
+  assert.equal(doc.querySelectorAll("words").length, 0);
+  const due = leggi(xml([{ nome: "S", battute: [`<direction><direction-type><words>${LUNGA}</words></direction-type><direction-type><words>dolce</words></direction-type></direction>` + NOTA] }]));
+  assert.equal(M.senzaTestiLunghi(due), 1);
+  assert.deepEqual([...due.querySelectorAll("words")].map((w) => w.textContent), ["dolce"]);
+});
+
+test("senzaTestiLunghi: soglia personalizzabile, niente da togliere = 0, spazi multipli contati una volta", () => {
+  const doc = leggi(xml([{ nome: "S", battute: [PAROLE("uno   due") + NOTA] }]));
+  assert.equal(M.senzaTestiLunghi(doc, 7), 0); // "uno due" = 7
+  assert.equal(M.senzaTestiLunghi(doc, 6), 1);
+  assert.equal(M.senzaTestiLunghi(leggi(xml([{ nome: "S" }]))), 0);
+});
+
+test("abbreviaParti: toglie le scritte lunghe anche con una sola parte", () => {
+  const out = M.abbreviaParti(xml([{ nome: "S", battute: [PAROLE(LUNGA) + NOTA] }]), ["S"]);
+  assert.ok(!out.includes("Translation"));
+});

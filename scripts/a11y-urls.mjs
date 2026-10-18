@@ -17,6 +17,9 @@ export function sampleUrls(base = "http://localhost:8080", site = "_site") {
   }
   // Player di studio con dati di prova (assente nella build di produzione)
   if (existsSync(path.join(site, "player/_prova/index.html"))) paths.push("/player/_prova/");
+  // ...e il primo player reale (in produzione solo i brani gia' pubblicati), in italiano e in inglese
+  const reali = existsSync(path.join(site, "player")) ? readdirSync(path.join(site, "player"), { withFileTypes: true }).filter((d) => d.isDirectory() && !d.name.startsWith("_")).map((d) => d.name).sort() : [];
+  if (reali.length) paths.push(`/player/${reali[0]}/`, `/en/player/${reali[0]}/`);
   return paths.map((p) => base.replace(/\/$/, "") + p);
 }
 

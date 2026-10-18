@@ -26,12 +26,34 @@ export function senzaTempiRipetuti(doc) {
         if (!met) continue;
         const chiave = `${m.getAttribute("number")}|${met.textContent.replace(/\s+/g, " ").trim()}`;
         if (!visti.has(chiave)) { visti.add(chiave); continue; }
-        const tipo = met.closest("direction-type");
-        if (tipo && (d.querySelectorAll("direction-type").length > 1 || d.querySelector("sound"))) tipo.remove();
-        else d.remove();
+        togliTipo(d, met.closest("direction-type"));
         tolti++;
       }
     }
+  }
+  return tolti;
+}
+
+/** Toglie dal MusicXML l'elemento visibile `tipo` (un <direction-type>) lasciando il resto della <direction> se serve. */
+function togliTipo(d, tipo) {
+  if (tipo && (d.querySelectorAll("direction-type").length > 1 || d.querySelector("sound"))) tipo.remove();
+  else d.remove();
+}
+
+/**
+ * Toglie le scritte (<words>) piu' lunghe di `max` caratteri: sono traduzioni o note editoriali ("Translation: ...") che
+ * Verovio disegna su una riga sola e che escono dalla pagina, facendo scorrere la partitura di lato. Le indicazioni
+ * normali (Allegro, dolce, con espressione) sono molto piu' corte. Ritorna quante ne ha tolte.
+ */
+export function senzaTestiLunghi(doc, max = 60) {
+  let tolti = 0;
+  for (const w of [...doc.querySelectorAll("direction > direction-type > words")]) {
+    if (w.textContent.replace(/\s+/g, " ").trim().length <= max) continue;
+    const tipo = w.parentElement;
+    const d = tipo.parentElement;
+    if (tipo.children.length > 1) w.remove();
+    else togliTipo(d, tipo);
+    tolti++;
   }
   return tolti;
 }
@@ -46,7 +68,7 @@ export function abbreviaParti(xml, voci = []) {
   try {
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     if (doc.querySelector("parsererror")) return xml;
-    const tolti = senzaTempiRipetuti(doc);
+    const tolti = senzaTempiRipetuti(doc) + senzaTestiLunghi(doc);
     const fuori = () => (tolti ? new XMLSerializer().serializeToString(doc) : xml);
     const parti = [...doc.querySelectorAll("score-part")];
     if (parti.length < 2) return fuori();
