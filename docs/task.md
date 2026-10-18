@@ -89,6 +89,7 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [ ] P25 (H) Merge di T-908 su `main` di AIVideoCreator **a render fermi** (l'export di stanotte e' stato fatto dal worktree, il codice e' lo stesso)
 - [ ] P26 (H) **Rilanciare la suite e2e completa** (`npm run e2e`): l'ultimo giro e' stato fermato dal sistema per poca memoria a 244/331 con 0 errori; restano da rivedere partitura/player/pwa/sync-audio dopo le ultime modifiche CSS/JS. Poi controllare a mano un brano con organo (475) e *Agnus Dei* da telefono vero
 - [ ] P27 (H) Merge della PR del player su `main` (decisione dell'utente) e verifica del deploy; poi nuove esportazioni man mano che si programmano i video (comando in `docs/player.md`)
+- [ ] F1 (futuro, da valutare) Opus o MP3: togliere la riserva MP3 (-0,6 GB su R2) o tenere solo MP3? Misura fatta in Chrome (nessuno sfasamento, qualita' pari) in [misure-opus-mp3.md](misure-opus-mp3.md); mancano **Safari/iPhone/Firefox** e un ascolto a cuffia. Oggi si lascia com'e'
   (b) `partitura.spec.mjs` «scelta della battuta»: «toccare lo spazio vuoto di battute diverse…» e «prima e ultima battuta…» ricevono "0" invece di "1": capire se e' il test (punto cliccato / ripartenza della scelta) o `battutaAlPunto` nel browser (confrontare `caselle` con le battute reali di `_prova`, 6 battute)
 
 ## Q — Robustezza (Fase 3, ok dell'utente 2026-10-16)
