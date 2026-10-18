@@ -169,3 +169,27 @@ test.describe("aggiornamento del service worker", () => {
     }
   });
 });
+
+test.describe("asset versionati", () => {
+  test("HTML, moduli del player e precache portano lo stesso ?v=<hash> (niente copie vecchie dopo un deploy)", async ({ page, context }) => {
+    await intercettaAudio(context);
+    const richieste = [];
+    page.on("request", (r) => { const u = new URL(r.url()); if (/^\/assets\/(js|css)\//.test(u.pathname)) richieste.push(u.pathname + u.search); });
+    await apriPlayer(page);
+    const hash = await page.evaluate(() => /[?]v=([0-9a-f]{10})/.exec(document.querySelector('link[rel="stylesheet"][href*="main.css"]').getAttribute("href"))?.[1]);
+    expect(hash).toMatch(/^[0-9a-f]{10}$/);
+    for (const sel of ['link[href*="/assets/css/"]', 'script[src*="/assets/js/"]']) {
+      const url = (e) => e.getAttribute("href").then((h) => h ?? e.getAttribute("src"));
+      for (const e of await page.locator(sel).all()) expect(await url(e)).toContain("?v=" + hash);
+    }
+    const moduli = richieste.filter((r) => r.includes("/assets/js/study/"));
+    expect(moduli.length, "moduli del player caricati").toBeGreaterThanOrEqual(5);
+    for (const m of moduli) expect(m, "ogni modulo ha lo stesso hash").toContain(`?v=${hash}`);
+    // il precache del service worker usa gli stessi URL versionati
+    await page.reload();
+    await page.waitForFunction(() => !!navigator.serviceWorker.controller, null, { timeout: 15_000 });
+    const cache = await leggiCache(page);
+    const pre = Object.keys(cache).find((k) => k.startsWith("vav-pre-"));
+    expect(cache[pre].some((u) => u.endsWith(`/assets/css/main.css?v=${hash}`))).toBe(true);
+  });
+});
