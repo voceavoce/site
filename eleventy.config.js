@@ -6,7 +6,7 @@ import { sections, routeUrl, altUrls, seasonSlugs } from "./src/_data/routes.js"
 import * as fmt from "./src/_lib/format.js";
 import * as ld from "./src/_lib/jsonld.js";
 import { buildSitemap } from "./src/_lib/sitemap.js";
-import { writeFileSync } from "node:fs";
+import { writeFileSync, mkdirSync } from "node:fs";
 import { PLAYER_DIR } from "./src/_lib/studio.js";
 import studio from "./src/_data/studio.js";
 
@@ -72,6 +72,7 @@ export default function (eleventyConfig) {
 
   // sitemap.xml: costruita a fine build dalle pagine HTML prodotte (canonical, noindex, hreflang).
   eleventyConfig.on("eleventy.after", ({ dir, results }) => {
+    mkdirSync(dir.output, { recursive: true }); // con 0 pagine scritte (build di prova) la cartella puo' non esserci
     writeFileSync(path.join(dir.output, "sitemap.xml"), buildSitemap(results));
   });
 
