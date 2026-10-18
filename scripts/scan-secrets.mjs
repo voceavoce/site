@@ -32,10 +32,14 @@ export function scanText(file, text) {
   return out;
 }
 
+// File che contengono per forza esempi di segreti (le regole e i loro test).
+const ESCLUSI = new Set(["scripts/scan-secrets.mjs", "tests/scan-secrets.test.mjs"]);
+
 export function scanRepo(root) {
   const files = execFileSync("git", ["ls-files", "-z"], { cwd: root, encoding: "utf8" }).split("\0").filter(Boolean);
   const out = [];
   for (const f of files) {
+    if (ESCLUSI.has(f)) continue;
     if (/\.(png|jpe?g|gif|webp|ico|woff2?|wasm|pdf|opus|mp3|wav|zip)$/i.test(f)) continue;
     let buf;
     try {
