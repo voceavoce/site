@@ -9,6 +9,7 @@ import { buildSitemap } from "./src/_lib/sitemap.js";
 import { versionaAsset } from "./src/_lib/asset-version.js";
 import { writeFileSync, mkdirSync } from "node:fs";
 import { PLAYER_DIR } from "./src/_lib/studio.js";
+import { urlSegnalazione } from "./src/assets/js/study/segnalazione.js";
 import studio from "./src/_data/studio.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -49,6 +50,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("jsonSafe", (v) => JSON.stringify(v).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029"));
   eleventyConfig.addFilter("t", (key, lang) => fmt.t(String(key), lang));
   eleventyConfig.addFilter("routeUrl", routeUrl);
+  eleventyConfig.addFilter("reportUrl", (titolo, pagina) => urlSegnalazione({ titolo, pagina }));
   eleventyConfig.addFilter("altUrls", altUrls);
   eleventyConfig.addFilter("absUrl", (p) => new URL(p, site.url).href);
   eleventyConfig.addFilter("tv", (key, lang, vars) => fmt.t(key, lang, vars)); // t con segnaposto {x}

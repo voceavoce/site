@@ -23,14 +23,14 @@ For each piece we give the source and the edition. You will find them on the pie
 
 ## Corrected scores
 
-When we correct a score, the corrected version is published on GitHub, in the [voceavoce/scores](https://github.com/voceavoce/scores) repository.
+When we correct a score, we update the player and the piece's page.
 
 ## Reporting an error
 
-Did you notice a wrong note or word? Open a [GitHub issue](https://github.com/voceavoce/scores/issues) and include:
+Did you notice a wrong note or word? The player and the piece's page have a “Report an error in the score” link: it opens a pre-filled [GitHub issue](https://github.com/voceavoce/site/issues). Include:
 
 - the piece and the voice;
-- the minute of the video where the error appears;
+- the bar (or the minute of the video) where the error appears;
 - what it should be instead, with the source if you know it.
 
 </article>

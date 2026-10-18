@@ -378,6 +378,7 @@
     "fullscreen": "Full-screen score",
     "fullscreenClose": "Close",
     "optFullscreenPlay": "Full screen when I press Play (phones)",
-    "allVoices": "All voices level"
+    "allVoices": "All voices level",
+    "reportScore": "Report an error in the score"
   }
 }

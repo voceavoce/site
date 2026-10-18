@@ -413,3 +413,18 @@ test.describe("schermo intero su telefono", () => {
     await expect(page.locator("[data-opt-fullscreen-play]")).not.toBeChecked();
   });
 });
+
+test.describe("segnala un errore nello spartito", () => {
+  test("il link apre una issue del sito gia' compilata, con la battuta in cui si e' arrivati", async ({ page }) => {
+    await apriPlayer(page);
+    const link = page.locator("[data-report]");
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute("target", "_blank");
+    expect(await link.getAttribute("href")).toContain("https://github.com/voceavoce/site/issues/new?title=");
+    await page.evaluate(() => { document.querySelector("[data-seek]").dataset.measure = "7"; });
+    await link.focus();
+    const u = new URL(await link.getAttribute("href"));
+    expect(u.searchParams.get("body")).toContain("**Battuta:** 7");
+    expect(u.searchParams.get("body")).toContain(new URL(page.url()).pathname);
+  });
+});

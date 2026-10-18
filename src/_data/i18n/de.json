@@ -378,6 +378,7 @@
     "fullscreen": "Partitur im Vollbild",
     "fullscreenClose": "Schließen",
     "optFullscreenPlay": "Vollbild beim Drücken von Abspielen (Smartphones)",
-    "allVoices": "Alle Stimmen gleich laut"
+    "allVoices": "Alle Stimmen gleich laut",
+    "reportScore": "Fehler in der Partitur melden"
   }
 }

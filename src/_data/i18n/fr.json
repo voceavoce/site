@@ -378,6 +378,7 @@
     "fullscreen": "Partition en plein écran",
     "fullscreenClose": "Fermer",
     "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)",
-    "allVoices": "Toutes les voix égales"
+    "allVoices": "Toutes les voix égales",
+    "reportScore": "Signaler une erreur dans la partition"
   }
 }

@@ -68,6 +68,7 @@ eleventyExcludeFromCollections: true
         <p id="study-pick-hint" class="study__hint">{{ 'study.pickHint' | t(lang) }} {{ 'study.loopSame' | t(lang) }}</p>
       </div>
       <section class="score-scroll" data-score tabindex="0" aria-label="{{ 'study.scoreLabel' | tv(lang, { title: pieceTitle }) }}" data-label="{{ 'study.scoreLabel' | tv(lang, { title: pieceTitle }) }}"></section>
+      <p class="study__report"><a href="{{ pieceTitle | reportUrl(page.url | absUrl) }}" rel="noopener" target="_blank" data-report data-titolo="{{ pieceTitle }}" data-pagina="{{ page.url | absUrl }}">{{ 'study.reportScore' | t(lang) }}</a></p>
     </section>
 
     <div class="study__side">

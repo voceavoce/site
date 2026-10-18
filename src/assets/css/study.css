@@ -9,6 +9,7 @@
   .study__error { padding: var(--space-3) var(--space-4); border: 2px solid #b3261e; border-radius: var(--radius-sm); background: var(--surface); font-weight: 600; }
   .study__error[hidden] { display: none; }
   .study__hint { font-size: var(--step--1); color: var(--muted); }
+  .study__report { margin: var(--space-2) 0 0; font-size: var(--step--1); }
   .study__grid { display: grid; gap: var(--space-5); min-width: 0; }
   .study__score, .study__side { min-width: 0; display: grid; gap: var(--space-3); align-content: start; }
   .study__side { gap: var(--space-4); }
@@ -169,7 +170,7 @@
   }
   html.study-immersive .study__score .score-scroll { flex: 1 1 auto; min-height: 0; max-height: none; }
   html.study-immersive .study__bar { justify-content: flex-end; }
-  html.study-immersive [data-fs-open] { display: none; }
+  html.study-immersive [data-fs-open], html.study-immersive .study__report { display: none; }
   html.study-immersive .transport { z-index: 60; }
   html.study-immersive .transport__row--2 { display: none; }
   .fs-close { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--on-accent); }

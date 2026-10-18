@@ -124,8 +124,8 @@ L'italiano resta alla radice, così l'URL di oggi non perde valore; `/en/` e `/e
 3. **Player incorporato** (iframe `youtube-nocookie.com`, `loading="lazy"`; decisione utente 2026-10-16, prima era una facade). Il selettore voce si genera dalle chiavi reali (S/A/T/B, ma anche T1/T2/B1/B2, oppure "Voce media" per i metodi). Le voci non ancora uscite compaiono come "in arrivo il …". Sotto, i capitoli cliccabili.
 4. Note sul brano, da `curated` o da `nota_descrizione`.
 5. **Testo e traduzioni**, affiancati verso per verso; su mobile diventano schede. Ogni blocco ha il suo `lang`; ogni traduzione riporta autore e licenza.
-6. **Spartito:** prima le fonti di pubblico dominio (verifiche IMSLP/CPDL, link a `voceavoce/scores` quando c'è), poi le eventuali affiliazioni.
-7. Spazio pubblicitario riservato (spento) · brani correlati · "Hai sentito un errore?" che porta alle issue di `voceavoce/scores`.
+6. **Spartito:** prima le fonti di pubblico dominio (verifiche IMSLP/CPDL, nessun repository `scores`: le correzioni restano nel sito), poi le eventuali affiliazioni.
+7. Spazio pubblicitario riservato (spento) · brani correlati · "Hai sentito un errore?" che apre una issue di `voceavoce/site` già compilata (anche dal player, con la battuta).
 
 **Contenuti sottili:** per i brani programmati senza alcun video pubblico la scheda viene generata con `noindex`, e diventa indicizzabile alla prima uscita. Così Google non vede pagine vuote.
 

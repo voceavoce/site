@@ -378,6 +378,7 @@
     "fullscreen": "Partitura a schermo intero",
     "fullscreenClose": "Chiudi",
     "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)",
-    "allVoices": "Tutte le voci pari"
+    "allVoices": "Tutte le voci pari",
+    "reportScore": "Segnala un errore nello spartito"
   }
 }
