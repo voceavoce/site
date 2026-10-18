@@ -98,6 +98,27 @@ Legenda: `[ ]` da fare · `[~]` in corso · `[x]` fatto. Modello consigliato: **
 - [ ] F1 (futuro, da valutare) Opus o MP3: togliere la riserva MP3 (-0,6 GB su R2) o tenere solo MP3? Misura fatta in Chrome (nessuno sfasamento, qualita' pari) in [misure-opus-mp3.md](misure-opus-mp3.md); mancano **Safari/iPhone/Firefox** e un ascolto a cuffia. Oggi si lascia com'e'
   (b) `partitura.spec.mjs` «scelta della battuta»: «toccare lo spazio vuoto di battute diverse…» e «prima e ultima battuta…» ricevono "0" invece di "1": capire se e' il test (punto cliccato / ripartenza della scelta) o `battutaAlPunto` nel browser (confrontare `caselle` con le battute reali di `_prova`, 6 battute)
 
+## R — Sessione 2026-10-18 sera: contenuti in 5 lingue, CI, player
+
+- [x] R1 (S) C1, C2, C3 chiusi (vedi sezione C); dichiarazione sull'uso dell'IA (#7); anti-segreti (#8); CI più veloce (#9)
+- [x] R2 (S) Player: pannello di caricamento con barra di avanzamento e percentuale reale dal download (`schermo.js`, `engine.load` con frazione per traccia); partitura a schermo intero (classe su `<html>`, API Fullscreen in più dove c'è), su telefono parte al Riproduci (opzione `fullscreenPlay`, ricordata) (#12)
+- [~] R3 (S) «Tutte le voci pari» nel mixer (#13, da unire dopo i check)
+- [ ] R4 (S) **Qualità del rallentamento** (segnalata dall'utente: intonazione instabile e suoni sporchi sotto il 100%, anche con Solo). Provare `?debug&stretch=voci` (uno stretcher per voce) e confrontare con lo stesso URL senza. Se migliora: farlo default (attenzione a CPU ~x4 e sfasamento di qualche ms tra voci). Se no: tracce rallentate pre-renderizzate con Rubber Band R3 (più archivio su R2), oppure velocità minima più alta. Chiedere: quale brano/voce, velocità, PC o telefono
+- [ ] R5 (S) Note per i brani che usciranno (il test `tests/note.test.mjs` le richiede in 5 lingue per ogni brano pubblicato)
+- [ ] R6 (O) Rilettura umana delle traduzioni e note in tedesco e francese (pagine Privacy e Trasparenza per prime) e delle note it/en/es; le traduzioni comuni sono «non riviste»
+- [ ] R7 (S) Eventuale: portare le note de/fr nella pipeline (`nota_descrizione`) se si vogliono anche nelle descrizioni YouTube
+- [ ] R8 (S) Pulizia: `git worktree remove ../site-assets` e branch locali già uniti; fermare i server di sviluppo
+
+### Prove a mano (da fare dall'utente)
+
+1. **Caricamento:** apri un player con la cache svuotata (DevTools → Network → «Disable cache», oppure una finestra privata): deve comparire la scheda «Sto preparando le voci…» con barra e percentuale che avanzano, poi sparire. Prova anche con rete lenta (Network → Slow 4G).
+2. **Schermo intero su telefono** (o DevTools in modalità telefono, ≤640 px e tocco): premi Riproduci → la partitura va a schermo intero con soltanto Chiudi, A−/A+ e la barra di riproduzione; Chiudi esce; Esc esce da tastiera. In Opzioni, togli «Schermo intero quando premo Riproduci»: non deve più partire in automatico (e la scelta resta dopo il ricaricamento).
+3. **Schermo intero su PC:** il pulsante con le quattro frecce accanto ad A−/A+ apre la partitura a tutto schermo; la barra di riproduzione resta in basso.
+4. **Menu lingua:** a 360 px il pulsante «IT ▾» apre l'elenco con i nomi estesi; clic fuori o Esc lo chiudono; cambia lingua da una scheda brano e dal player; controlla che la pagina in tedesco/francese abbia la nota e la voce «Traduzione non rivista» sui testi comuni.
+5. **Tutte le voci pari** (dopo la #13): «La mia voce» (100/30) e poi «Tutte le voci pari» → tutte al 100% e nessuna in muta; stessa cosa dopo «Solo».
+6. **Qualità del rallentamento (R4):** su Agnus Dei, prova 70% e 50%, con e senza `&stretch=voci`, con e senza Solo; annota quale suona meglio e se la differenza si sente sul telefono.
+7. **Pagine DE/FR:** scorri Home, Chor/Chœur, una scheda brano, il player, Datenschutz/Confidentialité e Transparenz/Transparence cercando testi tagliati o parole sbagliate.
+
 ## Q — Robustezza (Fase 3, ok dell'utente 2026-10-16)
 
 - [x] P12 (S) Test end-to-end Playwright in `tests/e2e/` (PWA + player), partendo dalle bozze in `tools/verifica-manuale/`; audio sintetici generati al momento del test, mai nel repo — FATTO: `tests/e2e/{helpers,player.spec,pwa.spec}.mjs`, 18 test, `npm run e2e`
