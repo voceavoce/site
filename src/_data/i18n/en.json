@@ -141,6 +141,7 @@
     "chapters": "Chapters",
     "chaptersFor": "Chapters, {voice} part",
     "notes": "Notes on the piece",
+    "aiNote": "Written with AI assistance",
     "lyrics": "Text and translations",
     "original": "Original text",
     "translation": "Translation: {lang}",
