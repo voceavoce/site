@@ -76,6 +76,7 @@
   [data-loop-range]:not(:empty) { margin-inline-start: .4em; }
   .tool.is-on { border-color: var(--accent-fill); box-shadow: inset 0 0 0 1px var(--accent-fill); }
   .myvoice { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3); align-items: end; }
+  .myvoice .tool--wide { grid-column: 1 / -1; }
 
   .mix { list-style: none; padding: 0; display: grid; gap: var(--space-3); }
   .mix__row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "name mute solo" "vol vol out"; gap: var(--space-2) var(--space-3); align-items: center;

@@ -95,6 +95,7 @@ eleventyExcludeFromCollections: true
               {%- endif %}{% endfor %}
             </select></label>
           <button type="button" class="tool tool--text" data-myvoice data-needs-audio disabled aria-describedby="study-myvoice-hint">{{ 'study.myVoice' | t(lang) }}</button>
+          <button type="button" class="tool tool--text tool--wide" data-allvoices data-needs-audio disabled>{{ 'study.allVoices' | t(lang) }}</button>
         </div>
         <p id="study-myvoice-hint" class="study__hint">{{ 'study.myVoiceHint' | t(lang) }}</p>
       </section>

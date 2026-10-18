@@ -377,6 +377,7 @@
     "loaderHint": "À la première ouverture, cela peut prendre quelques secondes : nous téléchargeons l'audio de toutes les voix.",
     "fullscreen": "Partition en plein écran",
     "fullscreenClose": "Fermer",
-    "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)"
+    "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)",
+    "allVoices": "Toutes les voix égales"
   }
 }

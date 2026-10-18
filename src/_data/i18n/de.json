@@ -377,6 +377,7 @@
     "loaderHint": "Beim ersten Öffnen kann es einige Sekunden dauern: Wir laden das Audio aller Stimmen herunter.",
     "fullscreen": "Partitur im Vollbild",
     "fullscreenClose": "Schließen",
-    "optFullscreenPlay": "Vollbild beim Drücken von Abspielen (Smartphones)"
+    "optFullscreenPlay": "Vollbild beim Drücken von Abspielen (Smartphones)",
+    "allVoices": "Alle Stimmen gleich laut"
   }
 }

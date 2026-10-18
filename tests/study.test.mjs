@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { measureIndexAt, timeOfMeasure, endOfMeasure, loopBounds, indexOfScoreMeasure, computePosition, audiblePosition, measureLabels, formatClock } from "../src/assets/js/study/timeline.js";
 import { stretcherLatency, deviceLatency, totalLatency, STRETCH_LATENCY } from "../src/assets/js/study/latency.js";
 import { resolveAudioUrl, isSafeRelativePath, setAudioBase } from "../src/assets/js/study/config.js";
-import { effectiveGains, myVoiceState, initialMixerState, soloState, isSolo } from "../src/assets/js/study/mixer.js";
+import { effectiveGains, myVoiceState, initialMixerState, soloState, isSolo, allVoicesState } from "../src/assets/js/study/mixer.js";
 import { loadStudio, checkManifest } from "../src/_lib/studio.js";
 import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -254,4 +254,12 @@ test("startForPlay: con un ripeti acceso e la testina fuori dal passaggio si par
   assert.equal(startForPlay(null, 7), 7); // nessun ripeti
   assert.equal(startForPlay({ start: 5, end: 5 }, 7), 7); // passaggio non valido
   assert.equal(startForPlay({ start: NaN, end: 9 }, 7), 7);
+});
+
+test("allVoicesState: tutte le voci a pieno volume e non mute, da qualunque stato", () => {
+  const tr = [{ chiave: "s" }, { chiave: "a" }, { chiave: "t" }];
+  const base = initialMixerState(tr);
+  assert.deepEqual(allVoicesState(myVoiceState(base, "a")), base);
+  assert.deepEqual(allVoicesState(soloState(base, "t")), base);
+  assert.deepEqual(effectiveGains(allVoicesState(soloState(myVoiceState(base, "s"), "t"))), { s: 1, a: 1, t: 1 });
 });

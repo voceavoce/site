@@ -377,6 +377,7 @@
     "loaderHint": "La primera vez puede tardar unos segundos: descargamos el audio de todas las voces.",
     "fullscreen": "Partitura a pantalla completa",
     "fullscreenClose": "Cerrar",
-    "optFullscreenPlay": "Pantalla completa al pulsar Reproducir (móviles)"
+    "optFullscreenPlay": "Pantalla completa al pulsar Reproducir (móviles)",
+    "allVoices": "Todas las voces iguales"
   }
 }

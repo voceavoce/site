@@ -206,6 +206,17 @@ test.describe("mixer", () => {
     for (const k of ["soprano", "tenore", "basso"]) await expect.poll(() => gain(page, k)).toBeCloseTo(0.3, 2);
     await expect(riga(page, "soprano").locator("[data-volume]")).toHaveValue("30");
   });
+
+  test("«Tutte le voci pari» annulla La mia voce e Solo con un tocco", async ({ page }) => {
+    await page.locator("[data-myvoice-select]").selectOption("alto");
+    await page.locator("[data-myvoice]").click();
+    await riga(page, "basso").locator("[data-solo]").click();
+    await expect.poll(() => gain(page, "soprano")).toBeLessThan(0.01);
+    await page.locator("[data-allvoices]").click();
+    for (const k of ["soprano", "alto", "tenore", "basso"]) await expect.poll(() => gain(page, k)).toBeCloseTo(1, 2);
+    await expect(riga(page, "soprano").locator("[data-volume]")).toHaveValue("100");
+    await expect(riga(page, "basso").locator("[data-solo]")).toHaveAttribute("aria-pressed", "false");
+  });
 });
 
 test.describe("tastiera e ARIA", () => {

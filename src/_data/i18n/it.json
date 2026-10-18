@@ -377,6 +377,7 @@
     "loaderHint": "Alla prima apertura può volerci qualche secondo: scarichiamo l'audio di tutte le voci.",
     "fullscreen": "Partitura a schermo intero",
     "fullscreenClose": "Chiudi",
-    "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)"
+    "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)",
+    "allVoices": "Tutte le voci pari"
   }
 }
