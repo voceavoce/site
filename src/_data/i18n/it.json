@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Hai sentito un errore?",
     "reportP": "Un'alterazione sbagliata, una nota fuori posto, un verso mal scritto: dicci dove.",
-    "reportLink": "Segnala su GitHub",
+    "reportLink": "Segnala per email",
     "related": "Brani correlati",
     "descr": {
       "base": "{title} – {composer}: video di studio voce per voce.",

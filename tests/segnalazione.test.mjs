@@ -1,25 +1,45 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { urlSegnalazione, REPO_SEGNALAZIONI } from "../src/assets/js/study/segnalazione.js";
+import { mailSegnalazione, testoSegnalazione } from "../src/assets/js/study/segnalazione.js";
 
-test("urlSegnalazione: issue del sito con titolo e testo precompilati", () => {
-  const u = new URL(urlSegnalazione({ titolo: "Agnus Dei", pagina: "https://voceavoce.com/it/player/agnus-dei-josquin/", battuta: "12" }));
-  assert.equal(u.origin + u.pathname, `https://github.com/${REPO_SEGNALAZIONI}/issues/new`);
-  assert.equal(REPO_SEGNALAZIONI, "voceavoce/site");
-  assert.equal(u.searchParams.get("title"), "Spartito: Agnus Dei");
-  const body = u.searchParams.get("body");
-  assert.match(body, /\*\*Brano:\*\* Agnus Dei/);
-  assert.match(body, /\*\*Pagina:\*\* https:\/\/voceavoce\.com\/it\/player\/agnus-dei-josquin\//);
-  assert.match(body, /\*\*Battuta:\*\* 12/);
+const EMAIL = "info@voceavoce.com";
+const parti = (m) => new URLSearchParams(m.split("?")[1]);
+
+test("mailSegnalazione: email gia' scritta all'indirizzo del sito, in chiaro e con la battuta", () => {
+  const m = mailSegnalazione({ email: EMAIL, titolo: "Agnus Dei", pagina: "https://voceavoce.com/player/agnus-dei-josquin/", battuta: "12", lingua: "it" });
+  assert.match(m, /^mailto:info@voceavoce\.com\?subject=/);
+  const q = parti(m);
+  assert.equal(q.get("subject"), "Spartito: Agnus Dei");
+  assert.match(q.get("body"), /^Brano: Agnus Dei\r\nPagina: https:\/\/voceavoce\.com\/player\/agnus-dei-josquin\/\r\nBattuta: 12\r\n/);
+  assert.ok(!q.get("body").includes("**"), "niente Markdown: i coristi leggono un'email");
 });
 
-test("urlSegnalazione: senza battuta chiede di indicarla; caratteri speciali restano interi", () => {
-  const u = new URL(urlSegnalazione({ titolo: "Ave & «Maria» #2", pagina: "https://x/?a=1&b=2" }));
-  assert.equal(u.searchParams.get("title"), "Spartito: Ave & «Maria» #2");
-  assert.match(u.searchParams.get("body"), /\*\*Battuta:\*\* \(indica il numero\)/);
-  assert.match(u.searchParams.get("body"), /\?a=1&b=2/);
+test("mailSegnalazione: senza battuta chiede di indicarla; caratteri speciali restano interi", () => {
+  const q = parti(mailSegnalazione({ email: EMAIL, titolo: "Ave & «Maria» #2", pagina: "https://x/?a=1&b=2" }));
+  assert.equal(q.get("subject"), "Spartito: Ave & «Maria» #2");
+  assert.match(q.get("body"), /Battuta: \(indica il numero\)/);
+  assert.match(q.get("body"), /\?a=1&b=2/);
 });
 
-test("urlSegnalazione: senza argomenti non si rompe", () => {
-  assert.doesNotThrow(() => new URL(urlSegnalazione()));
+test("testo e oggetto nella lingua del sito; lingua sconosciuta o assente, italiano", () => {
+  const p = { titolo: "Agnus Dei", pagina: "https://voceavoce.com/fr/player/x/", battuta: "5" };
+  const fr = testoSegnalazione({ ...p, lingua: "fr" });
+  assert.equal(fr.oggetto, "Partition: Agnus Dei");
+  assert.match(fr.corpo, /Mesure: 5/);
+  assert.match(fr.corpo, /Ce qui ne va pas/);
+  assert.match(fr.corpo, /Lingua \/ Language: fr/);
+  assert.equal(testoSegnalazione({ ...p, lingua: "de" }).oggetto, "Partitur: Agnus Dei");
+  const xx = testoSegnalazione({ titolo: "X", lingua: "xx" });
+  assert.equal(xx.oggetto, "Spartito: X");
+  assert.match(xx.corpo, /Lingua \/ Language: it/);
+  assert.doesNotThrow(() => testoSegnalazione());
+});
+
+test("ogni lingua del sito ha tutti i testi della segnalazione", async () => {
+  const site = (await import("../src/_data/site.js")).default;
+  for (const l of site.langs) {
+    const { oggetto, corpo } = testoSegnalazione({ titolo: "X", pagina: "p", battuta: "1", lingua: l });
+    assert.match(corpo, new RegExp(`Lingua / Language: ${l}`), l);
+    assert.ok(!oggetto.includes("undefined") && !corpo.includes("undefined"), l);
+  }
 });

@@ -27,7 +27,7 @@ Wenn wir eine Partitur korrigieren, aktualisieren wir den Player und die Seite d
 
 ## Einen Fehler melden
 
-Eine falsche Note oder ein falsches Wort bemerkt? Im Player und auf der Seite des Stücks findest du den Link „Fehler in der Partitur melden“: Er öffnet ein vorausgefülltes [GitHub-Issue](https://github.com/voceavoce/site/issues). Nenne:
+Eine falsche Note oder ein falsches Wort bemerkt? Im Player und auf der Seite des Stücks findest du den Link „Fehler in der Partitur melden“: Er öffnet eine vorbereitete E-Mail mit Stück und Takt. Wenn du magst, schreib an info@voceavoce.com. Nenne:
 
 - das Stück und die Stimme;
 - den Takt (oder die Minute im Video), in dem der Fehler vorkommt;

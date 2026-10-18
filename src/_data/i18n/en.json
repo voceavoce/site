@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Did you hear a mistake?",
     "reportP": "A wrong accidental, a misplaced note, a misspelt word: tell us where.",
-    "reportLink": "Report it on GitHub",
+    "reportLink": "Report by email",
     "related": "Related pieces",
     "descr": {
       "base": "{title} – {composer}: part-by-part rehearsal video.",

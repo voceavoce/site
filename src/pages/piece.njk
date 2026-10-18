@@ -179,7 +179,7 @@ eleventyExcludeFromCollections: true
 
     <section class="report" aria-labelledby="report-h">
       <h2 id="report-h">{{ 'piece.report' | t(lang) }}</h2>
-      <p>{{ 'piece.reportP' | t(lang) }} <a href="{{ piece.titolo | reportUrl(page.url | absUrl) }}" rel="noopener" target="_blank">{{ 'piece.reportLink' | t(lang) }}</a></p>
+      <p>{{ 'piece.reportP' | t(lang) }} <a href="{{ piece.titolo | reportMail(page.url | absUrl, lang) }}">{{ 'piece.reportLink' | t(lang) }}</a> <span class="study__hint">({{ site.email }})</span></p>
     </section>
 
     {%- if piece.correlati.length %}

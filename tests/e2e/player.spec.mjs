@@ -415,16 +415,16 @@ test.describe("schermo intero su telefono", () => {
 });
 
 test.describe("segnala un errore nello spartito", () => {
-  test("il link apre una issue del sito gia' compilata, con la battuta in cui si e' arrivati", async ({ page }) => {
+  test("un solo link, l'email gia' scritta con la battuta in cui si e' arrivati; l'indirizzo e' scritto accanto", async ({ page }) => {
     await apriPlayer(page);
     const link = page.locator("[data-report]");
     await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute("target", "_blank");
-    expect(await link.getAttribute("href")).toContain("https://github.com/voceavoce/site/issues/new?title=");
+    await expect(page.locator(".study__report")).toContainText("info@voceavoce.com");
+    expect(await link.getAttribute("href")).toMatch(/^mailto:info@voceavoce[.]com[?]subject=/);
     await page.evaluate(() => { document.querySelector("[data-seek]").dataset.measure = "7"; });
     await link.focus();
-    const u = new URL(await link.getAttribute("href"));
-    expect(u.searchParams.get("body")).toContain("**Battuta:** 7");
-    expect(u.searchParams.get("body")).toContain(new URL(page.url()).pathname);
+    const corpo = decodeURIComponent(await link.getAttribute("href"));
+    expect(corpo).toContain("Battuta: 7");
+    expect(corpo).toContain(new URL(page.url()).pathname);
   });
 });

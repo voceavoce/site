@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Fehler gehört?",
     "reportP": "Ein falsches Vorzeichen, eine verrutschte Note, ein falsch geschriebener Vers: sag uns, wo.",
-    "reportLink": "Auf GitHub melden",
+    "reportLink": "Per E-Mail melden",
     "related": "Verwandte Stücke",
     "descr": {
       "base": "{title} – {composer}: Übevideo Stimme für Stimme.",

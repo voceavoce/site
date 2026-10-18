@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "¿Has oído un error?",
     "reportP": "Una alteración equivocada, una nota fuera de lugar, una palabra mal escrita: dinos dónde.",
-    "reportLink": "Avisar en GitHub",
+    "reportLink": "Señalar por correo",
     "related": "Obras relacionadas",
     "descr": {
       "base": "{title} – {composer}: vídeo de estudio voz por voz.",
