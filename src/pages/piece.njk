@@ -110,6 +110,7 @@ eleventyExcludeFromCollections: true
     <section class="notes" aria-labelledby="notes-h">
       <h2 id="notes-h">{{ 'piece.notes' | t(lang) }}</h2>
       <p class="prose"{% if noteLang != lang %} lang="{{ noteLang }}"{% endif %}>{{ piece.nota[noteLang] }}</p>
+      <p class="credit"><em>{{ 'piece.aiNote' | t(lang) }}</em></p>
     </section>
     {%- endif %}
 

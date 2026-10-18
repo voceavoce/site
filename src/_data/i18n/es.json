@@ -141,6 +141,7 @@
     "chapters": "Capítulos",
     "chaptersFor": "Capítulos, voz {voice}",
     "notes": "Notas sobre la obra",
+    "aiNote": "Escrito con ayuda de la IA",
     "lyrics": "Texto y traducciones",
     "original": "Texto original",
     "translation": "Traducción: {lang}",
