@@ -20,19 +20,44 @@
   </defaults>
   <part-list>
     <score-part id="Pfd23d2effe4db69d2d20b926578f9cb8">
-      <part-name>Sopran</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I3dfefea6fddb37a37a4897f166f166ed">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pc7a07074640f4d9e1920104e6cce43f3">
-      <part-name>Alt</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Ic9ac59142d963965500cf7a2609a9eb9">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P977b73314b225ebb75e806590849b53d">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Ieafcb8f10c9edb4da152a1f569992e5d">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pf7a39d9fd005c6ceb01c3e4603aa85f6">
-      <part-name>Bariton</part-name>
+      <part-name>B1</part-name>
+      <part-abbreviation>B1</part-abbreviation>
+      <score-instrument id="Ib75b3b4cf8c142db03dc8b5275301dbc">
+        <instrument-name>B1</instrument-name>
+        <instrument-abbreviation>B1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pd0ac2deab00f46f398b044bb9be4fabd">
-      <part-name>Bass</part-name>
+      <part-name>B2</part-name>
+      <part-abbreviation>B2</part-abbreviation>
+      <score-instrument id="I4c4b58e4750c682e62eef8d3ac1d4c4e">
+        <instrument-name>B2</instrument-name>
+        <instrument-abbreviation>B2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -1945,6 +1970,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

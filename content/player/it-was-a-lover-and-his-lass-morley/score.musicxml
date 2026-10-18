@@ -20,16 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="P0f6348149042cbf69e7387683c3a9e94">
-      <part-name>Midi_1</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I65f35decbc39cc4dc9b893e41b0efa05">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P1186eab49a0da1906836882bd7dd9f7f">
-      <part-name>Midi_1</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I8f62bf3a991588fe7658e8b6e9109bcc">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P33271d8dcc2ca28777a282b346881a76">
-      <part-name>Midi_1</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Ide21f4bf4157e176d12121d052100423">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P89c25f9a646b23fbbba36578cd429b2e">
-      <part-name>Midi_1</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I8ce7411b1e5681a059d866ce6dbcca9e">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -1845,10 +1865,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -3655,10 +3671,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -5465,10 +5477,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <direction>
         <direction-type>
@@ -9086,10 +9094,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -10890,10 +10894,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -12694,10 +12694,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -14508,6 +14504,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>
@@ -16313,10 +16310,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -18121,10 +18114,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -19929,10 +19918,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -23398,10 +23383,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -25052,10 +25033,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>
@@ -26706,10 +26683,6 @@
           <beats>2</beats>
           <beat-type>2</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <note>
         <pitch>

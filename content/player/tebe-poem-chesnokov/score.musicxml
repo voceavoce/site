@@ -22,61 +22,61 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano</part-name>
-      <part-abbreviation>S.</part-abbreviation>
-      <score-instrument id="Ia5a823f2994011b5c1a853869b6ea6be">
-        <instrument-name>Soprano</instrument-name>
-        <instrument-abbreviation>Str</instrument-abbreviation>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I87a3c8eab59c469b34d23451d2a71c9a">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ia5a823f2994011b5c1a853869b6ea6be">
+      <midi-instrument id="I87a3c8eab59c469b34d23451d2a71c9a">
         <midi-channel>1</midi-channel>
         <midi-program>50</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alto</part-name>
-      <part-abbreviation>A.</part-abbreviation>
-      <score-instrument id="If608f6e9e4e1e064ac5abd2634384644">
-        <instrument-name>Alto</instrument-name>
-        <instrument-abbreviation>Str</instrument-abbreviation>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I105a4388f07bbeeefdeb12266724d4c5">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="If608f6e9e4e1e064ac5abd2634384644">
+      <midi-instrument id="I105a4388f07bbeeefdeb12266724d4c5">
         <midi-channel>2</midi-channel>
         <midi-program>50</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenor</part-name>
-      <part-abbreviation>T.</part-abbreviation>
-      <score-instrument id="I56ea342af6311d823081309c9dea66f4">
-        <instrument-name>Tenor</instrument-name>
-        <instrument-abbreviation>Str</instrument-abbreviation>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Id09c81eee68ba248ab187ad0f5777ad9">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I56ea342af6311d823081309c9dea66f4">
+      <midi-instrument id="Id09c81eee68ba248ab187ad0f5777ad9">
         <midi-channel>3</midi-channel>
         <midi-program>50</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Bass</part-name>
-      <part-abbreviation>B.</part-abbreviation>
-      <score-instrument id="I961c955427ecd8d57d8c2763d0c973a2">
-        <instrument-name>Bass</instrument-name>
-        <instrument-abbreviation>Str</instrument-abbreviation>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I1e10a54860b0d0fe26b0fce513617bc5">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I961c955427ecd8d57d8c2763d0c973a2">
+      <midi-instrument id="I1e10a54860b0d0fe26b0fce513617bc5">
         <midi-channel>4</midi-channel>
         <midi-program>50</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P5">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="I05eebea47a0724ba32aa239aaa8ac560">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="I2f9c7077e75df6c2ea8d3242db60c271">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I05eebea47a0724ba32aa239aaa8ac560">
+      <midi-instrument id="I2f9c7077e75df6c2ea8d3242db60c271">
         <midi-channel>5</midi-channel>
         <midi-program>50</midi-program>
       </midi-instrument>
@@ -120,7 +120,7 @@
       </direction>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="1.13" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -1490,7 +1490,7 @@
       </attributes>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="-80" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -2427,7 +2427,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="1.13" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -2722,7 +2722,7 @@
       </attributes>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.25" default-y="-80" relative-y="15">
+          <dynamics default-x="3.25">
             <p />
           </dynamics>
         </direction-type>
@@ -3071,7 +3071,7 @@
     <measure implicit="no" number="9" width="251.39">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.25" default-y="-80" relative-y="15">
+          <dynamics default-x="3.25">
             <p />
           </dynamics>
         </direction-type>
@@ -3610,7 +3610,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="16.13" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -3886,7 +3886,7 @@
       </attributes>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="12.38" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -4463,7 +4463,7 @@
     <measure implicit="no" number="9" width="251.39">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="12.38" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -4940,7 +4940,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="-80" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -5194,7 +5194,7 @@
       </attributes>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.25" default-y="-80" relative-y="15">
+          <dynamics default-x="3.25">
             <p />
           </dynamics>
         </direction-type>
@@ -5217,7 +5217,7 @@
       </backup>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.25" default-y="22.12" relative-y="15">
+          <dynamics default-x="3.25">
             <p />
           </dynamics>
         </direction-type>
@@ -5252,7 +5252,7 @@
       </backup>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="12.38" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -6728,7 +6728,7 @@
       </backup>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.25" default-y="24.07" relative-y="15">
+          <dynamics default-x="3.25">
             <p />
           </dynamics>
         </direction-type>
@@ -6782,7 +6782,7 @@
       </backup>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="12.38" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -8796,7 +8796,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="34.88" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>
@@ -8869,7 +8869,7 @@
       </note>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.5" default-y="-80" relative-y="15">
+          <dynamics default-x="6.5">
             <p />
           </dynamics>
         </direction-type>

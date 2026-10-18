@@ -20,16 +20,36 @@
   </defaults>
   <part-list>
     <score-part id="Pecc2bcef3c2cddff892eb57fdac150c1">
-      <part-name>Flute</part-name>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I0a0836dae1c9caa31c929d89b2095340">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pa2c03f7191a0dcc20bf9b9a6ab43ffa6">
-      <part-name>Oboe</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Ibb2a70e9a6f3b38a00f2ea0d1a5a2c10">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Paee30eb9b368c200e631723ca90849ae">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I8b5a94cffc821bf38c75a7c7ae0b1d56">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P7dec63f2308da91ce3db8599f28c59e7">
-      <part-name>Tuba</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="If2eaaab264478dcbab17e1aa11f203ad">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -6161,6 +6181,7 @@
         <clef>
           <sign>G</sign>
           <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

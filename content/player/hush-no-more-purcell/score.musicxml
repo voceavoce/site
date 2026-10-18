@@ -22,61 +22,61 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="Icba10ce89a989b627c416a79d651ee58">
-        <instrument-name>Soprano</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I86e74218456c308c41ea5e045c39bc44">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Icba10ce89a989b627c416a79d651ee58">
+      <midi-instrument id="I86e74218456c308c41ea5e045c39bc44">
         <midi-channel>1</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alto</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I9e15cacc6efe72ffaddd49caf45e4b8d">
-        <instrument-name>Alto</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I54541ffc1b468682069931d946b7dcfb">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I9e15cacc6efe72ffaddd49caf45e4b8d">
+      <midi-instrument id="I54541ffc1b468682069931d946b7dcfb">
         <midi-channel>2</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenor</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="Ifd005c828178d8480ddbc607c670f299">
-        <instrument-name>Tenor</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="I841f27c474bd2ac26b6c41d261c44ae4">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ifd005c828178d8480ddbc607c670f299">
+      <midi-instrument id="I841f27c474bd2ac26b6c41d261c44ae4">
         <midi-channel>3</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Bass</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I672de567bb75d80f2c7c67085a1ec347">
-        <instrument-name>Bass</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="Ie5887794177efc4ecbd44e82aea14e99">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I672de567bb75d80f2c7c67085a1ec347">
+      <midi-instrument id="Ie5887794177efc4ecbd44e82aea14e99">
         <midi-channel>4</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P5">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="Ib3ba08a29e4231d61049b179b1a4f378">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="Ia315e48f9049b6341fdd3350502643de">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ib3ba08a29e4231d61049b179b1a4f378">
+      <midi-instrument id="Ia315e48f9049b6341fdd3350502643de">
         <midi-channel>5</midi-channel>
         <midi-program>7</midi-program>
       </midi-instrument>

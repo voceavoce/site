@@ -23,48 +23,48 @@
   <part-list>
     <score-part id="P1">
       <part-name>S</part-name>
-      <part-abbreviation>Pno</part-abbreviation>
-      <score-instrument id="I65e3b692598378fa9ba7c31c0864eb57">
-        <instrument-name>Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="Ia7528a52329e32c99724fcc06e7bb2c6">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I65e3b692598378fa9ba7c31c0864eb57">
+      <midi-instrument id="Ia7528a52329e32c99724fcc06e7bb2c6">
         <midi-channel>1</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
       <part-name>A</part-name>
-      <part-abbreviation>Pno</part-abbreviation>
-      <score-instrument id="I3b6ff6282121ede1a0904f7db2ea734c">
-        <instrument-name>Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Iaf813d82d5cdfdc94c65ab010640c9f6">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I3b6ff6282121ede1a0904f7db2ea734c">
+      <midi-instrument id="Iaf813d82d5cdfdc94c65ab010640c9f6">
         <midi-channel>2</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
       <part-name>T</part-name>
-      <part-abbreviation>Pno</part-abbreviation>
-      <score-instrument id="Ifdd9daa2eddfe95681f01ea983df198c">
-        <instrument-name>Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Id650c621ef45701d1d4ffa2451ab7bff">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ifdd9daa2eddfe95681f01ea983df198c">
+      <midi-instrument id="Id650c621ef45701d1d4ffa2451ab7bff">
         <midi-channel>3</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
       <part-name>B</part-name>
-      <part-abbreviation>Pno</part-abbreviation>
-      <score-instrument id="Ia6be729512ad08d7f2f3c8e64cd5f9fc">
-        <instrument-name>Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="Ia6f096f6481fb49dafb8cd084a94ab2e">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ia6be729512ad08d7f2f3c8e64cd5f9fc">
+      <midi-instrument id="Ia6f096f6481fb49dafb8cd084a94ab2e">
         <midi-channel>4</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>

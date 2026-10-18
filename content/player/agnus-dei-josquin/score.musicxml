@@ -22,37 +22,37 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="Ibfe7f8c9ebdb62bc375b210db2000bb0">
-        <instrument-name>Soprano</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I48d1af1474bf38d857248166663030ef">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ibfe7f8c9ebdb62bc375b210db2000bb0">
+      <midi-instrument id="I48d1af1474bf38d857248166663030ef">
         <midi-channel>1</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Tenor</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="I59a877d5b20303d25e093e1f6d4c805d">
-        <instrument-name>Tenor</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="If98187f24cb462fea44fe68087553cdd">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I59a877d5b20303d25e093e1f6d4c805d">
+      <midi-instrument id="If98187f24cb462fea44fe68087553cdd">
         <midi-channel>2</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Bass</part-name>
-      <part-abbreviation>Ch</part-abbreviation>
-      <score-instrument id="Ia48347fcdf8948803903ea8dc92284ec">
-        <instrument-name>Bass</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I7950176d21fd115b5c71558a0931c0bc">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ia48347fcdf8948803903ea8dc92284ec">
+      <midi-instrument id="I7950176d21fd115b5c71558a0931c0bc">
         <midi-channel>3</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>

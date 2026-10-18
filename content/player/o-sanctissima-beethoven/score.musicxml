@@ -22,61 +22,61 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano 1</part-name>
+      <part-name>S1</part-name>
       <part-abbreviation>S1</part-abbreviation>
-      <score-instrument id="I76718fe4c67cbf24305fa5d0ac71a936">
-        <instrument-name>Sopran</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <score-instrument id="Ieb0f542dea1e841fd5e90ab8fc8ea163">
+        <instrument-name>S1</instrument-name>
+        <instrument-abbreviation>S1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I76718fe4c67cbf24305fa5d0ac71a936">
+      <midi-instrument id="Ieb0f542dea1e841fd5e90ab8fc8ea163">
         <midi-channel>7</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Soprano 2</part-name>
+      <part-name>S2</part-name>
       <part-abbreviation>S2</part-abbreviation>
-      <score-instrument id="Ib577780ffecc697c5c37d545369831b7">
-        <instrument-name>Mezzosopran</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <score-instrument id="I241cd48dd84063846456fbd9e7d1b007">
+        <instrument-name>S2</instrument-name>
+        <instrument-abbreviation>S2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ib577780ffecc697c5c37d545369831b7">
+      <midi-instrument id="I241cd48dd84063846456fbd9e7d1b007">
         <midi-channel>8</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Basso</part-name>
+      <part-name>B</part-name>
       <part-abbreviation>B</part-abbreviation>
-      <score-instrument id="I7712aca50ce33092492ea3a732cf175a">
-        <instrument-name>Bass</instrument-name>
-        <instrument-abbreviation>Ch</instrument-abbreviation>
+      <score-instrument id="Ic420dbe63733553e9c8a4da2aba99ccc">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I7712aca50ce33092492ea3a732cf175a">
+      <midi-instrument id="Ic420dbe63733553e9c8a4da2aba99ccc">
         <midi-channel>9</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="I25a35cb3732d3eb03df6001337e2ed23">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="I4222bcfa181f19192190a59a96479910">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I25a35cb3732d3eb03df6001337e2ed23">
+      <midi-instrument id="I4222bcfa181f19192190a59a96479910">
         <midi-channel>1</midi-channel>
         <midi-program>41</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P5">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="Idecd5c73d55813d9093750d64fbfd4ec">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name />
+      <part-abbreviation />
+      <score-instrument id="If3cef68ac8fd9195b02c73c0f14029ed">
+        <instrument-name />
+        <instrument-abbreviation />
       </score-instrument>
-      <midi-instrument id="Idecd5c73d55813d9093750d64fbfd4ec">
+      <midi-instrument id="If3cef68ac8fd9195b02c73c0f14029ed">
         <midi-channel>4</midi-channel>
         <midi-program>43</midi-program>
       </midi-instrument>
@@ -4370,7 +4370,7 @@
       </attributes>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-y="20">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -5071,7 +5071,7 @@
     <measure implicit="no" number="11">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="6.58" default-y="-80" relative-y="20">
+          <dynamics default-x="6.58">
             <p />
           </dynamics>
         </direction-type>
@@ -9978,7 +9978,7 @@
       </attributes>
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="4.41" relative-y="20">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>
@@ -10911,7 +10911,7 @@
     <measure implicit="no" number="11">
       <direction placement="above">
         <direction-type>
-          <dynamics default-x="3.29" default-y="8.08" relative-y="20">
+          <dynamics default-x="3.29">
             <p />
           </dynamics>
         </direction-type>

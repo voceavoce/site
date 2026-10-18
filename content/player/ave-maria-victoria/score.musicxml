@@ -22,109 +22,109 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano 1</part-name>
+      <part-name>S1</part-name>
       <part-abbreviation>S1</part-abbreviation>
-      <score-instrument id="I1bb6fbc7e99b2e7d88fa49f2a406f2fd">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="I99aed40f89f5a661ca4b35abe2f7ef7f">
+        <instrument-name>S1</instrument-name>
+        <instrument-abbreviation>S1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I1bb6fbc7e99b2e7d88fa49f2a406f2fd">
+      <midi-instrument id="I99aed40f89f5a661ca4b35abe2f7ef7f">
         <midi-channel>1</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alto 1</part-name>
+      <part-name>A1</part-name>
       <part-abbreviation>A1</part-abbreviation>
-      <score-instrument id="If91f47d18794080f17258ee79aa050a4">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="Idcc1c687a3b030f49c7a816c899e3ca7">
+        <instrument-name>A1</instrument-name>
+        <instrument-abbreviation>A1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="If91f47d18794080f17258ee79aa050a4">
+      <midi-instrument id="Idcc1c687a3b030f49c7a816c899e3ca7">
         <midi-channel>2</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenore 1</part-name>
+      <part-name>T1</part-name>
       <part-abbreviation>T1</part-abbreviation>
-      <score-instrument id="Id8f3d810b6718241771b1184f3e452ef">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="Ia02a401a7554a606230f63b61926db8b">
+        <instrument-name>T1</instrument-name>
+        <instrument-abbreviation>T1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Id8f3d810b6718241771b1184f3e452ef">
+      <midi-instrument id="Ia02a401a7554a606230f63b61926db8b">
         <midi-channel>3</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Basso 1</part-name>
+      <part-name>B1</part-name>
       <part-abbreviation>B1</part-abbreviation>
-      <score-instrument id="If9c2bee86355c190c599e6e5b2dc9b20">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="I82183ed773dd1c66a2d81c5ec6400a23">
+        <instrument-name>B1</instrument-name>
+        <instrument-abbreviation>B1</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="If9c2bee86355c190c599e6e5b2dc9b20">
+      <midi-instrument id="I82183ed773dd1c66a2d81c5ec6400a23">
         <midi-channel>4</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P5">
-      <part-name>Soprano 2</part-name>
+      <part-name>S2</part-name>
       <part-abbreviation>S2</part-abbreviation>
-      <score-instrument id="If1d3eda05d5bf7d380c2d2a30b5531e9">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="I431f808169f69959e3a26e9e21912a09">
+        <instrument-name>S2</instrument-name>
+        <instrument-abbreviation>S2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="If1d3eda05d5bf7d380c2d2a30b5531e9">
+      <midi-instrument id="I431f808169f69959e3a26e9e21912a09">
         <midi-channel>5</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P6">
-      <part-name>Alto 2</part-name>
+      <part-name>A2</part-name>
       <part-abbreviation>A2</part-abbreviation>
-      <score-instrument id="Ie3bff65ade184b8718491d2b8bf3ed95">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="I9ff2f195280f34c33f6381b48dc9ce42">
+        <instrument-name>A2</instrument-name>
+        <instrument-abbreviation>A2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ie3bff65ade184b8718491d2b8bf3ed95">
+      <midi-instrument id="I9ff2f195280f34c33f6381b48dc9ce42">
         <midi-channel>6</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P7">
-      <part-name>Tenore 2</part-name>
+      <part-name>T2</part-name>
       <part-abbreviation>T2</part-abbreviation>
-      <score-instrument id="If145eb83593f182791d06df1caef3b9f">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="I709879c6f310ecd1ff5e376f0802ac7d">
+        <instrument-name>T2</instrument-name>
+        <instrument-abbreviation>T2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="If145eb83593f182791d06df1caef3b9f">
+      <midi-instrument id="I709879c6f310ecd1ff5e376f0802ac7d">
         <midi-channel>7</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P8">
-      <part-name>Basso 2</part-name>
+      <part-name>B2</part-name>
       <part-abbreviation>B2</part-abbreviation>
-      <score-instrument id="I4ce663c2b9c787a85378a18fc945ce62">
-        <instrument-name>Grand Piano</instrument-name>
-        <instrument-abbreviation>Pno</instrument-abbreviation>
+      <score-instrument id="I0448d009f5e43805e870e64fc72eed22">
+        <instrument-name>B2</instrument-name>
+        <instrument-abbreviation>B2</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I4ce663c2b9c787a85378a18fc945ce62">
+      <midi-instrument id="I0448d009f5e43805e870e64fc72eed22">
         <midi-channel>8</midi-channel>
         <midi-program>1</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P9">
-      <part-name>Organo</part-name>
-      <part-abbreviation>Org.</part-abbreviation>
-      <score-instrument id="I7fe6790793bc91c7b82a5514878f60c0">
-        <instrument-name>Organo</instrument-name>
-        <instrument-abbreviation>Org.</instrument-abbreviation>
+      <part-name>O</part-name>
+      <part-abbreviation>O</part-abbreviation>
+      <score-instrument id="If770f4c3717d933accf8769f6d714fbc">
+        <instrument-name>O</instrument-name>
+        <instrument-abbreviation>O</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I7fe6790793bc91c7b82a5514878f60c0">
+      <midi-instrument id="If770f4c3717d933accf8769f6d714fbc">
         <midi-channel>9</midi-channel>
         <midi-program>20</midi-program>
       </midi-instrument>
