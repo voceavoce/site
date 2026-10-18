@@ -146,7 +146,7 @@ export function rigoDellaVoce(idx, voci, righi) {
  * Opzioni della partitura: valori di partenza. Fascia gialla sulla propria parte e cursore accesi, colore del cursore
  * ambra, fascia sulla battuta corrente spenta (c'e' il cursore), partitura su carta bianca (invert = sfondo scuro).
  */
-export const OPZIONI_DEFAULT = Object.freeze({ myPart: true, cursor: true, cursorColor: "#f2a900", measure: false, invert: false });
+export const OPZIONI_DEFAULT = Object.freeze({ myPart: true, cursor: true, cursorColor: "#f2a900", measure: false, invert: false, fullscreenPlay: true });
 
 /**
  * Le opzioni lette dal browser (stringa JSON o oggetto): ogni campo non valido torna al suo valore di partenza.
@@ -159,7 +159,7 @@ export function opzioniPartitura(raw) {
     try { s = JSON.parse(raw); } catch { return o; }
   }
   if (!s || typeof s !== "object" || Array.isArray(s)) return o;
-  for (const k of ["myPart", "cursor", "measure", "invert"]) if (typeof s[k] === "boolean") o[k] = s[k];
+  for (const k of ["myPart", "cursor", "measure", "invert", "fullscreenPlay"]) if (typeof s[k] === "boolean") o[k] = s[k];
   if (typeof s.cursorColor === "string" && /^#[0-9a-f]{6}$/i.test(s.cursorColor)) o.cursorColor = s.cursorColor.toLowerCase();
   return o;
 }

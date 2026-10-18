@@ -369,7 +369,14 @@
         "pickOn": "Picking on the score is on: tap the first and the last bar.",
         "pickOff": "Picking on the score is off: a tap moves to that bar.",
         "range": "Passage chosen: bars {a} to {b}."
-      }
-    }
+      },
+      "fsOn": "Full-screen score.",
+      "fsOff": "Full screen closed."
+    },
+    "loaderTitle": "Getting the voices ready…",
+    "loaderHint": "On first open it can take a few seconds: we are downloading the audio of every voice.",
+    "fullscreen": "Full-screen score",
+    "fullscreenClose": "Close",
+    "optFullscreenPlay": "Full screen when I press Play (phones)"
   }
 }

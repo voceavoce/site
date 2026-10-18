@@ -7,6 +7,7 @@ import { bindLoop } from "./loop.js";
 import { createScore } from "./score.js";
 import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock, startForPlay } from "./timeline.js";
 import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
+import { percentuale, pienoAlPlay } from "./schermo.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const dataEl = $("#study-data");
@@ -66,7 +67,7 @@ async function main(data) {
     });
   }
   const optMyPart = $("[data-opt-mypart]"), optCursor = $("[data-opt-cursor]"), optColor = $("[data-opt-cursor-color]");
-  const optMeasure = $("[data-opt-measure]"), optInvert = $("[data-opt-invert]");
+  const optMeasure = $("[data-opt-measure]"), optInvert = $("[data-opt-invert]"), optFsPlay = $("[data-opt-fullscreen-play]");
   const OPT_KEY = "va-score-opts";
   let saved = null;
   try { saved = localStorage.getItem(OPT_KEY); } catch { /* storage non disponibile */ }
@@ -83,6 +84,7 @@ async function main(data) {
     optColor.disabled = !opts.cursor;
     optMeasure.checked = opts.measure;
     optInvert.checked = opts.invert;
+    optFsPlay.checked = opts.fullscreenPlay;
     if (save) { try { localStorage.setItem(OPT_KEY, JSON.stringify(opts)); } catch { /* storage non disponibile */ } }
   };
   optMyPart.addEventListener("change", () => { opts.myPart = optMyPart.checked; applyOpts(true); });
@@ -90,10 +92,36 @@ async function main(data) {
   optColor.addEventListener("input", () => { opts.cursorColor = optColor.value; applyOpts(true); });
   optMeasure.addEventListener("change", () => { opts.measure = optMeasure.checked; applyOpts(true); });
   optInvert.addEventListener("change", () => { opts.invert = optInvert.checked; applyOpts(true); });
+  optFsPlay.addEventListener("change", () => { opts.fullscreenPlay = optFsPlay.checked; applyOpts(true); });
   applyOpts(false);
 
   $("[data-zoom-in]").addEventListener("click", () => { const z = score?.setZoom(1); if (z) say(L.zoom.replace("{z}", z)); });
   $("[data-zoom-out]").addEventListener("click", () => { const z = score?.setZoom(-1); if (z) say(L.zoom.replace("{z}", z)); });
+
+  // --- partitura a schermo intero: la classe su <html> la porta sopra la pagina (funziona anche su iPhone, dove
+  // l'API Fullscreen non c'e'); dove l'API esiste la si usa in piu' per nascondere anche la barra del browser.
+  const fsOpen = $("[data-fs-open]"), fsClose = $("[data-fs-close]");
+  const htmlEl = document.documentElement;
+  const immersive = () => htmlEl.classList.contains("study-immersive");
+  const setImmersive = (on) => {
+    if (on === immersive()) return;
+    htmlEl.classList.toggle("study-immersive", on);
+    fsOpen.setAttribute("aria-expanded", String(on));
+    fsClose.hidden = !on;
+    if (on) {
+      try { htmlEl.requestFullscreen?.({ navigationUI: "hide" })?.catch(() => {}); } catch { /* non supportato */ }
+      fsClose.focus();
+    } else {
+      try { if (document.fullscreenElement) document.exitFullscreen?.()?.catch(() => {}); } catch { /* gia' uscito */ }
+      fsOpen.focus();
+    }
+    say(on ? L.fsOn : L.fsOff);
+  };
+  fsOpen.addEventListener("click", () => setImmersive(!immersive()));
+  fsClose.addEventListener("click", () => setImmersive(false));
+  document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && immersive()) setImmersive(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && immersive()) setImmersive(false); });
+  const telefono = () => ({ stretto: matchMedia("(max-width: 40rem)").matches, tocco: matchMedia("(pointer: coarse)").matches });
 
   // --- mixer e loop
   let mixer = null, loop = null;
@@ -140,6 +168,7 @@ async function main(data) {
     if (el.play.disabled) return;
     if (engine.playing) engine.pause();
     else {
+      if (pienoAlPlay({ ...telefono(), opzione: opts.fullscreenPlay, attivo: immersive() })) setImmersive(true);
       // con un ripeti acceso e la testina fuori dal passaggio si parte dall'inizio del passaggio, non dal brano
       const da = startForPlay(loop?.range, engine.position());
       if (da !== engine.position()) { engine.seek(da); update(); }
@@ -171,18 +200,37 @@ async function main(data) {
 
   if (new URLSearchParams(location.search).has("debug")) window.__study = { engine, get score() { return score; }, get loop() { return loop; }, get mixer() { return mixer; }, sync };
 
-  // --- audio
+  // --- audio, con il pannello di caricamento (barra di avanzamento) finche' non e' pronto
+  const loader = $("[data-loader]"), bar = $("[data-loader-bar]"), pct = $("[data-loader-pct]"), lcount = $("[data-loader-count]");
+  const showProgress = (f, n, total) => {
+    const p = percentuale(f, 3); // la barra si muove subito: l'utente vede che sta lavorando
+    bar.value = p;
+    bar.setAttribute("aria-valuetext", p + "%");
+    pct.textContent = p + "%";
+    lcount.textContent = L.loading.replace("{n}", n).replace("{total}", total);
+  };
+  const closeLoader = () => { loader.classList.add("is-done"); setTimeout(() => { loader.hidden = true; }, 300); };
+  let fatte = 0;
+  loader.hidden = false;
+  showProgress(0, 0, manifest.tracce.length);
   say(L.loading.replace("{n}", 0).replace("{total}", manifest.tracce.length));
   try {
     await engine.init();
     engine.addEventListener("warning", () => say(L.noStretch));
-    await engine.load(manifest.tracce, (n, total) => say(L.loading.replace("{n}", n).replace("{total}", total)));
+    await engine.load(
+      manifest.tracce,
+      (n, total) => { fatte = n; say(L.loading.replace("{n}", n).replace("{total}", total)); },
+      (f) => showProgress(f, fatte, manifest.tracce.length),
+    );
   } catch (e) {
+    closeLoader();
     console.error(e);
     fail(({ network: L.errNetwork, decode: L.errDecode, unsupported: L.errUnsupported }[e.kind]) || L.errNetwork);
     say("");
     return;
   }
+  showProgress(1, manifest.tracce.length, manifest.tracce.length);
+  closeLoader();
   setReady(true);
   if (!engine.stretchOk) { el.speed.disabled = true; say(L.noStretch); }
   el.seek.max = String(engine.duration);
