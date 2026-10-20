@@ -8,7 +8,7 @@ Oltre agli stem cantati (Synth V, Opus), il player può suonare le **note della 
 
 1. **Funzione nuova:** scegliere lo strumento di ogni voce (e dell'accompagnamento). Default: voci in **pianoforte**, accompagnamento in **organo** (il timbro «coro» c'è ma non è il default: il coro GM è poco leggibile per l'intonazione).
 2. **Fallback al posto dell'MP3:** se il browser non legge l'Opus (o lo scaricamento/decodifica fallisce) il player passa da solo agli strumenti, invece che all'MP3.
-3. **Meno duplicazioni:** a fallback in produzione si elimina l'MP3 (618 MB su 1,4 GB di R2, una conversione e un caricamento in meno).
+3. **Possibile eliminazione dell'MP3 in futuro** (618 MB su 1,4 GB di R2): rimandata, non decisa.
 
 Vantaggi collaterali: rallentamento **senza artefatti** (si riprogramma il tempo, niente SoundTouch né vibrato, vedi R4/T-911); nessuna latenza dello stretcher; file di poche decine di KB, quindi in cache nella PWA e utilizzabili offline; in prospettiva, player anche per brani **senza render**.
 
@@ -24,14 +24,18 @@ Limiti da dire all'utente: il timbro non è il canto (niente testo, niente frase
 | D4 | Velocità | Nessun time-stretch: la sorgente MIDI ricalcola gli istanti. Percorso **diretto** (ramo `dry`), niente latenza SoundTouch |
 | D5 | Scelta strumento | Per traccia, salvata in `localStorage` (con try/catch, solo comodità). Default per linea: *coro* voci pianoforte, accompagnamento organo; *arie/metodi* voce flauto, accompagnamento pianoforte |
 | D6 | Fallback | Si attiva se: (a) `canDecodeOpus()` è falso; (b) per una traccia falliscono rete e decodifica. Avviso esplicito e visibile: «Questo browser non legge l'audio cantato: stai ascoltando gli strumenti» |
-| D7 | MP3 | Si toglie **solo dopo** che il fallback MIDI è in produzione e misurato (fase M4) |
+| D7 | MP3 | **Resta** (decisione 2026-10-20) fino a problemi di spazio; poi si segue M5-M6. Il fallback agli strumenti è l'ultimo anello: Opus → MP3 → strumenti |
 | D8 | Mix cantato + strumento | **Fuori dalla prima versione.** Richiede di compensare la latenza dello stretcher sul ramo MIDI (vedi §6). Fase opzionale M7 |
 
-### Da decidere con l'utente
+### Decisioni dell'utente (2026-10-20) e verifica delle licenze
 
-- **U-M1 – Dove stanno i suoni degli strumenti.** Regola attuale: «audio mai in git né dalla CI». I campioni degli strumenti sono audio. Opzioni: (A) bucket R2 sotto `strumenti/v1/` (coerente con la regola, ma il Worker è cross-origin: il service worker non lo mette in cache, quindi niente offline per gli strumenti); (B) in git come libreria vendorizzata (pochi MB, ammesso come eccezione), con cache offline. Raccomandazione: **B se la dimensione resta sotto ~5 MB**, perché rende il fallback davvero offline.
-- **U-M2 – Licenza del soundfont.** Il sintetizzatore sul sito deve usare campioni redistribuibili. Verificare quale soundfont usa FluidSynth in pipeline e la sua licenza, e quella di ogni libreria candidata (§4).
-- **U-M3 – Soglia per togliere l'MP3.** Proposta: visitatori che non leggono l'Opus < 3% in Cloudflare Web Analytics su almeno 7 giorni, più prova a mano su un iPhone/Safari vecchio.
+- **U-M1 – campioni in git: SÌ.** Gli strumenti stanno nel repo come file del sito (eccezione dichiarata alla regola «audio mai in git», che resta per gli stem dei brani). Vanno quindi in cache nella PWA e il fallback funziona offline. Obiettivo: meno di ~5 MB in tutto.
+- **U-M2 – licenze (verificate il 2026-10-20 sui testi originali):**
+  - **GeneralUser GS 2.0.3** (il soundfont che già usa la pipeline, S. Christian Collins): «use it in your software projects», uso libero anche commerciale, modifiche e confezionamento ammessi; i campioni ereditano diritti che consentono l'uso in produzione musicale. Riserva dell'autore: l'origine di alcuni campioni non è certa al 100% (nessuno da raccolte commerciali, nessuna contestazione dal 2000). Ammesso. Obblighi pratici: citare l'autore nella pagina «Fonti e licenze» e **non linkare i suoi file direttamente**. Cartella `src/assets/strumenti/` con una `LICENSE-GeneralUser-GS.txt` e `docs/licenze-terze-parti`.
+  - **WebAudioFont: GPL-3.0** → **scartata** (copyleft sul sito).
+  - **SpessaSynth: Apache-2.0** → ammessa ma non necessaria se si sceglie il sampler nostro.
+  - Scelta conseguente: **strada C** (§4), campioni resi dal soundfont già in uso, nessuna libreria di terzi.
+- **U-M3 – MP3: restano** finché non ci sono problemi di spazio su R2. Catena di riserva: **Opus → MP3 → strumenti** (gli strumenti scattano se anche l'MP3 fallisce o non c'è). M5 (misura) e M6 (eliminazione dell'MP3) restano in coda, da riprendere solo se lo spazio diventa un problema.
 
 ## 3. Formato dei dati
 

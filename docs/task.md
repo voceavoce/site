@@ -139,13 +139,13 @@ epos\audio-sito` e **su R2, verificati con HEAD**
 
 ## M — Player con strumenti MIDI e fine dell'MP3 (piano 2026-10-20, [midi-player.md](midi-player.md))
 
-- [ ] M0 (utente) Decidere U-M1 (campioni degli strumenti: R2 o in git come libreria), U-M2 (licenza soundfont/libreria), U-M3 (soglia per togliere l'MP3: proposta < 3% senza Opus su 7 giorni)
+- [x] M0 (FATTO 2026-10-20) Campioni degli strumenti **in git** nel sito (< ~5 MB); licenze verificate: GeneralUser GS ammesso (citare l'autore, niente link diretti ai suoi file), WebAudioFont GPL-3.0 scartata, quindi sampler nostro dallo stesso soundfont della pipeline; **MP3 restano** finché non ci sono problemi di spazio (catena Opus → MP3 → strumenti)
 - [ ] M1 (O/S, 2-3 gg) Spike su Locus iste: export note di prova + tre strade per i suoni (WebAudioFont, SF2 in browser, sampler nostro da FluidSynth) con pianoforte e organo; ascolto dell'utente prima di proseguire
 - [ ] M2 (S, 1,5 gg) **AIVideoCreator T-915**: `job_sito_player` scrive `content/player/<slug>/note.json` (note in ms nel tempo del sync, legature fuse, grace escluse, parti cantate + accompagnamento), `--solo-note`, test di coerenza col sync; rigenerare i 140 brani
 - [ ] M3 (S, 3-4 gg) Sito: `schedule.js` (puro, testato), `synth.js`, `strumenti.js`, `engine.js` con tracce `audio|midi`, controllo di `note.json` in `studio.js`, selettore strumento per traccia (default: coro voci pianoforte + accompagnamento organo; arie/metodi voce flauto + accompagnamento pianoforte), i18n 5 lingue, `docs/player.md`
-- [ ] M4 (S, 1,5 gg) Fallback automatico Opus → strumenti (browser senza Opus, o rete/decodifica fallite) con avviso; test e2e (canPlayType forzato, audio 404, sincronia con spia nel grafo, loop, 0,75x e 0,5x, seek, offline); l'MP3 resta ancora
-- [ ] M5 (1 gg + 1 settimana) Misurare in Cloudflare Web Analytics la quota di browser senza Opus; prova a mano su iPhone/Safari vecchio (utente); decidere. Alternativa se la quota è alta: stesso Opus in contenitore WebM/CAF per Safari
-- [ ] M6 (S, 1-1,5 gg) **AIVideoCreator T-916** + sito: eliminare l'MP3 (niente conversione né `riserva`, `resolveAudioUrl` e `#fetchDecode` a un solo formato, `upload-audio.mjs` senza `*.mp3`, test e docs; archiviare `misure-opus-mp3.md`); svuotare i `*.mp3` su R2 a mano con `--dry-run` prima (chiude F1)
+- [ ] M4 (S, 1,5 gg) Fallback automatico agli strumenti quando Opus **e** MP3 falliscono (rete/decodifica) con avviso; test e2e (audio 404, sincronia con spia nel grafo, loop, 0,75x e 0,5x, seek, offline); l'MP3 resta
+- [ ] M5 (IN CODA: solo se lo spazio su R2 diventa un problema) (1 gg + 1 settimana) Misurare in Cloudflare Web Analytics la quota di browser senza Opus; prova a mano su iPhone/Safari vecchio (utente); decidere. Alternativa se la quota è alta: stesso Opus in contenitore WebM/CAF per Safari
+- [ ] M6 (IN CODA, vedi M5) (S, 1-1,5 gg) **AIVideoCreator T-916** + sito: eliminare l'MP3 (niente conversione né `riserva`, `resolveAudioUrl` e `#fetchDecode` a un solo formato, `upload-audio.mjs` senza `*.mp3`, test e docs; archiviare `misure-opus-mp3.md`); svuotare i `*.mp3` su R2 a mano con `--dry-run` prima (chiude F1)
 - [ ] M7 (opzionale, 2-3 gg) Mix cantato + strumento per voce (note MIDI ritardate della latenza dello stretcher, tabella di `latency.js`) + test di sincronia misto
 - [ ] M8 (opzionale, 2 gg) Player in sola modalità strumenti per i brani senza render
 
