@@ -21,6 +21,7 @@
 
 - **Fatto** (M0-M4): campioni in git (6 strumenti, 2,7 MB, da GeneralUser GS con FluidSynth: `tools/strumenti/genera.py`), `note.json` per i 141 brani (AIVideoCreator T-915, cd9f63a), motore (`schedule.js`, `synth.js`, `strumenti.js`, `suono.js`, `engine.js`), pannello «Suono» in 5 lingue, fallback Opus → MP3 → strumenti, cache offline dei campioni nel service worker, attribuzione in «Fonti e licenze». 9 test e2e nuovi + unitari. Vedi `docs/player.md` («Modalità strumenti») e `docs/midi-player.md`.
 - **Decisioni dell'utente:** MIDI/campioni nel repo; licenza verificata (GeneralUser GS ammesso, WebAudioFont GPL-3.0 scartata); MP3 restano finché non c'è un problema di spazio (M5-M6 in coda).
+- **Controlli (2026-10-20 sera):** e2e completo 358/358 verdi (22,8 min); `validate`, `secrets`, `build`, `lint:html` OK; `a11y` 17/17 senza errori (il pannello «Suono» compare solo a audio caricato, quindi pa11y potrebbe non averlo visto: da riprovare a mano); `npm test` 233/234: resta solo `tests/note.test.mjs`, perché due brani pubblicati non hanno la nota (`o-lord-in-thee-is-all-my-trust-tallis`, `tres-morillas-m-enamoran`: nessuna nota nei dati della pipeline, vedi R5; da scrivere con fonti, non a memoria).
 - **Da fare:** M9 ascolto dell'utente (timbri, loop dei timbri tenuti, livelli) PRIMA della pubblicazione; M10 15 brani con parti mancanti in `note.json` (pipeline); poi Lutkin (R13), R14, R4. Nessuna PR aperta: il lavoro è sul branch di sviluppo.
 
 ## Aggiornamento 2026-10-20: piano del player con strumenti MIDI
