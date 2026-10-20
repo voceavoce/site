@@ -9,6 +9,13 @@
 - **Da fare, in ordine:** (1) **caso Lutkin** (issue #2 del repo privato): nelle due varianti, b. 18 `f`, forcella *crescendo* dalla b. 19 alla 23 dove compare `pp` e si chiude: incoerente, quasi certamente va un *diminuendo*; verificare su edizione autorevole, correggere nel catalogo/pipeline (non nel file del sito), rigenerare lo score del sito, PR, rispondere alla persona (che ha lasciato la sua email) e chiudere l'issue; i video già su YouTube mostrano lo stesso errore (decisione dell'utente su un nuovo render). (2) **Skill di verifica delle segnalazioni** (R13 in `task.md`), dopo il caso Lutkin. (3) Merge #19 e #20 + `wrangler deploy`. (4) Brani nuovi: prima `job_sito_player --scrivi`, audio su R2 e PR del sito, POI il video pubblico (altrimenti il link nella descrizione dà 404). (5) Riga del player nei video GIÀ pubblicati: solo su istruzione (API YouTube) o a mano.
 - **Da scartare:** il branch `fix/player-qualita-rallentamento` (`?stretch=voci`, mai in PR) e il suo esperimento.
 
+## Aggiornamento 2026-10-20: piano del player con strumenti MIDI
+
+- Scritto [midi-player.md](midi-player.md) (analisi, formato `note.json`, architettura, rischi, fasi) e aggiunta la sezione **M** a `task.md` (M0-M8). Nessun codice ancora.
+- Decisioni dell'utente: gli strumenti MIDI fanno da **fallback quando l'Opus non funziona**, al posto dell'MP3, che si elimina (F1 diventa M5-M6) solo dopo il fallback in produzione e i dati di Analytics; il default non è il coro ma il **pianoforte** per le voci, con l'accompagnamento in uno strumento diverso (organo).
+- Da decidere (M0): dove stanno i campioni (R2 o libreria in git: tocca la regola «audio mai in git»), licenza del soundfont, soglia per togliere l'MP3. Prima dell'implementazione: spike M1 con ascolto dell'utente.
+- Ordine di lavoro proposto: caso Lutkin (R13) → R14 → M0/M1 → R4. Numeri T riservati in AIVideoCreator: T-915, T-916 (T-917 solo se sampler nostro).
+
 ## Riepilogo precedente (2026-10-18 sera, C1-C3 fatti, player in rifinitura)
 
 - **Unite su `main` (online):** #4 (player: scelta battuta, Ripeti in riquadro, tempi radi, cursore sulla prima nota), #5 (asset versionati `?v=hash`), #6 (C1, traduzioni dei 20 testi comuni in 5 lingue, non riviste), #7 (dichiarazione sull'uso dell'IA: pagina Trasparenza + etichetta sulle note), #8 (anti-segreti: `npm run secrets`, in `check` e in CI), #9 (CI: e2e in 3 job paralleli, ~6 min invece di ~15), #10 (C2, note it/en/es dei brani pubblicati), #11 (C3, interfaccia in tedesco e francese + note de/fr, menu lingua a tendina), #12 (player: pannello di caricamento con barra, partitura a schermo intero, su telefono al Riproduci).

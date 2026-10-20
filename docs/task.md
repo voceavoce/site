@@ -96,7 +96,7 @@ epos\audio-sito` e **su R2, verificati con HEAD**
 - [x] P25 (H) Merge di T-908 su `main` di AIVideoCreator **a render fermi** (l'export di stanotte e' stato fatto dal worktree, il codice e' lo stesso) — fatto (merge cbdb41d su main di AIVideoCreator)
 - [ ] P26 (H) **Rilanciare la suite e2e completa** (`npm run e2e`): l'ultimo giro e' stato fermato dal sistema per poca memoria a 244/331 con 0 errori; restano da rivedere partitura/player/pwa/sync-audio dopo le ultime modifiche CSS/JS. Poi controllare a mano un brano con organo (475) e *Agnus Dei* da telefono vero
 - [x] P27 (H) Merge della PR del player su `main` (decisione dell'utente) e verifica del deploy; poi nuove esportazioni man mano che si programmano i video (comando in `docs/player.md`) — fatto (PR #2 unita, player online)
-- [ ] F1 (futuro, da valutare) Opus o MP3: togliere la riserva MP3 (-0,6 GB su R2) o tenere solo MP3? Misura fatta in Chrome (nessuno sfasamento, qualita' pari) in [misure-opus-mp3.md](misure-opus-mp3.md); mancano **Safari/iPhone/Firefox** e un ascolto a cuffia. Oggi si lascia com'e'
+- [ ] F1 (futuro, da valutare) [ora pianificato in M5-M6, vedi midi-player.md] Opus o MP3: togliere la riserva MP3 (-0,6 GB su R2) o tenere solo MP3? Misura fatta in Chrome (nessuno sfasamento, qualita' pari) in [misure-opus-mp3.md](misure-opus-mp3.md); mancano **Safari/iPhone/Firefox** e un ascolto a cuffia. Oggi si lascia com'e'
   (b) `partitura.spec.mjs` «scelta della battuta»: «toccare lo spazio vuoto di battute diverse…» e «prima e ultima battuta…» ricevono "0" invece di "1": capire se e' il test (punto cliccato / ripartenza della scelta) o `battutaAlPunto` nel browser (confrontare `caselle` con le battute reali di `_prova`, 6 battute)
 
 ## R — Sessione 2026-10-18 sera: contenuti in 5 lingue, CI, player
@@ -136,6 +136,18 @@ epos\audio-sito` e **su R2, verificati con HEAD**
 - [x] P13 (S) Test dell'aggiornamento del service worker (versione nuova → cache vecchie cancellate, audio sempre fuori dalla cache)
 - [x] P14 (H) `npm run e2e` nel workflow Check (solo PR), con l'installazione di Chromium da Playwright in CI
 - [x] P15 (S) Test e2e automatico evidenziazione ↔ clic UDIBILE (ex `tools/verifica-manuale/measure.mjs`) a 1×/0,75×/0,5×, che deve fallire se si toglie la compensazione della latenza (richiesta utente 2026-10-17) — FATTO: `tests/e2e/sync-audio.spec.mjs`, 3 test; errore mediano con compensazione −5…+26 ms, senza compensazione −46…−116 ms (il test fallisce, come deve)
+
+## M — Player con strumenti MIDI e fine dell'MP3 (piano 2026-10-20, [midi-player.md](midi-player.md))
+
+- [ ] M0 (utente) Decidere U-M1 (campioni degli strumenti: R2 o in git come libreria), U-M2 (licenza soundfont/libreria), U-M3 (soglia per togliere l'MP3: proposta < 3% senza Opus su 7 giorni)
+- [ ] M1 (O/S, 2-3 gg) Spike su Locus iste: export note di prova + tre strade per i suoni (WebAudioFont, SF2 in browser, sampler nostro da FluidSynth) con pianoforte e organo; ascolto dell'utente prima di proseguire
+- [ ] M2 (S, 1,5 gg) **AIVideoCreator T-915**: `job_sito_player` scrive `content/player/<slug>/note.json` (note in ms nel tempo del sync, legature fuse, grace escluse, parti cantate + accompagnamento), `--solo-note`, test di coerenza col sync; rigenerare i 140 brani
+- [ ] M3 (S, 3-4 gg) Sito: `schedule.js` (puro, testato), `synth.js`, `strumenti.js`, `engine.js` con tracce `audio|midi`, controllo di `note.json` in `studio.js`, selettore strumento per traccia (default: coro voci pianoforte + accompagnamento organo; arie/metodi voce flauto + accompagnamento pianoforte), i18n 5 lingue, `docs/player.md`
+- [ ] M4 (S, 1,5 gg) Fallback automatico Opus → strumenti (browser senza Opus, o rete/decodifica fallite) con avviso; test e2e (canPlayType forzato, audio 404, sincronia con spia nel grafo, loop, 0,75x e 0,5x, seek, offline); l'MP3 resta ancora
+- [ ] M5 (1 gg + 1 settimana) Misurare in Cloudflare Web Analytics la quota di browser senza Opus; prova a mano su iPhone/Safari vecchio (utente); decidere. Alternativa se la quota è alta: stesso Opus in contenitore WebM/CAF per Safari
+- [ ] M6 (S, 1-1,5 gg) **AIVideoCreator T-916** + sito: eliminare l'MP3 (niente conversione né `riserva`, `resolveAudioUrl` e `#fetchDecode` a un solo formato, `upload-audio.mjs` senza `*.mp3`, test e docs; archiviare `misure-opus-mp3.md`); svuotare i `*.mp3` su R2 a mano con `--dry-run` prima (chiude F1)
+- [ ] M7 (opzionale, 2-3 gg) Mix cantato + strumento per voce (note MIDI ritardate della latenza dello stretcher, tabella di `latency.js`) + test di sincronia misto
+- [ ] M8 (opzionale, 2 gg) Player in sola modalità strumenti per i brani senza render
 
 ## Statistiche visite
 
