@@ -18,6 +18,7 @@ import { resolveAudioUrl } from "./config.js";
 import { computePosition, audiblePosition } from "./timeline.js";
 import { deviceLatency, totalLatency } from "./latency.js";
 import { progressoTotale } from "./schermo.js";
+import { Synth } from "./synth.js";
 
 const TARGET_RATE = 24000; // le voci non hanno contenuto utile oltre i 12 kHz: si dimezza la memoria
 const XFADE = 0.04; // dissolvenza (s) tra ramo diretto e ramo con stretcher
@@ -55,7 +56,9 @@ export class StudyEngine extends EventTarget {
   constructor() {
     super();
     this.ctx = null;
-    this.tracks = new Map(); // chiave -> { buffer, gain, source }
+    this.tracks = new Map(); // chiave -> { buffer, gain, source } (buffer assente nella sola modalita' strumenti)
+    this.mode = "audio"; // "audio" (stem cantati) | "midi" (strumenti: note.json + campioni)
+    this.synth = null;
     this.bus = null;
     this.stretcher = null;
     this.dry = null; // ramo diretto bus -> uscita (usato a 1x)
@@ -71,12 +74,13 @@ export class StudyEngine extends EventTarget {
     this.anchorTime = 0;
     this.pausedPos = 0;
     this.gains = {};
+    this.midiParti = [];
   }
 
   /** Crea il contesto e il grafo. Va chiamato presto: il contesto parte sospeso, play() lo riattiva. */
   async init() {
     const AC = window.AudioContext || window.webkitAudioContext;
-    if (!AC || !window.AudioWorkletNode) throw new StudyError("unsupported", "Web Audio / AudioWorklet non disponibili");
+    if (!AC) throw new StudyError("unsupported", "Web Audio non disponibile");
     this.ctx = new AC({ latencyHint: "playback" });
     this.bus = this.ctx.createGain();
     this.dry = this.ctx.createGain();
@@ -116,7 +120,47 @@ export class StudyEngine extends EventTarget {
       }),
     );
     this.duration = Math.max(...[...this.tracks.values()].map((t) => t.buffer.duration));
+    this.synth?.setParti(this.midiParti, this.duration);
     this.setGains(this.gains);
+  }
+
+  /**
+   * Prepara la modalita' strumenti: `noteData` e' note.json, `campioni` un'istanza di Campioni, `scelte` lo strumento
+   * per chiave di traccia. Usabile prima o dopo load(): le tracce non ancora presenti ricevono solo il guadagno.
+   */
+  prepareMidi(noteData, campioni, scelte, tracce) {
+    for (const tr of tracce) {
+      if (this.tracks.has(tr.chiave)) continue;
+      const gain = this.ctx.createGain();
+      gain.connect(this.bus);
+      this.tracks.set(tr.chiave, { buffer: null, gain, source: null });
+    }
+    this.midiParti = noteData.parti.filter((p) => this.tracks.has(p.chiave)).map((p) => ({ chiave: p.chiave, notes: p.note }));
+    if (!this.duration) this.duration = noteData.fine;
+    this.synth = new Synth(this.ctx, campioni, Object.fromEntries([...this.tracks].map(([k, t]) => [k, t.gain])));
+    this.synth.setParti(this.midiParti, this.duration);
+    for (const [k, id] of Object.entries(scelte)) this.synth.setStrumento(k, id);
+    this.setGains(this.gains);
+  }
+  setStrumento(chiave, id) { this.synth?.setStrumento(chiave, id); }
+  hasAudio() { return [...this.tracks.values()].some((t) => t.buffer); }
+
+  /** Passa da "audio" a "midi" (e viceversa) senza perdere la posizione; se sta suonando riparte dallo stesso punto. */
+  setMode(mode) {
+    if (mode === this.mode) return;
+    if (mode === "midi" && !this.synth) return;
+    if (mode === "audio" && !this.hasAudio()) return;
+    let pos = this.pausedPos;
+    if (this.playing) {
+      pos = this.position();
+      if (!this.playing) { this.mode = mode; return; } // fine del brano proprio ora
+      this.#stopSources();
+    }
+    if (mode === "audio" && !this.stretchOk && this.rate < 1) this.rate = 1; // senza stretcher gli stem non rallentano
+    this.mode = mode;
+    this.#setBranch(mode === "audio" && this.rate < 1 ? 1 : 0);
+    if (this.playing) this.#startSources(pos);
+    this.dispatchEvent(new Event("mode"));
   }
 
   async #fetchDecode(tr, onFrac = () => {}) {
@@ -228,7 +272,14 @@ export class StudyEngine extends EventTarget {
   #startSources(pos) {
     this.prevAnchor = null; // sorgenti nuove: nessun suono precedente da raccordare
     const when = this.ctx.currentTime + 0.06; // stesso istante di partenza per tutte le tracce
+    if (this.mode === "midi") {
+      this.synth.start(pos, when, this.rate, this.loop);
+      this.anchorPos = pos;
+      this.anchorTime = when;
+      return;
+    }
     for (const tr of this.tracks.values()) {
+      if (!tr.buffer) continue;
       const src = this.ctx.createBufferSource();
       src.buffer = tr.buffer;
       src.playbackRate.value = this.rate;
@@ -241,6 +292,7 @@ export class StudyEngine extends EventTarget {
     this.anchorTime = when;
   }
   #stopSources() {
+    this.synth?.stop();
     for (const tr of this.tracks.values()) {
       if (tr.source) { try { tr.source.stop(); } catch {} tr.source.disconnect(); tr.source = null; }
     }
@@ -276,7 +328,7 @@ export class StudyEngine extends EventTarget {
   /** Velocita' da 0,5 a 1,0 (senza cambiare l'intonazione). */
   setRate(r) {
     r = Math.min(1, Math.max(0.5, r));
-    if (!this.stretchOk) r = 1;
+    if (!this.stretchOk && this.mode === "audio") r = 1;
     const now = this.ctx.currentTime;
     if (this.playing) { // nuovo ancoraggio alla posizione di adesso, poi cambio per tutti allo stesso istante
       this.prevAnchor = { anchorPos: this.anchorPos, anchorTime: this.anchorTime, rate: this.rate, loop: this.loop };
@@ -286,7 +338,8 @@ export class StudyEngine extends EventTarget {
     this.rate = r;
     for (const tr of this.tracks.values()) tr.source?.playbackRate.setValueAtTime(r, now);
     this.stretcher?.playbackRate.setValueAtTime(r, now);
-    this.#setBranch(r < 1 ? 1 : 0);
+    this.#setBranch(this.mode === "audio" && r < 1 ? 1 : 0);
+    if (this.mode === "midi" && this.playing) this.synth.retime(this.anchorPos, r, this.loop);
   }
 
   /** Loop senza vuoti ({start,end} in secondi) oppure null. */
@@ -300,6 +353,7 @@ export class StudyEngine extends EventTarget {
       this.anchorPos = pos;
       this.anchorTime = this.ctx.currentTime;
       for (const tr of this.tracks.values()) if (tr.source) this.#applyLoop(tr.source);
+      if (this.mode === "midi") this.synth.retime(pos, this.rate, this.loop);
     } else if (this.loop && pos >= this.loop.end) {
       this.pausedPos = this.loop.start;
     }
