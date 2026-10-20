@@ -33,5 +33,9 @@ Cuando corregimos una partitura, actualizamos el reproductor y la ficha de la ob
 - el compás (o el minuto del vídeo) donde aparece el error;
 - qué debería ser en su lugar, con la fuente si la conoces.
 
+## Sonidos de los instrumentos
+
+Los instrumentos del reproductor (piano, órgano, coro, voz, flauta, cuerdas) usan muestras del soundfont GeneralUser GS de S. Christian Collins, cuya licencia permite el uso libre, también en programas. Autor y licencia: [schristiancollins.com](http://www.schristiancollins.com). El texto de la licencia se entrega con las muestras.
+
 </article>
 </div>

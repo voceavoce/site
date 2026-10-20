@@ -1,6 +1,6 @@
 # Player con strumenti MIDI: analisi e piano di sviluppo
 
-Stato: **piano approvato nelle linee generali (2026-10-20), nessun codice scritto.** Task: sezione **M** di [task.md](task.md). Contesto del player: [player.md](player.md). Misure Opus/MP3: [misure-opus-mp3.md](misure-opus-mp3.md).
+Stato (2026-10-20): **M0–M4 fatti** (export note.json T-915, motore, pannello, fallback, 9 test e2e); restano l'ascolto dell'utente (M9), le parti mancanti in 15 brani (M10) e le fasi opzionali. M5-M6 (togliere l'MP3) in coda. Task: sezione **M** di [task.md](task.md). Contesto del player: [player.md](player.md). Misure Opus/MP3: [misure-opus-mp3.md](misure-opus-mp3.md).
 
 ## 1. Idea e obiettivi
 

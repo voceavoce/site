@@ -33,5 +33,9 @@ Eine falsche Note oder ein falsches Wort bemerkt? Im Player und auf der Seite de
 - den Takt (oder die Minute im Video), in dem der Fehler vorkommt;
 - was stattdessen stehen müsste, mit Quelle, falls du sie kennst.
 
+## Klänge der Instrumente
+
+Die Instrumente des Players (Klavier, Orgel, Chor, Stimme, Flöte, Streicher) verwenden Samples aus dem Soundfont GeneralUser GS von S. Christian Collins, dessen Lizenz die freie Nutzung auch in Software erlaubt. Autor und Lizenz: [schristiancollins.com](http://www.schristiancollins.com). Der Lizenztext wird mit den Samples ausgeliefert.
+
 </article>
 </div>

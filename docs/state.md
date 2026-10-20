@@ -9,6 +9,12 @@
 - **Da fare, in ordine:** (1) **caso Lutkin** (issue #2 del repo privato): nelle due varianti, b. 18 `f`, forcella *crescendo* dalla b. 19 alla 23 dove compare `pp` e si chiude: incoerente, quasi certamente va un *diminuendo*; verificare su edizione autorevole, correggere nel catalogo/pipeline (non nel file del sito), rigenerare lo score del sito, PR, rispondere alla persona (che ha lasciato la sua email) e chiudere l'issue; i video già su YouTube mostrano lo stesso errore (decisione dell'utente su un nuovo render). (2) **Skill di verifica delle segnalazioni** (R13 in `task.md`), dopo il caso Lutkin. (3) Merge #19 e #20 + `wrangler deploy`. (4) Brani nuovi: prima `job_sito_player --scrivi`, audio su R2 e PR del sito, POI il video pubblico (altrimenti il link nella descrizione dà 404). (5) Riga del player nei video GIÀ pubblicati: solo su istruzione (API YouTube) o a mano.
 - **Da scartare:** il branch `fix/player-qualita-rallentamento` (`?stretch=voci`, mai in PR) e il suo esperimento.
 
+## Aggiornamento 2026-10-20 (sera): modalità strumenti implementata
+
+- **Fatto** (M0-M4): campioni in git (6 strumenti, 2,7 MB, da GeneralUser GS con FluidSynth: `tools/strumenti/genera.py`), `note.json` per i 141 brani (AIVideoCreator T-915, cd9f63a), motore (`schedule.js`, `synth.js`, `strumenti.js`, `suono.js`, `engine.js`), pannello «Suono» in 5 lingue, fallback Opus → MP3 → strumenti, cache offline dei campioni nel service worker, attribuzione in «Fonti e licenze». 9 test e2e nuovi + unitari. Vedi `docs/player.md` («Modalità strumenti») e `docs/midi-player.md`.
+- **Decisioni dell'utente:** MIDI/campioni nel repo; licenza verificata (GeneralUser GS ammesso, WebAudioFont GPL-3.0 scartata); MP3 restano finché non c'è un problema di spazio (M5-M6 in coda).
+- **Da fare:** M9 ascolto dell'utente (timbri, loop dei timbri tenuti, livelli) PRIMA della pubblicazione; M10 15 brani con parti mancanti in `note.json` (pipeline); poi Lutkin (R13), R14, R4. Nessuna PR aperta: il lavoro è sul branch di sviluppo.
+
 ## Aggiornamento 2026-10-20: piano del player con strumenti MIDI
 
 - Scritto [midi-player.md](midi-player.md) (analisi, formato `note.json`, architettura, rischi, fasi) e aggiunta la sezione **M** a `task.md` (M0-M8). Nessun codice ancora.

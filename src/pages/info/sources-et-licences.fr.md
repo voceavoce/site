@@ -33,5 +33,9 @@ Tu as remarqué une note ou un mot erroné ? Dans le lecteur et sur la fiche de 
 - la mesure (ou la minute de la vidéo) où apparaît l'erreur ;
 - ce qui devrait figurer à la place, avec la source si tu la connais.
 
+## Sons des instruments
+
+Les instruments du lecteur (piano, orgue, chœur, voix, flûte, cordes) utilisent des échantillons tirés de la soundfont GeneralUser GS de S. Christian Collins, dont la licence autorise l'usage libre, y compris dans des logiciels. Auteur et licence : [schristiancollins.com](http://www.schristiancollins.com). Le texte de la licence est livré avec les échantillons.
+
 </article>
 </div>
