@@ -199,7 +199,7 @@ Piano e decisioni: [midi-player.md](midi-player.md). Oltre agli stem cantati il 
 - **Predefiniti.** Coro: voci pianoforte, accompagnamento organo. Arie e metodi: voce flauto, accompagnamento pianoforte. La scelta per traccia si ricorda per traccia (altrimenti vale il predefinito del tipo).
 - **Fallback.** Catena Opus → MP3 → strumenti: se il caricamento degli stem fallisce (rete o decodifica) e c'è `note.json`, il player passa agli strumenti con l'avviso `fallbackInstr` e la scelta «Cantato» disattivata. Non vale per `unsupported` (niente Web Audio).
 - **Test.** `tests/e2e/strumenti.spec.mjs` (9 test): pannello e menu, preferenze, ritorno a «Cantato», sincronia evidenziazione ↔ attacco udibile con la spia sul mix finale a 100/75/50 % (misure: 100 % mediana −6 ms, max 7; 75 % +2, max 19; 50 % −6, max 11), loop, cambio di velocità al volo, fallback con stem 404.
-- **Limiti noti.** Il timbro «coro»/«voce» è un campione GM, non canto; i loop dei timbri tenuti (organo, archi) hanno una piccola discontinuità sulle note più lunghe di ~1,5 s (da giudicare a orecchio); la dinamica è fissa; niente mix fra stem cantati e strumenti (M7); 15 brani hanno parti del manifest senza note (voci divisi o righi non riconosciuti, M10).
+- **Limiti noti.** Il timbro «coro»/«voce» è un campione GM, non canto; i loop dei timbri tenuti (organo, archi) hanno una piccola discontinuità sulle note più lunghe di ~1,5 s (da giudicare a orecchio); la dinamica è fissa; niente mix fra stem cantati e strumenti (M7); in `prado-verde-y-florido-guerrero` le voci sono assegnate ai righi per posizione (da ascoltare).
 
 ## Limiti noti
 
