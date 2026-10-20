@@ -371,7 +371,12 @@
         "range": "Gewählte Passage: Takte {a} bis {b}."
       },
       "fsOn": "Partitur im Vollbild.",
-      "fsOff": "Vollbild geschlossen."
+      "fsOff": "Vollbild geschlossen.",
+      "soundLoading": "Instrumente werden geladen…",
+      "soundInstrOn": "Sie hören Instrumente, nicht Gesang.",
+      "soundSungOn": "Sie hören die gesungenen Stimmen.",
+      "fallbackInstr": "Der gesungene Ton ist nicht verfügbar: Sie hören Instrumente.",
+      "errInstr": "Die Instrumente konnten nicht geladen werden."
     },
     "loaderTitle": "Die Stimmen werden vorbereitet…",
     "loaderHint": "Beim ersten Öffnen kann es einige Sekunden dauern: Wir laden das Audio aller Stimmen herunter.",
@@ -379,7 +384,13 @@
     "fullscreenClose": "Schließen",
     "optFullscreenPlay": "Vollbild beim Drücken von Abspielen (Smartphones)",
     "allVoices": "Alle Stimmen gleich laut",
-    "reportScore": "Fehler in der Partitur melden"
+    "reportScore": "Fehler in der Partitur melden",
+    "sound": "Klang",
+    "soundHint": "Gesungen: die aufgenommenen Stimmen. Instrumente: die Noten der Partitur, von Instrumenten gespielt, eines pro Stimme nach Wahl (hilfreich, um die Tonhöhe klar zu hören und ohne Artefakte langsamer zu spielen).",
+    "soundLegend": "Was Sie hören",
+    "soundSung": "Gesungen",
+    "soundInstr": "Instrumente",
+    "instrumentOf": "Instrument: {voice}"
   },
   "report": {
     "title": "Fehler in der Partitur melden",

@@ -101,6 +101,24 @@ eleventyExcludeFromCollections: true
         <p id="study-myvoice-hint" class="study__hint">{{ 'study.myVoiceHint' | t(lang) }}</p>
       </section>
 
+      {%- if item.noteFile %}
+      <section class="panel" data-sound data-feature="mixer" hidden aria-labelledby="study-sound-h">
+        <h2 id="study-sound-h">{{ 'study.sound' | t(lang) }}</h2>
+        <p class="study__hint">{{ 'study.soundHint' | t(lang) }}</p>
+        <fieldset class="sound-pick">
+          <legend class="sr-only">{{ 'study.soundLegend' | t(lang) }}</legend>
+          <label class="sound-pick__opt"><input type="radio" name="study-sound" value="audio" data-sound-mode checked> <span>{{ 'study.soundSung' | t(lang) }}</span></label>
+          <label class="sound-pick__opt"><input type="radio" name="study-sound" value="midi" data-sound-mode> <span>{{ 'study.soundInstr' | t(lang) }}</span></label>
+        </fieldset>
+        <div class="sound-instr" data-sound-instr hidden>
+          {%- for tr in tracks %}
+          <label class="field"><span>{{ 'study.instrumentOf' | tv(lang, { voice: tr.voce | voiceName(lang) }) }}</span>
+            <select data-instr="{{ tr.chiave }}" data-instr-tipo="{{ tr.tipo }}"></select></label>
+          {%- endfor %}
+        </div>
+      </section>
+      {%- endif %}
+
       {%- if firstVoice %}
       <section class="panel player" data-player aria-labelledby="study-video-h"
         data-title="{{ 'piece.iframeTitle' | tv(lang, { title: piece.titolo, voice: '{voice}' }) }}">

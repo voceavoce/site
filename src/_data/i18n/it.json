@@ -371,7 +371,12 @@
         "range": "Passaggio scelto: battute da {a} a {b}."
       },
       "fsOn": "Partitura a schermo intero.",
-      "fsOff": "Schermo intero chiuso."
+      "fsOff": "Schermo intero chiuso.",
+      "soundLoading": "Carico gli strumenti…",
+      "soundInstrOn": "Ascolti gli strumenti, non il canto.",
+      "soundSungOn": "Ascolti le voci cantate.",
+      "fallbackInstr": "L'audio cantato non è disponibile: stai ascoltando gli strumenti.",
+      "errInstr": "Non riesco a caricare gli strumenti."
     },
     "loaderTitle": "Sto preparando le voci…",
     "loaderHint": "Alla prima apertura può volerci qualche secondo: scarichiamo l'audio di tutte le voci.",
@@ -379,7 +384,13 @@
     "fullscreenClose": "Chiudi",
     "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)",
     "allVoices": "Tutte le voci pari",
-    "reportScore": "Segnala un errore nello spartito"
+    "reportScore": "Segnala un errore nello spartito",
+    "sound": "Suono",
+    "soundHint": "Cantato: le voci registrate. Strumenti: le note della partitura suonate da strumenti, uno per voce a tua scelta (utili per sentire bene l'intonazione e per rallentare senza artefatti).",
+    "soundLegend": "Che cosa ascolti",
+    "soundSung": "Cantato",
+    "soundInstr": "Strumenti",
+    "instrumentOf": "Strumento: {voice}"
   },
   "report": {
     "title": "Segnala un errore nello spartito",

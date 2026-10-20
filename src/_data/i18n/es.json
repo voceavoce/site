@@ -371,7 +371,12 @@
         "range": "Pasaje elegido: compases {a} a {b}."
       },
       "fsOn": "Partitura a pantalla completa.",
-      "fsOff": "Pantalla completa cerrada."
+      "fsOff": "Pantalla completa cerrada.",
+      "soundLoading": "Cargando los instrumentos…",
+      "soundInstrOn": "Estás escuchando instrumentos, no canto.",
+      "soundSungOn": "Estás escuchando las voces cantadas.",
+      "fallbackInstr": "El audio cantado no está disponible: estás escuchando instrumentos.",
+      "errInstr": "No puedo cargar los instrumentos."
     },
     "loaderTitle": "Preparando las voces…",
     "loaderHint": "La primera vez puede tardar unos segundos: descargamos el audio de todas las voces.",
@@ -379,7 +384,13 @@
     "fullscreenClose": "Cerrar",
     "optFullscreenPlay": "Pantalla completa al pulsar Reproducir (móviles)",
     "allVoices": "Todas las voces iguales",
-    "reportScore": "Señalar un error en la partitura"
+    "reportScore": "Señalar un error en la partitura",
+    "sound": "Sonido",
+    "soundHint": "Cantado: las voces grabadas. Instrumentos: las notas de la partitura tocadas por instrumentos, uno por voz a tu elección (útiles para oír bien la afinación y para ir más lento sin artefactos).",
+    "soundLegend": "Lo que escuchas",
+    "soundSung": "Cantado",
+    "soundInstr": "Instrumentos",
+    "instrumentOf": "Instrumento: {voice}"
   },
   "report": {
     "title": "Señalar un error en la partitura",

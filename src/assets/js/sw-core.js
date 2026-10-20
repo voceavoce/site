@@ -1,7 +1,7 @@
 /* Logica pura del service worker (classificazione delle richieste), condivisa da /sw.js e dai test.
  * Script classico: in un SW si carica con importScripts(), nei test con node:vm (tests/sw.test.mjs).
  *
- * REGOLA SULL'AUDIO: l'audio NON entra MAI in nessuna cache. Niente respondWith per audio.voceavoce.com,
+ * REGOLA SULL'AUDIO: l'audio dei brani (stem) NON entra MAI in nessuna cache (unica eccezione: i campioni degli strumenti, /assets/strumenti/). Niente respondWith per audio.voceavoce.com,
  * localhost:8787, URL .opus/.mp3/.wav/.flac/... o richieste con header Range: passano alla rete cosi' come sono.
  * Motivo: in questa fase il player non offre audio offline, e quando arrivera' il contenuto premium il
  * caricamento avverra' con URL firmati a scadenza, che non devono restare in una cache del browser.
@@ -23,6 +23,9 @@
     var url;
     try { url = new URL(req.url); } catch (e) { return "ignore"; }
     if (url.protocol !== "http:" && url.protocol !== "https:") return "ignore";
+    // Campioni degli strumenti del player: file del sito (stessa origine, in git), si mettono in cache come le altre risorse
+    // statiche cosi' la modalita' strumenti funziona anche offline. NON sono gli stem dei brani (quelli non si cachano mai).
+    if (url.origin === origin && url.pathname.indexOf("/assets/strumenti/") === 0 && (!req.method || req.method === "GET") && !(req.headers && req.headers.get && req.headers.get("range"))) return "static";
     // audio e Range PRIMA di tutto (anche se cross-origin o sotto un altro schema di URL)
     if (AUDIO_HOSTS.indexOf(url.host) !== -1 || (audioHosts || []).indexOf(url.host) !== -1 || AUDIO_HOST_SUFFIX.test(url.host) || AUDIO_EXT.test(url.pathname)) return "ignore";
     if (req.headers && req.headers.get && req.headers.get("range")) return "ignore";

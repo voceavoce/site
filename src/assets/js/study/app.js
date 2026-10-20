@@ -9,6 +9,7 @@ import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock, startF
 import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
 import { percentuale, pienoAlPlay } from "./schermo.js";
 import { mailSegnalazione } from "./segnalazione.js";
+import { creaSuono } from "./suono.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const dataEl = $("#study-data");
@@ -43,6 +44,15 @@ async function main(data) {
   el.seek.max = String(manifest.durata_sec ?? sync.fine);
 
   const engine = new StudyEngine();
+  // Modalita' strumenti (note.json + campioni): si cambia fra stem cantati e strumenti; con gli strumenti la velocita' non usa lo stretcher.
+  const onMode = () => {
+    el.speed.disabled = !(engine.stretchOk || engine.mode === "midi");
+    const pct = Math.round(engine.rate * 100);
+    el.speed.value = String(pct);
+    el.speedOut.textContent = `${pct}%`;
+    el.speed.setAttribute("aria-valuetext", `${pct}%`);
+  };
+  const suono = creaSuono({ data, engine, manifest, say, labels: L, onMode });
   let score = null;
   let currentIdx = -1;
 
@@ -221,6 +231,7 @@ async function main(data) {
   };
   const closeLoader = () => { loader.classList.add("is-done"); setTimeout(() => { loader.hidden = true; }, 300); };
   let fatte = 0;
+  let fallbackAttivo = false;
   loader.hidden = false;
   showProgress(0, 0, manifest.tracce.length);
   say(L.loading.replace("{n}", 0).replace("{total}", manifest.tracce.length));
@@ -233,20 +244,27 @@ async function main(data) {
       (f) => showProgress(f, fatte, manifest.tracce.length),
     );
   } catch (e) {
-    closeLoader();
     console.error(e);
-    fail(({ network: L.errNetwork, decode: L.errDecode, unsupported: L.errUnsupported }[e.kind]) || L.errNetwork);
-    say("");
-    return;
+    // Ultimo anello della catena Opus -> MP3 -> strumenti: se nemmeno l'MP3 si scarica o decodifica, si suonano le note.
+    if (e.kind === "unsupported" || !(await suono.fallback())) {
+      closeLoader();
+      fail(({ network: L.errNetwork, decode: L.errDecode, unsupported: L.errUnsupported }[e.kind]) || L.errNetwork);
+      say("");
+      return;
+    }
+    fallbackAttivo = true;
   }
   showProgress(1, manifest.tracce.length, manifest.tracce.length);
   closeLoader();
   setReady(true);
-  if (!engine.stretchOk) { el.speed.disabled = true; say(L.noStretch); }
+  if (!engine.stretchOk && engine.mode === "audio") { el.speed.disabled = true; say(L.noStretch); }
+  else onMode();
+  suono.mostra();
   el.seek.max = String(engine.duration);
   el.total.textContent = formatClock(engine.duration);
   mixer?.render();
-  if (engine.stretchOk) say(L.ready);
+  if (fallbackAttivo) say(L.fallbackInstr);
+  else if (engine.stretchOk) say(L.ready);
   await scorePromise;
   update();
 }

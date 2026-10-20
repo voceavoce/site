@@ -371,7 +371,12 @@
         "range": "Passage choisi : mesures {a} à {b}."
       },
       "fsOn": "Partition en plein écran.",
-      "fsOff": "Plein écran fermé."
+      "fsOff": "Plein écran fermé.",
+      "soundLoading": "Chargement des instruments…",
+      "soundInstrOn": "Vous écoutez des instruments, pas le chant.",
+      "soundSungOn": "Vous écoutez les voix chantées.",
+      "fallbackInstr": "L'audio chanté n'est pas disponible : vous écoutez des instruments.",
+      "errInstr": "Impossible de charger les instruments."
     },
     "loaderTitle": "Préparation des voix…",
     "loaderHint": "À la première ouverture, cela peut prendre quelques secondes : nous téléchargeons l'audio de toutes les voix.",
@@ -379,7 +384,13 @@
     "fullscreenClose": "Fermer",
     "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)",
     "allVoices": "Toutes les voix égales",
-    "reportScore": "Signaler une erreur dans la partition"
+    "reportScore": "Signaler une erreur dans la partition",
+    "sound": "Son",
+    "soundHint": "Chanté : les voix enregistrées. Instruments : les notes de la partition jouées par des instruments, un par voix à votre choix (utile pour bien entendre la justesse et pour ralentir sans artefacts).",
+    "soundLegend": "Ce que vous entendez",
+    "soundSung": "Chanté",
+    "soundInstr": "Instruments",
+    "instrumentOf": "Instrument : {voice}"
   },
   "report": {
     "title": "Signaler une erreur dans la partition",
