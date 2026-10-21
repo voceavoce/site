@@ -26,7 +26,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run validate
-      - run: npm test
+      - run: node --test $(find tests -name '*.test.mjs' ! -name note.test.mjs)
+      # Le note mancanti in una lingua non fermano il deploy giornaliero: restano un avviso (anche in check.yml); `npm run check` in locale le segnala come errore.
+      - run: node --test tests/note.test.mjs
+        continue-on-error: true
       - run: npm run build
         env:
           ELEVENTY_ENV: production # esclude i dati di prova del player (content/player/_prova)
