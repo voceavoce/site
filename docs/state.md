@@ -11,7 +11,7 @@
 
 ## Lavori in corso 2026-10-21 (cloud, elenco concordato con l'utente)
 
-Ordine: (7) test completo della pipeline [in corso, `/tmp` log non persistente] · (1) test offline strumenti [FATTO] · (2) axe sul pannello Suono + tastiera [FATTO] · (8-9) Lutkin: regola `anomalie_spartito` + repair + scansione del catalogo · (3) dinamica nelle note (velocity) · (4) mix cantato+strumento (M7) [FATTO] · (5) brani senza render (M8) · (6) pannello Suono nella scheda brano (M11) · (10) bozza skill segnalazioni · (11) note dei due brani senza testo. Commit e push a ogni passo.
+Ordine: (7) test completo della pipeline [in corso, `/tmp` log non persistente] · (1) test offline strumenti [FATTO] · (2) axe sul pannello Suono + tastiera [FATTO] · (8-9) Lutkin: regola `anomalie_spartito` + repair + scansione del catalogo · (3) dinamica nelle note (velocity) · (4) mix cantato+strumento (M7) [FATTO] · (5) brani senza render (M8) · (6) pannello Suono nella scheda brano (M11) · (10) bozza skill segnalazioni · (11) note dei due brani senza testo [RIMANDATO dall'utente a quando lavora in locale con la rete: `npm run check` resta rosso solo per questo]. Commit e push a ogni passo.
 
 - **Idea da valutare (2026-10-21), M12:** nomi delle note (do re mi / C D E, con vocali) al posto del testo nella partitura, come supporto al solfeggio; vedi `docs/task.md` e `docs/midi-player.md` §10. Non pianificata.
 
