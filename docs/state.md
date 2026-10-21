@@ -15,6 +15,12 @@ Ordine: (7) test completo della pipeline [in corso, `/tmp` log non persistente] 
 
 - **Idea da valutare (2026-10-21), M12:** nomi delle note (do re mi / C D E, con vocali) al posto del testo nella partitura, come supporto al solfeggio; vedi `docs/task.md` e `docs/midi-player.md` §10. Non pianificata.
 
+## Riepilogo 2026-10-21 sera (credito quasi finito: tutto committato e pushato)
+
+- **Fatti oggi:** U1 pytest completo (3253 passati; correzioni T-919), test offline/axe/tastiera degli strumenti, mix cantato+strumento per voce (M7), dinamica nelle note (T-921, 66 brani), player per 23 brani in lavorazione (M8/T-920), caso Lutkin PREPARATO (T-913, non attivo), scansione catalogo (`docs/anomalie-catalogo-2026-10.md` in AIVideoCreator), skill `/voceavoce-segnalazioni` (bozza T-914), idea M12 registrata. e2e strumenti 18/18 verdi.
+- **Resta all'utente (in locale):** M9 ascolto; verifica Lutkin sull'edizione e attivazione (`docs/caso-lutkin.md` in AIVideoCreator); note R5 dei due brani (serve la rete: e' l'unico rosso di `npm run check`); rilanciare `job_sito_player --in-lavorazione --scrivi` sulla macchina RENDER PRIMA di pubblicare i 22 'da-caricare' (hanno gli stem); decidere se includere i 3 brani 'pubblicato' senza voci pubblicabili; rivedere sulle fonti i brani con regola `dinamica` (177, 259, 305, 039, aria-012); P8 corona singola.
+- **Non fatto:** M11 (pannello Suono nella scheda brano: scartato, la scheda non ha mixer), M12 (nomi delle note, da valutare), M5-M6 (togliere l'MP3, in coda), 5 test di rendering/ffmpeg Linux e cmudict/googleapiclient mancanti nel cloud.
+
 ## Come proseguire in locale (se la sessione cloud si ferma)
 
 - **Stato git (2026-10-20 sera):** tutto è su GitHub. Sito: branch `claude/voceavocecoro-video-portal-s3o8vi` (ultimo commit 3ba5686 + questo). AIVideoCreator: stesso nome di branch, ultimo commit cd9f63a (T-915); `main` di entrambi non è ancora toccato (nessuna PR aperta).
