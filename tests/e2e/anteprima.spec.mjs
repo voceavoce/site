@@ -69,6 +69,7 @@ test("anteprima: il blocco di risposta segue i campi e si copia negli appunti", 
   const copiato = await page.evaluate(() => navigator.clipboard.readText());
   expect(copiato).toBe(await uscita.inputValue());
   expect(JSON.parse(copiato.slice(copiato.indexOf("{"))).segnalazioni_vere).toEqual(["3"]);
+  expect(JSON.parse(copiato.slice(copiato.indexOf("{"))).segnalazioni).toEqual([{ indice: 0, battuta: "3", parte: "basso", categoria: "raddoppio", gravita: "alta", esito: "vera" }]);
   await page.getByRole("button", { name: "Copia il testo per Gemini" }).click();
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(await page.locator("#ant-prompt").inputValue());
 });

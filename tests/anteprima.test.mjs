@@ -42,15 +42,18 @@ test("righeOpzioni: testo e JSON, valori lunghi tagliati", () => {
 });
 
 test("testoRisposta: tempo, osservazioni, segnalazioni e JSON da incollare", () => {
-  const dossier = { brano: { titolo: "Ave verum", rank: "475", slug: "_anteprima-ave" }, tempo: { prova: 72 } };
-  const t = testoRisposta({ dossier, tempo: " 66 ", note: "il basso e' troppo alto in b. 13", segnate: { 13: "vera", 17: "ignora", 32: "boh" }, velocitaPct: 90 });
+  const dossier = { brano: { titolo: "Ave verum", rank: "475", slug: "_anteprima-ave" }, tempo: { prova: 72 },
+    anomalie: { mostrate: [{ battuta: "13", parte: "basso", categoria: "raddoppio", gravita: "alta" }, { battuta: "13", parte: "tenore", categoria: "sillaba", gravita: "media" }, { battuta: "17", parte: "alto", categoria: "salto", gravita: "bassa" }, { battuta: "32", parte: "soprano", categoria: "salto", gravita: "bassa" }] } };
+  const t = testoRisposta({ dossier, tempo: " 66 ", note: "il basso e' troppo alto in b. 13", segnate: { 0: "vera", 2: "ignora", 3: "boh" }, velocitaPct: 90 });
   assert.match(t, /^ANTEPRIMA Ave verum \(rank 475\)\nTempo deciso: 66\n/);
   assert.match(t, /Provato a: 64.8 BPM \(90% del tempo di prova 72\)/);
   assert.match(t, /Osservazioni: il basso e' troppo alto in b\. 13/);
   assert.match(t, /Segnalazioni confermate \(battute\): 13/);
   assert.match(t, /Segnalazioni da ignorare \(battute\): 17/);
   const json = JSON.parse(t.slice(t.indexOf("{")));
-  assert.deepEqual(json, { rank: "475", slug: "_anteprima-ave", tempo_deciso: "66", tempo_prova: 72, segnalazioni_vere: ["13"], segnalazioni_ignorate: ["17"], osservazioni: "il basso e' troppo alto in b. 13" });
+  assert.deepEqual(json, { rank: "475", slug: "_anteprima-ave", tempo_deciso: "66", tempo_prova: 72, segnalazioni_vere: ["13"], segnalazioni_ignorate: ["17"],
+    segnalazioni: [{ indice: 0, battuta: "13", parte: "basso", categoria: "raddoppio", gravita: "alta", esito: "vera" }, { indice: 2, battuta: "17", parte: "alto", categoria: "salto", gravita: "bassa", esito: "ignora" }],
+    osservazioni: "il basso e' troppo alto in b. 13" });
 });
 
 test("testoRisposta: senza niente di compilato non esplode", () => {

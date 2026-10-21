@@ -85,7 +85,7 @@ export async function creaAnteprima({ url, sync, vai, speed }) {
   const lista = anomalie.length
     ? h("ul", { class: "anteprima__anom" }, anomalie.map((a, i) => {
         const idx = indiceBattuta(sync, a.battuta);
-        const sel = h("select", { id: `ant-an-${i}`, "aria-label": `Esito della segnalazione alla battuta ${a.battuta}`, onchange: (e) => { if (e.target.value) segnate[a.battuta] = e.target.value; else delete segnate[a.battuta]; aggiorna(); } },
+        const sel = h("select", { id: `ant-an-${i}`, "aria-label": `Esito della segnalazione alla battuta ${a.battuta}`, onchange: (e) => { if (e.target.value) segnate[i] = e.target.value; else delete segnate[i]; aggiorna(); } },
           h("option", { value: "" }, "da decidere"), h("option", { value: "vera" }, "vera"), h("option", { value: "ignora" }, "da ignorare"));
         return h("li", {}, h("strong", {}, `b. ${a.battuta}`), ` · ${a.parte} · ${a.categoria} (${a.gravita}): ${a.descrizione} `,
           h("button", { type: "button", class: "tool tool--text", disabled: idx < 0, onclick: () => vai?.(idx) }, "Vai alla battuta"), " ", sel);

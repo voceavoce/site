@@ -32,7 +32,8 @@ export function righeOpzioni(opzioni, max = 160) {
 }
 
 /** Il blocco da incollare nella chat di Claude: tempo deciso, osservazioni, segnalazioni segnate come vere o da ignorare
- *  e le scelte del contratto che ha visto. `segnate` = { battuta: "vera" | "ignora" }. Testo semplice + JSON in fondo. */
+ *  (con battuta, parte e categoria: servono al registro e alle statistiche delle guardie). `segnate` = { indice della
+ *  segnalazione nel dossier: "vera" | "ignora" }. Testo semplice + JSON in fondo. */
 export function testoRisposta({ dossier, tempo, note, segnate = {}, velocitaPct = null }) {
   const b = dossier?.brano ?? {};
   const t = dossier?.tempo ?? {};
@@ -41,8 +42,11 @@ export function testoRisposta({ dossier, tempo, note, segnate = {}, velocitaPct 
   if (Number.isFinite(velocitaPct) && Number.isFinite(t.prova)) righe.push(`Provato a: ${bpmDaVelocita(t.prova, velocitaPct)} BPM (${velocitaPct}% del tempo di prova ${t.prova})`);
   const osserv = String(note ?? "").trim();
   righe.push(osserv ? `Osservazioni: ${osserv}` : "Osservazioni: nessuna");
-  const vere = Object.entries(segnate).filter(([, s]) => s === "vera").map(([n]) => n);
-  const ignorate = Object.entries(segnate).filter(([, s]) => s === "ignora").map(([n]) => n);
+  const dettaglio = (dossier?.anomalie?.mostrate ?? []).map((a, i) => ({ indice: i, battuta: String(a.battuta), parte: a.parte ?? null, categoria: a.categoria ?? null, gravita: a.gravita ?? null, esito: segnate[i] ?? null }));
+  const scelte = dettaglio.filter((s) => s.esito === "vera" || s.esito === "ignora");
+  const battute = (esito) => [...new Set(scelte.filter((s) => s.esito === esito).map((s) => s.battuta))];
+  const vere = battute("vera");
+  const ignorate = battute("ignora");
   if (vere.length) righe.push(`Segnalazioni confermate (battute): ${vere.join(", ")}`);
   if (ignorate.length) righe.push(`Segnalazioni da ignorare (battute): ${ignorate.join(", ")}`);
   const json = {
@@ -52,6 +56,7 @@ export function testoRisposta({ dossier, tempo, note, segnate = {}, velocitaPct 
     tempo_prova: t.prova ?? null,
     segnalazioni_vere: vere,
     segnalazioni_ignorate: ignorate,
+    segnalazioni: scelte,
     osservazioni: osserv || null,
   };
   return `${righe.join("\n")}\n\n${JSON.stringify(json, null, 1)}\n`;
