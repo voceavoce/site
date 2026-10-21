@@ -143,3 +143,7 @@ Da registrare in `tasks.md` quando si parte (ultimo usato: T-914): **T-915** exp
 - Ascolto dell'utente su Locus iste, Ave verum (475, con organo) e un'aria: sincronia, timbro, velocità, loop.
 - Il fallback si prova a mano forzando `canPlayType` e, per M6, con un browser reale senza Opus.
 - Documentazione: `player.md` (architettura e limiti), `plan.md`, `task.md`, `state.md`.
+
+## 10. Idee da valutare (non pianificate)
+
+- **Nomi delle note al posto del testo (M12, 2026-10-21).** Mostrare nella partitura il nome di ogni nota (do re mi… oppure C D E…, con eventuale vocale per cantarci sopra) come supporto al solfeggio cantato e alla lettura; insieme agli strumenti permette di studiare l'intonazione senza il testo. Aperte: do fisso o mobile, alterazioni, vocali, più strofe, posizione nell'interfaccia. Punto di partenza: `study/musicxml.js` riscrive già il MusicXML prima di Verovio.

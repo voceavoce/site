@@ -13,6 +13,8 @@
 
 Ordine: (7) test completo della pipeline [in corso, `/tmp` log non persistente] · (1) test offline strumenti [FATTO] · (2) axe sul pannello Suono + tastiera [FATTO] · (8-9) Lutkin: regola `anomalie_spartito` + repair + scansione del catalogo · (3) dinamica nelle note (velocity) · (4) mix cantato+strumento (M7) · (5) brani senza render (M8) · (6) pannello Suono nella scheda brano (M11) · (10) bozza skill segnalazioni · (11) note dei due brani senza testo. Commit e push a ogni passo.
 
+- **Idea da valutare (2026-10-21), M12:** nomi delle note (do re mi / C D E, con vocali) al posto del testo nella partitura, come supporto al solfeggio; vedi `docs/task.md` e `docs/midi-player.md` §10. Non pianificata.
+
 ## Come proseguire in locale (se la sessione cloud si ferma)
 
 - **Stato git (2026-10-20 sera):** tutto è su GitHub. Sito: branch `claude/voceavocecoro-video-portal-s3o8vi` (ultimo commit 3ba5686 + questo). AIVideoCreator: stesso nome di branch, ultimo commit cd9f63a (T-915); `main` di entrambi non è ancora toccato (nessuna PR aperta).
