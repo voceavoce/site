@@ -15,6 +15,10 @@ Ordine: (7) test completo della pipeline [in corso, `/tmp` log non persistente] 
 
 - **Idea da valutare (2026-10-21), M12:** nomi delle note (do re mi / C D E, con vocali) al posto del testo nella partitura, come supporto al solfeggio; vedi `docs/task.md` e `docs/midi-player.md` §10. Non pianificata.
 
+## Modo di lavoro dal 2026-10-21 (credito in esaurimento)
+
+Un task alla volta, niente sub-agenti in parallelo; commit e push dopo OGNI passo e aggiornamento di `state.md`/`task.md` prima di cambiare task. Prossimi candidati (cloud, uno per volta): (1) `npm run check` verde = solo le note R5 (rimandate al locale); (2) M12 nomi delle note nella partitura (da valutare con l'utente: serve prima una decisione su do fisso/mobile, alterazioni, vocali); (3) rendere `tests/note.test.mjs` meno rigido? (no: e' la guardia voluta); (4) rifinire loop dei timbri tenuti dopo l'ascolto M9; (5) R4/T-911 vibrato (solo con istruzioni); i resti sono dell'utente in locale (vedi il riepilogo sotto).
+
 ## Riepilogo 2026-10-21 sera (credito quasi finito: tutto committato e pushato)
 
 - **Fatti oggi:** U1 pytest completo (3253 passati; correzioni T-919), test offline/axe/tastiera degli strumenti, mix cantato+strumento per voce (M7), dinamica nelle note (T-921, 66 brani), player per 23 brani in lavorazione (M8/T-920), caso Lutkin PREPARATO (T-913, non attivo), scansione catalogo (`docs/anomalie-catalogo-2026-10.md` in AIVideoCreator), skill `/voceavoce-segnalazioni` (bozza T-914), idea M12 registrata. e2e strumenti 18/18 verdi.
