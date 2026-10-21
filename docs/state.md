@@ -1,5 +1,21 @@
 # State — avanzamento e decisioni
 
+## Anteprima del brano (T-922..T-928, avviata il 2026-10-21): pagina usa e getta per vedere e sentire la parte PRIMA di fissare tempo e opzioni
+
+- **Idea dell'utente:** nello STAGE 2 di `/voceavoce-pianifica-lotto` (tempo, sezioni, opzioni) mostrare la partitura che scorre col cursore e suonata con gli strumenti, con le opzioni dei classificatori, le segnalazioni sulla partitura e il testo da copiare per Gemini; ogni difetto visto diventa una guardia in `anomalie_spartito`. Piano completo: `docs/anteprima-brano.md` nel repo AIVideoCreator.
+- **Fatto (AIVideoCreator, ramo `claude/voceavocecoro-video-portal-s3o8vi`):** T-922 piano, T-923 `job_anteprima_brano` (scrive `content/player/_anteprima-<slug>/` nel clone del sito: partitura, sync, note, manifest `senza_audio`, `dossier.json`; tempo di prova mai scritto nel contratto; provato su 475 a 72 BPM). Gli slug con «_» sono già ignorati in produzione (`studio.js`).
+- **Qui nel sito, da fare (T-924):** pannello `anteprima.js` solo in sviluppo (opzioni, anomalie cliccabili, tempo, testo per Gemini con «Copia», blocco di risposta), test e2e; ramo `feat/anteprima-brano` da `main`, una PR piccola.
+- **Come provare in locale:** `cd pipeline-core && python -m scripts.cli.job_anteprima_brano --brano 475 --tempo 72 --scrivi --out <clone del sito>`, poi `npm run dev` nel sito e l'URL stampato.
+
+## Riepilogo 2026-10-21 notte (tutto il lavoro MIDI è su `main` e online)
+
+- **Unite su `main`:** #22 (il test delle note non blocca più il deploy: era rosso dal 20/10 per le note mancanti di `o-lord-in-thee-is-all-my-trust-tallis` e `tres-morillas-m-enamoran`), #23 (`checkout@v5` e `setup-node@v5`, via l'avviso su Node 20), #24 (modalità strumenti, mix cantato+strumento, velocità dalle dinamiche, 23 player in lavorazione, M12 nomi delle note). Deploy #29 verde: il pannello Suono è online nei 45 brani pubblicati con `note.json` (es. `/player/ave-verum-corpus-byrd/`).
+- **Difetto trovato dalla CI della #24:** i 6 MP3 dei campioni degli strumenti (`src/assets/strumenti/*.mp3`, 2,8 MB) non erano mai stati committati perché il `.gitignore` ignora `*.mp3`. Aggiunta l'eccezione `!src/assets/strumenti/*.mp3`. Regola: gli stem non entrano mai in git; i campioni sì (eccezione dichiarata).
+- **Test:** e2e completo 392 verdi + 6 di M12; `npm test` verde tranne `tests/note.test.mjs` (note mancanti dei due brani, ora solo avviso in CI). Metodo per lanciare l'e2e in questo cloud: vedi più sotto («e2e completo dopo M7/M8»).
+- **M12** (nomi delle note, Do Re Mi / C D E): fatto; sfalsamento su due righe solo per le semicrome in fila; fuori dalla v1 do mobile, ottava, vocali della sillaba (`docs/midi-player.md` §10-§11).
+- **Resta all'utente (in locale):** ascolto M9 (Locus iste, Ave verum 475, un'aria; ora anche online); Lutkin (verifica sull'edizione, `applicare:true`, rigenera, chiudi issue #2 di `voceavoce/segnalazioni`); note R5 dei due brani; rilanciare `job_sito_player --in-lavorazione --scrivi` sulla macchina RENDER PRIMA di pubblicare i 22 «da-caricare»; decidere i 3 brani «pubblicato» senza voci pubblicabili; rivedere i brani con regola `dinamica` (177, 259, 305, 039, aria-012).
+- **In coda, solo se serve:** M5-M6 (togliere l'MP3 se lo spazio su R2 diventa un problema).
+
 ## Riepilogo per riprendere (aggiornato 2026-10-18 notte, segnalazioni attive, player anticipato in PR)
 
 - **Unite su `main`:** #15 (partiture del player = quelle del video: tenore in violino-8, sigle, dinamiche sopra; 141 `score.musicxml` rigenerati), #16 + #17 (segnalazioni: la #16 è stata unita prima degli ultimi commit, la #17 l'ha completata), #18 (docs R4), oltre a #4–#14.
