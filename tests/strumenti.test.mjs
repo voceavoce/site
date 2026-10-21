@@ -55,6 +55,9 @@ test("note.json: controlli di contratto", () => {
   male({ ...ok, parti: [{ chiave: "soprano", note: [[0, 100, 200]] }] });
   male({ ...ok, parti: [{ chiave: "soprano", note: [[11000, 100, 60]] }] });
   male({ ...ok, parti: [{ chiave: "soprano", note: [[0.5, 100, 60]] }] });
+  assert.doesNotThrow(() => checkNote("x", { ...ok, parti: [{ chiave: "soprano", note: [[0, 100, 60, 33], [100, 100, 62, 112]] }] }, manifest)); // velocita' facoltativa
+  male({ ...ok, parti: [{ chiave: "soprano", note: [[0, 100, 60, 0]] }] });
+  male({ ...ok, parti: [{ chiave: "soprano", note: [[0, 100, 60, 128]] }] });
 });
 
 test("manifest senza_audio: le tracce non hanno file; altrimenti il file e' obbligatorio", () => {

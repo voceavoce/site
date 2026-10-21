@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { firstAtOrAfter, inRange, soundingAt, begin, advance, campioneVicino } from "../src/assets/js/study/schedule.js";
+import { guadagnoVelocita, VEL_PREDEFINITA, firstAtOrAfter, inRange, soundingAt, begin, advance, campioneVicino } from "../src/assets/js/study/schedule.js";
 
 const notes = [[0, 1000, 60], [1000, 1000, 62], [2000, 2000, 64], [4000, 500, 65]];
 const parti = [{ chiave: "soprano", notes }];
@@ -86,4 +86,20 @@ test("campioneVicino: campione piu' vicino e rapporto di velocita'", () => {
   const c = campioneVicino(s, 29);
   assert.equal(c.indice, 2);
   assert.ok(Math.abs(c.rate - Math.pow(2, -1 / 12)) < 1e-12);
+});
+
+test("velocita': guadagno monotono, 1 a mf, limitato; assente = mf", () => {
+  assert.equal(guadagnoVelocita(VEL_PREDEFINITA), 1);
+  assert.equal(guadagnoVelocita(undefined), 1);
+  const v = [20, 33, 49, 64, 80, 96, 112, 127].map(guadagnoVelocita);
+  for (let i = 1; i < v.length; i++) assert.ok(v[i] > v[i - 1]);
+  assert.ok(guadagnoVelocita(1) >= 0.2 && guadagnoVelocita(127) <= 1.8);
+  assert.ok(guadagnoVelocita(33) < 0.35 && guadagnoVelocita(112) > 1.5);
+});
+
+test("velocita' nelle note pianificate: usata se c'e', altrimenti mf, anche nelle note in corso", () => {
+  const n = [[0, 2000, 60, 33], [500, 500, 62]];
+  const r = inRange(n, 0, 1);
+  assert.deepEqual(r.map((x) => x.vel), [33, 80]);
+  assert.equal(soundingAt(n, 1)[0].vel, 33);
 });

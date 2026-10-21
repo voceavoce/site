@@ -1,7 +1,7 @@
 // Sorgente "strumenti" del motore: suona le note di note.json con i campioni di strumenti.js.
 // Scheduler con anticipo: ogni tick programma sul clock di Web Audio (AudioContext.currentTime) le note che cadono
 // entro l'orizzonte; la logica del tempo e' in schedule.js (pura, testata). Le note non partono mai da setTimeout.
-import { begin, advance, campioneVicino } from "./schedule.js";
+import { begin, advance, campioneVicino, guadagnoVelocita } from "./schedule.js";
 
 const TICK_MS = 50;
 const HORIZON = 0.4; // s di anticipo con la pagina visibile
@@ -98,7 +98,7 @@ export class Synth {
       src.loopEnd = base + def.loop[indice][1];
     }
     const g = ctx.createGain();
-    const level = LEVEL * (def.guadagno || 1);
+    const level = LEVEL * (def.guadagno || 1) * guadagnoVelocita(ev.vel);
     g.gain.setValueAtTime(0, t0);
     g.gain.linearRampToValueAtTime(level, t0 + FADE_IN);
     g.gain.setValueAtTime(level, tEnd);

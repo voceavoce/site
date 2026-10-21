@@ -41,8 +41,9 @@ export function checkNote(slug, note, manifest) {
     if (!Array.isArray(p.note)) fail(`parte "${p.chiave}": note non e' un elenco`);
     let prev = -1;
     for (const n of p.note) {
-      if (!Array.isArray(n) || n.length !== 3 || !n.every(Number.isInteger)) fail(`parte "${p.chiave}": nota non valida ${JSON.stringify(n)}`);
-      const [t, d, m] = n;
+      if (!Array.isArray(n) || (n.length !== 3 && n.length !== 4) || !n.every(Number.isInteger)) fail(`parte "${p.chiave}": nota non valida ${JSON.stringify(n)}`);
+      const [t, d, m, vel = 80] = n;
+      if (vel < 1 || vel > 127) fail(`parte "${p.chiave}": velocita' fuori intervallo ${JSON.stringify(n)}`);
       if (t < prev) fail(`parte "${p.chiave}": inizi non crescenti`);
       if (d <= 0 || m < 0 || m > 127 || t < 0) fail(`parte "${p.chiave}": nota fuori intervallo ${JSON.stringify(n)}`);
       if (t > note.fine * 1000) fail(`parte "${p.chiave}": nota oltre la fine`);

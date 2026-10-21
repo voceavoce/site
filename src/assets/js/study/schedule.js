@@ -1,8 +1,20 @@
 // Pianificazione delle note per gli strumenti: funzioni PURE (nessun DOM, nessun Web Audio), testate con node:test.
 //
-// `notes` e' l'elenco di una parte di note.json: [[inizio_ms, durata_ms, altezza], ...] ordinato per inizio.
+// `notes` e' l'elenco di una parte di note.json: [[inizio_ms, durata_ms, altezza, velocita'?], ...] ordinato per inizio.
+// La velocita' (1-127, come in MIDI) e' facoltativa: senza, vale VEL_PREDEFINITA (mf).
 // Il tempo di partitura e' quello del sync (s); il tempo del contesto audio (`ctx`) e' quello di AudioContext.
 // Relazione: ctx = ctxCursor + (tempoPartitura - scoreCursor) / velocita'.
+
+export const VEL_PREDEFINITA = 80;
+
+/**
+ * Guadagno (moltiplicatore, 1 = mf) per una velocita' MIDI: curva (v/80)^1.4, limitata fra 0,2 e 1,8. Cosi' pp (33) ~0,29,
+ * p (49) ~0,51, mf (80) = 1, f (96) ~1,29, ff (112) ~1,60.
+ */
+export function guadagnoVelocita(vel) {
+  const v = Number.isFinite(+vel) && vel > 0 ? +vel : VEL_PREDEFINITA;
+  return Math.min(1.8, Math.max(0.2, Math.pow(v / VEL_PREDEFINITA, 1.4)));
+}
 
 /** Indice della prima nota che inizia a `t` secondi o dopo (ricerca binaria). */
 export function firstAtOrAfter(notes, t) {
@@ -24,7 +36,7 @@ export function inRange(notes, a, b, loopEnd = Infinity) {
   const out = [];
   for (let i = firstAtOrAfter(notes, a); i < notes.length && notes[i][0] < b * 1000; i++) {
     const start = notes[i][0] / 1000;
-    out.push({ start, dur: Math.min(notes[i][1] / 1000, loopEnd - start), midi: notes[i][2] });
+    out.push({ start, dur: Math.min(notes[i][1] / 1000, loopEnd - start), midi: notes[i][2], vel: notes[i][3] ?? VEL_PREDEFINITA });
   }
   return out;
 }
@@ -37,8 +49,8 @@ export function soundingAt(notes, pos, loopEnd = Infinity) {
   const out = [];
   const posMs = pos * 1000;
   for (let i = firstAtOrAfter(notes, pos) - 1; i >= 0; i--) {
-    const [t, d, midi] = notes[i];
-    if (t + d > posMs + 1) out.push({ start: pos, dur: Math.min((t + d) / 1000, loopEnd) - pos, midi, catchUp: true });
+    const [t, d, midi, vel = VEL_PREDEFINITA] = notes[i];
+    if (t + d > posMs + 1) out.push({ start: pos, dur: Math.min((t + d) / 1000, loopEnd) - pos, midi, vel, catchUp: true });
     else if (posMs - t > 30000) break; // note piu' lunghe di 30 s non esistono: si smette di cercare indietro
   }
   return out.filter((n) => n.dur > 0.001).reverse();
