@@ -392,7 +392,12 @@
     "soundLegend": "Lo que escuchas",
     "soundSung": "Cantado",
     "soundInstr": "Instrumentos",
-    "instrumentOf": "Sonido: {voice}"
+    "instrumentOf": "Sonido: {voice}",
+    "scoreText": "Texto de la partitura",
+    "scoreTextHint": "En lugar de la letra, bajo cada nota aparece su nombre: útil para practicar el solfeo cantado.",
+    "scoreTextWords": "Letra",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Señalar un error en la partitura",

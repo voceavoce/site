@@ -56,10 +56,18 @@ async function main(data) {
   let score = null;
   let currentIdx = -1;
 
+  // Testo dello spartito: parole del brano o nomi delle note (Do Re Mi / C D E). La scelta resta fra una visita e l'altra.
+  const TESTO_KEY = "va-testo", TESTI = ["parole", "do", "abc"];
+  const testoRadio = [...document.querySelectorAll("[data-score-text] input[type=radio]")];
+  let testoPref = "parole";
+  try { const t = localStorage.getItem(TESTO_KEY); if (TESTI.includes(t) && testoRadio.length) testoPref = t; } catch { /* storage non disponibile */ }
+  for (const r of testoRadio) r.checked = r.value === testoPref;
+
   // --- partitura (in parallelo con l'audio; un suo errore non ferma il player)
   const scorePromise = createScore({
     container: $("[data-score]"),
     xmlUrl: data.scoreUrl,
+    testo: testoPref,
     voiceLabels: manifest.tracce.filter((t) => t.tipo !== "accompagnamento").map((t) => t.voce),
     onMeasureTap: (m) => {
       if (loop?.tapMeasure(m, Math.max(0, currentIdx))) {
@@ -142,6 +150,12 @@ async function main(data) {
   document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && immersive()) setImmersive(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && immersive()) setImmersive(false); });
   const telefono = () => ({ stretto: matchMedia("(max-width: 40rem)").matches, tocco: matchMedia("(pointer: coarse)").matches });
+
+  for (const r of testoRadio) r.addEventListener("change", () => {
+    if (!r.checked) return;
+    try { localStorage.setItem(TESTO_KEY, r.value); } catch { /* storage non disponibile */ }
+    scorePromise.then(() => { try { score?.setTesto(r.value); } catch (e) { console.error(e); } });
+  });
 
   // --- mixer e loop
   let mixer = null, loop = null;

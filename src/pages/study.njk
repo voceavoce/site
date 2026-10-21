@@ -116,6 +116,13 @@ eleventyExcludeFromCollections: true
             <select data-instr="{{ tr.chiave }}" data-instr-tipo="{{ tr.tipo }}"></select></label>
           {%- endfor %}
         </div>
+        <fieldset class="sound-pick sound-pick--text" data-score-text>
+          <legend class="sound-pick__legend">{{ 'study.scoreText' | t(lang) }}</legend>
+          <p class="study__hint">{{ 'study.scoreTextHint' | t(lang) }}</p>
+          <label class="sound-pick__opt"><input type="radio" name="study-score-text" value="parole" checked> <span>{{ 'study.scoreTextWords' | t(lang) }}</span></label>
+          <label class="sound-pick__opt"><input type="radio" name="study-score-text" value="do"> <span>{{ 'study.scoreTextDo' | t(lang) }}</span></label>
+          <label class="sound-pick__opt"><input type="radio" name="study-score-text" value="abc"> <span>{{ 'study.scoreTextAbc' | t(lang) }}</span></label>
+        </fieldset>
       </section>
       {%- endif %}
 

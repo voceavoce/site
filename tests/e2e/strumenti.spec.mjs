@@ -278,10 +278,10 @@ for (const tema of ["light", "dark"]) {
     expect(await esegui(), "modalita' cantato").toEqual([]);
     await passaAStrumenti(page);
     expect(await esegui(), "modalita' strumenti").toEqual([]);
-    // ogni menu ha un nome accessibile con la voce, e i due pulsanti radio sono nello stesso gruppo con legenda
+    // ogni menu ha un nome accessibile con la voce, e i gruppi di pulsanti radio hanno la legenda
     const nomi = await page.$$eval("[data-instr]", (l) => l.map((s) => s.labels[0]?.textContent.trim()));
     expect(nomi.every((n) => n && n.length > 3)).toBe(true);
-    expect(await page.locator('fieldset.sound-pick legend').count()).toBe(1);
+    expect(await page.locator('fieldset.sound-pick legend').count()).toBe(2); // Cantato/Strumenti e Testo dello spartito
   });
 }
 

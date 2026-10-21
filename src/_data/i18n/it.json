@@ -392,7 +392,12 @@
     "soundLegend": "Che cosa ascolti",
     "soundSung": "Cantato",
     "soundInstr": "Strumenti",
-    "instrumentOf": "Suono: {voice}"
+    "instrumentOf": "Suono: {voice}",
+    "scoreText": "Testo dello spartito",
+    "scoreTextHint": "Al posto delle parole, sotto ogni nota compare il suo nome: utile per esercitarsi nel solfeggio cantato.",
+    "scoreTextWords": "Parole",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Segnala un errore nello spartito",

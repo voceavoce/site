@@ -11,7 +11,7 @@ export const ZOOM_STEPS = [25, 30, 35, 40, 50, 60, 75, 100];
 
 const reducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasureTap, onError }) {
+export async function createScore({ container, xmlUrl, voiceLabels = [], testo = "parole", onMeasureTap, onError }) {
   const [{ default: createVerovioModule }, { VerovioToolkit }] = await Promise.all([
     import(new URL("verovio-module.mjs", VEROVIO).href),
     import(new URL("verovio.mjs", VEROVIO).href),
@@ -21,7 +21,8 @@ export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasu
     fetch(xmlUrl).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); }),
   ]);
   const tk = new VerovioToolkit(mod);
-  if (!tk.loadData(abbreviaParti(xml, voiceLabels))) throw new Error("MusicXML non leggibile da Verovio");
+  let testoOra = testo;
+  if (!tk.loadData(abbreviaParti(xml, voiceLabels, { testo: testoOra }))) throw new Error("MusicXML non leggibile da Verovio");
 
   // Zoom iniziale: note ben leggibili senza dover premere A+. Piu' alto sugli schermi larghi (partitura a tutta
   // larghezza), piu' basso sui telefoni. Con A- / A+ si cambia.
@@ -59,6 +60,7 @@ export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasu
       pageMarginLeft: 30, pageMarginRight: 30, pageMarginTop: 40, pageMarginBottom: 40,
       svgViewBox: true,
       svgAdditionalAttribute: [],
+      lyricSize: testoOra === "parole" ? 4.5 : 3.6, // i nomi delle note sono piu' fitti delle parole: un po' piu' piccoli
     });
     tk.redoLayout();
     const pages = [];
@@ -213,6 +215,19 @@ export async function createScore({ container, xmlUrl, voiceLabels = [], onMeasu
       myStaff = rigoDellaVoce(idx, voices, staves);
       drawBands();
     },
+    // Parole del brano o nomi delle note ("do" = Do Re Mi, "abc" = C D E). Rilegge il MusicXML gia' scaricato (niente
+    // rete) e rifa' il layout: battuta evidenziata e cursore tornano dove erano. Ritorna false se non e' cambiato niente.
+    setTesto(modo) {
+      if (modo === testoOra) return false;
+      if (!tk.loadData(abbreviaParti(xml, voiceLabels, { testo: modo }))) {
+        tk.loadData(abbreviaParti(xml, voiceLabels, { testo: testoOra }));
+        return false;
+      }
+      testoOra = modo;
+      layout();
+      return true;
+    },
+    get testo() { return testoOra; },
     get measureCount() { return measures.length; },
     get caselle() { return caselle.map(({ i, l, r, t, b }) => ({ i, l, r, t, b })); }, // per i test: dove il codice crede che stia ogni battuta
     get zoom() { return zoom; },

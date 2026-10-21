@@ -392,7 +392,12 @@
     "soundLegend": "Ce que vous entendez",
     "soundSung": "Chanté",
     "soundInstr": "Instruments",
-    "instrumentOf": "Son : {voice}"
+    "instrumentOf": "Son : {voice}",
+    "scoreText": "Texte de la partition",
+    "scoreTextHint": "À la place des paroles, le nom de chaque note s'affiche sous elle : utile pour travailler le solfège chanté.",
+    "scoreTextWords": "Paroles",
+    "scoreTextDo": "Do Ré Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Signaler une erreur dans la partition",

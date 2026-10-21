@@ -392,7 +392,12 @@
     "soundLegend": "Was Sie hören",
     "soundSung": "Gesungen",
     "soundInstr": "Instrumente",
-    "instrumentOf": "Klang: {voice}"
+    "instrumentOf": "Klang: {voice}",
+    "scoreText": "Text der Partitur",
+    "scoreTextHint": "Statt des Textes steht unter jeder Note ihr Name: hilfreich zum Üben des Solfeggierens.",
+    "scoreTextWords": "Text",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Fehler in der Partitur melden",

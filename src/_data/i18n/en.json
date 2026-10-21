@@ -392,7 +392,12 @@
     "soundLegend": "What you hear",
     "soundSung": "Sung",
     "soundInstr": "Instruments",
-    "instrumentOf": "Sound: {voice}"
+    "instrumentOf": "Sound: {voice}",
+    "scoreText": "Score text",
+    "scoreTextHint": "Shows the name of each note under it instead of the words: useful for practising sight-singing.",
+    "scoreTextWords": "Words",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Report an error in the score",
