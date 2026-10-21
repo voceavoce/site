@@ -24,6 +24,14 @@ async function passaAStrumenti(page) {
   await page.waitForFunction(() => window.__study.engine.mode === "midi", null, { timeout: 30_000 });
 }
 
+/** Fa partire e ferma il contesto una volta: nei primi istanti l'orologio d'uscita del browser non e' ancora stabile. */
+async function riscalda(page) {
+  await page.click("[data-play]");
+  await page.waitForFunction(() => window.__study.engine.ctx.currentTime > 0.8, null, { timeout: 10_000 });
+  await page.click("[data-play]");
+  await page.waitForFunction(() => !window.__study.engine.playing);
+}
+
 /** Spia sul mix finale (rileva l'inizio di ogni nota) e osservatore delle evidenziazioni. */
 async function installaStrumenti(page) {
   await page.evaluate(async () => {
@@ -52,6 +60,7 @@ async function installaStrumenti(page) {
     spia.connect(e.ctx.destination);
     e.dry.connect(spia);
     e.wet?.connect(spia);
+    e.midiDelay.connect(spia); // gli strumenti hanno un bus proprio, in uscita diretta
     const c = document.querySelector("[data-score]");
     window.__hl = [];
     new MutationObserver(() => {
@@ -132,6 +141,7 @@ for (const { pct, da } of [{ pct: 100, da: 1 }, { pct: 75, da: 1 }, { pct: 50, d
   test(`strumenti: evidenziazione contro attacco udibile a ${pct}%`, async ({ page }) => {
     await apriPlayer(page);
     await passaAStrumenti(page);
+    await riscalda(page);
     await installaStrumenti(page);
     await page.evaluate(({ pct, t }) => {
       const s = document.querySelector("[data-speed]");
