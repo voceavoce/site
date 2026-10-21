@@ -234,7 +234,7 @@ async function main(data) {
 
   // anteprima del brano (solo cartelle _anteprima-*, in sviluppo): pannello col dossier, tempo, segnalazioni, testo per Gemini
   if (data.dossierUrl) {
-    import("./anteprima.js").then((m) => m.creaAnteprima({ url: data.dossierUrl, sync, speed: $("[data-speed]"),
+    import("./anteprima.js").then((m) => m.creaAnteprima({ url: data.dossierUrl, sync, speed: $("[data-speed]"), engine, senzaAudio: data.senzaAudio === true,
       vai: (i) => { if (engine.tracks.size) { engine.seek(timeOfMeasure(sync, i)); update(); } } })).catch((e) => console.error(e));
   }
 

@@ -46,10 +46,18 @@ test("anteprima: il tempo si prova con lo slider; oltre il tempo di prova dice d
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
   await expect(page.locator("[data-speed]")).toHaveValue("80");
   await expect(page.locator(".anteprima__live")).toContainText("80% = 64 BPM");
+  // soli strumenti: anche piu' veloci del tempo di prova (80 BPM = 100%): 100 BPM = 125%
+  await expect(page.locator("[data-speed]")).toHaveAttribute("max", "150");
   await page.fill("#ant-tempo", "100");
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
-  await expect(page.locator("[data-speed]")).toHaveValue("100");
-  await expect(page.locator("[data-anteprima-body] .study__hint[aria-live]")).toContainText("--tempo 100");
+  await expect(page.locator("[data-speed]")).toHaveValue("125");
+  await expect(page.locator(".anteprima__live")).toContainText("125% = 100 BPM");
+  await page.waitForFunction(() => Math.abs(window.__study.engine.rate - 1.25) < 0.001);
+  // oltre il 150% dice di rigenerare
+  await page.fill("#ant-tempo", "130");
+  await page.getByRole("button", { name: "Prova questo tempo" }).click();
+  await expect(page.locator("[data-speed]")).toHaveValue("150");
+  await expect(page.locator("[data-anteprima-body] .study__hint[aria-live]")).toContainText("--tempo 130");
   await page.fill("#ant-tempo", "abc");
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
   await expect(page.locator("[data-anteprima-body] .study__hint[aria-live]")).toContainText("numero");
@@ -82,4 +90,21 @@ test("anteprima: accessibilita' del pannello (axe, WCAG 2.2 AA)", async ({ page 
     return r.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(" ")).join(" | ")}`);
   });
   expect(violazioni).toEqual([]);
+});
+
+test("anteprima: a 150% le note si suonano ancora tutte, e senza anteprima il tetto resta il 100%", async ({ page }) => {
+  await apri(page);
+  await page.fill("#ant-tempo", "120");
+  await page.getByRole("button", { name: "Prova questo tempo" }).click();
+  await page.waitForFunction(() => Math.abs(window.__study.engine.rate - 1.5) < 0.001);
+  await page.click("[data-play]");
+  await page.waitForFunction(() => window.__study.engine.position() > 3, null, { timeout: 15_000 });
+  await page.click("[data-play]");
+  // il player normale (brano di prova con stem) non cambia: il tetto e' 1
+  const tetto = await page.evaluate(() => { const e = window.__study.engine; const prima = e.maxRate; e.setRate(1.5); return { prima, rate: e.rate }; });
+  expect(tetto.prima).toBe(1.5);                                // qui e' l'anteprima: tetto 1,5
+  await page.goto("/player/_prova/?debug");
+  await page.waitForFunction(() => window.__study?.engine.tracks.size === 4, null, { timeout: 90_000 });
+  const normale = await page.evaluate(() => { const e = window.__study.engine; e.setRate(1.5); return { maxRate: e.maxRate, rate: e.rate }; });
+  expect(normale).toEqual({ maxRate: 1, rate: 1 });
 });

@@ -369,9 +369,12 @@ export class StudyEngine extends EventTarget {
     if (this.playing) { this.#stopSources(); this.#startSources(pos); } else this.pausedPos = pos;
   }
 
-  /** Velocita' da 0,5 a 1,0 (senza cambiare l'intonazione). */
+  /** Velocita' da 0,5 a 1,0 (senza cambiare l'intonazione). Solo con gli strumenti (nessun audio cantato) il tetto puo' salire
+   *  con `maxRate` (l'anteprima del brano lo porta a 1,5 per confrontare tempi piu' veloci di quello di prova). */
+  maxRate = 1;
+
   setRate(r) {
-    r = Math.min(1, Math.max(0.5, r));
+    r = Math.min(this.#anyAudio() ? 1 : Math.max(1, this.maxRate), Math.max(0.5, r));
     if (!this.stretchOk && this.#anyAudio()) r = 1;
     const now = this.ctx.currentTime;
     if (this.playing) { // nuovo ancoraggio alla posizione di adesso, poi cambio per tutti allo stesso istante
