@@ -319,9 +319,16 @@ test("nomi delle note: piu' voci sullo stesso rigo scrivono su righe diverse", (
   assert.deepEqual([...doc.querySelectorAll("lyric")].map((l) => `${l.getAttribute("number")}:${l.querySelector("text").textContent}`), ["1:Do", "2:Mi"]);
 });
 
-test("nomi delle note: le note veloci in fila si alternano fra la riga 1 e la 2; la nota lenta riparte dalla 1", () => {
+test("nomi delle note: le semicrome in fila si alternano fra la riga 1 e la 2; la nota lenta riparte dalla 1", () => {
   const nota = (step, dur) => `<note><pitch><step>${step}</step><octave>4</octave></pitch><duration>${dur}</duration></note>`;
   const b = ["<attributes><divisions>4</divisions></attributes>" + nota("C", 1) + nota("D", 1) + nota("E", 1) + nota("F", 1) + nota("G", 4) + nota("A", 1) + nota("B", 1)];
   const doc = leggi(M.abbreviaParti(xml([{ nome: "Soprano", abbr: "S", battute: [b[0].replace(nota("C", 1), nota("C", 1).replace("</note>", '<lyric number="1"><text>a</text></lyric></note>'))] }]), [], { testo: "do" }));
   assert.deepEqual([...doc.querySelectorAll("lyric")].map((l) => l.getAttribute("number")), ["1", "2", "1", "2", "1", "1", "2"]);
+});
+
+test("nomi delle note: le crome in fila e i valori piu' lunghi restano sempre sulla riga 1 (niente sfalsamento senza coloriture)", () => {
+  const nota = (step, dur) => `<note><pitch><step>${step}</step><octave>4</octave></pitch><duration>${dur}</duration></note>`;
+  const b = ["<attributes><divisions>4</divisions></attributes>" + nota("C", 2).replace("</note>", '<lyric number="1"><text>a</text></lyric></note>') + nota("D", 2) + nota("E", 2) + nota("F", 2) + nota("G", 4)];
+  const doc = leggi(M.abbreviaParti(xml([{ nome: "Soprano", abbr: "S", battute: b }]), [], { testo: "do" }));
+  assert.deepEqual([...doc.querySelectorAll("lyric")].map((l) => l.getAttribute("number")), ["1", "1", "1", "1", "1"]);
 });

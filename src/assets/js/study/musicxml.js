@@ -148,8 +148,8 @@ export function nomeNota(pitch, sistema) {
  *  - la nota legata a quella prima (<tie type="stop">) non ripete il nome; le note di un accordo stanno sotto la prima
  *    ("Do/Mi"); pause e abbellimenti restano senza nome;
  *  - piu' voci sullo stesso rigo: la seconda scrive sulla riga 2, la terza sulla 3 (altrimenti i nomi si sovrapporrebbero);
- *  - passaggi veloci (crome e piu' brevi, in fila) in un rigo a voce sola: i nomi si alternano fra la riga 1 e la 2, per
- *    non toccarsi nelle coloriture.
+ *  - solo le coloriture: semicrome (o piu' brevi) in fila in un rigo a voce sola alternano i nomi fra la riga 1 e la 2,
+ *    cosi' le note fitte non allargano la battuta; crome e valori piu' lunghi stanno sempre sulla riga 1.
  * Ritorna quanti nomi ha scritto (0 = sistema sconosciuto o nessuna nota: il documento non e' stato toccato).
  */
 export function nomiNote(doc, sistema, nVoci = 0) {
@@ -191,9 +191,9 @@ export function nomiNote(doc, sistema, nVoci = 0) {
       const rigo = n.querySelector(":scope > staff")?.textContent.trim() ?? "1";
       const k = `${rigo}|${n.querySelector(":scope > voice")?.textContent.trim() ?? "1"}`;
       let riga = voci.get(k) ?? 1;
-      if (perRigo.get(rigo) === 1) { // rigo a voce sola: i passaggi veloci si alternano su due righe
+      if (perRigo.get(rigo) === 1) { // rigo a voce sola: le coloriture (semicrome in fila) si alternano su due righe
         const dur = parseFloat(n.querySelector(":scope > duration")?.textContent);
-        const breve = Number.isFinite(dur) && dur / divisioni <= 0.5;
+        const breve = Number.isFinite(dur) && dur / divisioni <= 0.25; // semicroma o piu' breve
         const prima = veloce.get(k);            // undefined = la nota prima non era veloce; 1 o 2 = riga che ha usato
         riga = breve && prima === 1 ? 2 : 1;
         if (breve) veloce.set(k, riga); else veloce.delete(k);
