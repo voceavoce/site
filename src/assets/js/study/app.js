@@ -46,7 +46,7 @@ async function main(data) {
   const engine = new StudyEngine();
   // Modalita' strumenti (note.json + campioni): si cambia fra stem cantati e strumenti; con gli strumenti la velocita' non usa lo stretcher.
   const onMode = () => {
-    el.speed.disabled = !(engine.stretchOk || engine.mode === "midi");
+    el.speed.disabled = !engine.speedOk;
     const pct = Math.round(engine.rate * 100);
     el.speed.value = String(pct);
     el.speedOut.textContent = `${pct}%`;
@@ -257,7 +257,7 @@ async function main(data) {
   showProgress(1, manifest.tracce.length, manifest.tracce.length);
   closeLoader();
   setReady(true);
-  if (!engine.stretchOk && engine.mode === "audio") { el.speed.disabled = true; say(L.noStretch); }
+  if (!engine.speedOk) { el.speed.disabled = true; say(L.noStretch); }
   else onMode();
   suono.mostra();
   el.seek.max = String(engine.duration);

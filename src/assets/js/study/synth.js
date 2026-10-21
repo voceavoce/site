@@ -18,7 +18,8 @@ export class Synth {
     this.ctx = ctx;
     this.campioni = campioni;
     this.uscite = uscite;
-    this.parti = []; // [{ chiave, notes }]
+    this.tutte = []; // tutte le parti di note.json
+    this.parti = []; // quelle da suonare con gli strumenti [{ chiave, notes }]
     this.strum = new Map(); // chiave -> id strumento
     this.attive = new Set(); // voci che suonano o sono programmate
     this.state = null;
@@ -28,7 +29,9 @@ export class Synth {
     this.timer = 0;
   }
 
-  setParti(parti, duration) { this.parti = parti; this.duration = duration; }
+  setParti(parti, duration) { this.tutte = parti; this.parti = parti; this.duration = duration; }
+  /** Le parti che questa sorgente suona (le altre tracce suonano da stem cantato). */
+  setTracce(chiavi) { this.parti = this.tutte.filter((p) => chiavi.has(p.chiave)); }
   setStrumento(chiave, id) { this.strum.set(chiave, id); }
   get running() { return this.timer !== 0; }
 

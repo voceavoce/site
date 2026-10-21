@@ -73,7 +73,8 @@ test.describe("pannello e scelta degli strumenti", () => {
       sel: Object.fromEntries(window.__study.engine.synth.strum),
     }));
     expect(r.menu).toHaveLength(4);
-    for (const m of r.menu) { expect(m.opzioni).toBe(6); expect(m.valore).toBe("pianoforte"); }
+    for (const m of r.menu) { expect(m.opzioni).toBe(7); // «Cantato» + 6 strumenti
+     expect(m.valore).toBe("pianoforte"); }
     expect(r.sel.soprano).toBe("pianoforte");
     expect(await page.locator("[data-sound-instr]").isVisible()).toBe(true);
     expect(errori).toEqual([]);
@@ -97,12 +98,33 @@ test.describe("pannello e scelta degli strumenti", () => {
     expect(errori).toEqual([]);
   });
 
-  test("tornare a «Cantato» ripristina gli stem e nascosti i menu", async ({ page }) => {
+  test("tornare a «Cantato» ripristina gli stem e i menu mostrano «Cantato»", async ({ page }) => {
     await apriPlayer(page);
     await passaAStrumenti(page);
     await page.check('[data-sound-mode][value="audio"]');
     await page.waitForFunction(() => window.__study.engine.mode === "audio");
-    expect(await page.locator("[data-sound-instr]").isVisible()).toBe(false);
+    const valori = await page.$$eval("[data-instr]", (l) => l.map((s) => s.value));
+    expect(valori).toEqual(["cantato", "cantato", "cantato", "cantato"]);
+  });
+
+  test("scegliere uno strumento per una sola voce mescola cantato e strumento; i due pulsanti non ne scelgono nessuno", async ({ page }) => {
+    const errori = raccogliErrori(page);
+    await apriPlayer(page);
+    await page.waitForSelector("[data-sound]:not([hidden])");
+    await page.selectOption('[data-instr="soprano"]', "pianoforte");
+    await page.waitForFunction(() => window.__study.engine.mode === "mixed", null, { timeout: 30_000 });
+    const r = await page.evaluate(() => ({
+      modi: Object.fromEntries([...window.__study.engine.tracks].map(([k, t]) => [k, t.mode])),
+      radio: [...document.querySelectorAll("[data-sound-mode]")].map((x) => x.checked),
+      menu: [...document.querySelectorAll("[data-instr]")].map((x) => x.value),
+    }));
+    expect(r.modi).toEqual({ soprano: "midi", alto: "audio", tenore: "audio", basso: "audio" });
+    expect(r.radio).toEqual([false, false]);
+    expect(r.menu).toEqual(["pianoforte", "cantato", "cantato", "cantato"]);
+    // la voce tornata al canto riporta tutto a «Cantato»
+    await page.selectOption('[data-instr="soprano"]', "cantato");
+    await page.waitForFunction(() => window.__study.engine.mode === "audio");
+    expect(errori).toEqual([]);
   });
 });
 
@@ -264,3 +286,59 @@ test("tastiera: il gruppo Cantato/Strumenti si governa con le frecce e il menu c
   const v = await page.$eval('[data-instr="soprano"]', (s) => s.value);
   expect(v).not.toBe("pianoforte");
 });
+
+// Mix: soprano da strumento, le altre voci da stem. Le note passano dal bus a parte (niente stretcher) con un ritardo pari
+// alla latenza dello stretcher: attacco dello strumento e clic dello stem devono uscire insieme, anche rallentando.
+for (const pct of [100, 75, 50]) {
+  test(`mix cantato + strumento: stem e strumento escono insieme a ${pct}%`, async ({ page }) => {
+    await apriPlayer(page);
+    await page.waitForSelector("[data-sound]:not([hidden])");
+    await page.selectOption('[data-instr="soprano"]', "pianoforte");
+    await page.waitForFunction(() => window.__study.engine.mode === "mixed", null, { timeout: 30_000 });
+    await page.evaluate(async () => {
+      const e = window.__study.engine;
+      const codice = (nome, soglia) => `
+        class ${nome} extends AudioWorkletProcessor {
+          constructor() { super(); this.quieto = 1e9; }
+          process(inputs) {
+            const ch = inputs[0] && inputs[0][0];
+            if (ch) for (let i = 0; i < ch.length; i++) {
+              const a = Math.abs(ch[i]);
+              if (a > ${soglia}) { if (this.quieto > 0.5 * sampleRate) this.port.postMessage(currentFrame + i); this.quieto = 0; }
+              else this.quieto++;
+            }
+            return true;
+          }
+        }
+        registerProcessor("${nome.toLowerCase()}", ${nome});`;
+      for (const [nome, soglia] of [["SpiaStem", 0.1], ["SpiaNote", 0.05]]) {
+        await e.ctx.audioWorklet.addModule(URL.createObjectURL(new Blob([codice(nome, soglia)], { type: "text/javascript" })));
+      }
+      const mk = (nome, chiave, daNodi) => {
+        const n = new AudioWorkletNode(e.ctx, nome.toLowerCase(), { numberOfInputs: 1, numberOfOutputs: 1 });
+        window[chiave] = [];
+        n.port.onmessage = (ev) => window[chiave].push(ev.data / e.ctx.sampleRate);
+        n.connect(e.ctx.destination);
+        for (const d of daNodi) d.connect(n);
+      };
+      // stem: bus diretto e uscita dello stretcher; strumenti: dopo il ritardo di compensazione
+      mk("SpiaStem", "__stem", [e.dry, e.wet]);
+      mk("SpiaNote", "__note", [e.midiDelay]);
+    });
+    await page.evaluate(({ pct, t }) => {
+      const sl = document.querySelector("[data-speed]");
+      sl.value = pct;
+      sl.dispatchEvent(new Event("input", { bubbles: true }));
+      window.__study.engine.seek(t);
+    }, { pct, t: SYNC.battute[1].t - 0.3 });
+    await page.waitForTimeout(300);
+    await page.evaluate(() => { window.__stem.length = 0; window.__note.length = 0; });
+    await page.click("[data-play]");
+    const n = SYNC.battute.length - 1;
+    await page.waitForFunction((n) => window.__stem.length >= n && window.__note.length >= n, n, { timeout: 60_000 });
+    const r = await page.evaluate(() => ({ stem: window.__stem.slice(0, 4), note: window.__note.slice(0, 4) }));
+    const diff = r.stem.map((t, i) => (t - r.note[i]) * 1000);
+    console.log(`mix ${pct}%: stem-strumento = [${diff.map((x) => x.toFixed(0)).join(", ")}] ms`);
+    for (const d of diff) expect(Math.abs(d), `scarto ${d.toFixed(1)} ms`).toBeLessThanOrEqual(35);
+  });
+}

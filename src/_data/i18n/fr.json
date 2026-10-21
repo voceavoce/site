@@ -376,7 +376,8 @@
       "soundInstrOn": "Vous écoutez des instruments, pas le chant.",
       "soundSungOn": "Vous écoutez les voix chantées.",
       "fallbackInstr": "L'audio chanté n'est pas disponible : vous écoutez des instruments.",
-      "errInstr": "Impossible de charger les instruments."
+      "errInstr": "Impossible de charger les instruments.",
+      "soundSungOpt": "Chanté (voix enregistrée)"
     },
     "loaderTitle": "Préparation des voix…",
     "loaderHint": "À la première ouverture, cela peut prendre quelques secondes : nous téléchargeons l'audio de toutes les voix.",
@@ -386,11 +387,11 @@
     "allVoices": "Toutes les voix égales",
     "reportScore": "Signaler une erreur dans la partition",
     "sound": "Son",
-    "soundHint": "Chanté : les voix enregistrées. Instruments : les notes de la partition jouées par des instruments, un par voix à votre choix (utile pour bien entendre la justesse et pour ralentir sans artefacts).",
+    "soundHint": "Chanté : les voix enregistrées. Instruments : les notes de la partition jouées par des instruments. Pour chaque voix, vous pouvez choisir un instrument ou le chant, même en les mélangeant (par exemple votre voix au piano et les autres chantées). Avec les instruments, vous entendez bien la justesse et pouvez ralentir sans artefacts.",
     "soundLegend": "Ce que vous entendez",
     "soundSung": "Chanté",
     "soundInstr": "Instruments",
-    "instrumentOf": "Instrument : {voice}"
+    "instrumentOf": "Son : {voice}"
   },
   "report": {
     "title": "Signaler une erreur dans la partition",

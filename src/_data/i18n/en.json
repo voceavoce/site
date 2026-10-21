@@ -376,7 +376,8 @@
       "soundInstrOn": "You are hearing instruments, not singing.",
       "soundSungOn": "You are hearing the sung voices.",
       "fallbackInstr": "The sung audio is not available: you are hearing instruments.",
-      "errInstr": "I could not load the instruments."
+      "errInstr": "I could not load the instruments.",
+      "soundSungOpt": "Sung (recorded voice)"
     },
     "loaderTitle": "Getting the voices ready…",
     "loaderHint": "On first open it can take a few seconds: we are downloading the audio of every voice.",
@@ -386,11 +387,11 @@
     "allVoices": "All voices level",
     "reportScore": "Report an error in the score",
     "sound": "Sound",
-    "soundHint": "Sung: the recorded voices. Instruments: the notes of the score played by instruments, one per voice of your choice (handy to hear the pitch clearly and to slow down without artefacts).",
+    "soundHint": "Sung: the recorded voices. Instruments: the notes of the score played by instruments. For each voice you can choose an instrument or the singing, even mixing them (for example your voice on the piano and the others sung). With instruments you can hear the pitch clearly and slow down without artefacts.",
     "soundLegend": "What you hear",
     "soundSung": "Sung",
     "soundInstr": "Instruments",
-    "instrumentOf": "Instrument: {voice}"
+    "instrumentOf": "Sound: {voice}"
   },
   "report": {
     "title": "Report an error in the score",

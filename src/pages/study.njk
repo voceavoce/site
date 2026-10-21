@@ -110,7 +110,7 @@ eleventyExcludeFromCollections: true
           <label class="sound-pick__opt"><input type="radio" name="study-sound" value="audio" data-sound-mode checked> <span>{{ 'study.soundSung' | t(lang) }}</span></label>
           <label class="sound-pick__opt"><input type="radio" name="study-sound" value="midi" data-sound-mode> <span>{{ 'study.soundInstr' | t(lang) }}</span></label>
         </fieldset>
-        <div class="sound-instr" data-sound-instr hidden>
+        <div class="sound-instr" data-sound-instr>
           {%- for tr in tracks %}
           <label class="field"><span>{{ 'study.instrumentOf' | tv(lang, { voice: tr.voce | voiceName(lang) }) }}</span>
             <select data-instr="{{ tr.chiave }}" data-instr-tipo="{{ tr.tipo }}"></select></label>
