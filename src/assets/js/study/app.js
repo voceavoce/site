@@ -232,6 +232,12 @@ async function main(data) {
     toggle();
   });
 
+  // anteprima del brano (solo cartelle _anteprima-*, in sviluppo): pannello col dossier, tempo, segnalazioni, testo per Gemini
+  if (data.dossierUrl) {
+    import("./anteprima.js").then((m) => m.creaAnteprima({ url: data.dossierUrl, sync, speed: $("[data-speed]"),
+      vai: (i) => { if (engine.tracks.size) { engine.seek(timeOfMeasure(sync, i)); update(); } } })).catch((e) => console.error(e));
+  }
+
   if (new URLSearchParams(location.search).has("debug")) window.__study = { engine, get score() { return score; }, get loop() { return loop; }, get mixer() { return mixer; }, sync };
 
   // --- audio, con il pannello di caricamento (barra di avanzamento) finche' non e' pronto

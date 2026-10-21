@@ -81,7 +81,15 @@ export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY
         if (Array.isArray(note.parti) && note.parti.some((p) => chiaviManifest.has(p.chiave))) { checkNote(d.name, note, manifest); noteFile = "note.json"; }
       }
       if (manifest.senza_audio && !noteFile) throw new Error(`content/player/${d.name}: senza_audio richiede un note.json con parti`);
-      items[d.name] = { slug: d.name, manifest, sync, scoreFile, noteFile, test: isTestSlug(d.name), pubblicato: !pubblicati || pubblicati.has(d.name) };
+      // dossier.json: solo nelle anteprime (job_anteprima_brano di AIVideoCreator), mai nei brani veri
+      let dossierFile = null;
+      const dp = path.join(dir, d.name, "dossier.json");
+      if (d.name.startsWith("_anteprima-") && existsSync(dp)) {
+        const dos = JSON.parse(readFileSync(dp, "utf8"));
+        if (dos.schema !== 1 || !dos.brano || !dos.tempo) throw new Error(`content/player/${d.name}: dossier.json non valido (schema 1, brano, tempo)`);
+        dossierFile = "dossier.json";
+      }
+      items[d.name] = { slug: d.name, manifest, sync, scoreFile, noteFile, dossierFile, test: isTestSlug(d.name), pubblicato: !pubblicati || pubblicati.has(d.name) };
     }
   }
   const slugs = Object.keys(items).sort();
