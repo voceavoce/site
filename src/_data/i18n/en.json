@@ -371,7 +371,14 @@
         "range": "Passage chosen: bars {a} to {b}."
       },
       "fsOn": "Full-screen score.",
-      "fsOff": "Full screen closed."
+      "fsOff": "Full screen closed.",
+      "soundLoading": "Loading the instruments…",
+      "soundInstrOn": "You are hearing instruments, not singing.",
+      "soundSungOn": "You are hearing the sung voices.",
+      "fallbackInstr": "The sung audio is not available: you are hearing instruments.",
+      "errInstr": "I could not load the instruments.",
+      "soundSungOpt": "Sung (recorded voice)",
+      "noAudioYet": "The sung audio for this piece is not available yet: you are hearing instruments."
     },
     "loaderTitle": "Getting the voices ready…",
     "loaderHint": "On first open it can take a few seconds: we are downloading the audio of every voice.",
@@ -379,7 +386,18 @@
     "fullscreenClose": "Close",
     "optFullscreenPlay": "Full screen when I press Play (phones)",
     "allVoices": "All voices level",
-    "reportScore": "Report an error in the score"
+    "reportScore": "Report an error in the score",
+    "sound": "Sound",
+    "soundHint": "Sung: the recorded voices. Instruments: the notes of the score played by instruments. For each voice you can choose an instrument or the singing, even mixing them (for example your voice on the piano and the others sung). With instruments you can hear the pitch clearly and slow down without artefacts.",
+    "soundLegend": "What you hear",
+    "soundSung": "Sung",
+    "soundInstr": "Instruments",
+    "instrumentOf": "Sound: {voice}",
+    "scoreText": "Score text",
+    "scoreTextHint": "Shows the name of each note under it instead of the words: useful for practising sight-singing.",
+    "scoreTextWords": "Words",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Report an error in the score",

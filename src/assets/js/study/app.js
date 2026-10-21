@@ -1,7 +1,7 @@
 // Player di studio: collega engine, mixer, loop e partitura alla pagina /player/<slug>/.
 import { setAudioBase } from "./config.js";
 import { isOn } from "./features.js";
-import { StudyEngine } from "./engine.js";
+import { StudyEngine, StudyError } from "./engine.js";
 import { bindMixer } from "./mixer.js";
 import { bindLoop } from "./loop.js";
 import { createScore } from "./score.js";
@@ -9,6 +9,7 @@ import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock, startF
 import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
 import { percentuale, pienoAlPlay } from "./schermo.js";
 import { mailSegnalazione } from "./segnalazione.js";
+import { creaSuono } from "./suono.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const dataEl = $("#study-data");
@@ -43,13 +44,30 @@ async function main(data) {
   el.seek.max = String(manifest.durata_sec ?? sync.fine);
 
   const engine = new StudyEngine();
+  // Modalita' strumenti (note.json + campioni): si cambia fra stem cantati e strumenti; con gli strumenti la velocita' non usa lo stretcher.
+  const onMode = () => {
+    el.speed.disabled = !engine.speedOk;
+    const pct = Math.round(engine.rate * 100);
+    el.speed.value = String(pct);
+    el.speedOut.textContent = `${pct}%`;
+    el.speed.setAttribute("aria-valuetext", `${pct}%`);
+  };
+  const suono = creaSuono({ data, engine, manifest, say, labels: L, onMode });
   let score = null;
   let currentIdx = -1;
+
+  // Testo dello spartito: parole del brano o nomi delle note (Do Re Mi / C D E). La scelta resta fra una visita e l'altra.
+  const TESTO_KEY = "va-testo", TESTI = ["parole", "do", "abc"];
+  const testoRadio = [...document.querySelectorAll("[data-score-text] input[type=radio]")];
+  let testoPref = "parole";
+  try { const t = localStorage.getItem(TESTO_KEY); if (TESTI.includes(t) && testoRadio.length) testoPref = t; } catch { /* storage non disponibile */ }
+  for (const r of testoRadio) r.checked = r.value === testoPref;
 
   // --- partitura (in parallelo con l'audio; un suo errore non ferma il player)
   const scorePromise = createScore({
     container: $("[data-score]"),
     xmlUrl: data.scoreUrl,
+    testo: testoPref,
     voiceLabels: manifest.tracce.filter((t) => t.tipo !== "accompagnamento").map((t) => t.voce),
     onMeasureTap: (m) => {
       if (loop?.tapMeasure(m, Math.max(0, currentIdx))) {
@@ -132,6 +150,12 @@ async function main(data) {
   document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && immersive()) setImmersive(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && immersive()) setImmersive(false); });
   const telefono = () => ({ stretto: matchMedia("(max-width: 40rem)").matches, tocco: matchMedia("(pointer: coarse)").matches });
+
+  for (const r of testoRadio) r.addEventListener("change", () => {
+    if (!r.checked) return;
+    try { localStorage.setItem(TESTO_KEY, r.value); } catch { /* storage non disponibile */ }
+    scorePromise.then(() => { try { score?.setTesto(r.value); } catch (e) { console.error(e); } });
+  });
 
   // --- mixer e loop
   let mixer = null, loop = null;
@@ -221,32 +245,41 @@ async function main(data) {
   };
   const closeLoader = () => { loader.classList.add("is-done"); setTimeout(() => { loader.hidden = true; }, 300); };
   let fatte = 0;
+  let fallbackAttivo = false;
   loader.hidden = false;
   showProgress(0, 0, manifest.tracce.length);
   say(L.loading.replace("{n}", 0).replace("{total}", manifest.tracce.length));
   try {
     await engine.init();
     engine.addEventListener("warning", () => say(L.noStretch));
+    if (data.senzaAudio) throw new StudyError("noaudio", "brano senza stem: solo strumenti");
     await engine.load(
       manifest.tracce,
       (n, total) => { fatte = n; say(L.loading.replace("{n}", n).replace("{total}", total)); },
       (f) => showProgress(f, fatte, manifest.tracce.length),
     );
   } catch (e) {
-    closeLoader();
-    console.error(e);
-    fail(({ network: L.errNetwork, decode: L.errDecode, unsupported: L.errUnsupported }[e.kind]) || L.errNetwork);
-    say("");
-    return;
+    if (e.kind !== "noaudio") console.error(e);
+    // Ultimo anello della catena Opus -> MP3 -> strumenti: se nemmeno l'MP3 si scarica o decodifica, si suonano le note.
+    if (e.kind === "unsupported" || !(await suono.fallback())) {
+      closeLoader();
+      fail(({ network: L.errNetwork, decode: L.errDecode, unsupported: L.errUnsupported }[e.kind]) || L.errNetwork);
+      say("");
+      return;
+    }
+    fallbackAttivo = true;
   }
   showProgress(1, manifest.tracce.length, manifest.tracce.length);
   closeLoader();
   setReady(true);
-  if (!engine.stretchOk) { el.speed.disabled = true; say(L.noStretch); }
+  if (!engine.speedOk) { el.speed.disabled = true; say(L.noStretch); }
+  else onMode();
+  suono.mostra();
   el.seek.max = String(engine.duration);
   el.total.textContent = formatClock(engine.duration);
   mixer?.render();
-  if (engine.stretchOk) say(L.ready);
+  if (fallbackAttivo) say(data.senzaAudio ? L.noAudioYet : L.fallbackInstr);
+  else if (engine.stretchOk) say(L.ready);
   await scorePromise;
   update();
 }

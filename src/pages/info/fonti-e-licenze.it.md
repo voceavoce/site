@@ -33,5 +33,9 @@ Hai notato una nota o una parola sbagliata? Nel player e nella scheda del brano 
 - la battuta (o il minuto del video) in cui compare l'errore;
 - cosa dovrebbe esserci invece, con la fonte se la conosci.
 
+## Suoni degli strumenti
+
+Gli strumenti del player (pianoforte, organo, coro, voce, flauto, archi) usano campioni ricavati dal soundfont GeneralUser GS di S. Christian Collins, che ne consente l'uso libero anche nei programmi. Autore e licenza: [schristiancollins.com](http://www.schristiancollins.com). Il testo della licenza è spedito con i campioni.
+
 </article>
 </div>

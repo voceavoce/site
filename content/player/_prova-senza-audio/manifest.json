@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "_prova-senza-audio",
+  "titolo": "Brano di prova senza audio",
+  "compositore": {
+    "id": "dati-di-prova",
+    "nome": "Dati di prova"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 20,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "Inventato per i test",
+    "audio": null
+  },
+  "senza_audio": true
+}

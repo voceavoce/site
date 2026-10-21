@@ -371,7 +371,14 @@
         "range": "Passaggio scelto: battute da {a} a {b}."
       },
       "fsOn": "Partitura a schermo intero.",
-      "fsOff": "Schermo intero chiuso."
+      "fsOff": "Schermo intero chiuso.",
+      "soundLoading": "Carico gli strumenti…",
+      "soundInstrOn": "Ascolti gli strumenti, non il canto.",
+      "soundSungOn": "Ascolti le voci cantate.",
+      "fallbackInstr": "L'audio cantato non è disponibile: stai ascoltando gli strumenti.",
+      "errInstr": "Non riesco a caricare gli strumenti.",
+      "soundSungOpt": "Cantato (voce registrata)",
+      "noAudioYet": "Per questo brano l'audio cantato non è ancora disponibile: ascolti gli strumenti."
     },
     "loaderTitle": "Sto preparando le voci…",
     "loaderHint": "Alla prima apertura può volerci qualche secondo: scarichiamo l'audio di tutte le voci.",
@@ -379,7 +386,18 @@
     "fullscreenClose": "Chiudi",
     "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)",
     "allVoices": "Tutte le voci pari",
-    "reportScore": "Segnala un errore nello spartito"
+    "reportScore": "Segnala un errore nello spartito",
+    "sound": "Suono",
+    "soundHint": "Cantato: le voci registrate. Strumenti: le note della partitura suonate da strumenti. Per ogni voce puoi scegliere uno strumento o il canto, anche mescolando (per esempio la tua voce al pianoforte e le altre cantate). Con gli strumenti puoi sentire bene l'intonazione e rallentare senza artefatti.",
+    "soundLegend": "Che cosa ascolti",
+    "soundSung": "Cantato",
+    "soundInstr": "Strumenti",
+    "instrumentOf": "Suono: {voice}",
+    "scoreText": "Testo dello spartito",
+    "scoreTextHint": "Al posto delle parole, sotto ogni nota compare il suo nome: utile per esercitarsi nel solfeggio cantato.",
+    "scoreTextWords": "Parole",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Segnala un errore nello spartito",

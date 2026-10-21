@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "o-cessate-di-piagarmi-scarlatti",
+  "titolo": "O cessate di piagarmi",
+  "compositore": {
+    "id": "alessandro-scarlatti",
+    "nome": "Alessandro Scarlatti"
+  },
+  "linea": "aria",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "alta",
+      "tipo": "voce"
+    },
+    {
+      "voce": "ACC",
+      "chiave": "accompagnamento-alta",
+      "tipo": "accompagnamento"
+    },
+    {
+      "voce": "S",
+      "chiave": "bassa",
+      "tipo": "voce"
+    },
+    {
+      "voce": "ACC",
+      "chiave": "accompagnamento-bassa",
+      "tipo": "accompagnamento"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 119.3,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

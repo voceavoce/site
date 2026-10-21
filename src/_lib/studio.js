@@ -18,12 +18,38 @@ export function checkManifest(slug, m, sync) {
   if (m.slug !== slug) fail(`slug "${m.slug}" diverso dalla cartella`);
   if (!Array.isArray(m.tracce) || !m.tracce.length) fail("nessuna traccia");
   for (const t of m.tracce) {
-    for (const k of ["voce", "chiave", "file"]) if (!t[k]) fail(`traccia senza "${k}"`);
+    // senza_audio: brano in lavorazione, ancora senza stem: le tracce non hanno file e il player suona solo gli strumenti
+    for (const k of m.senza_audio ? ["voce", "chiave"] : ["voce", "chiave", "file"]) if (!t[k]) fail(`traccia senza "${k}"`);
     for (const k of ["file", "riserva"]) if (t[k] != null && !isSafeRelativePath(t[k])) fail(`percorso non relativo in tracce[].${k}: ${t[k]}`);
   }
   if (!Array.isArray(sync.battute) || !sync.battute.length || typeof sync.fine !== "number") fail("sync.json non valido");
   let prev = -1;
   for (const b of sync.battute) { if (!(b.t >= prev)) fail("sync.json: tempi non crescenti"); prev = b.t; }
+}
+
+/** note.json (docs/midi-player.md §3): note per parte nel tempo del sync, per la modalita' strumenti. */
+export function checkNote(slug, note, manifest) {
+  const fail = (msg) => { throw new Error(`content/player/${slug}/note.json: ${msg}`); };
+  if (note.schema !== 1) fail(`schema ${note.schema} non supportato`);
+  if (typeof note.fine !== "number") fail("manca `fine`");
+  if (!Array.isArray(note.parti) || !note.parti.length) fail("nessuna parte");
+  const viste = new Set();
+  for (const p of note.parti) {
+    // una parte senza traccia nel manifest si ignora: il manifest e' la verita' (le tracce dipendono dagli stem disponibili)
+    if (viste.has(p.chiave)) fail(`parte "${p.chiave}" ripetuta`);
+    viste.add(p.chiave);
+    if (!Array.isArray(p.note)) fail(`parte "${p.chiave}": note non e' un elenco`);
+    let prev = -1;
+    for (const n of p.note) {
+      if (!Array.isArray(n) || (n.length !== 3 && n.length !== 4) || !n.every(Number.isInteger)) fail(`parte "${p.chiave}": nota non valida ${JSON.stringify(n)}`);
+      const [t, d, m, vel = 80] = n;
+      if (vel < 1 || vel > 127) fail(`parte "${p.chiave}": velocita' fuori intervallo ${JSON.stringify(n)}`);
+      if (t < prev) fail(`parte "${p.chiave}": inizi non crescenti`);
+      if (d <= 0 || m < 0 || m > 127 || t < 0) fail(`parte "${p.chiave}": nota fuori intervallo ${JSON.stringify(n)}`);
+      if (t > note.fine * 1000) fail(`parte "${p.chiave}": nota oltre la fine`);
+      prev = t;
+    }
+  }
 }
 
 /**
@@ -45,7 +71,17 @@ export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY
       const scoreFile = manifest.partitura || "score.musicxml";
       checkManifest(d.name, manifest, sync);
       if (!existsSync(path.join(dir, d.name, scoreFile))) throw new Error(`content/player/${d.name}: manca ${scoreFile}`);
-      items[d.name] = { slug: d.name, manifest, sync, scoreFile, test: isTestSlug(d.name), pubblicato: !pubblicati || pubblicati.has(d.name) };
+      // note.json e' facoltativo: senza, la pagina non offre la modalita' strumenti
+      const notePath = path.join(dir, d.name, "note.json");
+      let noteFile = null;
+      if (existsSync(notePath)) {
+        const note = JSON.parse(readFileSync(notePath, "utf8"));
+        // senza parti (nessuna traccia del manifest ha una parte nella partitura) la modalita' strumenti non ha nulla da suonare
+        const chiaviManifest = new Set(manifest.tracce.map((t) => t.chiave));
+        if (Array.isArray(note.parti) && note.parti.some((p) => chiaviManifest.has(p.chiave))) { checkNote(d.name, note, manifest); noteFile = "note.json"; }
+      }
+      if (manifest.senza_audio && !noteFile) throw new Error(`content/player/${d.name}: senza_audio richiede un note.json con parti`);
+      items[d.name] = { slug: d.name, manifest, sync, scoreFile, noteFile, test: isTestSlug(d.name), pubblicato: !pubblicati || pubblicati.has(d.name) };
     }
   }
   const slugs = Object.keys(items).sort();

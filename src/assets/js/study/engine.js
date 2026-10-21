@@ -16,8 +16,9 @@
 // SoundTouch (AudioWorklet): vedi src/assets/vendor (copiato da node_modules, file separati e non minificati).
 import { resolveAudioUrl } from "./config.js";
 import { computePosition, audiblePosition } from "./timeline.js";
-import { deviceLatency, totalLatency } from "./latency.js";
+import { deviceLatency, totalLatency, stretcherLatency } from "./latency.js";
 import { progressoTotale } from "./schermo.js";
+import { Synth } from "./synth.js";
 
 const TARGET_RATE = 24000; // le voci non hanno contenuto utile oltre i 12 kHz: si dimezza la memoria
 const XFADE = 0.04; // dissolvenza (s) tra ramo diretto e ramo con stretcher
@@ -55,7 +56,10 @@ export class StudyEngine extends EventTarget {
   constructor() {
     super();
     this.ctx = null;
-    this.tracks = new Map(); // chiave -> { buffer, gain, source }
+    // chiave -> { buffer, gain, source, mode } (buffer assente se la traccia esiste solo come strumento);
+    // mode: "audio" (stem cantato) | "midi" (strumento: note.json + campioni), per traccia
+    this.tracks = new Map();
+    this.synth = null;
     this.bus = null;
     this.stretcher = null;
     this.dry = null; // ramo diretto bus -> uscita (usato a 1x)
@@ -71,17 +75,24 @@ export class StudyEngine extends EventTarget {
     this.anchorTime = 0;
     this.pausedPos = 0;
     this.gains = {};
+    this.midiParti = [];
   }
 
   /** Crea il contesto e il grafo. Va chiamato presto: il contesto parte sospeso, play() lo riattiva. */
   async init() {
     const AC = window.AudioContext || window.webkitAudioContext;
-    if (!AC || !window.AudioWorkletNode) throw new StudyError("unsupported", "Web Audio / AudioWorklet non disponibili");
+    if (!AC) throw new StudyError("unsupported", "Web Audio non disponibile");
     this.ctx = new AC({ latencyHint: "playback" });
     this.bus = this.ctx.createGain();
     this.dry = this.ctx.createGain();
     this.bus.connect(this.dry);
     this.dry.connect(this.ctx.destination);
+    // Gli strumenti NON passano dallo stretcher (la velocita' la fa lo scheduler): bus a parte, in uscita diretta, con un
+    // ritardo pari a quello del ramo con stretcher quando si suona anche un stem cantato (altrimenti i due si sfasano).
+    this.midiBus = this.ctx.createGain();
+    this.midiDelay = this.ctx.createDelay(0.5);
+    this.midiBus.connect(this.midiDelay);
+    this.midiDelay.connect(this.ctx.destination);
     try {
       const { SoundTouchNode } = await import(new URL("index.js", VENDOR).href);
       await SoundTouchNode.register(this.ctx, new URL("soundtouch-processor.js", VENDOR).href);
@@ -111,12 +122,94 @@ export class StudyEngine extends EventTarget {
         emit();
         const gain = this.ctx.createGain();
         gain.connect(this.bus);
-        this.tracks.set(tr.chiave, { buffer, gain, source: null });
+        this.tracks.set(tr.chiave, { buffer, gain, source: null, mode: "audio" });
         onProgress(++done, tracks.length);
       }),
     );
     this.duration = Math.max(...[...this.tracks.values()].map((t) => t.buffer.duration));
+    this.synth?.setParti(this.midiParti, this.duration);
+    this.#filtraSynth();
     this.setGains(this.gains);
+  }
+
+  /**
+   * Prepara la modalita' strumenti: `noteData` e' note.json, `campioni` un'istanza di Campioni, `scelte` lo strumento
+   * per chiave di traccia. Usabile prima o dopo load(): le tracce non ancora presenti ricevono solo il guadagno.
+   */
+  prepareMidi(noteData, campioni, scelte, tracce) {
+    for (const tr of tracce) {
+      if (this.tracks.has(tr.chiave)) continue;
+      const gain = this.ctx.createGain();
+      gain.connect(this.midiBus);
+      this.tracks.set(tr.chiave, { buffer: null, gain, source: null, mode: "midi" });
+    }
+    this.midiParti = noteData.parti.filter((p) => this.tracks.has(p.chiave)).map((p) => ({ chiave: p.chiave, notes: p.note }));
+    if (!this.duration) this.duration = noteData.fine;
+    this.synth = new Synth(this.ctx, campioni, Object.fromEntries([...this.tracks].map(([k, t]) => [k, t.gain])));
+    this.synth.setParti(this.midiParti, this.duration);
+    this.#filtraSynth();
+    for (const [k, id] of Object.entries(scelte)) this.synth.setStrumento(k, id);
+    this.setGains(this.gains);
+  }
+  #filtraSynth() { this.synth?.setTracce(new Set([...this.tracks].filter(([, t]) => t.mode === "midi").map(([k]) => k))); }
+  setStrumento(chiave, id) { this.synth?.setStrumento(chiave, id); }
+  hasAudio() { return [...this.tracks.values()].some((t) => t.buffer); }
+
+  /** "audio" | "midi" se tutte le tracce suonano allo stesso modo, altrimenti "mixed". */
+  get mode() {
+    const m = [...this.tracks.values()].map((t) => t.mode);
+    if (!m.length || m.every((x) => x === "audio")) return "audio";
+    return m.every((x) => x === "midi") ? "midi" : "mixed";
+  }
+  #anyAudio() { return [...this.tracks.values()].some((t) => t.mode === "audio" && t.buffer); }
+  #anyMidi() { return [...this.tracks.values()].some((t) => t.mode === "midi"); }
+  /** La velocita' si puo' cambiare: serve lo stretcher solo se c'e' almeno uno stem cantato in riproduzione. */
+  get speedOk() { return this.stretchOk || !this.#anyAudio(); }
+
+  /** Passa tutte le tracce da "audio" a "midi" (o viceversa), senza perdere la posizione. */
+  setMode(mode) {
+    const modi = {};
+    for (const k of this.tracks.keys()) modi[k] = mode;
+    this.setTrackModes(modi);
+  }
+
+  /**
+   * Cambia il modo di singole tracce ({ chiave: "audio" | "midi" }). Se sta suonando riparte dallo stesso punto.
+   * Una traccia passa a "midi" solo se ha una parte in note.json, ad "audio" solo se ha lo stem decodificato.
+   */
+  setTrackModes(modi) {
+    const daCambiare = Object.entries(modi).filter(([k, m]) => {
+      const tr = this.tracks.get(k);
+      if (!tr || tr.mode === m) return false;
+      if (m === "midi") return !!this.synth && this.midiParti.some((p) => p.chiave === k);
+      return m === "audio" && !!tr.buffer;
+    });
+    if (!daCambiare.length) return;
+    let pos = this.pausedPos, riparti = false;
+    if (this.playing) {
+      pos = this.position();
+      riparti = this.playing; // false se il brano e' finito proprio ora
+      if (riparti) this.#stopSources();
+    }
+    for (const [k, m] of daCambiare) {
+      const tr = this.tracks.get(k);
+      tr.mode = m;
+      tr.gain.disconnect();
+      tr.gain.connect(m === "midi" ? this.midiBus : this.bus);
+    }
+    this.#filtraSynth();
+    if (this.#anyAudio() && !this.stretchOk && this.rate < 1) this.rate = 1; // senza stretcher gli stem non rallentano
+    this.#setBranch(this.#anyAudio() && this.rate < 1 ? 1 : 0);
+    this.#aggiornaRitardoMidi();
+    if (riparti) this.#startSources(pos);
+    this.dispatchEvent(new Event("mode"));
+  }
+
+  // Con stem cantati e strumenti insieme, gli strumenti aspettano quanto lo stretcher (se il suo ramo e' attivo).
+  #aggiornaRitardoMidi() {
+    if (!this.midiDelay) return;
+    const d = this.#anyAudio() && this.#anyMidi() && this.rate < 1 ? stretcherLatency(this.rate) : 0;
+    this.midiDelay.delayTime.setTargetAtTime(d, this.ctx.currentTime, 0.02);
   }
 
   async #fetchDecode(tr, onFrac = () => {}) {
@@ -228,7 +321,9 @@ export class StudyEngine extends EventTarget {
   #startSources(pos) {
     this.prevAnchor = null; // sorgenti nuove: nessun suono precedente da raccordare
     const when = this.ctx.currentTime + 0.06; // stesso istante di partenza per tutte le tracce
+    if (this.#anyMidi()) this.synth.start(pos, when, this.rate, this.loop);
     for (const tr of this.tracks.values()) {
+      if (!tr.buffer || tr.mode !== "audio") continue;
       const src = this.ctx.createBufferSource();
       src.buffer = tr.buffer;
       src.playbackRate.value = this.rate;
@@ -241,6 +336,7 @@ export class StudyEngine extends EventTarget {
     this.anchorTime = when;
   }
   #stopSources() {
+    this.synth?.stop();
     for (const tr of this.tracks.values()) {
       if (tr.source) { try { tr.source.stop(); } catch {} tr.source.disconnect(); tr.source = null; }
     }
@@ -276,7 +372,7 @@ export class StudyEngine extends EventTarget {
   /** Velocita' da 0,5 a 1,0 (senza cambiare l'intonazione). */
   setRate(r) {
     r = Math.min(1, Math.max(0.5, r));
-    if (!this.stretchOk) r = 1;
+    if (!this.stretchOk && this.#anyAudio()) r = 1;
     const now = this.ctx.currentTime;
     if (this.playing) { // nuovo ancoraggio alla posizione di adesso, poi cambio per tutti allo stesso istante
       this.prevAnchor = { anchorPos: this.anchorPos, anchorTime: this.anchorTime, rate: this.rate, loop: this.loop };
@@ -286,7 +382,9 @@ export class StudyEngine extends EventTarget {
     this.rate = r;
     for (const tr of this.tracks.values()) tr.source?.playbackRate.setValueAtTime(r, now);
     this.stretcher?.playbackRate.setValueAtTime(r, now);
-    this.#setBranch(r < 1 ? 1 : 0);
+    this.#setBranch(this.#anyAudio() && r < 1 ? 1 : 0);
+    this.#aggiornaRitardoMidi();
+    if (this.#anyMidi() && this.playing) this.synth.retime(this.anchorPos, r, this.loop);
   }
 
   /** Loop senza vuoti ({start,end} in secondi) oppure null. */
@@ -300,6 +398,7 @@ export class StudyEngine extends EventTarget {
       this.anchorPos = pos;
       this.anchorTime = this.ctx.currentTime;
       for (const tr of this.tracks.values()) if (tr.source) this.#applyLoop(tr.source);
+      if (this.#anyMidi()) this.synth.retime(pos, this.rate, this.loop);
     } else if (this.loop && pos >= this.loop.end) {
       this.pausedPos = this.loop.start;
     }

@@ -9,3 +9,7 @@ SoundTouchJS (@soundtouchjs/audio-worklet 2.x) - https://github.com/cutterbl/Sou
   /assets/vendor/soundtouch/*.js (nodo AudioWorklet per il time-stretch). L'algoritmo SoundTouch originale
   e' di Olli Parviainen (LGPL-2.1); la porta JavaScript e' distribuita con licenza MPL-2.0.
   I file restano in chiaro (non minificati insieme al codice del sito) e modificabili/sostituibili.
+
+GeneralUser GS 2.0.3 - S. Christian Collins - http://www.schristiancollins.com - licenza propria (uso libero anche in programmi)
+  /assets/strumenti/*.mp3 (campioni degli strumenti del player, resi con FluidSynth da questo soundfont; vedi tools/strumenti/genera.py).
+  Il testo della licenza e' in /assets/strumenti/LICENSE-GeneralUser-GS.txt.

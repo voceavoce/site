@@ -371,7 +371,14 @@
         "range": "Passage choisi : mesures {a} à {b}."
       },
       "fsOn": "Partition en plein écran.",
-      "fsOff": "Plein écran fermé."
+      "fsOff": "Plein écran fermé.",
+      "soundLoading": "Chargement des instruments…",
+      "soundInstrOn": "Vous écoutez des instruments, pas le chant.",
+      "soundSungOn": "Vous écoutez les voix chantées.",
+      "fallbackInstr": "L'audio chanté n'est pas disponible : vous écoutez des instruments.",
+      "errInstr": "Impossible de charger les instruments.",
+      "soundSungOpt": "Chanté (voix enregistrée)",
+      "noAudioYet": "L'audio chanté de cette pièce n'est pas encore disponible : vous écoutez des instruments."
     },
     "loaderTitle": "Préparation des voix…",
     "loaderHint": "À la première ouverture, cela peut prendre quelques secondes : nous téléchargeons l'audio de toutes les voix.",
@@ -379,7 +386,18 @@
     "fullscreenClose": "Fermer",
     "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)",
     "allVoices": "Toutes les voix égales",
-    "reportScore": "Signaler une erreur dans la partition"
+    "reportScore": "Signaler une erreur dans la partition",
+    "sound": "Son",
+    "soundHint": "Chanté : les voix enregistrées. Instruments : les notes de la partition jouées par des instruments. Pour chaque voix, vous pouvez choisir un instrument ou le chant, même en les mélangeant (par exemple votre voix au piano et les autres chantées). Avec les instruments, vous entendez bien la justesse et pouvez ralentir sans artefacts.",
+    "soundLegend": "Ce que vous entendez",
+    "soundSung": "Chanté",
+    "soundInstr": "Instruments",
+    "instrumentOf": "Son : {voice}",
+    "scoreText": "Texte de la partition",
+    "scoreTextHint": "À la place des paroles, le nom de chaque note s'affiche sous elle : utile pour travailler le solfège chanté.",
+    "scoreTextWords": "Paroles",
+    "scoreTextDo": "Do Ré Mi",
+    "scoreTextAbc": "C D E"
   },
   "report": {
     "title": "Signaler une erreur dans la partition",

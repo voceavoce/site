@@ -233,6 +233,10 @@ Prossimi passi: vedi `task.md`, sezione P (P20–P27).
 - **Player anticipato:** la pagina `/player/<slug>/` esiste per ogni brano con dati pronti ma resta nascosta (noindex, nessun link) fino all'uscita; serve al link «Studia la tua parte nel player» nelle descrizioni YouTube (T-912) dal primo minuto. YouTube resta il primo passo (scoperta), il player lo strumento per lavorare sui passaggi.
 - **Rallentamento:** il «suono sporco» sotto il 100% è il vibrato delle voci Synth V rallentato dal time-stretching; must have (R4): provare ad attenuarlo nei rendering (T-911).
 
+## Player con strumenti MIDI e fine dell'MP3 (2026-10-20)
+
+Idea dell'utente, analizzata e pianificata in [midi-player.md](midi-player.md): il player può suonare le note della partitura con strumenti scelti per voce (default pianoforte per le voci, organo per l'accompagnamento), sincronizzate al cursore; i tempi delle note nascono nella pipeline dallo stesso modello dei video (`note.json`, T-915), così corone, respiri e ritardando restano coerenti. Gli strumenti sostituiscono l'MP3 come fallback quando il browser non legge l'Opus; dopo la misura in produzione si elimina l'MP3 (-618 MB su R2). Fasi M0-M8 in [task.md](task.md); percorso principale 10-12 giorni, MP3 tolto solo dopo i dati di Cloudflare Web Analytics. Decisioni aperte: dove tenere i campioni (regola «audio mai in git»), licenza del soundfont, soglia di visitatori senza Opus.
+
 ## Ordine di esecuzione
 
 1. **Backup:** tag `landing-v1` su `c50b793` + `src/static/classic/` (noindex, percorsi corretti).

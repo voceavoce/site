@@ -71,3 +71,12 @@ test("activate: via le cache vecchie, non quelle di altri", () => {
   const n = cacheNames("v2");
   assert.deepEqual(staleCaches(["vav-pre-v1", "vav-rt-v1", n.pre, n.rt, "altro"], "v2"), ["vav-pre-v1", "vav-rt-v1"]);
 });
+
+test("campioni degli strumenti: unica eccezione alla regola dell'audio, solo same-origin e senza Range", () => {
+  assert.equal(classify(req(`${ORIGIN}/assets/strumenti/pianoforte.mp3`), ORIGIN), "static");
+  assert.equal(classify(req(`${ORIGIN}/assets/strumenti/strumenti.json`), ORIGIN), "static");
+  assert.equal(classify(req(`${ORIGIN}/assets/strumenti/pianoforte.mp3`, { range: "bytes=0-99" }), ORIGIN), "ignore");
+  assert.equal(classify(req("https://altro.example/assets/strumenti/pianoforte.mp3"), ORIGIN), "ignore");
+  assert.equal(classify(req(`${ORIGIN}/player-data/x/soprano.mp3`), ORIGIN), "ignore"); // gli stem restano fuori
+  assert.equal(classify(req(`${ORIGIN}/player-data/x/note.json`), ORIGIN), "static");
+});

@@ -29,6 +29,10 @@ export default {
       return {
         audioBase: d.site.audioBase,
         scoreUrl: `/player-data/${it.slug}/score.musicxml`,
+        senzaAudio: it.manifest.senza_audio === true,
+        noteUrl: it.noteFile ? `/player-data/${it.slug}/note.json` : null,
+        lang,
+        linea: it.manifest.linea || "coro",
         manifest: { tracce: it.manifest.tracce, durata_sec: it.manifest.durata_sec },
         sync: it.sync,
         labels: { ...t("study.js", lang), play: t("study.play", lang), pause: t("study.pause", lang) },

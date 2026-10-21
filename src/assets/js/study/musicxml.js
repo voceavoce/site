@@ -124,17 +124,107 @@ export function senzaTestiLunghi(doc, max = 60) {
   return tolti;
 }
 
+const NOMI_NOTA = {
+  do: { C: "Do", D: "Re", E: "Mi", F: "Fa", G: "Sol", A: "La", B: "Si" },
+  abc: { C: "C", D: "D", E: "E", F: "F", G: "G", A: "A", B: "B" },
+};
+
+/** Nome di una nota ("Do", "Fa♯", "B♭") dal suo <pitch>; null se manca lo step. L'alterazione e' quella esplicita del file, non l'armatura. */
+export function nomeNota(pitch, sistema) {
+  const tabella = NOMI_NOTA[sistema];
+  const base = tabella?.[pitch.querySelector("step")?.textContent.trim()];
+  if (!base) return null;
+  const alt = Math.round(parseFloat(pitch.querySelector("alter")?.textContent));
+  if (!Number.isFinite(alt) || alt === 0) return base;
+  return base + (alt > 0 ? "\u266F" : "\u266D").repeat(Math.min(2, Math.abs(alt)));
+}
+
+/**
+ * Al posto delle parole mette il nome di ogni nota (`sistema`: "do" = Do Re Mi, "abc" = C D E), per esercitarsi nel
+ * solfeggio. Toglie TUTTI i versi e scrive un solo <lyric> "single" per nota (cosi' Verovio non disegna trattini ne'
+ * linee di melisma). Regole:
+ *  - solo le voci cantate: le parti che avevano il testo. Il pianoforte o l'organo dell'accompagnamento restano senza
+ *    nomi. Se nessuna parte ha testo si nominano le prime `nVoci` (le voci del manifest, dall'alto), altrimenti niente;
+ *  - la nota legata a quella prima (<tie type="stop">) non ripete il nome; le note di un accordo stanno sotto la prima
+ *    ("Do/Mi"); pause e abbellimenti restano senza nome;
+ *  - piu' voci sullo stesso rigo: la seconda scrive sulla riga 2, la terza sulla 3 (altrimenti i nomi si sovrapporrebbero);
+ *  - solo le coloriture: semicrome (o piu' brevi) in fila in un rigo a voce sola alternano i nomi fra la riga 1 e la 2,
+ *    cosi' le note fitte non allargano la battuta; crome e valori piu' lunghi stanno sempre sulla riga 1.
+ * Ritorna quanti nomi ha scritto (0 = sistema sconosciuto o nessuna nota: il documento non e' stato toccato).
+ */
+export function nomiNote(doc, sistema, nVoci = 0) {
+  if (!NOMI_NOTA[sistema]) return 0;
+  const parti = [...doc.querySelectorAll("part")];
+  if (!parti.some((p) => p.querySelector("note > pitch"))) return 0;
+  const conTesto = parti.filter((p) => p.querySelector("note > lyric"));
+  const daNominare = conTesto.length ? conTesto : parti.slice(0, nVoci); // senza testo: le prime `nVoci` parti, dall'alto (le voci)
+  if (!daNominare.length) return 0;
+  for (const l of doc.querySelectorAll("note > lyric")) l.remove();
+  let scritti = 0;
+  for (const parte of daNominare) {
+    let divisioni = 1;
+    const voci = new Map(); // "rigo|voce" -> posizione della voce nel rigo (1, 2, 3)
+    const perRigo = new Map();
+    for (const n of parte.querySelectorAll("note")) {
+      if (n.querySelector(":scope > rest")) continue;
+      const rigo = n.querySelector(":scope > staff")?.textContent.trim() ?? "1";
+      const v = n.querySelector(":scope > voice")?.textContent.trim() ?? "1";
+      const k = `${rigo}|${v}`;
+      if (!voci.has(k)) { const n0 = perRigo.get(rigo) ?? 0; perRigo.set(rigo, n0 + 1); voci.set(k, n0 + 1); }
+    }
+    let ultima = null;      // l'ultimo <text> scritto: li' si accodano le note dell'accordo
+    const veloce = new Map(); // "rigo|voce" -> true se la nota nominata prima era veloce e sulla riga 1
+    for (const el of parte.querySelectorAll("measure > attributes > divisions, measure > note")) {
+      if (el.localName === "divisions") { divisioni = parseFloat(el.textContent) || divisioni; continue; }
+      const n = el;
+      const pitch = n.querySelector(":scope > pitch");
+      const accordo = !!n.querySelector(":scope > chord");
+      if (!pitch || n.querySelector(":scope > grace")) { if (!accordo) ultima = null; continue; }
+      const nome = nomeNota(pitch, sistema);
+      if (!nome) continue;
+      if (accordo) {
+        if (ultima) ultima.textContent += `/${nome}`;
+        continue;
+      }
+      ultima = null;
+      if ([...n.querySelectorAll(":scope > tie")].some((t) => t.getAttribute("type") === "stop")) continue;
+      const rigo = n.querySelector(":scope > staff")?.textContent.trim() ?? "1";
+      const k = `${rigo}|${n.querySelector(":scope > voice")?.textContent.trim() ?? "1"}`;
+      let riga = voci.get(k) ?? 1;
+      if (perRigo.get(rigo) === 1) { // rigo a voce sola: le coloriture (semicrome in fila) si alternano su due righe
+        const dur = parseFloat(n.querySelector(":scope > duration")?.textContent);
+        const breve = Number.isFinite(dur) && dur / divisioni <= 0.25; // semicroma o piu' breve
+        const prima = veloce.get(k);            // undefined = la nota prima non era veloce; 1 o 2 = riga che ha usato
+        riga = breve && prima === 1 ? 2 : 1;
+        if (breve) veloce.set(k, riga); else veloce.delete(k);
+      }
+      const lyric = doc.createElement("lyric");
+      lyric.setAttribute("number", String(riga));
+      const sill = doc.createElement("syllabic");
+      sill.textContent = "single";
+      const testo = doc.createElement("text");
+      testo.textContent = nome;
+      lyric.append(sill, testo);
+      n.append(lyric);
+      ultima = testo;
+      scritti++;
+    }
+  }
+  return scritti;
+}
+
 /**
  * Il MusicXML pronto per Verovio: tempi non ripetuti e righi etichettati con la sigla della voce (S, A, T, B, S1...).
  * Le sigle sono quelle del manifest (`voci`, dall'alto) se sono tante quante le parti; altrimenti l'iniziale del nome
  * della parte, ma solo quando le abbreviazioni del file non sono gia' tutte diverse. Vale sia sul primo rigo (dove il
  * file puo' nascondere il nome: si toglie print-object) sia dai successivi.
+ * `testo`: "parole" (default, le parole del brano), "do" (Do Re Mi) o "abc" (C D E): vedi nomiNote.
  */
-export function abbreviaParti(xml, voci = []) {
+export function abbreviaParti(xml, voci = [], { testo = "parole" } = {}) {
   try {
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     if (doc.querySelector("parsererror")) return xml;
-    const tolti = senzaTempiRipetuti(doc) + tempiRadi(doc) + senzaTestiLunghi(doc) + chiaviOttavate(doc);
+    const tolti = senzaTempiRipetuti(doc) + tempiRadi(doc) + senzaTestiLunghi(doc) + chiaviOttavate(doc) + nomiNote(doc, testo, Array.isArray(voci) ? voci.length : 0);
     const fuori = () => (tolti ? new XMLSerializer().serializeToString(doc) : xml);
     const parti = [...doc.querySelectorAll("score-part")];
     if (parti.length < 2) return fuori();
