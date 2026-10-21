@@ -1,5 +1,14 @@
 # State — avanzamento e decisioni
 
+## Riepilogo 2026-10-21 notte (tutto il lavoro MIDI è su `main` e online)
+
+- **Unite su `main`:** #22 (il test delle note non blocca più il deploy: era rosso dal 20/10 per le note mancanti di `o-lord-in-thee-is-all-my-trust-tallis` e `tres-morillas-m-enamoran`), #23 (`checkout@v5` e `setup-node@v5`, via l'avviso su Node 20), #24 (modalità strumenti, mix cantato+strumento, velocità dalle dinamiche, 23 player in lavorazione, M12 nomi delle note). Deploy #29 verde: il pannello Suono è online nei 45 brani pubblicati con `note.json` (es. `/player/ave-verum-corpus-byrd/`).
+- **Difetto trovato dalla CI della #24:** i 6 MP3 dei campioni degli strumenti (`src/assets/strumenti/*.mp3`, 2,8 MB) non erano mai stati committati perché il `.gitignore` ignora `*.mp3`. Aggiunta l'eccezione `!src/assets/strumenti/*.mp3`. Regola: gli stem non entrano mai in git; i campioni sì (eccezione dichiarata).
+- **Test:** e2e completo 392 verdi + 6 di M12; `npm test` verde tranne `tests/note.test.mjs` (note mancanti dei due brani, ora solo avviso in CI). Metodo per lanciare l'e2e in questo cloud: vedi più sotto («e2e completo dopo M7/M8»).
+- **M12** (nomi delle note, Do Re Mi / C D E): fatto; sfalsamento su due righe solo per le semicrome in fila; fuori dalla v1 do mobile, ottava, vocali della sillaba (`docs/midi-player.md` §10-§11).
+- **Resta all'utente (in locale):** ascolto M9 (Locus iste, Ave verum 475, un'aria; ora anche online); Lutkin (verifica sull'edizione, `applicare:true`, rigenera, chiudi issue #2 di `voceavoce/segnalazioni`); note R5 dei due brani; rilanciare `job_sito_player --in-lavorazione --scrivi` sulla macchina RENDER PRIMA di pubblicare i 22 «da-caricare»; decidere i 3 brani «pubblicato» senza voci pubblicabili; rivedere i brani con regola `dinamica` (177, 259, 305, 039, aria-012).
+- **In coda, solo se serve:** M5-M6 (togliere l'MP3 se lo spazio su R2 diventa un problema).
+
 ## Riepilogo per riprendere (aggiornato 2026-10-18 notte, segnalazioni attive, player anticipato in PR)
 
 - **Unite su `main`:** #15 (partiture del player = quelle del video: tenore in violino-8, sigle, dinamiche sopra; 141 `score.musicxml` rigenerati), #16 + #17 (segnalazioni: la #16 è stata unita prima degli ultimi commit, la #17 l'ha completata), #18 (docs R4), oltre a #4–#14.
