@@ -4,7 +4,7 @@
 
 - **Idea dell'utente:** nello STAGE 2 di `/voceavoce-pianifica-lotto` (tempo, sezioni, opzioni) mostrare la partitura che scorre col cursore e suonata con gli strumenti, con le opzioni dei classificatori, le segnalazioni sulla partitura e il testo da copiare per Gemini; ogni difetto visto diventa una guardia in `anomalie_spartito`. Piano completo: `docs/anteprima-brano.md` nel repo AIVideoCreator.
 - **Fatto (AIVideoCreator, ramo `claude/voceavocecoro-video-portal-s3o8vi`):** T-922 piano, T-923 `job_anteprima_brano` (scrive `content/player/_anteprima-<slug>/` nel clone del sito: partitura, sync, note, manifest `senza_audio`, `dossier.json`; tempo di prova mai scritto nel contratto; provato su 475 a 72 BPM). Gli slug con «_» sono già ignorati in produzione (`studio.js`).
-- **Qui nel sito, da fare (T-924):** pannello `anteprima.js` solo in sviluppo (opzioni, anomalie cliccabili, tempo, testo per Gemini con «Copia», blocco di risposta), test e2e; ramo `feat/anteprima-brano` da `main`, una PR piccola.
+- **T-924 fatto qui nel sito (ramo `feat/anteprima-brano`, PR da aprire):** pannello `anteprima.js` (solo sviluppo: tempo con slider e BPM equivalenti, sezioni, scelte del contratto, segnalazioni con «Vai alla battuta», testo per Gemini con «Copia», blocco di risposta), cartella di prova `content/player/_anteprima-prova`, 8 test unitari e 5 e2e (axe compreso). In produzione, da `_site` pulita, restano solo i due JS inerti: nessuna pagina, dato o dossier.
 - **Come provare in locale:** `cd pipeline-core && python -m scripts.cli.job_anteprima_brano --brano 475 --tempo 72 --scrivi --out <clone del sito>`, poi `npm run dev` nel sito e l'URL stampato.
 
 ## Riepilogo 2026-10-21 notte (tutto il lavoro MIDI è su `main` e online)

@@ -126,6 +126,13 @@ eleventyExcludeFromCollections: true
       </section>
       {%- endif %}
 
+      {%- if item.dossierFile %}
+      <section class="panel anteprima" data-anteprima aria-labelledby="study-anteprima-h" lang="it">
+        <h2 id="study-anteprima-h">Anteprima del brano <span class="anteprima__tag">solo sviluppo</span></h2>
+        <div data-anteprima-body><p class="study__hint">Carico il dossier…</p></div>
+      </section>
+      {%- endif %}
+
       {%- if firstVoice %}
       <section class="panel player" data-player aria-labelledby="study-video-h"
         data-title="{{ 'piece.iframeTitle' | tv(lang, { title: piece.titolo, voice: '{voice}' }) }}">

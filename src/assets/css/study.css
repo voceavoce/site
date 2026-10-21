@@ -190,3 +190,18 @@
     html.study-immersive [data-score-options-toggle] { display: none; }
   }
 }
+
+/* Anteprima del brano (T-924, solo in sviluppo) */
+.anteprima__tag { font-size: 0.75rem; font-weight: 600; padding: 0.1rem 0.5rem; border: 1px solid var(--border); border-radius: 999px; vertical-align: middle; }
+.anteprima__sez { margin-top: var(--space-4); }
+.anteprima__sez h3 { margin: 0 0 var(--space-2); font-size: 1rem; }
+.anteprima__tab { border-collapse: collapse; margin: var(--space-2) 0; }
+.anteprima__tab caption { text-align: left; font-size: 0.875rem; padding-bottom: var(--space-1); }
+.anteprima__tab th, .anteprima__tab td { padding: 0.2rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; }
+.anteprima__opz { display: grid; grid-template-columns: max-content 1fr; gap: 0.15rem var(--space-3); margin: 0; }
+.anteprima__opz dt { font-weight: 600; }
+.anteprima__opz dd { margin: 0; overflow-wrap: anywhere; }
+.anteprima__pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: var(--space-2); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); }
+.anteprima__anom { display: grid; gap: var(--space-2); padding-left: 1.2rem; margin: 0; }
+.anteprima textarea, .anteprima input[type="text"] { width: 100%; box-sizing: border-box; font: inherit; }
+.anteprima__stato { min-height: 1.4em; }

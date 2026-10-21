@@ -43,6 +43,7 @@ export default function (eleventyConfig) {
   for (const it of Object.values(studio.items)) {
     eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.scoreFile)]: `player-data/${it.slug}/score.musicxml` });
     if (it.noteFile) eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.noteFile)]: `player-data/${it.slug}/note.json` });
+    if (it.dossierFile) eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.dossierFile)]: `player-data/${it.slug}/dossier.json` });
   }
   eleventyConfig.addWatchTarget("src/_data/i18n/");
 

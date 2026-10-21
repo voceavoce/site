@@ -31,6 +31,7 @@ export default {
         scoreUrl: `/player-data/${it.slug}/score.musicxml`,
         senzaAudio: it.manifest.senza_audio === true,
         noteUrl: it.noteFile ? `/player-data/${it.slug}/note.json` : null,
+        dossierUrl: it.dossierFile ? `/player-data/${it.slug}/dossier.json` : null,
         lang,
         linea: it.manifest.linea || "coro",
         manifest: { tracce: it.manifest.tracce, durata_sec: it.manifest.durata_sec },
