@@ -2,8 +2,12 @@
 // una nota per voce all'inizio di ogni battuta di sync.json. I campioni sono quelli veri (assets/strumenti, in git);
 // gli stem sono sintetici (helpers.mjs). La sincronia si misura come in sync-audio.spec.mjs: una spia in ascolto sul
 // mix finale rileva l'inizio di ogni nota sul frame esatto e lo si confronta con l'evidenziazione della battuta.
+import fs from "node:fs";
+import path from "node:path";
 import { expect } from "@playwright/test";
-import { test, apriPlayer, avviaSito, leggiCache, intercettaAudio, raccogliErrori, SYNC, HOST_AUDIO } from "./helpers.mjs";
+import { test, apriPlayer, avviaSito, leggiCache, intercettaAudio, raccogliErrori, SYNC, HOST_AUDIO, RADICE } from "./helpers.mjs";
+
+const AXE = fs.readFileSync(path.join(RADICE, "node_modules/axe-core/axe.min.js"), "utf8");
 
 const MEDIANA_MAX_MS = 45;
 const MASSIMO_MAX_MS = 90;
@@ -224,4 +228,39 @@ test("offline: gli strumenti suonano dalla cache del service worker, anche senza
     await sito.ferma().catch(() => {});
   }
   expect(errori.filter((e) => !/Failed to load resource|net::ERR|StudyError: HTTP 404/.test(e))).toEqual([]);
+});
+
+// Accessibilita' del pannello «Suono» (pa11y non lo vede: compare solo ad audio caricato). axe-core su WCAG 2.2 AA,
+// in tema chiaro e scuro, con i menu degli strumenti aperti e con gli stati attivati.
+for (const tema of ["light", "dark"]) {
+  test(`accessibilita' del pannello Suono (axe, WCAG 2.2 AA, tema ${tema})`, async ({ page }) => {
+    await apriPlayer(page);
+    await page.waitForSelector("[data-sound]:not([hidden])");
+    await page.addScriptTag({ content: AXE });
+    await page.evaluate((t) => { document.documentElement.dataset.theme = t; }, tema);
+    const esegui = () => page.evaluate(async () => {
+      const r = await window.axe.run(document.querySelector("[data-sound]"), { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa", "best-practice"] } });
+      if (r.passes.length < 5) return [`axe ha controllato solo ${r.passes.length} regole`];
+      return r.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(" ")).join(" | ")}`);
+    });
+    expect(await esegui(), "modalita' cantato").toEqual([]);
+    await passaAStrumenti(page);
+    expect(await esegui(), "modalita' strumenti").toEqual([]);
+    // ogni menu ha un nome accessibile con la voce, e i due pulsanti radio sono nello stesso gruppo con legenda
+    const nomi = await page.$$eval("[data-instr]", (l) => l.map((s) => s.labels[0]?.textContent.trim()));
+    expect(nomi.every((n) => n && n.length > 3)).toBe(true);
+    expect(await page.locator('fieldset.sound-pick legend').count()).toBe(1);
+  });
+}
+
+test("tastiera: il gruppo Cantato/Strumenti si governa con le frecce e il menu con la tastiera", async ({ page }) => {
+  await apriPlayer(page);
+  await page.waitForSelector("[data-sound]:not([hidden])");
+  await page.focus('[data-sound-mode][value="audio"]');
+  await page.keyboard.press("ArrowRight");
+  await page.waitForFunction(() => window.__study.engine.mode === "midi", null, { timeout: 30_000 });
+  await page.focus('[data-instr="soprano"]');
+  await page.keyboard.press("ArrowDown");
+  const v = await page.$eval('[data-instr="soprano"]', (s) => s.value);
+  expect(v).not.toBe("pianoforte");
 });

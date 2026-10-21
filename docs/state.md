@@ -9,6 +9,10 @@
 - **Da fare, in ordine:** (1) **caso Lutkin** (issue #2 del repo privato): nelle due varianti, b. 18 `f`, forcella *crescendo* dalla b. 19 alla 23 dove compare `pp` e si chiude: incoerente, quasi certamente va un *diminuendo*; verificare su edizione autorevole, correggere nel catalogo/pipeline (non nel file del sito), rigenerare lo score del sito, PR, rispondere alla persona (che ha lasciato la sua email) e chiudere l'issue; i video già su YouTube mostrano lo stesso errore (decisione dell'utente su un nuovo render). (2) **Skill di verifica delle segnalazioni** (R13 in `task.md`), dopo il caso Lutkin. (3) Merge #19 e #20 + `wrangler deploy`. (4) Brani nuovi: prima `job_sito_player --scrivi`, audio su R2 e PR del sito, POI il video pubblico (altrimenti il link nella descrizione dà 404). (5) Riga del player nei video GIÀ pubblicati: solo su istruzione (API YouTube) o a mano.
 - **Da scartare:** il branch `fix/player-qualita-rallentamento` (`?stretch=voci`, mai in PR) e il suo esperimento.
 
+## Lavori in corso 2026-10-21 (cloud, elenco concordato con l'utente)
+
+Ordine: (7) test completo della pipeline [in corso, `/tmp` log non persistente] · (1) test offline strumenti [FATTO] · (2) axe sul pannello Suono + tastiera [FATTO] · (8-9) Lutkin: regola `anomalie_spartito` + repair + scansione del catalogo · (3) dinamica nelle note (velocity) · (4) mix cantato+strumento (M7) · (5) brani senza render (M8) · (6) pannello Suono nella scheda brano (M11) · (10) bozza skill segnalazioni · (11) note dei due brani senza testo. Commit e push a ogni passo.
+
 ## Come proseguire in locale (se la sessione cloud si ferma)
 
 - **Stato git (2026-10-20 sera):** tutto è su GitHub. Sito: branch `claude/voceavocecoro-video-portal-s3o8vi` (ultimo commit 3ba5686 + questo). AIVideoCreator: stesso nome di branch, ultimo commit cd9f63a (T-915); `main` di entrambi non è ancora toccato (nessuna PR aperta).
