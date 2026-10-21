@@ -8,12 +8,13 @@
 export const VEL_PREDEFINITA = 80;
 
 /**
- * Guadagno (moltiplicatore, 1 = mf) per una velocita' MIDI: curva (v/80)^1.4, limitata fra 0,2 e 1,8. Cosi' pp (33) ~0,29,
- * p (49) ~0,51, mf (80) = 1, f (96) ~1,29, ff (112) ~1,60.
+ * Guadagno (moltiplicatore, 1 = mf) per una velocita' MIDI: curva (v/80)^0.9, limitata fra 0,3 e 1,5 (escursione
+ * moderata: gran parte dei brani ha dinamiche fra p e mf e non deve suonare troppo piano). pp (33) ~0,45,
+ * p (49) ~0,64, mf (80) = 1, f (96) ~1,18, ff (112) ~1,36.
  */
 export function guadagnoVelocita(vel) {
   const v = Number.isFinite(+vel) && vel > 0 ? +vel : VEL_PREDEFINITA;
-  return Math.min(1.8, Math.max(0.2, Math.pow(v / VEL_PREDEFINITA, 1.4)));
+  return Math.min(1.5, Math.max(0.3, Math.pow(v / VEL_PREDEFINITA, 0.9)));
 }
 
 /** Indice della prima nota che inizia a `t` secondi o dopo (ricerca binaria). */

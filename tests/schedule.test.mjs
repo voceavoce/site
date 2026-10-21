@@ -93,8 +93,8 @@ test("velocita': guadagno monotono, 1 a mf, limitato; assente = mf", () => {
   assert.equal(guadagnoVelocita(undefined), 1);
   const v = [20, 33, 49, 64, 80, 96, 112, 127].map(guadagnoVelocita);
   for (let i = 1; i < v.length; i++) assert.ok(v[i] > v[i - 1]);
-  assert.ok(guadagnoVelocita(1) >= 0.2 && guadagnoVelocita(127) <= 1.8);
-  assert.ok(guadagnoVelocita(33) < 0.35 && guadagnoVelocita(112) > 1.5);
+  assert.ok(guadagnoVelocita(1) >= 0.3 && guadagnoVelocita(127) <= 1.5);
+  assert.ok(guadagnoVelocita(33) < 0.5 && guadagnoVelocita(112) > 1.3);
 });
 
 test("velocita' nelle note pianificate: usata se c'e', altrimenti mf, anche nelle note in corso", () => {

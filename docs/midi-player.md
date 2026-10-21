@@ -56,7 +56,7 @@ Limiti da dire all'utente: il timbro non è il canto (niente testo, niente frase
 - Tempi nel tempo del sync (lead-in di 0,5 s compreso), con ritornelli espansi come la partitura del sito.
 - Legature di valore fuse (stessa strada di `accomp_midi_events` / `stripTies`), note di abbellimento (grace) escluse, accordi come più note allo stesso inizio.
 - Dimensione attesa: 4 voci + accompagnamento, ~400 note per parte, ~10–25 KB (5–10 KB con gzip).
-- **Velocità (dinamica), facoltativa:** quarto elemento `[inizio_ms, durata_ms, altezza, velocità]`, intero 1-127 come in MIDI; senza, vale 80 (mf). Il sito la traduce in guadagno con la curva `(v/80)^1.4` (pp ≈ 0,29, p ≈ 0,51, mf 1, f ≈ 1,29, ff ≈ 1,60). La pipeline la ricava da dinamiche e forcelle della partitura (T-921).
+- **Velocità (dinamica), facoltativa:** quarto elemento `[inizio_ms, durata_ms, altezza, velocità]`, intero 1-127 come in MIDI; senza, vale 80 (mf). Il sito la traduce in guadagno con la curva `(v/80)^0.9` limitata fra 0,3 e 1,5 (pp ≈ 0,45, p ≈ 0,64, mf 1, f ≈ 1,18, ff ≈ 1,36; escursione moderata perché molti brani stanno fra p e mf). La pipeline la ricava da dinamiche e forcelle della partitura (T-921).
 
 Controlli in build (`checkManifest` accanto a quello del sync): schema = 1; ogni `chiave` presente nel manifest; inizi non decrescenti; altezze 0–127; durate > 0; nessuna nota oltre `fine`.
 
