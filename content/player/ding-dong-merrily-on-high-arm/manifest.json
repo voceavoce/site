@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "ding-dong-merrily-on-high-arm",
+  "titolo": "Ding Dong! merrily on high",
+  "compositore": {
+    "id": "charles-wood-arm",
+    "nome": "Charles Wood (arm.)"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 79.8,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

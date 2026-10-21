@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "slug": "io-son-ferito-palestrina",
+  "titolo": "IO son ferito",
+  "compositore": {
+    "id": "giovanni-pierluigi-da-palestrina",
+    "nome": "Giovanni Pierluigi da Palestrina"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T1",
+      "chiave": "tenore-1",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T2",
+      "chiave": "tenore-2",
+      "tipo": "voce"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 270.5,
+  "licenza": {
+    "spartito": null,
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

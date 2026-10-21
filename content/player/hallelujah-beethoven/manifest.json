@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "slug": "hallelujah-beethoven",
+  "titolo": "Hallelujah",
+  "compositore": {
+    "id": "ludwig-van-beethoven",
+    "nome": "Ludwig van Beethoven"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce"
+    },
+    {
+      "voce": "ACC",
+      "chiave": "accompagnamento",
+      "tipo": "accompagnamento"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 294.4,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}
