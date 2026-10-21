@@ -377,7 +377,8 @@
       "soundSungOn": "Sie hören die gesungenen Stimmen.",
       "fallbackInstr": "Der gesungene Ton ist nicht verfügbar: Sie hören Instrumente.",
       "errInstr": "Die Instrumente konnten nicht geladen werden.",
-      "soundSungOpt": "Gesungen (Aufnahme)"
+      "soundSungOpt": "Gesungen (Aufnahme)",
+      "noAudioYet": "Der gesungene Ton für dieses Stück ist noch nicht verfügbar: Sie hören Instrumente."
     },
     "loaderTitle": "Die Stimmen werden vorbereitet…",
     "loaderHint": "Beim ersten Öffnen kann es einige Sekunden dauern: Wir laden das Audio aller Stimmen herunter.",

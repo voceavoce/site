@@ -1,7 +1,7 @@
 // Player di studio: collega engine, mixer, loop e partitura alla pagina /player/<slug>/.
 import { setAudioBase } from "./config.js";
 import { isOn } from "./features.js";
-import { StudyEngine } from "./engine.js";
+import { StudyEngine, StudyError } from "./engine.js";
 import { bindMixer } from "./mixer.js";
 import { bindLoop } from "./loop.js";
 import { createScore } from "./score.js";
@@ -238,13 +238,14 @@ async function main(data) {
   try {
     await engine.init();
     engine.addEventListener("warning", () => say(L.noStretch));
+    if (data.senzaAudio) throw new StudyError("noaudio", "brano senza stem: solo strumenti");
     await engine.load(
       manifest.tracce,
       (n, total) => { fatte = n; say(L.loading.replace("{n}", n).replace("{total}", total)); },
       (f) => showProgress(f, fatte, manifest.tracce.length),
     );
   } catch (e) {
-    console.error(e);
+    if (e.kind !== "noaudio") console.error(e);
     // Ultimo anello della catena Opus -> MP3 -> strumenti: se nemmeno l'MP3 si scarica o decodifica, si suonano le note.
     if (e.kind === "unsupported" || !(await suono.fallback())) {
       closeLoader();
@@ -263,7 +264,7 @@ async function main(data) {
   el.seek.max = String(engine.duration);
   el.total.textContent = formatClock(engine.duration);
   mixer?.render();
-  if (fallbackAttivo) say(L.fallbackInstr);
+  if (fallbackAttivo) say(data.senzaAudio ? L.noAudioYet : L.fallbackInstr);
   else if (engine.stretchOk) say(L.ready);
   await scorePromise;
   update();

@@ -377,7 +377,8 @@
       "soundSungOn": "Ascolti le voci cantate.",
       "fallbackInstr": "L'audio cantato non è disponibile: stai ascoltando gli strumenti.",
       "errInstr": "Non riesco a caricare gli strumenti.",
-      "soundSungOpt": "Cantato (voce registrata)"
+      "soundSungOpt": "Cantato (voce registrata)",
+      "noAudioYet": "Per questo brano l'audio cantato non è ancora disponibile: ascolti gli strumenti."
     },
     "loaderTitle": "Sto preparando le voci…",
     "loaderHint": "Alla prima apertura può volerci qualche secondo: scarichiamo l'audio di tutte le voci.",

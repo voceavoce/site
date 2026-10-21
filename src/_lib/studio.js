@@ -18,7 +18,8 @@ export function checkManifest(slug, m, sync) {
   if (m.slug !== slug) fail(`slug "${m.slug}" diverso dalla cartella`);
   if (!Array.isArray(m.tracce) || !m.tracce.length) fail("nessuna traccia");
   for (const t of m.tracce) {
-    for (const k of ["voce", "chiave", "file"]) if (!t[k]) fail(`traccia senza "${k}"`);
+    // senza_audio: brano in lavorazione, ancora senza stem: le tracce non hanno file e il player suona solo gli strumenti
+    for (const k of m.senza_audio ? ["voce", "chiave"] : ["voce", "chiave", "file"]) if (!t[k]) fail(`traccia senza "${k}"`);
     for (const k of ["file", "riserva"]) if (t[k] != null && !isSafeRelativePath(t[k])) fail(`percorso non relativo in tracce[].${k}: ${t[k]}`);
   }
   if (!Array.isArray(sync.battute) || !sync.battute.length || typeof sync.fine !== "number") fail("sync.json non valido");
@@ -78,6 +79,7 @@ export function loadStudio({ dir = PLAYER_DIR, production = process.env.ELEVENTY
         const chiaviManifest = new Set(manifest.tracce.map((t) => t.chiave));
         if (Array.isArray(note.parti) && note.parti.some((p) => chiaviManifest.has(p.chiave))) { checkNote(d.name, note, manifest); noteFile = "note.json"; }
       }
+      if (manifest.senza_audio && !noteFile) throw new Error(`content/player/${d.name}: senza_audio richiede un note.json con parti`);
       items[d.name] = { slug: d.name, manifest, sync, scoreFile, noteFile, test: isTestSlug(d.name), pubblicato: !pubblicati || pubblicati.has(d.name) };
     }
   }

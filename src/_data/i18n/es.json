@@ -377,7 +377,8 @@
       "soundSungOn": "Estás escuchando las voces cantadas.",
       "fallbackInstr": "El audio cantado no está disponible: estás escuchando instrumentos.",
       "errInstr": "No puedo cargar los instrumentos.",
-      "soundSungOpt": "Cantado (voz grabada)"
+      "soundSungOpt": "Cantado (voz grabada)",
+      "noAudioYet": "El audio cantado de esta obra aún no está disponible: estás escuchando instrumentos."
     },
     "loaderTitle": "Preparando las voces…",
     "loaderHint": "La primera vez puede tardar unos segundos: descargamos el audio de todas las voces.",

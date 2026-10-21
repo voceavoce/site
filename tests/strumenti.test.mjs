@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync, statSync } from "node:fs";
 import { scegliStrumenti } from "../src/assets/js/study/strumenti.js";
-import { checkNote } from "../src/_lib/studio.js";
+import { checkNote, checkManifest } from "../src/_lib/studio.js";
 
 const IDS = ["pianoforte", "organo", "coro", "voce", "flauto", "archi"];
 const tracce = [
@@ -55,4 +55,13 @@ test("note.json: controlli di contratto", () => {
   male({ ...ok, parti: [{ chiave: "soprano", note: [[0, 100, 200]] }] });
   male({ ...ok, parti: [{ chiave: "soprano", note: [[11000, 100, 60]] }] });
   male({ ...ok, parti: [{ chiave: "soprano", note: [[0.5, 100, 60]] }] });
+});
+
+test("manifest senza_audio: le tracce non hanno file; altrimenti il file e' obbligatorio", () => {
+  const sync = { battute: [{ m: 0, numero: "1", t: 0.5 }], fine: 5 };
+  const base = { schema: 1, slug: "x", sync: "sync.json" };
+  const tracce = [{ voce: "S", chiave: "soprano", tipo: "voce" }];
+  assert.doesNotThrow(() => checkManifest("x", { ...base, senza_audio: true, tracce }, sync));
+  assert.throws(() => checkManifest("x", { ...base, tracce }, sync), /senza "file"/);
+  assert.doesNotThrow(() => checkManifest("x", { ...base, tracce: [{ ...tracce[0], file: "x/v1/soprano.opus" }] }, sync));
 });

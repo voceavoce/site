@@ -377,7 +377,8 @@
       "soundSungOn": "Vous écoutez les voix chantées.",
       "fallbackInstr": "L'audio chanté n'est pas disponible : vous écoutez des instruments.",
       "errInstr": "Impossible de charger les instruments.",
-      "soundSungOpt": "Chanté (voix enregistrée)"
+      "soundSungOpt": "Chanté (voix enregistrée)",
+      "noAudioYet": "L'audio chanté de cette pièce n'est pas encore disponible : vous écoutez des instruments."
     },
     "loaderTitle": "Préparation des voix…",
     "loaderHint": "À la première ouverture, cela peut prendre quelques secondes : nous téléchargeons l'audio de toutes les voix.",

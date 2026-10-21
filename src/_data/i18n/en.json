@@ -377,7 +377,8 @@
       "soundSungOn": "You are hearing the sung voices.",
       "fallbackInstr": "The sung audio is not available: you are hearing instruments.",
       "errInstr": "I could not load the instruments.",
-      "soundSungOpt": "Sung (recorded voice)"
+      "soundSungOpt": "Sung (recorded voice)",
+      "noAudioYet": "The sung audio for this piece is not available yet: you are hearing instruments."
     },
     "loaderTitle": "Getting the voices ready…",
     "loaderHint": "On first open it can take a few seconds: we are downloading the audio of every voice.",

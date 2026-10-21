@@ -352,3 +352,26 @@ for (const pct of [100, 75, 50]) {
     for (const d of diff) expect(Math.abs(d), `scarto ${d.toFixed(1)} ms`).toBeLessThanOrEqual(35);
   });
 }
+
+test("brano in lavorazione (senza_audio): niente richieste di audio, si suonano subito gli strumenti, con avviso", async ({ page, context }) => {
+  await context.unrouteAll();
+  const richieste = [];
+  await context.route((u) => u.host === HOST_AUDIO || /(^|\.)workers\.dev$/.test(u.hostname), (route) => { richieste.push(route.request().url()); return route.fulfill({ status: 404, body: "no" }); });
+  const errori = raccogliErrori(page);
+  await page.goto("/player/_prova-senza-audio/?debug");
+  await page.waitForFunction(() => window.__study?.engine.mode === "midi" && !document.querySelector("[data-play]").disabled, null, { timeout: 90_000 });
+  const r = await page.evaluate(() => ({
+    stato: document.querySelector("[data-status]").textContent,
+    audioDisattivato: document.querySelector('[data-sound-mode][value="audio"]').disabled,
+    errore: !document.querySelector("[data-error]").hidden,
+    opzioni: [...document.querySelector('[data-instr="soprano"]').options].map((o) => o.value),
+  }));
+  expect(richieste, "nessuna richiesta di stem").toEqual([]);
+  expect(r.errore).toBe(false);
+  expect(r.audioDisattivato).toBe(true);
+  expect(r.opzioni).not.toContain("cantato");
+  expect(r.stato).toMatch(/non .* disponibile|not available yet/i);
+  await page.click("[data-play]");
+  await page.waitForFunction(() => window.__study.engine.position() > 1, null, { timeout: 15_000 });
+  expect(errori).toEqual([]);
+});
