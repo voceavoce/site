@@ -3,7 +3,7 @@
 // gli stem sono sintetici (helpers.mjs). La sincronia si misura come in sync-audio.spec.mjs: una spia in ascolto sul
 // mix finale rileva l'inizio di ogni nota sul frame esatto e lo si confronta con l'evidenziazione della battuta.
 import { expect } from "@playwright/test";
-import { test, apriPlayer, intercettaAudio, raccogliErrori, SYNC, HOST_AUDIO } from "./helpers.mjs";
+import { test, apriPlayer, avviaSito, leggiCache, intercettaAudio, raccogliErrori, SYNC, HOST_AUDIO } from "./helpers.mjs";
 
 const MEDIANA_MAX_MS = 45;
 const MASSIMO_MAX_MS = 90;
@@ -192,4 +192,36 @@ test("fallback: se gli stem non si scaricano si suonano gli strumenti, con avvis
   await page.click("[data-play]");
   await page.waitForFunction(() => window.__study.engine.position() > 1, null, { timeout: 15_000 });
   await context.close();
+});
+
+test("offline: gli strumenti suonano dalla cache del service worker, anche senza stem e senza rete", async ({ page, context }) => {
+  const errori = raccogliErrori(page);
+  const sito = await avviaSito();
+  try {
+    // 1) con la rete: il SW prende il controllo, si passa agli strumenti e i campioni finiscono nella cache
+    await page.goto(`${sito.url}/`);
+    await page.evaluate(() => navigator.serviceWorker.ready);
+    await page.reload();
+    await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
+    await apriPlayer(page, `${sito.url}/player/_prova/?debug`);
+    await passaAStrumenti(page);
+    await expect.poll(async () => Object.values(await leggiCache(page)).flat().some((u) => u.endsWith("/assets/strumenti/pianoforte.mp3")), { timeout: 20_000 }).toBe(true);
+    const cache = Object.values(await leggiCache(page)).flat();
+    expect(cache.some((u) => u.endsWith("/player-data/_prova/note.json")), "note.json in cache").toBe(true);
+    expect(cache.some((u) => /\.(opus|mp3|wav)$/.test(u) && !u.includes("/assets/strumenti/")), "gli stem restano fuori dalla cache").toBe(false);
+    // 2) senza rete e senza stem: la pagina si riapre dalla cache e va in modalita' strumenti da sola
+    await context.unrouteAll();
+    await context.route((u) => u.host === HOST_AUDIO || /(^|\.)workers\.dev$/.test(u.hostname), (route) => route.fulfill({ status: 404, headers: { "access-control-allow-origin": "*" }, body: "no" }));
+    await sito.ferma();
+    await page.reload();
+    await page.waitForFunction(() => window.__study?.engine.mode === "midi" && !document.querySelector("[data-play]").disabled, null, { timeout: 90_000 });
+    await page.click("[data-play]");
+    await page.waitForFunction(() => window.__study.engine.position() > 1, null, { timeout: 15_000 });
+    // le note hanno davvero suonato: qualche voce e' stata creata (i campioni arrivano dalla cache)
+    const campioni = await page.evaluate(() => window.__study.engine.synth.campioni.pronti.size);
+    expect(campioni).toBeGreaterThan(0);
+  } finally {
+    await sito.ferma().catch(() => {});
+  }
+  expect(errori.filter((e) => !/Failed to load resource|net::ERR|StudyError: HTTP 404/.test(e))).toEqual([]);
 });
