@@ -147,3 +147,26 @@ Da registrare in `tasks.md` quando si parte (ultimo usato: T-914): **T-915** exp
 ## 10. Idee da valutare (non pianificate)
 
 - **Nomi delle note al posto del testo (M12, 2026-10-21).** Mostrare nella partitura il nome di ogni nota (do re mi… oppure C D E…, con eventuale vocale per cantarci sopra) come supporto al solfeggio cantato e alla lettura; insieme agli strumenti permette di studiare l'intonazione senza il testo. Aperte: do fisso o mobile, alterazioni, vocali, più strofe, posizione nell'interfaccia. Decisioni dell'utente (2026-10-21): **sistemi** = italiano (Do Re Mi) E anglosassone (C D E), con scelta nel player; **interfaccia** = sezione «Testo dello spartito» nel pannello Suono (Parole / Do Re Mi / C D E), una sola impostazione per tutte le voci; **vocali** = NON nella prima versione, solo i nomi; in una fase successiva «vocali» significa la VOCALE DELLA SILLABA DEL TESTO su ciascuna nota (non una vocale fissa): serve a preparare la parte cantando prima sulle vocali e aggiungendo poi le consonanti, tecnica di preparazione soprattutto solistica. Costo: estrarre il nucleo vocalico per ogni sillaba, facile in latino, più difficile in inglese, tedesco e francese (lingua per lingua). Ancora aperte: do fisso o mobile (default proposto: fisso), alterazioni (# e b), più strofe. Punto di partenza: `study/musicxml.js` riscrive già il MusicXML prima di Verovio.
+
+## 11. Specifica di M12 – nomi delle note nello spartito (2026-10-21, da implementare solo su decisione)
+
+Decisioni già prese: vedi §10 (italiano + anglosassone; sezione «Testo dello spartito» nel pannello Suono; niente vocali nella v1).
+
+**Come funziona oggi.** `score.js` scarica `score.musicxml`, lo passa ad `abbreviaParti()` (`musicxml.js`, funzioni pure su DOM) e poi `tk.loadData(...)`. Il testo è nei `<lyric>` delle note (Locus iste: 412 lyric, un solo verso, `syllabic` begin/middle/end/single). Le altezze sono assolute nel file: `<step>`, `<octave>` e `<alter>` esplicito, quindi il nome di una nota si ricava senza leggere l'armatura. Locus iste non ha `<key>`: l'armatura NON è affidabile in tutti i file.
+
+**Disegno.** Nuova funzione pura `conNomiNote(doc, sistema)` in `musicxml.js`, chiamata da `abbreviaParti(xml, voci, { testo })`:
+1. Con `testo = "parole"` (default) non cambia nulla, come oggi.
+2. Con `"do"` o `"abc"`: toglie TUTTI i `<lyric>` esistenti (anche i versi 2+) e mette su ogni nota con `<pitch>` un `<lyric number="1">` con `<syllabic>single</syllabic>` (così Verovio non disegna trattini né linee di melisma) e il nome come `<text>`.
+3. Tabelle: italiano Do Re Mi Fa Sol La Si; anglosassone C D E F G A B. Alterazioni con ♯ e ♭ (doppie: 𝄪 e 𝄫, o «x» se il glifo manca nel font di Verovio: da verificare nel browser). Il do è sempre fisso.
+4. Note legate: il nome compare solo sulla prima della legatura (`<tie type="stop">` senza nome). Note in accordo nella stessa voce (`<chord/>`): nome solo sulla prima. Pause e note di abbellimento: come oggi (nessun nome sulle pause; le acciaccature restano senza).
+5. Ogni funzione, come le altre di `musicxml.js`, in caso di dubbio restituisce l'XML originale.
+
+**Interfaccia.** In `study.njk`, nel pannello Suono, un gruppo radio «Testo dello spartito»: Parole / Do Re Mi / C D E (stile come i radio `data-sound-mode`). Stringhe in `src/_data/i18n/*.json` per le 5 lingue. Preferenza in `localStorage` (try/catch, come `strumenti.js`), una sola per tutte le voci. Il pannello è la stessa Suono già testata con axe: serve ripetere il controllo.
+
+**Motore.** `createScore` espone `setTesto(modo)`: rilegge `xml` (già in memoria, nessuna nuova richiesta di rete, quindi nessun effetto sull'offline/service worker), rifà `tk.loadData(abbreviaParti(xml, voci, { testo }))` e `layout()`. `layout()` ricostruisce già misure, geometria e fasce e riposiziona battuta e cursore, quindi la sincronia con l'audio non dipende dai lyric. Da verificare: che l'evidenziazione della battuta corrente e il cursore sopravvivano al cambio a riproduzione in corso.
+
+**Test.**
+- Unit (`tests/musicxml.test.mjs`, jsdom): tabelle e alterazioni, legature, accordi, verso 2+ eliminato, pause senza nome, XML invalido restituito invariato, modo `parole` identico a oggi.
+- E2E (`tests/e2e/`): cambio modo, i testi dell'SVG della prima battuta cambiano (Do Re Mi, poi C D E, poi di nuovo parole), il cursore continua a muoversi in play, la preferenza resta dopo il ricaricamento, axe senza errori nel pannello, nessun errore in console.
+
+**Costi e rischi.** Stima: 1–1,5 giorni, solo nel sito (nessun cambio nella pipeline). Rischi: glifi ♯/♭ nel font di Verovio; brani con parti `divisi` (due voci su un rigo, nome sovrapposto); tempo del ricaricamento su partiture lunghe (da misurare, 400 note). Fuori dalla v1: do mobile (richiede la tonalità; `<key>` manca in alcuni file, quindi servirebbe un campo `tonalita` nel manifest, quindi lavoro in AIVideoCreator), ottava accanto al nome, vocali della sillaba (§10).
