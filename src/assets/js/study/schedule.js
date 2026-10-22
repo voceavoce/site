@@ -110,6 +110,17 @@ export function advance(parti, state, horizon, rate, loop, duration) {
   return { events, state: { scoreCursor, ctxCursor } };
 }
 
+/**
+ * Quanto puo' durare, nel tempo del contesto, un campione NON ciclico partendo da `pad` (s): il suo slot nel file ha `slot` - `pad`
+ * secondi di contenuto e suona alla velocita' `rate` (intonazione). Oltre, il buffer passa allo slot SUCCESSIVO e si sente un'altra
+ * nota (quella tre semitoni sopra) poco prima dell'attacco seguente: succede quando la nota dura piu' dello slot, cioe' a velocita' basse.
+ */
+export function durataMassimaCampione(def, rate) {
+  const r = Number.isFinite(+rate) && rate > 0 ? +rate : 1;
+  const contenuto = Math.max(0.05, (Number(def.slot) || 0) - (Number(def.pad) || 0) - 0.02); // margine: 20 ms prima dello slot dopo
+  return contenuto / r;
+}
+
 /** Numero MIDI -> indice del campione piu' vicino e rapporto di velocita' (playbackRate) per intonare. */
 export function campioneVicino(strumento, midi) {
   const note = strumento.note;
