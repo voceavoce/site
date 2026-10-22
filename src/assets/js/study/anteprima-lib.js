@@ -8,12 +8,13 @@ export function bpmDaVelocita(prova, pct) {
 }
 
 /** Velocita' (percentuale, a passi di 5 come lo slider) che dà `bpm` rispetto al tempo di prova.
- *  { pct, fuori }: `fuori` = il tempo voluto e' oltre quello che lo slider puo' dare (50..100%): serve rigenerare con --tempo. */
-export function velocitaPerBpm(prova, bpm) {
+ *  { pct, fuori }: `fuori` = il tempo voluto e' oltre quello che lo slider puo' dare (50..`max`%, 100 di default; 150 nelle
+ *  anteprime a soli strumenti): serve rigenerare con --tempo. */
+export function velocitaPerBpm(prova, bpm, max = 100) {
   if (!Number.isFinite(prova) || prova <= 0 || !Number.isFinite(bpm) || bpm <= 0) return null;
   const grezza = (bpm / prova) * 100;
-  const pct = Math.min(100, Math.max(50, Math.round(grezza / 5) * 5));
-  return { pct, fuori: grezza > 100.01 || grezza < 49.99 };
+  const pct = Math.min(max, Math.max(50, Math.round(grezza / 5) * 5));
+  return { pct, fuori: grezza > max + 0.01 || grezza < 49.99 };
 }
 
 /** Indice (in sync.battute) della battuta col numero `numero` (testo, come lo scrivono le segnalazioni); -1 se non c'e'. */

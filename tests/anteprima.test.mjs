@@ -21,6 +21,11 @@ test("velocitaPerBpm: passi di 5, segnala quando serve rigenerare", () => {
   assert.deepEqual(velocitaPerBpm(80, 30), { pct: 50, fuori: true });
   assert.deepEqual(velocitaPerBpm(72, 90), { pct: 100, fuori: true });
   assert.equal(velocitaPerBpm(72, "x"), null);
+  // anteprima a soli strumenti: lo slider arriva al 150%
+  assert.deepEqual(velocitaPerBpm(80, 100, 150), { pct: 125, fuori: false });
+  assert.deepEqual(velocitaPerBpm(80, 120, 150), { pct: 150, fuori: false });
+  assert.deepEqual(velocitaPerBpm(80, 130, 150), { pct: 150, fuori: true });
+  assert.deepEqual(velocitaPerBpm(80, 40, 150), { pct: 50, fuori: false });
 });
 
 test("indiceBattuta: il numero e' un testo, anche con spazi; -1 se manca", () => {

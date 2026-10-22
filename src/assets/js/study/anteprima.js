@@ -34,7 +34,7 @@ function sezione(titolo, ...contenuto) {
   return h("section", { class: "anteprima__sez" }, h("h3", {}, titolo), ...contenuto);
 }
 
-export async function creaAnteprima({ url, sync, vai, speed }) {
+export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio = false }) {
   const corpo = document.querySelector("[data-anteprima-body]");
   if (!corpo) return null;
   let dossier;
@@ -47,6 +47,10 @@ export async function creaAnteprima({ url, sync, vai, speed }) {
     return null;
   }
   const t = dossier.tempo ?? {};
+  // soli strumenti: nessun allungamento audio, quindi si puo' anche andare piu' veloci del tempo di prova (fino al 150%)
+  const massimo = senzaAudio ? 150 : 100;
+  if (senzaAudio && engine) engine.maxRate = 1.5;
+  if (senzaAudio && speed) speed.max = String(massimo);
   const segnate = {};
   const stato = h("p", { class: "anteprima__stato", role: "status", "aria-live": "polite" });
   const live = h("p", { class: "anteprima__live" });
@@ -67,11 +71,11 @@ export async function creaAnteprima({ url, sync, vai, speed }) {
 
   const provaTempo = () => {
     const bpm = Number(String(tempoCampo.value).replace(",", "."));
-    const v = velocitaPerBpm(t.prova, bpm);
+    const v = velocitaPerBpm(t.prova, bpm, massimo);
     if (!v) { msgTempo.textContent = "Scrivi un numero di BPM."; return; }
     if (speed) { speed.value = String(v.pct); speed.dispatchEvent(new Event("input", { bubbles: true })); }
     msgTempo.textContent = v.fuori
-      ? `Lo slider va dal 50% al 100% del tempo di prova (${t.prova}): per ${bpm} BPM rigenera l'anteprima con --tempo ${bpm}. Ora è al ${v.pct}%.`
+      ? `Lo slider va dal 50% al ${massimo}% del tempo di prova (${t.prova}): per ${bpm} BPM rigenera l'anteprima con --tempo ${bpm}. Ora è al ${v.pct}%.`
       : `Velocità impostata al ${v.pct}%.`;
     aggiorna();
   };
