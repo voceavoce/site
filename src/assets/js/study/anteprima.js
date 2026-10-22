@@ -118,6 +118,8 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
   corpo.replaceChildren(
     h("p", {}, h("strong", {}, dossier.brano?.titolo ?? "?"), ` · rank ${dossier.brano?.rank ?? "?"} · ${t.battute} battute, metro ${t.metro} · tempo di prova ${t.prova ?? "—"} (contratto ${t.contratto ?? "—"}, ${t.origine ?? "senza origine"}) · ${Math.floor(t.durata_prova_sec / 60)}:${String(Math.round(t.durata_prova_sec % 60)).padStart(2, "0")}`),
     sezione("Tempo", live, tabella,
+      h("label", { class: "sound-pick__opt" }, h("input", { type: "checkbox", onchange: (e) => { if (engine) { engine.diagnostico = e.target.checked; if (engine.synth) engine.synth.diagnostico = e.target.checked; } } }),
+        " Suono secco di prova (solo per sentire i tempi; ferma e riparti dopo averlo cambiato)"),
       h("div", { class: "field" }, h("label", { for: "ant-tempo" }, "Tempo che vuoi provare o decidere (BPM)"), tempoCampo),
       h("button", { type: "button", class: "tool tool--text", onclick: provaTempo }, "Prova questo tempo"), msgTempo),
     sezione("Sezioni proposte", sezioni),

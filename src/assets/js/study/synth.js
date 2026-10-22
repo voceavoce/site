@@ -30,6 +30,8 @@ export class Synth {
     /** Stacco (s) alla fine delle note a suono NON tenuto (pianoforte): la nota si spegne `stacco` secondi prima della successiva, con un
      *  rilascio breve, cosi' il nuovo attacco esce da un suono pulito (utile a velocita' molto basse, dove le note si accavallano). 0 = come prima. */
     this.stacco = 0;
+    /** Diagnostica: tutte le note con un oscillatore a pizzico (attacco di 2 ms), senza campioni, per sentire SOLO i tempi di partenza. */
+    this.diagnostico = false;
   }
 
   setParti(parti, duration) { this.tutte = parti; this.parti = parti; this.duration = duration; }
@@ -79,7 +81,31 @@ export class Synth {
     for (const ev of r.events) this.#voce(ev);
   }
 
+  #voceSecca(ev) {
+    const out = this.uscite[ev.parte];
+    if (!out) return;
+    const ctx = this.ctx;
+    const t0 = Math.max(ctx.currentTime, ev.ctxStart);
+    const fine = t0 + Math.min(0.5, Math.max(0.1, ev.ctxEnd - t0));
+    const osc = ctx.createOscillator();
+    osc.type = "triangle";
+    osc.frequency.value = 440 * Math.pow(2, (ev.midi - 69) / 12);
+    const g = ctx.createGain();
+    const level = 0.5 * guadagnoVelocita(ev.vel);
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(level, t0 + 0.002);
+    g.gain.exponentialRampToValueAtTime(0.001, fine);
+    osc.connect(g);
+    g.connect(out);
+    osc.start(t0);
+    osc.stop(fine + 0.02);
+    const v = { src: osc, g, level, rel: 0.05, ctxStart: ev.ctxStart, ctxEnd: fine, scoreEnd: ev.start + ev.dur };
+    this.attive.add(v);
+    osc.onended = () => { this.attive.delete(v); try { g.disconnect(); } catch { /* gia' scollegato */ } };
+  }
+
   #voce(ev) {
+    if (this.diagnostico) { this.#voceSecca(ev); return; }
     const id = this.strum.get(ev.parte);
     const camp = id && this.campioni.get(id);
     const out = this.uscite[ev.parte];
