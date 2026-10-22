@@ -1,7 +1,7 @@
 // Sorgente "strumenti" del motore: suona le note di note.json con i campioni di strumenti.js.
 // Scheduler con anticipo: ogni tick programma sul clock di Web Audio (AudioContext.currentTime) le note che cadono
 // entro l'orizzonte; la logica del tempo e' in schedule.js (pura, testata). Le note non partono mai da setTimeout.
-import { begin, advance, campioneVicino, guadagnoVelocita } from "./schedule.js";
+import { begin, advance, campioneVicino, guadagnoVelocita, durataMassimaCampione } from "./schedule.js";
 
 const TICK_MS = 50;
 const HORIZON = 0.4; // s di anticipo con la pagina visibile
@@ -155,8 +155,10 @@ export class Synth {
       else t0 += -delta / rate; // salita rapida: si ritarda la nota (la durata del campione cambia col passo `rate`)
     }
     const stacca = !def.loop && this.stacco > 0;
-    const tEnd = Math.max(t0 + 0.02, ev.ctxEnd - (stacca ? this.stacco : 0));
     const rel = def.loop ? REL_TENUTO : (stacca ? Math.min(REL_PIANO, 0.12) : REL_PIANO);
+    // un campione non ciclico non puo' suonare oltre il suo slot (si sentirebbe la nota successiva del file): si chiude in tempo
+    const limite = def.loop ? Infinity : t0 + durataMassimaCampione(def, rate);
+    const tEnd = Math.max(t0 + 0.02, Math.min(ev.ctxEnd - (stacca ? this.stacco : 0), limite - rel));
     const src = ctx.createBufferSource();
     src.buffer = buffer;
     src.playbackRate.value = rate;
@@ -175,8 +177,8 @@ export class Synth {
     src.connect(g);
     g.connect(out);
     src.start(t0, base + def.pad + extra);
-    src.stop(tEnd + rel + 0.02);
-    const v = { src, g, level, rel, ctxStart: ev.ctxStart, ctxEnd: tEnd, scoreEnd: ev.start + ev.dur };
+    src.stop(Math.min(tEnd + rel + 0.02, limite));
+    const v = { src, g, level, rel, limite, ctxStart: ev.ctxStart, ctxEnd: tEnd, scoreEnd: ev.start + ev.dur };
     this.attive.add(v);
     src.onended = () => { this.attive.delete(v); try { g.disconnect(); } catch { /* gia' scollegato */ } };
   }
@@ -198,13 +200,13 @@ export class Synth {
   // Una nota in corso: la sua fine nel contesto dipende dalla velocita' nuova.
   #riallinea(v, now, pos, rate, loop) {
     const fineScore = loop ? Math.min(v.scoreEnd, loop.end) : v.scoreEnd;
-    const fine = Math.max(now + 0.02, now + (fineScore - pos) / rate);
+    const fine = Math.max(now + 0.02, Math.min(now + (fineScore - pos) / rate, (v.limite ?? Infinity) - v.rel));
     try {
       v.g.gain.cancelScheduledValues(now);
       v.g.gain.setValueAtTime(v.g.gain.value, now);
       v.g.gain.setValueAtTime(v.level, fine);
       v.g.gain.linearRampToValueAtTime(0, fine + v.rel);
-      v.src.stop(fine + v.rel + 0.02);
+      v.src.stop(Math.min(fine + v.rel + 0.02, v.limite ?? Infinity));
     } catch { /* gia' fermata */ }
     v.ctxEnd = fine;
   }

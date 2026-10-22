@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { guadagnoVelocita, VEL_PREDEFINITA, firstAtOrAfter, inRange, soundingAt, begin, advance, campioneVicino } from "../src/assets/js/study/schedule.js";
+import { guadagnoVelocita, VEL_PREDEFINITA, firstAtOrAfter, inRange, soundingAt, begin, advance, campioneVicino, durataMassimaCampione } from "../src/assets/js/study/schedule.js";
 
 const notes = [[0, 1000, 60], [1000, 1000, 62], [2000, 2000, 64], [4000, 500, 65]];
 const parti = [{ chiave: "soprano", notes }];
@@ -78,6 +78,15 @@ test("advance: loop con nota che attraversa l'inizio del passaggio", () => {
 test("advance: fine del brano, nessuna nota oltre", () => {
   const r = advance(parti, { scoreCursor: 3, ctxCursor: 0 }, 50, 1, null, 4.6);
   assert.deepEqual(r.events.map((e) => e.midi), [65]);
+});
+
+test("durataMassimaCampione: un campione non ciclico non esce dal suo slot (altrimenti si sente la nota dopo)", () => {
+  const def = { slot: 3.75, pad: 0.1 };
+  assert.ok(Math.abs(durataMassimaCampione(def, 1) - 3.63) < 1e-9);
+  assert.ok(Math.abs(durataMassimaCampione(def, 2) - 1.815) < 1e-9); // intonato un'ottava sopra: finisce prima
+  assert.ok(durataMassimaCampione(def, 0.5) > 7);
+  assert.ok(durataMassimaCampione({ slot: 0.01, pad: 0.1 }, 1) >= 0.05); // slot degenere: mai zero o negativo
+  assert.equal(durataMassimaCampione(def, 0), durataMassimaCampione(def, 1)); // velocita' non valida = 1
 });
 
 test("campioneVicino: campione piu' vicino e rapporto di velocita'", () => {
