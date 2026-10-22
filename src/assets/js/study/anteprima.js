@@ -110,6 +110,24 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
     : h("p", { class: "study__hint" }, "Nessuna segnalazione sulla partitura.");
   const avvisi = (dossier.anomalie?.avvisi ?? []).map((a) => h("p", { class: "study__hint" }, a));
 
+  // Voci da ascoltare: per trovare quale voce parte prima o dopo si ascoltano a coppie (spunta solo quelle che vuoi sentire)
+  const voci = h("div", { class: "anteprima__voci" });
+  const popolaVoci = () => {
+    const chiavi = engine ? [...engine.tracks.keys()] : [];
+    if (!chiavi.length || voci.childElementCount) return;
+    const applica = () => {
+      const g = {};
+      for (const c of voci.querySelectorAll("input")) g[c.dataset.chiave] = c.checked ? 1 : 0;
+      engine.setGains(g);
+    };
+    for (const k of chiavi) {
+      voci.append(h("label", { class: "sound-pick__opt" }, h("input", { type: "checkbox", checked: true, "data-chiave": k, onchange: applica }), ` ${k}`));
+    }
+  };
+  popolaVoci();
+  engine?.addEventListener?.("mode", popolaVoci);
+  setTimeout(popolaVoci, 1500);
+
   const opzioni = h("dl", { class: "anteprima__opz" }, righeOpzioni(dossier.opzioni).flatMap((r) => [h("dt", {}, r.chiave), h("dd", {}, r.valore)]));
   const sezioni = dossier.sezioni?.righe ? h("pre", { class: "anteprima__pre" }, dossier.sezioni.righe.join("\n")) : h("p", { class: "study__hint" }, dossier.sezioni?.errore ?? "Nessuna proposta di sezione.");
   const prompt = h("textarea", { id: "ant-prompt", rows: "6", readonly: true, "aria-label": "Testo da copiare per Gemini" });
@@ -124,6 +142,7 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
         " Suono secco di prova (solo per sentire i tempi; ferma e riparti dopo averlo cambiato)"),
       h("div", { class: "field" }, h("label", { for: "ant-tempo" }, "Tempo che vuoi provare o decidere (BPM)"), tempoCampo),
       h("button", { type: "button", class: "tool tool--text", onclick: provaTempo }, "Prova questo tempo"), msgTempo),
+    sezione("Voci da ascoltare", h("p", { class: "study__hint" }, "Spunta solo le voci che vuoi sentire (per esempio due alla volta) per capire quale parte prima o dopo."), voci),
     sezione("Sezioni proposte", sezioni),
     sezione("Scelte già nel contratto", opzioni),
     sezione("Segnalazioni sulla partitura",
