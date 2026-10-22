@@ -55,7 +55,7 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
   const passo = senzaAudio ? 0.1 : 5;
   if (senzaAudio && engine) { engine.maxRate = massimo / 100; engine.minRate = minimo / 100; }
   // prova (utente 2026-10-22: «a orecchio e' palese lo sfasamento»): il pianoforte si stacca prima della nota successiva
-  if (senzaAudio && engine) { engine.stacco = 0.15; if (engine.synth) engine.synth.stacco = 0.15; }
+  if (senzaAudio && engine) { engine.stacco = 0; engine.allinea = true; if (engine.synth) { engine.synth.stacco = 0; engine.synth.allinea = true; } }
   if (senzaAudio && speed) { speed.min = String(minimo); speed.max = String(massimo); speed.step = String(passo); }
   // questa pagina serve solo a decidere il tempo: il mixer qui non serve (resta nel player vero); il pannello Suono va in fondo (utente 2026-10-22)
   document.querySelectorAll("[data-mixer]").forEach((n) => { n.hidden = true; });
@@ -118,6 +118,8 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
   corpo.replaceChildren(
     h("p", {}, h("strong", {}, dossier.brano?.titolo ?? "?"), ` · rank ${dossier.brano?.rank ?? "?"} · ${t.battute} battute, metro ${t.metro} · tempo di prova ${t.prova ?? "—"} (contratto ${t.contratto ?? "—"}, ${t.origine ?? "senza origine"}) · ${Math.floor(t.durata_prova_sec / 60)}:${String(Math.round(t.durata_prova_sec % 60)).padStart(2, "0")}`),
     sezione("Tempo", live, tabella,
+      h("label", { class: "sound-pick__opt" }, h("input", { type: "checkbox", checked: true, onchange: (e) => { if (engine) { engine.allinea = e.target.checked; if (engine.synth) engine.synth.allinea = e.target.checked; } } }),
+        " Allinea gli attacchi del pianoforte (prova: ferma e riparti dopo averlo cambiato)"),
       h("label", { class: "sound-pick__opt" }, h("input", { type: "checkbox", onchange: (e) => { if (engine) { engine.diagnostico = e.target.checked; if (engine.synth) engine.synth.diagnostico = e.target.checked; } } }),
         " Suono secco di prova (solo per sentire i tempi; ferma e riparti dopo averlo cambiato)"),
       h("div", { class: "field" }, h("label", { for: "ant-tempo" }, "Tempo che vuoi provare o decidere (BPM)"), tempoCampo),

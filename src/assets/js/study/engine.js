@@ -60,6 +60,7 @@ export class StudyEngine extends EventTarget {
     // mode: "audio" (stem cantato) | "midi" (strumento: note.json + campioni), per traccia
     this.tracks = new Map();
     this.synth = null;
+    this.allinea = false; // allineamento degli attacchi del pianoforte (vedi Synth.allinea)
     this.diagnostico = false; // suono secco di prova (vedi Synth.diagnostico)
     this.stacco = 0; // s di stacco del pianoforte (vedi Synth.stacco); l'anteprima lo porta a 0,15
     this.bus = null;
@@ -150,6 +151,7 @@ export class StudyEngine extends EventTarget {
     this.synth = new Synth(this.ctx, campioni, Object.fromEntries([...this.tracks].map(([k, t]) => [k, t.gain])));
     this.synth.stacco = this.stacco;
     this.synth.diagnostico = this.diagnostico;
+    this.synth.allinea = this.allinea;
     this.synth.setParti(this.midiParti, this.duration);
     this.#filtraSynth();
     for (const [k, id] of Object.entries(scelte)) this.synth.setStrumento(k, id);

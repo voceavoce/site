@@ -11,6 +11,7 @@ const REL_TENUTO = 0.09; // rilascio (s) degli strumenti a suono tenuto
 const REL_PIANO = 0.3;
 const FADE_IN = 0.004;
 const STOP_REL = 0.025;
+const ATT_TARGET = 0.03; // s: tempo di salita comune a cui si portano i campioni quando `allinea` e' attivo
 
 export class Synth {
   /** `uscite`: chiave traccia -> GainNode della traccia (il mixer agisce li'). */
@@ -32,6 +33,10 @@ export class Synth {
     this.stacco = 0;
     /** Diagnostica: tutte le note con un oscillatore a pizzico (attacco di 2 ms), senza campioni, per sentire SOLO i tempi di partenza. */
     this.diagnostico = false;
+    /** Allinea gli attacchi degli strumenti a suono non tenuto: ogni campione ha un suo tempo di salita (misurato dal buffer: istante in cui
+     *  l'inviluppo liscio raggiunge il 90% del suo massimo iniziale); si porta tutto a ATT_TARGET anticipando (saltando l'inizio del
+     *  campione) o ritardando la nota. 0/false = come prima. */
+    this.allinea = false;
   }
 
   setParti(parti, duration) { this.tutte = parti; this.parti = parti; this.duration = duration; }
@@ -81,6 +86,34 @@ export class Synth {
     for (const ev of r.events) this.#voce(ev);
   }
 
+  // Tempo di salita (s, dopo il pad) di ogni campione di `camp`: si calcola una volta dal buffer decodificato.
+  #salite(camp) {
+    if (camp.salite) return camp.salite;
+    const { def, buffer } = camp;
+    const sr = buffer.sampleRate;
+    const x = buffer.getChannelData(0);
+    const w = Math.max(1, Math.round(0.001 * sr));
+    const n = Math.round(0.3 / 0.001);
+    const salite = [];
+    for (let i = 0; i < def.note.length; i++) {
+      const a = Math.round((i * def.slot + def.pad) * sr);
+      const env = new Float32Array(n);
+      for (let j = 0; j < n; j++) {
+        let s = 0;
+        for (let k = 0; k < w; k++) { const v = x[a + j * w + k] || 0; s += v * v; }
+        env[j] = Math.sqrt(s / w);
+      }
+      const sm = env.map((_, j) => { let s = 0, c = 0; for (let q = Math.max(0, j - 5); q <= Math.min(n - 1, j + 5); q++) { s += env[q]; c++; } return s / c; });
+      let pm = 0;
+      for (let j = 0; j < 200; j++) if (sm[j] > pm) pm = sm[j];
+      let j90 = 0;
+      while (j90 < n && sm[j90] < 0.9 * pm) j90++;
+      salite.push(j90 * 0.001);
+    }
+    camp.salite = salite;
+    return salite;
+  }
+
   #voceSecca(ev) {
     const out = this.uscite[ev.parte];
     if (!out) return;
@@ -114,7 +147,13 @@ export class Synth {
     const { indice, rate } = campioneVicino(def, ev.midi);
     const ctx = this.ctx;
     const now = ctx.currentTime;
-    const t0 = Math.max(now, ev.ctxStart);
+    let t0 = Math.max(now, ev.ctxStart);
+    let extra = 0;
+    if (this.allinea && !def.loop) {
+      const delta = this.#salite(camp)[indice] - ATT_TARGET;
+      if (delta > 0) extra = delta; // salita lenta: si salta l'inizio del campione
+      else t0 += -delta / rate; // salita rapida: si ritarda la nota (la durata del campione cambia col passo `rate`)
+    }
     const stacca = !def.loop && this.stacco > 0;
     const tEnd = Math.max(t0 + 0.02, ev.ctxEnd - (stacca ? this.stacco : 0));
     const rel = def.loop ? REL_TENUTO : (stacca ? Math.min(REL_PIANO, 0.12) : REL_PIANO);
@@ -135,7 +174,7 @@ export class Synth {
     g.gain.linearRampToValueAtTime(0, tEnd + rel);
     src.connect(g);
     g.connect(out);
-    src.start(t0, base + def.pad);
+    src.start(t0, base + def.pad + extra);
     src.stop(tEnd + rel + 0.02);
     const v = { src, g, level, rel, ctxStart: ev.ctxStart, ctxEnd: tEnd, scoreEnd: ev.start + ev.dur };
     this.attive.add(v);
