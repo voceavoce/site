@@ -40,24 +40,30 @@ test("anteprima: «Vai alla battuta» porta il player alla battuta; una battuta 
   await page.waitForFunction((t) => Math.abs(window.__study.engine.position() - t) < 0.2, t3, { timeout: 5_000 });
 });
 
-test("anteprima: il tempo si prova con lo slider; oltre il tempo di prova dice di rigenerare", async ({ page }) => {
+test("anteprima: il tempo si prova ESATTO con lo slider; oltre i limiti dice di rigenerare", async ({ page }) => {
   await apri(page);
   await page.fill("#ant-tempo", "64");
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
   await expect(page.locator("[data-speed]")).toHaveValue("80");
   await expect(page.locator(".anteprima__live")).toContainText("80% = 64 BPM");
   // soli strumenti: anche piu' veloci del tempo di prova (80 BPM = 100%): 100 BPM = 125%
-  await expect(page.locator("[data-speed]")).toHaveAttribute("max", "150");
+  await expect(page.locator("[data-speed]")).toHaveAttribute("max", "300");
   await page.fill("#ant-tempo", "100");
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
   await expect(page.locator("[data-speed]")).toHaveValue("125");
   await expect(page.locator(".anteprima__live")).toContainText("125% = 100 BPM");
   await page.waitForFunction(() => Math.abs(window.__study.engine.rate - 1.25) < 0.001);
-  // oltre il 150% dice di rigenerare
+  // qualunque tempo si prova ESATTO (lo slider va dal 25% al 300%, al decimo): 130 BPM = 162,5%
   await page.fill("#ant-tempo", "130");
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
-  await expect(page.locator("[data-speed]")).toHaveValue("150");
-  await expect(page.locator("[data-anteprima-body] .study__hint[aria-live]")).toContainText("--tempo 130");
+  await expect(page.locator("[data-speed]")).toHaveValue("162.5");
+  await page.waitForFunction(() => Math.abs(window.__study.engine.rate - 1.625) < 0.001);
+  await expect(page.locator("[data-anteprima-body] .study__hint[aria-live]")).toContainText("Suona a 130 BPM");
+  // oltre il 300% dice di rigenerare
+  await page.fill("#ant-tempo", "400");
+  await page.getByRole("button", { name: "Prova questo tempo" }).click();
+  await expect(page.locator("[data-speed]")).toHaveValue("300");
+  await expect(page.locator("[data-anteprima-body] .study__hint[aria-live]")).toContainText("--tempo 400");
   await page.fill("#ant-tempo", "abc");
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
   await expect(page.locator("[data-anteprima-body] .study__hint[aria-live]")).toContainText("numero");
@@ -92,8 +98,11 @@ test("anteprima: accessibilita' del pannello (axe, WCAG 2.2 AA)", async ({ page 
   expect(violazioni).toEqual([]);
 });
 
-test("anteprima: a 150% le note si suonano ancora tutte, e senza anteprima il tetto resta il 100%", async ({ page }) => {
+test("anteprima: il mixer non c'e' (resta nel player), e a 150% le note si suonano ancora tutte, e senza anteprima il tetto resta il 100%", async ({ page }) => {
   await apri(page);
+  await expect(page.locator("[data-mixer]")).toBeHidden();
+  // il pannello Suono sta DOPO l'anteprima, in fondo
+  expect(await page.evaluate(() => { const a = document.querySelector("[data-anteprima]"); const s = document.querySelector("[data-sound]"); return a.nextElementSibling === s; })).toBe(true);
   await page.fill("#ant-tempo", "120");
   await page.getByRole("button", { name: "Prova questo tempo" }).click();
   await page.waitForFunction(() => Math.abs(window.__study.engine.rate - 1.5) < 0.001);
@@ -102,7 +111,7 @@ test("anteprima: a 150% le note si suonano ancora tutte, e senza anteprima il te
   await page.click("[data-play]");
   // il player normale (brano di prova con stem) non cambia: il tetto e' 1
   const tetto = await page.evaluate(() => { const e = window.__study.engine; const prima = e.maxRate; e.setRate(1.5); return { prima, rate: e.rate }; });
-  expect(tetto.prima).toBe(1.5);                                // qui e' l'anteprima: tetto 1,5
+  expect(tetto.prima).toBe(3);                                  // qui e' l'anteprima: tetto 3
   await page.goto("/player/_prova/?debug");
   await page.waitForFunction(() => window.__study?.engine.tracks.size === 4, null, { timeout: 90_000 });
   const normale = await page.evaluate(() => { const e = window.__study.engine; e.setRate(1.5); return { maxRate: e.maxRate, rate: e.rate }; });

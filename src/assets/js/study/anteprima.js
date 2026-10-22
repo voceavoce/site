@@ -31,7 +31,8 @@ async function copia(testo, stato) {
 }
 
 function sezione(titolo, ...contenuto) {
-  return h("section", { class: "anteprima__sez" }, h("h3", {}, titolo), ...contenuto);
+  const lunga = titolo.startsWith("Segnalazioni") ? " anteprima__sez--lunga" : "";
+  return h("section", { class: `anteprima__sez${lunga}` }, h("h3", {}, titolo), ...contenuto);
 }
 
 export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio = false }) {
@@ -47,10 +48,18 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
     return null;
   }
   const t = dossier.tempo ?? {};
-  // soli strumenti: nessun allungamento audio, quindi si puo' anche andare piu' veloci del tempo di prova (fino al 150%)
-  const massimo = senzaAudio ? 150 : 100;
-  if (senzaAudio && engine) engine.maxRate = 1.5;
-  if (senzaAudio && speed) speed.max = String(massimo);
+  // soli strumenti: nessun allungamento audio, quindi lo slider copre da un quarto a tre volte il tempo di prova, al decimo di punto:
+  // qualunque BPM scritto nel campo si ascolta ESATTO, senza rigenerare l'anteprima (utente 2026-10-22).
+  const massimo = senzaAudio ? 300 : 100;
+  const minimo = senzaAudio ? 25 : 50;
+  const passo = senzaAudio ? 0.1 : 5;
+  if (senzaAudio && engine) { engine.maxRate = massimo / 100; engine.minRate = minimo / 100; }
+  if (senzaAudio && speed) { speed.min = String(minimo); speed.max = String(massimo); speed.step = String(passo); }
+  // questa pagina serve solo a decidere il tempo: il mixer qui non serve (resta nel player vero); il pannello Suono va in fondo (utente 2026-10-22)
+  document.querySelectorAll("[data-mixer]").forEach((n) => { n.hidden = true; });
+  const pannello = document.querySelector("[data-anteprima]");
+  const suono = document.querySelector("[data-sound]");
+  if (pannello && suono) { pannello.after(suono); suono.classList.add("anteprima__suono"); }
   const segnate = {};
   const stato = h("p", { class: "anteprima__stato", role: "status", "aria-live": "polite" });
   const live = h("p", { class: "anteprima__live" });
@@ -71,12 +80,12 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
 
   const provaTempo = () => {
     const bpm = Number(String(tempoCampo.value).replace(",", "."));
-    const v = velocitaPerBpm(t.prova, bpm, massimo);
+    const v = velocitaPerBpm(t.prova, bpm, massimo, minimo, passo);
     if (!v) { msgTempo.textContent = "Scrivi un numero di BPM."; return; }
     if (speed) { speed.value = String(v.pct); speed.dispatchEvent(new Event("input", { bubbles: true })); }
     msgTempo.textContent = v.fuori
-      ? `Lo slider va dal 50% al ${massimo}% del tempo di prova (${t.prova}): per ${bpm} BPM rigenera l'anteprima con --tempo ${bpm}. Ora è al ${v.pct}%.`
-      : `Velocità impostata al ${v.pct}%.`;
+      ? `Lo slider va dal ${minimo}% al ${massimo}% del tempo di prova (${t.prova}): per ${bpm} BPM rigenera l'anteprima con --tempo ${bpm}. Ora è al ${v.pct}%.`
+      : `Suona a ${bpm} BPM (${v.pct}% del tempo di prova ${t.prova}).`;
     aggiorna();
   };
 

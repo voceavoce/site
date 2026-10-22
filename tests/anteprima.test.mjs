@@ -28,6 +28,14 @@ test("velocitaPerBpm: passi di 5, segnala quando serve rigenerare", () => {
   assert.deepEqual(velocitaPerBpm(80, 40, 150), { pct: 50, fuori: false });
 });
 
+test("velocitaPerBpm: anteprima a soli strumenti, da 25% a 300%, al decimo di punto", () => {
+  assert.deepEqual(velocitaPerBpm(192, 176, 300, 25, 0.1), { pct: 91.7, fuori: false });
+  assert.deepEqual(velocitaPerBpm(192, 352, 300, 25, 0.1), { pct: 183.3, fuori: false });
+  assert.deepEqual(velocitaPerBpm(192, 60, 300, 25, 0.1), { pct: 31.3, fuori: false });
+  assert.deepEqual(velocitaPerBpm(192, 20, 300, 25, 0.1), { pct: 25, fuori: true });
+  assert.deepEqual(velocitaPerBpm(192, 700, 300, 25, 0.1), { pct: 300, fuori: true });
+});
+
 test("indiceBattuta: il numero e' un testo, anche con spazi; -1 se manca", () => {
   const sync = { battute: [{ numero: "1" }, { numero: "2" }, { numero: "13" }] };
   assert.equal(indiceBattuta(sync, "13"), 2);

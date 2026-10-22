@@ -192,6 +192,13 @@
 }
 
 /* Anteprima del brano (T-924, solo in sviluppo) */
+/* Il pannello occupa TUTTA la larghezza (entrambe le colonne di .study__side) e dispone le sezioni a colonne: non lungo e stretto (utente 2026-10-22). */
+.anteprima, .anteprima__suono { grid-column: 1 / -1; }
+.anteprima [data-anteprima-body] { columns: 24rem 3; column-gap: var(--space-5); }
+.anteprima [data-anteprima-body] > p:first-child { column-span: all; }
+.anteprima__sez { break-inside: avoid-column; margin-top: 0; margin-bottom: var(--space-4); }
+.anteprima__sez--lunga { break-inside: auto; }
+.anteprima__pre { max-height: 22rem; overflow: auto; }
 .anteprima__tag { font-size: 0.75rem; font-weight: 600; padding: 0.1rem 0.5rem; border: 1px solid var(--border); border-radius: 999px; vertical-align: middle; }
 .anteprima__sez { margin-top: var(--space-4); }
 .anteprima__sez h3 { margin: 0 0 var(--space-2); font-size: 1rem; }
