@@ -1,5 +1,13 @@
 # State — avanzamento e decisioni
 
+## Riepilogo 2026-10-22 (sera)
+
+- **`main` verde:** unite #29 (e2e anteprima: fine riga degli appunti su Windows) e #30 (note sobrie it/en/es/de/fr per Ave Maria di Elgar, Tallis, Tres morillas, Verbum caro di Victoria): `tests/note.test.mjs` torna verde. Suite e2e completa in locale: 431 test verdi (28,7 min). Unit test: 255.
+- **Esperimento `?stretch=voci` scartato** (PR #28 chiusa, branch `fix/player-qualita-rallentamento` tenuto solo come riferimento, non unire). Misura: sfasamento tra voci 15–23 ms a 0,75x e fino a 38 ms a 0,5x contro 0 del mix. La causa del rallentamento «sporco» resta il vibrato delle voci Synth V: la prova utile e' con nuovi bounce a vibrato ridotto o nullo (R4, AIVideoCreator T-911), da fare prima di decidere altro. Lezione: leggere `state.md`/`task.md` di `main` aggiornato, non quelli del branch, prima di riprendere un branch vecchio.
+- **Pulizia fatta (R8):** worktree `../site-assets` rimosso, 21 branch locali gia' uniti cancellati, server 8080/8787 fermi. Restano: `fix/player-campioni-oltre-slot` (PR #31 aperta), `feat/anteprima-prova-tempo-esatto` (worktree AIVideoCreator), `feat/c3-de-fr` (1 commit solo docs), `fix/player-qualita-rallentamento` (scartato).
+- **Da fare dall'utente:** M9 (ascolto modalita' Strumenti: Locus iste, Ave verum 475, un'aria), U4 (sincronia in cuffia e Bluetooth), R6 (rilettura de/fr, comprese le 4 note nuove), U6/P8 (corona singola, licenza voicebank), U1/U2 (pytest e `.env` di AIVideoCreator).
+- **Pipeline:** R4 (vibrato), A8 (primo export reale con slug), U3 (altri brani per il player, da 475), P24, R13/R14 (da collaudare sul caso Lutkin), R15.
+
 ## Anteprima del brano (T-922..T-928, avviata il 2026-10-21): pagina usa e getta per vedere e sentire la parte PRIMA di fissare tempo e opzioni
 
 - **Idea dell'utente:** nello STAGE 2 di `/voceavoce-pianifica-lotto` (tempo, sezioni, opzioni) mostrare la partitura che scorre col cursore e suonata con gli strumenti, con le opzioni dei classificatori, le segnalazioni sulla partitura e il testo da copiare per Gemini; ogni difetto visto diventa una guardia in `anomalie_spartito`. Piano completo: `docs/anteprima-brano.md` nel repo AIVideoCreator.
