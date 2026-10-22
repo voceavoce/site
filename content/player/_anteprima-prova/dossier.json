@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "brano": {
+  "rank": "001",
+  "slug": "_anteprima-prova",
+  "titolo": "Prova (anteprima)",
+  "compositore": "Un Autore",
+  "linea": "coro"
+ },
+ "tempo": {
+  "prova": 80.0,
+  "contratto": 72.0,
+  "origine": "confermato-utente",
+  "metro": "4/4",
+  "battute": 6,
+  "quarti": 24.0,
+  "durata_prova_sec": 18.0,
+  "tabella": [
+   {
+    "bpm": 56,
+    "durata_sec": 25.7
+   },
+   {
+    "bpm": 64,
+    "durata_sec": 22.5
+   },
+   {
+    "bpm": 72,
+    "durata_sec": 20.0
+   },
+   {
+    "bpm": 80,
+    "durata_sec": 18.0
+   },
+   {
+    "bpm": 88,
+    "durata_sec": 16.4
+   },
+   {
+    "bpm": 100,
+    "durata_sec": 14.4
+   }
+  ]
+ },
+ "sezioni": {
+  "righe": [
+   "== 001 · Prova · Un Autore [coro] — tempo PROPOSTO 80 (contratto: 72)",
+   "Lettura ritmica: non consigliata (punteggio 0,0)",
+   "Sezione lenta: TOGLIERLA (lentezza 3,5)"
+  ]
+ },
+ "opzioni": {
+  "title": "Prova",
+  "voicing": [
+   "S",
+   "A",
+   "T",
+   "B"
+  ],
+  "tempo_bpm": 72,
+  "tempo_source": "confermato-utente"
+ },
+ "voci": [
+  {
+   "chiave": "soprano",
+   "tipo": "voce"
+  },
+  {
+   "chiave": "alto",
+   "tipo": "voce"
+  },
+  {
+   "chiave": "tenore",
+   "tipo": "voce"
+  },
+  {
+   "chiave": "basso",
+   "tipo": "voce"
+  }
+ ],
+ "anomalie": {
+  "totale": 2,
+  "mostrate": [
+   {
+    "categoria": "raddoppio",
+    "gravita": "alta",
+    "parte": "basso",
+    "battuta": "3",
+    "descrizione": "basso e organo raddoppiati a distanza strana"
+   },
+   {
+    "categoria": "sillaba",
+    "gravita": "media",
+    "parte": "tenore",
+    "battuta": "99",
+    "descrizione": "battuta fuori dal brano (prova del pulsante spento)"
+   }
+  ],
+  "avvisi": [
+   "avviso di prova"
+  ]
+ },
+ "prompt_gemini": "Cerca una o due registrazioni autorevoli di «Prova» (Un Autore) e dimmi il tempo in BPM."
+}

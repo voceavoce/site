@@ -1,0 +1,22 @@
+{#- Modulo «Segnala un errore nello spartito»: c'e' solo se il Worker e' configurato (site.segnalaUrl). Logica in /assets/js/segnala.js -#}
+<dialog class="report-dialog" data-report-dialog data-endpoint="{{ site.segnalaUrl }}" data-email="{{ site.email }}" data-failure="{{ 'report.error' | tv(lang, { email: site.email }) }}" data-short="{{ 'report.short' | t(lang) }}" data-thanks="{{ 'report.thanks' | t(lang) }}" data-sending="{{ 'report.sending' | t(lang) }}" aria-labelledby="report-dlg-h">
+  <form class="report-form" data-report-form novalidate>
+    <h2 id="report-dlg-h">{{ 'report.title' | t(lang) }}</h2>
+    <p class="report-where"><span data-report-title></span><span data-report-bar hidden> · {{ 'report.bar' | t(lang) }} <strong data-report-bar-n></strong></span></p>
+    <div data-report-fields>
+      <label class="report-field"><span>{{ 'report.what' | t(lang) }}</span>
+        <textarea name="cosa" rows="5" maxlength="2000" required aria-describedby="report-what-hint"></textarea></label>
+      <p class="report-hint" id="report-what-hint">{{ 'report.whatHint' | t(lang) }}</p>
+      <label class="report-field"><span>{{ 'report.contact' | t(lang) }}</span>
+        <input type="email" name="contatto" maxlength="200" autocomplete="email" inputmode="email"></label>
+      <div class="report-trap" aria-hidden="true"><label>Sito <input type="text" name="sito" tabindex="-1" autocomplete="off"></label></div>
+      <p class="report-hint">{{ 'report.privacy' | t(lang) }}</p>
+    </div>
+    <p class="report-status" role="status" aria-live="polite" data-report-status></p>
+    <div class="report-actions">
+      <button type="submit" class="btn" data-report-send>{{ 'report.send' | t(lang) }}</button>
+      <button type="button" class="btn btn--ghost" data-report-cancel data-close="{{ 'report.close' | t(lang) }}">{{ 'report.cancel' | t(lang) }}</button>
+    </div>
+  </form>
+</dialog>
+<script type="module" src="/assets/js/segnala.js"></script>

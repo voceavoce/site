@@ -253,3 +253,82 @@ test("abbreviaParti: toglie le scritte lunghe anche con una sola parte", () => {
   const out = M.abbreviaParti(xml([{ nome: "S", battute: [PAROLE(LUNGA) + NOTA] }]), ["S"]);
   assert.ok(!out.includes("Translation"));
 });
+
+// --- nomi delle note (M12) -----------------------------------------------------------------------------------------
+const N = (step, ott, { alter, chord, tie, lyric, grace } = {}) =>
+  `<note>${grace ? "<grace/>" : ""}${chord ? "<chord/>" : ""}<pitch><step>${step}</step>${alter !== undefined ? `<alter>${alter}</alter>` : ""}<octave>${ott}</octave></pitch><duration>4</duration>${tie ? `<tie type="${tie}"/>` : ""}${lyric ? `<lyric number="1"><syllabic>single</syllabic><text>${lyric}</text></lyric>` : ""}</note>`;
+const PAUSA = "<note><rest/><duration>4</duration></note>";
+const nomi = (testo) => [...leggi(testo).querySelectorAll("lyric > text")].map((t) => t.textContent);
+const conSistema = (battute, sistema) => M.abbreviaParti(xml([{ nome: "Soprano", abbr: "S", battute }]), ["S"], { testo: sistema });
+
+test("nomi delle note: italiano con diesis e bemolle, anglosassone, do fisso", () => {
+  const b = [N("C", 4, { lyric: "Lo" }) + N("D", 4, { alter: 1 }) + N("E", 4, { alter: -1 }) + N("F", 4) + N("G", 4, { alter: 2 }) + N("A", 4) + N("B", 4, { alter: -2 })];
+  assert.deepEqual(nomi(conSistema(b, "do")), ["Do", "Re♯", "Mi♭", "Fa", "Sol♯♯", "La", "Si♭♭"]);
+  assert.deepEqual(nomi(conSistema(b, "abc")), ["C", "D♯", "E♭", "F", "G♯♯", "A", "B♭♭"]);
+});
+
+test("nomi delle note: toglie tutti i versi, un solo <lyric> single per nota", () => {
+  const verso2 = '<lyric number="2"><syllabic>begin</syllabic><text>ste</text></lyric>';
+  const b = [N("C", 4, { lyric: "Lo" }).replace("</note>", verso2 + "</note>") + N("D", 4, { lyric: "cus" })];
+  const out = conSistema(b, "do");
+  assert.deepEqual(nomi(out), ["Do", "Re"]);
+  assert.equal(conta(out, "lyric"), 2);
+  assert.ok(!out.includes("<syllabic>begin"));
+  assert.equal(conta(out, "syllabic"), 2);
+});
+
+test("nomi delle note: la nota legata non ripete il nome; pause e abbellimenti senza nome", () => {
+  const b = [N("E", 4, { tie: "start" }) + N("E", 4, { tie: "stop" }) + PAUSA + N("F", 4, { grace: true }) + N("G", 4)];
+  assert.deepEqual(nomi(conSistema(b, "do")), ["Mi", "Sol"]);
+});
+
+test("nomi delle note: le note di un accordo stanno sotto la prima", () => {
+  const b = [N("C", 4) + N("E", 4, { chord: true }) + N("G", 4, { chord: true }) + N("D", 4)];
+  assert.deepEqual(nomi(conSistema(b, "do")), ["Do/Mi/Sol", "Re"]);
+});
+
+test("nomi delle note: parole = identico a oggi; sistema sconosciuto o senza note = invariato", () => {
+  const b = [N("C", 4, { lyric: "Lo" })];
+  const orig = xml([{ nome: "Soprano", abbr: "S", battute: b }]);
+  assert.equal(M.abbreviaParti(orig, [], { testo: "parole" }), M.abbreviaParti(orig));
+  assert.deepEqual(nomi(M.abbreviaParti(orig, [], { testo: "parole" })), ["Lo"]);
+  assert.equal(M.abbreviaParti(orig, [], { testo: "klingon" }), orig);
+  const soloPause = xml([{ nome: "Soprano", abbr: "S", battute: [PAUSA] }]);
+  assert.equal(M.abbreviaParti(soloPause, [], { testo: "do" }), soloPause);
+});
+
+test("nomi delle note: XML non valido restituito com'e'", () => {
+  assert.equal(M.abbreviaParti("<non-xml", [], { testo: "do" }), "<non-xml");
+});
+
+test("nomi delle note: solo le voci cantate; senza testo si usano le prime N parti del manifest, mai l'accompagnamento", () => {
+  const voce = { nome: "Soprano", abbr: "S", battute: [N("C", 4, { lyric: "Lo" }) + N("D", 4)] };
+  const pianoforte = { nome: "Piano", abbr: "Pf", battute: [N("E", 3) + N("F", 3)] };
+  assert.deepEqual(nomi(M.abbreviaParti(xml([voce, pianoforte]), [], { testo: "do" })), ["Do", "Re"]);
+  // nessuna parte con testo: senza voci note niente nomi (XML invariato), con le voci del manifest solo le prime
+  const senza = { ...voce, battute: [N("C", 4) + N("D", 4)] };
+  const doc = xml([senza, pianoforte]);
+  assert.equal(M.abbreviaParti(doc, [], { testo: "do" }), doc);
+  assert.deepEqual(nomi(M.abbreviaParti(doc, ["S"], { testo: "do" })), ["Do", "Re"]);
+});
+
+test("nomi delle note: piu' voci sullo stesso rigo scrivono su righe diverse", () => {
+  const v = (voce, step) => N(step, 4).replace("</pitch>", "</pitch>").replace("<duration>4</duration>", `<duration>4</duration><voice>${voce}</voice>`);
+  const b = [N("C", 4, { lyric: "x" }).replace("<duration>4</duration>", "<duration>4</duration><voice>1</voice>") + v(2, "E")];
+  const doc = leggi(M.abbreviaParti(xml([{ nome: "Soprano", abbr: "S", battute: b }]), [], { testo: "do" }));
+  assert.deepEqual([...doc.querySelectorAll("lyric")].map((l) => `${l.getAttribute("number")}:${l.querySelector("text").textContent}`), ["1:Do", "2:Mi"]);
+});
+
+test("nomi delle note: le semicrome in fila si alternano fra la riga 1 e la 2; la nota lenta riparte dalla 1", () => {
+  const nota = (step, dur) => `<note><pitch><step>${step}</step><octave>4</octave></pitch><duration>${dur}</duration></note>`;
+  const b = ["<attributes><divisions>4</divisions></attributes>" + nota("C", 1) + nota("D", 1) + nota("E", 1) + nota("F", 1) + nota("G", 4) + nota("A", 1) + nota("B", 1)];
+  const doc = leggi(M.abbreviaParti(xml([{ nome: "Soprano", abbr: "S", battute: [b[0].replace(nota("C", 1), nota("C", 1).replace("</note>", '<lyric number="1"><text>a</text></lyric></note>'))] }]), [], { testo: "do" }));
+  assert.deepEqual([...doc.querySelectorAll("lyric")].map((l) => l.getAttribute("number")), ["1", "2", "1", "2", "1", "1", "2"]);
+});
+
+test("nomi delle note: le crome in fila e i valori piu' lunghi restano sempre sulla riga 1 (niente sfalsamento senza coloriture)", () => {
+  const nota = (step, dur) => `<note><pitch><step>${step}</step><octave>4</octave></pitch><duration>${dur}</duration></note>`;
+  const b = ["<attributes><divisions>4</divisions></attributes>" + nota("C", 2).replace("</note>", '<lyric number="1"><text>a</text></lyric></note>') + nota("D", 2) + nota("E", 2) + nota("F", 2) + nota("G", 4)];
+  const doc = leggi(M.abbreviaParti(xml([{ nome: "Soprano", abbr: "S", battute: b }]), [], { testo: "do" }));
+  assert.deepEqual([...doc.querySelectorAll("lyric")].map((l) => l.getAttribute("number")), ["1", "1", "1", "1", "1"]);
+});

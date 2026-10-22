@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "slug": "caro-mio-ben-giordani",
+  "titolo": "Caro mio ben",
+  "compositore": {
+    "id": "tommaso-giordani",
+    "nome": "Tommaso Giordani"
+  },
+  "linea": "aria",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "alta",
+      "tipo": "voce"
+    },
+    {
+      "voce": "S",
+      "chiave": "bassa",
+      "tipo": "voce"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 170.2,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

@@ -9,6 +9,7 @@ import { buildSitemap } from "./src/_lib/sitemap.js";
 import { versionaAsset } from "./src/_lib/asset-version.js";
 import { writeFileSync, mkdirSync } from "node:fs";
 import { PLAYER_DIR } from "./src/_lib/studio.js";
+import { mailSegnalazione } from "./src/assets/js/study/segnalazione.js";
 import studio from "./src/_data/studio.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -41,6 +42,8 @@ export default function (eleventyConfig) {
   // MusicXML del player: /player-data/<slug>/score.musicxml (i dati di prova "_" restano fuori in produzione)
   for (const it of Object.values(studio.items)) {
     eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.scoreFile)]: `player-data/${it.slug}/score.musicxml` });
+    if (it.noteFile) eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.noteFile)]: `player-data/${it.slug}/note.json` });
+    if (it.dossierFile) eleventyConfig.addPassthroughCopy({ [path.join(PLAYER_DIR, it.slug, it.dossierFile)]: `player-data/${it.slug}/dossier.json` });
   }
   eleventyConfig.addWatchTarget("src/_data/i18n/");
 
@@ -49,6 +52,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("jsonSafe", (v) => JSON.stringify(v).replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029"));
   eleventyConfig.addFilter("t", (key, lang) => fmt.t(String(key), lang));
   eleventyConfig.addFilter("routeUrl", routeUrl);
+  eleventyConfig.addFilter("reportMail", (titolo, pagina, lingua) => mailSegnalazione({ email: site.email, titolo, pagina, lingua }));
   eleventyConfig.addFilter("altUrls", altUrls);
   eleventyConfig.addFilter("absUrl", (p) => new URL(p, site.url).href);
   eleventyConfig.addFilter("tv", (key, lang, vars) => fmt.t(key, lang, vars)); // t con segnaposto {x}

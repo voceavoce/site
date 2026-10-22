@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "slug": "ave-verum-corpus-in-e-flat-major-saint-saens",
+  "titolo": "Ave verum corpus in E-flat major",
+  "compositore": {
+    "id": "camille-saint-saens",
+    "nome": "Camille Saint-Saëns"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce"
+    },
+    {
+      "voce": "ACC",
+      "chiave": "accompagnamento",
+      "tipo": "accompagnamento"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 188.2,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

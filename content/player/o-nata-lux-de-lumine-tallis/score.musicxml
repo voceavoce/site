@@ -20,19 +20,44 @@
   </defaults>
   <part-list>
     <score-part id="P49fe0eca6856dc16b657a5008c6bef78">
-      <part-name>Voice</part-name>
+      <part-name>S1</part-name>
+      <part-abbreviation>S1</part-abbreviation>
+      <score-instrument id="Ia444961be8f3f661fab6f2730290b456">
+        <instrument-name>S1</instrument-name>
+        <instrument-abbreviation>S1</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pa96606006bbbadf9896d89996450704f">
-      <part-name>Voice</part-name>
+      <part-name>S2</part-name>
+      <part-abbreviation>S2</part-abbreviation>
+      <score-instrument id="I54e0bc9c85f87b630a9fc517b6c4a78a">
+        <instrument-name>S2</instrument-name>
+        <instrument-abbreviation>S2</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pb4c315125fd7eceba3438f6112a15839">
-      <part-name>Countertenor</part-name>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I2a576c31759910bb02b356281d25764c">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="Pc249a3fda45bbf2076777ec7748a07b7">
-      <part-name>Tenor</part-name>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Icffc72a8da380970c0ef7b652cd3e882">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P6c88e6d964b9b5fd37cf9e4db5d6bbd2">
-      <part-name>Bass</part-name>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I9ccab3d05aa7b00eb687215312f3ffd5">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -3600,8 +3625,9 @@
           <beat-type>2</beat-type>
         </time>
         <clef>
-          <sign>F</sign>
-          <line>4</line>
+          <sign>G</sign>
+          <line>2</line>
+          <clef-octave-change>-1</clef-octave-change>
         </clef>
       </attributes>
       <note>

@@ -124,8 +124,8 @@ L'italiano resta alla radice, così l'URL di oggi non perde valore; `/en/` e `/e
 3. **Player incorporato** (iframe `youtube-nocookie.com`, `loading="lazy"`; decisione utente 2026-10-16, prima era una facade). Il selettore voce si genera dalle chiavi reali (S/A/T/B, ma anche T1/T2/B1/B2, oppure "Voce media" per i metodi). Le voci non ancora uscite compaiono come "in arrivo il …". Sotto, i capitoli cliccabili.
 4. Note sul brano, da `curated` o da `nota_descrizione`.
 5. **Testo e traduzioni**, affiancati verso per verso; su mobile diventano schede. Ogni blocco ha il suo `lang`; ogni traduzione riporta autore e licenza.
-6. **Spartito:** prima le fonti di pubblico dominio (verifiche IMSLP/CPDL, link a `voceavoce/scores` quando c'è), poi le eventuali affiliazioni.
-7. Spazio pubblicitario riservato (spento) · brani correlati · "Hai sentito un errore?" che porta alle issue di `voceavoce/scores`.
+6. **Spartito:** prima le fonti di pubblico dominio (verifiche IMSLP/CPDL, nessun repository `scores`: le correzioni restano nel sito), poi le eventuali affiliazioni.
+7. Spazio pubblicitario riservato (spento) · brani correlati · "Hai sentito un errore?" che apre un'email già scritta a info@ (anche dal player, con la battuta; nella lingua del sito; chi visita è un corista, niente GitHub).
 
 **Contenuti sottili:** per i brani programmati senza alcun video pubblico la scheda viene generata con `noindex`, e diventa indicizzabile alla prima uscita. Così Google non vede pagine vuote.
 
@@ -216,6 +216,26 @@ Dopo la prima messa online con tre brani di prova, l'interfaccia della partitura
 - **Un worktree per il codice di AIVideoCreator**, merge a render fermi.
 
 Prossimi passi: vedi `task.md`, sezione P (P20–P27).
+
+## Contenuti in 5 lingue, CI e player (2026-10-18 sera)
+
+- **Lingue:** it/en/es/de/fr con un solo modello di rotte (`routes.js`) e chiavi i18n identiche (test `tests/lingue.test.mjs`); cambio lingua con menu a tendina per il mobile. Traduzioni e note scritte dall'IA e dichiarate come tali (pagina Trasparenza, etichetta sulle note, «non rivista» sui testi).
+- **Traduzioni dei testi comuni:** file `content/curated/_comuni/<comune>.yaml` con frasi `{la, alt, it, en, es, de, fr}`; `comuni.js` abbina il testo cantato del brano alle frasi (parole normalizzate, copertura minima 70%); i `curated/<slug>.yaml` per brano prevalgono.
+- **Guardie automatiche:** note in 5 lingue per ogni brano pubblicato, anti-segreti sui file tracciati, chiavi i18n e segnaposto coerenti.
+- **CI:** controlli rapidi in un job, e2e in 3 job paralleli (`--shard`).
+- **Player:** pannello di caricamento con avanzamento, partitura a schermo intero (automatica su telefono), «Tutte le voci pari». Aperto: qualità del rallentamento (R4 in `task.md`).
+
+## Segnalazioni, partiture del video, player anticipato (2026-10-18 notte)
+
+- **Una sola partitura:** il sito pubblica la partitura come la vede il video (`score.video.musicxml`, scritta dagli assets; chiavi corali, sigle, dinamiche sopra), non più lo score di lavoro. Il sito può adattarla, ma parte da quella. Non si pubblica su un repo `scores` separato: le correzioni restano in pipeline e sito.
+- **Segnalare un errore (coristi, non programmatori):** link nel player e nella scheda → modulo nel sito → Worker Cloudflare gratuito → issue nel repo privato `voceavoce/segnalazioni` (notifica GitHub all'utente). Se il Worker non c'è o fallisce, resta l'email già scritta. Nessun cookie; privacy aggiornata nelle 5 lingue.
+- **Dalla segnalazione alla correzione (flusso):** issue → verifica su edizione autorevole (gate T-796) → correzione come *repair* nella pipeline (mai nel file del sito) → score rigenerato → PR → l'utente risponde e chiude. Una skill `/voceavoce-segnalazioni` (R14) guiderà i passi, dopo il primo caso fatto a mano (Lutkin, R13).
+- **Player anticipato:** la pagina `/player/<slug>/` esiste per ogni brano con dati pronti ma resta nascosta (noindex, nessun link) fino all'uscita; serve al link «Studia la tua parte nel player» nelle descrizioni YouTube (T-912) dal primo minuto. YouTube resta il primo passo (scoperta), il player lo strumento per lavorare sui passaggi.
+- **Rallentamento:** il «suono sporco» sotto il 100% è il vibrato delle voci Synth V rallentato dal time-stretching; must have (R4): provare ad attenuarlo nei rendering (T-911).
+
+## Player con strumenti MIDI e fine dell'MP3 (2026-10-20)
+
+Idea dell'utente, analizzata e pianificata in [midi-player.md](midi-player.md): il player può suonare le note della partitura con strumenti scelti per voce (default pianoforte per le voci, organo per l'accompagnamento), sincronizzate al cursore; i tempi delle note nascono nella pipeline dallo stesso modello dei video (`note.json`, T-915), così corone, respiri e ritardando restano coerenti. Gli strumenti sostituiscono l'MP3 come fallback quando il browser non legge l'Opus; dopo la misura in produzione si elimina l'MP3 (-618 MB su R2). Fasi M0-M8 in [task.md](task.md); percorso principale 10-12 giorni, MP3 tolto solo dopo i dati di Cloudflare Web Analytics. Decisioni aperte: dove tenere i campioni (regola «audio mai in git»), licenza del soundfont, soglia di visitatori senza Opus.
 
 ## Ordine di esecuzione
 

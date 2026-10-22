@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Fehler gehört?",
     "reportP": "Ein falsches Vorzeichen, eine verrutschte Note, ein falsch geschriebener Vers: sag uns, wo.",
-    "reportLink": "Auf GitHub melden",
+    "reportLink": "Per E-Mail melden",
     "related": "Verwandte Stücke",
     "descr": {
       "base": "{title} – {composer}: Übevideo Stimme für Stimme.",
@@ -369,7 +369,49 @@
         "pickOn": "Auswahl in der Partitur aktiv: tippe den ersten und den letzten Takt.",
         "pickOff": "Auswahl in der Partitur aus: ein Tippen springt zum Takt.",
         "range": "Gewählte Passage: Takte {a} bis {b}."
-      }
-    }
+      },
+      "fsOn": "Partitur im Vollbild.",
+      "fsOff": "Vollbild geschlossen.",
+      "soundLoading": "Instrumente werden geladen…",
+      "soundInstrOn": "Sie hören Instrumente, nicht Gesang.",
+      "soundSungOn": "Sie hören die gesungenen Stimmen.",
+      "fallbackInstr": "Der gesungene Ton ist nicht verfügbar: Sie hören Instrumente.",
+      "errInstr": "Die Instrumente konnten nicht geladen werden.",
+      "soundSungOpt": "Gesungen (Aufnahme)",
+      "noAudioYet": "Der gesungene Ton für dieses Stück ist noch nicht verfügbar: Sie hören Instrumente."
+    },
+    "loaderTitle": "Die Stimmen werden vorbereitet…",
+    "loaderHint": "Beim ersten Öffnen kann es einige Sekunden dauern: Wir laden das Audio aller Stimmen herunter.",
+    "fullscreen": "Partitur im Vollbild",
+    "fullscreenClose": "Schließen",
+    "optFullscreenPlay": "Vollbild beim Drücken von Abspielen (Smartphones)",
+    "allVoices": "Alle Stimmen gleich laut",
+    "reportScore": "Fehler in der Partitur melden",
+    "sound": "Klang",
+    "soundHint": "Gesungen: die aufgenommenen Stimmen. Instrumente: die Noten der Partitur, von Instrumenten gespielt. Für jede Stimme können Sie ein Instrument oder den Gesang wählen, auch gemischt (zum Beispiel Ihre Stimme am Klavier und die anderen gesungen). Mit Instrumenten hören Sie die Tonhöhe klar und können ohne Artefakte langsamer spielen.",
+    "soundLegend": "Was Sie hören",
+    "soundSung": "Gesungen",
+    "soundInstr": "Instrumente",
+    "instrumentOf": "Klang: {voice}",
+    "scoreText": "Text der Partitur",
+    "scoreTextHint": "Statt des Textes steht unter jeder Note ihr Name: hilfreich zum Üben des Solfeggierens.",
+    "scoreTextWords": "Text",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
+  },
+  "report": {
+    "title": "Fehler in der Partitur melden",
+    "bar": "Takt",
+    "what": "Was ist falsch?",
+    "whatHint": "Zum Beispiel: „In Takt 7 hat der Tenor ein F, es müsste ein Fis sein“. Mehr ist nicht nötig.",
+    "contact": "Deine E-Mail (nur wenn du eine Antwort möchtest)",
+    "privacy": "Wir verwenden deinen Text nur, um die Partitur zu korrigieren und, falls du deine E-Mail angegeben hast, um dir zu antworten.",
+    "send": "Senden",
+    "sending": "Wird gesendet…",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "thanks": "Danke! Wir haben deine Meldung erhalten.",
+    "short": "Schreib bitte ein paar Worte dazu, was nicht stimmt.",
+    "error": "Das Senden hat nicht geklappt. Du kannst uns an {email} schreiben."
   }
 }

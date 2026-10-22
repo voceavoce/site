@@ -20,16 +20,28 @@
   </defaults>
   <part-list>
     <score-part id="P2a01d3483adc276aa2997b8ac0cb3bc5">
-      <part-name>Soprano</part-name>
+      <part-name>S</part-name>
       <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="I10bc231579d3ab4701eb8571831fc36b">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P9c9bf10daea701cc528f6eda55528580">
-      <part-name>Alto</part-name>
+      <part-name>A</part-name>
       <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="Ic79e7addb43f979a94daccffcdfcc7f2">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
+      </score-instrument>
     </score-part>
     <score-part id="P931d765c18fd1c7bee14e7ab0eedf16a">
-      <part-name>Basso</part-name>
+      <part-name>B</part-name>
       <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I169a78b97361f2f95450e5f169e31f62">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
+      </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
@@ -1218,10 +1230,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -2391,10 +2399,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -3564,10 +3568,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -4737,10 +4737,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -7195,10 +7191,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -8476,10 +8468,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -9757,10 +9745,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -11038,10 +11022,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -13568,10 +13548,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -14813,10 +14789,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -16058,10 +16030,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>
@@ -17303,10 +17271,6 @@
           <beats>6</beats>
           <beat-type>8</beat-type>
         </time>
-        <clef>
-          <sign>F</sign>
-          <line>4</line>
-        </clef>
       </attributes>
       <barline location="left">
         <bar-style>light-light</bar-style>

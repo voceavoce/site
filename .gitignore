@@ -4,6 +4,8 @@ _site/
 # gli audio non entrano MAI nel repo: stanno in VOCEAVOCE_AUDIO_DIR e si caricano su R2 a mano
 *.opus
 *.mp3
+# eccezione dichiarata: i campioni degli strumenti del player (GeneralUser GS, docs/midi-player.md), non sono stem
+!src/assets/strumenti/*.mp3
 *.wav
 *.flac
 *.ogg

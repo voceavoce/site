@@ -23,15 +23,19 @@ Per ogni brano indichiamo fonte ed edizione. Le trovi nella scheda del brano e n
 
 ## Spartiti corretti
 
-Quando correggiamo uno spartito, la versione corretta è pubblicata su GitHub, nel repository [voceavoce/scores](https://github.com/voceavoce/scores).
+Quando correggiamo uno spartito, aggiorniamo il player e la scheda del brano.
 
 ## Segnalare un errore
 
-Hai notato una nota o una parola sbagliata? Apri una [issue su GitHub](https://github.com/voceavoce/scores/issues) e indica:
+Hai notato una nota o una parola sbagliata? Nel player e nella scheda del brano trovi il link «Segnala un errore nello spartito»: apre un'email già scritta, con il brano e la battuta. Se preferisci, scrivi a info@voceavoce.com. Indica:
 
 - il brano e la voce;
-- il minuto del video in cui compare l'errore;
+- la battuta (o il minuto del video) in cui compare l'errore;
 - cosa dovrebbe esserci invece, con la fonte se la conosci.
+
+## Suoni degli strumenti
+
+Gli strumenti del player (pianoforte, organo, coro, voce, flauto, archi) usano campioni ricavati dal soundfont GeneralUser GS di S. Christian Collins, che ne consente l'uso libero anche nei programmi. Autore e licenza: [schristiancollins.com](http://www.schristiancollins.com). Il testo della licenza è spedito con i campioni.
 
 </article>
 </div>

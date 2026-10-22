@@ -26,6 +26,10 @@ El sitio no usa cookies ni estadísticas propias, y Voce a Voce no recoge datos 
 
 Las fichas de las obras incluyen el reproductor de YouTube en modo de privacidad mejorada, a través del dominio **youtube-nocookie.com**. Cuando la ficha se abre y el reproductor se carga, YouTube puede guardar datos en el navegador. Desde ese momento se aplican las normas de YouTube y de Google, que puedes consultar en la [política de privacidad de Google](https://policies.google.com/privacy).
 
+## Avisos de errores
+
+Si usas el formulario «Señalar un error en la partitura», el texto que escribes, la obra, la página y el compás llegan a un archivo privado en GitHub, accesible solo para quien cuida el sitio. El correo es opcional: si lo escribes, lo usamos solo para responderte. El formulario no usa cookies. Si prefieres, escríbenos a {{ site.email }}; para borrar un aviso, escríbenos también.
+
 ## Contacto
 
 Para preguntas sobre este aviso escribe a [{{ site.email }}](mailto:{{ site.email }}).

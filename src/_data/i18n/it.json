@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Hai sentito un errore?",
     "reportP": "Un'alterazione sbagliata, una nota fuori posto, un verso mal scritto: dicci dove.",
-    "reportLink": "Segnala su GitHub",
+    "reportLink": "Segnala per email",
     "related": "Brani correlati",
     "descr": {
       "base": "{title} – {composer}: video di studio voce per voce.",
@@ -369,7 +369,49 @@
         "pickOn": "Scelta sulla partitura attiva: tocca la prima e l'ultima battuta.",
         "pickOff": "Scelta sulla partitura spenta: un tocco porta alla battuta.",
         "range": "Passaggio scelto: battute da {a} a {b}."
-      }
-    }
+      },
+      "fsOn": "Partitura a schermo intero.",
+      "fsOff": "Schermo intero chiuso.",
+      "soundLoading": "Carico gli strumenti…",
+      "soundInstrOn": "Ascolti gli strumenti, non il canto.",
+      "soundSungOn": "Ascolti le voci cantate.",
+      "fallbackInstr": "L'audio cantato non è disponibile: stai ascoltando gli strumenti.",
+      "errInstr": "Non riesco a caricare gli strumenti.",
+      "soundSungOpt": "Cantato (voce registrata)",
+      "noAudioYet": "Per questo brano l'audio cantato non è ancora disponibile: ascolti gli strumenti."
+    },
+    "loaderTitle": "Sto preparando le voci…",
+    "loaderHint": "Alla prima apertura può volerci qualche secondo: scarichiamo l'audio di tutte le voci.",
+    "fullscreen": "Partitura a schermo intero",
+    "fullscreenClose": "Chiudi",
+    "optFullscreenPlay": "Schermo intero quando premo Riproduci (telefono)",
+    "allVoices": "Tutte le voci pari",
+    "reportScore": "Segnala un errore nello spartito",
+    "sound": "Suono",
+    "soundHint": "Cantato: le voci registrate. Strumenti: le note della partitura suonate da strumenti. Per ogni voce puoi scegliere uno strumento o il canto, anche mescolando (per esempio la tua voce al pianoforte e le altre cantate). Con gli strumenti puoi sentire bene l'intonazione e rallentare senza artefatti.",
+    "soundLegend": "Che cosa ascolti",
+    "soundSung": "Cantato",
+    "soundInstr": "Strumenti",
+    "instrumentOf": "Suono: {voice}",
+    "scoreText": "Testo dello spartito",
+    "scoreTextHint": "Al posto delle parole, sotto ogni nota compare il suo nome: utile per esercitarsi nel solfeggio cantato.",
+    "scoreTextWords": "Parole",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
+  },
+  "report": {
+    "title": "Segnala un errore nello spartito",
+    "bar": "battuta",
+    "what": "Cosa non va?",
+    "whatHint": "Per esempio: «alla battuta 7 il tenore ha un fa, dovrebbe essere un fa diesis». Non serve altro.",
+    "contact": "La tua email (solo se vuoi una risposta)",
+    "privacy": "Usiamo quello che scrivi solo per correggere lo spartito e, se hai lasciato l'email, per risponderti.",
+    "send": "Invia",
+    "sending": "Invio…",
+    "cancel": "Annulla",
+    "close": "Chiudi",
+    "thanks": "Grazie! Abbiamo ricevuto la segnalazione.",
+    "short": "Scrivi almeno qualche parola su cosa non va.",
+    "error": "Non siamo riusciti a inviarla. Puoi scriverci a {email}."
   }
 }

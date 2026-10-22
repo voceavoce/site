@@ -23,15 +23,19 @@ Para cada obra indicamos la fuente y la edición. Están en la ficha de la obra 
 
 ## Partituras corregidas
 
-Cuando corregimos una partitura, la versión corregida se publica en GitHub, en el repositorio [voceavoce/scores](https://github.com/voceavoce/scores).
+Cuando corregimos una partitura, actualizamos el reproductor y la ficha de la obra.
 
 ## Cómo señalar un error
 
-¿Has notado una nota o una palabra incorrecta? Abre una [issue en GitHub](https://github.com/voceavoce/scores/issues) e indica:
+¿Has notado una nota o una palabra incorrecta? En el reproductor y en la ficha de la obra encontrarás el enlace «Señalar un error en la partitura»: abre un correo ya redactado, con la obra y el compás. Si lo prefieres, escribe a info@voceavoce.com. Indica:
 
 - la obra y la voz;
-- el minuto del vídeo donde aparece el error;
+- el compás (o el minuto del vídeo) donde aparece el error;
 - qué debería ser en su lugar, con la fuente si la conoces.
+
+## Sonidos de los instrumentos
+
+Los instrumentos del reproductor (piano, órgano, coro, voz, flauta, cuerdas) usan muestras del soundfont GeneralUser GS de S. Christian Collins, cuya licencia permite el uso libre, también en programas. Autor y licencia: [schristiancollins.com](http://www.schristiancollins.com). El texto de la licencia se entrega con las muestras.
 
 </article>
 </div>

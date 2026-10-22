@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "il-bianco-e-dolce-cigno-arcadelt",
+  "titolo": "Il bianco e dolce cigno",
+  "compositore": {
+    "id": "jacques-arcadelt",
+    "nome": "Jacques Arcadelt"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S",
+      "chiave": "soprano",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 231.6,
+  "licenza": {
+    "spartito": "CC0",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

@@ -237,6 +237,19 @@
   .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
   .btn--ghost { background: transparent; color: var(--text); border-color: var(--border); }
   .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .report-dialog { margin: auto; width: min(32rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); }
+  .report-dialog::backdrop { background: rgb(0 0 0 / 0.55); }
+  .report-form { display: grid; gap: var(--space-3); }
+  .report-form h2 { margin: 0; }
+  .report-where { margin: 0; color: var(--muted); }
+  .report-field { display: grid; gap: var(--space-1); font-weight: 600; }
+  .report-field textarea, .report-field input { width: 100%; padding: var(--space-2) var(--space-3); border: 2px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); color: inherit; font: inherit; }
+  .report-field input { min-height: var(--tap); }
+  .report-hint { margin: 0; font-size: var(--step--1); color: var(--muted); }
+  .report-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .report-status { margin: 0; min-height: 1.5em; }
+  .report-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .report-actions .btn { min-height: var(--tap); }
 
   /* Motivo delle 4 barre: una evidenziata */
   .voices {

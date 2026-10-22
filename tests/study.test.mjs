@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { measureIndexAt, timeOfMeasure, endOfMeasure, loopBounds, indexOfScoreMeasure, computePosition, audiblePosition, measureLabels, formatClock } from "../src/assets/js/study/timeline.js";
 import { stretcherLatency, deviceLatency, totalLatency, STRETCH_LATENCY } from "../src/assets/js/study/latency.js";
 import { resolveAudioUrl, isSafeRelativePath, setAudioBase } from "../src/assets/js/study/config.js";
-import { effectiveGains, myVoiceState, initialMixerState, soloState, isSolo } from "../src/assets/js/study/mixer.js";
+import { effectiveGains, myVoiceState, initialMixerState, soloState, isSolo, allVoicesState } from "../src/assets/js/study/mixer.js";
 import { loadStudio, checkManifest } from "../src/_lib/studio.js";
 import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -146,11 +146,16 @@ test("studio: manifest con URL assoluto rifiutato; dati di prova esclusi in prod
   assert.deepEqual(dev.slugs, ["_prova", "vero"]);
   assert.deepEqual(Object.keys(dev.linked), ["vero"]); // nessun link verso i dati di prova
   assert.equal(dev.schede.length, 10); // 2 brani x 5 lingue
-  // solo i brani con un video gia' pubblicato: gli altri non hanno ne' pagina, ne' link, ne' partitura
-  const pub = loadStudio({ dir, production: false, pubblicati: new Set(["altro"]) });
-  assert.deepEqual(pub.slugs, ["_prova"]); // "vero" non e' pubblicato; i dati di prova restano (solo fuori produzione)
-  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set(["vero"]) }).slugs, ["vero"]);
-  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set() }).slugs, []);
+  // il player c'e' per tutti i brani con i dati pronti; il link dalla scheda solo per quelli gia' usciti
+  const pub = loadStudio({ dir, production: true, pubblicati: new Set(["altro"]) });
+  assert.deepEqual(pub.slugs, ["vero"]);
+  assert.deepEqual(Object.keys(pub.linked), []); // "vero" non e' ancora uscito: pagina nascosta, nessun link
+  assert.equal(pub.items.vero.pubblicato, false);
+  const usciti = loadStudio({ dir, production: true, pubblicati: new Set(["vero"]) });
+  assert.deepEqual(usciti.slugs, ["vero"]);
+  assert.deepEqual(Object.keys(usciti.linked), ["vero"]);
+  assert.equal(usciti.items.vero.pubblicato, true);
+  assert.deepEqual(loadStudio({ dir, production: true, pubblicati: new Set() }).slugs, ["vero"]);
 });
 
 test("latenza dello stretcher: tabella monotona, interpolata e limitata", () => {
@@ -254,4 +259,12 @@ test("startForPlay: con un ripeti acceso e la testina fuori dal passaggio si par
   assert.equal(startForPlay(null, 7), 7); // nessun ripeti
   assert.equal(startForPlay({ start: 5, end: 5 }, 7), 7); // passaggio non valido
   assert.equal(startForPlay({ start: NaN, end: 9 }, 7), 7);
+});
+
+test("allVoicesState: tutte le voci a pieno volume e non mute, da qualunque stato", () => {
+  const tr = [{ chiave: "s" }, { chiave: "a" }, { chiave: "t" }];
+  const base = initialMixerState(tr);
+  assert.deepEqual(allVoicesState(myVoiceState(base, "a")), base);
+  assert.deepEqual(allVoicesState(soloState(base, "t")), base);
+  assert.deepEqual(effectiveGains(allVoicesState(soloState(myVoiceState(base, "s"), "t"))), { s: 1, a: 1, t: 1 });
 });

@@ -185,12 +185,12 @@ test("rigo della voce: indici non validi o fuori intervallo -> -1", () => {
 
 // --- opzioniPartitura --------------------------------------------------------------------------------------------
 test("opzioni: valori di partenza", () => {
-  assert.deepEqual(opzioniPartitura(undefined), { myPart: true, cursor: true, cursorColor: "#f2a900", measure: false, invert: false });
+  assert.deepEqual(opzioniPartitura(undefined), { myPart: true, cursor: true, cursorColor: "#f2a900", measure: false, invert: false, fullscreenPlay: true });
   assert.deepEqual(opzioniPartitura(null), OPZIONI_DEFAULT);
   assert.deepEqual(opzioniPartitura("{}"), OPZIONI_DEFAULT);
 });
 test("opzioni: lettura da stringa JSON e da oggetto", () => {
-  const o = { myPart: false, cursor: false, cursorColor: "#112233", measure: true, invert: true };
+  const o = { myPart: false, cursor: false, cursorColor: "#112233", measure: true, invert: true, fullscreenPlay: false };
   assert.deepEqual(opzioniPartitura(JSON.stringify(o)), o);
   assert.deepEqual(opzioniPartitura(o), o);
 });

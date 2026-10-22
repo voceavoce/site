@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "slug": "cantate-domino-sv-293-monteverdi",
+  "titolo": "Cantate Domino (SV 293)",
+  "compositore": {
+    "id": "claudio-monteverdi",
+    "nome": "Claudio Monteverdi"
+  },
+  "linea": "coro",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S1",
+      "chiave": "soprano-1",
+      "tipo": "voce"
+    },
+    {
+      "voce": "S2",
+      "chiave": "soprano-2",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A1",
+      "chiave": "alto-1",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A2",
+      "chiave": "alto-2",
+      "tipo": "voce"
+    },
+    {
+      "voce": "T",
+      "chiave": "tenore",
+      "tipo": "voce"
+    },
+    {
+      "voce": "B",
+      "chiave": "basso",
+      "tipo": "voce"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 119.6,
+  "licenza": {
+    "spartito": "PD",
+    "fonte_spartito": "PDMX / MuseScore",
+    "audio": null
+  }
+}

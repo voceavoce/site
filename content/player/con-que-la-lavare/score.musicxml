@@ -22,49 +22,49 @@
   </defaults>
   <part-list>
     <score-part id="P1">
-      <part-name>Soprano</part-name>
-      <part-abbreviation>S.</part-abbreviation>
-      <score-instrument id="I3f544c71241a8b478fb772fdb301a69a">
-        <instrument-name>Soprano</instrument-name>
-        <instrument-abbreviation>Picc</instrument-abbreviation>
+      <part-name>S</part-name>
+      <part-abbreviation>S</part-abbreviation>
+      <score-instrument id="Ib696821a5aa1ffb65618b44e214f4e26">
+        <instrument-name>S</instrument-name>
+        <instrument-abbreviation>S</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I3f544c71241a8b478fb772fdb301a69a">
+      <midi-instrument id="Ib696821a5aa1ffb65618b44e214f4e26">
         <midi-channel>1</midi-channel>
         <midi-program>53</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P2">
-      <part-name>Alto</part-name>
-      <part-abbreviation>A.</part-abbreviation>
-      <score-instrument id="Ifaaa66837702f24ab22c3a65fc56601b">
-        <instrument-name>Alto</instrument-name>
-        <instrument-abbreviation>Rec</instrument-abbreviation>
+      <part-name>A</part-name>
+      <part-abbreviation>A</part-abbreviation>
+      <score-instrument id="I3626402df094e3c24cc4de8a7d52ddf3">
+        <instrument-name>A</instrument-name>
+        <instrument-abbreviation>A</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ifaaa66837702f24ab22c3a65fc56601b">
+      <midi-instrument id="I3626402df094e3c24cc4de8a7d52ddf3">
         <midi-channel>2</midi-channel>
         <midi-program>75</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P3">
-      <part-name>Tenor</part-name>
-      <part-abbreviation>T.</part-abbreviation>
-      <score-instrument id="I5a33f9277931f94c73b617d7fd2179a4">
-        <instrument-name>Tenor</instrument-name>
-        <instrument-abbreviation>Ob</instrument-abbreviation>
+      <part-name>T</part-name>
+      <part-abbreviation>T</part-abbreviation>
+      <score-instrument id="Iaa7d71a7081cff89806f8f867c34b9a5">
+        <instrument-name>T</instrument-name>
+        <instrument-abbreviation>T</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I5a33f9277931f94c73b617d7fd2179a4">
+      <midi-instrument id="Iaa7d71a7081cff89806f8f867c34b9a5">
         <midi-channel>3</midi-channel>
         <midi-program>69</midi-program>
       </midi-instrument>
     </score-part>
     <score-part id="P4">
-      <part-name>Bass</part-name>
-      <part-abbreviation>B.</part-abbreviation>
-      <score-instrument id="I1e3c9cfe315358f5518176c0edce3e8a">
-        <instrument-name>Bass</instrument-name>
-        <instrument-abbreviation>Bsn</instrument-abbreviation>
+      <part-name>B</part-name>
+      <part-abbreviation>B</part-abbreviation>
+      <score-instrument id="I42d6f07adb0f31914f49c53a57e39f1f">
+        <instrument-name>B</instrument-name>
+        <instrument-abbreviation>B</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I1e3c9cfe315358f5518176c0edce3e8a">
+      <midi-instrument id="I42d6f07adb0f31914f49c53a57e39f1f">
         <midi-channel>4</midi-channel>
         <midi-program>71</midi-program>
       </midi-instrument>

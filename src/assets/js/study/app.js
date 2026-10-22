@@ -1,12 +1,15 @@
 // Player di studio: collega engine, mixer, loop e partitura alla pagina /player/<slug>/.
 import { setAudioBase } from "./config.js";
 import { isOn } from "./features.js";
-import { StudyEngine } from "./engine.js";
+import { StudyEngine, StudyError } from "./engine.js";
 import { bindMixer } from "./mixer.js";
 import { bindLoop } from "./loop.js";
 import { createScore } from "./score.js";
 import { measureIndexAt, timeOfMeasure, indexOfScoreMeasure, formatClock, startForPlay } from "./timeline.js";
 import { frazioneInBattuta, opzioniPartitura } from "./cursore.js";
+import { percentuale, pienoAlPlay } from "./schermo.js";
+import { mailSegnalazione } from "./segnalazione.js";
+import { creaSuono } from "./suono.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const dataEl = $("#study-data");
@@ -25,6 +28,15 @@ async function main(data) {
     play: $("[data-play]"), seek: $("[data-seek]"), time: $("[data-time]"), total: $("[data-total]"),
     speed: $("[data-speed]"), speedOut: $("[data-speed-out]"),
   };
+  // «Segnala un errore nello spartito»: la issue si apre gia' con la battuta in cui si e' arrivati
+  const report = $("[data-report]");
+  if (report) {
+    const aggiorna = () => {
+      const d = report.dataset;
+      report.href = mailSegnalazione({ email: d.email, titolo: d.titolo, pagina: d.pagina, lingua: d.lingua, battuta: el.seek.dataset.measure });
+    };
+    for (const ev of ["pointerdown", "focus", "click"]) report.addEventListener(ev, aggiorna);
+  }
   const controls = [...document.querySelectorAll("[data-needs-audio]")];
   const setReady = (on) => controls.forEach((c) => { c.disabled = !on; });
   setReady(false);
@@ -33,13 +45,30 @@ async function main(data) {
 
   // ?stretch=voci: prova sperimentale con uno stretcher per voce (vedi engine.js)
   const engine = new StudyEngine({ perVoce: new URLSearchParams(location.search).get("stretch") === "voci" });
+  // Modalita' strumenti (note.json + campioni): si cambia fra stem cantati e strumenti; con gli strumenti la velocita' non usa lo stretcher.
+  const onMode = () => {
+    el.speed.disabled = !engine.speedOk;
+    const pct = Math.round(engine.rate * 100);
+    el.speed.value = String(pct);
+    el.speedOut.textContent = `${pct}%`;
+    el.speed.setAttribute("aria-valuetext", `${pct}%`);
+  };
+  const suono = creaSuono({ data, engine, manifest, say, labels: L, onMode });
   let score = null;
   let currentIdx = -1;
+
+  // Testo dello spartito: parole del brano o nomi delle note (Do Re Mi / C D E). La scelta resta fra una visita e l'altra.
+  const TESTO_KEY = "va-testo", TESTI = ["parole", "do", "abc"];
+  const testoRadio = [...document.querySelectorAll("[data-score-text] input[type=radio]")];
+  let testoPref = "parole";
+  try { const t = localStorage.getItem(TESTO_KEY); if (TESTI.includes(t) && testoRadio.length) testoPref = t; } catch { /* storage non disponibile */ }
+  for (const r of testoRadio) r.checked = r.value === testoPref;
 
   // --- partitura (in parallelo con l'audio; un suo errore non ferma il player)
   const scorePromise = createScore({
     container: $("[data-score]"),
     xmlUrl: data.scoreUrl,
+    testo: testoPref,
     voiceLabels: manifest.tracce.filter((t) => t.tipo !== "accompagnamento").map((t) => t.voce),
     onMeasureTap: (m) => {
       if (loop?.tapMeasure(m, Math.max(0, currentIdx))) {
@@ -67,7 +96,7 @@ async function main(data) {
     });
   }
   const optMyPart = $("[data-opt-mypart]"), optCursor = $("[data-opt-cursor]"), optColor = $("[data-opt-cursor-color]");
-  const optMeasure = $("[data-opt-measure]"), optInvert = $("[data-opt-invert]");
+  const optMeasure = $("[data-opt-measure]"), optInvert = $("[data-opt-invert]"), optFsPlay = $("[data-opt-fullscreen-play]");
   const OPT_KEY = "va-score-opts";
   let saved = null;
   try { saved = localStorage.getItem(OPT_KEY); } catch { /* storage non disponibile */ }
@@ -84,6 +113,7 @@ async function main(data) {
     optColor.disabled = !opts.cursor;
     optMeasure.checked = opts.measure;
     optInvert.checked = opts.invert;
+    optFsPlay.checked = opts.fullscreenPlay;
     if (save) { try { localStorage.setItem(OPT_KEY, JSON.stringify(opts)); } catch { /* storage non disponibile */ } }
   };
   optMyPart.addEventListener("change", () => { opts.myPart = optMyPart.checked; applyOpts(true); });
@@ -91,10 +121,42 @@ async function main(data) {
   optColor.addEventListener("input", () => { opts.cursorColor = optColor.value; applyOpts(true); });
   optMeasure.addEventListener("change", () => { opts.measure = optMeasure.checked; applyOpts(true); });
   optInvert.addEventListener("change", () => { opts.invert = optInvert.checked; applyOpts(true); });
+  optFsPlay.addEventListener("change", () => { opts.fullscreenPlay = optFsPlay.checked; applyOpts(true); });
   applyOpts(false);
 
   $("[data-zoom-in]").addEventListener("click", () => { const z = score?.setZoom(1); if (z) say(L.zoom.replace("{z}", z)); });
   $("[data-zoom-out]").addEventListener("click", () => { const z = score?.setZoom(-1); if (z) say(L.zoom.replace("{z}", z)); });
+
+  // --- partitura a schermo intero: la classe su <html> la porta sopra la pagina (funziona anche su iPhone, dove
+  // l'API Fullscreen non c'e'); dove l'API esiste la si usa in piu' per nascondere anche la barra del browser.
+  const fsOpen = $("[data-fs-open]"), fsClose = $("[data-fs-close]");
+  const htmlEl = document.documentElement;
+  const immersive = () => htmlEl.classList.contains("study-immersive");
+  const setImmersive = (on) => {
+    if (on === immersive()) return;
+    htmlEl.classList.toggle("study-immersive", on);
+    fsOpen.setAttribute("aria-expanded", String(on));
+    fsClose.hidden = !on;
+    if (on) {
+      try { htmlEl.requestFullscreen?.({ navigationUI: "hide" })?.catch(() => {}); } catch { /* non supportato */ }
+      fsClose.focus();
+    } else {
+      try { if (document.fullscreenElement) document.exitFullscreen?.()?.catch(() => {}); } catch { /* gia' uscito */ }
+      fsOpen.focus();
+    }
+    say(on ? L.fsOn : L.fsOff);
+  };
+  fsOpen.addEventListener("click", () => setImmersive(!immersive()));
+  fsClose.addEventListener("click", () => setImmersive(false));
+  document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && immersive()) setImmersive(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && immersive()) setImmersive(false); });
+  const telefono = () => ({ stretto: matchMedia("(max-width: 40rem)").matches, tocco: matchMedia("(pointer: coarse)").matches });
+
+  for (const r of testoRadio) r.addEventListener("change", () => {
+    if (!r.checked) return;
+    try { localStorage.setItem(TESTO_KEY, r.value); } catch { /* storage non disponibile */ }
+    scorePromise.then(() => { try { score?.setTesto(r.value); } catch (e) { console.error(e); } });
+  });
 
   // --- mixer e loop
   let mixer = null, loop = null;
@@ -141,6 +203,7 @@ async function main(data) {
     if (el.play.disabled) return;
     if (engine.playing) engine.pause();
     else {
+      if (pienoAlPlay({ ...telefono(), opzione: opts.fullscreenPlay, attivo: immersive() })) setImmersive(true);
       // con un ripeti acceso e la testina fuori dal passaggio si parte dall'inizio del passaggio, non dal brano
       const da = startForPlay(loop?.range, engine.position());
       if (da !== engine.position()) { engine.seek(da); update(); }
@@ -170,26 +233,60 @@ async function main(data) {
     toggle();
   });
 
+  // anteprima del brano (solo cartelle _anteprima-*, in sviluppo): pannello col dossier, tempo, segnalazioni, testo per Gemini
+  if (data.dossierUrl) {
+    import("./anteprima.js").then((m) => m.creaAnteprima({ url: data.dossierUrl, sync, speed: $("[data-speed]"), engine, senzaAudio: data.senzaAudio === true,
+      vai: (i) => { if (engine.tracks.size) { engine.seek(timeOfMeasure(sync, i)); update(); } } })).catch((e) => console.error(e));
+  }
+
   if (new URLSearchParams(location.search).has("debug")) window.__study = { engine, get score() { return score; }, get loop() { return loop; }, get mixer() { return mixer; }, sync };
 
-  // --- audio
+  // --- audio, con il pannello di caricamento (barra di avanzamento) finche' non e' pronto
+  const loader = $("[data-loader]"), bar = $("[data-loader-bar]"), pct = $("[data-loader-pct]"), lcount = $("[data-loader-count]");
+  const showProgress = (f, n, total) => {
+    const p = percentuale(f, 3); // la barra si muove subito: l'utente vede che sta lavorando
+    bar.value = p;
+    bar.setAttribute("aria-valuetext", p + "%");
+    pct.textContent = p + "%";
+    lcount.textContent = L.loading.replace("{n}", n).replace("{total}", total);
+  };
+  const closeLoader = () => { loader.classList.add("is-done"); setTimeout(() => { loader.hidden = true; }, 300); };
+  let fatte = 0;
+  let fallbackAttivo = false;
+  loader.hidden = false;
+  showProgress(0, 0, manifest.tracce.length);
   say(L.loading.replace("{n}", 0).replace("{total}", manifest.tracce.length));
   try {
     await engine.init();
     engine.addEventListener("warning", () => say(L.noStretch));
-    await engine.load(manifest.tracce, (n, total) => say(L.loading.replace("{n}", n).replace("{total}", total)));
+    if (data.senzaAudio) throw new StudyError("noaudio", "brano senza stem: solo strumenti");
+    await engine.load(
+      manifest.tracce,
+      (n, total) => { fatte = n; say(L.loading.replace("{n}", n).replace("{total}", total)); },
+      (f) => showProgress(f, fatte, manifest.tracce.length),
+    );
   } catch (e) {
-    console.error(e);
-    fail(({ network: L.errNetwork, decode: L.errDecode, unsupported: L.errUnsupported }[e.kind]) || L.errNetwork);
-    say("");
-    return;
+    if (e.kind !== "noaudio") console.error(e);
+    // Ultimo anello della catena Opus -> MP3 -> strumenti: se nemmeno l'MP3 si scarica o decodifica, si suonano le note.
+    if (e.kind === "unsupported" || !(await suono.fallback())) {
+      closeLoader();
+      fail(({ network: L.errNetwork, decode: L.errDecode, unsupported: L.errUnsupported }[e.kind]) || L.errNetwork);
+      say("");
+      return;
+    }
+    fallbackAttivo = true;
   }
+  showProgress(1, manifest.tracce.length, manifest.tracce.length);
+  closeLoader();
   setReady(true);
-  if (!engine.stretchOk) { el.speed.disabled = true; say(L.noStretch); }
+  if (!engine.speedOk) { el.speed.disabled = true; say(L.noStretch); }
+  else onMode();
+  suono.mostra();
   el.seek.max = String(engine.duration);
   el.total.textContent = formatClock(engine.duration);
   mixer?.render();
-  if (engine.stretchOk) say(L.ready);
+  if (fallbackAttivo) say(data.senzaAudio ? L.noAudioYet : L.fallbackInstr);
+  else if (engine.stretchOk) say(L.ready);
   await scorePromise;
   update();
 }

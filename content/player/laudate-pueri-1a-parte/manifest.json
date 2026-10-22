@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "slug": "laudate-pueri-1a-parte",
+  "titolo": "Laudate pueri (1ª parte)",
+  "linea": "coro",
+  "audio_versione": "v1",
+  "senza_audio": true,
+  "tracce": [
+    {
+      "voce": "S1",
+      "chiave": "soprano-1",
+      "tipo": "voce"
+    },
+    {
+      "voce": "S2",
+      "chiave": "soprano-2",
+      "tipo": "voce"
+    },
+    {
+      "voce": "A",
+      "chiave": "alto",
+      "tipo": "voce"
+    },
+    {
+      "voce": "ACC",
+      "chiave": "accompagnamento",
+      "tipo": "accompagnamento"
+    }
+  ],
+  "sync": "sync.json",
+  "partitura": "score.musicxml",
+  "durata_sec": 195.2,
+  "licenza": {
+    "spartito": "ChoralWiki License",
+    "fonte_spartito": "CPDL / ChoralWiki",
+    "audio": null
+  }
+}

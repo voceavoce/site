@@ -19,6 +19,11 @@ export function myVoiceState(state, id) {
   );
 }
 
+/** «Tutte le voci»: torna alla partenza, tutte le tracce a volume pieno e non mute (annulla «La mia voce» e «Solo»). */
+export function allVoicesState(state) {
+  return Object.fromEntries(Object.keys(state).map((k) => [k, { volume: 1, mute: false }]));
+}
+
 /** Vero se `id` e' l'unica traccia non mute (e ce n'e' piu' di una): e' lo stato che «Solo» produce. */
 export function isSolo(state, id) {
   const ids = Object.keys(state);
@@ -42,7 +47,7 @@ export function clamp01(x) {
 
 /**
  * Collega la UI. `root` contiene [data-track] con: input[data-volume], button[data-mute], button[data-solo],
- * output[data-volume-out]; opzionali select[data-myvoice-select] e button[data-myvoice].
+ * output[data-volume-out]; opzionali select[data-myvoice-select], button[data-myvoice] e button[data-allvoices].
  */
 export function bindMixer(root, tracks, onGains) {
   let state = initialMixerState(tracks);
@@ -71,9 +76,11 @@ export function bindMixer(root, tracks, onGains) {
     render();
   });
   root.addEventListener("click", (e) => {
-    const btn = e.target.closest?.("[data-mute],[data-solo],[data-myvoice]");
+    const btn = e.target.closest?.("[data-mute],[data-solo],[data-myvoice],[data-allvoices]");
     if (!btn) return;
-    if (btn.hasAttribute("data-myvoice")) {
+    if (btn.hasAttribute("data-allvoices")) {
+      state = allVoicesState(state);
+    } else if (btn.hasAttribute("data-myvoice")) {
       const sel = root.querySelector("[data-myvoice-select]");
       state = myVoiceState(state, sel ? sel.value : tracks[0].chiave);
     } else {

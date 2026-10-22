@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Tu as entendu une erreur ?",
     "reportP": "Une altération fausse, une note déplacée, un vers mal écrit : dis-nous où.",
-    "reportLink": "Signaler sur GitHub",
+    "reportLink": "Signaler par e-mail",
     "related": "Pièces liées",
     "descr": {
       "base": "{title} – {composer} : vidéo d'étude voix par voix.",
@@ -369,7 +369,49 @@
         "pickOn": "Choix sur la partition activé : touche la première et la dernière mesure.",
         "pickOff": "Choix sur la partition désactivé : un toucher amène à la mesure.",
         "range": "Passage choisi : mesures {a} à {b}."
-      }
-    }
+      },
+      "fsOn": "Partition en plein écran.",
+      "fsOff": "Plein écran fermé.",
+      "soundLoading": "Chargement des instruments…",
+      "soundInstrOn": "Vous écoutez des instruments, pas le chant.",
+      "soundSungOn": "Vous écoutez les voix chantées.",
+      "fallbackInstr": "L'audio chanté n'est pas disponible : vous écoutez des instruments.",
+      "errInstr": "Impossible de charger les instruments.",
+      "soundSungOpt": "Chanté (voix enregistrée)",
+      "noAudioYet": "L'audio chanté de cette pièce n'est pas encore disponible : vous écoutez des instruments."
+    },
+    "loaderTitle": "Préparation des voix…",
+    "loaderHint": "À la première ouverture, cela peut prendre quelques secondes : nous téléchargeons l'audio de toutes les voix.",
+    "fullscreen": "Partition en plein écran",
+    "fullscreenClose": "Fermer",
+    "optFullscreenPlay": "Plein écran quand j'appuie sur Lire (téléphones)",
+    "allVoices": "Toutes les voix égales",
+    "reportScore": "Signaler une erreur dans la partition",
+    "sound": "Son",
+    "soundHint": "Chanté : les voix enregistrées. Instruments : les notes de la partition jouées par des instruments. Pour chaque voix, vous pouvez choisir un instrument ou le chant, même en les mélangeant (par exemple votre voix au piano et les autres chantées). Avec les instruments, vous entendez bien la justesse et pouvez ralentir sans artefacts.",
+    "soundLegend": "Ce que vous entendez",
+    "soundSung": "Chanté",
+    "soundInstr": "Instruments",
+    "instrumentOf": "Son : {voice}",
+    "scoreText": "Texte de la partition",
+    "scoreTextHint": "À la place des paroles, le nom de chaque note s'affiche sous elle : utile pour travailler le solfège chanté.",
+    "scoreTextWords": "Paroles",
+    "scoreTextDo": "Do Ré Mi",
+    "scoreTextAbc": "C D E"
+  },
+  "report": {
+    "title": "Signaler une erreur dans la partition",
+    "bar": "mesure",
+    "what": "Qu'est-ce qui ne va pas ?",
+    "whatHint": "Par exemple : « à la mesure 7 le ténor a un fa, ce devrait être un fa dièse ». Pas besoin de plus.",
+    "contact": "Ton e-mail (seulement si tu veux une réponse)",
+    "privacy": "Nous utilisons ce que tu écris uniquement pour corriger la partition et, si tu as laissé ton e-mail, pour te répondre.",
+    "send": "Envoyer",
+    "sending": "Envoi…",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "thanks": "Merci ! Nous avons bien reçu ton signalement.",
+    "short": "Écris au moins quelques mots sur ce qui ne va pas.",
+    "error": "Nous n'avons pas pu l'envoyer. Tu peux nous écrire à {email}."
   }
 }

@@ -158,7 +158,7 @@
     "edition": "{edition}{publisher}{year}",
     "report": "Did you hear a mistake?",
     "reportP": "A wrong accidental, a misplaced note, a misspelt word: tell us where.",
-    "reportLink": "Report it on GitHub",
+    "reportLink": "Report by email",
     "related": "Related pieces",
     "descr": {
       "base": "{title} – {composer}: part-by-part rehearsal video.",
@@ -369,7 +369,49 @@
         "pickOn": "Picking on the score is on: tap the first and the last bar.",
         "pickOff": "Picking on the score is off: a tap moves to that bar.",
         "range": "Passage chosen: bars {a} to {b}."
-      }
-    }
+      },
+      "fsOn": "Full-screen score.",
+      "fsOff": "Full screen closed.",
+      "soundLoading": "Loading the instruments…",
+      "soundInstrOn": "You are hearing instruments, not singing.",
+      "soundSungOn": "You are hearing the sung voices.",
+      "fallbackInstr": "The sung audio is not available: you are hearing instruments.",
+      "errInstr": "I could not load the instruments.",
+      "soundSungOpt": "Sung (recorded voice)",
+      "noAudioYet": "The sung audio for this piece is not available yet: you are hearing instruments."
+    },
+    "loaderTitle": "Getting the voices ready…",
+    "loaderHint": "On first open it can take a few seconds: we are downloading the audio of every voice.",
+    "fullscreen": "Full-screen score",
+    "fullscreenClose": "Close",
+    "optFullscreenPlay": "Full screen when I press Play (phones)",
+    "allVoices": "All voices level",
+    "reportScore": "Report an error in the score",
+    "sound": "Sound",
+    "soundHint": "Sung: the recorded voices. Instruments: the notes of the score played by instruments. For each voice you can choose an instrument or the singing, even mixing them (for example your voice on the piano and the others sung). With instruments you can hear the pitch clearly and slow down without artefacts.",
+    "soundLegend": "What you hear",
+    "soundSung": "Sung",
+    "soundInstr": "Instruments",
+    "instrumentOf": "Sound: {voice}",
+    "scoreText": "Score text",
+    "scoreTextHint": "Shows the name of each note under it instead of the words: useful for practising sight-singing.",
+    "scoreTextWords": "Words",
+    "scoreTextDo": "Do Re Mi",
+    "scoreTextAbc": "C D E"
+  },
+  "report": {
+    "title": "Report an error in the score",
+    "bar": "bar",
+    "what": "What is wrong?",
+    "whatHint": "For example: “in bar 7 the tenor has an F, it should be an F sharp”. Nothing else is needed.",
+    "contact": "Your email (only if you want a reply)",
+    "privacy": "We use what you write only to correct the score and, if you left your email, to reply.",
+    "send": "Send",
+    "sending": "Sending…",
+    "cancel": "Cancel",
+    "close": "Close",
+    "thanks": "Thank you! We have received your report.",
+    "short": "Please write a few words about what is wrong.",
+    "error": "We could not send it. You can write to us at {email}."
   }
 }

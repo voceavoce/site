@@ -1,7 +1,7 @@
 // Player di studio (/player/<slug>/) sul brano di prova content/player/_prova: caricamento, sincronia della battuta
 // evidenziata con sync.json, seek, loop, mixer, tastiera/ARIA e layout mobile. Audio sintetici (helpers.mjs).
 import { expect } from "@playwright/test";
-import { test, apriPlayer, apriRipeti, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST } from "./helpers.mjs";
+import { test, apriPlayer, apriRipeti, intercettaAudio, raccogliErrori, SYNC, CHIAVI, MANIFEST, PLAYER_URL } from "./helpers.mjs";
 
 const TOLLERANZA_S = 0.15; // evidenziazione vs sync.json: un frame di rAF piu' la latenza stimata, in headless
 const battuta = (i) => SYNC.battute[i];
@@ -206,6 +206,17 @@ test.describe("mixer", () => {
     for (const k of ["soprano", "tenore", "basso"]) await expect.poll(() => gain(page, k)).toBeCloseTo(0.3, 2);
     await expect(riga(page, "soprano").locator("[data-volume]")).toHaveValue("30");
   });
+
+  test("«Tutte le voci pari» annulla La mia voce e Solo con un tocco", async ({ page }) => {
+    await page.locator("[data-myvoice-select]").selectOption("alto");
+    await page.locator("[data-myvoice]").click();
+    await riga(page, "basso").locator("[data-solo]").click();
+    await expect.poll(() => gain(page, "soprano")).toBeLessThan(0.01);
+    await page.locator("[data-allvoices]").click();
+    for (const k of ["soprano", "alto", "tenore", "basso"]) await expect.poll(() => gain(page, k)).toBeCloseTo(1, 2);
+    await expect(riga(page, "soprano").locator("[data-volume]")).toHaveValue("100");
+    await expect(riga(page, "basso").locator("[data-solo]")).toHaveAttribute("aria-pressed", "false");
+  });
 });
 
 test.describe("tastiera e ARIA", () => {
@@ -352,5 +363,130 @@ test.describe("prova sperimentale: uno stretcher per voce", () => {
     await apriPlayer(page);
     expect(await page.evaluate(() => window.__study.engine.stretchers.length)).toBe(0);
     expect(await page.evaluate(() => !!window.__study.engine.stretcher)).toBe(true);
+  });
+});
+
+test.describe("pannello di caricamento", () => {
+  test("compare con la barra di avanzamento mentre l'audio scarica e sparisce a player pronto", async ({ page, context }) => {
+    // ritarda ogni file audio, poi lascia rispondere l'intercettazione di base
+    await context.route((u) => u.host === "localhost:8787", async (route) => {
+      await new Promise((r) => setTimeout(r, 1500));
+      await route.fallback();
+    });
+    await page.goto(PLAYER_URL);
+    const loader = page.locator("[data-loader]");
+    await expect(loader).toBeVisible();
+    const bar = page.locator("[data-loader-bar]");
+    await expect(bar).toHaveAttribute("max", "100");
+    expect(Number(await bar.getAttribute("value"))).toBeGreaterThanOrEqual(3);
+    await expect(page.locator("[data-loader-pct]")).toContainText("%");
+    await page.waitForFunction(() => window.__study?.engine.tracks.size === 4, null, { timeout: 90_000 });
+    await expect(loader).toBeHidden({ timeout: 5_000 });
+    expect(Number(await bar.getAttribute("value"))).toBe(100);
+  });
+});
+
+test.describe("partitura a schermo intero", () => {
+  test("il pulsante la porta sopra la pagina, Chiudi ed Esc la richiudono", async ({ page }) => {
+    await apriPlayer(page);
+    const html = page.locator("html");
+    await expect(page.locator("[data-fs-close]")).toBeHidden();
+    await page.click("[data-fs-open]");
+    await expect(html).toHaveClass(/study-immersive/);
+    await expect(page.locator("[data-fs-close]")).toBeVisible();
+    const box = await page.locator(".study__score").boundingBox();
+    expect(box.y).toBeLessThanOrEqual(1);
+    expect(box.x).toBeLessThanOrEqual(1);
+    await expect(page.locator("[data-play]")).toBeVisible(); // il trasporto resta
+    await page.click("[data-fs-close]");
+    await expect(html).not.toHaveClass(/study-immersive/);
+    await page.click("[data-fs-open]");
+    await page.keyboard.press("Escape");
+    await expect(html).not.toHaveClass(/study-immersive/);
+  });
+});
+
+test.describe("schermo intero su telefono", () => {
+  test.use({ viewport: { width: 375, height: 667 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+
+  test("premendo Riproduci si passa a schermo intero con i tasti minimi; Chiudi esce", async ({ page }) => {
+    await apriPlayer(page);
+    await page.tap("[data-play]");
+    await expect(page.locator("html")).toHaveClass(/study-immersive/);
+    await expect(page.locator("[data-fs-close]")).toBeVisible();
+    await expect(page.locator("[data-loop-open]")).toBeHidden();
+    await expect(page.locator("[data-score-options-toggle]")).toBeHidden();
+    const orizz = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+    expect(orizz).toBe(true);
+    await page.tap("[data-fs-close]");
+    await expect(page.locator("html")).not.toHaveClass(/study-immersive/);
+  });
+
+  test("con l'opzione spenta (ricordata) Riproduci non cambia schermata", async ({ page }) => {
+    await apriPlayer(page);
+    await page.tap("[data-score-options-toggle]");
+    await page.uncheck("[data-opt-fullscreen-play]");
+    await page.tap("[data-play]");
+    await expect(page.locator("html")).not.toHaveClass(/study-immersive/);
+    await page.reload();
+    await page.waitForFunction(() => !document.querySelector("[data-play]").disabled, null, { timeout: 60_000 });
+    await page.tap("[data-score-options-toggle]");
+    await expect(page.locator("[data-opt-fullscreen-play]")).not.toBeChecked();
+  });
+});
+
+test.describe("segnala un errore nello spartito", () => {
+  test("un solo link, l'email gia' scritta con la battuta in cui si e' arrivati; l'indirizzo e' scritto accanto", async ({ page }) => {
+    await apriPlayer(page);
+    const link = page.locator("[data-report]");
+    await expect(link).toBeVisible();
+    await expect(page.locator(".study__report")).toContainText("info@voceavoce.com");
+    expect(await link.getAttribute("href")).toMatch(/^mailto:info@voceavoce[.]com[?]subject=/);
+    await page.evaluate(() => { document.querySelector("[data-seek]").dataset.measure = "7"; });
+    await link.focus();
+    const corpo = decodeURIComponent(await link.getAttribute("href"));
+    expect(corpo).toContain("Battuta: 7");
+    expect(corpo).toContain(new URL(page.url()).pathname);
+  });
+});
+
+test.describe('modulo di segnalazione', () => {
+  const ENDPOINT = 'http://localhost:8788/segnala';
+  test('il clic apre il modulo con brano e battuta; testo troppo corto non parte', async ({ page }) => {
+    await apriPlayer(page);
+    await page.evaluate(() => { document.querySelector('[data-seek]').dataset.measure = '7'; });
+    let inviato = false;
+    await page.route(ENDPOINT, (r) => { inviato = true; r.fulfill({ status: 200, contentType: 'application/json', body: '{\"ok\":true}' }); });
+    await page.click('[data-report]');
+    const dlg = page.locator('[data-report-dialog]');
+    await expect(dlg).toBeVisible();
+    await expect(dlg.locator('[data-report-bar-n]')).toHaveText('7');
+    await expect(dlg.locator('textarea[name=cosa]')).toBeFocused();
+    await dlg.locator('[data-report-send]').click();
+    await expect(dlg.locator('[data-report-status]')).not.toBeEmpty();
+    expect(inviato).toBe(false);
+    await page.keyboard.press('Escape');
+    await expect(dlg).toBeHidden();
+  });
+  test('invio riuscito: manda il JSON giusto e ringrazia', async ({ page }) => {
+    await apriPlayer(page);
+    await page.evaluate(() => { document.querySelector('[data-seek]').dataset.measure = '7'; });
+    let corpo = null;
+    await page.route(ENDPOINT, async (r) => { corpo = r.request().postDataJSON(); await r.fulfill({ status: 200, contentType: 'application/json', body: '{\"ok\":true}' }); });
+    await page.click('[data-report]');
+    await page.fill('textarea[name=cosa]', 'Alla battuta 7 il tenore ha un fa');
+    await page.click('[data-report-send]');
+    await expect(page.locator('[data-report-status]')).toContainText(/Grazie/);
+    expect(corpo).toMatchObject({ battuta: '7', lingua: 'it', cosa: 'Alla battuta 7 il tenore ha un fa', sito: '' });
+    expect(corpo.pagina).toContain('/player/');
+  });
+  test('invio fallito: si resta nel modulo e compare l indirizzo email', async ({ page }) => {
+    await apriPlayer(page);
+    await page.route(ENDPOINT, (r) => r.fulfill({ status: 502, contentType: 'application/json', body: '{\"ok\":false}' }));
+    await page.click('[data-report]');
+    await page.fill('textarea[name=cosa]', 'nota sbagliata');
+    await page.click('[data-report-send]');
+    await expect(page.locator('[data-report-status] a')).toHaveAttribute('href', 'mailto:info@voceavoce.com');
+    await expect(page.locator('[data-report-send]')).toBeEnabled();
   });
 });

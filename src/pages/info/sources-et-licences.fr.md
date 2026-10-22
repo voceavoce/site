@@ -23,15 +23,19 @@ Pour chaque pièce nous indiquons la source et l'édition. Tu les trouveras sur 
 
 ## Partitions corrigées
 
-Quand nous corrigeons une partition, la version corrigée est publiée sur GitHub, dans le dépôt [voceavoce/scores](https://github.com/voceavoce/scores).
+Quand nous corrigeons une partition, nous mettons à jour le lecteur et la fiche de la pièce.
 
 ## Signaler une erreur
 
-Tu as remarqué une note ou un mot erroné ? Ouvre une [issue GitHub](https://github.com/voceavoce/scores/issues) en indiquant :
+Tu as remarqué une note ou un mot erroné ? Dans le lecteur et sur la fiche de la pièce, le lien « Signaler une erreur dans la partition » ouvre un e-mail déjà rédigé, avec la pièce et la mesure. Si tu préfères, écris à info@voceavoce.com. Indique :
 
 - la pièce et la voix ;
-- la minute de la vidéo où apparaît l'erreur ;
+- la mesure (ou la minute de la vidéo) où apparaît l'erreur ;
 - ce qui devrait figurer à la place, avec la source si tu la connais.
+
+## Sons des instruments
+
+Les instruments du lecteur (piano, orgue, chœur, voix, flûte, cordes) utilisent des échantillons tirés de la soundfont GeneralUser GS de S. Christian Collins, dont la licence autorise l'usage libre, y compris dans des logiciels. Auteur et licence : [schristiancollins.com](http://www.schristiancollins.com). Le texte de la licence est livré avec les échantillons.
 
 </article>
 </div>
