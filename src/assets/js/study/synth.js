@@ -27,6 +27,9 @@ export class Synth {
     this.loop = null;
     this.duration = 0;
     this.timer = 0;
+    /** Stacco (s) alla fine delle note a suono NON tenuto (pianoforte): la nota si spegne `stacco` secondi prima della successiva, con un
+     *  rilascio breve, cosi' il nuovo attacco esce da un suono pulito (utile a velocita' molto basse, dove le note si accavallano). 0 = come prima. */
+    this.stacco = 0;
   }
 
   setParti(parti, duration) { this.tutte = parti; this.parti = parti; this.duration = duration; }
@@ -86,8 +89,9 @@ export class Synth {
     const ctx = this.ctx;
     const now = ctx.currentTime;
     const t0 = Math.max(now, ev.ctxStart);
-    const tEnd = Math.max(t0 + 0.02, ev.ctxEnd);
-    const rel = def.loop ? REL_TENUTO : REL_PIANO;
+    const stacca = !def.loop && this.stacco > 0;
+    const tEnd = Math.max(t0 + 0.02, ev.ctxEnd - (stacca ? this.stacco : 0));
+    const rel = def.loop ? REL_TENUTO : (stacca ? Math.min(REL_PIANO, 0.12) : REL_PIANO);
     const src = ctx.createBufferSource();
     src.buffer = buffer;
     src.playbackRate.value = rate;
