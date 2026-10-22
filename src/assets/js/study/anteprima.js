@@ -99,9 +99,11 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
     ? h("ul", { class: "anteprima__anom" }, anomalie.map((a, i) => {
         const idx = indiceBattuta(sync, a.battuta);
         const sel = h("select", { id: `ant-an-${i}`, "aria-label": `Esito della segnalazione alla battuta ${a.battuta}`, onchange: (e) => { if (e.target.value) segnate[i] = e.target.value; else delete segnate[i]; aggiorna(); } },
-          h("option", { value: "" }, "da decidere"), h("option", { value: "vera" }, "vera"), h("option", { value: "ignora" }, "da ignorare"));
-        return h("li", {}, h("strong", {}, `b. ${a.battuta}`), ` · ${a.parte} · ${a.categoria} (${a.gravita}): ${a.descrizione} `,
-          h("button", { type: "button", class: "tool tool--text", disabled: idx < 0, onclick: () => vai?.(idx) }, "Vai alla battuta"), " ", sel);
+          h("option", { value: "" }, "— scegli —"), h("option", { value: "vera" }, "Sì, è un errore: da correggere"), h("option", { value: "ignora" }, "No, va bene così: ignora"));
+        return h("li", {}, h("p", { class: "anteprima__an-testo" }, h("strong", {}, `b. ${a.battuta}`), ` · ${a.parte} · ${a.categoria} (${a.gravita}): ${a.descrizione}`),
+          h("div", { class: "anteprima__an-azioni" },
+            h("button", { type: "button", class: "tool tool--text", disabled: idx < 0, onclick: () => vai?.(idx) }, "Vai alla battuta"),
+            h("label", { for: `ant-an-${i}` }, "È un errore nello spartito? "), sel));
       }))
     : h("p", { class: "study__hint" }, "Nessuna segnalazione sulla partitura.");
   const avvisi = (dossier.anomalie?.avvisi ?? []).map((a) => h("p", { class: "study__hint" }, a));
@@ -118,7 +120,9 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
       h("button", { type: "button", class: "tool tool--text", onclick: provaTempo }, "Prova questo tempo"), msgTempo),
     sezione("Sezioni proposte", sezioni),
     sezione("Scelte già nel contratto", opzioni),
-    sezione("Segnalazioni sulla partitura", ...avvisi, lista),
+    sezione("Segnalazioni sulla partitura",
+      h("p", { class: "study__hint" }, "Il programma ha trovato dei punti sospetti. Per ognuno premi «Vai alla battuta», guarda e ascolta, poi rispondi: «Sì, è un errore» = lo correggo nello spartito prima di fare il video; «No, va bene così» = lo ignoro."),
+      ...avvisi, lista),
     sezione("Per Gemini", prompt, h("button", { type: "button", class: "tool tool--text", onclick: () => copia(prompt.value, stato) }, "Copia il testo per Gemini")),
     sezione("Osservazioni", h("div", { class: "field" }, h("label", { for: "ant-note" }, "Che cosa hai visto o sentito"), note)),
     sezione("Risposta per Claude", h("p", { class: "study__hint" }, "Incolla questo blocco nella chat: la pagina non scrive nel repo."), uscita,
