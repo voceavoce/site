@@ -74,12 +74,12 @@ test("anteprima: il blocco di risposta segue i campi e si copia negli appunti", 
   await expect(uscita).toHaveValue(/Segnalazioni confermate \(battute\): 3/);
   await page.getByRole("button", { name: "Copia la risposta" }).click();
   await expect(page.locator(".anteprima__stato")).toHaveText("Copiato.");
-  const copiato = await page.evaluate(() => navigator.clipboard.readText());
+  const copiato = (await page.evaluate(() => navigator.clipboard.readText())).replace(/\r\n/g, "\n"); // su Windows gli appunti rendono \r\n
   expect(copiato).toBe(await uscita.inputValue());
   expect(JSON.parse(copiato.slice(copiato.indexOf("{"))).segnalazioni_vere).toEqual(["3"]);
   expect(JSON.parse(copiato.slice(copiato.indexOf("{"))).segnalazioni).toEqual([{ indice: 0, battuta: "3", parte: "basso", categoria: "raddoppio", gravita: "alta", esito: "vera" }]);
   await page.getByRole("button", { name: "Copia il testo per Gemini" }).click();
-  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(await page.locator("#ant-prompt").inputValue());
+  expect((await page.evaluate(() => navigator.clipboard.readText())).replace(/\r\n/g, "\n")).toBe(await page.locator("#ant-prompt").inputValue());
 });
 
 test("anteprima: accessibilita' del pannello (axe, WCAG 2.2 AA)", async ({ page }) => {
