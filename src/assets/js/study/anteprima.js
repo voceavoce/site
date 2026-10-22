@@ -55,7 +55,7 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
   const passo = senzaAudio ? 0.1 : 5;
   if (senzaAudio && engine) { engine.maxRate = massimo / 100; engine.minRate = minimo / 100; }
   // prova (utente 2026-10-22: «a orecchio e' palese lo sfasamento»): il pianoforte si stacca prima della nota successiva
-  if (senzaAudio && engine?.synth) engine.synth.stacco = 0.15;
+  if (senzaAudio && engine) { engine.stacco = 0.15; if (engine.synth) engine.synth.stacco = 0.15; }
   if (senzaAudio && speed) { speed.min = String(minimo); speed.max = String(massimo); speed.step = String(passo); }
   // questa pagina serve solo a decidere il tempo: il mixer qui non serve (resta nel player vero); il pannello Suono va in fondo (utente 2026-10-22)
   document.querySelectorAll("[data-mixer]").forEach((n) => { n.hidden = true; });
