@@ -1,6 +1,12 @@
 # State — avanzamento e decisioni
 
-## Riepilogo per riprendere (aggiornato 2026-10-18 notte, PR #2 unita, correzioni in corso)
+## Riepilogo per riprendere (aggiornato 2026-10-22)
+
+- **Su `main` e online:** player con 140 brani, statistiche, correzioni P31–P35 (scelta battuta, Ripeti, tempi, cursore, tessitura), C1/C2/C3 (traduzioni comuni, note, interfaccia DE/FR), dichiarazione IA, anti-segreti, e2e in 3 shard (PR #6–#11). Il riepilogo del 2026-10-18 qui sotto e' in parte superato (le PR citate sono unite).
+- **Lavoro in corso: `fix/player-qualita-rallentamento`** (P37): prova `?stretch=voci`, uno stretcher SoundTouch per voce invece di uno sul mix. Misura (`tests/e2e/stretch-voci.spec.mjs`): le voci si sfasano di 15–23 ms a 0,75x e fino a 38 ms a 0,5x. **Manca l'ascolto dell'utente** per decidere se la qualita' vale lo sfasamento; il default resta lo stretcher unico.
+- **P36/P26 (suite e2e completa):** rilanciata il 2026-10-22, esito in `task.md`.
+
+## Riepilogo precedente (aggiornato 2026-10-18 notte, PR #2 unita, correzioni in corso)
 
 - **PR #2 (player, 140 brani, audio su R2, statistiche) e' gia' unita su `main` e online** (deploy ok). PR #3 (solo docs/script: misura Opus/MP3, punto F1) aperta, da unire. **Lavoro in corso su `fix/player-ripeti-selezione-tempi`** (non ancora in PR): vedi task **P31–P36** in `task.md` (scelta battuta sbagliata sui brani veri, Ripeti poco chiaro e Riproduci dall'inizio, tempi sovrapposti, cursore a meta' battuta, tenore fuori tessitura, e2e da rilanciare).
 - **Strumenti:** `gh` installato (`C:\Program Files\GitHub CLI\gh.exe`, login `ezin82` fatto); e2e: `$env:PW_CHROMIUM='C:\Program Files\Google\Chrome\Application\chrome.exe'; npm run e2e -- tests/e2e/partitura.spec.mjs`; con `E2E_SKIP_BUILD=1` non ricostruisce. In PowerShell evitare le virgolette dentro `Select-String`.
