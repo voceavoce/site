@@ -4,7 +4,7 @@
 
 - **Su `main` e online:** player con 140 brani, statistiche, correzioni P31–P35 (scelta battuta, Ripeti, tempi, cursore, tessitura), C1/C2/C3 (traduzioni comuni, note, interfaccia DE/FR), dichiarazione IA, anti-segreti, e2e in 3 shard (PR #6–#11). Il riepilogo del 2026-10-18 qui sotto e' in parte superato (le PR citate sono unite).
 - **Lavoro in corso: `fix/player-qualita-rallentamento`** (P37): prova `?stretch=voci`, uno stretcher SoundTouch per voce invece di uno sul mix. Misura (`tests/e2e/stretch-voci.spec.mjs`): le voci si sfasano di 15–23 ms a 0,75x e fino a 38 ms a 0,5x. **Manca l'ascolto dell'utente** per decidere se la qualita' vale lo sfasamento; il default resta lo stretcher unico.
-- **P36/P26 (suite e2e completa):** rilanciata il 2026-10-22, esito in `task.md`.
+- **P36/P26 (suite e2e completa):** rilanciata il 2026-10-22: 431 test, tutti verdi dopo una correzione al test dell'anteprima (fine riga degli appunti su Windows). Resta rosso `tests/note.test.mjs` (unit, anche su `main`): 4 brani pubblicati senza nota in tutte le lingue.
 
 ## Anteprima del brano (T-922..T-928, avviata il 2026-10-21): pagina usa e getta per vedere e sentire la parte PRIMA di fissare tempo e opzioni
 
