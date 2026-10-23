@@ -5,7 +5,7 @@ import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { loadStudio } from "../src/_lib/studio.js";
-import { bpmDaVelocita, velocitaPerBpm, indiceBattuta, righeOpzioni, testoRisposta } from "../src/assets/js/study/anteprima-lib.js";
+import { bpmDaVelocita, velocitaPerBpm, indiceBattuta, righeOpzioni, testoRisposta, messaggioCruscotto, origineCruscottoValida, origineGenitore, vociScelte } from "../src/assets/js/study/anteprima-lib.js";
 
 test("bpmDaVelocita: tempo di prova per la percentuale dello slider", () => {
   assert.equal(bpmDaVelocita(72, 100), 72);
@@ -95,4 +95,46 @@ test("anteprima: dossier non valido ferma la build con un messaggio chiaro", () 
   const dir = mkdtempSync(path.join(tmpdir(), "player-"));
   cartella(dir, "_anteprima-y", { schema: 2, brano: {}, tempo: {} });
   assert.throws(() => loadStudio({ dir, production: false }), /dossier\.json non valido/);
+});
+
+test("velocitaPerBpm: con lo slider all'1% il tempo e' esatto", () => {
+  assert.deepEqual(velocitaPerBpm(80, 73, 150, 1), { pct: 91, fuori: false });
+  assert.deepEqual(velocitaPerBpm(80, 73, 100), { pct: 90, fuori: false }); // il default resta a passi di 5
+  assert.equal(bpmDaVelocita(80, 91), 72.8);
+});
+
+test("origineCruscottoValida: solo http locale con porta", () => {
+  for (const ok of ["http://127.0.0.1:8765", "http://localhost:80"]) assert.equal(origineCruscottoValida(ok), true, ok);
+  for (const no of ["https://127.0.0.1:8765", "http://127.0.0.1", "http://localhost.evil.com:80", "http://127.0.0.1:8765/x", "http://evil.com:80", "*", "", null, undefined]) assert.equal(origineCruscottoValida(no), false, String(no));
+});
+
+test("origineGenitore: ancestorOrigins, poi referrer, poi null", () => {
+  assert.equal(origineGenitore({ ancestorOrigins: ["http://127.0.0.1:9000"], referrer: "http://altro:1/x" }), "http://127.0.0.1:9000");
+  assert.equal(origineGenitore({ ancestorOrigins: [], referrer: "http://localhost:9000/#/anteprima" }), "http://localhost:9000");
+  assert.equal(origineGenitore({ referrer: "non un url" }), null);
+  assert.equal(origineGenitore(), null);
+});
+
+test("vociScelte: tolte le voci a guadagno 0", () => {
+  const voci = [{ chiave: "soprano" }, { chiave: "alto" }, { chiave: "basso" }];
+  assert.deepEqual(vociScelte(voci, {}), ["soprano", "alto", "basso"]);
+  assert.deepEqual(vociScelte(voci, { soprano: 1, alto: 0, basso: 0.3 }), ["soprano", "basso"]);
+  assert.deepEqual(vociScelte(null), []);
+});
+
+test("messaggioCruscotto: schema 1, tempo esatto dello slider, voci e errore_spartito per segnalazione", () => {
+  const dossier = { brano: { titolo: "Ave", rank: "475", slug: "_anteprima-ave" }, tempo: { prova: 80 }, voci: [{ chiave: "soprano" }, { chiave: "basso" }],
+    anomalie: { mostrate: [{ battuta: "3", parte: "basso", categoria: "raddoppio", gravita: "alta" }, { battuta: "5", parte: "alto", categoria: "salto", gravita: "bassa" }] } };
+  const segnate = { 0: "vera", 1: "ignora" };
+  const m = messaggioCruscotto({ dossier, tempo: "73", note: "ok", segnate, velocitaPct: 91, gains: { soprano: 1, basso: 0 } });
+  assert.equal(m.tipo, "voceavoce-anteprima");
+  assert.equal(m.schema, 1);
+  assert.equal(m.dati.tempo_slider_bpm, 72.8);
+  assert.equal(m.dati.tempo_deciso, "73");
+  assert.deepEqual(m.dati.voci_scelte, ["soprano"]);
+  assert.deepEqual(m.dati.segnalazioni.map((s) => [s.battuta, s.errore_spartito]), [["3", true], ["5", false]]);
+  const testo = testoRisposta({ dossier, tempo: "73", note: "ok", segnate, velocitaPct: 91 });
+  const json = JSON.parse(testo.slice(testo.indexOf("{")));
+  for (const k of Object.keys(json)) if (k !== "segnalazioni") assert.deepEqual(m.dati[k], json[k], k); // stesso JSON del blocco da incollare
+  JSON.parse(JSON.stringify(m)); // clonabile da postMessage
 });

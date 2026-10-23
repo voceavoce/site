@@ -18,3 +18,7 @@ _site/
 /_site-e2e/
 /playwright-report/
 /test-results/
+
+# anteprime del brano generate da job_anteprima_brano (T-940): usa e getta, mai in un commit; resta solo la cartella di prova
+/content/player/_anteprima-*/
+!/content/player/_anteprima-prova/
