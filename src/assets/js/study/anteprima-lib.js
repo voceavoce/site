@@ -7,13 +7,13 @@ export function bpmDaVelocita(prova, pct) {
   return Math.round(((prova * pct) / 100) * 10) / 10;
 }
 
-/** Velocita' (percentuale, a passi di 5 come lo slider) che dà `bpm` rispetto al tempo di prova.
+/** Velocita' (percentuale, a passi di `passo`: 5 di default, 1 nelle anteprime dove lo slider e' all'1%) che dà `bpm` rispetto al tempo di prova.
  *  { pct, fuori }: `fuori` = il tempo voluto e' oltre quello che lo slider puo' dare (50..`max`%, 100 di default; 150 nelle
  *  anteprime a soli strumenti): serve rigenerare con --tempo. */
-export function velocitaPerBpm(prova, bpm, max = 100) {
+export function velocitaPerBpm(prova, bpm, max = 100, passo = 5) {
   if (!Number.isFinite(prova) || prova <= 0 || !Number.isFinite(bpm) || bpm <= 0) return null;
   const grezza = (bpm / prova) * 100;
-  const pct = Math.min(max, Math.max(50, Math.round(grezza / 5) * 5));
+  const pct = Math.min(max, Math.max(50, Math.round(grezza / passo) * passo));
   return { pct, fuori: grezza > max + 0.01 || grezza < 49.99 };
 }
 
@@ -36,6 +36,11 @@ export function righeOpzioni(opzioni, max = 160) {
  *  (con battuta, parte e categoria: servono al registro e alle statistiche delle guardie). `segnate` = { indice della
  *  segnalazione nel dossier: "vera" | "ignora" }. Testo semplice + JSON in fondo. */
 export function testoRisposta({ dossier, tempo, note, segnate = {}, velocitaPct = null }) {
+  return composta({ dossier, tempo, note, segnate, velocitaPct }).testo;
+}
+
+/** Cuore di testoRisposta: { testo, json } (il json e' lo stesso incollato in fondo al testo). */
+function composta({ dossier, tempo, note, segnate = {}, velocitaPct = null }) {
   const b = dossier?.brano ?? {};
   const t = dossier?.tempo ?? {};
   const righe = [`ANTEPRIMA ${b.titolo ?? "?"} (rank ${b.rank ?? "?"})`];
@@ -60,5 +65,39 @@ export function testoRisposta({ dossier, tempo, note, segnate = {}, velocitaPct 
     segnalazioni: scelte,
     osservazioni: osserv || null,
   };
-  return `${righe.join("\n")}\n\n${JSON.stringify(json, null, 1)}\n`;
+  return { testo: `${righe.join("\n")}\n\n${JSON.stringify(json, null, 1)}\n`, json };
+}
+
+/** Origini del cruscotto (AIVideoCreator, T-940) a cui l'anteprima puo' scrivere: solo http://127.0.0.1:<porta> o http://localhost:<porta>. */
+export function origineCruscottoValida(origine) {
+  return typeof origine === "string" && /^http:\/\/(127\.0\.0\.1|localhost):\d{1,5}$/.test(origine);
+}
+
+/** Origine della pagina che contiene l'iframe (ancestorOrigins su Chromium, altrimenti il referrer); null se non e' un iframe o non si sa. */
+export function origineGenitore({ ancestorOrigins = null, referrer = "" } = {}) {
+  const da = ancestorOrigins?.[0];
+  if (da) return da;
+  try { return referrer ? new URL(referrer).origin : null; } catch { return null; }
+}
+
+/** Voci che suonano: chiavi del dossier con guadagno > 0. `gains` = guadagni effettivi del motore ({} = mixer ai default, suonano tutte). */
+export function vociScelte(voci, gains = {}) {
+  const chiavi = (voci ?? []).map((v) => v.chiave);
+  return chiavi.filter((k) => !(k in gains) || gains[k] > 0);
+}
+
+/** Messaggio postMessage per il cruscotto: JSON di testoRisposta + tempo esatto dello slider, voci che suonano e, per ogni
+ *  segnalazione scelta, `errore_spartito` (vera = errore dello spartito). */
+export function messaggioCruscotto({ dossier, tempo, note, segnate = {}, velocitaPct = null, gains = {} }) {
+  const { json } = composta({ dossier, tempo, note, segnate, velocitaPct });
+  return {
+    tipo: "voceavoce-anteprima",
+    schema: 1,
+    dati: {
+      ...json,
+      segnalazioni: json.segnalazioni.map((s) => ({ ...s, errore_spartito: s.esito === "vera" })),
+      tempo_slider_bpm: bpmDaVelocita(dossier?.tempo?.prova, velocitaPct),
+      voci_scelte: vociScelte(dossier?.voci, gains),
+    },
+  };
 }

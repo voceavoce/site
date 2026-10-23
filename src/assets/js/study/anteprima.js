@@ -1,7 +1,7 @@
 // Pannello di ANTEPRIMA del brano (T-924): solo per le cartelle content/player/_anteprima-<slug>, che in produzione non esistono.
 // Mostra il dossier scritto da job_anteprima_brano (AIVideoCreator): tempo, opzioni, sezioni, segnalazioni sulla partitura;
 // dà il testo da copiare per Gemini e il blocco di risposta da incollare in chat. Tutto con textContent: i dati non sono HTML.
-import { bpmDaVelocita, velocitaPerBpm, indiceBattuta, righeOpzioni, testoRisposta } from "./anteprima-lib.js";
+import { bpmDaVelocita, velocitaPerBpm, indiceBattuta, righeOpzioni, testoRisposta, messaggioCruscotto, origineCruscottoValida, origineGenitore } from "./anteprima-lib.js";
 
 const h = (tag, attrs = {}, ...figli) => {
   const el = document.createElement(tag);
@@ -51,6 +51,9 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
   const massimo = senzaAudio ? 150 : 100;
   if (senzaAudio && engine) engine.maxRate = 1.5;
   if (senzaAudio && speed) speed.max = String(massimo);
+  if (speed) speed.step = "1"; // tempo esatto: nelle anteprime lo slider va all'1% (nel player vero resta a 5)
+  // invio al cruscotto: solo dentro un iframe e solo verso un'origine locale valida (mai "*")
+  const origineCruscotto = (() => { if (window.parent === window) return null; const o = origineGenitore({ ancestorOrigins: location.ancestorOrigins, referrer: document.referrer }); return origineCruscottoValida(o) ? o : null; })();
   const segnate = {};
   const stato = h("p", { class: "anteprima__stato", role: "status", "aria-live": "polite" });
   const live = h("p", { class: "anteprima__live" });
@@ -60,6 +63,7 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
   const uscita = h("textarea", { id: "ant-uscita", rows: "10", readonly: true, "aria-label": "Blocco di risposta da incollare in chat" });
 
   const pct = () => (speed ? Number(speed.value) : 100);
+  const tempoSlider = () => (Number.isFinite(t.prova) ? bpmDaVelocita(t.prova, pct()) : null);
   const aggiorna = () => {
     const p = pct();
     live.textContent = Number.isFinite(t.prova) ? `Velocità del player ${p}% = ${bpmDaVelocita(t.prova, p)} BPM (tempo di prova ${t.prova})` : `Velocità del player ${p}%`;
@@ -71,13 +75,26 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
 
   const provaTempo = () => {
     const bpm = Number(String(tempoCampo.value).replace(",", "."));
-    const v = velocitaPerBpm(t.prova, bpm, massimo);
+    const v = velocitaPerBpm(t.prova, bpm, massimo, 1);
     if (!v) { msgTempo.textContent = "Scrivi un numero di BPM."; return; }
     if (speed) { speed.value = String(v.pct); speed.dispatchEvent(new Event("input", { bubbles: true })); }
     msgTempo.textContent = v.fuori
       ? `Lo slider va dal 50% al ${massimo}% del tempo di prova (${t.prova}): per ${bpm} BPM rigenera l'anteprima con --tempo ${bpm}. Ora è al ${v.pct}%.`
       : `Velocità impostata al ${v.pct}%.`;
     aggiorna();
+  };
+
+  const usaSlider = () => {
+    const bpm = tempoSlider();
+    if (bpm == null) { msgTempo.textContent = "Il dossier non ha un tempo di prova."; return; }
+    tempoCampo.value = String(bpm);
+    msgTempo.textContent = `Tempo deciso: ${bpm} BPM (${pct()}% del tempo di prova ${t.prova}).`;
+    aggiorna();
+  };
+  const invia = () => {
+    window.parent.postMessage(messaggioCruscotto({ dossier, tempo: tempoCampo.value, note: note.value, segnate, velocitaPct: pct(), gains: engine?.gains ?? {} }), origineCruscotto);
+    stato.textContent = "Inviato al cruscotto.";
+    setTimeout(() => { stato.textContent = ""; }, 2500);
   };
 
   const tabella = h("table", { class: "anteprima__tab" },
@@ -106,14 +123,16 @@ export async function creaAnteprima({ url, sync, vai, speed, engine, senzaAudio 
     h("p", {}, h("strong", {}, dossier.brano?.titolo ?? "?"), ` · rank ${dossier.brano?.rank ?? "?"} · ${t.battute} battute, metro ${t.metro} · tempo di prova ${t.prova ?? "—"} (contratto ${t.contratto ?? "—"}, ${t.origine ?? "senza origine"}) · ${Math.floor(t.durata_prova_sec / 60)}:${String(Math.round(t.durata_prova_sec % 60)).padStart(2, "0")}`),
     sezione("Tempo", live, tabella,
       h("div", { class: "field" }, h("label", { for: "ant-tempo" }, "Tempo che vuoi provare o decidere (BPM)"), tempoCampo),
-      h("button", { type: "button", class: "tool tool--text", onclick: provaTempo }, "Prova questo tempo"), msgTempo),
+      h("button", { type: "button", class: "tool tool--text", onclick: provaTempo }, "Prova questo tempo"), " ",
+      h("button", { type: "button", class: "tool tool--text", onclick: usaSlider }, "Usa il tempo dello slider"), msgTempo),
     sezione("Sezioni proposte", sezioni),
     sezione("Scelte già nel contratto", opzioni),
     sezione("Segnalazioni sulla partitura", ...avvisi, lista),
     sezione("Per Gemini", prompt, h("button", { type: "button", class: "tool tool--text", onclick: () => copia(prompt.value, stato) }, "Copia il testo per Gemini")),
     sezione("Osservazioni", h("div", { class: "field" }, h("label", { for: "ant-note" }, "Che cosa hai visto o sentito"), note)),
     sezione("Risposta per Claude", h("p", { class: "study__hint" }, "Incolla questo blocco nella chat: la pagina non scrive nel repo."), uscita,
-      h("button", { type: "button", class: "tool tool--text", onclick: () => copia(uscita.value, stato) }, "Copia la risposta")),
+      h("button", { type: "button", class: "tool tool--text", onclick: () => copia(uscita.value, stato) }, "Copia la risposta"),
+      origineCruscotto ? [" ", h("button", { type: "button", class: "tool tool--text", onclick: invia }, "Invia al cruscotto")] : []),
     stato,
   );
   aggiorna();

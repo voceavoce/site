@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { expect } from "@playwright/test";
 import { test, intercettaAudio, raccogliErrori, RADICE } from "./helpers.mjs";
+import { BASE } from "../../playwright.config.mjs";
 
 const AXE = fs.readFileSync(path.join(RADICE, "node_modules/axe-core/axe.min.js"), "utf8");
 const URL_ANT = "/player/_anteprima-prova/?debug";
@@ -107,4 +108,40 @@ test("anteprima: a 150% le note si suonano ancora tutte, e senza anteprima il te
   await page.waitForFunction(() => window.__study?.engine.tracks.size === 4, null, { timeout: 90_000 });
   const normale = await page.evaluate(() => { const e = window.__study.engine; e.setRate(1.5); return { maxRate: e.maxRate, rate: e.rate }; });
   expect(normale).toEqual({ maxRate: 1, rate: 1 });
+});
+
+test("anteprima: lo slider va all'1% e «Usa il tempo dello slider» scrive il tempo esatto", async ({ page }) => {
+  await apri(page);
+  await expect(page.locator("[data-speed]")).toHaveAttribute("step", "1");
+  await page.fill("#ant-tempo", "73");
+  await page.getByRole("button", { name: "Prova questo tempo" }).click();
+  await expect(page.locator("[data-speed]")).toHaveValue("91");
+  await page.getByRole("button", { name: "Usa il tempo dello slider" }).click();
+  await expect(page.locator("#ant-tempo")).toHaveValue("72.8");
+  await expect(page.locator("#ant-uscita")).toHaveValue(/Tempo deciso: 72.8/);
+  // il player normale non cambia: slider a passi di 5
+  await page.goto("/player/_prova/?debug");
+  await expect(page.locator("[data-speed]")).toHaveAttribute("step", "5");
+});
+
+test("anteprima: «Invia al cruscotto» c'e' solo in un iframe del cruscotto locale e manda il messaggio allo schema 1", async ({ page }) => {
+  await apri(page);
+  await expect(page.getByRole("button", { name: "Invia al cruscotto" })).toHaveCount(0); // pagina intera: nessun invio
+  const pagina = `<!doctype html><title>cruscotto finto</title><script>window.ricevuti=[];addEventListener("message",e=>window.ricevuti.push({origin:e.origin,data:e.data}))</script><iframe id="f" src="${BASE}${URL_ANT}" width="1200" height="2400"></iframe>`;
+  await page.route("http://localhost:4999/**", (r) => r.fulfill({ contentType: "text/html", body: pagina }));
+  await page.goto("http://localhost:4999/");
+  const fr = page.frameLocator("#f");
+  await fr.locator("[data-anteprima-body] h3").first().waitFor({ timeout: 90_000 });
+  await fr.locator("#ant-tempo").fill("73");
+  await fr.locator("#ant-an-0").selectOption("vera");
+  await fr.getByRole("button", { name: "Invia al cruscotto" }).click();
+  await page.waitForFunction(() => window.ricevuti.length === 1);
+  const m = await page.evaluate(() => window.ricevuti[0]);
+  expect(m.origin).toBe(BASE);
+  expect(m.data.tipo).toBe("voceavoce-anteprima");
+  expect(m.data.schema).toBe(1);
+  expect(m.data.dati.tempo_deciso).toBe("73");
+  expect(m.data.dati.tempo_slider_bpm).toBe(80);
+  expect(m.data.dati.voci_scelte).toEqual(["soprano", "alto", "tenore", "basso"]);
+  expect(m.data.dati.segnalazioni[0]).toMatchObject({ battuta: "3", esito: "vera", errore_spartito: true });
 });
