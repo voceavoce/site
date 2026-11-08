@@ -65,3 +65,29 @@ jobs:
             test-results/
           retention-days: 7
           if-no-files-found: ignore
+
+  # S2 (T-1012): il player su WebKit/iPhone (Safari non e' Chromium: autoplay, sospensione dell'audio, schermo intero).
+  # Solo gli spec mobili; la variabile PW_WEBKIT attiva il progetto "webkit" di playwright.config.mjs.
+  e2e-webkit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Browser WebKit di Playwright
+        run: npx playwright install --with-deps webkit
+      - name: Test end-to-end su WebKit (iPhone)
+        run: PW_WEBKIT=1 npm run e2e -- --project=webkit
+      - name: Report e trace
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-webkit
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore
