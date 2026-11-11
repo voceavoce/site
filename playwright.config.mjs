@@ -2,7 +2,7 @@
 // in _site-e2e e poi esegue questa configurazione). Non c'entrano con `npm test`, che esegue solo gli unit test
 // (tests/**/*.test.mjs): qui i file si chiamano *.spec.mjs.
 import fs from "node:fs";
-import { defineConfig } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 
 export const PORTA = Number(process.env.E2E_PORT || 8090);
 export const BASE = `http://127.0.0.1:${PORTA}`;
@@ -36,6 +36,9 @@ export default defineConfig({
       args: ["--autoplay-policy=no-user-gesture-required"],
     },
   },
+  // WebKit (iPhone) SOLO su richiesta: PW_WEBKIT=1 e browser installato (in CI: `npx playwright install --with-deps webkit`;
+  // in locale mai `playwright install`). Senza la variabile non cambia nulla: nessun progetto, si usa il Chromium di sempre.
+  ...(process.env.PW_WEBKIT ? { projects: [{ name: "webkit", testMatch: "**/mobile.spec.mjs", use: { ...devices["iPhone 13"], launchOptions: {} } }] } : {}),
   // Il server del sito appartiene a Playwright: parte prima dei test e si ferma alla fine.
   // Serve _site-e2e (costruito da scripts/e2e.mjs, senza ELEVENTY_ENV=production, quindi con il brano di prova).
   webServer: {
