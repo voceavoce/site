@@ -39,7 +39,7 @@ jobs:
 
   # Test end-to-end divisi in 3 job in parallelo (un solo worker per job: i test misurano tempi di riproduzione).
   e2e:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Playwright 1.56 non supporta ancora ubuntu 26.04 (= ubuntu-latest)
     strategy:
       fail-fast: false
       matrix:
@@ -69,7 +69,7 @@ jobs:
   # S2 (T-1012): il player su WebKit/iPhone (Safari non e' Chromium: autoplay, sospensione dell'audio, schermo intero).
   # Solo gli spec mobili; la variabile PW_WEBKIT attiva il progetto "webkit" di playwright.config.mjs.
   e2e-webkit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Playwright 1.56 non supporta ancora ubuntu 26.04 (= ubuntu-latest)
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
