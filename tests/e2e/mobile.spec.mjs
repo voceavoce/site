@@ -19,10 +19,12 @@ test.beforeEach(async ({ context }) => { await intercettaAudio(context); });
 const stato = (page) => page.evaluate(() => window.__study.engine.ctx.state);
 const posizione = (page) => page.evaluate(() => window.__study.engine.audiblePosition());
 
-test("autoplay: il contesto audio parte sospeso e il primo tocco su Riproduci lo avvia", async ({ page }) => {
+test("autoplay: il contesto audio parte sospeso e il primo tocco su Riproduci lo avvia", async ({ page }, testInfo) => {
   const errori = raccogliErrori(page);
   await apriPlayer(page);
-  expect(await stato(page)).not.toBe("running");                     // nessun suono prima del gesto dell'utente
+  // Il WebKit di Playwright su Linux (CI) non applica il blocco dell'autoplay di Safari su iPhone: lì il contesto puo' partire
+  // gia' in marcia. Il controllo "sospeso prima del gesto" vale su Chromium; su WebKit si verifica solo che il tocco avvii l'audio.
+  if (testInfo.project.name !== "webkit") expect(await stato(page)).not.toBe("running");   // nessun suono prima del gesto dell'utente
   await page.locator("[data-play]").tap();
   await expect(page.locator("[data-play]")).toHaveAttribute("aria-pressed", "true");
   await expect.poll(() => stato(page), { timeout: 10_000 }).toBe("running");
