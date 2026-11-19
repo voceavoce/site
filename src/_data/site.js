@@ -28,7 +28,7 @@ export default {
   email: "info@voceavoce.com",
   ogImage: { path: "/assets/img/og-default.png", width: 1200, height: 630 },
   aiCrawlers: true, // robots.txt: consente esplicitamente i crawler AI
-  ads: { enabled: false },
+  ads: { enabled: false, house: true }, // house: invito «Iscriviti al canale» al posto della pubblicità (components/ad-slot.njk)
   analytics: {
     attive: Boolean(CLOUDFLARE_ANALYTICS_TOKEN), // decide il testo della pagina Privacy
     // lo script si carica solo nella build di produzione (niente visite finte da sviluppo e test)
