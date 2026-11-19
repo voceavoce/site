@@ -10,7 +10,10 @@
   "compositore": {
     "id": "ludovico-da-viadana",
     "nome": "Ludovico da Viadana",
-    "breve": "Viadana"
+    "breve": "Viadana",
+    "alias": [
+      "Viadana"
+    ]
   },
   "generi": [
     "sacro"

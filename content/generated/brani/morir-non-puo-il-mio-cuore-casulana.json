@@ -10,13 +10,28 @@
   "compositore": {
     "id": "maddalena-casulana",
     "nome": "Maddalena Casulana",
-    "breve": "Casulana"
+    "breve": "Casulana",
+    "date": "c. 1535–1590",
+    "nascita": "c. 1535",
+    "morte": 1590,
+    "periodo": "rinascimento",
+    "alias": [
+      "Madalena Casulana"
+    ]
   },
   "generi": [],
   "lingua": "it",
   "organico": "SATB",
   "tempo_bpm": 108,
   "fonte_spartito": "PDMX / MuseScore",
+  "testo": {
+    "lingua": "it",
+    "testo": "Morir non può il mio cuore: ucciderlo vorrei,\nPoi che vi piace,\nMa trar no si può fuore dal petto\nVostr’ove gran tempo giace;\nEt uccidendol’io, come desio,\nSo che morreste voi,\nMorrend’ anch’io.",
+    "fonte": {
+      "sito": "eugeneconcertchoir.org",
+      "url": "https://eugeneconcertchoir.org/wp-content/uploads/2021/02/Morir-non-puo.pdf"
+    }
+  },
   "voci": [
     {
       "voce": "S",

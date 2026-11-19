@@ -10,7 +10,12 @@
   "compositore": {
     "id": "giovanni-battista-martini",
     "nome": "Giovanni Battista Martini",
-    "breve": "Martini"
+    "breve": "Martini",
+    "alias": [
+      "Martini",
+      "G. B. Martini",
+      "Padre Martini"
+    ]
   },
   "stagioni": [
     "quaresima"

@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "generato": "2026-10-17T21:38:06Z",
-  "pipeline": "64cd5e57",
-  "impronta": "3500b5559a5097fc",
+  "generato": "2026-11-19T22:12:59Z",
+  "pipeline": "5b62f026",
+  "impronta": "ff22010be9c1877c",
   "brani": [
     {
       "slug": "le-violette-scarlatti",
@@ -578,7 +578,7 @@
       "slug": "weepe-you-no-more-sad-fountaines-dowland",
       "linea": "coro",
       "titolo": "Weepe you no more sad fountaines",
-      "prima_uscita": "2026-11-17T15:30:00Z"
+      "prima_uscita": "2026-11-18T15:30:00Z"
     },
     {
       "slug": "adoramus-te-christe-martini",
@@ -668,7 +668,7 @@
       "slug": "in-s-angelum-custodem-wab-18-bruckner",
       "linea": "coro",
       "titolo": "In S. Angelum custodem WAB 18",
-      "prima_uscita": "2026-11-18T15:30:00Z"
+      "prima_uscita": "2027-01-26T15:30:00Z"
     },
     {
       "slug": "for-unto-us-a-child-is-born-handel",
@@ -849,6 +849,12 @@
       "linea": "coro",
       "titolo": "The Coventry Carol",
       "prima_uscita": "2026-11-12T15:30:00Z"
+    },
+    {
+      "slug": "o-magnum-mysterium-beata-virgo-byrd",
+      "linea": "coro",
+      "titolo": "O magnum mysterium - Beata Virgo",
+      "prima_uscita": "2026-11-17T15:30:00Z"
     },
     {
       "slug": "concone-50-lezioni-op-9-n-1",

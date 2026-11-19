@@ -10,7 +10,10 @@
   "compositore": {
     "id": "claudio-casciolini",
     "nome": "Claudio Casciolini",
-    "breve": "Casciolini"
+    "breve": "Casciolini",
+    "alias": [
+      "Casciolini"
+    ]
   },
   "generi": [
     "sacro"

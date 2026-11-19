@@ -15,6 +15,14 @@
     "id": "alonso-lobo",
     "nome": "Alonso Lobo",
     "breve": "Lobo",
+    "date": "c. 1555–1617",
+    "nascita": "c. 1555",
+    "morte": 1617,
+    "periodo": "rinascimento",
+    "alias": [
+      "Lobo",
+      "Alfonso Lobo"
+    ],
     "brani": [
       "versa-est-in-luctum-lobo"
     ]
@@ -23,6 +31,10 @@
     "id": "andrea-gabrieli",
     "nome": "Andrea Gabrieli",
     "breve": "Gabrieli",
+    "date": "c. 1533–1585",
+    "nascita": "c. 1533",
+    "morte": 1585,
+    "periodo": "rinascimento",
     "brani": [
       "sancta-et-immaculata-gabrieli"
     ]
@@ -124,6 +136,9 @@
     "id": "claudio-casciolini",
     "nome": "Claudio Casciolini",
     "breve": "Casciolini",
+    "alias": [
+      "Casciolini"
+    ],
     "brani": [
       "panis-angelicus-casciolini"
     ]
@@ -319,6 +334,11 @@
     "id": "giovanni-battista-martini",
     "nome": "Giovanni Battista Martini",
     "breve": "Martini",
+    "alias": [
+      "Martini",
+      "G. B. Martini",
+      "Padre Martini"
+    ],
     "brani": [
       "tristis-est-anima-mea-martini",
       "adoramus-te-christe-martini"
@@ -415,10 +435,18 @@
       "laudi-alla-vergine-maria-verdi"
     ]
   },
-  "grzegorz-gorczycki": {
-    "id": "grzegorz-gorczycki",
-    "nome": "Grzegorz Gorczycki",
+  "grzegorz-gerwazy-gorczycki": {
+    "id": "grzegorz-gerwazy-gorczycki",
+    "nome": "Grzegorz Gerwazy Gorczycki",
     "breve": "Gorczycki",
+    "date": "c. 1665–1734",
+    "nascita": "c. 1665",
+    "morte": 1734,
+    "periodo": "barocco",
+    "alias": [
+      "Grzegorz Gorczycki",
+      "Gorczycki"
+    ],
     "brani": [
       "omni-die-dic-mariae-gorczycki"
     ]
@@ -539,6 +567,10 @@
     "id": "john-farmer",
     "nome": "John Farmer",
     "breve": "Farmer",
+    "date": "c. 1570–1601",
+    "nascita": "c. 1570",
+    "morte": 1601,
+    "periodo": "rinascimento",
     "brani": [
       "fair-phyllis-i-saw-farmer"
     ]
@@ -580,6 +612,13 @@
     "id": "john-wilbye",
     "nome": "John Wilbye",
     "breve": "Wilbye",
+    "date": "1574–1638",
+    "nascita": "1574",
+    "morte": 1638,
+    "periodo": "rinascimento",
+    "alias": [
+      "Wilbye"
+    ],
     "brani": [
       "adieu-sweet-amaryllis-wilbye"
     ]
@@ -679,6 +718,9 @@
     "id": "ludovico-da-viadana",
     "nome": "Ludovico da Viadana",
     "breve": "Viadana",
+    "alias": [
+      "Viadana"
+    ],
     "brani": [
       "exultate-justi-viadana"
     ]
@@ -703,6 +745,13 @@
     "id": "maddalena-casulana",
     "nome": "Maddalena Casulana",
     "breve": "Casulana",
+    "date": "c. 1535–1590",
+    "nascita": "c. 1535",
+    "morte": 1590,
+    "periodo": "rinascimento",
+    "alias": [
+      "Madalena Casulana"
+    ],
     "brani": [
       "morir-non-puo-il-mio-cuore-casulana"
     ]
@@ -950,7 +999,8 @@
       "ave-verum-corpus-byrd",
       "sing-joyfully-byrd",
       "miserere-mei-deus-byrd",
-      "teach-me-o-lord-byrd"
+      "teach-me-o-lord-byrd",
+      "o-magnum-mysterium-beata-virgo-byrd"
     ]
   },
   "wolfgang-amadeus-mozart": {

@@ -10,7 +10,15 @@
   "compositore": {
     "id": "alonso-lobo",
     "nome": "Alonso Lobo",
-    "breve": "Lobo"
+    "breve": "Lobo",
+    "date": "c. 1555–1617",
+    "nascita": "c. 1555",
+    "morte": 1617,
+    "periodo": "rinascimento",
+    "alias": [
+      "Lobo",
+      "Alfonso Lobo"
+    ]
   },
   "generi": [
     "sacro"
@@ -24,6 +32,14 @@
   "tempo_bpm": 88,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Versa est in luctum cithara mea\net organum meum in vocem flentium.\nParce mihi, Domine,\nnihil enim sunt dies mei.",
+    "fonte": {
+      "sito": "lieder.net",
+      "url": "https://www.lieder.net/lieder/get_text.html?TextId=56787"
+    }
+  },
   "voci": [
     {
       "voce": "S1",

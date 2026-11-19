@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "slug": "o-magnum-mysterium-beata-virgo-byrd",
+  "linea": "coro",
+  "rank": "490",
+  "ranks": [
+    "490"
+  ],
+  "titolo": "O magnum mysterium - Beata Virgo",
+  "compositore": {
+    "id": "william-byrd",
+    "nome": "William Byrd",
+    "breve": "Byrd",
+    "date": "c. 1540–1623",
+    "nascita": "c. 1540",
+    "morte": 1623,
+    "periodo": "rinascimento",
+    "alias": [
+      "Byrd"
+    ]
+  },
+  "generi": [
+    "sacro"
+  ],
+  "lingua": "la",
+  "organico": "SATB",
+  "tempo_bpm": 90,
+  "fonte_spartito": "CPDL / ChoralWiki",
+  "licenza_spartito": "PD",
+  "edizioni_verifica": [
+    {
+      "edizione": "Tudor Church Music vol. 7 (William Byrd, Gradualia I-II), a cura di R. R. Terry, E. H. Fellowes, P. C. Buck, S. Townsend Warner, A. Ramsbotham; nn. 8 'O magnum misterium' e 9 'Beata Virgo'",
+      "editore": "Oxford University Press (per il Carnegie United Kingdom Trust)",
+      "anno": 1927,
+      "url": "https://imslp.org/wiki/File:PMLP235715-TUD_07_8.pdf ; https://imslp.org/wiki/File:PMLP235708-TUD_07_9.pdf"
+    },
+    {
+      "edizione": "William Byrd, Gradualia seu cantionum sacrarum liber secundus (Londra, Thomas East, 1607), libri-parte Bassus e Contratenor dei nn. VIII-IX",
+      "editore": "Thomas East",
+      "anno": 1607,
+      "url": "https://archive.org/details/bim_early-english-books-1475-1640_gradualia-seu-cantionum_byrd-william_1607"
+    }
+  ],
+  "testo": {
+    "lingua": "la",
+    "testo": "O magnum mysterium,\net admirabile sacramentum,\nut animalia viderent Dominum natum,\njacentem in praesepio.\nBeata Virgo, cujus viscera\nmeruerunt portare Dominum Christum.\nAve Maria, gratia plena,\nDominus tecum.\nBeata Virgo, cujus viscera\nmeruerunt portare Dominum Christum.",
+    "fonte": {
+      "sito": "emmanuelmusic.org",
+      "url": "https://www.emmanuelmusic.org/other-translations/byrd-o-magnum-mysterium"
+    }
+  },
+  "voci": [
+    {
+      "voce": "S",
+      "video_id": "glVySZUYXYY",
+      "pubblica_dal": "2026-11-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 390,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 767,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 779,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 1313,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1696,
+          "titolo": "IN PAIRS — your part and Alto"
+        },
+        {
+          "sec": 2073,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 2451,
+          "titolo": "YOUR TURN — the choir with your part barely audible — sing it yourself"
+        },
+        {
+          "sec": 2828,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 2848
+    },
+    {
+      "voce": "A",
+      "video_id": "XgdobZiQ9gg",
+      "pubblica_dal": "2026-11-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 395,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 773,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 784,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 1318,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1701,
+          "titolo": "IN PAIRS — your part and Soprano"
+        },
+        {
+          "sec": 2084,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 2461,
+          "titolo": "YOUR TURN — the choir with your part barely audible — sing it yourself"
+        },
+        {
+          "sec": 2844,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 2864
+    },
+    {
+      "voce": "T",
+      "video_id": "3K2z5qcqaxQ",
+      "pubblica_dal": "2026-11-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 390,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 767,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 779,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 1313,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1696,
+          "titolo": "IN PAIRS — your part and Basso"
+        },
+        {
+          "sec": 2078,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 2456,
+          "titolo": "YOUR TURN — the choir with your part barely audible — sing it yourself"
+        },
+        {
+          "sec": 2834,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 2854
+    },
+    {
+      "voce": "B",
+      "video_id": "Rpx1AnMCcIw",
+      "pubblica_dal": "2026-11-17T15:30:00Z",
+      "capitoli": [
+        {
+          "sec": 0,
+          "titolo": "Intro"
+        },
+        {
+          "sec": 12,
+          "titolo": "YOUR PART HIGHLIGHTED — all voices, yours the loudest"
+        },
+        {
+          "sec": 390,
+          "titolo": "RHYTHM READING — the words in rhythm, on one note"
+        },
+        {
+          "sec": 767,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 779,
+          "titolo": "SLOW — your part only"
+        },
+        {
+          "sec": 1313,
+          "titolo": "FULL TEMPO — your part only"
+        },
+        {
+          "sec": 1696,
+          "titolo": "IN PAIRS — your part and Tenore"
+        },
+        {
+          "sec": 2078,
+          "titolo": "ALL TOGETHER — the whole piece, all voices"
+        },
+        {
+          "sec": 2456,
+          "titolo": "YOUR TURN — the choir with your part barely audible — sing it yourself"
+        },
+        {
+          "sec": 2834,
+          "titolo": "End screen"
+        }
+      ],
+      "durata_sec": 2854
+    }
+  ],
+  "prima_uscita": "2026-11-17T15:30:00Z"
+}

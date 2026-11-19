@@ -10,7 +10,11 @@
   "compositore": {
     "id": "john-farmer",
     "nome": "John Farmer",
-    "breve": "Farmer"
+    "breve": "Farmer",
+    "date": "c. 1570–1601",
+    "nascita": "c. 1570",
+    "morte": 1601,
+    "periodo": "rinascimento"
   },
   "generi": [],
   "lingua": "en",
@@ -22,6 +26,14 @@
   "tempo_bpm": 160,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "Fair Phyllis I saw sitting all alone\nFeeding her flock near to the mountain side.\nThe shepherds knew not,\nthey knew not whither she was gone,\nBut after her lover Amyntas hied,\nUp and down he wandered\nwhilst she was missing;\nWhen he found her,\nO then they fell a-kissing.",
+    "fonte": {
+      "sito": "oxfordsong.org",
+      "url": "https://oxfordsong.org/song/fair-phyllis"
+    }
+  },
   "voci": [
     {
       "voce": "S",

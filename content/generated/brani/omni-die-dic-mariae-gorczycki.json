@@ -8,9 +8,17 @@
   ],
   "titolo": "Omni die dic Mariae",
   "compositore": {
-    "id": "grzegorz-gorczycki",
-    "nome": "Grzegorz Gorczycki",
-    "breve": "Gorczycki"
+    "id": "grzegorz-gerwazy-gorczycki",
+    "nome": "Grzegorz Gerwazy Gorczycki",
+    "breve": "Gorczycki",
+    "date": "c. 1665–1734",
+    "nascita": "c. 1665",
+    "morte": 1734,
+    "periodo": "barocco",
+    "alias": [
+      "Grzegorz Gorczycki",
+      "Gorczycki"
+    ]
   },
   "generi": [
     "sacro"
@@ -24,6 +32,14 @@
   "tempo_bpm": 126,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Omni die dic Mariae Mea laudes anima: Ejus festa, ejus gesta Cole devotissima.\nContemplare et mirare Ejus celsitudinem: Dic felicem genitricem, Dic beatam Virginem.",
+    "fonte": {
+      "sito": "catholicculture.org",
+      "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1002"
+    }
+  },
   "voci": [
     {
       "voce": "S",

@@ -10,7 +10,11 @@
   "compositore": {
     "id": "andrea-gabrieli",
     "nome": "Andrea Gabrieli",
-    "breve": "Gabrieli"
+    "breve": "Gabrieli",
+    "date": "c. 1533–1585",
+    "nascita": "c. 1533",
+    "morte": 1585,
+    "periodo": "rinascimento"
   },
   "generi": [
     "sacro"
@@ -24,6 +28,14 @@
   "tempo_bpm": 92,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "la",
+    "testo": "Sancta et immaculata virginitas, quibus te laudibus efferam nescio:\nQuia quem coeli capere non poterant, tuo gremio contulisti.\nBenedicta tu in mulieribus, et benedictus fructus ventris tui.\nQuia quem coeli capere non poterant, tuo gremio contulisti.",
+    "fonte": {
+      "sito": "chantblog.blogspot.com",
+      "url": "http://chantblog.blogspot.com/2015/12/sancta-et-immaculata-virginitas-holy.html"
+    }
+  },
   "voci": [
     {
       "voce": "S1",

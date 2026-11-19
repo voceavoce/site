@@ -10,7 +10,14 @@
   "compositore": {
     "id": "john-wilbye",
     "nome": "John Wilbye",
-    "breve": "Wilbye"
+    "breve": "Wilbye",
+    "date": "1574–1638",
+    "nascita": "1574",
+    "morte": 1638,
+    "periodo": "rinascimento",
+    "alias": [
+      "Wilbye"
+    ]
   },
   "generi": [],
   "lingua": "en",
@@ -18,6 +25,14 @@
   "tempo_bpm": 124,
   "fonte_spartito": "PDMX / MuseScore",
   "licenza_spartito": "PD",
+  "testo": {
+    "lingua": "en",
+    "testo": "Adieu, adieu\nSweet amaryllis\nFor since to part your will is\nO heavy tiding\nHere is for me no biding\nYet once again\nEre that I part with you\nAmaryllis, amaryllis\nSweet adieu",
+    "fonte": {
+      "sito": "genius.com",
+      "url": "https://genius.com/John-wilbye-adieu-sweet-amaryllis-lyrics"
+    }
+  },
   "voci": [
     {
       "voce": "S",
